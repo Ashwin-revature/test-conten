@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "porting-a-javalin-route-service-and-repository-to-spring-boot",
-  "title": "Porting a Javalin route, service and repository to Spring Boot",
+  "title": "Applying Spring MVC: Controllers and Error Handling",
   "kind": "core",
   "curriculum": [
     {
