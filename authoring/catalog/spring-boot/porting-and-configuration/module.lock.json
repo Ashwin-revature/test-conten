@@ -20,8 +20,8 @@
     },
     {
       "path": "authoring/catalog/spring-boot/porting-and-configuration/porting-a-javalin-route-service-and-repository-to-spring-boot/topic.json",
-      "sha256": "7f9d7ec12098953e3428cc635fcbf572f24f7162c421039d3a7d9cdfe201c4b2",
-      "bytes": 3645
+      "sha256": "e1603233aca4423ddf7fb5df656624dd3dfc41bb888ec10482f3641d7b128842",
+      "bytes": 3647
     },
     {
       "path": "authoring/catalog/spring-boot/porting-and-configuration/rest-design-recap/topic.json",
