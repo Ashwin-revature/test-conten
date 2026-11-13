@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactHashes": {
-    "artifact.html": "071b8ddec27136a81473e7e330a797fdf20eddaa09f0a7da9c928ee7f0b9ccdd",
+    "artifact.html": "e7ac5f45b37afee18cda5f722e04b185ac90068ce11b30cfda0dd812d21d05b7",
     "artifact.md": "eb1f7a09a7ee40ab590fc1017dc5402c73ab28baf969ddc9dd39ced3c6d56549"
   },
   "viewports": [
@@ -88,9 +88,9 @@
     "chromium": "140.0.7339.16"
   },
   "privateSuccessProof": {
-    "record": "validated at 16de57d55462e7f93795836702b350a28354b3fc by run tjr-indep-mockito-1794115334-success",
-    "runId": "tjr-indep-mockito-1794115334-success",
-    "ranAt": "2026-11-08T05:22:18Z",
+    "record": "validated at 0a916def99d256249af17532ddb8f51867fad2b6 by run tjr-truthfix-mocking-1794529932-success",
+    "runId": "tjr-truthfix-mocking-1794529932-success",
+    "ranAt": "2026-11-13T00:32:14Z",
     "environment": {
       "node": "24.2.0",
       "playwright": "1.55.0",
@@ -101,7 +101,7 @@
     "publicBindings": [
       {
         "file": "java-foundations/testing-and-java-review/mocking-with-mockito/artifact.html",
-        "reviewedSha256": "071b8ddec27136a81473e7e330a797fdf20eddaa09f0a7da9c928ee7f0b9ccdd"
+        "reviewedSha256": "e7ac5f45b37afee18cda5f722e04b185ac90068ce11b30cfda0dd812d21d05b7"
       },
       {
         "file": "authoring/evidence/java-foundations/testing-and-java-review/mocking-with-mockito/qa-paths.json",
@@ -120,6 +120,6 @@
         "reviewedSha256": "6fcb012d5c32c31f04d7ad326a104b814782ef19d38799acb8c6642443bf9dd4"
       }
     ],
-    "commit": "16de57d55462e7f93795836702b350a28354b3fc"
+    "commit": "0a916def99d256249af17532ddb8f51867fad2b6"
   }
 }
