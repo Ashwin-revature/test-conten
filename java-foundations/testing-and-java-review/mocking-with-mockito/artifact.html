@@ -1398,7 +1398,7 @@ var PepTest = (function () {
           if (rt2.isClassRef) {
             var key = rt2.name + '.' + e.name;
             if (/^(Integer\.compare|Integer\.parseInt|Math\.max|Math\.min|Math\.abs|String\.valueOf)$/.test(key)) return { name: key === 'String.valueOf' ? 'String' : 'int' };
-            if (classes[rt2.name]) { var sm = methodsNamed(classes[rt2.name], e.name)[0]; if (!sm) { report(e, 'cannot find symbol\n  symbol: method ' + e.name); return null; } if (!sm.mods.static) report(e, 'non-static method ' + e.name + '() cannot be referenced from a static context'); return sm.type; }
+            if (classes[rt2.name]) { var sm = methodsNamed(classes[rt2.name], e.name)[0]; if (!sm) { report(e, 'cannot find symbol\n  symbol: method ' + e.name); return null; } if (!sm.mods.static) report(e, 'non-static method ' + e.name + '() cannot be referenced from a static context'); nullArgs(methodsNamed(classes[rt2.name], e.name).filter(function (x) { return x.params.length === e.args.length; }), e.args); return sm.type; }
             report(e, key + ' is outside this practice editor.', 'limit'); return null;
           }
           var rc = classes[rt2.name];
