@@ -33,7 +33,7 @@ Four defects were reproduced on the landed bytes of https://github.com/JesterCha
 - M3: three checker result lookups now match both owning class and method (`NamesTest.shorterNameComesFirst`, `NamesOrderCheck.checkerComparisons`, `FakeRemembersCheck.namesAreRemembered`). An identically named empty test in a decoy class now leaves each note *Missing*, with no credit.
 - L8: section 2's line that `\u` escapes were reported as *Not supported here* was untrue inside comments. The runner now looks for any Java-eligible Unicode escape in the raw source (backslash preceded by an even number of backslashes, then `u+` and four hex digits). It runs that check before comments are skipped, tokens are compared or code runs, and reports any match as an unassessed limit. Ordinary comment and spacing no-ops and the non-eligible escaped-backslash case behave as before.
   - Known limit: an eligible `\u` that is not followed by four hex digits inside a comment, which javac rejects as an illegal escape, is not detected.
-- L10: a literal `null` passed where every resolved candidate of that arity declares the same primitive parameter, and a literal `null` arithmetic operand (binary, compound or unary; `+` with a `String` stays legal), are now the javac errors. Lawful reference null, null comparisons and runtime unboxing are unchanged. An unresolved operand type next to `null +` is an unassessed limit. No overload inference was added.
+- L10: a literal `null` passed where every resolved candidate of that arity declares the same primitive parameter (same-class, instance, interface, static and constructor calls), and a literal `null` arithmetic operand (binary, compound or unary; `+` with a `String` stays legal), are now the javac errors. Lawful reference null, null comparisons and runtime unboxing are unchanged. An unresolved operand type next to `null +` is an unassessed limit. No overload inference was added.
 - L9: the runner no longer claims that JUnit 6.1.3 would not run a private `@BeforeEach`. JUnit 6.1.3 runs the tests and warns that this will be disallowed in a future release. The JUnit User Guide still says lifecycle methods must not be private. The case stays unassessed with that wording.
 - Confirmed against Temurin JDK 25.0.5+8 with the JUnit 6.1.3 jars on the neutral counterexamples and controls named in the landed-byte report:
   - ordinary, eligible and non-eligible comment escapes;
@@ -43,6 +43,7 @@ Four defects were reproduced on the landed bytes of https://github.com/JesterCha
   - empty-decoy controls on reading-older A2 and test-doubles A3.
 
   The runner agreed with JDK 25 on every case; the boxed local stays a stated limit.
+- Static-call follow-up (`23069408`): the independent Java/testing recheck of `bcdc35f6` found that a static call into a learner class (`Util.take(null)` with `static int take(int)`) still compiled, though javac 25 rejects it. The static-call branch now applies the same rule. JDK 25 controls agree on that case and on lawful static reference null. They also agree on a non-null static call and on the earlier L10 cases, which are unchanged. Because page bytes changed, the five proofs in section 4 were run again with new private inputs.
 
 ## 3. Checks on the final bytes
 
@@ -63,19 +64,19 @@ The 2026-11-08 record follows.
 
 These five topics opt in to `answerSafety.privateSuccessProof`: `junit-test-first`, `test-doubles-fakes-and-stubs`, `mocking-with-mockito`, `code-coverage` and `reading-older-java-code`.
 They run in this sequence.
-The section 2a correction changed every editor page, so the 2026-11-08 proof chain (`95d9b9b9` to `7c3ae965`) no longer binds current bytes. Five fresh proofs replace it, run on 2026-11-13 on the corrected bytes.
-For each one, the owner wrote one fresh, captain-authorized private input file. It sat in task-owned staging outside the repository, with mode 0700 on the directory and 0600 on the file, and was read only through `PEP_QA_PRIVATE_INPUTS_FILE`. Three overlays ran against the clean commit.
+The section 2a correction changed every editor page, so the 2026-11-08 proof chain (`95d9b9b9` to `7c3ae965`) no longer binds current bytes. The first 2026-11-13 chain (`bc8c4089` to `dcfd8658`) is superseded too, by the static-call follow-up. The current five proofs were run on 2026-11-13 on the final bytes.
+For each one, the owner wrote one new, captain-authorized private input file. It was distinct from every earlier input. It sat in task-owned staging outside the repository, with mode 0700 on the directory and 0600 on the file, and was read only through `PEP_QA_PRIVATE_INPUTS_FILE`. Three overlays ran against the clean commit.
 
 | Topic | Proof commit P | Receipt commit R | All-fail overlay | Mixed overlay | Success |
 | --- | --- | --- | --- | --- | --- |
-| junit-test-first | bc8c4089 | dc3e8724 | refused (task 1) | refused (task 2) | pass |
-| test-doubles-fakes-and-stubs | dc3e8724 | 0a916def | refused (task 1) | refused (task 2) | pass |
-| mocking-with-mockito | 0a916def | 2b444e7c | refused | refused (pass withdrawn by a real edit) | pass |
-| code-coverage | 2b444e7c | 7320a39b | refused | refused (pass withdrawn by a real edit) | pass |
-| reading-older-java-code | 7320a39b | dcfd8658 | refused | refused (pass withdrawn by a real edit) | pass |
+| junit-test-first | 23069408 | 1dbe7037 | refused (task 1) | refused (task 2) | pass |
+| test-doubles-fakes-and-stubs | 1dbe7037 | 5609ef83 | refused (task 1) | refused (task 2) | pass |
+| mocking-with-mockito | 5609ef83 | b0f2bbc6 | refused | refused (pass withdrawn by a real edit) | pass |
+| code-coverage | b0f2bbc6 | ddf52a72 | refused | refused (pass withdrawn by a real edit) | pass |
+| reading-older-java-code | ddf52a72 | ec84dac0 | refused | refused (pass withdrawn by a real edit) | pass |
 
 - The runner refused every all-fail and mixed overlay at its own declared-task-state postcondition. The overlays' page-level assertions had been loosened, so no earlier assertion stopped the run first.
 - Each receipt commit R is the immediate child of its P and changes only that receipt. The module lock was regenerated once, after all five proofs, together with the value-free `sources.json` and `owner-essential-qa.json` HTML bindings.
-- The public T09-T13 and T18 receipt content comes from one module-scoped run on `bc8c4089`, whose learner bytes are identical through `dcfd8658`.
+- The public T09-T13 and T18 receipt content comes from one module-scoped run on `23069408`, whose learner bytes are identical through `ec84dac0`.
 - After each success, staging was retired. No private value, resolved output or answer-derived hash is recorded in Git, receipts or this file.
 - Committed QA paths contain only starter, malformed, unsupported and incomplete code.
