@@ -40,8 +40,8 @@
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/code-coverage/owner-essential-qa.json",
-      "sha256": "aee16de12d69976f208af1daf3c6ae50c784c934e22e40fafdfd006d294bd2be",
-      "bytes": 3021
+      "sha256": "f592f1bf63597b3213f20af85de4f52f7425aee2fa0f1dd4cd9bd9536143b101",
+      "bytes": 3356
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/code-coverage/qa-paths.json",
@@ -50,12 +50,12 @@
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/code-coverage/qa-receipt.json",
-      "sha256": "640bdb336eee64a852ddaa67dd1b0baafc42d31bfabd1605b4f8aded7e6066f3",
-      "bytes": 3120
+      "sha256": "a2a7bc6c98df12c206146a3b2744f65227096cf37340a66012b3594ecf9d68bc",
+      "bytes": 3126
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/code-coverage/sources.json",
-      "sha256": "1f33fe4622a0dc5de655a2ce2ea6dc7a6a8dc2f31eef84efea3ab41beb741b0b",
+      "sha256": "3f0e3d7c2b1ef7a4acc4777d0ed0f073a1a142e3577cfd9cec3b770d5b2a29ab",
       "bytes": 1898
     },
     {
@@ -75,8 +75,8 @@
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/junit-test-first/owner-essential-qa.json",
-      "sha256": "efe40e37c3431d62407e6e489491b9557636ae9d62a461e2aa4775eee0ac7079",
-      "bytes": 3027
+      "sha256": "b4eb20dcae789b1ed79e8b3f784fe75005d3dd699239a389c24b1dd1e76d3e56",
+      "bytes": 3362
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/junit-test-first/qa-paths.json",
@@ -85,18 +85,18 @@
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/junit-test-first/qa-receipt.json",
-      "sha256": "c7277d83fc6ce18b1a9827e241248be2c414fc7fd370b0b22a992e72fae02a13",
-      "bytes": 2996
+      "sha256": "4efd27728fb3e9acf667cb87bdd5b4f23f5807b4a72ed19352fdb80a8ad6b8ad",
+      "bytes": 3002
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/junit-test-first/sources.json",
-      "sha256": "38d1ab86d09e0631407170990d201f4cf26283fbaa557406d631397490903589",
+      "sha256": "6546f2f7f2c6fb4c6ee395ef65ff274cea87d41693a9a7ada78422b7b22f7958",
       "bytes": 2253
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/mocking-with-mockito/owner-essential-qa.json",
-      "sha256": "ba4a99f68361bb4dd0ece9437660787472c87c7cf19d4cdcf1065ee17a99ed50",
-      "bytes": 3035
+      "sha256": "8ec4cbf4bdd03016df7746c8944ae4e1d51934dce66839a0dcefb7a85f7cd625",
+      "bytes": 3370
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/mocking-with-mockito/qa-paths.json",
@@ -105,23 +105,23 @@
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/mocking-with-mockito/qa-receipt.json",
-      "sha256": "858d75d35644c46b4ffa595ba7bf4865452759ac70f978fda648b3cdbfc5b1c3",
-      "bytes": 3008
+      "sha256": "e8d2756024161d3e18c2fd1c35969e46335b185b9b8447ecdb99599355c3441a",
+      "bytes": 3014
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/mocking-with-mockito/sources.json",
-      "sha256": "16a734a2ca160c98292485a5448e8038a5fb194bd02350f93123d9c8262a62af",
+      "sha256": "da8d6696f4948ae241678d43a558bc17c4cb3bd9d026b275af074e2963dc6c73",
       "bytes": 1598
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/readiness.md",
-      "sha256": "3eb180408a1bebc64dc7bcae0b04469992ff87889488b3ad760f4e39d34c8a42",
-      "bytes": 4616
+      "sha256": "f9e1b76b584d6b3d426e9a1c33f3ee9d684f0e4ba648b8f430d33dcc7ba0451e",
+      "bytes": 8188
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/reading-older-java-code/owner-essential-qa.json",
-      "sha256": "c6dbd8711d8c06e41a424652db3cd379ccee462034f7a39c9e3d6213ef72a58a",
-      "bytes": 2833
+      "sha256": "a9d73de6f18ecd38b7d6606fa2f549f12389bf5c605e3a4cbc559418cf250a8e",
+      "bytes": 3168
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/reading-older-java-code/qa-paths.json",
@@ -130,18 +130,18 @@
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/reading-older-java-code/qa-receipt.json",
-      "sha256": "83c6dcfafa0a7b27cbbe5298718e16d4525aa88ccc793d7f38bf33367822238e",
-      "bytes": 3010
+      "sha256": "a8a9fa0b4f72db2c321ccaf1459f9836288b83fdbce5653d679b9e8751bc8a46",
+      "bytes": 3016
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/reading-older-java-code/sources.json",
-      "sha256": "c8252cad895149183127a9c1d15abaaea28129221821cb3a822576846e8508e9",
+      "sha256": "f5f3fda359e01e005d51ae7cbb2fe832823d5dc7a5ff5b4a35a8d86fab5a5990",
       "bytes": 3841
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/test-doubles-fakes-and-stubs/owner-essential-qa.json",
-      "sha256": "6562855b2bb4d9bcbf5fa3277fb6421c8af987febd56595a88c82438a9c8a4d8",
-      "bytes": 3051
+      "sha256": "075a98986cfc83eef5c5129712bc43c5106b6134054290025112d02bf6c2de81",
+      "bytes": 3386
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/test-doubles-fakes-and-stubs/qa-paths.json",
@@ -150,12 +150,12 @@
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/test-doubles-fakes-and-stubs/qa-receipt.json",
-      "sha256": "fa469f398114fa9d7bd077e5244225b13b99a03a19ce858a5eda08dbe55dcf9a",
-      "bytes": 3024
+      "sha256": "94fafe5dda8e138d2ba51cccb21a2308d633b25142a2b5269168b6fe6c1275ec",
+      "bytes": 3030
     },
     {
       "path": "authoring/evidence/java-foundations/testing-and-java-review/test-doubles-fakes-and-stubs/sources.json",
-      "sha256": "f2902de95060c27a2cb74f88e1a020a79f72bad54e9bab9a8f10a1cc059874cf",
+      "sha256": "f32e14de83a0f6b32f842fe5e070d2263e6ac9c33842696e3b0e13fed2df2893",
       "bytes": 1607
     },
     {
@@ -165,8 +165,8 @@
     },
     {
       "path": "java-foundations/testing-and-java-review/code-coverage/artifact.html",
-      "sha256": "2006d0a1c1bc37f0945dab975688b2ac0f1eb2aac5a5596f54b9de042839dd8c",
-      "bytes": 202842
+      "sha256": "9134591aa0ef172f9737463a9caee5e529a1b724c9ac90e59860963269f8d668",
+      "bytes": 206136
     },
     {
       "path": "java-foundations/testing-and-java-review/code-coverage/artifact.md",
@@ -195,8 +195,8 @@
     },
     {
       "path": "java-foundations/testing-and-java-review/junit-test-first/artifact.html",
-      "sha256": "5c09b18971de6d32e81cc761758d84e6dc1ea862455a2635630739c7c042fe67",
-      "bytes": 208517
+      "sha256": "8b0872707d0aba0c1cede04b5280ac05b6f1fd447e4fe5440e4872452d057b14",
+      "bytes": 211811
     },
     {
       "path": "java-foundations/testing-and-java-review/junit-test-first/artifact.md",
@@ -210,8 +210,8 @@
     },
     {
       "path": "java-foundations/testing-and-java-review/mocking-with-mockito/artifact.html",
-      "sha256": "071b8ddec27136a81473e7e330a797fdf20eddaa09f0a7da9c928ee7f0b9ccdd",
-      "bytes": 204332
+      "sha256": "e7ac5f45b37afee18cda5f722e04b185ac90068ce11b30cfda0dd812d21d05b7",
+      "bytes": 207626
     },
     {
       "path": "java-foundations/testing-and-java-review/mocking-with-mockito/artifact.md",
@@ -220,8 +220,8 @@
     },
     {
       "path": "java-foundations/testing-and-java-review/reading-older-java-code/artifact.html",
-      "sha256": "301e54aa88ba337880f6091f672e386ad5635ee0ef847043f773c77f04f04977",
-      "bytes": 203577
+      "sha256": "de4c9e34bbf6a72254d889e22096a196bb373ada6e0b749cbd29d72c7c0b223d",
+      "bytes": 206927
     },
     {
       "path": "java-foundations/testing-and-java-review/reading-older-java-code/artifact.md",
@@ -235,8 +235,8 @@
     },
     {
       "path": "java-foundations/testing-and-java-review/test-doubles-fakes-and-stubs/artifact.html",
-      "sha256": "4a8c7f52e8586e5a7459ca6eab512a90ff6b64af412354d72fd1595d8961558e",
-      "bytes": 214748
+      "sha256": "26dd707aa041a3668624922c71371dd6fdf75219baa8060823aa05dd7f194573",
+      "bytes": 218076
     },
     {
       "path": "java-foundations/testing-and-java-review/test-doubles-fakes-and-stubs/artifact.md",
@@ -250,7 +250,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/code-coverage/owner-essential-qa.json",
       "field": "artifacts[0].reviewedSha256",
       "artifactPath": "java-foundations/testing-and-java-review/code-coverage/artifact.html",
-      "sha256": "2006d0a1c1bc37f0945dab975688b2ac0f1eb2aac5a5596f54b9de042839dd8c",
+      "sha256": "9134591aa0ef172f9737463a9caee5e529a1b724c9ac90e59860963269f8d668",
       "current": true
     },
     {
@@ -266,7 +266,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/code-coverage/qa-receipt.json",
       "field": "artifactHashes.artifact.html",
       "artifactPath": "java-foundations/testing-and-java-review/code-coverage/artifact.html",
-      "sha256": "2006d0a1c1bc37f0945dab975688b2ac0f1eb2aac5a5596f54b9de042839dd8c",
+      "sha256": "9134591aa0ef172f9737463a9caee5e529a1b724c9ac90e59860963269f8d668",
       "current": true
     },
     {
@@ -290,7 +290,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/code-coverage/qa-receipt.json",
       "field": "privateSuccessProof.publicBindings[0].reviewedSha256",
       "artifactPath": "java-foundations/testing-and-java-review/code-coverage/artifact.html",
-      "sha256": "2006d0a1c1bc37f0945dab975688b2ac0f1eb2aac5a5596f54b9de042839dd8c",
+      "sha256": "9134591aa0ef172f9737463a9caee5e529a1b724c9ac90e59860963269f8d668",
       "current": true
     },
     {
@@ -330,7 +330,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/code-coverage/sources.json",
       "field": "reviewedSha256",
       "artifactPath": "java-foundations/testing-and-java-review/code-coverage/artifact.html",
-      "sha256": "2006d0a1c1bc37f0945dab975688b2ac0f1eb2aac5a5596f54b9de042839dd8c",
+      "sha256": "9134591aa0ef172f9737463a9caee5e529a1b724c9ac90e59860963269f8d668",
       "current": true
     },
     {
@@ -354,7 +354,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/junit-test-first/owner-essential-qa.json",
       "field": "artifacts[0].reviewedSha256",
       "artifactPath": "java-foundations/testing-and-java-review/junit-test-first/artifact.html",
-      "sha256": "5c09b18971de6d32e81cc761758d84e6dc1ea862455a2635630739c7c042fe67",
+      "sha256": "8b0872707d0aba0c1cede04b5280ac05b6f1fd447e4fe5440e4872452d057b14",
       "current": true
     },
     {
@@ -370,7 +370,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/junit-test-first/qa-receipt.json",
       "field": "artifactHashes.artifact.html",
       "artifactPath": "java-foundations/testing-and-java-review/junit-test-first/artifact.html",
-      "sha256": "5c09b18971de6d32e81cc761758d84e6dc1ea862455a2635630739c7c042fe67",
+      "sha256": "8b0872707d0aba0c1cede04b5280ac05b6f1fd447e4fe5440e4872452d057b14",
       "current": true
     },
     {
@@ -386,7 +386,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/junit-test-first/qa-receipt.json",
       "field": "privateSuccessProof.publicBindings[0].reviewedSha256",
       "artifactPath": "java-foundations/testing-and-java-review/junit-test-first/artifact.html",
-      "sha256": "5c09b18971de6d32e81cc761758d84e6dc1ea862455a2635630739c7c042fe67",
+      "sha256": "8b0872707d0aba0c1cede04b5280ac05b6f1fd447e4fe5440e4872452d057b14",
       "current": true
     },
     {
@@ -426,7 +426,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/junit-test-first/sources.json",
       "field": "reviewedSha256",
       "artifactPath": "java-foundations/testing-and-java-review/junit-test-first/artifact.html",
-      "sha256": "5c09b18971de6d32e81cc761758d84e6dc1ea862455a2635630739c7c042fe67",
+      "sha256": "8b0872707d0aba0c1cede04b5280ac05b6f1fd447e4fe5440e4872452d057b14",
       "current": true
     },
     {
@@ -434,7 +434,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/mocking-with-mockito/owner-essential-qa.json",
       "field": "artifacts[0].reviewedSha256",
       "artifactPath": "java-foundations/testing-and-java-review/mocking-with-mockito/artifact.html",
-      "sha256": "071b8ddec27136a81473e7e330a797fdf20eddaa09f0a7da9c928ee7f0b9ccdd",
+      "sha256": "e7ac5f45b37afee18cda5f722e04b185ac90068ce11b30cfda0dd812d21d05b7",
       "current": true
     },
     {
@@ -450,7 +450,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/mocking-with-mockito/qa-receipt.json",
       "field": "artifactHashes.artifact.html",
       "artifactPath": "java-foundations/testing-and-java-review/mocking-with-mockito/artifact.html",
-      "sha256": "071b8ddec27136a81473e7e330a797fdf20eddaa09f0a7da9c928ee7f0b9ccdd",
+      "sha256": "e7ac5f45b37afee18cda5f722e04b185ac90068ce11b30cfda0dd812d21d05b7",
       "current": true
     },
     {
@@ -466,7 +466,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/mocking-with-mockito/qa-receipt.json",
       "field": "privateSuccessProof.publicBindings[0].reviewedSha256",
       "artifactPath": "java-foundations/testing-and-java-review/mocking-with-mockito/artifact.html",
-      "sha256": "071b8ddec27136a81473e7e330a797fdf20eddaa09f0a7da9c928ee7f0b9ccdd",
+      "sha256": "e7ac5f45b37afee18cda5f722e04b185ac90068ce11b30cfda0dd812d21d05b7",
       "current": true
     },
     {
@@ -506,7 +506,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/mocking-with-mockito/sources.json",
       "field": "reviewedSha256",
       "artifactPath": "java-foundations/testing-and-java-review/mocking-with-mockito/artifact.html",
-      "sha256": "071b8ddec27136a81473e7e330a797fdf20eddaa09f0a7da9c928ee7f0b9ccdd",
+      "sha256": "e7ac5f45b37afee18cda5f722e04b185ac90068ce11b30cfda0dd812d21d05b7",
       "current": true
     },
     {
@@ -514,7 +514,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/reading-older-java-code/owner-essential-qa.json",
       "field": "artifacts[0].reviewedSha256",
       "artifactPath": "java-foundations/testing-and-java-review/reading-older-java-code/artifact.html",
-      "sha256": "301e54aa88ba337880f6091f672e386ad5635ee0ef847043f773c77f04f04977",
+      "sha256": "de4c9e34bbf6a72254d889e22096a196bb373ada6e0b749cbd29d72c7c0b223d",
       "current": true
     },
     {
@@ -522,7 +522,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/reading-older-java-code/qa-receipt.json",
       "field": "artifactHashes.artifact.html",
       "artifactPath": "java-foundations/testing-and-java-review/reading-older-java-code/artifact.html",
-      "sha256": "301e54aa88ba337880f6091f672e386ad5635ee0ef847043f773c77f04f04977",
+      "sha256": "de4c9e34bbf6a72254d889e22096a196bb373ada6e0b749cbd29d72c7c0b223d",
       "current": true
     },
     {
@@ -538,7 +538,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/reading-older-java-code/qa-receipt.json",
       "field": "privateSuccessProof.publicBindings[0].reviewedSha256",
       "artifactPath": "java-foundations/testing-and-java-review/reading-older-java-code/artifact.html",
-      "sha256": "301e54aa88ba337880f6091f672e386ad5635ee0ef847043f773c77f04f04977",
+      "sha256": "de4c9e34bbf6a72254d889e22096a196bb373ada6e0b749cbd29d72c7c0b223d",
       "current": true
     },
     {
@@ -578,7 +578,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/reading-older-java-code/sources.json",
       "field": "reviewedSha256",
       "artifactPath": "java-foundations/testing-and-java-review/reading-older-java-code/artifact.html",
-      "sha256": "301e54aa88ba337880f6091f672e386ad5635ee0ef847043f773c77f04f04977",
+      "sha256": "de4c9e34bbf6a72254d889e22096a196bb373ada6e0b749cbd29d72c7c0b223d",
       "current": true
     },
     {
@@ -586,7 +586,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/test-doubles-fakes-and-stubs/owner-essential-qa.json",
       "field": "artifacts[0].reviewedSha256",
       "artifactPath": "java-foundations/testing-and-java-review/test-doubles-fakes-and-stubs/artifact.html",
-      "sha256": "4a8c7f52e8586e5a7459ca6eab512a90ff6b64af412354d72fd1595d8961558e",
+      "sha256": "26dd707aa041a3668624922c71371dd6fdf75219baa8060823aa05dd7f194573",
       "current": true
     },
     {
@@ -602,7 +602,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/test-doubles-fakes-and-stubs/qa-receipt.json",
       "field": "artifactHashes.artifact.html",
       "artifactPath": "java-foundations/testing-and-java-review/test-doubles-fakes-and-stubs/artifact.html",
-      "sha256": "4a8c7f52e8586e5a7459ca6eab512a90ff6b64af412354d72fd1595d8961558e",
+      "sha256": "26dd707aa041a3668624922c71371dd6fdf75219baa8060823aa05dd7f194573",
       "current": true
     },
     {
@@ -618,7 +618,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/test-doubles-fakes-and-stubs/qa-receipt.json",
       "field": "privateSuccessProof.publicBindings[0].reviewedSha256",
       "artifactPath": "java-foundations/testing-and-java-review/test-doubles-fakes-and-stubs/artifact.html",
-      "sha256": "4a8c7f52e8586e5a7459ca6eab512a90ff6b64af412354d72fd1595d8961558e",
+      "sha256": "26dd707aa041a3668624922c71371dd6fdf75219baa8060823aa05dd7f194573",
       "current": true
     },
     {
@@ -658,7 +658,7 @@
       "evidencePath": "authoring/evidence/java-foundations/testing-and-java-review/test-doubles-fakes-and-stubs/sources.json",
       "field": "reviewedSha256",
       "artifactPath": "java-foundations/testing-and-java-review/test-doubles-fakes-and-stubs/artifact.html",
-      "sha256": "4a8c7f52e8586e5a7459ca6eab512a90ff6b64af412354d72fd1595d8961558e",
+      "sha256": "26dd707aa041a3668624922c71371dd6fdf75219baa8060823aa05dd7f194573",
       "current": true
     }
   ]
