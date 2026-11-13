@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactHashes": {
-    "artifact.html": "5c09b18971de6d32e81cc761758d84e6dc1ea862455a2635630739c7c042fe67",
+    "artifact.html": "8b0872707d0aba0c1cede04b5280ac05b6f1fd447e4fe5440e4872452d057b14",
     "artifact.md": "5148fc52ccaae1179ccb38e0cc74a07508124569f1a715b469cdf5e7d1052b7b"
   },
   "viewports": [
@@ -88,9 +88,9 @@
     "chromium": "140.0.7339.16"
   },
   "privateSuccessProof": {
-    "record": "validated at 95d9b9b9e42566fe0d41bfaa2e57f8065f3525e4 by run tjr-indep-junit-1794115294-success",
-    "runId": "tjr-indep-junit-1794115294-success",
-    "ranAt": "2026-11-08T05:21:38Z",
+    "record": "validated at bc8c408927ca0c3c0af98be42fa55bd2f1f92bbe by run tjr-truthfix-junit-1794529453-success",
+    "runId": "tjr-truthfix-junit-1794529453-success",
+    "ranAt": "2026-11-13T00:24:29Z",
     "environment": {
       "node": "24.2.0",
       "playwright": "1.55.0",
@@ -101,7 +101,7 @@
     "publicBindings": [
       {
         "file": "java-foundations/testing-and-java-review/junit-test-first/artifact.html",
-        "reviewedSha256": "5c09b18971de6d32e81cc761758d84e6dc1ea862455a2635630739c7c042fe67"
+        "reviewedSha256": "8b0872707d0aba0c1cede04b5280ac05b6f1fd447e4fe5440e4872452d057b14"
       },
       {
         "file": "authoring/evidence/java-foundations/testing-and-java-review/junit-test-first/qa-paths.json",
@@ -120,6 +120,6 @@
         "reviewedSha256": "6fcb012d5c32c31f04d7ad326a104b814782ef19d38799acb8c6642443bf9dd4"
       }
     ],
-    "commit": "95d9b9b9e42566fe0d41bfaa2e57f8065f3525e4"
+    "commit": "bc8c408927ca0c3c0af98be42fa55bd2f1f92bbe"
   }
 }
