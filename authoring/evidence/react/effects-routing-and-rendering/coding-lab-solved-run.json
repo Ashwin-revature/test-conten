@@ -1,9 +1,9 @@
 {
  "schemaVersion": 1,
  "lab": "react/effects-routing-and-rendering/coding-lab",
- "record": "solved at 30cd7583924cbfef449c2539a15558213dd58e96 by run solved-1794989455",
- "commit": "30cd7583924cbfef449c2539a15558213dd58e96",
- "runId": "solved-1794989455",
+ "record": "solved at cbd4f6837f9d46d189b5d492eb8aa8b5a34e52b8 by run solved-1794990221",
+ "commit": "cbd4f6837f9d46d189b5d492eb8aa8b5a34e52b8",
+ "runId": "solved-1794990221",
  "ranAt": "2026-11-18",
  "contract": "authoring/docs/lab-contract.md section 10 and authoring/schemas/solved-run.schema.json: every tracked public lab file at the recorded commit is bound by file and reviewedSha256; the lab files were exported from that commit with git archive and run there.",
  "toolchain": {
@@ -13,7 +13,7 @@
   "packages": "pinned by the committed tests/package-lock.json and starter/package-lock.json (@testing-library/dom 10.4.2, @testing-library/jest-dom 6.6.3, @testing-library/react 16.2.0, @testing-library/user-event 14.6.1, @vitejs/plugin-react 4.7.0, jsdom 26.0.0, react 19.1.0, react-dom 19.1.0, react-router 7.18.5, vite 6.4.6, vitest 4.1.12)"
  },
  "procedure": [
-  "git archive 30cd7583924cbfef449c2539a15558213dd58e96 react/effects-routing-and-rendering/coding-lab into a fresh private directory outside the repository",
+  "git archive cbd4f6837f9d46d189b5d492eb8aa8b5a34e52b8 react/effects-routing-and-rendering/coding-lab into a fresh private directory outside the repository",
   "npm ci in tests (one-time setup; offline afterwards)",
   "npm test in tests against the shipped starter",
   "copy the uncommitted private solution's README-listed editable starter files over the archived starter",
@@ -174,7 +174,7 @@
   },
   {
    "file": "react/effects-routing-and-rendering/coding-lab/tests/t6-abort-on-unmount.test.jsx",
-   "reviewedSha256": "b6adbae2bb4118ef067ec95b475155fd55ca52d2d9d0cc1192e97d1b5394d1f6"
+   "reviewedSha256": "f5fc25c2aa195a6d86440ade23f86b6f81778cb9abfcb1c417b6f93ae625bfa7"
   },
   {
    "file": "react/effects-routing-and-rendering/coding-lab/tests/t7-lifted-filter.test.jsx",
