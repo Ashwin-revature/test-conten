@@ -23,7 +23,7 @@ Each check is named after its task, and most failure messages say what to do nex
 
 ## Prerequisites
 
-- Python 3.12 to 3.15 (the pinned packages ship ready-built for those versions; the lab was tested on 3.12). Check it with `python3 --version` on macOS and Linux, or `py --version` on Windows. Native ARM64 Windows Python is not supported, because the pinned `psycopg-binary` has no ARM64 Windows build.
+- Python 3.12 to 3.15 (the pinned packages ship ready-built for those versions; the lab was tested on 3.12). Check it with `python3 --version` on macOS and Linux, or `py --version` on Windows. Native ARM64 Windows Python is not supported, because the pinned `psycopg-binary` has no ARM64 Windows build: on an ARM64 Windows computer, do this lab on a macOS, Linux or x64 Windows computer instead.
 - The PostgreSQL server (16 or later) and `psql`, installed and running as in the SQL course reading *Installing Postgres and a SQL client*. Check it with `psql --version`. Your PostgreSQL user must be allowed to create a schema in the database you use.
 
 ## Setup (once, needs the internet)
@@ -101,7 +101,7 @@ Never build the SQL with an f-string: the check passes the session `testing' OR 
 1. Write `UPSERT_SQL`: `INSERT INTO staging_signups (email, name, session, seats, signed_up_at) VALUES (%(email)s, %(name)s, %(session)s, %(seats)s, %(signed_up_at)s)` followed by `ON CONFLICT (email) DO UPDATE SET` each other column `= EXCLUDED.<column>`. The `email` column is the table's primary key, so it is the conflict target.
 2. `load_staging(records)` opens its own connection with `with connect() as conn:`, then, inside it, sends the whole batch with `cur.executemany(UPSERT_SQL, records)` in `with conn.cursor() as cur:`. Each record is a dict, and the `%(email)s` placeholders take values from its keys. Leaving the connection block cleanly commits; the check reads the rows from a different connection, so uncommitted rows are invisible to it.
 
-Before you run the check, predict what a second load of the same batch would do with a plain `INSERT` and no `ON CONFLICT` clause, and what it does with your upsert. (A plain `INSERT` fails with a duplicate-key error on the primary key; the upsert updates each email's row, so a rerun after a failed night is safe.)
+Before you run the check, predict what a second load of the same batch would do with a plain `INSERT` and no `ON CONFLICT` clause, and what it does with your upsert. Then run the check, which loads the same batch twice and counts the rows, and compare the plain-`INSERT` half of your prediction with the section *ON CONFLICT turns a failure into a decision* on the page *Loading into a staging table with upserts*.
 
 ### Task 4: transform in SQL, all or nothing (`database.py`)
 
@@ -140,7 +140,8 @@ Before you run the check, predict which of the CSV texts `"1"`, `"2026-11-03T10:
 
 ### Task 6: deduplicate in Python (`records.py`)
 
-`latest_per_email(signups)` keeps one sign-up per email, the one with the latest `signed_up_at`. Remember the one you keep for each email in a dict keyed on `signup.email` (or track the emails you have seen in a set while walking the sign-ups newest first), and replace the kept sign-up when a later one arrives. Return the kept sign-ups ordered by email: `sorted(kept.values(), key=lambda s: s.email)`.
+`latest_per_email(signups)` keeps one sign-up per email, the one with the latest `signed_up_at`. Remember the one you keep for each email in a dict `kept` keyed on `signup.email`, and replace the kept sign-up when a later one arrives. Return the kept sign-ups ordered by email: `sorted(kept.values(), key=lambda s: s.email)`.
+A set works too: walk the sign-ups newest first (`sorted(signups, key=lambda s: s.signed_up_at, reverse=True)`), add each email to a `seen` set, append a sign-up to a list only when its email is not yet in `seen`, and return that list sorted by email.
 
 ### Task 7: keep personal data out of the prompt (`enrich.py`)
 
@@ -211,5 +212,6 @@ Only the setup step uses the network. The tests talk only to your local PostgreS
 - **`No module named pytest` or `psycopg`**: the virtual environment is not active in this terminal. Activate it and run the test command again.
 - **`errors during collection`, a `NameError` or a `SyntaxError` stops every check**: fix the file and line that pytest names first (a `NameError` such as `name 'Literal' is not defined` usually means a missing import); one broken file stops the whole run.
 - **Only your own tests ran, or `no tests ran`**: you are in the `starter` folder. Go back to the lab folder with `cd ..` and run the test command there.
+- **`No matching distribution found for psycopg-binary==3.3.9`**: your Python is not one the pinned package is built for: Python 3.12 to 3.15 on macOS, Linux or x64 Windows (not ARM64 Windows). Check `python --version` inside the environment, then recreate `.venv` with a supported Python.
 - **PowerShell refuses to run `Activate.ps1`**: run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once, then activate again.
 - **You pass 60 minutes**: pause, note the task you are on, and finish in self-study; every check is still named after its task.

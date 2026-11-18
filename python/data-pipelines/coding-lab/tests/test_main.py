@@ -160,8 +160,10 @@ def test_task01_extract_streams_csv_and_jsonl_with_generators():
             if (isinstance(c.func, ast.Attribute) and c.func.attr in ("read", "readlines"))
             or (isinstance(c.func, ast.Name) and c.func.id in ("list", "sorted", "tuple"))
         ]
-        starred = [n for n in ast.walk(tree_of(func)) if isinstance(n, ast.Starred)]
-        assert not whole_file and not starred, (
+        collected = [
+            n for n in ast.walk(tree_of(func)) if isinstance(n, (ast.Starred, ast.ListComp, ast.SetComp, ast.DictComp))
+        ]
+        assert not whole_file and not collected, (
             f"Task 1: {func.__name__} must stream record by record, not read the whole file first"
         )
 
@@ -234,7 +236,7 @@ def test_task03_load_staging_commits_an_idempotent_batch_upsert(your_db):
     per_row = [
         c
         for loop in ast.walk(tree_of(database.load_staging))
-        if isinstance(loop, (ast.For, ast.While))
+        if isinstance(loop, (ast.For, ast.While, ast.ListComp, ast.SetComp, ast.DictComp, ast.GeneratorExp))
         for c in ast.walk(loop)
         if isinstance(c, ast.Call) and isinstance(c.func, ast.Attribute) and c.func.attr == "execute"
     ]
