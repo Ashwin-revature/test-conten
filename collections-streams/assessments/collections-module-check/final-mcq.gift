@@ -18,8 +18,8 @@ System.out.print(" " + d.pop());</code></pre>{
 Map&lt;String, Integer&gt; first \= new LinkedHashMap&lt;&gt;();
 Map&lt;String, Integer&gt; sorted \= new TreeMap&lt;&gt;();
 for (int i \= 0; i &lt; words.size(); i++) \{
-    first.put(words.get(i), i);
-    sorted.put(words.get(i), i);
+&nbsp;   first.put(words.get(i), i);
+&nbsp;   sorted.put(words.get(i), i);
 \}
 System.out.println(first + " " + sorted);</code></pre>{
 =<code>\{pear\=0, fig\=3, apple\=2\} \{apple\=2, fig\=3, pear\=0\}</code>#Correct. A repeated key replaces its value but keeps its place\: a LinkedHashMap keeps the order keys were first inserted, and a TreeMap sorts by key.
@@ -41,7 +41,7 @@ int padCount \= pads;                                    // L5</code></pre>{
 }
 
 ::cs-final-q03::[html]<p>A stock map uses a record key with a deliberately weak hash code. What does this print, and which statement about <code>stock</code> holds?</p><pre><code>record Sku(String id) \{
-    @Override public int hashCode() \{ return id.length(); \}
+&nbsp;   @Override public int hashCode() \{ return id.length(); \}
 \}
 Map&lt;Sku, Integer&gt; stock \= new HashMap&lt;&gt;();
 stock.put(new Sku("A12"), 5);
@@ -55,11 +55,11 @@ System.out.println(stock.get(new Sku("B77")) + " " + stock.size());</code></pre>
 
 ::cs-final-q04::[html]<p>Jobs are sorted for an on-call screen; some have no priority yet. What does this print?</p><pre><code>record Job(String team, Integer priority) \{\}
 List&lt;Job&gt; jobs \= new ArrayList&lt;&gt;(List.of(
-    new Job("ops", 2), new Job("dev", null),
-    new Job("dev", 1), new Job("ops", null)));
+&nbsp;   new Job("ops", 2), new Job("dev", null),
+&nbsp;   new Job("dev", 1), new Job("ops", null)));
 jobs.sort(Comparator.comparing(Job\:\:team)
-    .thenComparing(Job\:\:priority, Comparator.nullsFirst(Comparator.naturalOrder()))
-    .reversed());
+&nbsp;   .thenComparing(Job\:\:priority, Comparator.nullsFirst(Comparator.naturalOrder()))
+&nbsp;   .reversed());
 jobs.forEach(j -&gt; System.out.print(j.team() + "\:" + j.priority() + " "));</code></pre>{
 ~<code>ops\:null ops\:2 dev\:null dev\:1</code>#Not quite. That reverses only the team key. reversed() at the end applies to the whole comparator built so far, so the priority order and the null position flip too.
 =<code>ops\:2 ops\:null dev\:1 dev\:null</code>#Correct. Before reversed, the order is team A to Z with missing priorities first\: dev\:null dev\:1 ops\:null ops\:2. reversed() reverses that whole chain, including where the nulls go.
@@ -72,7 +72,7 @@ Consumer&lt;String&gt; shout \= s -&gt; log.append(s.toUpperCase());
 Consumer&lt;String&gt; size \= s -&gt; log.append(s.length());
 Predicate&lt;String&gt; isShort \= s -&gt; s.length() &lt; 4;
 for (String w \: List.of("ox", "zebra", "cat"))
-    if (isShort.negate().test(w)) shout.andThen(size).accept(w);
+&nbsp;   if (isShort.negate().test(w)) shout.andThen(size).accept(w);
 System.out.println(log);</code></pre>{
 =<code>ZEBRA5</code>#Correct. negate keeps only words of 4 or more characters, so only zebra passes. andThen runs shout first, then size, on the same word.
 ~<code>OX2CAT3</code>#Not quite. Those are the short words. negate flips isShort, so the loop handles only words that are not short.
@@ -82,14 +82,14 @@ System.out.println(log);</code></pre>{
 
 ::cs-final-q05::[html]<p>A shop groups its orders by city. Cities repeat. What does this print?</p><pre><code>record Order(String city, String item) \{\}
 List&lt;Order&gt; orders \= List.of(new Order("Oslo", "tea"), new Order("Rome", "tea"),
-    new Order("Oslo", "jam"), new Order("Oslo", "tea"));
+&nbsp;   new Order("Oslo", "jam"), new Order("Oslo", "tea"));
 Map&lt;String, Long&gt; perCity \= orders.stream()
-    .collect(Collectors.groupingBy(Order\:\:city, Collectors.counting()));
+&nbsp;   .collect(Collectors.groupingBy(Order\:\:city, Collectors.counting()));
 Map&lt;String, Set&lt;String&gt;&gt; items \= orders.stream()
-    .collect(Collectors.groupingBy(Order\:\:city,
-        Collectors.mapping(Order\:\:item, Collectors.toSet())));
+&nbsp;   .collect(Collectors.groupingBy(Order\:\:city,
+&nbsp;       Collectors.mapping(Order\:\:item, Collectors.toSet())));
 System.out.println(perCity.get("Oslo") + " " + items.get("Oslo").size()
-    + " " + perCity.get("Paris"));</code></pre>{
+&nbsp;   + " " + perCity.get("Paris"));</code></pre>{
 ~<code>3 3 0</code>#Not quite. toSet drops the repeated tea, and groupingBy adds no entry with 0 for a missing city, so get returns null.
 ~<code>2 2 null</code>#Not quite. counting counts orders, not distinct items. Oslo has three orders.
 ~It throws <code>IllegalStateException</code>, because the key Oslo repeats.#Not quite. groupingBy is built for repeating keys. A toMap collector without a merge function is the one that throws on a repeated key.
@@ -97,12 +97,12 @@ System.out.println(perCity.get("Oslo") + " " + items.get("Oslo").size()
 }
 
 ::cs-final-q29::[html]<p>In a coding screen you solve "find the most frequent word" with a frequency count. What is this solution's time complexity for n words?</p><pre><code>static String mostFrequent(List&lt;String&gt; words) \{
-    Map&lt;String, Integer&gt; counts \= new HashMap&lt;&gt;();
-    for (String w \: words) counts.merge(w, 1, Integer\:\:sum);
-    String best \= null;
-    for (Map.Entry&lt;String, Integer&gt; e \: counts.entrySet())
-        if (best \=\= null || e.getValue() &gt; counts.get(best)) best \= e.getKey();
-    return best;
+&nbsp;   Map&lt;String, Integer&gt; counts \= new HashMap&lt;&gt;();
+&nbsp;   for (String w \: words) counts.merge(w, 1, Integer\:\:sum);
+&nbsp;   String best \= null;
+&nbsp;   for (Map.Entry&lt;String, Integer&gt; e \: counts.entrySet())
+&nbsp;       if (best \=\= null || e.getValue() &gt; counts.get(best)) best \= e.getKey();
+&nbsp;   return best;
 \}</code></pre>{
 ~O(n squared)\: the second loop calls <code>counts.get</code> inside a loop.#Not quite. HashMap get is constant time on average, so calling it once per entry adds only O(n).
 =O(n)\: two loops run one after the other, each at most n times, and <code>HashMap</code> <code>merge</code> and <code>get</code> are constant time on average.#Correct. The loops are sequential, not nested, so their costs add. The second loop visits at most n distinct words.
@@ -112,7 +112,7 @@ System.out.println(perCity.get("Oslo") + " " + items.get("Oslo").size()
 
 ::cs-final-q20::[html]<p><code>readings</code> is a <code>LinkedList&lt;Integer&gt;</code> of n values. This loop takes about 1 second when n is 20,000. About how long when the list doubles to 40,000 values?</p><pre><code>long total \= 0;
 for (int i \= 0; i &lt; readings.size(); i++)
-    total +\= readings.get(i);</code></pre>{
+&nbsp;   total +\= readings.get(i);</code></pre>{
 =About 4 seconds\: each <code>get(i)</code> on a <code>LinkedList</code> walks from the nearer end, which is O(n), so n calls make the loop O(n squared).#Correct. The loop runs n times and each get walks up to half the list, so doubling n multiplies the work by about 4.
 ~About 2 seconds\: a single loop over the list is linear.#Not quite. The loop is one pass, but every get(i) on a LinkedList walks node by node to reach index i, so each step costs O(n).
 ~About 2 seconds\: <code>get(i)</code> is constant time on any <code>List</code>.#Not quite. Constant-time get is documented for ArrayList. A LinkedList reaches index i by walking from the nearer end.
@@ -120,11 +120,11 @@ for (int i \= 0; i &lt; readings.size(); i++)
 }
 
 ::cs-final-q06::[html]<p>A utility rounds numbers from one list into another. It must accept both calls in the comment. Which parameter types fit, and what happens to a wrong call?</p><pre><code>static void roundAll(List&lt;____&gt; in, List&lt;____&gt; out) \{
-    for (Number n \: in)
-        out.add((int) Math.round(n.doubleValue()));
+&nbsp;   for (Number n \: in)
+&nbsp;       out.add((int) Math.round(n.doubleValue()));
 \}
-&nbsp;// roundAll(prices, totals);    prices\: List&lt;Double&gt;,  totals\: List&lt;Number&gt;
-&nbsp;// roundAll(counts, anything);  counts\: List&lt;Integer&gt;, anything\: List&lt;Object&gt;</code></pre>{
+&\#47;/ roundAll(prices, totals);    prices\: List&lt;Double&gt;,  totals\: List&lt;Number&gt;
+&\#47;/ roundAll(counts, anything);  counts\: List&lt;Integer&gt;, anything\: List&lt;Object&gt;</code></pre>{
 ~<code>in</code> is <code>List&lt;Number&gt;</code> and <code>out</code> is <code>List&lt;Integer&gt;</code>.#Not quite. A List&lt;Double&gt; is not a List&lt;Number&gt;, and a List&lt;Number&gt; is not a List&lt;Integer&gt;, so the compiler rejects both calls.
 ~<code>in</code> is <code>List&lt;? super Number&gt;</code> and <code>out</code> is <code>List&lt;? extends Integer&gt;</code>.#Not quite. You cannot add to a list with an extends bound, and reading from a super-bounded list gives Object, not Number. The method body would not compile.
 =<code>in</code> is <code>List&lt;? extends Number&gt;</code> and <code>out</code> is <code>List&lt;? super Integer&gt;</code>. A call that passes a <code>List&lt;String&gt;</code> as <code>out</code> is rejected at compile time.#Correct. in is only read, so an extends bound accepts lists of any Number subtype. out is only written with Integer values, so a super bound accepts lists that can hold Integer. Type-safe generic code is checked by the compiler.
@@ -132,7 +132,7 @@ for (int i \= 0; i &lt; readings.size(); i++)
 }
 
 ::cs-final-q18::[html]<p>Old code adds values to a <code>List&lt;String&gt;</code> through a raw alias, and the list is then passed to a newer generic method. What does the compiler infer for <code>T</code>, and what happens when the code runs?</p><pre><code>static &lt;T&gt; T firstOr(List&lt;T&gt; xs, T fallback) \{
-    return xs.isEmpty() ? fallback \: xs.get(0);
+&nbsp;   return xs.isEmpty() ? fallback \: xs.get(0);
 \}
 List&lt;String&gt; names \= new ArrayList&lt;&gt;();
 List raw \= names;
@@ -148,9 +148,9 @@ String b \= names.get(1);</code></pre>{
 
 ::cs-final-q07::[html]<p>In a small test log, home and cart each appear 5 times and <code>tie</code> prints. In the production log both appear 300 times, and <code>tie</code> does not print. What is the cause, and what is the repair?</p><pre><code>Map&lt;String, Integer&gt; hits \= new HashMap&lt;&gt;();
 for (String page \: log)
-    hits.merge(page, 1, Integer\:\:sum);
+&nbsp;   hits.merge(page, 1, Integer\:\:sum);
 if (hits.get("home") \=\= hits.get("cart"))
-    System.out.println("tie");</code></pre>{
+&nbsp;   System.out.println("tie");</code></pre>{
 ~<code>merge</code> with <code>Integer\:\:sum</code> stops counting above 127. Replace it with <code>put(page, hits.get(page) + 1)</code>.#Not quite. merge counts correctly at any size. The suggested put would also throw NullPointerException for a page not seen before, because get returns null.
 ~HashMap stores counts above 127 in a different bucket. Read both counts with <code>getOrDefault</code> before comparing.#Not quite. Buckets depend on the key's hash code, not on the value. getOrDefault still returns Integer objects, so \=\= still compares references.
 =<code>\=\=</code> compares two <code>Integer</code> objects by identity, and only values from -128 to 127 are guaranteed to be the same cached object. Compare with <code>Objects.equals(hits.get("home"), hits.get("cart"))</code>; the <code>merge</code> counting is correct.#Correct. get returns Integer objects, and \=\= between two objects compares references. Small values come from a cache, so the test passed by luck. equals compares the numbers.
@@ -171,12 +171,12 @@ l.number \= 8;       // change 2</code></pre>{
 }
 
 ::cs-final-q21::[html]<p>Tag names use ASCII letters only and must be case-insensitive, but a <code>HashSet</code> of <code>Tag</code> sometimes holds both java and Java. Which rule does <code>Tag</code> break, and which repair keeps tags case-insensitive?</p><pre><code>class Tag \{
-    final String name;
-    Tag(String name) \{ this.name \= name; \}
-    @Override public boolean equals(Object o) \{
-        return o instanceof Tag t &amp;&amp; name.equalsIgnoreCase(t.name);
-    \}
-    @Override public int hashCode() \{ return name.hashCode(); \}
+&nbsp;   final String name;
+&nbsp;   Tag(String name) \{ this.name \= name; \}
+&nbsp;   @Override public boolean equals(Object o) \{
+&nbsp;       return o instanceof Tag t &amp;&amp; name.equalsIgnoreCase(t.name);
+&nbsp;   \}
+&nbsp;   @Override public int hashCode() \{ return name.hashCode(); \}
 \}</code></pre>{
 ~Symmetry\: <code>a.equals(b)</code> can differ from <code>b.equals(a)</code>. Replace <code>equalsIgnoreCase</code> with <code>equals</code>.#Not quite. equalsIgnoreCase gives the same answer in both directions. Switching to equals would also make tags case-sensitive, which breaks the requirement.
 ~Equal objects must have equal hash codes. Replace the class with <code>record Tag(String name)</code>, which writes both methods.#Not quite. The rule is right, but a record's equals compares name exactly, so java and Java would become two different tags.
@@ -198,9 +198,9 @@ Predicate&lt;Person&gt; blocked \= oldEnough.and(active).negate();</code></pre>{
 ::cs-final-q10::[html]<p>A reviewer asks which lambdas could become method references, and whether <code>Check</code> can be the target of a lambda. Which answer is right?</p><pre><code>interface Check \{ boolean test(int n); default Check not() \{ return n -&gt; !test(n); \} \}
 &nbsp;
 List&lt;Integer&gt; nums \= List.of("12", "7", "30").stream()
-    .map(s -&gt; Integer.parseInt(s))                          // L1
-    .filter(n -&gt; n &gt; 10)                                    // L2
-    .toList();
+&nbsp;   .map(s -&gt; Integer.parseInt(s))                          // L1
+&nbsp;   .filter(n -&gt; n &gt; 10)                                    // L2
+&nbsp;   .toList();
 Supplier&lt;List&lt;Integer&gt;&gt; fresh \= () -&gt; new ArrayList&lt;&gt;();    // L3
 nums.forEach(n -&gt; System.out.println(n));                   // L4</code></pre>{
 ~L1 static, L2 unbound instance (<code>Integer\:\:compareTo</code>), L3 constructor, L4 bound instance. <code>Check</code> can be a lambda target.#Not quite. compareTo returns an int and needs a second Integer, while filter needs a boolean test against the fixed value 10. L2 cannot become a method reference.
@@ -217,9 +217,9 @@ nums.forEach(n -&gt; System.out.println(n));                   // L4</code></pre
 }
 
 ::cs-final-q16::[html]<p>A worker drains jobs from an <code>ArrayDeque</code> used as a stack. After the last job it crashes with <code>NoSuchElementException</code> instead of stopping. Which change makes it stop cleanly?</p><pre><code>while (true) \{
-    Job next \= jobs.pop();
-    if (next \=\= null) break;
-    next.run();
+&nbsp;   Job next \= jobs.pop();
+&nbsp;   if (next \=\= null) break;
+&nbsp;   next.run();
 \}</code></pre>{
 ~Keep <code>pop()</code>, and move the null check so it runs before <code>next.run()</code>.#Not quite. The null check already runs before run. The exception comes from pop itself, which never returns null.
 ~Replace <code>jobs.pop()</code> with <code>jobs.remove()</code>, which returns null on an empty deque.#Not quite. remove belongs to the throwing family with pop and element. It throws NoSuchElementException too.
@@ -229,10 +229,10 @@ nums.forEach(n -&gt; System.out.println(n));                   // L4</code></pre
 
 ::cs-final-q17::[html]<p>A clean-up job must remove every expired <code>Session</code> from the same <code>sessions</code> list object while it scans it. In production <code>sessions</code> is an <code>ArrayList</code>. A unit test passes a list made with <code>List.of(...)</code> that contains an expired session. Which version is safe in production, and what happens in the test?</p><pre><code>// Version 1
 for (Session s \: sessions) if (s.expired()) sessions.remove(s);
-&nbsp;// Version 2
+&\#47;/ Version 2
 for (Iterator&lt;Session&gt; it \= sessions.iterator(); it.hasNext(); )
-    if (it.next().expired()) it.remove();
-&nbsp;// Version 3
+&nbsp;   if (it.next().expired()) it.remove();
+&\#47;/ Version 3
 sessions.stream().filter(s -&gt; !s.expired()).toList();</code></pre>{
 ~Version 2. It also works in the test, because the iterator removes the element itself.#Not quite. Version 2 is the safe choice in production, but a List.of list is unmodifiable, so any removal from it throws UnsupportedOperationException, even through the iterator.
 ~Version 1. In the test it throws <code>UnsupportedOperationException</code>.#Not quite. Calling the list's own remove inside a for-each loop over it can throw ConcurrentModificationException in production. Java detects this only on a best-effort basis, so never rely on it.
@@ -242,7 +242,7 @@ sessions.stream().filter(s -&gt; !s.expired()).toList();</code></pre>{
 
 ::cs-final-q22::[html]<p><code>staff</code> holds three employees in two departments. This grouping prints a wrong size. What does it print, and what is the repair?</p><pre><code>Map&lt;String, List&lt;String&gt;&gt; byDept \= new HashMap&lt;&gt;();
 for (Emp e \: staff)
-    byDept.getOrDefault(e.dept(), new ArrayList&lt;&gt;()).add(e.name());
+&nbsp;   byDept.getOrDefault(e.dept(), new ArrayList&lt;&gt;()).add(e.name());
 System.out.println(byDept.size());</code></pre>{
 =<code>0</code>. <code>getOrDefault</code> returns the new list for a missing key but never stores it. Use <code>byDept.computeIfAbsent(e.dept(), d -&gt; new ArrayList&lt;&gt;()).add(e.name());</code>#Correct. Each name is added to a list that is never put in the map. computeIfAbsent creates the list, stores it under the key, and returns it.
 ~<code>2</code>. The code is already correct.#Not quite. getOrDefault only reads; nothing in the loop ever puts an entry into byDept.
@@ -251,7 +251,7 @@ System.out.println(byDept.size());</code></pre>{
 }
 
 ::cs-final-q24::[html]<p><code>Score</code> defines its natural order by points. The board holds Ana 40, a null for a player who has not played yet, and Ben 25, and <code>board.sort(null)</code> throws <code>NullPointerException</code>. Which call sorts by the natural order with the missing entry last, and what order results?</p><pre><code>record Score(String name, int pts) implements Comparable&lt;Score&gt; \{
-    public int compareTo(Score o) \{ return Integer.compare(pts, o.pts); \}
+&nbsp;   public int compareTo(Score o) \{ return Integer.compare(pts, o.pts); \}
 \}</code></pre>{
 ~<code>board.sort(Comparator.nullsLast(Comparator.naturalOrder()));</code> gives Ana 40, Ben 25, null.#Not quite. The call is right, but compareTo uses Integer.compare(pts, o.pts), so the natural order puts lower points first.
 ~<code>board.sort(Comparator.nullsLast(Comparator.comparing(Score\:\:name)));</code> gives Ana 40, Ben 25, null.#Not quite. That handles the null, but it sorts by name, a supplied ordering, not by the natural order on points.
@@ -260,7 +260,7 @@ System.out.println(byDept.size());</code></pre>{
 }
 
 ::cs-final-q11::[html]<p><code>rows</code> holds two invoices already loaded with JDBC to fill a screen's table, so the team filters them in Java rather than with a second query. What happens?</p><pre><code>Stream&lt;Invoice&gt; late \= rows.stream()
-    .filter(i -&gt; \{ System.out.println("check " + i.id()); return i.daysLate() &gt; 30; \});
+&nbsp;   .filter(i -&gt; \{ System.out.println("check " + i.id()); return i.daysLate() &gt; 30; \});
 System.out.println("built");
 List&lt;Invoice&gt; list \= late.toList();
 Optional&lt;Invoice&gt; first \= late.findFirst();</code></pre>{
@@ -279,7 +279,7 @@ Optional&lt;Invoice&gt; first \= late.findFirst();</code></pre>{
 
 ::cs-final-q30::[html]<p>A teammate wants to rewrite this loop as a stream pipeline over the loaded <code>orders</code> (<code>Order</code> records with <code>customer()</code> and <code>cents()</code>). Which pipeline produces the same strings in the same order? Ignore whether the returned list is modifiable.</p><pre><code>List&lt;String&gt; out \= new ArrayList&lt;&gt;();
 for (Order o \: orders)
-    if (o.cents() &gt; 1000) out.add(o.customer().toUpperCase());
+&nbsp;   if (o.cents() &gt; 1000) out.add(o.customer().toUpperCase());
 Collections.sort(out);</code></pre>{
 ~<code>orders.stream().map(o -&gt; o.customer().toUpperCase()).filter(o -&gt; o.cents() &gt; 1000).sorted().toList()</code>#Not quite. After map the elements are Strings, which have no cents(), so this does not compile. Filter on the Order before mapping it.
 =<code>orders.stream().filter(o -&gt; o.cents() &gt; 1000).map(o -&gt; o.customer().toUpperCase()).sorted().toList()</code>#Correct. filter keeps the same orders the if keeps, map does the same transformation, and sorted gives the natural String order that Collections.sort gives.
@@ -288,8 +288,8 @@ Collections.sort(out);</code></pre>{
 }
 
 ::cs-final-q12::[html]<p>Each order id has at most one invoice. A teammate proposes building a <code>Map&lt;String, Invoice&gt;</code> from <code>invoices</code> once, then calling <code>get(s.orderId())</code> inside a single loop over <code>shipments</code>. Both lists hold n records. Which assessment is right?</p><pre><code>for (Shipment s \: shipments)
-    for (Invoice inv \: invoices)
-        if (inv.orderId().equals(s.orderId())) s.attach(inv);</code></pre>{
+&nbsp;   for (Invoice inv \: invoices)
+&nbsp;       if (inv.orderId().equals(s.orderId())) s.attach(inv);</code></pre>{
 ~Before O(n squared); after O(n log n), because <code>HashMap</code> lookups are logarithmic. When both lists double\: about 4 times before, a little over 2 times after.#Not quite. HashMap get is constant time on average. Logarithmic lookups belong to TreeMap.
 =Before O(n squared); after O(n), since building the map is one O(n) pass and each <code>HashMap</code> <code>get</code> is constant time on average. When both lists double\: about 4 times longer before, about 2 times after.#Correct. The nested loops do n times n comparisons. The map version does one pass to build and one pass to look up, so it grows linearly.
 ~Before O(n); after O(1). When both lists double\: about 2 times before, no change after.#Not quite. The original has a loop inside a loop, which is quadratic, and the new version still visits every shipment, which is linear.
@@ -314,10 +314,10 @@ board.put(90, "Cy");</code></pre>{
 }
 
 ::cs-final-q14::[html]<p>A nightly report crashes with <code>NoSuchElementException\: No value present</code>, but only on nights when a region had no sales. Which diagnosis and repair are right?</p><pre><code>String topRep \= sales.stream()
-    .filter(s -&gt; s.region().equals(region))
-    .max(Comparator.comparing(Sale\:\:amount))
-    .get()
-    .rep();</code></pre>{
+&nbsp;   .filter(s -&gt; s.region().equals(region))
+&nbsp;   .max(Comparator.comparing(Sale\:\:amount))
+&nbsp;   .get()
+&nbsp;   .rep();</code></pre>{
 ~<code>max</code> returns null for an empty stream, so <code>.rep()</code> fails. Check <code>topRep !\= null</code> after the pipeline.#Not quite. max never returns null; it returns an Optional. The symptom is NoSuchElementException from get, not NullPointerException.
 =<code>max</code> returns an empty <code>Optional</code> when no sale matches, and <code>get()</code> throws on it. Replace <code>.get().rep()</code> with <code>.map(Sale\:\:rep).orElse("no sales")</code>.#Correct. map turns a present Sale into its rep and leaves an empty Optional empty, and orElse supplies the text for a night with no sales.
 ~<code>max</code> returns an empty <code>Optional</code> when no sale matches. Replace <code>.get()</code> with <code>.orElseThrow()</code>.#Not quite. The diagnosis is right, but orElseThrow with no argument throws the same NoSuchElementException, so the report still crashes.
@@ -326,7 +326,7 @@ board.put(90, "Cy");</code></pre>{
 
 ::cs-final-q27::[html]<p>Screen A loads today's orders as shown, to list them in a table, and also needs the total per region. Screen B shows only the number of late orders per region over the last two years, millions of rows. Where should each reduction happen?</p><pre><code>List&lt;Order&gt; today \= new ArrayList&lt;&gt;();
 while (rs.next())
-    today.add(new Order(rs.getString("region"), rs.getInt("cents")));</code></pre>{
+&nbsp;   today.add(new Order(rs.getString("region"), rs.getInt("cents")));</code></pre>{
 ~Both in SQL, so the database does all the work.#Not quite. Screen A already has today's rows in memory for its table. A second query for the totals adds a round trip without saving any loading.
 =Screen A in a stream over <code>today</code>, because the rows are already loaded. Screen B in SQL with <code>WHERE</code> and <code>GROUP BY</code>, so only the counts come back.#Correct. Reduce in SQL when the program needs only the reduced result. Process in the stream when the rows are already loaded for another use.
 ~Both in streams\: load Screen B's rows the same way and group them with <code>groupingBy</code>.#Not quite. Screen B needs only counts, and loading millions of rows to count them wastes transfer and memory.

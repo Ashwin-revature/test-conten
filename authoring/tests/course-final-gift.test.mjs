@@ -4,7 +4,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
-import { entityCodeNewlines, literalCodeNewlines, NUMERIC_NEWLINE } from "../tools/gift/code-newlines.mjs";
+import { convertCodeBlocks, entityCodeNewlines, literalCodeNewlines, NUMERIC_NEWLINE } from "../tools/gift/code-newlines.mjs";
 import { parseGift, validateGift } from "../tools/gift/validate.mjs";
 
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
@@ -55,7 +55,7 @@ for (const [file, { category, html }] of Object.entries(BANKS)) {
     for (const line of comments)
       assert.doesNotMatch(line, /PROTECTED|never commit|not for learners|private route/i, "obsolete private-bank header");
     // GIFT import drops every line that starts with //, so only the leading header may use one;
-    // a code line inside a question that starts with // must be written &nbsp;// or &\#47;/ to survive import.
+    // a code line inside a question that starts with // must be written &\#47;/ (or follow &nbsp; indentation) to survive import.
     const header = lines.findIndex((line) => !line.startsWith("//"));
     const dropped = lines
       .map((line, index) => (index >= header && line.trimStart().startsWith("//") ? index + 1 : 0))
@@ -63,7 +63,13 @@ for (const [file, { category, html }] of Object.entries(BANKS)) {
     assert.deepEqual(dropped, [], "question lines that GIFT import would drop as comments");
     if (html) {
       // Code blocks use actual line breaks; numeric &\#10; references are the retired form.
-      assert.equal(bytes.toString("ascii").match(NUMERIC_NEWLINE)?.length ?? 0, 0, "numeric newline references in code");
+      const text = bytes.toString("ascii");
+      assert.equal(text.match(NUMERIC_NEWLINE)?.length ?? 0, 0, "numeric newline references in code");
+      // Indentation-safe: an importer that trims each physical line must not change any code line.
+      const unsafe = [...text.matchAll(/<pre>([\s\S]*?)<\/pre>/g)]
+        .flatMap((match) => match[1].split("\n").slice(1))
+        .filter((line) => line === "" || line !== line.trim() || line.startsWith("//"));
+      assert.deepEqual(unsafe.length, 0, "code lines that start or end with whitespace, are blank or start with //");
     }
     const positions = {};
     let previous;
@@ -117,11 +123,11 @@ test("the default topic-quiz mode still rejects any < or >", () => {
   assert.throws(() => validateGift(bytes, htmlCategory), /must not contain < or >/);
 });
 
-// Code-block line breaks: the literal-LF form must parse to the same questions as the
-// numeric-reference form, apart from the line breaks inside <pre> stems.
+// Code-block line breaks: the indentation-safe literal form must parse to the same questions as
+// the numeric-reference form, show the same code with and without per-line trimming, and invert.
 const codeBank = (body) => Buffer.from(`// header\n$CATEGORY: ${htmlCategory}\n\n${body}\n`, "ascii");
 const entityBody = [
-  "::c1::[html]<p>What prints?</p><pre><code>class A \\{&\\#10;    int x \\= 1;&\\#10;&\\#10;    // note: x \\~ y&\\#10;    void m() \\{ if (x &gt; 0 &amp;&amp; y &lt; 2) \\{\\} \\}&\\#10;\\}</code></pre>{",
+  "::c1::[html]<p>What prints?</p><pre><code>class A \\{&\\#10;    int x \\= 1;&\\#10;&\\#10;    // note: x \\~ y&\\#10;    void m() \\{ if (x &gt; 0 &amp;&amp; y &lt; 2) \\{\\} \\}&\\#10;// end&\\#10;\\}</code></pre>{",
   "=<code>1</code>#Correct. \\{ok\\}",
   "~<code>2</code>#Not quite. no \\#",
   "~<code>3</code>#Not quite. no",
@@ -133,24 +139,64 @@ const entityBody = [
   "}",
 ].join("\n");
 
-const shape = (questions) =>
-  questions.map(({ category, title, stem, options }) => ({ category, title, stem: entityCodeNewlines(stem, "&#10;"), options }));
+const shape = (questions, form) =>
+  questions.map(({ category, title, stem, options }) => ({
+    category,
+    title,
+    stem: form === "entity" ? stem : convertCodeBlocks(stem, form, "entity", { escaped: false }),
+    options,
+  }));
 
-test("literal code-block line breaks keep every parsed field and invert exactly", () => {
-  const literalBody = literalCodeNewlines(entityBody);
-  assert.equal(entityCodeNewlines(literalBody), entityBody, "inverse reproduces the entity form byte for byte");
-  assert.equal(literalBody.match(NUMERIC_NEWLINE), null);
-  assert.equal(literalBody.includes("\n\n    "), false, "no blank physical line inside a question");
-  assert.match(literalBody, /\n&nbsp;\n/, "visually blank code line becomes &nbsp;");
-  assert.match(literalBody, /\n    &nbsp;\/\/ note/, "comment keeps its indentation behind &nbsp;");
-  assert.match(literalBody, /<code>\/\/ first line comment/, "first code line shares the <pre> line and is unchanged");
-  assert.match(literalBody, /\\\{\n    int x \\= 1;/, "escaped braces and operators survive");
+// What a reader sees: optional per-physical-line trim (as Moodle's importer does), then GIFT
+// parsing, then HTML decoding of each <pre> block into visible lines.
+const visibleCode = (body, trim) => {
+  const text = trim ? body.split("\n").map((line) => line.trim()).join("\n") : body;
+  return parseGift(codeBank(text), { html: true }).flatMap((question) =>
+    [...question.stem.matchAll(/<pre><code>([\s\S]*?)<\/code><\/pre>/g)].map((match) =>
+      match[1]
+        .replaceAll("&#10;", "\n")
+        .replaceAll("&#47;", "/")
+        .replaceAll("&nbsp;", " ")
+        .replaceAll("&lt;", "<")
+        .replaceAll("&gt;", ">")
+        .replaceAll("&amp;", "&")
+        .split("\n")
+        .map((line) => line.trimEnd()),
+    ),
+  );
+};
+
+test("indentation-safe code-block line breaks keep every parsed field and invert exactly", () => {
+  const safeBody = literalCodeNewlines(entityBody);
+  assert.equal(entityCodeNewlines(safeBody), entityBody, "inverse reproduces the entity form byte for byte");
+  assert.equal(safeBody.match(NUMERIC_NEWLINE), null);
+  assert.match(safeBody, /\n&nbsp;\n/, "visually blank code line becomes &nbsp;");
+  assert.match(safeBody, /\n&nbsp;   int x \\= 1;/, "first indent space becomes &nbsp;, the rest stay");
+  assert.match(safeBody, /\n&nbsp;   \/\/ note/, "indented comment is protected without an extra column");
+  assert.match(safeBody, /\n&\\#47;\/ end/, "unindented comment becomes &\\#47;/ without an extra column");
+  assert.match(safeBody, /<code>\/\/ first line comment/, "first code line shares the <pre> line and is unchanged");
+  assert.match(safeBody, /class A \\\{\n/, "escaped braces and operators survive");
   const before = validateGift(codeBank(entityBody), htmlCategory, { html: true });
-  const after = validateGift(codeBank(literalBody), htmlCategory, { html: true });
+  const after = validateGift(codeBank(safeBody), htmlCategory, { html: true });
   assert.equal(after.length, 2);
-  assert.deepEqual(shape(after), shape(before));
+  assert.deepEqual(shape(after, "safe"), shape(before, "entity"));
   assert.deepEqual(after.map((q) => q.options), before.map((q) => q.options));
   assert.ok(after.every((q) => q.stem.includes("\n")), "stems carry multiline code");
+});
+
+test("indentation-safe code shows the same code and indentation with or without per-line trimming", () => {
+  const safeBody = literalCodeNewlines(entityBody);
+  const reference = visibleCode(entityBody, false);
+  assert.equal(reference.length, 2);
+  assert.ok(reference[0].some((line) => line.startsWith("    ")), "reference has indented code");
+  assert.deepEqual(visibleCode(safeBody, false), reference);
+  assert.deepEqual(visibleCode(safeBody, true), reference);
+  // Counterfactual: the earlier literal form (&nbsp; only before //) loses indentation
+  // under trimming and shows its comments one column to the right even untrimmed.
+  const plain = convertCodeBlocks(entityBody, "entity", "nbsp");
+  assert.notDeepEqual(visibleCode(plain, true), reference);
+  assert.equal(visibleCode(plain, true)[0][1], "int x = 1;");
+  assert.equal(visibleCode(plain, false)[0][3], "     // note: x ~ y");
 });
 
 test("unguarded blank or // code lines would break GIFT import", () => {

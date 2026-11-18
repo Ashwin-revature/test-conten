@@ -10,8 +10,8 @@
     },
     {
       "path": "authoring/evidence/collections-streams/course-final-mcq-coverage.md",
-      "sha256": "1f4157e10661aab10e62c958d98b47724a3fa18513a758abdffbe2d1d4d8c25f",
-      "bytes": 40147
+      "sha256": "99fe688f1e47e6d66ee9cf14cd5d00ee1b546aa9d3705a8930729fc9c423921c",
+      "bytes": 40414
     },
     {
       "path": "authoring/evidence/collections-streams/course-schedule.md",
@@ -160,8 +160,8 @@
     },
     {
       "path": "collections-streams/assessments/collections-module-check/final-mcq.gift",
-      "sha256": "6f12594c8227b522278d8aaadc200facd5a4c1e125767c1b2b7ec4c00ca30866",
-      "bytes": 44991
+      "sha256": "38a91d801c9198d5bfe29828d101901cbf3ddd9e7648ac27c2f3ee61d86a2da2",
+      "bytes": 45232
     },
     {
       "path": "collections-streams/assessments/collections-streams-final-mcq/blueprint.json",
