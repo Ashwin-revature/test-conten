@@ -124,6 +124,16 @@
       "bytes": 3114
     },
     {
+      "path": "authoring/evidence/python/python-fundamentals/exceptions-and-logging/t25-debt-1814ba7-critic-education-recheck.json",
+      "sha256": "215dbbc46fb39deae92761b07b76b5f6d1775b422cc928ee2365f31a95c425f9",
+      "bytes": 2660
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/exceptions-and-logging/t25-debt-1814ba7-critic-sme-recheck.json",
+      "sha256": "b3456fce776882a33d61b75d5c2404e3251ae5929ee73598e126f4ce8adf33af",
+      "bytes": 3565
+    },
+    {
       "path": "authoring/evidence/python/python-fundamentals/exceptions-and-logging/video.json",
       "sha256": "ba54a7baf8d132545f18beb9798d6c0239e74500646b15ddbdc9266292e5be8a",
       "bytes": 525
@@ -187,6 +197,16 @@
       "path": "authoring/evidence/python/python-fundamentals/functions-and-arguments/sources.json",
       "sha256": "6027b309563cd1d3b3b9631946fcf1c97d79950411f3ff844a13cf168e476d94",
       "bytes": 2015
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/functions-and-arguments/t25-debt-1814ba7-critic-education-recheck.json",
+      "sha256": "c6c86cfe918619a5663d156b08226557a099d531b29f7adb8f19721298efb16e",
+      "bytes": 2827
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/functions-and-arguments/t25-debt-1814ba7-critic-sme-recheck.json",
+      "sha256": "4630e7b42a86e9ff0bfb1418db09891ca6eb9da5d4872e815234a78fc5711fb6",
+      "bytes": 3822
     },
     {
       "path": "authoring/evidence/python/python-fundamentals/functions-and-arguments/video.json",
@@ -334,6 +354,11 @@
       "bytes": 1700
     },
     {
+      "path": "authoring/evidence/python/python-fundamentals/lists-dicts-sets-and-tuples/t25-debt-1814ba7-critic-sme-recheck.json",
+      "sha256": "f5ae2436647899e3e452c745637b68ad5547e97b5db9bfdbca7c00f4e3b8d242",
+      "bytes": 3315
+    },
+    {
       "path": "authoring/evidence/python/python-fundamentals/lists-dicts-sets-and-tuples/video.json",
       "sha256": "e71009b8a40b243d4ae0f52501c2a4fe01c18e670cb167e8e858b00fb1dc43dd",
       "bytes": 494
@@ -372,6 +397,16 @@
       "path": "authoring/evidence/python/python-fundamentals/module-reconciliation.json",
       "sha256": "14d236c1e6def6b06e0868c8ab778d18ec4730d956e554ec35c431eb530c7423",
       "bytes": 66545
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-education-recheck.json",
+      "sha256": "8fac0f3a1a9dcf4462c7c725622e1f9d306c07e18b21bbb2dc4755d929ec081c",
+      "bytes": 10267
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-sme-recheck.json",
+      "sha256": "357cb0d1b087a7dd57f4222c71f0bf5fe56c526225addce6be74c0456adf2d67",
+      "bytes": 24804
     },
     {
       "path": "authoring/evidence/python/python-fundamentals/modules-imports-and-virtual-environments/critic-education.json",
@@ -417,6 +452,11 @@
       "path": "authoring/evidence/python/python-fundamentals/modules-imports-and-virtual-environments/sources.json",
       "sha256": "58e9511b2f1d4f02b9f675b78d99636e0f2982e3ad57a3648c6388341d8a2791",
       "bytes": 4276
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/modules-imports-and-virtual-environments/t25-debt-1814ba7-critic-sme-recheck.json",
+      "sha256": "255a224cbb2d178745831c0cea45819eba6e410306c1c47e7473cb52256adfc6",
+      "bytes": 3560
     },
     {
       "path": "authoring/evidence/python/python-fundamentals/modules-imports-and-virtual-environments/video.json",
@@ -467,6 +507,11 @@
       "path": "authoring/evidence/python/python-fundamentals/mutability-and-aliasing/sources.json",
       "sha256": "7ac0c460f6850456f4b721408b6d2115495d56b41bdd421e764dc6a4e8ae868a",
       "bytes": 2636
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/mutability-and-aliasing/t25-debt-1814ba7-critic-sme-recheck.json",
+      "sha256": "89e42618c801ab4eb90c81fe44730a1d9bc8156dd181d386f282732b19253b0c",
+      "bytes": 3339
     },
     {
       "path": "authoring/evidence/python/python-fundamentals/mutability-and-aliasing/video.json",
@@ -537,6 +582,16 @@
       "path": "authoring/evidence/python/python-fundamentals/python-syntax-for-java-developers/sources.json",
       "sha256": "529c2a1b4fec35c7a6603e5d70453a1a1f7bf2437450d9aefb086c7d8e68ab63",
       "bytes": 3294
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/python-syntax-for-java-developers/t25-debt-1814ba7-critic-education-recheck.json",
+      "sha256": "0d7fe33a20fc9f9a5e6d99bc06e3d77e1e3a44627ff6d3da7ba2a886eaca26e1",
+      "bytes": 2059
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/python-syntax-for-java-developers/t25-debt-1814ba7-critic-sme-recheck.json",
+      "sha256": "59954f0994c0e18182dd51c36d2d8bb77fe693972e375cfc7d08e0b5e5445180",
+      "bytes": 4768
     },
     {
       "path": "authoring/evidence/python/python-fundamentals/python-syntax-for-java-developers/video.json",
@@ -659,6 +714,16 @@
       "bytes": 3378
     },
     {
+      "path": "authoring/evidence/python/python-fundamentals/testing-with-pytest/t25-debt-1814ba7-critic-education-recheck.json",
+      "sha256": "d0cd97b79c5f40cd6a07dea2fd32b6280a73eed121d0b59116d88c692ae27efb",
+      "bytes": 2516
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/testing-with-pytest/t25-debt-1814ba7-critic-sme-recheck.json",
+      "sha256": "b3aa8e09ad87361163752377fd738d4e944e4b563b51c077a95bb6cfd83d7802",
+      "bytes": 3582
+    },
+    {
       "path": "authoring/evidence/python/python-fundamentals/testing-with-pytest/video.json",
       "sha256": "679ee7a04f213c18acf1a082973905ab6e2760ccf390a276882df2e3567ec3ae",
       "bytes": 514
@@ -742,6 +807,16 @@
       "path": "authoring/evidence/python/python-fundamentals/writing-and-running-script-files/sources.json",
       "sha256": "d39be5e6eb0269c57e34ef739de26f123674e15c4fcefb3d8bcc35e0d8acc420",
       "bytes": 2714
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/writing-and-running-script-files/t25-debt-1814ba7-critic-education-recheck.json",
+      "sha256": "f335ce28fb2fd6db130c67d5e4559e5cb14dd64cd219d377473d32bda8a3cdda",
+      "bytes": 2893
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/writing-and-running-script-files/t25-debt-1814ba7-critic-sme-recheck.json",
+      "sha256": "58bb032e8403079e4b1248ff20fe72b99736a31684869637b2423727d4d00164",
+      "bytes": 3473
     },
     {
       "path": "authoring/evidence/python/python-fundamentals/writing-and-running-script-files/video.json",
@@ -1468,6 +1543,54 @@
     },
     {
       "topic": "exceptions-and-logging",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/exceptions-and-logging/t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "artifactHashes.artifact.html",
+      "artifactPath": "python/python-fundamentals/exceptions-and-logging/artifact.html",
+      "sha256": "23853355fb7b8579dad4cd49c5022f6aa5b545ddb43ed3a8dbb6f0827d71ac41",
+      "current": true
+    },
+    {
+      "topic": "exceptions-and-logging",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/exceptions-and-logging/t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/exceptions-and-logging/artifact.html",
+      "sha256": "23853355fb7b8579dad4cd49c5022f6aa5b545ddb43ed3a8dbb6f0827d71ac41",
+      "current": true
+    },
+    {
+      "topic": "exceptions-and-logging",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/exceptions-and-logging/t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/exceptions-and-logging/artifact.html",
+      "sha256": "23853355fb7b8579dad4cd49c5022f6aa5b545ddb43ed3a8dbb6f0827d71ac41",
+      "current": true
+    },
+    {
+      "topic": "exceptions-and-logging",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/exceptions-and-logging/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "artifactHashes.artifact.html",
+      "artifactPath": "python/python-fundamentals/exceptions-and-logging/artifact.html",
+      "sha256": "23853355fb7b8579dad4cd49c5022f6aa5b545ddb43ed3a8dbb6f0827d71ac41",
+      "current": true
+    },
+    {
+      "topic": "exceptions-and-logging",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/exceptions-and-logging/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/exceptions-and-logging/artifact.html",
+      "sha256": "23853355fb7b8579dad4cd49c5022f6aa5b545ddb43ed3a8dbb6f0827d71ac41",
+      "current": true
+    },
+    {
+      "topic": "exceptions-and-logging",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/exceptions-and-logging/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/exceptions-and-logging/artifact.html",
+      "sha256": "23853355fb7b8579dad4cd49c5022f6aa5b545ddb43ed3a8dbb6f0827d71ac41",
+      "current": true
+    },
+    {
+      "topic": "exceptions-and-logging",
       "evidencePath": "authoring/evidence/python/python-fundamentals/exceptions-and-logging/video.json",
       "field": "artifactSha256",
       "artifactPath": "python/python-fundamentals/exceptions-and-logging/artifact.html",
@@ -2020,6 +2143,54 @@
     },
     {
       "topic": "functions-and-arguments",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/functions-and-arguments/t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "artifactHashes.artifact.html",
+      "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
+      "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
+      "current": true
+    },
+    {
+      "topic": "functions-and-arguments",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/functions-and-arguments/t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
+      "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
+      "current": true
+    },
+    {
+      "topic": "functions-and-arguments",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/functions-and-arguments/t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
+      "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
+      "current": true
+    },
+    {
+      "topic": "functions-and-arguments",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/functions-and-arguments/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "artifactHashes.artifact.html",
+      "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
+      "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
+      "current": true
+    },
+    {
+      "topic": "functions-and-arguments",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/functions-and-arguments/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
+      "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
+      "current": true
+    },
+    {
+      "topic": "functions-and-arguments",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/functions-and-arguments/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
+      "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
+      "current": true
+    },
+    {
+      "topic": "functions-and-arguments",
       "evidencePath": "authoring/evidence/python/python-fundamentals/functions-and-arguments/video.json",
       "field": "artifactSha256",
       "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
@@ -2357,6 +2528,30 @@
     {
       "topic": "lists-dicts-sets-and-tuples",
       "evidencePath": "authoring/evidence/python/python-fundamentals/lists-dicts-sets-and-tuples/sources.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/lists-dicts-sets-and-tuples/artifact.html",
+      "sha256": "3764268940e561bf22711bc1fce86e5afd927f006a400326984b660a4a61d3eb",
+      "current": true
+    },
+    {
+      "topic": "lists-dicts-sets-and-tuples",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/lists-dicts-sets-and-tuples/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "artifactHashes.artifact.html",
+      "artifactPath": "python/python-fundamentals/lists-dicts-sets-and-tuples/artifact.html",
+      "sha256": "3764268940e561bf22711bc1fce86e5afd927f006a400326984b660a4a61d3eb",
+      "current": true
+    },
+    {
+      "topic": "lists-dicts-sets-and-tuples",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/lists-dicts-sets-and-tuples/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/lists-dicts-sets-and-tuples/artifact.html",
+      "sha256": "3764268940e561bf22711bc1fce86e5afd927f006a400326984b660a4a61d3eb",
+      "current": true
+    },
+    {
+      "topic": "lists-dicts-sets-and-tuples",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/lists-dicts-sets-and-tuples/t25-debt-1814ba7-critic-sme-recheck.json",
       "field": "reviewedSha256",
       "artifactPath": "python/python-fundamentals/lists-dicts-sets-and-tuples/artifact.html",
       "sha256": "3764268940e561bf22711bc1fce86e5afd927f006a400326984b660a4a61d3eb",
@@ -3974,6 +4169,118 @@
       "current": true
     },
     {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/exceptions-and-logging/artifact.html",
+      "sha256": "23853355fb7b8579dad4cd49c5022f6aa5b545ddb43ed3a8dbb6f0827d71ac41",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
+      "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/testing-with-pytest/artifact.html",
+      "sha256": "126a2c5c2c09bcfcc7569873e20323632fec5c397b108ff3e7a8f42f0bfe3d45",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/writing-and-running-script-files/artifact.html",
+      "sha256": "32cc6c31f497aea132106fe32321aa135d78bb568bf71ca9400c01ea88d39f47",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/python-syntax-for-java-developers/artifact.html",
+      "sha256": "18fb8f84283abdd1518a73f986f7bbdeb2a330e1a2e933223c11832f72341ba2",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
+      "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/exceptions-and-logging/artifact.html",
+      "sha256": "23853355fb7b8579dad4cd49c5022f6aa5b545ddb43ed3a8dbb6f0827d71ac41",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
+      "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/lists-dicts-sets-and-tuples/artifact.html",
+      "sha256": "3764268940e561bf22711bc1fce86e5afd927f006a400326984b660a4a61d3eb",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/modules-imports-and-virtual-environments/artifact.html",
+      "sha256": "1cab8ddcfdaf402e4b39b52940456bb4f85179475c7f249a082ef39560b70f69",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/mutability-and-aliasing/artifact.html",
+      "sha256": "78a7ec469ebe8e20dd924976da48504df53e31f510d0e57fc167a64a2360e403",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/python-syntax-for-java-developers/artifact.html",
+      "sha256": "18fb8f84283abdd1518a73f986f7bbdeb2a330e1a2e933223c11832f72341ba2",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/python-syntax-for-java-developers/artifact.html",
+      "sha256": "18fb8f84283abdd1518a73f986f7bbdeb2a330e1a2e933223c11832f72341ba2",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "recheck.items[7].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/testing-with-pytest/artifact.html",
+      "sha256": "126a2c5c2c09bcfcc7569873e20323632fec5c397b108ff3e7a8f42f0bfe3d45",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "recheck.items[8].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/writing-and-running-script-files/artifact.html",
+      "sha256": "32cc6c31f497aea132106fe32321aa135d78bb568bf71ca9400c01ea88d39f47",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
+      "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
+      "current": true
+    },
+    {
       "topic": "modules-imports-and-virtual-environments",
       "evidencePath": "authoring/evidence/python/python-fundamentals/modules-imports-and-virtual-environments/critic-education.json",
       "field": "artifactHashes.artifact.gift",
@@ -4359,6 +4666,30 @@
     },
     {
       "topic": "modules-imports-and-virtual-environments",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/modules-imports-and-virtual-environments/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "artifactHashes.artifact.html",
+      "artifactPath": "python/python-fundamentals/modules-imports-and-virtual-environments/artifact.html",
+      "sha256": "1cab8ddcfdaf402e4b39b52940456bb4f85179475c7f249a082ef39560b70f69",
+      "current": true
+    },
+    {
+      "topic": "modules-imports-and-virtual-environments",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/modules-imports-and-virtual-environments/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/modules-imports-and-virtual-environments/artifact.html",
+      "sha256": "1cab8ddcfdaf402e4b39b52940456bb4f85179475c7f249a082ef39560b70f69",
+      "current": true
+    },
+    {
+      "topic": "modules-imports-and-virtual-environments",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/modules-imports-and-virtual-environments/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/modules-imports-and-virtual-environments/artifact.html",
+      "sha256": "1cab8ddcfdaf402e4b39b52940456bb4f85179475c7f249a082ef39560b70f69",
+      "current": true
+    },
+    {
+      "topic": "modules-imports-and-virtual-environments",
       "evidencePath": "authoring/evidence/python/python-fundamentals/modules-imports-and-virtual-environments/video.json",
       "field": "artifactSha256",
       "artifactPath": "python/python-fundamentals/modules-imports-and-virtual-environments/artifact.html",
@@ -4680,6 +5011,30 @@
     {
       "topic": "mutability-and-aliasing",
       "evidencePath": "authoring/evidence/python/python-fundamentals/mutability-and-aliasing/sources.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/mutability-and-aliasing/artifact.html",
+      "sha256": "78a7ec469ebe8e20dd924976da48504df53e31f510d0e57fc167a64a2360e403",
+      "current": true
+    },
+    {
+      "topic": "mutability-and-aliasing",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/mutability-and-aliasing/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "artifactHashes.artifact.html",
+      "artifactPath": "python/python-fundamentals/mutability-and-aliasing/artifact.html",
+      "sha256": "78a7ec469ebe8e20dd924976da48504df53e31f510d0e57fc167a64a2360e403",
+      "current": true
+    },
+    {
+      "topic": "mutability-and-aliasing",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/mutability-and-aliasing/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/mutability-and-aliasing/artifact.html",
+      "sha256": "78a7ec469ebe8e20dd924976da48504df53e31f510d0e57fc167a64a2360e403",
+      "current": true
+    },
+    {
+      "topic": "mutability-and-aliasing",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/mutability-and-aliasing/t25-debt-1814ba7-critic-sme-recheck.json",
       "field": "reviewedSha256",
       "artifactPath": "python/python-fundamentals/mutability-and-aliasing/artifact.html",
       "sha256": "78a7ec469ebe8e20dd924976da48504df53e31f510d0e57fc167a64a2360e403",
@@ -5624,6 +5979,62 @@
     },
     {
       "topic": "python-syntax-for-java-developers",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/python-syntax-for-java-developers/t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "artifactHashes.artifact.html",
+      "artifactPath": "python/python-fundamentals/python-syntax-for-java-developers/artifact.html",
+      "sha256": "18fb8f84283abdd1518a73f986f7bbdeb2a330e1a2e933223c11832f72341ba2",
+      "current": true
+    },
+    {
+      "topic": "python-syntax-for-java-developers",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/python-syntax-for-java-developers/t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/python-syntax-for-java-developers/artifact.html",
+      "sha256": "18fb8f84283abdd1518a73f986f7bbdeb2a330e1a2e933223c11832f72341ba2",
+      "current": true
+    },
+    {
+      "topic": "python-syntax-for-java-developers",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/python-syntax-for-java-developers/t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/python-syntax-for-java-developers/artifact.html",
+      "sha256": "18fb8f84283abdd1518a73f986f7bbdeb2a330e1a2e933223c11832f72341ba2",
+      "current": true
+    },
+    {
+      "topic": "python-syntax-for-java-developers",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/python-syntax-for-java-developers/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "artifactHashes.artifact.html",
+      "artifactPath": "python/python-fundamentals/python-syntax-for-java-developers/artifact.html",
+      "sha256": "18fb8f84283abdd1518a73f986f7bbdeb2a330e1a2e933223c11832f72341ba2",
+      "current": true
+    },
+    {
+      "topic": "python-syntax-for-java-developers",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/python-syntax-for-java-developers/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/python-syntax-for-java-developers/artifact.html",
+      "sha256": "18fb8f84283abdd1518a73f986f7bbdeb2a330e1a2e933223c11832f72341ba2",
+      "current": true
+    },
+    {
+      "topic": "python-syntax-for-java-developers",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/python-syntax-for-java-developers/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/python-syntax-for-java-developers/artifact.html",
+      "sha256": "18fb8f84283abdd1518a73f986f7bbdeb2a330e1a2e933223c11832f72341ba2",
+      "current": true
+    },
+    {
+      "topic": "python-syntax-for-java-developers",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/python-syntax-for-java-developers/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/python-syntax-for-java-developers/artifact.html",
+      "sha256": "18fb8f84283abdd1518a73f986f7bbdeb2a330e1a2e933223c11832f72341ba2",
+      "current": true
+    },
+    {
+      "topic": "python-syntax-for-java-developers",
       "evidencePath": "authoring/evidence/python/python-fundamentals/python-syntax-for-java-developers/video.json",
       "field": "artifactSha256",
       "artifactPath": "python/python-fundamentals/python-syntax-for-java-developers/artifact.html",
@@ -6544,6 +6955,54 @@
     },
     {
       "topic": "testing-with-pytest",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/testing-with-pytest/t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "artifactHashes.artifact.html",
+      "artifactPath": "python/python-fundamentals/testing-with-pytest/artifact.html",
+      "sha256": "126a2c5c2c09bcfcc7569873e20323632fec5c397b108ff3e7a8f42f0bfe3d45",
+      "current": true
+    },
+    {
+      "topic": "testing-with-pytest",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/testing-with-pytest/t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/testing-with-pytest/artifact.html",
+      "sha256": "126a2c5c2c09bcfcc7569873e20323632fec5c397b108ff3e7a8f42f0bfe3d45",
+      "current": true
+    },
+    {
+      "topic": "testing-with-pytest",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/testing-with-pytest/t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/testing-with-pytest/artifact.html",
+      "sha256": "126a2c5c2c09bcfcc7569873e20323632fec5c397b108ff3e7a8f42f0bfe3d45",
+      "current": true
+    },
+    {
+      "topic": "testing-with-pytest",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/testing-with-pytest/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "artifactHashes.artifact.html",
+      "artifactPath": "python/python-fundamentals/testing-with-pytest/artifact.html",
+      "sha256": "126a2c5c2c09bcfcc7569873e20323632fec5c397b108ff3e7a8f42f0bfe3d45",
+      "current": true
+    },
+    {
+      "topic": "testing-with-pytest",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/testing-with-pytest/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/testing-with-pytest/artifact.html",
+      "sha256": "126a2c5c2c09bcfcc7569873e20323632fec5c397b108ff3e7a8f42f0bfe3d45",
+      "current": true
+    },
+    {
+      "topic": "testing-with-pytest",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/testing-with-pytest/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/testing-with-pytest/artifact.html",
+      "sha256": "126a2c5c2c09bcfcc7569873e20323632fec5c397b108ff3e7a8f42f0bfe3d45",
+      "current": true
+    },
+    {
+      "topic": "testing-with-pytest",
       "evidencePath": "authoring/evidence/python/python-fundamentals/testing-with-pytest/video.json",
       "field": "artifactSha256",
       "artifactPath": "python/python-fundamentals/testing-with-pytest/artifact.html",
@@ -7105,6 +7564,54 @@
     {
       "topic": "writing-and-running-script-files",
       "evidencePath": "authoring/evidence/python/python-fundamentals/writing-and-running-script-files/sources.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/writing-and-running-script-files/artifact.html",
+      "sha256": "32cc6c31f497aea132106fe32321aa135d78bb568bf71ca9400c01ea88d39f47",
+      "current": true
+    },
+    {
+      "topic": "writing-and-running-script-files",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/writing-and-running-script-files/t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "artifactHashes.artifact.html",
+      "artifactPath": "python/python-fundamentals/writing-and-running-script-files/artifact.html",
+      "sha256": "32cc6c31f497aea132106fe32321aa135d78bb568bf71ca9400c01ea88d39f47",
+      "current": true
+    },
+    {
+      "topic": "writing-and-running-script-files",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/writing-and-running-script-files/t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/writing-and-running-script-files/artifact.html",
+      "sha256": "32cc6c31f497aea132106fe32321aa135d78bb568bf71ca9400c01ea88d39f47",
+      "current": true
+    },
+    {
+      "topic": "writing-and-running-script-files",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/writing-and-running-script-files/t25-debt-1814ba7-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/writing-and-running-script-files/artifact.html",
+      "sha256": "32cc6c31f497aea132106fe32321aa135d78bb568bf71ca9400c01ea88d39f47",
+      "current": true
+    },
+    {
+      "topic": "writing-and-running-script-files",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/writing-and-running-script-files/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "artifactHashes.artifact.html",
+      "artifactPath": "python/python-fundamentals/writing-and-running-script-files/artifact.html",
+      "sha256": "32cc6c31f497aea132106fe32321aa135d78bb568bf71ca9400c01ea88d39f47",
+      "current": true
+    },
+    {
+      "topic": "writing-and-running-script-files",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/writing-and-running-script-files/t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/writing-and-running-script-files/artifact.html",
+      "sha256": "32cc6c31f497aea132106fe32321aa135d78bb568bf71ca9400c01ea88d39f47",
+      "current": true
+    },
+    {
+      "topic": "writing-and-running-script-files",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/writing-and-running-script-files/t25-debt-1814ba7-critic-sme-recheck.json",
       "field": "reviewedSha256",
       "artifactPath": "python/python-fundamentals/writing-and-running-script-files/artifact.html",
       "sha256": "32cc6c31f497aea132106fe32321aa135d78bb568bf71ca9400c01ea88d39f47",
