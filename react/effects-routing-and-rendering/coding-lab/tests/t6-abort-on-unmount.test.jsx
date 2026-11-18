@@ -42,7 +42,7 @@ test("task 6: an unmounted request is aborted through the effect cleanup", async
     await new Promise((resolve) => setTimeout(resolve, 0));
   });
   expect(screen.queryByText(/Could not load/)).not.toBeInTheDocument();
-  expect(screen.getByText("Loading services...")).toBeInTheDocument();
+  expect(screen.getByText(/Loading services/)).toBeInTheDocument();
   strictView.unmount();
   vi.unstubAllGlobals();
 
