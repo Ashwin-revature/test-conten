@@ -82,7 +82,7 @@ Look the sign-up up with `repo.get(signup_id)`. When the result is `None`, `rais
 
 Add `GET /sessions/{session}/signups` with `response_model=list[SignupOut]`, the path parameter `session: str` and two query parameters with limits:
 `limit: int = Query(10, ge=1, le=50)` and `offset: int = Query(0, ge=0)`.
-Return `repo.list_by_session(session, limit, offset)`. `?limit=2&offset=1` skips the first sign-up and returns the next two; `?limit=0` is a `422`.
+Return `repo.list_by_session(session, limit, offset)`. `?limit=2&offset=1` skips the session's first sign-up and returns the next two; `?limit=0` is a `422`. (In the optional run below, `/sessions/testing/signups?limit=1&offset=1` returns Eli Novak, the second of the two testing sign-ups.)
 
 Optional: see the routes run. The page's `fastapi dev main.py` needs the `fastapi[standard]` extra, which this lab does not install, so start the same app with uvicorn instead: `cd starter`, then `python -m uvicorn signups_api.main:app`, open http://127.0.0.1:8000/docs, try the routes, stop it with Ctrl-C and go back with `cd ..` before you run the tests.
 The `/docs` page loads its Swagger UI files from the internet; offline, open http://127.0.0.1:8000/openapi.json or call a route such as http://127.0.0.1:8000/signups/1 instead.

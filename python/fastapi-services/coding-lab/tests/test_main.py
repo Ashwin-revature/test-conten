@@ -197,31 +197,40 @@ def use_workshop_handler(handler):
     main.app.dependency_overrides[main.get_workshop_client] = override
 
 
-def test_task07_workshop_route_turns_upstream_errors_into_responses(repo, monkeypatch):
+def workshop_answer(client, path):
+    try:
+        return client.get(path)
+    except upstream.UpstreamError as err:
+        pytest.fail(
+            f"Task 7: UpstreamError({err.status_code}, {err.detail!r}) escaped the route; catch it and "
+            "raise HTTPException(status_code=err.status_code, detail=err.detail)"
+        )
+
+
+def test_task07_workshop_route_turns_upstream_errors_into_responses(client, monkeypatch):
     monkeypatch.delenv("SPRING_BASE_URL", raising=False)
     monkeypatch.delenv("SPRING_TOKEN", raising=False)
-    client = TestClient(main.app, raise_server_exceptions=False)
     use_workshop_handler(lambda request: httpx.Response(200, json=WORKSHOP))
-    response = client.get("/signups/1/workshop")
-    assert response.status_code == 200, (
-        f"Task 7: GET /signups/1/workshop must answer 200, got {response.status_code}; "
-        "add the route with client=Depends(get_workshop_client)"
+    response = workshop_answer(client, "/signups/1/workshop")
+    assert response.status_code != 404 or response.json() != {"detail": "Not Found"}, (
+        "Task 7: GET /signups/1/workshop answered 404 Not Found; add the route with client=Depends(get_workshop_client)"
     )
+    assert response.status_code == 200, f"Task 7: GET /signups/1/workshop must answer 200, got {response.status_code}"
     assert response.json() == {"signup_id": 1, "workshop": WORKSHOP}, (
         "Task 7: answer {\"signup_id\": ..., \"workshop\": <the catalog's JSON>}"
     )
-    assert client.get("/signups/99/workshop").status_code == 404, "Task 7: an unknown sign-up is a 404"
+    assert workshop_answer(client, "/signups/99/workshop").status_code == 404, "Task 7: an unknown sign-up is a 404"
 
     def slow(request):
         raise httpx.ReadTimeout("slow", request=request)
 
     use_workshop_handler(slow)
-    timed_out = client.get("/signups/1/workshop")
+    timed_out = workshop_answer(client, "/signups/1/workshop")
     assert timed_out.status_code == 504 and timed_out.json() == {"detail": "Workshop service timed out"}, (
-        f"Task 7: got {timed_out.status_code}; catch UpstreamError and raise HTTPException with its status_code and detail"
+        f"Task 7: got {timed_out.status_code}; raise HTTPException with the UpstreamError's status_code and detail"
     )
     use_workshop_handler(lambda request: httpx.Response(500))
-    assert client.get("/signups/1/workshop").status_code == 502, "Task 7: a 500 from the catalog is our 502"
+    assert workshop_answer(client, "/signups/1/workshop").status_code == 502, "Task 7: a 500 from the catalog is our 502"
 
 
 MUTANTS = {
