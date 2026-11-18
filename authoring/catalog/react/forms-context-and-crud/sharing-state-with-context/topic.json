@@ -63,7 +63,7 @@
     },
     "lab": {
       "status": "absent",
-      "reason": "Standard: covered by the module lab react/forms-context-and-crud/coding-lab/ for the S32 Lab day. Course project: applied in part P6 of the planned cumulative course project react/coding-lab/ (Fast FT19 Project implementation brief), after an embedded teach-then-check step; authored in a course-level PR"
+      "reason": "Standard: practised in task 7 (toasts through context) of the module lab react/forms-context-and-crud/coding-lab/, done on S33 with tasks 4-8; tasks 1-3 run on the S32 Lab day. Course project: applied in part P6 of the planned cumulative course project react/coding-lab/ (Fast FT19 Project implementation brief), after an embedded teach-then-check step; authored in a course-level PR"
     }
   },
   "freshness": {

@@ -30,8 +30,8 @@
     },
     {
       "path": "authoring/catalog/react/forms-context-and-crud/sharing-state-with-context/topic.json",
-      "sha256": "3a952a69ffe08bc76c2b43c7f0bf72ccf951a4779dd532b489bce6ac1ce4fed0",
-      "bytes": 3321
+      "sha256": "77c5cd755d3a912acb052394548c45b20063a16cb383904eb671713703e10f19",
+      "bytes": 3400
     },
     {
       "path": "authoring/catalog/react/forms-context-and-crud/ui-tests-with-testing-library-querying-by-role-and-label/topic.json",
