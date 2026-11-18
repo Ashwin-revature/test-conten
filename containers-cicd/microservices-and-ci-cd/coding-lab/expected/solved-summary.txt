@@ -23,7 +23,7 @@ ok 22 - the pipeline, Kubernetes and release-policy questions match the taught d
 ok 23 - reviews Dockerfile starts a server that listens on 0.0.0.0
 ok 24 - the outgoing api call sets explicit connect and read timeouts
 ok 25 - the outgoing api call forwards the caller's token, and a request without one is refused
-ok 26 - a timed-out call answers 504 and a refused connection answers 502 or 503
+ok 26 - a timed-out or refused call becomes a clear gateway error response
 # tests 26
 # suites 0
 # pass 26

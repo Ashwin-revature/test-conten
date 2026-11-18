@@ -12,7 +12,7 @@ test('the outgoing api call forwards the caller\'s token, and a request without 
   assert.equal(problem, null, problem ?? undefined);
 });
 
-test('a timed-out call answers 504 and a refused connection answers 502 or 503', () => {
+test('a timed-out or refused call becomes a clear gateway error response', () => {
   const problem = check('reviews-error-mapping');
   assert.equal(problem, null, problem ?? undefined);
 });

@@ -33,7 +33,7 @@ def reviews_for_product(product_id: int, authorization: str | None = Header(defa
     2. It passes timeout=None, which turns off every limit, so a hanging api
        hangs this request too.
     3. A timed-out or refused call escapes as an unhandled exception instead
-       of a 504, or a 502/503, response.
+       of a clear error response.
     """
     response = httpx.get(
         f"{API_BASE_URL}/products/{product_id}",

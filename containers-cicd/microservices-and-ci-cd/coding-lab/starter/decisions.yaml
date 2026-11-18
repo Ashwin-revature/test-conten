@@ -7,11 +7,10 @@
 # ---- Phase 5 (S38): architecture, data, routing and service calls ----
 
 architecture:
-  # Each of the next four: microservices | monolith
+  # Each of the next three: microservices | monolith
   redeploys_everything_for_one_change: ""
   keeps_a_reviews_crash_away_from_checkout: ""
   scales_only_the_busy_part: ""
-  copies_every_module_to_add_capacity: ""
   # one of: cross-service-consistency | operational-overhead | network-failures
   cost_in_the_brief: ""
   # one of: allowed | forbidden
@@ -58,16 +57,14 @@ gateway_and_discovery:
   why: ""
 
 service_calls:
-  # Inside the reviews container, who can reach a server listening on each address?
+  # Inside the reviews container, who can reach a server listening on 127.0.0.1?
   # one of: other-containers-and-the-published-port | only-processes-in-the-same-container
   listening_on_127_0_0_1: ""
-  listening_on_0_0_0_0: ""
   # The api accepts the connection and then sends nothing. What does each client do?
   # one of: stops-after-the-limits-you-set | waits-with-no-limit | stops-after-about-five-seconds
   httpx_with_no_timeout_argument: ""
   httpx_with_timeout_none: ""
   restclient_with_nothing_set: ""
-  either_client_with_explicit_limits: ""
   # Where does Spring's RestClient get its read limit?
   # one of: the-calling-controller | the-request-factory | the-restclient-base-url
   restclient_read_limit_is_set_on: ""

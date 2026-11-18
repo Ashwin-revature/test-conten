@@ -241,6 +241,8 @@ export function pythonCode(text) {
 }
 const mainPy = (dir) => pythonCode(read(dir, 'reviews/app/main.py'));
 
+// A timeout limit: a number or a named constant (never None).
+const LIMIT = '(?!None\\b)(?:[0-9.]+|[A-Za-z_][\\w.]*)(?![\\w.]*\\s*=)';
 rule('reviews-timeouts', null, (dir) => {
   const code = mainPy(dir);
   if (/\btimeout\s*=\s*None\b/.test(code)) return 'timeout=None turns every limit off, so a hanging api hangs this request too: pass explicit limits instead';
@@ -248,10 +250,10 @@ rule('reviews-timeouts', null, (dir) => {
   if (!made.length) return 'build an httpx.Timeout with an explicit connect limit and an explicit read limit, and pass it as the call\'s timeout';
   for (const [, , args] of made) {
     if (/\b(connect|read)\s*=\s*None\b/.test(args) || /^\s*None\s*(,|$)/.test(args)) return 'a None inside httpx.Timeout turns that limit off: give connect and read real numbers';
-    const hasConnect = /\bconnect\s*=\s*[0-9.]+/.test(args);
+    const hasConnect = new RegExp(`\\bconnect\\s*=\\s*${LIMIT}`).test(args);
     // httpx.Timeout needs a default (first positional or timeout=) covering read, or all four limits.
-    const hasDefault = /^\s*[0-9.]+\s*(,|$)/.test(args) || /\btimeout\s*=\s*[0-9.]+/.test(args);
-    const allFour = ['connect', 'read', 'write', 'pool'].every((k) => new RegExp(`\\b${k}\\s*=\\s*[0-9.]+`).test(args));
+    const hasDefault = new RegExp(`^\\s*${LIMIT}\\s*(,|$)`).test(args) || new RegExp(`\\btimeout\\s*=\\s*${LIMIT}`).test(args);
+    const allFour = ['connect', 'read', 'write', 'pool'].every((k) => new RegExp(`\\b${k}\\s*=\\s*${LIMIT}`).test(args));
     if (!hasConnect || !(hasDefault || allFour)) {
       return 'httpx.Timeout needs an explicit connect limit and a read limit it accepts: a default that covers read plus connect=..., or all four of connect, read, write and pool';
     }
@@ -305,14 +307,14 @@ const REFUSED = ['ConnectError', 'NetworkError', 'TransportError', 'RequestError
 rule('reviews-error-mapping', null, (dir) => {
   const hs = handlers(mainPy(dir));
   const timeout = hs.find((h) => h.names.includes('TimeoutException'));
-  if (!timeout) return 'catch httpx.TimeoutException around the call and answer 504 Gateway Timeout';
+  if (!timeout) return 'catch HTTPX\'s timeout exception around the call and answer with the status the service-to-service page gives for a timeout';
   const shadow = hs.find((h) => h.line < timeout.line && h.names.some((n) => SUPER_OF_TIMEOUT.includes(n)));
   if (shadow) return `the ${shadow.names.join(', ')} handler comes before the TimeoutException one and catches timeouts first: Python runs the first matching except, so put TimeoutException first`;
-  if (timeout.status !== '504') return 'the TimeoutException handler must answer 504 Gateway Timeout: no timely response arrived';
-  const refused = hs.find((h) => h.line > timeout.line && h.names.some((n) => REFUSED.includes(n)));
-  if (!refused) return 'also catch the refused-connection case (httpx.ConnectError) and answer 502 or 503 instead of letting the exception escape';
+  if (timeout.status !== '504') return 'the TimeoutException handler does not answer the status the service-to-service page gives when no timely response arrived';
+  const refused = hs.find((h) => h !== timeout && h.names.some((n) => REFUSED.includes(n)));
+  if (!refused) return 'also catch the refused-connection case and answer with a status the service-to-service page allows for it, instead of letting the exception escape';
   return ['502', '503'].includes(refused.status)
-    ? null : 'the refused-connection handler must answer 502 Bad Gateway or 503 Service Unavailable';
+    ? null : 'the refused-connection handler does not answer a status the service-to-service page allows for a refused connection';
 });
 
 // ---------- .github/workflows/ci.yml ----------
@@ -368,11 +370,13 @@ function evaluate(expr, ctx) {
 }
 const runs = (cond, ctx) => (cond === undefined || cond === null ? true : typeof cond === 'boolean' ? cond : evaluate(cond, ctx));
 
-rule('ci-trigger', CI, (dir) => {
+function triggers(dir) {
   const on = workflow(dir).on;
-  const names = typeof on === 'string' ? [on] : Array.isArray(on) ? on.map(String) : on && typeof on === 'object' ? Object.keys(on) : [];
-  return names.includes('push')
-    ? null : 'the workflow must run on push (pull_request may be listed too); workflow_dispatch alone never runs for a commit';
+  return typeof on === 'string' ? [on] : Array.isArray(on) ? on.map(String) : on && typeof on === 'object' ? Object.keys(on) : [];
+}
+rule('ci-trigger', CI, (dir) => {
+  return triggers(dir).includes('push')
+    ? null : 'the workflow only runs when someone starts it by hand: make it run for every pushed commit, as the GitHub Actions pipeline page\'s on: block shows';
 });
 
 const isTestRun = (s) => /\bmvnw?\b[^\n]*\btest\b|\bnpm\b[^\n]*\btest\b|\bpytest\b/.test(String(s?.run ?? ''));
@@ -383,7 +387,7 @@ rule('ci-test-job', CI, (dir) => {
   const checkout = list.findIndex((s) => /^actions\/checkout@\S+$/.test(String(s?.uses ?? '')));
   const tests = list.findIndex(isTestRun);
   if (tests < 0) return 'the test job must run the tests';
-  if (checkout < 0) return 'the runner starts empty: the test job needs an actions/checkout step before it can run the tests';
+  if (checkout < 0) return 'the runner starts empty: the test job must get the repository\'s code before it can run the tests';
   return checkout < tests ? null : 'the checkout step comes after the test step, so the tests run on an empty runner: check out first';
 });
 
@@ -391,7 +395,7 @@ rule('ci-needs', CI, (dir) => {
   const needs = jobs(dir).build?.needs;
   const list = Array.isArray(needs) ? needs.map(String) : needs ? [String(needs)] : [];
   return list.includes('test')
-    ? null : 'give the build job needs: test, so an image is only built after the tests succeed';
+    ? null : 'the build job starts alongside the tests: make it wait for the test job to succeed, as the GitHub Actions pipeline page shows';
 });
 
 rule('ci-build-push', CI, (dir) => {
@@ -403,6 +407,8 @@ rule('ci-build-push', CI, (dir) => {
   const result = {};
   try {
     for (const [name, ctx] of Object.entries(RUNS)) {
+      // A pull request run only exists when the workflow is triggered by pull requests.
+      if (ctx.event_name === 'pull_request' && !triggers(dir).some((t) => t.startsWith('pull_request'))) continue;
       const push = step.with.push;
       const pushes = push === undefined ? false : typeof push === 'boolean' ? push : String(push).trim() === 'true' ? true : String(push).trim() === 'false' ? false : evaluate(push, ctx);
       result[name] = runs(job.if, ctx) && runs(step.if, ctx) && pushes;
@@ -432,7 +438,8 @@ const ARGV_PASSWORD = /(^|\s)(-p\S*|--password(?!-stdin)\S*)/;
 
 rule('ci-secret-refs', CI, (dir) => {
   for (const { step } of allSteps(dir)) {
-    if (ARGV_PASSWORD.test(String(step?.run ?? '')) && /\bdocker\b/.test(String(step?.run ?? ''))) {
+    const loginParts = commands(step?.run).flatMap((c) => c.split('|')).filter((c) => /\bdocker\s+login\b/.test(c));
+    if (loginParts.some((c) => ARGV_PASSWORD.test(c))) {
       return 'a password is given on the docker login command line (-p or --password), where it lands in the workflow file, process lists or the log: pipe it to --password-stdin from a repository secret';
     }
   }
@@ -491,9 +498,9 @@ rule('ci-permissions', CI, (dir) => {
   const p = workflow(dir).permissions;
   if (typeof p === 'string') return `permissions: ${p} is not least access: list each permission the workflow needs as key: value, starting with contents`;
   if (!p || typeof p !== 'object') return 'add a top-level permissions block so GITHUB_TOKEN gets the least access this workflow needs';
-  if (p.contents !== 'read') return 'the workflow only reads the repository: give GITHUB_TOKEN contents: read';
+  if (p.contents !== 'read') return 'this workflow only reads the repository\'s code: give GITHUB_TOKEN that read access, as the secrets page\'s least-access rule says';
   return Object.entries(p).every(([k, v]) => k === 'contents' || v === 'none')
-    ? null : 'grant GITHUB_TOKEN nothing beyond contents: read: the Docker Hub login uses stored secrets, not GITHUB_TOKEN, and anything you do not list becomes none';
+    ? null : 'grant GITHUB_TOKEN nothing beyond reading the code: the Docker Hub login uses stored secrets, not GITHUB_TOKEN, and anything you do not list becomes none';
 });
 
 // ---------- decisions.yaml ----------
@@ -515,14 +522,12 @@ rule('decide-architecture', DECISIONS, (dir) => {
     redeploys_everything_for_one_change: 'monolith',
     keeps_a_reviews_crash_away_from_checkout: 'microservices',
     scales_only_the_busy_part: 'microservices',
-    copies_every_module_to_add_capacity: 'monolith',
     cost_in_the_brief: 'operational-overhead',
     reviews_reading_shop_tables_directly: 'forbidden',
   }, {
     redeploys_everything_for_one_change: 'reread incident 2 in the brief and the monolith page\'s deployment question',
     keeps_a_reviews_crash_away_from_checkout: 'reread incident 1 and what the page says fails together',
     scales_only_the_busy_part: 'reread incident 3 and what the page says can be scaled alone',
-    copies_every_module_to_add_capacity: 'reread incident 3: which architecture had to copy everything?',
     cost_in_the_brief: 'reread the two first-week problems and match them to one of the page\'s three costs',
     reviews_reading_shop_tables_directly: 'reread the database-per-service rule on the monolith page',
   }) ?? (whyOk(d) ? null : 'write at least a sentence of your own reasoning in architecture.why');
@@ -577,19 +582,15 @@ rule('decide-service-calls', DECISIONS, (dir) => {
   const d = decisions(dir).service_calls || {};
   return firstWrong(d, {
     listening_on_127_0_0_1: 'only-processes-in-the-same-container',
-    listening_on_0_0_0_0: 'other-containers-and-the-published-port',
     httpx_with_no_timeout_argument: 'stops-after-about-five-seconds',
     httpx_with_timeout_none: 'waits-with-no-limit',
     restclient_with_nothing_set: 'waits-with-no-limit',
-    either_client_with_explicit_limits: 'stops-after-the-limits-you-set',
     restclient_read_limit_is_set_on: 'the-request-factory',
   }, {
     listening_on_127_0_0_1: 'reread the adding-FastAPI page on the two listen addresses',
-    listening_on_0_0_0_0: 'reread the adding-FastAPI page on the two listen addresses',
     httpx_with_no_timeout_argument: 'reread the service-to-service page on HTTPX\'s documented default',
     httpx_with_timeout_none: 'reread what timeout=None does on the service-to-service page',
     restclient_with_nothing_set: 'reread the service-to-service page on a JDK-backed RestClient with nothing set',
-    either_client_with_explicit_limits: 'reread the service-to-service page\'s comparison against a hung service',
     restclient_read_limit_is_set_on: 'reread the RestClient example on the service-to-service page',
   });
 });

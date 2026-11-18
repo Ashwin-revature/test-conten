@@ -100,7 +100,7 @@
       "reviews Dockerfile starts a server that listens on 0.0.0.0",
       "the outgoing api call sets explicit connect and read timeouts",
       "the outgoing api call forwards the caller's token, and a request without one is refused",
-      "a timed-out call answers 504 and a refused connection answers 502 or 503"
+      "a timed-out or refused call becomes a clear gateway error response"
     ]
   },
   "fixtures": {
@@ -120,8 +120,8 @@
     "notes": "Delete tests/node_modules (created by npm ci) and starter/.env (your disposable local password file). To redo the lab, restore the edited starter files from version control or a fresh copy of the bundle. The lab creates no database, image, container, workflow run or volume: nothing runs a container engine, Python or any pipeline."
   },
   "minutes": {
-    "standard-s38": 35,
-    "standard-s39": 20,
+    "standard-s38": 37,
+    "standard-s39": 19,
     "standard-worst-required": 60
   },
   "trackRequirement": {
@@ -139,7 +139,7 @@
       "source": "https://www.npmjs.com/package/yaml/v/2.9.1"
     },
     {
-      "item": "fastapi 0.136.3 and httpx 0.28.1, named as pins in starter/reviews/requirements.txt; never installed or executed by this lab, only read as text (a learner who builds the image in the optional live extension installs them inside that image)",
+      "item": "fastapi 0.136.3 and httpx 0.28.1, named as pins in starter/reviews/requirements.txt; never installed or executed by this lab, only read as text (a learner who builds the image outside this lab installs them inside that image)",
       "license": "MIT (fastapi), BSD-3-Clause (httpx)",
       "source": "https://pypi.org/project/fastapi/ and https://pypi.org/project/httpx/"
     }

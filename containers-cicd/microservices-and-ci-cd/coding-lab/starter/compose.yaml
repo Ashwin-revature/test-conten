@@ -1,9 +1,9 @@
 # The shop stack after the Containers and Compose module.
 # The api image was already built there, so this module's stack runs it by
 # image name. TODO (README phase 2): uncomment the teammate's reviews draft
-# below and repair it — it reaches the wrong database by the wrong name,
-# writes the password into the file, publishes to every interface, reuses the
-# shop's volume, and only orders container start.
+# below and repair it — it names its database and the api wrongly, writes
+# the password into the file, publishes to every interface, reuses the shop's
+# volume, and only orders container start (its database has no healthcheck).
 services:
   api:
     image: shop-api:dev
