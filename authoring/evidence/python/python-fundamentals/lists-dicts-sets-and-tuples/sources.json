@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "reviewedSha256": "b34494f94465cb25f2cdba7c0f14f302327eca51aa753b59235d0103d6bca016",
-  "checkedAt": "2026-11-18T12:55:43.909Z",
+  "reviewedSha256": "b563e79aaf499c6cc04e802d9f77a78cb79623e33b94140b26b6b9ea221d26b7",
+  "checkedAt": "2026-11-18T13:33:27.717Z",
   "sources": [
     {
       "url": "https://docs.python.org/3/tutorial/datastructures.html",
-      "retrievedAt": "2026-11-18T12:55:43.909Z",
+      "retrievedAt": "2026-11-18T13:33:27.717Z",
       "status": 200,
       "finalUrl": "https://docs.python.org/3/tutorial/datastructures.html",
       "sha256": "7e178f63d31dfda11229dcfd8dd3018e6fe9bd9a5c9fe12ce2950051e86141c1",
@@ -19,7 +19,7 @@
     },
     {
       "url": "https://docs.python.org/3/builtins/stdtypes.html",
-      "retrievedAt": "2026-11-18T12:55:43.909Z",
+      "retrievedAt": "2026-11-18T13:33:27.717Z",
       "status": 200,
       "finalUrl": "https://docs.python.org/3/builtins/stdtypes.html",
       "sha256": "20b33c6b1143e0a00f409f1263fdb3df170df83e48eb0fdbed22a6134c2cbab8",

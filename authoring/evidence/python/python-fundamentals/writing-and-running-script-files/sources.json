@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "reviewedSha256": "3da79091bf3d7b784a3938506c089a8545a57d4a706334cfc3d426e9bd6b6b36",
-  "checkedAt": "2026-11-18T12:55:45.676Z",
+  "reviewedSha256": "8757ff82ecab97ca09163690ade3dd5a886db73143646faefd30cf14db678435",
+  "checkedAt": "2026-11-18T13:33:28.192Z",
   "sources": [
     {
       "url": "https://docs.python.org/3/tutorial/interpreter.html",
-      "retrievedAt": "2026-11-18T12:55:45.676Z",
+      "retrievedAt": "2026-11-18T13:33:28.192Z",
       "status": 200,
       "finalUrl": "https://docs.python.org/3/tutorial/interpreter.html",
       "sha256": "c38023a085e59d0b9070a48d42fda1cc87729198c315110324f945f08163c241",
@@ -16,7 +16,7 @@
     },
     {
       "url": "https://docs.python.org/3/using/cmdline.html",
-      "retrievedAt": "2026-11-18T12:55:45.676Z",
+      "retrievedAt": "2026-11-18T13:33:28.192Z",
       "status": 200,
       "finalUrl": "https://docs.python.org/3/using/cmdline.html",
       "sha256": "48f2b23571664fd3ef7f0ea3f24fd6a920ef13c707ea570d83bca9d124d45a20",
@@ -26,7 +26,7 @@
     },
     {
       "url": "https://docs.python.org/3/library/__main__.html",
-      "retrievedAt": "2026-11-18T12:55:45.676Z",
+      "retrievedAt": "2026-11-18T13:33:28.192Z",
       "status": 200,
       "finalUrl": "https://docs.python.org/3/library/__main__.html",
       "sha256": "14b8e392a8f1825a52c527fffd876f3aa6ece47280487c8b579025527fe712ff",
@@ -37,7 +37,7 @@
     },
     {
       "url": "https://docs.python.org/3/tutorial/modules.html",
-      "retrievedAt": "2026-11-18T12:55:45.676Z",
+      "retrievedAt": "2026-11-18T13:33:28.192Z",
       "status": 200,
       "finalUrl": "https://docs.python.org/3/tutorial/modules.html",
       "sha256": "68365914bd6e0f6b3b23291f0266fd9c7699120ab5ef069a8ae66ee6efc4db59",
@@ -47,7 +47,7 @@
     },
     {
       "url": "https://docs.python.org/3/using/windows.html",
-      "retrievedAt": "2026-11-18T12:55:45.676Z",
+      "retrievedAt": "2026-11-18T13:33:28.192Z",
       "status": 200,
       "finalUrl": "https://docs.python.org/3/using/windows.html",
       "sha256": "192d2fe63e70879d8fc28ae68a479d52c5ea6b6e44e401b5ce4045ddc033af84",

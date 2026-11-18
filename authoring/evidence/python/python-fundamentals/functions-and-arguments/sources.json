@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "reviewedSha256": "b48346b1d142b01dac17d505e65ffe6407847f82e85ebb5c2076b1e1cd488175",
-  "checkedAt": "2026-11-18T12:55:43.727Z",
+  "reviewedSha256": "1e0ee23768e584648d1f11ffd564333448633d33d9a9bf6596496291fb8c894f",
+  "checkedAt": "2026-11-18T13:33:27.660Z",
   "sources": [
     {
       "url": "https://docs.python.org/3/tutorial/controlflow.html",
-      "retrievedAt": "2026-11-18T12:55:43.727Z",
+      "retrievedAt": "2026-11-18T13:33:27.660Z",
       "status": 200,
       "finalUrl": "https://docs.python.org/3/tutorial/controlflow.html",
       "sha256": "40ada0e7bc8b05610c49edc403da4d95c04bf96ff0fd02640b61c327922d1d14",
@@ -20,7 +20,7 @@
     },
     {
       "url": "https://docs.python.org/3/reference/compound_stmts.html",
-      "retrievedAt": "2026-11-18T12:55:43.727Z",
+      "retrievedAt": "2026-11-18T13:33:27.660Z",
       "status": 200,
       "finalUrl": "https://docs.python.org/3/reference/compound_stmts.html",
       "sha256": "de17905cd201c2e827933a3f301307f0856d7ffc10e10b96b27313b141c11966",
@@ -30,7 +30,7 @@
     },
     {
       "url": "https://docs.python.org/3/library/typing.html",
-      "retrievedAt": "2026-11-18T12:55:43.727Z",
+      "retrievedAt": "2026-11-18T13:33:27.660Z",
       "status": 200,
       "finalUrl": "https://docs.python.org/3/library/typing.html",
       "sha256": "35f1697c91faa9b5b6a3d58fd2bae1d237e1dda4c7863c1881ac9ab9718e6316",
