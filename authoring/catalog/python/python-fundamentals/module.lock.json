@@ -209,6 +209,16 @@
       "bytes": 3822
     },
     {
+      "path": "authoring/evidence/python/python-fundamentals/functions-and-arguments/t25-debt-1814ba7-loop2-critic-education-recheck.json",
+      "sha256": "106c1dc795a9dbb04fb01764a32c5c5a1b60dd3be93d26cd7ac294797106283f",
+      "bytes": 3255
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/functions-and-arguments/t25-debt-1814ba7-loop2-critic-sme-recheck.json",
+      "sha256": "3eca08bf37512777cbcf6a93252baf9430b9615e68b7de8223560a1fb056b2e3",
+      "bytes": 3380
+    },
+    {
       "path": "authoring/evidence/python/python-fundamentals/functions-and-arguments/video.json",
       "sha256": "3df3fb69296ef6fe6e3dceb7644659e201d55e349eef77620c9f8cd8337fcac6",
       "bytes": 529
@@ -407,6 +417,16 @@
       "path": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-sme-recheck.json",
       "sha256": "357cb0d1b087a7dd57f4222c71f0bf5fe56c526225addce6be74c0456adf2d67",
       "bytes": 24804
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-loop2-critic-education-recheck.json",
+      "sha256": "02d872b0aa37521a5dd979403a1212b45fc6e76d6ba06b48e619fd65e14ec955",
+      "bytes": 3115
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-loop2-critic-sme-recheck.json",
+      "sha256": "d3a73c7610b7e656602ad90963b363d91f0d108dc469ab309b2cbcc244d4cef5",
+      "bytes": 3240
     },
     {
       "path": "authoring/evidence/python/python-fundamentals/modules-imports-and-virtual-environments/critic-education.json",
@@ -2188,6 +2208,54 @@
       "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
       "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
       "current": false
+    },
+    {
+      "topic": "functions-and-arguments",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/functions-and-arguments/t25-debt-1814ba7-loop2-critic-education-recheck.json",
+      "field": "artifactHashes.artifact.html",
+      "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
+      "sha256": "a7967507b6838cbf14d9db1b30c732b18cac09cab5117784c70ec5413dc2264b",
+      "current": true
+    },
+    {
+      "topic": "functions-and-arguments",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/functions-and-arguments/t25-debt-1814ba7-loop2-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
+      "sha256": "a7967507b6838cbf14d9db1b30c732b18cac09cab5117784c70ec5413dc2264b",
+      "current": true
+    },
+    {
+      "topic": "functions-and-arguments",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/functions-and-arguments/t25-debt-1814ba7-loop2-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
+      "sha256": "a7967507b6838cbf14d9db1b30c732b18cac09cab5117784c70ec5413dc2264b",
+      "current": true
+    },
+    {
+      "topic": "functions-and-arguments",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/functions-and-arguments/t25-debt-1814ba7-loop2-critic-sme-recheck.json",
+      "field": "artifactHashes.artifact.html",
+      "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
+      "sha256": "a7967507b6838cbf14d9db1b30c732b18cac09cab5117784c70ec5413dc2264b",
+      "current": true
+    },
+    {
+      "topic": "functions-and-arguments",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/functions-and-arguments/t25-debt-1814ba7-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
+      "sha256": "a7967507b6838cbf14d9db1b30c732b18cac09cab5117784c70ec5413dc2264b",
+      "current": true
+    },
+    {
+      "topic": "functions-and-arguments",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/functions-and-arguments/t25-debt-1814ba7-loop2-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
+      "sha256": "a7967507b6838cbf14d9db1b30c732b18cac09cab5117784c70ec5413dc2264b",
+      "current": true
     },
     {
       "topic": "functions-and-arguments",
@@ -4275,6 +4343,34 @@
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
+      "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-loop2-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
+      "sha256": "a7967507b6838cbf14d9db1b30c732b18cac09cab5117784c70ec5413dc2264b",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-loop2-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
+      "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
+      "sha256": "a7967507b6838cbf14d9db1b30c732b18cac09cab5117784c70ec5413dc2264b",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-loop2-critic-sme-recheck.json",
       "field": "reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
       "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
