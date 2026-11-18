@@ -133,6 +133,7 @@ button, .opt, .pep-step { transition: background-color var(--pep-dur-1) var(--pe
 [data-pep-activity-checks] h3 { margin: 0 0 4px; font-size: 16px; line-height: 24px; }
 @media print { .pep-objectives > div { display: block !important; width: auto; } .pep-topicbar, [data-pep-activity-checks] { print-color-adjust: exact; -webkit-print-color-adjust: exact; } }
 @media (forced-colors: active) { .pep-topicbar, [data-pep-activity-checks] { border-color: CanvasText; border-block-start-color: Highlight; } }
+@media (forced-colors: active) { .pep-optional { border-color: CanvasText; } }
 /* DESIGN.md guidance contract: activity timeline, task heading, back link, Previous activity */
 .pep-topicbar nav { flex: 1 1 100%; min-width: 0; }
 .pep-steps { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
@@ -148,7 +149,8 @@ html:not(.pep-js) .pep-step[aria-disabled="true"] { color: var(--pep-text); curs
 .pep-back { margin: 0 0 4px; }
 .pep-back a { display: inline-flex; align-items: center; min-height: 44px; color: var(--pep-accent-text); font-weight: 600; }
 .pep-next-row { display: flex; flex-wrap: wrap; gap: 8px; }
-@media print { .pep-topicbar nav, .pep-back, #prev { display: none !important; } }
+@media print { .pep-topicbar nav, .pep-back, #prev, [data-pep-back-link], [data-pep-previous], [data-pep-next] { display: none !important; } }
+@media print { section[data-pep-activity][hidden] { display: grid !important; } section[data-pep-activity] [data-step][hidden] { display: block !important; } section[data-pep-activity] .task { display: flex !important; } }
 /* Regions */
 .pep-regions { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
 @media (min-width: 960px) { .pep-regions { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; } }
@@ -167,7 +169,9 @@ html:not(.pep-js) .pep-step[aria-disabled="true"] { color: var(--pep-text); curs
 .pep-goals > li + li { border-top: 1px solid var(--pep-line-strong); }
 .pep-goals > li::after { content: "open"; font: 600 13px/20px var(--pep-font-sans); color: var(--pep-text-muted); white-space: nowrap; }
 .pep-goals > li.is-done::after { content: "\2713\00a0 done"; color: var(--pep-success); }
-.task { display: flex; flex-direction: column; gap: 12px; padding: 16px; border: 1px solid var(--pep-line-strong); border-radius: var(--pep-radius-lg); background: var(--pep-card); }
+.task { display: flex; flex-direction: column; gap: 12px; }
+.pep-region.workspace { padding: 24px; border: 1px solid var(--pep-line-strong); border-radius: var(--pep-radius-lg); background: var(--pep-card); }
+@media (max-width: 480px) { .pep-region.workspace { padding: 16px; } }
 .task > div { display: flex; flex-direction: column; gap: 12px; }
 .task p { margin: 0; }
 .goals { list-style: none; margin: 0; padding: 0; }
@@ -343,7 +347,8 @@ html:not(.pep-js) .pep-js-only, html:not(.pep-js) [data-region="current-control"
 /* Optional Anecdote and Challenge disclosures (never required, never counted) */
 .extras { display: flex; flex-direction: column; gap: 8px; margin: 48px 0 0; padding: 16px 0 0; border-top: 1px solid var(--pep-line-strong); min-width: 0; }
 .extras > p { margin: 0; color: var(--pep-text-muted); font: 400 14px/20px var(--pep-font-sans); }
-.pep-optional { min-width: 0; border-block: 1px solid var(--pep-line-strong); background: transparent; break-inside: avoid; }
+.pep-optional { min-width: 0; padding: 0 12px; border: 1px solid var(--pep-line); border-block-start: 4px solid var(--pep-line-strong); border-radius: var(--pep-radius-md); background: var(--pep-card); break-inside: avoid; }
+.pep-optional--challenge { border-color: var(--pep-line-strong); background: var(--pep-control); }
 .pep-optional > summary { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px; min-height: 44px; padding: 8px 0; cursor: pointer; color: var(--pep-text-strong); font-weight: 600; }
 .pep-optional > summary::marker { color: var(--pep-accent-text); }
 .pep-optional__cue, [data-pep-optional-time] { color: var(--pep-text-muted); font: 600 13px/20px var(--pep-font-sans); }
@@ -439,13 +444,13 @@ html:not(.pep-js) .pep-js-only, html:not(.pep-js) [data-region="current-control"
   <p>Practice prediction, not scored. You know Java; guess how Python treats the same line.</p>
 </div>
       </div>
+    </div>
+    <div class="pep-region workspace" data-pep-workspace="activity">
       <div class="task" data-region="current-task">
 <div data-step="1"><div class="pep-task" id="activity-task-1" data-pep-task><h3 class="pep-task__h">Your task</h3>
   <ol class="steps" aria-label="Steps"><li><strong>Where to look:</strong> Read the code in the workspace on the right (below these steps on a narrow screen).</li><li><strong>What to do or type:</strong> Under <em>Prediction</em>, pick the result you expect.</li><li><strong>What to expect:</strong> Pick Low, Medium or High confidence, then press <em>Check my prediction</em>.</li><li><strong>How to know it's done:</strong> Feedback appears below and Continue shows. A wrong guess is fine: the feedback explains it and you still move on.</li></ol></div>
   <section class="pep-activity-checks" data-pep-activity-checks aria-labelledby="checks-1-h"><h3 id="checks-1-h">What success looks like</h3><p>Feedback appears below and Continue shows. A wrong guess is fine: the feedback explains it and you still move on.</p></section></div>
       </div>
-    </div>
-    <div class="pep-region workspace" data-pep-workspace="activity">
       <div class="ask" data-region="current-ask">
 <div data-step="1"><h2 class="ws-h" id="ws-1-h"><span class="vh">Workspace: </span>Start with a guess</h2>
   <p id="task-1">In Java, <code>7 / 2</code> on two ints gives <code>3</code>. What does the Python below print?</p></div>
@@ -490,14 +495,14 @@ print(half)</pre></div></div></div>
   <p>A for-each loop reads <code>for s in scores:</code>, and <code>for i in range(n):</code> counts 0 up to n - 1.</p>
 </div>
       </div>
+    </div>
+    <div class="pep-region workspace" data-pep-workspace="code">
       <div class="task" data-region="current-task">
 <div data-step="2"><div class="pep-task" id="activity-task-2" data-pep-task><h3 class="pep-task__h">Your task</h3>
   <ol class="steps" aria-label="Steps"><li><strong>Where to look:</strong> Click in the <em>describe.py</em> editor (or Tab to it) and edit the code. Tab indents; Escape, then Tab, leaves the editor.</li><li><strong>What to do or type:</strong> Press <em>Run</em> (or Ctrl+Enter in the editor). The <em>Problems</em> panel lists each line Python would reject; press a problem to jump to its line.</li><li><strong>What to expect:</strong> Fix the lines and run again. Once nothing is flagged, <em>Output</em> compares each call's result with the Java's.</li><li><strong>How to know it's done:</strong> Each goal changes from <em>open</em> to <em>done</em>. If a result differs, the feedback points at the line to check; <em>Reset code</em> restores the start.</li></ol></div>
   <section class="pep-activity-checks" data-pep-activity-checks aria-labelledby="checks-2-h"><h3 id="checks-2-h">Activity checks</h3>
   <ul class="goals"><li data-goal="ok"><span>No problems: Run accepts the file</span><span class="st"></span></li><li data-goal="run"><span><code>describe(1)</code>, <code>describe(10)</code> and <code>describe(100)</code> match the Java</span><span class="st"></span></li></ul></section></div>
       </div>
-    </div>
-    <div class="pep-region workspace" data-pep-workspace="code">
       <div class="ask" data-region="current-ask">
 <div data-step="2"><h2 class="ws-h" id="ws-2-h"><span class="vh">Workspace: </span>Blocks by indentation, no types</h2>
   <p id="task-2">A teammate half-translated the Java below. Fix their Python until Run accepts it and it returns what the Java returns.</p>
@@ -579,14 +584,14 @@ print(half)</pre></div></div></div>
 </details>
 </div>
       </div>
+    </div>
+    <div class="pep-region workspace" data-pep-workspace="activity">
       <div class="task" data-region="current-task">
 <div data-step="3"><div class="pep-task" id="activity-task-3" data-pep-task><h3 class="pep-task__h">Your task</h3>
   <ol class="steps" aria-label="Steps"><li><strong>Where to look:</strong> Start in <em>Translate the Java for loop</em>, then use the division and truthiness controls below it.</li><li><strong>What to do or type:</strong> Rewrite the shown counting loop with <code>range</code>, a colon and four-space indentation, then press <em>Check translation</em>.</li><li><strong>What to expect:</strong> The bounded checker names any missing loop structure; the other controls print real Python results for their listed inputs.</li><li><strong>How to know it's done:</strong> The four goals below read <em>done</em>, including the translated loop, and Continue appears.</li></ol></div>
   <section class="pep-activity-checks" data-pep-activity-checks aria-labelledby="checks-3-h"><h3 id="checks-3-h">Activity checks</h3>
   <ul class="goals"><li data-goal="for"><span>A Java counting loop translated with range, a colon and indentation</span><span class="st"></span></li><li data-goal="fl"><span>A <code>/</code> result that is a float</span><span class="st"></span></li><li data-goal="neg"><span><code>//</code> on a negative number</span><span class="st"></span></li><li data-goal="tru"><span>A non-empty value that looks false but counts as true</span><span class="st"></span></li></ul></section></div>
       </div>
-    </div>
-    <div class="pep-region workspace" data-pep-workspace="activity">
       <div class="ask" data-region="current-ask">
 <div data-step="3"><h2 class="ws-h" id="ws-3-h"><span class="vh">Workspace: </span>Values carry types; / always gives a float</h2>
   <p id="task-3">Run expressions and values until you have seen all three behaviours.</p></div>
@@ -635,13 +640,13 @@ else:
   <p><code>None</code> plays the role of <code>null</code>. There is only one <code>None</code> object, so test it with <code>x is None</code> or <code>x is not None</code>. Do not use <code>is</code> to compare strings or numbers: Python warns, and the answer depends on how objects happen to be stored, not on their values.</p>
 </div>
       </div>
+    </div>
+    <div class="pep-region workspace" data-pep-workspace="activity">
       <div class="task" data-region="current-task">
 <div data-step="4"><div class="pep-task" id="activity-task-4" data-pep-task><h3 class="pep-task__h">Your task</h3>
   <ol class="steps" aria-label="Steps"><li><strong>Where to look:</strong> Read the question and the code it names in the workspace on the right.</li><li><strong>What to do or type:</strong> Pick one answer, pick your confidence, then press <em>Check answer</em>.</li><li><strong>What to expect:</strong> Feedback appears below. If the first answer is not right, a second question appears; answer it and press <em>Check second try</em>.</li><li><strong>How to know it's done:</strong> Either way, Continue then shows and takes you to the recap.</li></ol></div>
   <section class="pep-activity-checks" data-pep-activity-checks aria-labelledby="checks-4-h"><h3 id="checks-4-h">What success looks like</h3><p>Either way, Continue then shows and takes you to the recap.</p></section></div>
       </div>
-    </div>
-    <div class="pep-region workspace" data-pep-workspace="activity">
       <div class="ask" data-region="current-ask">
 <div data-step="4"><h2 class="ws-h" id="ws-4-h"><span class="vh">Workspace: </span>Equality, identity and None</h2>
   <p id="task-apply">Java: <code>if (name == null || !name.equals("admin")) { deny(); }</code>. Which Python line keeps the same meaning?</p>
@@ -683,7 +688,7 @@ else:
     </div>
   </section>
   <section class="pep-regions pep-act" data-step="5" aria-labelledby="teach-5-h">
-    <div class="pep-region reading" data-pep-instructions>
+    <div class="pep-region reading">
       <div class="teach" data-region="current-teaching">
 <div data-step="5" data-pep-recap class="recap">
   <h2 id="teach-5-h" tabindex="-1">Recap</h2>
@@ -701,7 +706,7 @@ else:
 <div data-step="5"></div>
       </div>
     </div>
-    <div class="pep-region workspace" data-pep-workspace="activity">
+    <div class="pep-region workspace">
       <div class="ask" data-region="current-ask">
 <div data-step="5"><h2 class="ws-h" id="ws-5-h"><span class="vh">Workspace: </span>Recap</h2>
   <p class="pep-js-only">All activities finished.</p>
@@ -1210,8 +1215,8 @@ function render(){track();renderSort();
   if(gs){gs.hidden=!need.length;gs.textContent=left?left+' of '+need.length+' checks still open':'All '+need.length+' checks done';}
   if(TOPIC.render){TOPIC.render(S,api);}}
 var MAXS=1;
-function nav(step){var n=TOPIC.acts.length;if(step>MAXS){MAXS=Math.min(step,n);}main.setAttribute('data-pep-current-activity',String(Math.min(step,n)));main.setAttribute('data-pep-unlocked-through',String(MAXS));qa('[data-pep-activity-link]').forEach(function(a,i){var k=i+1;if(k===step){a.setAttribute('aria-current','step');}else{a.removeAttribute('aria-current');}if(k>MAXS){a.setAttribute('aria-disabled','true');}else{a.removeAttribute('aria-disabled');}});var pv=$('prev');if(pv){pv.hidden=step<2;}}
-function go(k){if(k<1||k>TOPIC.acts.length){show(k);return;}if(location.hash!=='#activity-'+k){try{history.pushState(null,'','#activity-'+k);}catch(err){}}show(k);}
+function nav(step){var n=TOPIC.acts.length;if(step>MAXS){MAXS=Math.min(step,n);}main.setAttribute('data-pep-current-activity',String(step));main.setAttribute('data-pep-unlocked-through',String(MAXS));qa('[data-pep-activity-link]').forEach(function(a,i){var k=i+1;if(k===step){a.setAttribute('aria-current','step');}else{a.removeAttribute('aria-current');}if(k>MAXS){a.setAttribute('aria-disabled','true');}else{a.removeAttribute('aria-disabled');}});var pv=$('prev');if(pv){pv.hidden=step<2;}}
+function go(k){if(k<1||k>TOPIC.acts.length){show(k);return;}if(location.hash!=='#activity-'+k){try{history.pushState(null,'','#activity-'+k);}catch(err){NAVING++;try{location.hash='activity-'+k;}catch(e2){}NAVING--;}}show(k);}
 function show(step,focus){
   track();S.step=step;stageEl.setAttribute('data-step',String(step));stageEl.classList.toggle('applying',step===LAST-1);
   qa('[data-step]',stageEl).forEach(function(n){n.hidden=(+n.getAttribute('data-step')!==step);});
@@ -1221,7 +1226,7 @@ function show(step,focus){
   var na=TOPIC.acts[step-1];$('next').hidden=!(na&&(S.done[na]||S.settled[na]));nav(step);
   if(step===LAST){var miss=TOPIC.acts.filter(function(a){return !S.done[a];}).length;main.setAttribute('data-pep-complete',miss?'false':'true');var c=$('complete-msg');if(c){
     c.textContent=miss?'This page is not complete yet: '+miss+' of '+TOPIC.acts.length+' activities settled without passing. Review the explanations above; to finish, reload the page and work through it again.':'All '+TOPIC.acts.length+' activities finished.';}}
-  else{main.removeAttribute('data-pep-complete');}
+  /* Leaving the recap keeps the page completion result: navigation never changes it. */
   render();progress();
   if(focus!==false){var h=$('teach-'+step+'-h');if(h){h.focus();}}
 }
@@ -1309,9 +1314,12 @@ if(mq&&mq.addEventListener){mq.addEventListener('change',function(e){setTheme(e.
 d.addEventListener('click',function(e){var lk=e.target.closest('a[data-pep-activity-link],a[data-pep-back-link]');if(lk){e.preventDefault();e.stopPropagation();var lkn=+lk.getAttribute('href').replace('#activity-','');if(lkn>=1&&lkn<=MAXS){go(lkn);}return;}
   var b=e.target.closest('button');if(!b){return;}
   if(b.id==='prev'){e.stopPropagation();if(S.step>1){go(Math.min(S.step-1,TOPIC.acts.length));}return;}
-  if(b.id==='next'){var nk=S.step+1;if(nk<=TOPIC.acts.length&&location.hash!=='#activity-'+nk){try{history.pushState(null,'','#activity-'+nk);}catch(err){}}}
+  if(b.id==='next'){var nk=S.step+1;if(nk<=TOPIC.acts.length&&location.hash!=='#activity-'+nk){try{history.pushState(null,'','#activity-'+nk);}catch(err){NAVING++;try{location.hash='activity-'+nk;}catch(e2){}NAVING--;}}}
 },true);
-window.addEventListener('popstate',function(){var pm=/^#activity-(\d+)$/.exec(location.hash),pk=pm?+pm[1]:1;if(pk>=1&&pk<=MAXS&&pk!==S.step){show(pk,false);}});
+/* Back/Forward and fragment changes select an unlocked activity; a locked or unknown fragment returns to the current one. */
+var NAVING=0;
+function historyChanged(){if(NAVING){return;}var pm=/^#activity-(\d+)$/.exec(location.hash),pk=pm?+pm[1]:1;if(pk>=1&&pk<=MAXS&&pk!==S.step){show(pk,false);}else if(pm&&location.hash!=='#activity-'+S.step){try{history.replaceState(null,'','#activity-'+S.step);}catch(err){NAVING++;try{location.hash='activity-'+S.step;}catch(e2){}NAVING--;}}}
+window.addEventListener('popstate',historyChanged);window.addEventListener('hashchange',historyChanged);
 /* Each editor Run is one attempt for the activity that owns the editor. */
 if(typeof LESSON_EDITOR!=='undefined'&&LESSON_EDITOR&&typeof LESSON_EDITOR.mount==='function'){var leMount=LESSON_EDITOR.mount;
   LESSON_EDITOR.mount=function(root,cfg){if(cfg&&typeof cfg.onRun==='function'){var leRun=cfg.onRun;cfg.onRun=function(){attempt();var r=leRun.apply(this,arguments);track();return r;};}return leMount.call(this,root,cfg);};}
@@ -1330,6 +1338,16 @@ fresh();if(/^#activity-\d+$/.test(location.hash)&&location.hash!=='#activity-1')
       printOpened.forEach(details => { details.open = false; });
       printOpened = [];
     });
+    const objectives = document.querySelector('details[data-pep-objectives]');
+    if (objectives) {
+      const objectivesSummary = objectives.querySelector(':scope > summary');
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && objectives.open) { objectives.open = false; objectivesSummary.focus(); }
+      });
+      document.addEventListener('click', (event) => {
+        if (objectives.open && !objectives.contains(event.target)) objectives.open = false;
+      });
+    }
   })();
 </script>
 </body>
