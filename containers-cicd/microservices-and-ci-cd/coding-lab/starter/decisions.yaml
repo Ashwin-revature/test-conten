@@ -86,7 +86,7 @@ secrets_in_logs:
   # one of: a-permission-boundary | best-effort
   log_redaction_is: ""
   # A step computes a value derived from a secret. How is it kept out of the log?
-  # one of: base64-encode-it-first | print-it-only-once | register-it-with-add-mask
+  # one of: rely-on-automatic-redaction | add-a-permissions-block | register-it-with-add-mask
   hide_a_derived_value_by: ""
   # Which secrets does a run triggered from a fork's pull request receive?
   # one of: every-repository-secret | only-github-token | only-secrets-named-in-the-workflow

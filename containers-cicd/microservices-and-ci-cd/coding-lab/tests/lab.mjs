@@ -201,8 +201,10 @@ rule('reviews-listen', null, (dir) => {
       ? null : `the server is told to listen on ${host}: reread the adding-FastAPI page on the address a server in a container must listen on`;
   }
   if (w.some((x) => /uvicorn/.test(x))) {
-    return host === '0.0.0.0'
-      ? null : 'uvicorn without --host uses its default address: reread the adding-FastAPI page on the address a server in a container must listen on';
+    if (host === '0.0.0.0') return null;
+    return host === null
+      ? 'uvicorn without --host uses its default address: reread the adding-FastAPI page on the address a server in a container must listen on'
+      : `the server is told to listen on ${host}: reread the adding-FastAPI page on the address a server in a container must listen on`;
   }
   return 'start the FastAPI app with the fastapi command an image should use (or uvicorn with an explicit --host)';
 });
@@ -271,19 +273,63 @@ function keywordArgs(code, key) {
     if (c === ')') { stack.pop(); continue; }
     if (stack.length && !/[\w.]/.test(code[i - 1] ?? '')) {
       re.lastIndex = i;
-      if (re.exec(code)) out.push({ callee: stack.at(-1), value: code.slice(re.lastIndex).match(/^[^,)\n]*/)[0].trim() });
+      if (re.exec(code)) out.push({ at: i, callee: stack.at(-1), value: code.slice(re.lastIndex).match(/^[^,)\n]*/)[0].trim() });
     }
   }
   return out;
 }
+
+// Index of the parenthesis that closes the one opened at code[open].
+function parenEnd(code, open) {
+  let depth = 0;
+  for (let j = open; j < code.length; j += 1) {
+    if (code[j] === '(') depth += 1;
+    else if (code[j] === ')') { depth -= 1; if (!depth) return j; }
+  }
+  return code.length;
+}
+// httpx clients the code creates, by the name they are bound to (`with ... as name` or `name = ...`).
+function httpxClients(code) {
+  const out = {};
+  for (const m of code.matchAll(/httpx\.(?:Async)?Client\s*\(/g)) {
+    const open = m.index + m[0].length - 1;
+    const end = parenEnd(code, open);
+    const name = code.slice(end + 1).match(/^\s*as\s+([A-Za-z_]\w*)/)?.[1] ?? code.slice(0, m.index).match(/([A-Za-z_]\w*)\s*=\s*$/)?.[1];
+    if (name) out[name] = { start: open + 1, end, args: code.slice(open + 1, end) };
+  }
+  return out;
+}
+// The outgoing call to the shop api: a request made with httpx, directly (httpx.get
+// and friends) or through an httpx client the code creates. The one aimed at
+// API_BASE_URL wins (in its arguments, through a variable built from it, or
+// through the client's base_url); otherwise the first httpx request.
+function outgoingCall(code) {
+  const clients = httpxClients(code);
+  const derived = [...code.matchAll(/^\s*([A-Za-z_]\w*)\s*=[^\n]*API_BASE_URL/gm)].map((x) => x[1]);
+  const aimed = (text) => /API_BASE_URL/.test(text) || derived.some((n) => new RegExp(`\\b${n}\\b`).test(text));
+  const calls = [];
+  for (const m of code.matchAll(/\b(httpx|[A-Za-z_]\w*)\.(get|post|put|patch|delete|head|options|request|stream|send)\s*\(/g)) {
+    if (m[1] !== 'httpx' && !clients[m[1]]) continue;
+    const open = m.index + m[0].length - 1;
+    const end = parenEnd(code, open);
+    calls.push({ at: m.index, start: open + 1, end, args: code.slice(open + 1, end), client: clients[m[1]] ?? null });
+  }
+  return calls.find((c) => aimed(c.args) || aimed(c.client?.args ?? '')) ?? calls[0] ?? null;
+}
+const within = (span, at) => span && at >= span.start && at < span.end;
 
 // A timeout limit: a number or a named constant (never None).
 const LIMIT = '(?!None\\b)(?:[0-9.]+|[A-Za-z_][\\w.]*)(?![\\w.]*\\s*=)';
 const SINGLE_NUMBER = 'a single number sets one limit for every phase: build an httpx.Timeout with a separate connect limit and pass that';
 rule('reviews-timeouts', null, (dir) => {
   const code = mainPy(dir);
-  // Only a timeout= keyword in a call (the request or its client) passes a timeout; never httpx.Timeout's own.
-  const passedArgs = keywordArgs(code, 'timeout').filter((a) => !/(^|\.)Timeout$/.test(a.callee));
+  const call = outgoingCall(code);
+  if (!call) return 'make the call to the shop api with httpx, as the starter does';
+  // Only a timeout= keyword of the outgoing call, or of the client that makes it, passes a timeout.
+  // A per-request timeout replaces the client's default, so the call's own one decides when present.
+  const own = keywordArgs(code, 'timeout').filter((a) => !/(^|\.)Timeout$/.test(a.callee));
+  const onCall = own.filter((a) => within(call, a.at));
+  const passedArgs = onCall.length ? onCall : own.filter((a) => within(call.client, a.at));
   const plainNumber = passedArgs.some((a) => /^[0-9.]+$/.test(a.value));
   if (passedArgs.some((a) => a.value === 'None')) return 'the call passes timeout=None: reread what the service-to-service page says that does, then pass explicit limits';
   const made = [...code.matchAll(/(?:\b([A-Za-z_]\w*)\s*=\s*)?httpx\.Timeout\s*\(([^)]*)\)/g)];
@@ -307,23 +353,9 @@ rule('reviews-timeouts', null, (dir) => {
   return plainNumber ? SINGLE_NUMBER : 'your httpx.Timeout is built but never used: pass it as the timeout argument of the outgoing call (or its client)';
 });
 
-// The outgoing call to the shop api: the call whose arguments use API_BASE_URL.
-function outgoingCall(code) {
-  const re = /\b([A-Za-z_][\w.]*)\s*\(/g;
-  let m;
-  while ((m = re.exec(code))) {
-    let depth = 1;
-    let j = re.lastIndex;
-    while (j < code.length && depth) { depth += code[j] === '(' ? 1 : code[j] === ')' ? -1 : 0; j += 1; }
-    const args = code.slice(re.lastIndex, j - 1);
-    if (/API_BASE_URL/.test(args) && !/(environ\.get|getenv)$/.test(m[1])) return { at: m.index, args };
-  }
-  return null;
-}
 const AUTH_PAIR = /["']authorization["']\s*:\s*authorization\b/i;
 function forwardsToken(code, call) {
-  const clients = [...code.matchAll(/httpx\.(?:Async)?Client\s*\(([^)]*)\)/g)].map((x) => x[1]);
-  for (const args of [call.args, ...clients]) {
+  for (const args of [call.args, call.client?.args ?? '']) {
     const literal = args.match(/\bheaders\s*=\s*(\{[^}]*\})/);
     if (literal && AUTH_PAIR.test(literal[1])) return true;
     const name = args.match(/\bheaders\s*=\s*([A-Za-z_]\w*)\s*(?:[,)]|$)/)?.[1];
@@ -332,7 +364,15 @@ function forwardsToken(code, call) {
   }
   return false;
 }
-const RAISE_401 = /\braise\s+HTTPException\s*\(\s*(?:status_code\s*=\s*)?(?:status\.HTTP_)?401/;
+// raise HTTPException(...) with 401 anywhere in its arguments (positional, status_code= in any order, or the status constant).
+const RAISE_401 = /\braise\s+HTTPException\s*\([^)]*(?:\b401\b|HTTP_401_UNAUTHORIZED)/;
+const indentOf = (line) => line.match(/^(\s*)/)[1].length;
+// Line index just past the indented block that starts on lines[i].
+function blockEnd(lines, i) {
+  let j = i + 1;
+  while (j < lines.length && (lines[j].trim() === '' || indentOf(lines[j]) > indentOf(lines[i]))) j += 1;
+  return j;
+}
 
 rule('reviews-auth-forward', null, (dir) => {
   const code = mainPy(dir);
@@ -340,16 +380,24 @@ rule('reviews-auth-forward', null, (dir) => {
     return 'a bearer token is written into the source: forward the token the caller sent instead';
   }
   const call = outgoingCall(code);
-  if (!call || !forwardsToken(code, call)) return 'send the incoming authorization value on as the outgoing Authorization header of the call to the shop api';
+  if (!call) return 'no httpx request to the shop api was found: make the call with httpx (directly or through an httpx client), as the starter does';
+  if (!forwardsToken(code, call)) return 'send the incoming authorization value on as the outgoing Authorization header of the call to the shop api';
   const optional = /\bauthorization\s*:[^=\n]*=\s*(Header\s*\(\s*(default\s*=\s*)?None|None\b)/.test(code);
   if (!optional) return null;
   const lines = code.split(/\r?\n/);
   const callLine = code.slice(0, call.at).split(/\r?\n/).length - 1;
-  const guards = lines.map((l, i) => i).filter((i) => i < callLine && /^\s*if\s/.test(lines[i])
-    && /\bnot\s+authorization\b|\bauthorization\s+(?:is|==)\s+None\b/.test(lines[i]));
-  if (!guards.length) return 'a request with no token would reach the shop api without one: answer 401 before the call when authorization is missing';
-  return guards.some((i) => RAISE_401.test(blockBody(lines, i)))
-    ? null : 'your missing-token check does not raise HTTPException with 401, so the request still goes on to the call: raise it inside that check';
+  const before = lines.map((l, i) => i).filter((i) => i < callLine && /^\s*if\s/.test(lines[i]));
+  // A missing-token check before the call: `if not authorization:` / `if authorization is None:` raising 401.
+  const negative = before.filter((i) => /\bnot\s+authorization\b|\bauthorization\s+(?:is|==)\s+None\b/.test(lines[i]));
+  if (negative.some((i) => RAISE_401.test(blockBody(lines, i)))) return null;
+  // Or `if authorization:` (wrapping the call or ahead of it) with an else that raises 401.
+  const positive = before.filter((i) => /^\s*if\s+authorization(\s+is\s+not\s+None)?\s*:/.test(lines[i]));
+  for (const i of positive) {
+    const e = blockEnd(lines, i);
+    if (e < lines.length && indentOf(lines[e]) === indentOf(lines[i]) && /^\s*else\s*:/.test(lines[e]) && RAISE_401.test(blockBody(lines, e))) return null;
+  }
+  if (negative.length || positive.length) return 'your missing-token check does not raise HTTPException with 401, so a request without a token is not refused: raise it there';
+  return 'a request with no token is not refused before the call: answer 401 when authorization is missing';
 });
 
 // except clauses with the exception names they catch and the status their body raises.
@@ -534,7 +582,10 @@ rule('ci-secret-refs', CI, (dir) => {
     const vars = secretVars(dir, job, step);
     if (inlineSecret(run, vars)) return 'the login command writes a ${{ ... }} expression into the command text, which puts the secret itself into the script: map each secret into the step\'s env and use the shell variable, as the secrets page shows';
     const line = commands(run).find((c) => /\bdocker\s+login\b/.test(c)) ?? '';
-    const [feed, login] = line.split('|').map((x) => x.trim());
+    // A pipeline of any length whose last stage is docker login: everything before it is the feed.
+    const stages = line.split('|').map((x) => x.trim());
+    const login = stages.length > 1 ? stages.at(-1) : undefined;
+    const feed = stages.slice(0, -1).join(' | ');
     if (!login && /--password-stdin\b/.test(line)) return 'pipe the password into docker login with echo or printf and |, the form this lab checks (a here-string or file redirect is not accepted here)';
     if (!login || !/--password-stdin\b/.test(login)) return 'feed the password to docker login through --password-stdin';
     const pwVar = refersTo(feed, vars);
@@ -560,15 +611,37 @@ rule('ci-pinned-actions', CI, (dir) => {
 
 // Commands that write or encode what they are given (arguments, a here-string or a redirect).
 const PRINTERS = /^(echo|printf|cat|print|tee|base64|xxd|od|hexdump|openssl)\b/;
+const PRINTS_SECRET = 'a run step writes a secret (directly, through an env variable or encoded) to the run log: reread the secrets page on why a workflow never prints one, and delete that output';
+// Here-documents in a run script: the command line that opens each one, and its body.
+// A quoted delimiter stops the shell expanding $NAME, but ${{ }} is filled in by Actions first.
+function heredocs(run) {
+  const out = [];
+  for (const m of String(run ?? '').matchAll(/^([^\n]*?)<<-?[ \t]*(['"]?)([A-Za-z_]\w*)\2[^\n]*\n([\s\S]*?)^[ \t]*\3[ \t]*$/gm)) {
+    out.push({ command: m[1].trim(), quoted: m[2] !== '', body: m[4] });
+  }
+  return out;
+}
 rule('ci-no-secret-prints', CI, (dir) => {
   for (const { job, step } of allSteps(dir)) {
     const vars = secretVars(dir, job, step);
     for (const command of commands(step?.run)) {
       if (/::add-mask::/.test(command)) continue;
       const parts = command.split('|').map((x) => x.trim());
-      const intoLogin = parts.length === 2 && /\bdocker\s+login\b/.test(parts[1]) && /--password-stdin\b/.test(parts[1]);
-      const leaks = parts.some((part, k) => PRINTERS.test(part) && (inlineSecret(part, vars) || refersTo(part, vars)) && !(k === 0 && intoLogin));
-      if (leaks) return 'a run step writes a secret (directly, through an env variable or encoded) to the run log: reread the secrets page on why a workflow never prints one, and delete that output';
+      // A pipeline that ends in docker login --password-stdin hands the value to docker, not to the log.
+      const last = parts.at(-1);
+      const intoLogin = parts.length > 1 && /\bdocker\s+login\b/.test(last) && /--password-stdin\b/.test(last);
+      if (intoLogin) {
+        // tee copies what it passes on to stdout, stderr or the terminal, which all reach the log.
+        if (parts.slice(1, -1).some((p) => /^tee\b/.test(p) && (/\/dev\/(stdout|stderr|tty|fd\/[12])\b/.test(p) || /^tee(\s+-\S+)*\s*$/.test(p)))) return PRINTS_SECRET;
+        continue;
+      }
+      if (parts.some((part) => PRINTERS.test(part) && (inlineSecret(part, vars) || refersTo(part, vars)))) return PRINTS_SECRET;
+    }
+    for (const doc of heredocs(step?.run)) {
+      const into = doc.command.split('|').map((x) => x.trim());
+      if (!PRINTERS.test(into[0])) continue;
+      if (/\bdocker\s+login\b/.test(into.at(-1)) && /--password-stdin\b/.test(into.at(-1))) continue;
+      if (inlineSecret(doc.body, vars) || (!doc.quoted && refersTo(doc.body, vars))) return PRINTS_SECRET;
     }
   }
   return null;
@@ -583,10 +656,18 @@ function leastAccess(p) {
 }
 rule('ci-permissions', CI, (dir) => {
   const top = workflow(dir).permissions;
-  if (top !== undefined && top !== null) return leastAccess(top);
-  // Without a top-level block, every job must carry its own.
   const all = Object.values(jobs(dir));
-  if (!all.length || all.some((j) => j?.permissions === undefined || j?.permissions === null)) {
+  const has = (p) => p !== undefined && p !== null;
+  if (has(top)) {
+    // A job-level block replaces the top-level one for that job, so each must also be least access.
+    for (const p of [top, ...all.map((j) => j?.permissions).filter(has)]) {
+      const problem = leastAccess(p);
+      if (problem) return problem;
+    }
+    return null;
+  }
+  // Without a top-level block, every job must carry its own.
+  if (!all.length || all.some((j) => !has(j?.permissions))) {
     return 'add a top-level permissions block, as the secrets page shows, so GITHUB_TOKEN gets the least access this workflow needs';
   }
   for (const j of all) {
