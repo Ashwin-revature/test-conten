@@ -4,7 +4,8 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
-import { validateGift } from "../tools/gift/validate.mjs";
+import { entityCodeNewlines, literalCodeNewlines, NUMERIC_NEWLINE } from "../tools/gift/code-newlines.mjs";
+import { parseGift, validateGift } from "../tools/gift/validate.mjs";
 
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -54,12 +55,16 @@ for (const [file, { category, html }] of Object.entries(BANKS)) {
     for (const line of comments)
       assert.doesNotMatch(line, /PROTECTED|never commit|not for learners|private route/i, "obsolete private-bank header");
     // GIFT import drops every line that starts with //, so only the leading header may use one;
-    // a code comment inside a question must start with &\#47;/ to survive import.
+    // a code line inside a question that starts with // must be written &nbsp;// or &\#47;/ to survive import.
     const header = lines.findIndex((line) => !line.startsWith("//"));
     const dropped = lines
       .map((line, index) => (index >= header && line.trimStart().startsWith("//") ? index + 1 : 0))
       .filter(Boolean);
     assert.deepEqual(dropped, [], "question lines that GIFT import would drop as comments");
+    if (html) {
+      // Code blocks use actual line breaks; numeric &\#10; references are the retired form.
+      assert.equal(bytes.toString("ascii").match(NUMERIC_NEWLINE)?.length ?? 0, 0, "numeric newline references in code");
+    }
     const positions = {};
     let previous;
     let run = 0;
@@ -110,4 +115,48 @@ for (const [label, bytes, message] of htmlFailures) {
 test("the default topic-quiz mode still rejects any < or >", () => {
   const bytes = htmlQuestion("[html]<p>x</p>");
   assert.throws(() => validateGift(bytes, htmlCategory), /must not contain < or >/);
+});
+
+// Code-block line breaks: the literal-LF form must parse to the same questions as the
+// numeric-reference form, apart from the line breaks inside <pre> stems.
+const codeBank = (body) => Buffer.from(`// header\n$CATEGORY: ${htmlCategory}\n\n${body}\n`, "ascii");
+const entityBody = [
+  "::c1::[html]<p>What prints?</p><pre><code>class A \\{&\\#10;    int x \\= 1;&\\#10;&\\#10;    // note: x \\~ y&\\#10;    void m() \\{ if (x &gt; 0 &amp;&amp; y &lt; 2) \\{\\} \\}&\\#10;\\}</code></pre>{",
+  "=<code>1</code>#Correct. \\{ok\\}",
+  "~<code>2</code>#Not quite. no \\#",
+  "~<code>3</code>#Not quite. no",
+  "}",
+  "",
+  "::c2::[html]<p>Which query?</p><pre><code>// first line comment&\\#10;SELECT a&\\#10;  FROM t&\\#10;&\\#10;  WHERE b \\= 2;</code></pre>{",
+  "~<code>a</code>#Not quite. no",
+  "=<code>b</code>#Correct. yes",
+  "}",
+].join("\n");
+
+const shape = (questions) =>
+  questions.map(({ category, title, stem, options }) => ({ category, title, stem: entityCodeNewlines(stem, "&#10;"), options }));
+
+test("literal code-block line breaks keep every parsed field and invert exactly", () => {
+  const literalBody = literalCodeNewlines(entityBody);
+  assert.equal(entityCodeNewlines(literalBody), entityBody, "inverse reproduces the entity form byte for byte");
+  assert.equal(literalBody.match(NUMERIC_NEWLINE), null);
+  assert.equal(literalBody.includes("\n\n    "), false, "no blank physical line inside a question");
+  assert.match(literalBody, /\n&nbsp;\n/, "visually blank code line becomes &nbsp;");
+  assert.match(literalBody, /\n    &nbsp;\/\/ note/, "comment keeps its indentation behind &nbsp;");
+  assert.match(literalBody, /<code>\/\/ first line comment/, "first code line shares the <pre> line and is unchanged");
+  assert.match(literalBody, /\\\{\n    int x \\= 1;/, "escaped braces and operators survive");
+  const before = validateGift(codeBank(entityBody), htmlCategory, { html: true });
+  const after = validateGift(codeBank(literalBody), htmlCategory, { html: true });
+  assert.equal(after.length, 2);
+  assert.deepEqual(shape(after), shape(before));
+  assert.deepEqual(after.map((q) => q.options), before.map((q) => q.options));
+  assert.ok(after.every((q) => q.stem.includes("\n")), "stems carry multiline code");
+});
+
+test("unguarded blank or // code lines would break GIFT import", () => {
+  const raw = entityBody.replaceAll("&\\#10;", "\n");
+  assert.throws(() => parseGift(codeBank(raw), { html: true }), /answer block|title/);
+  const commentOnly = entityBody.replaceAll("&\\#10;&\\#10;", "&\\#10;&nbsp;&\\#10;").replaceAll("&\\#10;", "\n");
+  const dropped = parseGift(codeBank(commentOnly), { html: true });
+  assert.equal(dropped[0].stem.includes("// note"), false, "a bare // code line is dropped as a GIFT comment");
 });
