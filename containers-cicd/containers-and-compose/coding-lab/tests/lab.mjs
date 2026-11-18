@@ -2,7 +2,7 @@
 // YAML; nothing here builds an image, starts a container or calls a daemon.
 // Each rule returns null when the project satisfies it, or one stable message naming the file
 // and the rule that is not met yet. The README phase 3 and phase 5 outcomes say how to meet it.
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 import { parse } from 'yaml';
@@ -130,16 +130,27 @@ rule('frontend-stages', (dir) => {
 });
 
 const MANIFESTS = new Set(['package.json', 'package-lock.json']);
+// The top-level files of a build folder that one COPY source word names: a plain name, or a glob such as package*.json.
+function matches(dir, folder, word) {
+  const name = posix.basename(word);
+  if (!/[*?[]/.test(name)) return [name];
+  const pattern = name.replace(/[.+^$(){}|\\]/g, '\\$&').replace(/\*/g, '.*').replace(/\?/g, '.');
+  const re = new RegExp('^' + pattern + '$');
+  let names = [];
+  try { names = readdirSync(path.join(dir, folder)); } catch { names = []; }
+  return names.filter((n) => re.test(n));
+}
 rule('frontend-deps', (dir) => {
   const steps = dockerfile(dir, 'frontend/Dockerfile')[0]?.steps ?? [];
   const msg = 'frontend/Dockerfile: install the dependencies with npm ci after copying only the two package files, then copy the rest of the source and build';
   const ci = steps.findIndex((x) => runHas(x, /\bnpm ci\b/));
   if (ci < 0) return msg;
-  const before = steps.slice(0, ci).filter((x) => isCopy(x) && !fromOf(x)).flatMap(copySources);
-  if (before.some((w) => !MANIFESTS.has(posix.basename(w)))) {
+  const before = steps.slice(0, ci).filter((x) => isCopy(x) && !fromOf(x)).flatMap(copySources)
+    .flatMap((w) => { const m = matches(dir, 'frontend', w); return m.length ? m : [posix.basename(w)]; });
+  if (before.some((w) => !MANIFESTS.has(w))) {
     return 'frontend/Dockerfile: only package.json and package-lock.json may be copied before npm ci; source copied earlier makes every source change install everything again';
   }
-  if (![...MANIFESTS].every((f) => before.some((w) => posix.basename(w) === f))) return msg;
+  if (![...MANIFESTS].every((f) => before.includes(f))) return msg;
   const rest = steps.findIndex((x, i) => i > ci && isCopy(x) && !fromOf(x) && copySources(x).some((w) => !MANIFESTS.has(posix.basename(w))));
   const build = steps.findIndex((x, i) => i > rest && runHas(x, /\bnpm run build\b/));
   return rest > ci && build > rest ? null : msg;
@@ -247,6 +258,7 @@ rule('compose-ports', (dir) => {
   const sv = services(dir);
   const local = (p) => (typeof p === 'object' ? ['127.0.0.1', '::1'].includes(String(p.host_ip)) : /^(127\.0\.0\.1|\[::1\]):\d+:\d+/.test(String(p)));
   if (!(sv.api?.ports || []).length) return 'compose.yaml: the api must publish a port, so a browser on this machine can reach it';
+  if (Object.values(sv).some((s) => String(s?.network_mode || '') === 'host')) return 'compose.yaml: every published port must be reachable from this machine only, not from the network';
   return Object.values(sv).flatMap((s) => s?.ports || []).every(local)
     ? null : 'compose.yaml: every published port must be reachable from this machine only, not from the network';
 });
@@ -442,9 +454,9 @@ rule('runbook-exec', (dir) => {
   const cmd = composeCommand(entry(dir, 'print-one-api-setting'));
   const settings = Object.keys(env(services(dir).api));
   const [service, program, ...args] = cmd?.rest ?? [];
-  // printenv NAME, or a shell that echoes exactly one variable: sh -c 'echo $NAME'.
-  const echoed = ['sh', 'bash'].includes(program) && args[0] === '-c' && args.length === 2
-    ? (args[1].trim().match(/^echo\s+"?\$\{?([A-Za-z_][A-Za-z0-9_]*)\}?"?$/) || [])[1] : undefined;
+  // printenv NAME, or a shell that prints exactly one variable: sh -c 'echo $NAME' or sh -c 'printenv NAME'.
+  const script = ['sh', 'bash'].includes(program) && args[0] === '-c' && args.length === 2 ? args[1].trim() : '';
+  const echoed = (script.match(/^echo\s+"?\$\{?([A-Za-z_][A-Za-z0-9_]*)\}?"?$/) || script.match(/^printenv\s+([A-Za-z_][A-Za-z0-9_]*)$/) || [])[1];
   const name = program === 'printenv' && args.length === 1 ? args[0] : echoed;
   if (!cmd || cmd.sub !== 'exec' || service !== 'api') return 'print-one-api-setting: run the command inside the running api container, not in a new one';
   if (cmd.options.some(([n]) => ['-e', '--env'].includes(n))) return 'print-one-api-setting: read the setting the container already has; do not pass a new value in the same command';
