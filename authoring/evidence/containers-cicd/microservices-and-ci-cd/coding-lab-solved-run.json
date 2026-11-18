@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "lab": "containers-cicd/microservices-and-ci-cd/coding-lab",
+  "record": "solved at 1bd318beb4226a58ffff12f1efc27011d028a671 by run local-1794985051",
+  "commit": "1bd318beb4226a58ffff12f1efc27011d028a671",
+  "runId": "local-1794985051",
+  "ranAt": "2026-11-18T06:57:31Z",
+  "contract": "authoring/docs/lab-contract.md section 10 and authoring/schemas/solved-run.schema.json: every tracked public lab file at the recorded commit is bound by file and reviewedSha256; the lab directory was exported with git archive of that commit into private staging outside the repository and run there.",
+  "toolchain": {
+    "node": "v24.2.0",
+    "npm": "11.3.0",
+    "os": "darwin arm64 (macOS)",
+    "engine": "none: no container engine, Python runtime or CI runner was used; the lab's tests read files only"
+  },
+  "procedure": [
+    "git archive 1bd318beb4226a58ffff12f1efc27011d028a671 containers-cicd/microservices-and-ci-cd/coding-lab into a fresh private staging directory outside the repository",
+    "npm ci in tests (the one network step), then npm audit",
+    "node --test --test-reporter=tap against the shipped starter, comparing the result lines with expected/starter-summary.txt",
+    "for each of two independently written private solutions: a fresh copy of the same export with only the learner-edited starter files and starter/.env replaced, then node --test --test-reporter=tap, comparing the result and summary lines with expected/solved-summary.txt"
+  ],
+  "runs": [
+    {
+      "what": "shipped starter",
+      "summary": "# tests 27 # pass 0 # fail 27",
+      "expectation": "fails exactly the 27 declared failingTests; result lines identical to expected/starter-summary.txt"
+    },
+    {
+      "what": "private solution 1: fastapi run start command, mapping-style environment, Timeout(3.0, connect=2.0), ConnectError mapped to 503, login through env and --password-stdin, push expression on the action input (uncommitted staging)",
+      "summary": "# tests 27 # pass 27 # fail 0"
+    },
+    {
+      "what": "private solution 2, written independently: uvicorn --host 0.0.0.0 shell-form start, list-style environment, other service, volume and database names, long-form port and volume syntax, all four Timeout limits, RequestError mapped to 502, push: true gated by a step-level if on github.ref (uncommitted staging)",
+      "summary": "# tests 27 # pass 27 # fail 0"
+    }
+  ],
+  "audit": {
+    "tests": "npm audit: found 0 vulnerabilities (tests/package-lock.json, yaml 2.9.1)"
+  },
+  "testScope": "This run proves the rule checks over learner-written files: compose.yaml, the reviews Dockerfile and .dockerignore, reviews/app/main.py read as text, the GitHub Actions workflow and the decisions worksheet. Nothing in the lab executes Python, builds an image or runs a workflow.",
+  "privateStaging": "both solutions live only in uncommitted private staging outside the repository; no solution, hidden test or hash of either is recorded here",
+  "otherSystems": "Linux and Windows runs are not yet recorded; hosted CI is currently disabled, so this macOS record is the only execution evidence (lab-contract section 10).",
+  "files": [
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/README.md",
+      "reviewedSha256": "9df67c0351afc02676fb64ea88d404a136d9009c5722ea3b1356e8dcdef57517"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/expected/solved-summary.txt",
+      "reviewedSha256": "28db168f1d14b0368e49a7fc65d0c2c2788732a4fc1b12ca0cbb2a606b2d7b37"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/expected/starter-summary.txt",
+      "reviewedSha256": "039fc674111feca307863bf3dd73b6162ca85b455f5e95822abe2e90727daf2f"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/fixtures/.env.example",
+      "reviewedSha256": "16d958ba8d51b7600909af11bbcc39441a8f4b4c80a18379e12e2a50287223e4"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/fixtures/briefs/architecture-brief.md",
+      "reviewedSha256": "ee182f1507303308163b72ff003ada5b818ca8ce7322a4d02fdd7bb7fa437bfa"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/fixtures/briefs/image-reference.txt",
+      "reviewedSha256": "8a3a8f613ad38f9e27e7a4e8d7419ccc3cfc78e1967a516040a2c58ac1527a0f"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/lab.json",
+      "reviewedSha256": "9c58c9241d704517b6f9baea638de0c5848f51a5180d4112ac83d3e063368d78"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/.github/workflows/ci.yml",
+      "reviewedSha256": "23e3f3b9efacc064c3ecc267ea1ad4a8b33e8434eaeaa918d027cc197a1a9987"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/.gitignore",
+      "reviewedSha256": "6c9e486632f5647c93d52d6c064f6e4ebea0c0ddd0747d9f91511f6a06cf817a"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/compose.yaml",
+      "reviewedSha256": "79caf1e98f7b157cf5ac62869d1d5241fd25a2466c2ba467b38d78e3cfe63823"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/decisions.yaml",
+      "reviewedSha256": "337d0e1f7712e1857918ba6e7bfd6c842bfa06e1513baa19ce983f980c6ef391"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/.dockerignore",
+      "reviewedSha256": "319f8e376e8fdddd571f42b249ee21d571c6673e526cb8b8577077a77f2fa976"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/Dockerfile",
+      "reviewedSha256": "7617adb046a7b6b9f8a5119747c6d1256391b0c123d1b16a429f8e7c202f8a34"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/app/main.py",
+      "reviewedSha256": "1786d5bf84bb996fd3d03437923e0e9fba81dc841c3df7b685b23df141958393"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/requirements.txt",
+      "reviewedSha256": "44216c29888f2536291b0822db49381252392f80298b391c94c130bf892ebbad"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/ci.test.mjs",
+      "reviewedSha256": "32822e43ab8a0caf2540bf2b9410d993dda00fcbafcbc2a252fc0a64f7723f12"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/compose.test.mjs",
+      "reviewedSha256": "b3365f5caedfe40b6bcf7816da47cb20fdbfb50cf33c3e5e3bad8a0033db19ba"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/decisions.test.mjs",
+      "reviewedSha256": "c20d558eab1b795210d08bc2f6ce2748520db552a0a1ab05fda396ebbab09eb3"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/dockerfile.test.mjs",
+      "reviewedSha256": "849779dc9e92f98e1a78c77f8bd215dc70ac31aff289f3eedcd86694be14a3d4"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "reviewedSha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/package-lock.json",
+      "reviewedSha256": "967ac4c675131cb4beb93684e07dbbb8f8a427a78dc66422036927ce5c126803"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/package.json",
+      "reviewedSha256": "3a5c13790064c853eef28d93aed9525d0b7280843d68c34a43c0f734a8e3a4fd"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/service.test.mjs",
+      "reviewedSha256": "92be8e5f4dcdfb0f79d041c8e552eadbf507a97ceb039eec6f087d8482dd6261"
+    }
+  ]
+}
