@@ -3,11 +3,9 @@
 Run it from the starter folder:  python -m signups.cli SESSION
 """
 
-import sys
-
 from signups.sample import CAPACITY, SIGNUPS
 
-# TODO Task 9: import the record functions you use from signups.records.
+# TODO Task 9: import the standard-library sys module, and the record functions you use from signups.records.
 
 
 def main(argv):

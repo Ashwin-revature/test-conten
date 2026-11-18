@@ -6,7 +6,7 @@ The sign-up desk keeps its workshop records in a small Python package, and a vol
 In ten linked tasks you port two Java methods, clean and count the records, fix two aliasing bugs, raise and log a clear error, finish the summary script and write your own pytest tests.
 Everything runs on your own computer: no cloud account, no Docker, no database.
 
-About 45 minutes of your scheduled exercise block (an estimate); if you pass 60 minutes, pause and finish in self-study.
+About 55 minutes in total, setup included (an estimate): about 25 minutes on the first day (setup and Tasks 1-6) and 30 on the second (Tasks 7-10). If you pass 60 minutes in total, pause and finish in self-study.
 
 ## What you edit
 
@@ -17,15 +17,14 @@ About 45 minutes of your scheduled exercise block (an estimate); if you pass 60 
 | `starter/test_signups.py` | 10: your own tests |
 
 Leave `tests/`, `expected/`, `starter/signups/sample.py`, `starter/signups/__init__.py` and `starter/requirements.txt` as they are.
-Each failing check names its task and the next action.
+The checks are named after their tasks, and most failure messages say what to do next; when one stops with a plain Python error such as `TypeError`, the check's name still tells you the task.
 
 ## Prerequisites
 
-Python 3.12 or later. Check it in a terminal (on Windows, type `py` wherever this README says `python`):
+Python 3.12 or later. Check it in a terminal:
 
-```
-python --version
-```
+- macOS and Linux: `python3 --version`
+- Windows: `py --version`
 
 ## Setup (once, needs the internet)
 
@@ -34,7 +33,7 @@ Open a terminal in the lab folder (the folder that holds this README). Create an
 macOS and Linux:
 
 ```
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 ```
 
@@ -45,7 +44,7 @@ py -m venv .venv
 .venv\Scripts\Activate.ps1
 ```
 
-Then, on every system:
+Once the environment is active, `python` means its Python on every system. Then:
 
 ```
 python -m pip install -r starter/requirements.txt
@@ -63,7 +62,7 @@ python -m pytest -q
 
 Before you start, 11 tests fail: the ten `test_taskNN_...` checks and the example test in `starter/test_signups.py`.
 Work in order; Task 9 uses the functions from Tasks 1-6, and Task 10 tests your Task 1 and Task 8 code.
-Tasks 1-6 use the first day's topics (syntax, functions, collections, comprehensions) and Tasks 7-10 the second day's (mutability, modules, exceptions and logging, scripts, pytest), so the end of Task 6 is a natural place to stop between the two days.
+Tasks 1-6 use the first day's topics (syntax, functions, collections, comprehensions) and Tasks 7-10 the second day's (mutability, modules, exceptions and logging, scripts, pytest), so the end of Task 6 is the place to stop between the two days.
 
 ### Task 1: port the Java desk methods (`records.py`)
 
@@ -91,7 +90,7 @@ static int tablesNeeded(int people, int tableSize) {
 }
 ```
 
-Python has no `++`: write `tables += 1`.
+Python has no `++`: write `tables += 1`. If a test run hangs, your `while` loop never ends: press Ctrl+C and check that the loop changes `seated`.
 
 ### Task 2: look up one sign-up (`records.py`)
 
@@ -108,55 +107,63 @@ Type hints document the types; Python does not check them when the function runs
 ### Task 4: one flexible report line (`records.py`)
 
 Change the signature to `report_line(title, *values, **fields)`, so it takes any number of values and any keyword fields.
-Return the title, `": "`, then the values joined with `", "`; when there are fields, add `" ("`, each field as `key=value` joined with `", "`, and `")"`.
-`report_line("data", "1 signed up", "3 seats left", status="open")` returns `"data: 1 signed up, 3 seats left (status=open)"`.
+Return the title, `": "`, then the values joined with `", "`; when there are fields, add `" ("`, each field as `key=value` in the order given, joined with `", "`, and `")"`.
+The values may be any type, such as numbers, and `", ".join(...)` accepts only strings, so turn each value into text with `str(value)` first.
+
+- `report_line("data", "1 signed up", "3 seats left", status="open")` returns `"data: 1 signed up, 3 seats left (status=open)"`.
+- `report_line("x", 1, 2, b=True, a=1)` returns `"x: 1, 2 (b=True, a=1)"`.
 
 ### Task 5: counts and lookups (`records.py`)
 
-- `count_by_session` raises `KeyError` the first time it meets a session. Fix the one line with `counts.get(signup["session"], 0) + 1`.
-- `open_sessions(capacity, counts)` loops `for session, seats in capacity.items():` and keeps each session whose `counts.get(session, 0)` is below its seats, in `capacity` order.
-- `cancel(emails, email)` removes the email from that same list with `.remove` and returns `True`; when the email is not in the list it returns `False`.
+- `count_by_session` raises `KeyError` the first time it meets a session. Fix its one counting line with `dict.get` and a default of 0.
+- `open_sessions(capacity, counts)` returns the sessions, in `capacity` order, that still have a free seat. Loop over `capacity.items()` and unpack each pair into two names in the `for` line. A session missing from `counts` has no sign-ups yet.
+- `cancel(emails, email)` removes the email from that same list and returns `True`; when the email is not in the list it returns `False` and changes nothing.
 
-### Task 6: comprehensions and a slice (`records.py`)
+### Task 6: comprehensions (`records.py`)
 
-- Rewrite the `emails_for` loop as one list comprehension: `[... for signup in signups if ...]`.
-- `unique_emails` returns a set comprehension of the emails.
-- `seats_left_by_session` returns a dict comprehension `{session: seats - counts.get(session, 0) for session, seats in capacity.items()}`.
-- `latest(items, n)` returns the last `n` items with a negative slice. Careful: `items[-0:]` is the whole list, so return `[]` when `n` is 0.
+- Rewrite the `emails_for` loop as one list comprehension, with its `if` filter inside the brackets.
+- `unique_emails` returns the distinct emails with one set comprehension.
+- `seats_left_by_session(capacity, counts)` returns `{session: free seats}` for every session in `capacity` with one dict comprehension; a session missing from `counts` has every seat free.
+
+This is the end of the first day.
 
 ### Task 7: two aliasing bugs (`records.py`)
 
-- `add_to_waitlist("a@example.com")` called twice without a waitlist returns `["a@example.com", "b@example.com"]` the second time, because the default list is created once and shared. Use `waitlist=None` and create a new list inside the function when it is `None`.
-- `mark_checked_in` changes the caller's dict. Copy it first (`signup.copy()` or `dict(signup)`), then set `"checked_in"` on the copy.
+- Calling `add_to_waitlist("a@example.com")` and then `add_to_waitlist("b@example.com")`, both without a waitlist, returns `["a@example.com", "b@example.com"]` the second time instead of `["b@example.com"]`: the default list is created once, when Python defines the function, and every call shares it. Use `waitlist=None` and create a new list inside the function when it is `None`. A waitlist that is passed in, even an empty one, is appended to and returned.
+- `mark_checked_in` changes the caller's dict. Copy it first, then set `"checked_in"` on the copy.
 
-### Task 8: a clear error for the seats column (`records.py`)
+### Task 8: a clear error for a bad seats value (`records.py`)
 
-1. Under `import logging`, create the module logger: `logger = logging.getLogger(__name__)`.
-2. Define `class SignupError(Exception):` with a one-line docstring as its body.
+A sign-up form sends the number of seats as text, such as `" 2 "` or `"two"`. Make `parse_seats(text)` report bad text clearly:
+
+1. Import the standard-library `logging` module at the top of `records.py`, and create the module logger under it with `logging.getLogger(__name__)` in a variable named `logger`.
+2. Define an exception class `SignupError` that subclasses `Exception`.
 3. Rewrite `parse_seats(text)` with `try` / `except ValueError` / `else` / `finally`:
-   - `try`: `seats = int(text)` (`int` accepts surrounding spaces).
-   - `except ValueError`: log it with `logger.exception("could not parse seats %r", text)`, then `raise SignupError(f"seats must be a whole number, got {text!r}")`.
-   - `else`: raise `SignupError(f"seats must be at least 1, got {seats}")` when `seats < 1`, otherwise return `seats`.
-   - `finally`: `logger.debug("checked seats value %r", text)`.
+   - `try` converts the text with `int(...)` (it accepts surrounding spaces);
+   - `except ValueError` logs the problem with `logger.exception(...)`, then raises `SignupError("seats must be a whole number, got ...")` with the text in the message;
+   - `else` raises `SignupError("seats must be at least 1, got ...")` with the number when it is below 1, and otherwise returns it;
+   - `finally` logs one `logger.debug(...)` line for every value checked.
 
 Never use a bare `except:`; it would also catch mistakes you want to see. Python has no checked exceptions: nothing forces a caller to catch `SignupError`, so the message must say what went wrong.
 
 ### Task 9: the summary script (`cli.py`)
 
-1. Import what you use: `from signups.records import count_by_session, normalize_signup, report_line, seats_left_by_session, session_status`.
+1. Import what the script needs: the standard-library `sys` module, and the record functions you use from your own `signups.records` module with `from ... import`.
 2. In `main(argv)`:
-   - when `len(argv) < 2`, print `usage: python -m signups.cli SESSION` to `sys.stderr` and return `2`;
+   - when the session argument is missing (`argv` has fewer than 2 items), print `usage: python -m signups.cli SESSION` to `sys.stderr` and return `2`;
    - when `argv[1]` is not a key of `CAPACITY`, print `unknown session: <name>` to `sys.stderr` and return `1`;
-   - otherwise normalize every row of `SIGNUPS`, count them by session, build `parts = [f"{taken} signed up", f"{left} seats left"]` and `fields = {"status": ...}`, print `report_line(session, *parts, **fields)` and return `0`.
+   - otherwise normalize every row of `SIGNUPS`, count them by session, and work out the session's seats left and its status. Call `session_status` with keyword arguments in the opposite order to its parameters (`taken=` first, then `capacity=`).
+   - Build a list `parts` of the two texts `"<n> signed up"` and `"<n> seats left"` and a dict `fields` with the key `"status"`, print `report_line(session, *parts, **fields)` and return `0`.
 3. Replace the bare `main(sys.argv)` at the bottom with the guard `if __name__ == "__main__":` and `sys.exit(main(sys.argv))`, so importing the module runs nothing.
 
-Try it from the `starter` folder, then read the exit status (`echo $?` on macOS and Linux, `echo $LASTEXITCODE` in PowerShell):
+Try it: move into the `starter` folder (`cd starter`), run the script, read its exit status (`echo $?` on macOS and Linux, `echo $LASTEXITCODE` in PowerShell), then go back to the lab folder (`cd ..`) before you run the tests again:
 
 ```
 python -m signups.cli general
 ```
 
 It prints `general: 3 signed up, 2 seats left (status=almost full)` and exits with status 0. Run it with no session and check that the status is 2.
+`cli.py` is part of the `signups` package, so run it as a module with `-m` from the folder that contains `signups`: Python then finds `signups.records` on its search path. `python signups/cli.py general` would search only the `signups` folder itself and fail with `ModuleNotFoundError: No module named 'signups'`.
 
 ### Task 10: your own tests (`test_signups.py`)
 
@@ -167,7 +174,7 @@ Add to `starter/test_signups.py`, using plain `assert` statements:
 3. a test that checks `parse_seats("two")` raises `SignupError`, using `with pytest.raises(SignupError):` (import `SignupError` from `signups.records`).
 
 Run only your file while you work: `python -m pytest -q starter/test_signups.py`. When a test fails, pytest prints the failing `assert` line with the values it compared.
-The Task 10 check runs your tests against your code, where they must pass, and then against three deliberately broken versions of `session_status` and `parse_seats`, where they must fail.
+The Task 10 check runs your tests against your code, where they must pass, and then against four deliberately broken versions of `session_status` and `parse_seats`, where they must fail.
 
 ## Test
 
@@ -177,7 +184,7 @@ The one test command, run from the lab folder with the virtual environment activ
 python -m pytest -q
 ```
 
-When you finish, every test passes: the ten lab checks plus your own tests.
+When you finish, every test passes: your own tests plus the ten lab checks.
 
 ## Expected output
 
@@ -189,15 +196,19 @@ Only the setup step uses the network. The tests, the summary script and your own
 
 ## Cleanup
 
-The lab creates `.venv` and `.pytest_cache` in the lab folder and `__pycache__` folders under `starter/` and `tests/`. Deactivate the environment with `deactivate`, then delete them from the lab folder:
+The lab creates `.venv` and `.pytest_cache` in the lab folder and `__pycache__` folders under `starter/` and `tests/` (and `starter/.pytest_cache` if you ran pytest inside `starter`). Deactivate the environment with `deactivate`, then delete them from the lab folder:
 
-- macOS and Linux: `rm -rf .venv .pytest_cache starter/__pycache__ starter/signups/__pycache__ tests/__pycache__`
-- Windows PowerShell: `Remove-Item -Recurse -Force .venv, .pytest_cache, starter\__pycache__, starter\signups\__pycache__, tests\__pycache__ -ErrorAction SilentlyContinue`
+- macOS and Linux: `rm -rf .venv .pytest_cache starter/.pytest_cache starter/__pycache__ starter/signups/__pycache__ tests/__pycache__`
+- Windows PowerShell: `Remove-Item -Recurse -Force .venv, .pytest_cache, starter\.pytest_cache, starter\__pycache__, starter\signups\__pycache__, tests\__pycache__ -ErrorAction SilentlyContinue`
 
 ## Troubleshooting
 
+- **`command not found: python` or `python3`**: on macOS and Linux create the environment with `python3`; after `source .venv/bin/activate`, `python` works. On Windows use `py`.
 - **`No module named pytest`**: the virtual environment is not active in this terminal. Activate it and run the test command again.
-- **`ModuleNotFoundError: No module named 'signups'` when running the script**: run `python -m signups.cli ...` from the `starter` folder, not from the lab folder.
+- **Only your own tests ran, or `no tests ran`**: you are in the `starter` folder. Go back to the lab folder with `cd ..` and run the test command there.
+- **`ModuleNotFoundError: No module named 'signups'` when running the script**: run `python -m signups.cli ...` from the `starter` folder (Task 9).
+- **The whole run fails at collection with `No module named 'signups'`**: a `pytest.ini`, `pyproject.toml` or `PYTEST_ADDOPTS` setting outside this lab changed how pytest imports. Copy the lab to a folder of its own and clear `PYTEST_ADDOPTS`.
+- **The test run hangs**: press Ctrl+C; a `while` loop that never ends is the usual cause (Task 1).
 - **PowerShell refuses to run `Activate.ps1`**: run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once, then activate again.
 - **A `SyntaxError` or `IndentationError` stops every test**: fix the file and line that pytest names first; one broken file stops the whole run.
-- **You pass 60 minutes**: pause, note the task you are on, and finish in self-study; every check still names the task it belongs to.
+- **You pass 60 minutes**: pause, note the task you are on, and finish in self-study; every check is still named after its task.

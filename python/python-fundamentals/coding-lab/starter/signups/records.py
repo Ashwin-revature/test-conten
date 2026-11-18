@@ -4,9 +4,7 @@ Each TODO names its task in README.md. A sign-up is a dict such as
 {"email": "ana.ruiz@example.com", "name": "Ana Ruiz", "session": "general"}.
 """
 
-import logging
-
-# TODO Task 8: create this module's logger here (one line, using __name__).
+# TODO Task 8: import the standard-library logging module and create this module's logger here.
 
 
 # --- Task 1: port the Java desk methods -------------------------------------
@@ -93,7 +91,7 @@ def cancel(emails, email):
     raise NotImplementedError("Task 5: write cancel")
 
 
-# --- Task 6: comprehensions and a slice --------------------------------------
+# --- Task 6: comprehensions --------------------------------------------------
 
 
 def emails_for(signups, session):
@@ -118,12 +116,6 @@ def seats_left_by_session(capacity, counts):
     raise NotImplementedError("Task 6: write seats_left_by_session")
 
 
-def latest(items, n):
-    """Return the last `n` items as a new list; n == 0 gives []."""
-    # TODO Task 6: a slice with a negative start (watch the n == 0 case).
-    raise NotImplementedError("Task 6: write latest")
-
-
 # --- Task 7: aliasing bugs reported by the desk ------------------------------
 
 
@@ -139,13 +131,13 @@ def mark_checked_in(signup):
     return signup
 
 
-# --- Task 8: the seats column ------------------------------------------------
+# --- Task 8: a clear error for a bad seats value -----------------------------
 
 # TODO Task 8: define SignupError here.
 
 
 def parse_seats(text):
-    """Return the whole number of seats in `text` (at least 1)."""
+    """Return the whole number of seats in `text`, the seats value a sign-up form sends (at least 1)."""
     try:
         return int(text)
     except:
