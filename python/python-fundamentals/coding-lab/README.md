@@ -156,14 +156,14 @@ Never use a bare `except:`; it would also catch mistakes you want to see. Python
    - Build a list `parts` of the two texts `"<n> signed up"` and `"<n> seats left"` and a dict `fields` with the key `"status"`, print `report_line(session, *parts, **fields)` and return `0`.
 3. Replace the bare `main(sys.argv)` at the bottom with the guard `if __name__ == "__main__":` and `sys.exit(main(sys.argv))`, so importing the module runs nothing.
 
-Try it: move into the `starter` folder (`cd starter`), run the script, read its exit status (`echo $?` on macOS and Linux, `echo $LASTEXITCODE` in PowerShell), then go back to the lab folder (`cd ..`) before you run the tests again:
+Try it: move into the `starter` folder (`cd starter`), run the script, and read its exit status (`echo $?` on macOS and Linux, `echo $LASTEXITCODE` in PowerShell):
 
 ```
 python -m signups.cli general
 ```
 
-It prints `general: 3 signed up, 2 seats left (status=almost full)` and exits with status 0. Run it with no session and check that the status is 2.
-`cli.py` is part of the `signups` package, so run it as a module with `-m` from the folder that contains `signups`: Python then finds `signups.records` on its search path. `python signups/cli.py general` would search only the `signups` folder itself and fail with `ModuleNotFoundError: No module named 'signups'`.
+It prints `general: 3 signed up, 2 seats left (status=almost full)` and exits with status 0. Run it with no session and check that the status is 2. Then go back to the lab folder (`cd ..`) before you run the tests again.
+A package is a folder of modules with an `__init__.py` file, so `signups.records` means `records.py` inside the `signups` folder. `cli.py` is part of the `signups` package, so run it as a module with `-m` from the folder that contains `signups`: Python then puts that folder first on its search path and finds `signups.records`. `python signups/cli.py general` would put the `signups` folder itself first on the search path instead of `starter`, so the `signups` package cannot be found and the run fails with `ModuleNotFoundError: No module named 'signups'`.
 
 ### Task 10: your own tests (`test_signups.py`)
 
@@ -210,5 +210,5 @@ The lab creates `.venv` and `.pytest_cache` in the lab folder and `__pycache__` 
 - **The whole run fails at collection with `No module named 'signups'`**: a `pytest.ini`, `pyproject.toml` or `PYTEST_ADDOPTS` setting outside this lab changed how pytest imports. Copy the lab to a folder of its own and clear `PYTEST_ADDOPTS`.
 - **The test run hangs**: press Ctrl+C; a `while` loop that never ends is the usual cause (Task 1).
 - **PowerShell refuses to run `Activate.ps1`**: run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once, then activate again.
-- **A `SyntaxError` or `IndentationError` stops every test**: fix the file and line that pytest names first; one broken file stops the whole run.
+- **A `SyntaxError`, `IndentationError` or `NameError` stops every test**: fix the file and line that pytest names first (a `NameError` such as `name 'logging' is not defined` usually means a missing import); one broken file stops the whole run.
 - **You pass 60 minutes**: pause, note the task you are on, and finish in self-study; every check is still named after its task.

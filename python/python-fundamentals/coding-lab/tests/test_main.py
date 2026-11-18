@@ -249,7 +249,10 @@ def test_task09_summary_script_runs_and_imports_safely(capsys):
     try:
         importlib.import_module("signups.cli")
     except BaseException as err:  # the starter calls main at import time
-        pytest.fail(f"Task 9: importing signups.cli must run nothing, but it raised {err!r}; add the __name__ guard")
+        pytest.fail(
+            f"Task 9: importing signups.cli must run nothing, but it raised {err!r}; import what cli.py uses "
+            "(step 1) and put the call of main behind the __name__ guard (step 3)"
+        )
     captured = capsys.readouterr()
     assert captured.out == "" and captured.err == "", "Task 9: importing signups.cli must not run main"
     general = run(["-m", "signups.cli", "general"], timeout=30)
