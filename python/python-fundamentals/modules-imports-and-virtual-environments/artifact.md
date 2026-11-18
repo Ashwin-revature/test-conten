@@ -107,7 +107,7 @@ A virtual environment is one project's pantry; the pinned requirements file is t
 
 Use these same observable steps when working from the text alternative.
 
-1. Where to look: Read the code in the workspace on the right (below these steps on a narrow screen).
+1. Where to look: Read the code directly below these steps, inside this same workspace, at every screen width.
 2. What to do or type: Under Prediction, pick the result you expect.
 3. What to expect: Pick Low, Medium or High confidence, then press Check my prediction.
 4. How to know it's done: Feedback appears below and Continue shows. A wrong guess is fine: the feedback explains it and you still move on.
@@ -122,7 +122,7 @@ Use these same observable steps when working from the text alternative.
 3. What to expect: The output box shows where Python found the module, or a `ModuleNotFoundError`. Try each import with both Pythons.
 4. How to know it's done: Each check above changes from open to done when a run shows it. Continue appears when every check is done.
 
-1. Where to look: Read the question and the code it names in the workspace on the right.
+1. Where to look: Read the question and the code it names in this workspace, below these steps.
 2. What to do or type: Pick one answer, pick your confidence, then press Check answer.
 3. What to expect: Feedback appears below. If the first answer is not right, a second question appears; answer it and press Check second try.
 4. How to know it's done: Either way, Continue then shows and takes you to the recap.

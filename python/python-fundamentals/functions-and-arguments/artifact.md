@@ -126,7 +126,7 @@ Success criteria: for every call you can say the value of `level`, `parts` and `
 
 Use these same observable steps when working from the text alternative.
 
-1. Where to look: Read the code in the workspace on the right (below these steps on a narrow screen).
+1. Where to look: Read the code directly below these steps, inside this same workspace, at every screen width.
 2. What to do or type: Under Prediction, pick the result you expect.
 3. What to expect: Pick Low, Medium or High confidence, then press Check my prediction.
 4. How to know it's done: Feedback appears below and Continue shows. A wrong guess is fine: the feedback explains it and you still move on.
@@ -146,7 +146,7 @@ Use these same observable steps when working from the text alternative.
 3. What to expect: Problems names any placeholder or structure still out of place; Output confirms the completed scaffold.
 4. How to know it's done: The author check reads done, then Continue appears. Reset code restores the starter and its placeholders.
 
-1. Where to look: Read the question and the code it names in the workspace on the right.
+1. Where to look: Read the question and the code it names in this workspace, below these steps.
 2. What to do or type: Pick one answer, pick your confidence, then press Check answer.
 3. What to expect: Feedback appears below. If the first answer is not right, a second question appears; answer it and press Check second try.
 4. How to know it's done: Either way, Continue then shows and takes you to the recap.

@@ -89,7 +89,7 @@ A mutable default is made once, like the wall board; checking for nothing and ma
 
 Use these same observable steps when working from the text alternative.
 
-1. Where to look: Read the code in the workspace on the right (below these steps on a narrow screen).
+1. Where to look: Read the code directly below these steps, inside this same workspace, at every screen width.
 2. What to do or type: Under Prediction, pick the result you expect.
 3. What to expect: Pick Low, Medium or High confidence, then press Check my prediction.
 4. How to know it's done: Feedback appears below and Continue shows. A wrong guess is fine: the feedback explains it and you still move on.
@@ -104,7 +104,7 @@ Use these same observable steps when working from the text alternative.
 3. What to expect: Right: the item moves to Sorted so far and the next item appears. Wrong: the feedback says Not this group and the card stays, so try another button.
 4. How to know it's done: Continue appears when every item is sorted.
 
-1. Where to look: Read the question and the code it names in the workspace on the right.
+1. Where to look: Read the question and the code it names in this workspace, below these steps.
 2. What to do or type: Pick one answer, pick your confidence, then press Check answer.
 3. What to expect: Feedback appears below. If the first answer is not right, a second question appears; answer it and press Check second try.
 4. How to know it's done: Either way, Continue then shows and takes you to the recap.
