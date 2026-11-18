@@ -1,22 +1,24 @@
 {
   "schemaVersion": 1,
   "acceptanceProfile": "minimum",
-  "owner": "Implementation owner of the step-text correction (crewmate task pep-python-t25-gate-debt-reconciliation, Claude Opus 5.5); not an independent critic",
-  "provenance": "Owner essential pass on the activity-4 step-text correction for this page on branch fm/pep-python-t25-gate-debt-reconciliation (based on main 1814ba7d), recorded 2026-11-18. Trigger: a fresh independent technology-SME recheck ruled pyf-sme-steps-functions-and-arguments open because the activity-4 instructions stated every editor placeholder fill. This record replaces the 2026-11-09 guidance-contract owner record for this page, whose html binding the correction staled; it does not relabel any critic report.",
+  "owner": "Implementation owner of the python-fundamentals page-contract gate-debt correction (crewmate task pep-python-t25-gate-debt-reconciliation, Claude Opus 5.5); not an independent critic",
+  "provenance": "Owner essential pass on the page-contract correction for this page on branch fm/pep-python-t25-gate-debt-reconciliation (based on main 1814ba7d), recorded 2026-11-18 under firstmate decisions for the Python gate-debt scope (overlap decision A, python-loop3-correction, python-loop4-lows). This record replaces the previous owner record for this page, whose html binding the correction staled; it does not relabel any critic report.",
   "independentCriticApproval": "not-required-not-performed",
-  "statement": "This record is implementation-owner evidence only. It neither carries nor claims independent education or SME approval; the fresh independent rechecks of this page's reopened findings are recorded separately in this directory's critic recheck files.",
-  "checkedAt": "2026-11-18T09:00:00Z",
+  "statement": "This record is implementation-owner evidence only. It neither carries nor claims independent education or SME approval; the fresh independent rechecks of this page are recorded separately in this directory's critic recheck files.",
+  "checkedAt": "2026-11-18T14:10:00Z",
   "checks": [
-    "Scope: learner wording only. Activity 4 'What to do or type' step and its text-alternative copy now name the goal of each placeholder and annotation without the fill; the no-JS static result, the no-JS static editor exercise and its expected result, and the identical result string in the fieldset and TOPIC.render were rewritten the same way (html-artifact-contract: no-JS text must not reveal a graded answer). Teaching text, starter scaffold, checker rules, scoring, completion, navigation and feedback code are unchanged.",
-    "Node gates for the module on these bytes: T01, T05, T07, T14 (estimator P50 unchanged at 10.71 by holding the counted step at its original word count), T15 (live receipts refetched and rebound for this topic), T16 passed; browser gates T08 and T18 (artifact.md regenerated with md-from-html) passed.",
-    "Known open gate, not presented as passing: T06 stale private-success bindings for this topic predate this change (baseline at 1814ba7d) and need protected reproof.",
-    "Companions: artifact.gift and video-artifact.md are byte-identical to main and were not changed or re-reviewed; their bindings are carried from the previous owner record because this record replaces per-file critic coverage for the topic. artifact.md was regenerated from the html.",
-    "Answer safety and privacy: no answer key, rubric, hidden test, successful input or secret was added; the change removes stated fills from learner-visible text. No telemetry or external requests."
+    "Scope: page-contract correction only, in three role-separated commits: fef86277 (per-activity state hooks and guidance setups carried from 9f7e6f8a), 2f281e85 (task and activity checks moved to the head of each activity workspace, workspace card, recap no longer marked as an activity, optional-disclosure styling, Objectives Escape/outside-click close, sandbox-safe history fallback, print of every activity) and d3715dcd (the five accepted loop-3 regressions: Restart clears page completion, recap reading prints before the recap, location phrase, non-activity fragments keep the current activity with an effective guard, Escape inside the lesson editor left to the editor).",
+    "Learner text changes: only the task location sentence and its recap text-alternative copies (word counts held). Teaching text, task goals, starters, checkers, scoring, settle and feedback code are unchanged; artifact.md was regenerated from the html (T18).",
+    "Behavior on these bytes: harness guidance/anatomy assertions T09-T13 reported 0 errors for this page in a loader-filtered harness run; T01-T05, T07, T08, T14, T15 (live source receipts refetched and rebound), T16, T18, T19, T20 and T24 passed for the module path. Restart, fragment and print behavior use engine code byte-identical to the four public-route pages, where it was exercised in Chromium; this page's graded editor was not completed here.",
+    "Independent review: fresh non-author education and SME critics rechecked these bytes at loop 4 (t25-debt-1814ba7-loop4-critic-*-recheck.json); every earlier high finding is resolved; remaining low findings are reconciled in reconciliation.json as accepted and deferred, not fixed.",
+    "Private success: the T06 private-success receipt for this page is re-proved separately on a clean committed head with a task-owned disposable input and recorded in qa-receipt.json; no private value is in this record.",
+    "Companions: artifact.gift and video-artifact.md are byte-identical to the previous owner record's bound bytes and were not changed or re-reviewed; their bindings are carried because this record provides per-file coverage for the topic.",
+    "Answer safety and privacy: no answer key, rubric, hidden test, successful input or secret was added; no telemetry or external requests."
   ],
   "artifacts": [
     {
       "reviewedPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
-      "reviewedSha256": "a7967507b6838cbf14d9db1b30c732b18cac09cab5117784c70ec5413dc2264b"
+      "reviewedSha256": "1e0ee23768e584648d1f11ffd564333448633d33d9a9bf6596496291fb8c894f"
     },
     {
       "reviewedPath": "python/python-fundamentals/functions-and-arguments/artifact.gift",
