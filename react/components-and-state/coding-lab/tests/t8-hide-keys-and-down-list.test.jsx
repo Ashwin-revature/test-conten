@@ -43,4 +43,10 @@ test("task 8: hiding a card keeps details state with the right service and lists
     .closest("section");
   const items = within(downPanel).getAllByRole("listitem");
   expect(items.map((item) => item.textContent)).toEqual(["Email Relay"]);
+
+  // Hiding the only down service empties the list, because it follows state.
+  await user.click(
+    within(card("Email Relay")).getByRole("button", { name: "Hide" }),
+  );
+  expect(within(downPanel).queryAllByRole("listitem")).toHaveLength(0);
 });

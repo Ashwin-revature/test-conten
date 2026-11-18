@@ -12,7 +12,7 @@ Spring back end running without its dev profile.
 
 ## Prerequisites
 
-- Node.js 22.12 or newer and npm 10 or newer. Check with:
+- Node.js 22.12+ (22.x LTS) or 24+, and npm 10 or newer. Check with:
 
   ```
   node --version
@@ -28,7 +28,9 @@ cd tests
 npm ci
 ```
 
-Optional, to use the app against the mock API in a browser:
+Optional, to use the app against the mock API in a browser, open a second
+terminal in this lab folder (`cd ..` first if you are still in `tests`) and
+run:
 
 ```
 cd starter
@@ -36,20 +38,31 @@ npm ci
 npm run dev
 ```
 
+`npm run dev` keeps that terminal busy; stop it with Ctrl+C.
+
 Development accounts for the mock API (fake fixtures, not secrets):
 `avery` / `beacon1` (admin) and `omar` / `beacon2` (operator).
 
 ## How to test
 
-From the `tests` folder:
+From the `tests` folder (in its own terminal if the dev server is running):
 
 ```
 npm test
 ```
 
 All 8 tests fail on the shipped starter. The tests stub `fetch` and run fully
-offline. One coupling to know: test 1 ends on the loaded dashboard, so it
-needs task 2 (the bearer token) as well as task 1 before it turns green.
+offline. Work through the tasks in order and re-run after each one. Couplings
+to know:
+
+- Test 1 ends on the loaded dashboard, so it needs task 2 (the bearer token)
+  as well as task 1.
+- Tests 3-8 start signed out on a guarded page and sign in through the login
+  page, so they need tasks 1 and 3; tests 5-8 also load the list, so they
+  need task 2 too. Test 5 has no edit of its own and passes once tasks 1-3
+  are done.
+- Tests 3-7 switch the dev auto-sign-in off for themselves; only test 8
+  checks the switch in `dev-auth.js`.
 
 ## Files you edit
 
@@ -100,15 +113,17 @@ Every task is marked with a `TASK n` comment in the starter source.
    `sessionExpired` in the context): a 401 mid-session clears the client's
    auth state and lands on the login page with
    "Your session expired - sign in again.", returning after a new sign-in.
-   Your tasks 1-3 make this flow work; the test proves the whole loop.
+   There is nothing to write: once tasks 1-3 are done, test 5 proves the
+   whole loop.
 6. **Handle 403** - `src/pages/OverviewPage.jsx` (handleRestart). A 403 means
    authenticated but refused: show "You are not allowed to do that." and keep
-   the user signed in.
+   the user signed in. A 401 is different: report it with `sessionExpired()`.
 7. **Sign out** - `src/auth/AuthContext.jsx` (signOut) and the header button.
    The session is forgotten and the guards take over again.
 8. **Turn off the dev profile** - `src/dev-auth.js` and `src/api.js` (apiUrl).
    Nobody is signed in automatically any more, and the API base address comes
-   from the `VITE_API_URL` environment variable (defaulting to `/api`).
+   from the `VITE_API_URL` environment variable (defaulting to `/api`); every
+   request, authFetch's included, goes through apiUrl.
 
 ## Expected output
 
@@ -138,5 +153,9 @@ The lab writes nothing else.
   actually sends the Authorization header; the secured API answers 401
   without it and the hook then drops the session.
 - Test 8's environment assertions fail although auto-sign-in is off - apiUrl
-  must read `import.meta.env.VITE_API_URL` each time it is called, not once
-  at module load.
+  must read `import.meta.env.VITE_API_URL` each time it is called, and
+  authFetch must build its URL through apiUrl. The call-time read is a
+  testability requirement: the test changes the variable mid-run with
+  `vi.stubEnv`. In a real Vite app the value is fixed when the dev server
+  starts or the build runs, so after changing `VITE_API_URL` restart the dev
+  server or rebuild.

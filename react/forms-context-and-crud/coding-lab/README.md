@@ -12,7 +12,7 @@ server carries a stateful mock of the status API (`mock-api.js`).
 
 ## Prerequisites
 
-- Node.js 22.12 or newer and npm 10 or newer. Check with:
+- Node.js 22.12+ (22.x LTS) or 24+, and npm 10 or newer. Check with:
 
   ```
   node --version
@@ -21,20 +21,29 @@ server carries a stateful mock of the status API (`mock-api.js`).
 
 ## Setup (one-time, needs the network once)
 
-From this lab folder:
+From this lab folder (the `coding-lab` folder):
 
 ```
 cd tests
 npm ci
 ```
 
-Optional, to use the app against the mock API in a browser:
+Optional, to use the app against the mock API in a browser, from the `tests`
+folder:
 
 ```
-cd starter
+cd ../starter
 npm ci
 npm run dev
 ```
+
+The dev server keeps that terminal busy: run the tests from `tests` in a
+second terminal, and stop the server with Ctrl+C.
+
+## When to do the tasks
+
+Do tasks 1-3 on the S32 lab day. Do tasks 4-8 on S33, after its lessons on
+create/edit/delete, submission errors and Testing Library.
 
 ## How to test
 
@@ -48,13 +57,20 @@ All 8 tests fail on the shipped starter - including test 8, which lives in
 `starter/src/service-form.test.jsx` because you write it yourself. The tests
 stub `fetch` and run fully offline.
 
+Work in task order. Tests 4-7 build on tasks 1-3, and test 7 also needs the
+"Service deleted" toast you add in task 6. Until tasks 4-6 are done, the run
+also prints "Unhandled Rejection" errors from the unfinished API calls; they
+go away as you finish those tasks. Test 8 only proves that your own
+test passes; its role, label, user-event and query-variant demonstrations are
+self-checked practice.
+
 ## Files you edit
 
 Every change happens at a `TASK n` comment in these files:
 
 - `starter/src/components/ServiceForm.jsx` - tasks 1 to 5
 - `starter/src/api.js` - tasks 4 and 6
-- `starter/src/pages/OverviewPage.jsx` - task 6
+- `starter/src/pages/OverviewPage.jsx` - task 6 (test 7 also exercises it)
 - `starter/src/ToastContext.jsx` - task 7
 - `starter/src/service-form.test.jsx` - task 8 (the test you write)
 
@@ -93,12 +109,15 @@ Every task is marked with a `TASK n` comment in the starter source.
    the user's input is never thrown away.
 6. **Edit and delete** - `src/api.js` (updateService, deleteService) and the
    delete handler in `src/pages/OverviewPage.jsx`. PUT and DELETE to the
-   service's URL, then bring the list back in line with the server.
+   service's URL, announce "Service deleted" through the toast context, then
+   bring the list back in line with the server.
 7. **Toasts through context** - `src/ToastContext.jsx`. A real context,
    provider state, `addToast`, and the layout's live region shows every toast.
 8. **Write your own test** - `starter/src/service-form.test.jsx`. Query by
    role and label, simulate typing and clicking with user-event, pick the
    right getBy/queryBy/findBy variant, and assert what the user can see.
+   The suite checks only that your test passes, so check those choices
+   yourself.
 
 ## Expected output
 
@@ -128,7 +147,10 @@ The lab writes nothing else.
 - "A component is changing an uncontrolled input to be controlled" in the
   console - a field starts with `undefined` as its value; initialValues always
   provides a string or boolean, so read from state, not from props directly.
-- Task 4's test hangs - make sure handleSubmit awaits onSave inside
-  try/finally so the button re-enables even on failure.
+- Test 5 cannot find the Save service button after a server error - the
+  button is still disabled with its pending label; reset the pending state in
+  a `finally` block so it re-enables after a failure.
+- "Not implemented: HTMLFormElement.prototype.requestSubmit" in the test
+  output - handleSubmit is missing `event.preventDefault()`.
 - Your own test cannot find the button - its accessible name is the visible
   text; check what the form actually renders while submitting.

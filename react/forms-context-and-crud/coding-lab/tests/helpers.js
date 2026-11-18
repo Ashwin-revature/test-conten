@@ -11,18 +11,13 @@ export const SERVICES = [
 
 const TEAMS = ["Storefront", "Payments", "Messaging", "Discovery", "Platform"];
 
+// A real fetch Response, so json(), text() and headers all behave as in the
+// browser. A 204 has no body, so json() rejects on it.
 function jsonResponse(status, body) {
-  return {
-    ok: status >= 200 && status < 300,
+  return new Response(status === 204 ? null : JSON.stringify(body), {
     status,
-    // Like real fetch: a 204 has no body, so parsing it rejects.
-    json:
-      status === 204
-        ? async () => {
-            throw new SyntaxError("Unexpected end of JSON input");
-          }
-        : async () => body,
-  };
+    headers: { "Content-Type": "application/json" },
+  });
 }
 
 // HTTP header names are case-insensitive and fetch's Headers normalizes them

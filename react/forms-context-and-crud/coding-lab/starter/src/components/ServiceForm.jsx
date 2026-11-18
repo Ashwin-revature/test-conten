@@ -26,8 +26,9 @@ TASK 1. The fields below are broken in three different ways:
   Make all three controlled: value/checked from state, updated in onChange.
 
 TASK 2. Only the checkbox has a usable label (it wraps its input). Associate
-the other two: give each control an id and point its <label> at it with
-htmlFor. Mark the name and team fields required (required attribute).
+the other two: give each control an id and point its label at it with
+htmlFor. The team caption is a <span>; make it a <label> first. Mark the name
+and team fields required (required attribute).
 
 TASK 3. Implement handleSubmit:
   - call event.preventDefault() so the browser does not reload the page;

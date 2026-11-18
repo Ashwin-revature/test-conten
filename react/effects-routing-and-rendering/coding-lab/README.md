@@ -11,7 +11,7 @@ status API (`mock-api.js`), so nothing outside this folder is required.
 
 ## Prerequisites
 
-- Node.js 22.12 or newer and npm 10 or newer. Check with:
+- Node.js 22.12+ (22.x LTS) or 24+, and npm 10 or newer. Check with:
 
   ```
   node --version
@@ -27,13 +27,17 @@ cd tests
 npm ci
 ```
 
-Optional, to run the app with the mock API in a browser:
+Optional, to run the app with the mock API in a browser, from the `tests`
+folder:
 
 ```
-cd starter
+cd ../starter
 npm ci
 npm run dev
 ```
+
+The dev server keeps that terminal busy: run `npm test` in a second terminal,
+and stop the server with Ctrl+C.
 
 ## How to test
 
@@ -44,9 +48,16 @@ npm test
 ```
 
 All 8 tests fail on the shipped starter. The tests stub `fetch` themselves, so
-they run fully offline and never touch the mock API. One coupling to know:
-test 1 walks the whole route tree including the data-driven detail page, so it
-only turns fully green once tasks 3 and 4 are done as well.
+they run fully offline and never touch the mock API.
+
+Do task 4 before task 3; otherwise work in order. Some tests build on other
+tasks:
+
+- Test 1 walks the whole route tree, including the data-driven detail page,
+  so it turns green only once tasks 3 and 4 are done as well.
+- Tests 2 and 3 need the routes from task 1; test 3 also needs task 4.
+- Test 5 needs task 4, and test 6 needs task 5 (the overview must load
+  through your hook).
 
 ## Files you edit
 
@@ -56,8 +67,8 @@ Every change happens at a `TASK n` comment in these files:
 - `starter/src/components/AppLayout.jsx` - task 2
 - `starter/src/pages/ServiceDetailPage.jsx` - task 3
 - `starter/src/hooks/use-fetch.js` - tasks 4 and 6
-- `starter/src/api.js` - tasks 5 and 6
-- `starter/src/pages/OverviewPage.jsx` - tasks 5 to 7
+- `starter/src/api.js` - tasks 4 and 6
+- `starter/src/pages/OverviewPage.jsx` - tasks 5 and 7
 - `starter/src/components/Toolbar.jsx` - task 7
 - `starter/src/components/StatusLegend.jsx` - task 8
 
@@ -86,26 +97,31 @@ Every task is marked with a `TASK n` comment in the starter source.
    router's link components so switching pages keeps the app alive, and let
    the active link mark itself with `aria-current="page"`.
 3. **Build the service detail page** - `src/pages/ServiceDetailPage.jsx`.
-   Read the id with `useParams`, load the service with your hook from task 4,
-   handle loading and error, and navigate back to the overview from code.
-4. **Extract the useFetch hook** - `src/hooks/use-fetch.js`. One hook owns
-   loading/data/error state, re-runs when the url changes, and cleans up by
-   aborting. The exact contract is in the file's task comment.
-5. **Honest request states** - `src/api.js` and `src/pages/OverviewPage.jsx`.
-   Make `fetchJson` treat a non-ok response as an error (`HTTP <status>`),
-   then render four distinct overview screens: loading, error, empty and
-   loaded.
-6. **Abort stale requests** - spread across `src/api.js` and the hook. Pass an
-   AbortSignal through to `fetch` and abort it in the Effect cleanup, so a
-   request outlives no page. (This is also why Strict Mode's double Effect run
-   in development never produces duplicate state updates.)
+   Finish task 4 first. Read the id with `useParams`, load the service with
+   your hook from task 4, handle loading and error, render the given
+   `ServiceDetails` component on success, and navigate back to the overview
+   from code.
+4. **Extract the useFetch hook** - `src/hooks/use-fetch.js` and `src/api.js`.
+   One hook owns loading/data/error state and re-runs when the url changes;
+   `fetchJson` treats a non-ok response as an error (`HTTP <status>`). The
+   exact contract is in the files' task comments.
+5. **Honest request states** - `src/pages/OverviewPage.jsx`. Replace the old
+   effect with your hook and render four distinct overview screens: loading,
+   error, empty and loaded.
+6. **Abort stale requests** - `src/api.js` and the hook. Pass an AbortSignal
+   through to `fetch`, abort it in the Effect cleanup and ignore the
+   AbortError, so a request outlives no page. The test also renders the
+   overview in Strict Mode, whose double Effect run in development aborts the
+   first request: that abort must not show as an error.
 7. **Lift the filter state** - `src/components/Toolbar.jsx` and
    `src/pages/OverviewPage.jsx`. The toolbar sets the filter, the page uses it
    to narrow the list: the state belongs to their closest common parent. The
    visible list and count line are derived, not extra state.
-8. **Stop the needless re-render** - `src/components/StatusLegend.jsx`. Use
+8. **Skip the needless re-render** - `src/components/StatusLegend.jsx`. Use
    the render counts from `src/render-count.js` to see that every "Refresh
-   view" click re-renders the static legend, then memoize it.
+   view" click re-renders the static legend, then memoize it. `memo` is a
+   performance optimisation: it only skips work and never changes what is
+   shown.
 
 ## Expected output
 
@@ -130,8 +146,9 @@ The lab writes nothing else.
 ## Troubleshooting
 
 - `vitest: command not found` - run `npm ci` inside `tests` first.
-- Task 4 tests pass but task 5 still fails - check that the overview actually
-  renders the four screens from the hook's state instead of the old effect.
-- The detail page shows "Loading service..." forever in the dev server - the
-  URL you fetch must include the id from `useParams`, not a literal
-  `:serviceId`.
+- Test 4 fails at the HTTP 500 step - check the `response.ok` check in
+  `fetchJson` (`src/api.js`, task 4 part 2).
+- Every detail page shows HTTP 404 - the URL you fetch must include the id
+  from `useParams`, not a literal `:serviceId`.
+- A page shows "Loading ..." forever - check that your hook sets `loading` to
+  false when the request settles.

@@ -33,7 +33,7 @@
   "prerequisites": [
     {
       "tool": "node",
-      "version": ">=22.12",
+      "version": "^22.12.0 || >=24",
       "check": "node --version"
     },
     {
@@ -74,7 +74,7 @@
   "expectedOutput": "expected/on-completion.txt",
   "cleanup": {
     "paths": ["tests/node_modules", "starter/node_modules"],
-    "notes": "Setup (npm ci in tests/) creates tests/node_modules with the pinned Vitest, Testing Library and React packages; the optional dev setup (npm ci in starter/) creates starter/node_modules. Cleanup deletes both; the tests create nothing else, write no files and store nothing in the browser. Resetting the learner's work means restoring starter/src from a fresh copy of the lab. The expected output file writes variable timings as <ms>, and test file lines may print in any order. The 25-minute median and 30-minute cap are planning figures for the module's guided lab slot, not a measured learner pilot. Setup (the one-time npm ci) completes before the lab slot's working time; the 30-minute allowance covers only work on the tasks. All assertions are behavioral through Testing Library against rendered output; no test reads the learner's source text."
+    "notes": "Setup (npm ci in tests/) creates tests/node_modules with the pinned Vitest, Testing Library and React packages; the optional dev setup (npm ci in starter/) creates starter/node_modules. Cleanup deletes both; the tests create nothing else, write no files and store nothing in the browser. Resetting the learner's work means restoring starter/src from a fresh copy of the lab. The expected output file writes variable timings as <ms>, and test file lines may print in any order. The 25-minute median and 30-minute cap are planning figures for the module's guided lab slot, not a measured learner pilot. Setup (the one-time npm ci) completes before the lab slot's working time; the 30-minute allowance covers only work on the tasks. All assertions are behavioral: Testing Library queries against rendered output, React's own console warnings for HTML attribute spellings (task 1) and a call-through spy on the StatusBadge module's default export (task 3); no test reads the learner's source text. Partial-objective note: usestate#o3's predict-the-rendered-value clause and props#o1's destructuring-default form (a || fallback renders the same text) are not lab-tested; both are practised on their topic pages, not in this lab."
   },
   "minutes": {
     "estimatedMedian": 25,

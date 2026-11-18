@@ -51,18 +51,48 @@ export const SERVICES = [
   },
 ];
 
+// A real platform Response, so any standard way of reading the body works.
 export function jsonResponse(status, body) {
-  return {
-    ok: status >= 200 && status < 300,
+  return new Response(JSON.stringify(body), {
     status,
-    json: async () => body,
-  };
+    headers: { "Content-Type": "application/json" },
+  });
+}
+
+function abortError() {
+  return new DOMException("The operation was aborted.", "AbortError");
+}
+
+// Wraps a handler in a fetch stub that behaves like the real fetch: it
+// settles on a later tick, and an AbortSignal passed in the options rejects
+// it with an AbortError, whether the signal is already aborted or fires
+// before the response arrives. The handler builds a fresh Response per call.
+export function deferredFetch(handler) {
+  return vi.fn(
+    (url, options = {}) =>
+      new Promise((resolve, reject) => {
+        const signal = options.signal;
+        if (signal?.aborted) {
+          reject(abortError());
+          return;
+        }
+        const onAbort = () => {
+          clearTimeout(timer);
+          reject(abortError());
+        };
+        const timer = setTimeout(() => {
+          signal?.removeEventListener("abort", onAbort);
+          resolve(handler(String(url)));
+        }, 0);
+        signal?.addEventListener("abort", onAbort, { once: true });
+      }),
+  );
 }
 
 // Standard happy-path API: list and detail routes, 404 for unknown ids.
 export function stubRoutedFetch() {
-  const fetchMock = vi.fn(async (url, options = {}) => {
-    const path = String(url).split("?")[0];
+  const fetchMock = deferredFetch((url) => {
+    const path = url.split("?")[0];
     if (path === "/api/services") {
       return jsonResponse(200, SERVICES);
     }
@@ -89,10 +119,12 @@ export function stubPendingFetch() {
         state.signal = options.signal ?? null;
         state.resolve = (status, body) => resolve(jsonResponse(status, body));
         if (options.signal) {
-          options.signal.addEventListener("abort", () => {
-            const error = new Error("The operation was aborted.");
-            error.name = "AbortError";
-            reject(error);
+          if (options.signal.aborted) {
+            reject(abortError());
+            return;
+          }
+          options.signal.addEventListener("abort", () => reject(abortError()), {
+            once: true,
           });
         }
       }),
@@ -102,13 +134,13 @@ export function stubPendingFetch() {
 }
 
 export function stubFailingFetch(status) {
-  const fetchMock = vi.fn(async () => jsonResponse(status, { error: "boom" }));
+  const fetchMock = deferredFetch(() => jsonResponse(status, { error: "boom" }));
   vi.stubGlobal("fetch", fetchMock);
   return fetchMock;
 }
 
 export function stubEmptyListFetch() {
-  const fetchMock = vi.fn(async () => jsonResponse(200, []));
+  const fetchMock = deferredFetch(() => jsonResponse(200, []));
   vi.stubGlobal("fetch", fetchMock);
   return fetchMock;
 }

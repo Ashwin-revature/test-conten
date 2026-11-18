@@ -5,6 +5,11 @@ import { MemoryRouter } from "react-router";
 import App from "../starter/src/App.jsx";
 import { stubSecuredFetch, signInAs } from "./helpers.js";
 
+// Start signed out whatever dev-auth.js says: only test 8 checks that switch.
+vi.mock("../starter/src/dev-auth.js", () => ({
+  devAutoSignIn: { enabled: false, session: null },
+}));
+
 afterEach(() => {
   cleanup();
   vi.unstubAllGlobals();

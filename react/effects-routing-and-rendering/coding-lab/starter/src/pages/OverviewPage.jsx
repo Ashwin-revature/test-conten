@@ -8,7 +8,7 @@ export default function OverviewPage() {
   const [viewVersion, setViewVersion] = useState(1);
 
   /*
-  TASK 5 (part 2). This quick-and-dirty effect only handles the happy path:
+  TASK 5. This quick-and-dirty effect only handles the happy path:
   while the request is pending the page silently shows an empty dashboard, a
   server error is parsed as if it were data, and an empty fleet looks the same
   as a broken one. Replace it with the useFetch hook from TASK 4 and render
@@ -20,7 +20,7 @@ export default function OverviewPage() {
     - success with no services:    a paragraph reading  No services reporting yet.
     - success with services:      the toolbar, count line, list and legend below.
 
-  TASK 6 (part 3). Using the hook here also means the request is aborted when
+  Note (task 6). Using the hook here also means the request is aborted when
   the user navigates away while it is still pending; the tests check that.
   */
   useEffect(() => {
@@ -41,7 +41,7 @@ export default function OverviewPage() {
     <>
       <h2>Service overview</h2>
       {/*
-      TASK 8 (part 2). "Refresh view" simulates the live refresh ticker that
+      Note (task 8). "Refresh view" simulates the live refresh ticker that
       part 3 of the scenario adds for real. Every click updates state here and
       re-renders this page - and, needlessly, the static legend below. Fix
       that in src/components/StatusLegend.jsx.

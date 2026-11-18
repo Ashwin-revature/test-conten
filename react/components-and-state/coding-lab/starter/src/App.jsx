@@ -78,8 +78,8 @@ export default function App() {
         TASK 8 (part 2). The list key below is the array index, so when a card
         is hidden, React matches the remaining cards to the wrong previous
         ones and per-card state (like an expanded Details section) jumps to a
-        neighbour. Key each card by something that identifies the service
-        itself.
+        neighbour. Key each card by a stable value from the service, such as
+        its id, rather than the array index.
         */}
         <ul className="card-grid">
           {visibleServices.map((service, index) => (

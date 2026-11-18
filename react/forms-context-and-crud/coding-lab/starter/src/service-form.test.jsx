@@ -8,12 +8,13 @@ this module taught about Testing Library:
   2. use user-event to click the submit button - find it with getByRole and
      its accessible name;
   3. assert that the name field's error message "Enter a service name."
-     appears (it renders after a state update, so pick the right query
-     variant: getBy / queryBy / findBy);
+     appears (findBy is the safe choice for an element that may appear
+     asynchronously; pick from getBy / queryBy / findBy);
   4. assert that onSave was never called;
-  5. then type a name and a team with user-event, submit again, and assert
-     with findBy that the error disappears and onSave received the values
-     (queryBy is the variant that proves an element is absent).
+  5. then type a name with user.type, choose a team with user.selectOptions,
+     submit again, and assert that the error is gone and that onSave received
+     the values. queryBy ... not.toBeInTheDocument() proves an element is
+     absent (findBy rejects when it is missing); wrap in waitFor if needed.
 
 Replace the failing placeholder assertion at the bottom when you are done.
 */
@@ -32,6 +33,7 @@ test("task 8: learner test: the form rejects a blank name", async () => {
     />,
   );
   const user = userEvent.setup();
+  expect.hasAssertions(); // the test fails if it never asserts anything
 
   // TODO: follow steps 2 to 5 from the comment above.
 

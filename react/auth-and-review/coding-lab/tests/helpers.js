@@ -24,17 +24,19 @@ function normalizeHeaders(headers) {
   return out;
 }
 
+// A real fetch Response, so any correct way of reading the body works.
 function jsonResponse(status, body) {
-  return {
-    ok: status >= 200 && status < 300,
+  return new Response(status === 204 ? null : JSON.stringify(body), {
     status,
-    json: async () => body,
-  };
+    headers: { "Content-Type": "application/json" },
+  });
 }
 
 // Stand-in for the SECURED status API (the back end without its open dev
 // profile): /api/login issues tokens, everything else demands one.
 // state.expireTokens simulates the server no longer accepting any token.
+// Calls are recorded with the URL exactly as requested; routing uses only its
+// path, so a request to an absolute API address reaches the same endpoints.
 export function stubSecuredFetch() {
   const state = {
     calls: [],
@@ -43,12 +45,13 @@ export function stubSecuredFetch() {
 
   const fetchMock = vi.fn(async (urlValue, options = {}) => {
     const url = String(urlValue).split("?")[0];
+    const path = new URL(url, "http://localhost").pathname;
     const method = (options.method ?? "GET").toUpperCase();
     const headers = normalizeHeaders(options.headers);
     const body = options.body ? JSON.parse(options.body) : null;
     state.calls.push({ url, method, headers, body });
 
-    if (method === "POST" && url === "/api/login") {
+    if (method === "POST" && path === "/api/login") {
       const user = USERS.find(
         (entry) =>
           entry.username === body?.username &&
@@ -63,16 +66,18 @@ export function stubSecuredFetch() {
       });
     }
 
-    const bearer = (headers.authorization ?? "").replace(/^Bearer /, "");
+    // The secured API accepts only the Bearer scheme: "Bearer <token>".
+    const match = /^Bearer (.+)$/.exec(headers.authorization ?? "");
+    const bearer = match ? match[1] : null;
     const caller =
       !state.expireTokens && USERS.find((entry) => entry.token === bearer);
     if (!caller) {
       return jsonResponse(401, { error: "authentication required" });
     }
-    if (method === "GET" && url === "/api/services") {
+    if (method === "GET" && path === "/api/services") {
       return jsonResponse(200, SERVICES);
     }
-    const restart = url.match(/^\/api\/services\/([a-z0-9-]+)\/restart$/);
+    const restart = path.match(/^\/api\/services\/([a-z0-9-]+)\/restart$/);
     if (method === "POST" && restart) {
       if (caller.role !== "admin") {
         return jsonResponse(403, { error: "admin role required" });

@@ -1,8 +1,9 @@
+import { StrictMode } from "react";
 import { test, expect, afterEach, vi } from "vitest";
-import { render, cleanup } from "@testing-library/react";
+import { render, screen, cleanup } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import App from "../starter/src/App.jsx";
-import { stubPendingFetch } from "./helpers.js";
+import { stubPendingFetch, stubRoutedFetch } from "./helpers.js";
 
 afterEach(() => {
   cleanup();
@@ -24,4 +25,18 @@ test("task 6: an unmounted request is aborted through the effect cleanup", async
   // ...and leaving the page aborts it instead of letting it hang around.
   view.unmount();
   expect(pending.signal.aborted).toBe(true);
+  vi.unstubAllGlobals();
+
+  // Strict Mode runs every Effect twice in development, aborting the first
+  // request. That deliberate abort must not surface as an error.
+  stubRoutedFetch();
+  render(
+    <StrictMode>
+      <MemoryRouter initialEntries={["/"]}>
+        <App />
+      </MemoryRouter>
+    </StrictMode>,
+  );
+  expect(await screen.findAllByRole("heading", { level: 3 })).toHaveLength(6);
+  expect(screen.queryByText(/Could not load/)).not.toBeInTheDocument();
 });

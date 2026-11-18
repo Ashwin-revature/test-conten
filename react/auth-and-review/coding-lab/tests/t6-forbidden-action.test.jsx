@@ -5,6 +5,11 @@ import { MemoryRouter } from "react-router";
 import App from "../starter/src/App.jsx";
 import { stubSecuredFetch, signInAs } from "./helpers.js";
 
+// Start signed out whatever dev-auth.js says: only test 8 checks that switch.
+vi.mock("../starter/src/dev-auth.js", () => ({
+  devAutoSignIn: { enabled: false, session: null },
+}));
+
 afterEach(() => {
   cleanup();
   vi.unstubAllGlobals();
@@ -43,7 +48,7 @@ test("task 6: a 403 shows a not-allowed message without signing the user out", a
   vi.unstubAllGlobals();
 
   // The admin's same action succeeds.
-  stubSecuredFetch();
+  const api = stubSecuredFetch();
   render(
     <MemoryRouter initialEntries={["/"]}>
       <App />
@@ -62,4 +67,21 @@ test("task 6: a 403 shows a not-allowed message without signing the user out", a
   expect(await screen.findByRole("alert")).toHaveTextContent(
     "Restart requested for Catalog API.",
   );
+
+  // A 401 on the action is not a 403: the session is stale, so sign in again.
+  api.expireTokens = true;
+  await user.click(
+    within(card("Checkout API")).getByRole("button", {
+      name: "Request restart",
+    }),
+  );
+  expect(
+    await screen.findByRole("heading", { level: 2, name: "Sign in to Beacon" }),
+  ).toBeInTheDocument();
+  expect(
+    screen.getByText("Your session expired - sign in again."),
+  ).toBeInTheDocument();
+  expect(
+    screen.queryByText("You are not allowed to do that."),
+  ).not.toBeInTheDocument();
 });

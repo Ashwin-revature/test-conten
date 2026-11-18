@@ -8,6 +8,10 @@ every request URL through apiUrl so one Vite environment variable switches it:
 Example: apiUrl("/services") is "/api/services" by default, and
 "https://status.example.com/api/services" when
 VITE_API_URL=https://status.example.com/api.
+Why call time: test 8 changes the variable during the run (vi.stubEnv), so a
+value read once at module load would miss it. In a real Vite app the value is
+fixed when the dev server starts or the build runs, so after changing
+VITE_API_URL you restart the dev server or rebuild.
 */
 export function apiUrl(path) {
   // TODO: implement as described above

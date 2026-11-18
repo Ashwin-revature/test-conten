@@ -12,7 +12,7 @@ resettable lab on the same dashboard.
 
 ## Prerequisites
 
-- Node.js 22.12 or newer and npm 10 or newer. Check with:
+- Node.js 22.12+ (22.x LTS) or 24+, and npm 10 or newer. Check with:
 
   ```
   node --version
@@ -31,7 +31,9 @@ npm ci
 That installs the pinned test toolchain (Vitest, Testing Library, React) into
 `tests/node_modules`. After it finishes, the test command runs fully offline.
 
-Optional, if you also want to see the dashboard in a browser while you work:
+Optional, if you also want to see the dashboard in a browser while you work,
+open a second terminal in this lab folder (`cd ..` first if you are still in
+`tests`) and run:
 
 ```
 cd starter
@@ -39,8 +41,9 @@ npm ci
 npm run dev
 ```
 
-`npm run dev` serves the app for development; `npm run build` would produce
-the optimised production files in `dist/` instead.
+`npm run dev` keeps running and serves the app for development; stop it with
+Ctrl+C. `npm run build` would produce the optimised production files in
+`dist/` instead.
 
 ## How to test
 
@@ -52,7 +55,9 @@ npm test
 
 All 8 tests fail on the shipped starter. Work through the tasks in order and
 re-run the command after each one; when you are done, the output matches
-`expected/on-completion.txt` (timings and file order vary).
+`expected/on-completion.txt` (timings and file order vary). One coupling to
+know: tests 4, 5, 7 and 8 render the whole App, so they show their own failure
+only once task 2 (Panel children) is done.
 
 ## Files you edit
 
@@ -77,17 +82,19 @@ to look.
 1. **Rebuild the masthead as JSX** - `src/components/DashboardHeader.jsx`.
    Convert the old HTML masthead in the comment into JSX returned by the
    component, with the service count computed from the `serviceCount` prop.
+   The test fails if React warns about an HTML attribute spelling.
 2. **Make Panel a real wrapper** - `src/components/Panel.jsx`, plus the team
    line in `src/components/ServiceCard.jsx`. Panel must render its `title`
    prop and its children; a service without a team must read
    "Team: Unassigned" via a destructuring default.
 3. **Move StatusBadge into its own module** - `src/components/StatusBadge.jsx`
    and `src/components/ServiceCard.jsx`. Export the component as the default
-   export and `STATUS_LABELS` as a named export, then import both where the
-   card needs them.
+   export and `STATUS_LABELS` as a named export, then make the card import the
+   default `StatusBadge` instead of keeping its own copy.
 4. **Fix the two conditional-display bugs** - `src/components/ServiceCard.jsx`.
    A healthy card currently renders a stray `0`, and the maintenance note
-   renders (empty) on every card instead of only where maintenance is planned.
+   renders (empty) on every card instead of only where maintenance is planned;
+   make `MaintenanceNotice` itself return `null` when there is none.
 5. **Wire up the status filter** - `src/App.jsx`. Add a state variable for the
    selected filter, set it from the buttons, and narrow `visibleServices`.
 6. **Count all three regional checks** - `src/App.jsx`, `runChecks`. One click
@@ -97,9 +104,9 @@ to look.
    Rebuild the handler so it copies the changed service and its nested
    incident and builds a new log array, instead of mutating state in place.
 8. **Hide cards, fix the keys, derive the Down list** - `src/App.jsx`.
-   Implement `hideService` without mutation, key the cards by the service
-   itself rather than the array index, and render the "Down now" panel from
-   the services state with `filter` and `map`.
+   Implement `hideService` without mutation, key the cards by a stable value
+   from the service, such as its id, rather than the array index, and render
+   the "Down now" panel from the services state with `filter` and `map`.
 
 ## Expected output
 

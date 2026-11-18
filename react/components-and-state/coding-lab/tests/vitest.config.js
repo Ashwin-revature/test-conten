@@ -26,8 +26,9 @@ export default defineConfig({
     include: ["t*.test.jsx"],
     setupFiles: ["./setup.js"],
     reporters: "verbose",
-    // Run files one at a time in name order so the summary is deterministic
-    // and matches expected/on-completion.txt.
+    // Run test files one at a time (no parallel file workers). Vitest does
+    // not sort files by name, so the order of the file lines varies, as
+    // expected/on-completion.txt says.
     fileParallelism: false,
   },
 });

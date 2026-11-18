@@ -32,7 +32,9 @@ export function mockApiPlugin() {
           res.setHeader("Content-Type", "application/json");
           res.end(JSON.stringify(body));
         };
-        const bearer = (req.headers.authorization ?? "").replace(/^Bearer /, "");
+        // Only the Bearer scheme is accepted: "Authorization: Bearer <token>".
+        const match = /^Bearer (.+)$/.exec(req.headers.authorization ?? "");
+        const bearer = match ? match[1] : null;
         const caller = USERS.find((user) => user.token === bearer) ?? null;
 
         if (req.method === "POST" && url === "/api/login") {

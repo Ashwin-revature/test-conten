@@ -25,9 +25,10 @@ TASK 4. Two conditional-display bugs live below:
     number sits on the left of &&;
   - the maintenance paragraph renders for every card, even when there is no
     maintenance planned. A component that has nothing to say should return
-    null.
+    null: make MaintenanceNotice itself return null when there is no
+    maintenance. Keep it exported; the tests render it on its own.
 */
-function MaintenanceNotice({ maintenance }) {
+export function MaintenanceNotice({ maintenance }) {
   return <p className="maintenance">{maintenance}</p>;
 }
 
