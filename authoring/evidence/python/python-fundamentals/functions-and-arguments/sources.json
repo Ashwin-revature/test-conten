@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "reviewedSha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
-  "checkedAt": "2026-11-09T22:18:18.144Z",
+  "reviewedSha256": "a7967507b6838cbf14d9db1b30c732b18cac09cab5117784c70ec5413dc2264b",
+  "checkedAt": "2026-11-18T08:47:57.122Z",
   "sources": [
     {
       "url": "https://docs.python.org/3/tutorial/controlflow.html",
-      "retrievedAt": "2026-11-09T22:18:18.144Z",
+      "retrievedAt": "2026-11-18T08:47:57.122Z",
       "status": 200,
       "finalUrl": "https://docs.python.org/3/tutorial/controlflow.html",
-      "sha256": "891ac262ddb3374198a8a66f7b9bd2341e4dcdaa82e0261db2549d5713cf0beb",
+      "sha256": "b7743785ff165ba3e3ad62326932ec3b83351a328d2e6d348f5de4e1d9429814",
       "sectionsUsed": [
         "4.8 Defining Functions: def, parameters, return",
         "4.9.1 Default Argument Values",
@@ -20,20 +20,20 @@
     },
     {
       "url": "https://docs.python.org/3/reference/compound_stmts.html",
-      "retrievedAt": "2026-11-09T22:18:18.144Z",
+      "retrievedAt": "2026-11-18T08:47:57.122Z",
       "status": 200,
       "finalUrl": "https://docs.python.org/3/reference/compound_stmts.html",
-      "sha256": "3b0540bb85da7207b6e52add794d7810cea5cd5b85789be0894f91f40c069a43",
+      "sha256": "cc8389028c42ae504c1a70b23b1da0c162557bfc9672289845c48c70ed507275",
       "sectionsUsed": [
         "8.7 Function definitions: *identifier receives a tuple of excess positional parameters, **identifier a new ordered mapping of excess keyword arguments; annotations do not change function semantics"
       ]
     },
     {
       "url": "https://docs.python.org/3/library/typing.html",
-      "retrievedAt": "2026-11-09T22:18:18.144Z",
+      "retrievedAt": "2026-11-18T08:47:57.122Z",
       "status": 200,
       "finalUrl": "https://docs.python.org/3/library/typing.html",
-      "sha256": "bf13d4f5c60a0c8d90aad9a5621172cfa7a9e792000de47beca386a2eabc38de",
+      "sha256": "36dabea87178fd31110849aba13acc86f934855dc6caf36fd180183209f52dba",
       "sectionsUsed": [
         "Introduction note: the Python runtime does not enforce function and variable type annotations; they can be used by third-party tools such as type checkers, IDEs and linters"
       ]

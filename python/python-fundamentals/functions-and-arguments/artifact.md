@@ -142,7 +142,7 @@ Use these same observable steps when working from the text alternative.
 4. How to know it's done: Each check above changes from open to done when a run shows it. Continue appears when every check is done.
 
 1. Where to look: Use the functions.py editor in the workspace; the examples above it show the syntax.
-2. What to do or type: Replace all four `___` placeholders: annotate `room` as `str`, `nights` as `int` and the return as `tuple`, add `*parts` and `**fields`, and call `describe` with `*values` and `**options`. Press Run or Ctrl+Enter (Cmd+Enter on a Mac).
+2. What to do or type: Replace all four `___` placeholders: add both collectors the return line names, then call spreading `values` positionally and `options` by keyword. Type-hint `room`, `nights` and the return to match their values. Press Run or Ctrl+Enter (Cmd+Enter on a Mac).
 3. What to expect: Problems names any placeholder or structure still out of place; Output confirms the completed scaffold.
 4. How to know it's done: The author check reads done, then Continue appears. Reset code restores the starter and its placeholders.
 
@@ -183,7 +183,7 @@ Call activity for def log(*parts, **fields): print(parts, fields), with values =
 
 ### explore
 
-Authoring activity: complete functions.py so describe has an annotated positional parameter, an annotated default parameter, *parts, **fields and a return annotation; then call it by unpacking values with * and options with **. Run checks only those required structures in this scaffold. Expected result: the checker reports the signature, annotations and both unpackings found.
+Authoring activity: complete functions.py so describe has an annotated positional parameter, an annotated default parameter, a parameter that collects extra positional arguments, one that collects extra keyword arguments and a return annotation; then call it so the items of values arrive as positional arguments and the entries of options as keyword arguments. Run checks only those required structures in this scaffold. Expected result: the checker reports the signature, annotations and both unpackings found.
 
 ### mcq
 

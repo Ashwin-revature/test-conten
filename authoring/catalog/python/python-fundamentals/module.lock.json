@@ -170,8 +170,8 @@
     },
     {
       "path": "authoring/evidence/python/python-fundamentals/functions-and-arguments/owner-essential-qa.json",
-      "sha256": "a66a5dc34d1166e820119a520b54d019207b29d0e0dd952264cf2e2dff3ef39e",
-      "bytes": 5805
+      "sha256": "36a7a1409ccb478d932212834c5a838b0b28fbb23113817b33753306f8ee8b8b",
+      "bytes": 3248
     },
     {
       "path": "authoring/evidence/python/python-fundamentals/functions-and-arguments/prefix-delta-7a3e291-critic-education-recheck.json",
@@ -195,7 +195,7 @@
     },
     {
       "path": "authoring/evidence/python/python-fundamentals/functions-and-arguments/sources.json",
-      "sha256": "6027b309563cd1d3b3b9631946fcf1c97d79950411f3ff844a13cf168e476d94",
+      "sha256": "12253b3b143f669f85b1ca7b127e58a9a066e07ca3a8541ae376b6d41f2c7262",
       "bytes": 2015
     },
     {
@@ -850,13 +850,13 @@
     },
     {
       "path": "python/python-fundamentals/functions-and-arguments/artifact.html",
-      "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
-      "bytes": 113419
+      "sha256": "a7967507b6838cbf14d9db1b30c732b18cac09cab5117784c70ec5413dc2264b",
+      "bytes": 113884
     },
     {
       "path": "python/python-fundamentals/functions-and-arguments/artifact.md",
-      "sha256": "dec55d2053c6afc4f8ae0c8c595acf0a5297083e2c157b4ef069a3bcff3f867f",
-      "bytes": 10664
+      "sha256": "ff279b9f3a5f19e0057b8ac94843389fd7869551ad29e1522563529c61adbc14",
+      "bytes": 10822
     },
     {
       "path": "python/python-fundamentals/functions-and-arguments/video-artifact.md",
@@ -1619,7 +1619,7 @@
       "field": "artifactHashes.artifact.md",
       "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.md",
       "sha256": "dec55d2053c6afc4f8ae0c8c595acf0a5297083e2c157b4ef069a3bcff3f867f",
-      "current": true
+      "current": false
     },
     {
       "topic": "functions-and-arguments",
@@ -1675,7 +1675,7 @@
       "field": "artifactHashes.artifact.md",
       "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.md",
       "sha256": "dec55d2053c6afc4f8ae0c8c595acf0a5297083e2c157b4ef069a3bcff3f867f",
-      "current": true
+      "current": false
     },
     {
       "topic": "functions-and-arguments",
@@ -1851,7 +1851,7 @@
       "field": "artifactHashes.artifact.md",
       "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.md",
       "sha256": "dec55d2053c6afc4f8ae0c8c595acf0a5297083e2c157b4ef069a3bcff3f867f",
-      "current": true
+      "current": false
     },
     {
       "topic": "functions-and-arguments",
@@ -1922,7 +1922,7 @@
       "evidencePath": "authoring/evidence/python/python-fundamentals/functions-and-arguments/owner-essential-qa.json",
       "field": "artifacts[0].reviewedSha256",
       "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
-      "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
+      "sha256": "a7967507b6838cbf14d9db1b30c732b18cac09cab5117784c70ec5413dc2264b",
       "current": true
     },
     {
@@ -1963,7 +1963,7 @@
       "field": "artifactHashes.artifact.md",
       "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.md",
       "sha256": "dec55d2053c6afc4f8ae0c8c595acf0a5297083e2c157b4ef069a3bcff3f867f",
-      "current": true
+      "current": false
     },
     {
       "topic": "functions-and-arguments",
@@ -2083,7 +2083,7 @@
       "field": "artifactHashes.artifact.md",
       "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.md",
       "sha256": "dec55d2053c6afc4f8ae0c8c595acf0a5297083e2c157b4ef069a3bcff3f867f",
-      "current": true
+      "current": false
     },
     {
       "topic": "functions-and-arguments",
@@ -2138,7 +2138,7 @@
       "evidencePath": "authoring/evidence/python/python-fundamentals/functions-and-arguments/sources.json",
       "field": "reviewedSha256",
       "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
-      "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
+      "sha256": "a7967507b6838cbf14d9db1b30c732b18cac09cab5117784c70ec5413dc2264b",
       "current": true
     },
     {
@@ -2147,7 +2147,7 @@
       "field": "artifactHashes.artifact.html",
       "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
       "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
-      "current": true
+      "current": false
     },
     {
       "topic": "functions-and-arguments",
@@ -2155,7 +2155,7 @@
       "field": "recheck.items[0].reviewedSha256",
       "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
       "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
-      "current": true
+      "current": false
     },
     {
       "topic": "functions-and-arguments",
@@ -2163,7 +2163,7 @@
       "field": "reviewedSha256",
       "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
       "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
-      "current": true
+      "current": false
     },
     {
       "topic": "functions-and-arguments",
@@ -2171,7 +2171,7 @@
       "field": "artifactHashes.artifact.html",
       "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
       "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
-      "current": true
+      "current": false
     },
     {
       "topic": "functions-and-arguments",
@@ -2179,7 +2179,7 @@
       "field": "recheck.items[0].reviewedSha256",
       "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
       "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
-      "current": true
+      "current": false
     },
     {
       "topic": "functions-and-arguments",
@@ -2187,7 +2187,7 @@
       "field": "reviewedSha256",
       "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
       "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
-      "current": true
+      "current": false
     },
     {
       "topic": "functions-and-arguments",
@@ -3613,7 +3613,7 @@
       "field": "artifactHashes.functions-and-arguments/artifact.md",
       "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.md",
       "sha256": "dec55d2053c6afc4f8ae0c8c595acf0a5297083e2c157b4ef069a3bcff3f867f",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-final-critic-sme-recheck.json",
@@ -4180,7 +4180,7 @@
       "field": "recheck.items[1].reviewedSha256",
       "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
       "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-education-recheck.json",
@@ -4222,7 +4222,7 @@
       "field": "recheck.items[1].reviewedSha256",
       "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.html",
       "sha256": "2cc9bc53801e642f40b629d37ab4f3d1609f471ba9645da7320249254a8d556d",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-sme-recheck.json",
@@ -5102,7 +5102,7 @@
       "field": "artifactHashes.functions-and-arguments/artifact.md",
       "artifactPath": "python/python-fundamentals/functions-and-arguments/artifact.md",
       "sha256": "dec55d2053c6afc4f8ae0c8c595acf0a5297083e2c157b4ef069a3bcff3f867f",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/prefix-delta-7a3e291-critic-education-recheck.json",
