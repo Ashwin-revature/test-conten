@@ -8,64 +8,79 @@
     "note": "author workstation; CI runs Ubuntu. No container engine, Python runtime or CI runner is used by this lab."
   },
   "model": {
-    "basis": "Minutes for a learner who has finished the covered topic pages for that day. The lab is repair-and-complete: the compose draft ships commented with named defects, the Dockerfile and pipeline are teammate drafts, and main.py's docstring lists the three rules its call breaks. Reading time uses the frozen page estimator rates (200 words per minute, 15 code lines per minute) for the README and the architecture brief; editing time is judged from the edit distance between each draft and the private solutions (compose about 8 changed lines after uncommenting, Dockerfile 3 changed lines, main.py about 10 changed lines, ci.yml about 12 changed lines, 30 worksheet choices plus 6 why sentences).",
+    "basis": "Minutes for a learner who has read that day's topic pages. Reading uses the frozen page-estimator rate of 200 words per minute for the README, the brief and the required Jenkins reading. Each worksheet choice is charged 0.25 minute (the evidence is already read; the learner matches it to a listed option) and each why sentence 1.0 minute. Editing time is judged from the edit distance between each draft and the private solutions.",
     "phases": [
       {
-        "phase": "setup and first run (outside the required core)",
-        "minutes": 3
+        "phase": "setup (outside the required core)",
+        "minutes": 3,
+        "derivation": "npm ci once"
       },
       {
-        "phase": "S38 1 orient and copy .env",
-        "minutes": 3
+        "phase": "S38 1 orient: read the README, copy .env, first run",
+        "minutes": 5,
+        "derivation": "README 919 words at 200 wpm = 4.6, plus about 0.7 for the copy and the first run"
       },
       {
         "phase": "S38 2 repair the reviews services in Compose",
-        "minutes": 8
+        "minutes": 8,
+        "derivation": "uncomment, then about 8 changed lines across two services, the healthcheck and the volumes key"
       },
       {
-        "phase": "S38 3 repair the reviews image",
-        "minutes": 5
+        "phase": "S38 3 fix the Dockerfile start command",
+        "minutes": 2,
+        "derivation": "one instruction changed; the rest of the image is prewired from the previous module"
       },
       {
         "phase": "S38 4 safe service-to-service call",
-        "minutes": 8
+        "minutes": 8,
+        "derivation": "about 10 changed lines: a 401 guard, an httpx.Timeout, two except handlers"
       },
       {
-        "phase": "S38 5 architecture and data review (22 choices, 4 why sentences) and a test pass",
-        "minutes": 15
+        "phase": "S38 5 architecture and data review, then the checkpoint run",
+        "minutes": 14,
+        "derivation": "brief 634 words = 3.2, 27 choices x 0.25 = 6.75, 3 why sentences x 1.0 = 3, checkpoint run 1: 13.9"
+      },
+      {
+        "phase": "S39 Jenkins, registries, CD and Kubernetes reading (required by phase 7)",
+        "minutes": 4,
+        "derivation": "799 words at 200 wpm = 4.0"
       },
       {
         "phase": "S39 6 repair the pipeline",
-        "minutes": 10
+        "minutes": 9,
+        "derivation": "about 12 changed lines: trigger, checkout, needs, login through env, context, push condition, pin, permissions, delete the print step"
       },
       {
-        "phase": "S39 7 images and delivery review (8 choices, 2 why sentences)",
-        "minutes": 4
+        "phase": "S39 7 images, secrets and delivery review",
+        "minutes": 5,
+        "derivation": "14 choices x 0.25 = 3.5, 1 why sentence = 1, the image-reference fixture 0.1: 4.6"
       },
       {
-        "phase": "S39 final test pass",
-        "minutes": 2
+        "phase": "S39 final run",
+        "minutes": 1,
+        "derivation": "one full run"
       }
     ],
-    "typicalMinutes": 55,
+    "typicalMinutes": 56,
     "split": {
-      "S38": 39,
-      "S39": 16
+      "S38": 37,
+      "S39": 19
     },
     "requiredCoreBounds": {
-      "S38": "about 39 minutes inside S38's 85-minute guided-lab block",
-      "S39": "about 16 minutes inside S39's 85-minute guided-lab block, which also holds the module check",
+      "S38": "about 37 minutes inside S38's 85-minute guided-lab block",
+      "S39": "about 19 minutes, including the 4-minute Jenkins reading, inside S39's 85-minute guided-lab block, which also holds the module check",
       "outsideCore": "the one-time setup (about 3 minutes) is outside the required core"
     },
-    "wrongFirstRetry": "a failing test costs about 1 minute to read the message, make the one named repair and rerun; the drafts localize each failure",
+    "wrongFirstRetry": "a failing test costs about 1 minute to read the message, make the one named repair and rerun",
     "worstRequiredMinutes": 60,
-    "worstRequiredBasis": "typical 55 plus about 5 minutes of extra retries and brief rereading reaches the 60-minute bound the README names as the pause-and-self-study point",
+    "worstRequiredBasis": "typical 56 plus 4 extra failed runs at about 1 minute each = 60, the bound the README names as the pause-and-self-study point",
     "fit": "Each day's share occupies that day's existing frozen-calendar Lab-template guided-lab block (85 minutes) and adds no required time elsewhere."
   },
   "observed": {
     "learnerCommands": {
       "note": "node --test --test-reporter=tap finishes in well under a second on the starter and on both private solutions"
-    }
+    },
+    "independentAgentSolve": "an independent non-author agent solved the git-archived lab from the README, the topic pages and the failure messages in 3 test runs (0/26, then 15/26 at the S38 checkpoint, then 26/26) without opening the tests, and estimated about 44 minutes by phase (3, 7, 1, 9, 10, 10, 4). That is an agent's estimate, not a human timing; the model above stays the planning figure. The friction it reported was fixed in the lab before this record."
   },
   "notObserved": "No human learner has been timed. The phase minutes above are a model, not an observation."
 }

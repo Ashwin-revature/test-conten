@@ -80,13 +80,13 @@
     },
     {
       "path": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-solved-run.json",
-      "sha256": "c1d58a4a81bb9b42e283cd425182140249072c9c18e8a37ef077879dcb43797e",
-      "bytes": 7694
+      "sha256": "e6c2206085b7edab6b8dfece487e091ad7d842a7282747d01d8ead6f1967e580",
+      "bytes": 8037
     },
     {
       "path": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-timing.json",
-      "sha256": "8636bf61b3e75aafdd9d4db779f48d50c1519633e918065311b68f9c177e3d47",
-      "bytes": 3155
+      "sha256": "15284e095faebcae79c8e86fa3e41c8b34b7909157904b0f492f866bb2de9e28",
+      "bytes": 4400
     },
     {
       "path": "authoring/evidence/containers-cicd/microservices-and-ci-cd/first-draft-manifest.json",
@@ -122,6 +122,21 @@
       "path": "authoring/evidence/containers-cicd/microservices-and-ci-cd/jenkins-registries-cd-and-kubernetes/sources.json",
       "sha256": "086b6a7846860b81f3af90249e63a97110559dbd6922ebc05a584adff90ba5f4",
       "bytes": 5773
+    },
+    {
+      "path": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "sha256": "7aaeb83759d169a07ef0e88439e17798497280c40f427f77603830876161460c",
+      "bytes": 28921
+    },
+    {
+      "path": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "sha256": "8d51df447f23f04a2a704da8d919883df8d809c6fadccc8ce25307788f011a01",
+      "bytes": 27026
+    },
+    {
+      "path": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-reconciliation.json",
+      "sha256": "62286650199516f9bb87380108649bd85a12354de1082ec06770e538b47c5c34",
+      "bytes": 36023
     },
     {
       "path": "authoring/evidence/containers-cicd/microservices-and-ci-cd/monolith-vs-microservices/owner-essential-qa.json",
@@ -225,18 +240,18 @@
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/README.md",
-      "sha256": "9df67c0351afc02676fb64ea88d404a136d9009c5722ea3b1356e8dcdef57517",
-      "bytes": 7477
+      "sha256": "278c84efe83c756f5ee4d4f5ab8f93a034077624d36e607922a2c386fb19cd0e",
+      "bytes": 5723
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/expected/solved-summary.txt",
-      "sha256": "28db168f1d14b0368e49a7fc65d0c2c2788732a4fc1b12ca0cbb2a606b2d7b37",
-      "bytes": 1990
+      "sha256": "927e64a3f1a03d76d0a964a519890c61da0ee1157b31bdd672eca0b18ae35fcc",
+      "bytes": 1985
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/expected/starter-summary.txt",
-      "sha256": "039fc674111feca307863bf3dd73b6162ca85b455f5e95822abe2e90727daf2f",
-      "bytes": 2098
+      "sha256": "a3a04410ff3dc215617615f9066d17986c31b76ba72fae7f68f2369c32852a97",
+      "bytes": 2089
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/fixtures/.env.example",
@@ -245,23 +260,23 @@
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/fixtures/briefs/architecture-brief.md",
-      "sha256": "ee182f1507303308163b72ff003ada5b818ca8ce7322a4d02fdd7bb7fa437bfa",
-      "bytes": 3630
+      "sha256": "62f2be54b3807b2586acaa138809a8ba40ff928f77dad31389147586900fed9d",
+      "bytes": 3922
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/fixtures/briefs/image-reference.txt",
-      "sha256": "8a3a8f613ad38f9e27e7a4e8d7419ccc3cfc78e1967a516040a2c58ac1527a0f",
-      "bytes": 77
+      "sha256": "b19ef04e2336adfd683e93fc1f27223bf2936e300ce45226ea7555d15b9b2f33",
+      "bytes": 189
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/lab.json",
-      "sha256": "9c58c9241d704517b6f9baea638de0c5848f51a5180d4112ac83d3e063368d78",
-      "bytes": 6884
+      "sha256": "27501ca90bc2dd875baa92a078ff893d8fbc57a9db647e4008d11e5274ba9965",
+      "bytes": 6864
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/.github/workflows/ci.yml",
-      "sha256": "23e3f3b9efacc064c3ecc267ea1ad4a8b33e8434eaeaa918d027cc197a1a9987",
-      "bytes": 792
+      "sha256": "0fd485a2de89495350989d88d162d32c82388883f0874182d170e91877d38231",
+      "bytes": 981
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/.gitignore",
@@ -270,28 +285,28 @@
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/compose.yaml",
-      "sha256": "79caf1e98f7b157cf5ac62869d1d5241fd25a2466c2ba467b38d78e3cfe63823",
-      "bytes": 1496
+      "sha256": "296a2981948ec44e9c38f05a592b2cffb109c12fd85fc9bbc77a55db9b75000c",
+      "bytes": 1524
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/decisions.yaml",
-      "sha256": "337d0e1f7712e1857918ba6e7bfd6c842bfa06e1513baa19ce983f980c6ef391",
-      "bytes": 2549
+      "sha256": "ac99b429b85cab36e7d922cd26cfd18f929c9c08c0ccc65f81a25f311e87aedd",
+      "bytes": 3958
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/.dockerignore",
-      "sha256": "319f8e376e8fdddd571f42b249ee21d571c6673e526cb8b8577077a77f2fa976",
-      "bytes": 106
+      "sha256": "79052f6871c4f7f8dcda47576c5a56a89a518db2cef8a4585f951f13f4be0946",
+      "bytes": 150
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/Dockerfile",
-      "sha256": "7617adb046a7b6b9f8a5119747c6d1256391b0c123d1b16a429f8e7c202f8a34",
-      "bytes": 449
+      "sha256": "8adafd8da872f58632dd14599632615a6740003b6796386015cd8f600f9a2e8f",
+      "bytes": 536
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/app/main.py",
-      "sha256": "1786d5bf84bb996fd3d03437923e0e9fba81dc841c3df7b685b23df141958393",
-      "bytes": 1556
+      "sha256": "78ff20d69f1a1c96945146a26882279276de46565b2f2dacdb477daff6a78d81",
+      "bytes": 1642
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/requirements.txt",
@@ -300,28 +315,28 @@
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/ci.test.mjs",
-      "sha256": "32822e43ab8a0caf2540bf2b9410d993dda00fcbafcbc2a252fc0a64f7723f12",
-      "bytes": 1441
+      "sha256": "698d1ff83718360f4f47cae43175a2cda5493ce75a490d5ab3b110eadf9c13a2",
+      "bytes": 1480
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/compose.test.mjs",
-      "sha256": "b3365f5caedfe40b6bcf7816da47cb20fdbfb50cf33c3e5e3bad8a0033db19ba",
-      "bytes": 1288
+      "sha256": "657fd6172e7417928559e579ef5e95eeecbc17bd70180cbf3a7651f199f5a02d",
+      "bytes": 1306
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/decisions.test.mjs",
-      "sha256": "c20d558eab1b795210d08bc2f6ce2748520db552a0a1ab05fda396ebbab09eb3",
-      "bytes": 1245
+      "sha256": "fcd598182544d27ddaf6bc66d8dd3e0d349fff96e2cb6c1aa6e0e888409c5c93",
+      "bytes": 1635
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/dockerfile.test.mjs",
-      "sha256": "849779dc9e92f98e1a78c77f8bd215dc70ac31aff289f3eedcd86694be14a3d4",
-      "bytes": 838
+      "sha256": "3c6ec9e3adb6cb0175a44e39d1a0124afbf957cfab04217c29112b84390c2dbc",
+      "bytes": 286
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
-      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
-      "bytes": 23211
+      "sha256": "9f99a3850a18e6638661eafbc1115defbff98e5fd0aa51d2f70d505b3e01dbdb",
+      "bytes": 36618
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/package-lock.json",
@@ -335,8 +350,8 @@
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/service.test.mjs",
-      "sha256": "92be8e5f4dcdfb0f79d041c8e552eadbf507a97ceb039eec6f087d8482dd6261",
-      "bytes": 692
+      "sha256": "8314fabe10b849245f72e3917b76ad8f83d593dce9b4bd7523a064c28385ea41",
+      "bytes": 694
     },
     {
       "path": "containers-cicd/microservices-and-ci-cd/github-actions-pipeline/artifact.gift",
@@ -487,42 +502,42 @@
       "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-solved-run.json",
       "field": "files[0].reviewedSha256",
       "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/README.md",
-      "sha256": "9df67c0351afc02676fb64ea88d404a136d9009c5722ea3b1356e8dcdef57517",
+      "sha256": "278c84efe83c756f5ee4d4f5ab8f93a034077624d36e607922a2c386fb19cd0e",
       "current": true
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-solved-run.json",
       "field": "files[1].reviewedSha256",
       "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/expected/solved-summary.txt",
-      "sha256": "28db168f1d14b0368e49a7fc65d0c2c2788732a4fc1b12ca0cbb2a606b2d7b37",
+      "sha256": "927e64a3f1a03d76d0a964a519890c61da0ee1157b31bdd672eca0b18ae35fcc",
       "current": true
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-solved-run.json",
       "field": "files[10].reviewedSha256",
       "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/decisions.yaml",
-      "sha256": "337d0e1f7712e1857918ba6e7bfd6c842bfa06e1513baa19ce983f980c6ef391",
+      "sha256": "ac99b429b85cab36e7d922cd26cfd18f929c9c08c0ccc65f81a25f311e87aedd",
       "current": true
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-solved-run.json",
       "field": "files[11].reviewedSha256",
       "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/.dockerignore",
-      "sha256": "319f8e376e8fdddd571f42b249ee21d571c6673e526cb8b8577077a77f2fa976",
+      "sha256": "79052f6871c4f7f8dcda47576c5a56a89a518db2cef8a4585f951f13f4be0946",
       "current": true
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-solved-run.json",
       "field": "files[12].reviewedSha256",
       "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/Dockerfile",
-      "sha256": "7617adb046a7b6b9f8a5119747c6d1256391b0c123d1b16a429f8e7c202f8a34",
+      "sha256": "8adafd8da872f58632dd14599632615a6740003b6796386015cd8f600f9a2e8f",
       "current": true
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-solved-run.json",
       "field": "files[13].reviewedSha256",
       "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/app/main.py",
-      "sha256": "1786d5bf84bb996fd3d03437923e0e9fba81dc841c3df7b685b23df141958393",
+      "sha256": "78ff20d69f1a1c96945146a26882279276de46565b2f2dacdb477daff6a78d81",
       "current": true
     },
     {
@@ -536,42 +551,42 @@
       "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-solved-run.json",
       "field": "files[15].reviewedSha256",
       "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/ci.test.mjs",
-      "sha256": "32822e43ab8a0caf2540bf2b9410d993dda00fcbafcbc2a252fc0a64f7723f12",
+      "sha256": "698d1ff83718360f4f47cae43175a2cda5493ce75a490d5ab3b110eadf9c13a2",
       "current": true
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-solved-run.json",
       "field": "files[16].reviewedSha256",
       "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/compose.test.mjs",
-      "sha256": "b3365f5caedfe40b6bcf7816da47cb20fdbfb50cf33c3e5e3bad8a0033db19ba",
+      "sha256": "657fd6172e7417928559e579ef5e95eeecbc17bd70180cbf3a7651f199f5a02d",
       "current": true
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-solved-run.json",
       "field": "files[17].reviewedSha256",
       "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/decisions.test.mjs",
-      "sha256": "c20d558eab1b795210d08bc2f6ce2748520db552a0a1ab05fda396ebbab09eb3",
+      "sha256": "fcd598182544d27ddaf6bc66d8dd3e0d349fff96e2cb6c1aa6e0e888409c5c93",
       "current": true
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-solved-run.json",
       "field": "files[18].reviewedSha256",
       "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/dockerfile.test.mjs",
-      "sha256": "849779dc9e92f98e1a78c77f8bd215dc70ac31aff289f3eedcd86694be14a3d4",
+      "sha256": "3c6ec9e3adb6cb0175a44e39d1a0124afbf957cfab04217c29112b84390c2dbc",
       "current": true
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-solved-run.json",
       "field": "files[19].reviewedSha256",
       "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
-      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "sha256": "9f99a3850a18e6638661eafbc1115defbff98e5fd0aa51d2f70d505b3e01dbdb",
       "current": true
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-solved-run.json",
       "field": "files[2].reviewedSha256",
       "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/expected/starter-summary.txt",
-      "sha256": "039fc674111feca307863bf3dd73b6162ca85b455f5e95822abe2e90727daf2f",
+      "sha256": "a3a04410ff3dc215617615f9066d17986c31b76ba72fae7f68f2369c32852a97",
       "current": true
     },
     {
@@ -592,7 +607,7 @@
       "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-solved-run.json",
       "field": "files[22].reviewedSha256",
       "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/service.test.mjs",
-      "sha256": "92be8e5f4dcdfb0f79d041c8e552eadbf507a97ceb039eec6f087d8482dd6261",
+      "sha256": "8314fabe10b849245f72e3917b76ad8f83d593dce9b4bd7523a064c28385ea41",
       "current": true
     },
     {
@@ -606,28 +621,28 @@
       "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-solved-run.json",
       "field": "files[4].reviewedSha256",
       "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/fixtures/briefs/architecture-brief.md",
-      "sha256": "ee182f1507303308163b72ff003ada5b818ca8ce7322a4d02fdd7bb7fa437bfa",
+      "sha256": "62f2be54b3807b2586acaa138809a8ba40ff928f77dad31389147586900fed9d",
       "current": true
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-solved-run.json",
       "field": "files[5].reviewedSha256",
       "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/fixtures/briefs/image-reference.txt",
-      "sha256": "8a3a8f613ad38f9e27e7a4e8d7419ccc3cfc78e1967a516040a2c58ac1527a0f",
+      "sha256": "b19ef04e2336adfd683e93fc1f27223bf2936e300ce45226ea7555d15b9b2f33",
       "current": true
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-solved-run.json",
       "field": "files[6].reviewedSha256",
       "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/lab.json",
-      "sha256": "9c58c9241d704517b6f9baea638de0c5848f51a5180d4112ac83d3e063368d78",
+      "sha256": "27501ca90bc2dd875baa92a078ff893d8fbc57a9db647e4008d11e5274ba9965",
       "current": true
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-solved-run.json",
       "field": "files[7].reviewedSha256",
       "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/.github/workflows/ci.yml",
-      "sha256": "23e3f3b9efacc064c3ecc267ea1ad4a8b33e8434eaeaa918d027cc197a1a9987",
+      "sha256": "0fd485a2de89495350989d88d162d32c82388883f0874182d170e91877d38231",
       "current": true
     },
     {
@@ -641,7 +656,7 @@
       "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/coding-lab-solved-run.json",
       "field": "files[9].reviewedSha256",
       "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/compose.yaml",
-      "sha256": "79caf1e98f7b157cf5ac62869d1d5241fd25a2466c2ba467b38d78e3cfe63823",
+      "sha256": "296a2981948ec44e9c38f05a592b2cffb109c12fd85fc9bbc77a55db9b75000c",
       "current": true
     },
     {
@@ -691,6 +706,622 @@
       "artifactPath": "containers-cicd/microservices-and-ci-cd/jenkins-registries-cd-and-kubernetes/artifact.html",
       "sha256": "3daf313f3af6d4edb52866ea475c59260c9018193f9d77c96859784ebd5d1f3f",
       "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/expected/solved-summary.txt",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/expected/solved-summary.txt",
+      "sha256": "28db168f1d14b0368e49a7fc65d0c2c2788732a4fc1b12ca0cbb2a606b2d7b37",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/expected/starter-summary.txt",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/expected/starter-summary.txt",
+      "sha256": "039fc674111feca307863bf3dd73b6162ca85b455f5e95822abe2e90727daf2f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/fixtures/.env.example",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/fixtures/.env.example",
+      "sha256": "16d958ba8d51b7600909af11bbcc39441a8f4b4c80a18379e12e2a50287223e4",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/fixtures/briefs/architecture-brief.md",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/fixtures/briefs/architecture-brief.md",
+      "sha256": "ee182f1507303308163b72ff003ada5b818ca8ce7322a4d02fdd7bb7fa437bfa",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/fixtures/briefs/image-reference.txt",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/fixtures/briefs/image-reference.txt",
+      "sha256": "8a3a8f613ad38f9e27e7a4e8d7419ccc3cfc78e1967a516040a2c58ac1527a0f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/lab.json",
+      "sha256": "9c58c9241d704517b6f9baea638de0c5848f51a5180d4112ac83d3e063368d78",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/README.md",
+      "sha256": "9df67c0351afc02676fb64ea88d404a136d9009c5722ea3b1356e8dcdef57517",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/starter/.github/workflows/ci.yml",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/.github/workflows/ci.yml",
+      "sha256": "23e3f3b9efacc064c3ecc267ea1ad4a8b33e8434eaeaa918d027cc197a1a9987",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/starter/.gitignore",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/.gitignore",
+      "sha256": "6c9e486632f5647c93d52d6c064f6e4ebea0c0ddd0747d9f91511f6a06cf817a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/starter/compose.yaml",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/compose.yaml",
+      "sha256": "79caf1e98f7b157cf5ac62869d1d5241fd25a2466c2ba467b38d78e3cfe63823",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/starter/decisions.yaml",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/decisions.yaml",
+      "sha256": "337d0e1f7712e1857918ba6e7bfd6c842bfa06e1513baa19ce983f980c6ef391",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/starter/reviews/.dockerignore",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/.dockerignore",
+      "sha256": "319f8e376e8fdddd571f42b249ee21d571c6673e526cb8b8577077a77f2fa976",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/starter/reviews/app/main.py",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/app/main.py",
+      "sha256": "1786d5bf84bb996fd3d03437923e0e9fba81dc841c3df7b685b23df141958393",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/starter/reviews/Dockerfile",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/Dockerfile",
+      "sha256": "7617adb046a7b6b9f8a5119747c6d1256391b0c123d1b16a429f8e7c202f8a34",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/starter/reviews/requirements.txt",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/requirements.txt",
+      "sha256": "44216c29888f2536291b0822db49381252392f80298b391c94c130bf892ebbad",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/tests/ci.test.mjs",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/ci.test.mjs",
+      "sha256": "32822e43ab8a0caf2540bf2b9410d993dda00fcbafcbc2a252fc0a64f7723f12",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/tests/compose.test.mjs",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/compose.test.mjs",
+      "sha256": "b3365f5caedfe40b6bcf7816da47cb20fdbfb50cf33c3e5e3bad8a0033db19ba",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/tests/decisions.test.mjs",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/decisions.test.mjs",
+      "sha256": "c20d558eab1b795210d08bc2f6ce2748520db552a0a1ab05fda396ebbab09eb3",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/tests/dockerfile.test.mjs",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/dockerfile.test.mjs",
+      "sha256": "849779dc9e92f98e1a78c77f8bd215dc70ac31aff289f3eedcd86694be14a3d4",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/tests/lab.mjs",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/tests/package-lock.json",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/package-lock.json",
+      "sha256": "967ac4c675131cb4beb93684e07dbbb8f8a427a78dc66422036927ce5c126803",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/tests/package.json",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/package.json",
+      "sha256": "3a5c13790064c853eef28d93aed9525d0b7280843d68c34a43c0f734a8e3a4fd",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/tests/service.test.mjs",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/service.test.mjs",
+      "sha256": "92be8e5f4dcdfb0f79d041c8e552eadbf507a97ceb039eec6f087d8482dd6261",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/app/main.py",
+      "sha256": "1786d5bf84bb996fd3d03437923e0e9fba81dc841c3df7b685b23df141958393",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "findings[10].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/README.md",
+      "sha256": "9df67c0351afc02676fb64ea88d404a136d9009c5722ea3b1356e8dcdef57517",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "findings[11].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/README.md",
+      "sha256": "9df67c0351afc02676fb64ea88d404a136d9009c5722ea3b1356e8dcdef57517",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "findings[12].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/README.md",
+      "sha256": "9df67c0351afc02676fb64ea88d404a136d9009c5722ea3b1356e8dcdef57517",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "findings[13].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "findings[14].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/.github/workflows/ci.yml",
+      "sha256": "23e3f3b9efacc064c3ecc267ea1ad4a8b33e8434eaeaa918d027cc197a1a9987",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "findings[15].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/fixtures/briefs/architecture-brief.md",
+      "sha256": "ee182f1507303308163b72ff003ada5b818ca8ce7322a4d02fdd7bb7fa437bfa",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "findings[16].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/README.md",
+      "sha256": "9df67c0351afc02676fb64ea88d404a136d9009c5722ea3b1356e8dcdef57517",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "findings[17].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/README.md",
+      "sha256": "9df67c0351afc02676fb64ea88d404a136d9009c5722ea3b1356e8dcdef57517",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "findings[18].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/README.md",
+      "sha256": "9df67c0351afc02676fb64ea88d404a136d9009c5722ea3b1356e8dcdef57517",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "findings[3].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "findings[4].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "findings[5].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "findings[6].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "findings[7].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "findings[8].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/decisions.yaml",
+      "sha256": "337d0e1f7712e1857918ba6e7bfd6c842bfa06e1513baa19ce983f980c6ef391",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "findings[9].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/lab.json",
+      "sha256": "9c58c9241d704517b6f9baea638de0c5848f51a5180d4112ac83d3e063368d78",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-education.json",
+      "field": "reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/lab.json",
+      "sha256": "9c58c9241d704517b6f9baea638de0c5848f51a5180d4112ac83d3e063368d78",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/expected/solved-summary.txt",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/expected/solved-summary.txt",
+      "sha256": "28db168f1d14b0368e49a7fc65d0c2c2788732a4fc1b12ca0cbb2a606b2d7b37",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/expected/starter-summary.txt",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/expected/starter-summary.txt",
+      "sha256": "039fc674111feca307863bf3dd73b6162ca85b455f5e95822abe2e90727daf2f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/fixtures/.env.example",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/fixtures/.env.example",
+      "sha256": "16d958ba8d51b7600909af11bbcc39441a8f4b4c80a18379e12e2a50287223e4",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/fixtures/briefs/architecture-brief.md",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/fixtures/briefs/architecture-brief.md",
+      "sha256": "ee182f1507303308163b72ff003ada5b818ca8ce7322a4d02fdd7bb7fa437bfa",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/fixtures/briefs/image-reference.txt",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/fixtures/briefs/image-reference.txt",
+      "sha256": "8a3a8f613ad38f9e27e7a4e8d7419ccc3cfc78e1967a516040a2c58ac1527a0f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/lab.json",
+      "sha256": "9c58c9241d704517b6f9baea638de0c5848f51a5180d4112ac83d3e063368d78",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/README.md",
+      "sha256": "9df67c0351afc02676fb64ea88d404a136d9009c5722ea3b1356e8dcdef57517",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/starter/.github/workflows/ci.yml",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/.github/workflows/ci.yml",
+      "sha256": "23e3f3b9efacc064c3ecc267ea1ad4a8b33e8434eaeaa918d027cc197a1a9987",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/starter/.gitignore",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/.gitignore",
+      "sha256": "6c9e486632f5647c93d52d6c064f6e4ebea0c0ddd0747d9f91511f6a06cf817a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/starter/compose.yaml",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/compose.yaml",
+      "sha256": "79caf1e98f7b157cf5ac62869d1d5241fd25a2466c2ba467b38d78e3cfe63823",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/starter/decisions.yaml",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/decisions.yaml",
+      "sha256": "337d0e1f7712e1857918ba6e7bfd6c842bfa06e1513baa19ce983f980c6ef391",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/starter/reviews/.dockerignore",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/.dockerignore",
+      "sha256": "319f8e376e8fdddd571f42b249ee21d571c6673e526cb8b8577077a77f2fa976",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/starter/reviews/app/main.py",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/app/main.py",
+      "sha256": "1786d5bf84bb996fd3d03437923e0e9fba81dc841c3df7b685b23df141958393",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/starter/reviews/Dockerfile",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/Dockerfile",
+      "sha256": "7617adb046a7b6b9f8a5119747c6d1256391b0c123d1b16a429f8e7c202f8a34",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/starter/reviews/requirements.txt",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/requirements.txt",
+      "sha256": "44216c29888f2536291b0822db49381252392f80298b391c94c130bf892ebbad",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/tests/ci.test.mjs",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/ci.test.mjs",
+      "sha256": "32822e43ab8a0caf2540bf2b9410d993dda00fcbafcbc2a252fc0a64f7723f12",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/tests/compose.test.mjs",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/compose.test.mjs",
+      "sha256": "b3365f5caedfe40b6bcf7816da47cb20fdbfb50cf33c3e5e3bad8a0033db19ba",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/tests/decisions.test.mjs",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/decisions.test.mjs",
+      "sha256": "c20d558eab1b795210d08bc2f6ce2748520db552a0a1ab05fda396ebbab09eb3",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/tests/dockerfile.test.mjs",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/dockerfile.test.mjs",
+      "sha256": "849779dc9e92f98e1a78c77f8bd215dc70ac31aff289f3eedcd86694be14a3d4",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/tests/lab.mjs",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/tests/package-lock.json",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/package-lock.json",
+      "sha256": "967ac4c675131cb4beb93684e07dbbb8f8a427a78dc66422036927ce5c126803",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/tests/package.json",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/package.json",
+      "sha256": "3a5c13790064c853eef28d93aed9525d0b7280843d68c34a43c0f734a8e3a4fd",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/tests/service.test.mjs",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/service.test.mjs",
+      "sha256": "92be8e5f4dcdfb0f79d041c8e552eadbf507a97ceb039eec6f087d8482dd6261",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/app/main.py",
+      "sha256": "1786d5bf84bb996fd3d03437923e0e9fba81dc841c3df7b685b23df141958393",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/README.md",
+      "sha256": "9df67c0351afc02676fb64ea88d404a136d9009c5722ea3b1356e8dcdef57517",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[10].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/app/main.py",
+      "sha256": "1786d5bf84bb996fd3d03437923e0e9fba81dc841c3df7b685b23df141958393",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[11].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/.github/workflows/ci.yml",
+      "sha256": "23e3f3b9efacc064c3ecc267ea1ad4a8b33e8434eaeaa918d027cc197a1a9987",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[12].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/.github/workflows/ci.yml",
+      "sha256": "23e3f3b9efacc064c3ecc267ea1ad4a8b33e8434eaeaa918d027cc197a1a9987",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[13].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[14].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[15].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[16].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[17].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/fixtures/briefs/architecture-brief.md",
+      "sha256": "ee182f1507303308163b72ff003ada5b818ca8ce7322a4d02fdd7bb7fa437bfa",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[18].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/.github/workflows/ci.yml",
+      "sha256": "23e3f3b9efacc064c3ecc267ea1ad4a8b33e8434eaeaa918d027cc197a1a9987",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[19].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/Dockerfile",
+      "sha256": "7617adb046a7b6b9f8a5119747c6d1256391b0c123d1b16a429f8e7c202f8a34",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[3].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[4].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[5].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[6].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[7].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[8].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
+      "sha256": "57133373b66c46c667537a91f1c4e9727d83d928240765978cc67810d407103f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "findings[9].reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/README.md",
+      "sha256": "9df67c0351afc02676fb64ea88d404a136d9009c5722ea3b1356e8dcdef57517",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-critic-sme.json",
+      "field": "reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/lab.json",
+      "sha256": "9c58c9241d704517b6f9baea638de0c5848f51a5180d4112ac83d3e063368d78",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/lab.json",
+      "sha256": "9c58c9241d704517b6f9baea638de0c5848f51a5180d4112ac83d3e063368d78",
+      "current": false
     },
     {
       "topic": "monolith-vs-microservices",
