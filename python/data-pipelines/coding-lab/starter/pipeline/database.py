@@ -1,7 +1,7 @@
-"""PostgreSQL steps of the pipeline (Tasks 2, 3, 4 and 7).
+"""PostgreSQL steps of the pipeline (Tasks 2, 3 and 4).
 
-Every function takes an open psycopg connection, except connect(), which opens one.
-The tables are in schema.sql.
+connect() opens a connection from DATABASE_URL. load_staging and run_transform open their own
+connection with a `with` block, as the loading and ELT pages do. The tables are in schema.sql.
 """
 
 import os
@@ -31,9 +31,9 @@ TODO Task 3
 """
 
 
-def load_staging(conn, records):
+def load_staging(records):
     """Upsert every record (a dict with email, name, session, seats, signed_up_at) in one batch."""
-    # TODO Task 3
+    # TODO Task 3: open the connection with `with connect() as conn:` so a clean exit commits.
     raise NotImplementedError("Task 3: write load_staging")
 
 
@@ -44,19 +44,12 @@ TODO Task 4
 """
 
 
-def run_transform(conn):
+def run_transform():
     """Rebuild session_summary from staging_signups: all or nothing."""
+    # TODO Task 4: in autocommit mode each statement commits by itself, so a failing INSERT
+    # leaves the summary empty. Run both statements in one `with connect() as conn:` block.
+    conn = connect()
+    conn.autocommit = True
     conn.execute("DELETE FROM session_summary")
-    conn.execute(TRANSFORM_SQL)  # TODO Task 4: make the DELETE and this INSERT one transaction.
-
-
-# --- Task 7: deduplicate in SQL ----------------------------------------------
-
-LATEST_CHECKINS_SQL = """
-TODO Task 7
-"""
-
-
-def latest_checkins(conn):
-    """Return [(email, door, scanned_at), ...]: each email's latest scan, ordered by email."""
-    return conn.execute(LATEST_CHECKINS_SQL).fetchall()
+    conn.execute(TRANSFORM_SQL)
+    conn.close()

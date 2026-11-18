@@ -2,29 +2,29 @@
 
 ## Goal
 
-Every night the workshop desk exports sign-ups as a CSV file and a JSON Lines file. Build the pipeline that loads them:
-stream the records, load them into PostgreSQL with an upsert, summarise them in SQL, validate and deduplicate them, and enrich them with an AI model without sending anyone's personal data.
-In ten linked tasks across three files you write each step, and in the last task you write your own offline tests for the enrichment.
-Everything runs on your own computer with your local PostgreSQL server: no cloud account, no Docker, and no live or paid AI call (a scripted fake model client stands in for the model).
+Every night the workshop desk exports sign-ups as a CSV file and a JSON Lines file. Build the steps of the pipeline that loads them, in the order the pipeline runs them:
+extract the records with generators, validate them with Pydantic, deduplicate them, load them into a PostgreSQL staging table with an upsert, transform them into a summary in SQL, and enrich them with an AI model without sending names, emails or phone numbers.
+Each of the nine tasks builds one step, and its check gives that step its own data; in the last task you write your own offline tests for the enrichment.
+Everything runs on your own computer with your local PostgreSQL server: no cloud account, no Docker, and no live or paid AI call (a scripted fake model client stands in for the model). Every person in the fixtures and the tests is made up.
 
-About 55 minutes of your scheduled lab block (an estimate); if you pass 60 minutes, pause and finish in self-study.
+About 10 minutes of setup the first time, then about 45 minutes for the tasks (an estimate): Tasks 1-4 on the first lab day and Tasks 5-9 on the second. If you pass 60 minutes in total, pause and finish in self-study.
 
 ## What you edit
 
 | File | Tasks |
 | --- | --- |
 | `starter/pipeline/records.py` | 1, 5, 6: extract, validate and deduplicate in Python |
-| `starter/pipeline/database.py` | 2, 3, 4, 7: connect, upsert, transform and deduplicate in SQL |
-| `starter/pipeline/enrich.py` | 8, 9: minimize and enrich |
-| `starter/test_enrich.py` | 10: your own tests |
+| `starter/pipeline/database.py` | 2, 3, 4: connect, upsert and transform in SQL |
+| `starter/pipeline/enrich.py` | 7, 8: minimize and enrich |
+| `starter/test_enrich.py` | 9: your own tests |
 
 Leave `tests/`, `fixtures/`, `expected/`, `starter/pipeline/schema.sql`, `starter/pipeline/fake_model.py`, `starter/pipeline/__init__.py` and `starter/requirements.txt` as they are.
-Each failing check names its task and the next action.
+Each check is named after its task, and most failure messages say what to do next; read the lines that start with `E`, or run one task's check with `python -m pytest -q -k task04`.
 
 ## Prerequisites
 
-- Python 3.12 or later: `python --version` (on Windows, type `py` wherever this README says `python`).
-- The PostgreSQL server (16 or later) and `psql` from the SQL course, running on your computer. Your PostgreSQL user must be allowed to create a schema in the database you use.
+- Python 3.12 to 3.15 (the pinned packages ship ready-built for those versions; the lab was tested on 3.12). Check it with `python3 --version` on macOS and Linux, or `py --version` on Windows. Native ARM64 Windows Python is not supported, because the pinned `psycopg-binary` has no ARM64 Windows build.
+- The PostgreSQL server (16 or later) and `psql`, installed and running as in the SQL course reading *Installing Postgres and a SQL client*. Check it with `psql --version`. Your PostgreSQL user must be allowed to create a schema in the database you use.
 
 ## Setup (once, needs the internet)
 
@@ -35,7 +35,7 @@ Open a terminal in the lab folder (the folder that holds this README).
    macOS and Linux:
 
    ```
-   python -m venv .venv
+   python3 -m venv .venv
    source .venv/bin/activate
    ```
 
@@ -46,18 +46,20 @@ Open a terminal in the lab folder (the folder that holds this README).
    .venv\Scripts\Activate.ps1
    ```
 
+   Once the environment is active, `python` means its Python on every system.
+
 2. Install the pinned packages (pytest, Pydantic and psycopg):
 
    ```
    python -m pip install -r starter/requirements.txt
    ```
 
-3. Point the lab at your database with the `DATABASE_URL` environment variable, in the same terminal. Use your own port and database; add your PostgreSQL user as `postgresql://USER@localhost:5432/postgres` if it is not your login name.
+3. Point the lab at your database with the `DATABASE_URL` environment variable, in the same terminal. Use your own user, port and database. On macOS with Homebrew the user is usually your login name; with the Windows installer or a Linux package it is usually `postgres`:
 
-   - macOS and Linux: `export DATABASE_URL=postgresql://localhost:5432/postgres`
-   - Windows PowerShell: `$env:DATABASE_URL = "postgresql://localhost:5432/postgres"`
+   - macOS and Linux: `export DATABASE_URL=postgresql://localhost:5432/postgres` (or `postgresql://postgres@localhost:5432/postgres`)
+   - Windows PowerShell: `$env:DATABASE_URL = "postgresql://postgres@localhost:5432/postgres"`
 
-   Keep passwords out of the URL and out of every file: if your server asks for one, use the password file from the SQL course setup (`~/.pgpass`, or `%APPDATA%\postgresql\pgpass.conf` on Windows). Check the connection:
+   Keep passwords out of the URL and out of every file: if your server asks for one, use the password file as the SQL course's Relational design lab README shows in its Setup section (`~/.pgpass`, or `%APPDATA%\postgresql\pgpass.conf` on Windows). Check the connection:
 
    ```
    psql "$DATABASE_URL" -c "SELECT version();"
@@ -66,7 +68,7 @@ Open a terminal in the lab folder (the folder that holds this README).
    (in PowerShell: `psql $env:DATABASE_URL -c "SELECT version();"`). It prints one row starting `PostgreSQL`.
 
 Activate the environment and set `DATABASE_URL` again in every new terminal before you run the tests.
-The database checks create their own schema named `pipeline_lab_` plus 12 hex characters, create the tables from `starter/pipeline/schema.sql` inside it, and drop it when they finish; they never touch your other tables.
+The database checks create their own schema named `pipeline_lab_` plus 12 hex characters, create the tables from `starter/pipeline/schema.sql` inside it, point `DATABASE_URL` at it while they run your code, and drop it when they finish; they never touch your other tables.
 
 ## Tasks
 
@@ -76,9 +78,8 @@ Run the one test command from the lab folder after each task:
 python -m pytest -q
 ```
 
-Before you start, all ten `test_taskNN_...` checks fail.
-Tasks 1-4 are the first lab day (extract and load) and Tasks 5-10 the second (validate, deduplicate and enrich); the end of Task 4 is a natural place to stop between the days.
-The checks give each task its own data, so a task passes on its own; open the fixture files in `fixtures/` to see the raw records.
+Before you start, all nine `test_taskNN_...` checks fail.
+Each check gives its task its own data, so a task passes on its own; the exception is that Tasks 3 and 4 use your Task 2 `connect()`. Open the fixture files in `fixtures/` to see the exported records.
 
 ### Task 1: stream the records (`records.py`)
 
@@ -86,7 +87,7 @@ The checks give each task its own data, so a task passes on its own; open the fi
 2. `read_jsonl(path)`: open the file the same way (no `newline` needed), loop over its lines, skip blank lines (`if line.strip():`) and `yield json.loads(line)`.
 3. `extract(paths)`: for each path, pick `read_csv` when `Path(path).suffix == ".csv"`, otherwise `read_jsonl`, and yield each record whose email is not blank (`(record.get("email") or "").strip()`); the CSV export has an empty row.
 
-Because these are generators, only one record is in memory at a time, and nothing is read until a loop asks for the next record. A generator runs once: looping over it a second time gives nothing.
+Because these are generators, only one record is in memory at a time, and nothing is read until a loop asks for the next record. Before you run the check, write down what a second loop over the same `read_csv(...)` generator gives you, then compare with what the check expects.
 
 ### Task 2: connect and query safely (`database.py`)
 
@@ -98,9 +99,9 @@ Never build the SQL with an f-string: the check passes the session `testing' OR 
 ### Task 3: an idempotent batch upsert (`database.py`)
 
 1. Write `UPSERT_SQL`: `INSERT INTO staging_signups (email, name, session, seats, signed_up_at) VALUES (%(email)s, %(name)s, %(session)s, %(seats)s, %(signed_up_at)s)` followed by `ON CONFLICT (email) DO UPDATE SET` each other column `= EXCLUDED.<column>`. The `email` column is the table's primary key, so it is the conflict target.
-2. `load_staging(conn, records)`: in `with conn.cursor() as cur:`, send the whole batch with `cur.executemany(UPSERT_SQL, records)`. Each record is a dict, and the `%(email)s` placeholders take values from its keys.
+2. `load_staging(records)` opens its own connection with `with connect() as conn:`, then, inside it, sends the whole batch with `cur.executemany(UPSERT_SQL, records)` in `with conn.cursor() as cur:`. Each record is a dict, and the `%(email)s` placeholders take values from its keys. Leaving the connection block cleanly commits; the check reads the rows from a different connection, so uncommitted rows are invisible to it.
 
-Loading the same file twice now leaves one row per email instead of duplicates, so a rerun after a failed night is safe.
+Before you run the check, predict what a second load of the same batch would do with a plain `INSERT` and no `ON CONFLICT` clause, and what it does with your upsert. (A plain `INSERT` fails with a duplicate-key error on the primary key; the upsert updates each email's row, so a rerun after a failed night is safe.)
 
 ### Task 4: transform in SQL, all or nothing (`database.py`)
 
@@ -116,9 +117,10 @@ Loading the same file twice now leaves one row per email instead of duplicates, 
    ```
 
    Finish the `SELECT`: per `session`, `count(*)` sign-ups and `sum(seats)` seats, with `GROUP BY session`.
-2. `run_transform` deletes the old summary and inserts the new one. Put both statements inside `with conn.transaction():` so that a failed `INSERT` rolls back the `DELETE` too and yesterday's summary survives.
+2. `run_transform()` deletes the old summary and inserts the new one, but the starter runs in autocommit mode, where each statement commits by itself: if the `INSERT` fails, the summary is already empty. Replace it with one `with connect() as conn:` block that runs `conn.execute("DELETE FROM session_summary")` and then `conn.execute(TRANSFORM_SQL)`. The block commits both on a clean exit and rolls both back on an exception, so yesterday's summary survives a failure. Keep using the name `TRANSFORM_SQL` in `run_transform`: the check swaps in a failing SQL text through it.
 
-This is ELT: the raw rows were loaded first, and PostgreSQL does the transform where the data already is.
+This is ELT: the validated rows were loaded first, and PostgreSQL does the transform where the data already is.
+This is the end of the first lab day.
 
 ### Task 5: validate with Pydantic (`records.py`)
 
@@ -134,36 +136,34 @@ This is ELT: the raw rows were loaded first, and PostgreSQL does the transform w
    Strip and lower-case `value`, raise `ValueError("email needs @")` when there is no `@`, and return it.
 3. `validate_all(rows)`: for each row, `try:` to append `Signup(**row)` to `accepted`; `except ValidationError as err:` append `(row, err.errors())` to `rejected`. Return `accepted, rejected`.
 
-Pydantic converts the text `"1"` to the integer `1` and `"2026-11-03T10:00:00"` to a `datetime`, but rejects `"two"` as seats.
+Before you run the check, predict which of the CSV texts `"1"`, `"2026-11-03T10:00:00"` and `"two"` Pydantic converts to a number or a `datetime`, and which it rejects.
 
 ### Task 6: deduplicate in Python (`records.py`)
 
-`latest_per_email(signups)` keeps one sign-up per email, the one with the latest `signed_up_at`: use a dict keyed on `signup.email` and replace the kept sign-up when a later one arrives. Return the kept sign-ups ordered by email (`sorted(...)`).
+`latest_per_email(signups)` keeps one sign-up per email, the one with the latest `signed_up_at`. Remember the one you keep for each email in a dict keyed on `signup.email` (or track the emails you have seen in a set while walking the sign-ups newest first), and replace the kept sign-up when a later one arrives. Return the kept sign-ups ordered by email: `sorted(kept.values(), key=lambda s: s.email)`.
 
-### Task 7: deduplicate in SQL (`database.py`)
+### Task 7: keep personal data out of the prompt (`enrich.py`)
 
-The door scanner logs every scan into `checkins (email, door, scanned_at)`. Write `LATEST_CHECKINS_SQL` to return each email's latest scan, ordered by email, with PostgreSQL's `SELECT DISTINCT ON (email) email, door, scanned_at FROM checkins ORDER BY email, scanned_at DESC`, or the portable `ROW_NUMBER() OVER (PARTITION BY email ORDER BY scanned_at DESC)` keeping row number 1.
+The model only needs to classify each sign-up's interest and level. Start from nothing and send only what that needs:
+`minimize_for_prompt(signup)` returns a new dict with `"ref"` set to `pseudonym(signup["email"])`, plus the sign-up's `"session"` and `"comment"`. The name, email, phone, seats and sign-up time stay behind. Do not change `signup`.
 
-### Task 8: keep personal data out of the prompt (`enrich.py`)
+The pseudonym lets you match the model's answer back to the sign-up. The shipped `pseudonym` is a lab shortcut: a plain hash of an email can be reversed by anyone who guesses the email. In production, use the page's method, a random token with the mapping kept on your side.
+Free text such as the comment can also contain personal data; the fixture comments here do not, but in production you would mask it first, for example replacing an email inside the comment with `[email]`.
 
-1. Set `PERSONAL_FIELDS = {"email", "name", "phone"}`: the fields that identify a person.
-2. `minimize_for_prompt(signup)` returns a new dict: `"ref"` set to `pseudonym(signup["email"])`, plus every key of `signup` that is not in `PERSONAL_FIELDS`. Do not change `signup`.
-
-The pseudonym lets you match the model's answer back to the sign-up without the model ever seeing who it is.
-
-### Task 9: validated enrichment with retry and reject (`enrich.py`)
+### Task 8: validated enrichment with retry and reject (`enrich.py`)
 
 1. Give `Enrichment` two fields limited to fixed values with `Literal` (add `from typing import Literal`): `interest: Literal["testing", "data", "web", "other"]` and `level: Literal["beginner", "intermediate", "advanced"]`. `build_prompt` puts this schema into the prompt.
 2. `enrich(client, signups, max_attempts=2)`: for each sign-up, minimize it, then try up to `max_attempts` times:
    - `Enrichment.model_validate_json(client.complete(build_prompt(record)))`;
-   - on `ValidationError` or `ModelError`, log `logger.warning("invalid or failed enrichment for %s (attempt %d)", record["ref"], attempt)` and try again;
+   - on `ValidationError` (an answer that is not valid JSON or not one of the allowed values), log `logger.warning("invalid answer for %s (attempt %d)", record["ref"], attempt)` and try again;
+   - on `ModelError` (the call itself failed), log `logger.warning("model call failed for %s (attempt %d)", record["ref"], attempt)` in its own `except` branch and try again: a transient failure gets a bounded retry, then the reject path;
    - on success, append `{"ref": record["ref"], **answer.model_dump()}` to `enriched` and stop trying.
 
-   When every attempt failed, append the ref to `rejected` (a `for ... else:` or a flag). Return `enriched, rejected`.
+   When every attempt failed, append the ref to `rejected` (a `for ... else:` or a flag). Return `enriched, rejected`. Use `max_attempts` for the number of tries; do not hard-code it.
 
 Model output is untrusted input: anything that does not validate is never loaded. Log only the ref, never an email, name or phone number.
 
-### Task 10: your own offline tests (`test_enrich.py`)
+### Task 9: your own offline tests (`test_enrich.py`)
 
 Add two tests to `starter/test_enrich.py`, each driving `enrich` with a `FakeModelClient` of scripted answers and the `SIGNUP` dict already in the file:
 
@@ -171,7 +171,7 @@ Add two tests to `starter/test_enrich.py`, each driving `enrich` with a `FakeMod
 2. Two invalid answers, such as `"not json"` and `'{"interest": "cooking", "level": "beginner"}'`: nothing is enriched and its ref is rejected.
 
 Run only your file while you work: `python -m pytest -q starter/test_enrich.py`.
-The Task 10 check runs your tests against your code, where they must pass, then against an `enrich` that accepts any answer and one that never retries, where they must fail.
+The Task 9 check runs your tests against your code, where they must pass, then against four broken versions of `enrich`, where they must fail: one that accepts any answer, one that never retries, one that never rejects, and one that loads a junk answer for each rejected ref.
 
 ## Test
 
@@ -181,7 +181,7 @@ The one test command, run from the lab folder with the virtual environment activ
 python -m pytest -q
 ```
 
-When you finish, every test passes: the ten lab checks plus your own tests.
+When you finish, every test passes: your own tests plus the nine lab checks.
 
 ## Expected output
 
@@ -193,17 +193,23 @@ Only the setup step uses the network. The tests talk only to your local PostgreS
 
 ## Cleanup
 
-1. The checks drop their own `pipeline_lab_...` schema. If a run was interrupted, list leftovers with `psql "$DATABASE_URL" -c "\dn pipeline_lab_*"` and drop each one with `psql "$DATABASE_URL" -c "DROP SCHEMA pipeline_lab_<hex> CASCADE"`.
+1. The checks drop their own `pipeline_lab_...` schema. If a run was interrupted, list leftovers and drop each one:
+   - macOS and Linux: `psql "$DATABASE_URL" -c "\dn pipeline_lab_*"`, then `psql "$DATABASE_URL" -c "DROP SCHEMA pipeline_lab_<hex> CASCADE"`
+   - Windows PowerShell: `psql $env:DATABASE_URL -c "\dn pipeline_lab_*"`, then `psql $env:DATABASE_URL -c "DROP SCHEMA pipeline_lab_<hex> CASCADE"`
 2. Deactivate the environment with `deactivate`, then delete the files the lab created, from the lab folder:
-   - macOS and Linux: `rm -rf .venv .pytest_cache starter/__pycache__ starter/pipeline/__pycache__ tests/__pycache__`
-   - Windows PowerShell: `Remove-Item -Recurse -Force .venv, .pytest_cache, starter\__pycache__, starter\pipeline\__pycache__, tests\__pycache__ -ErrorAction SilentlyContinue`
+   - macOS and Linux: `rm -rf .venv .pytest_cache starter/.pytest_cache starter/__pycache__ starter/pipeline/__pycache__ tests/__pycache__`
+   - Windows PowerShell: `Remove-Item -Recurse -Force .venv, .pytest_cache, starter\.pytest_cache, starter\__pycache__, starter\pipeline\__pycache__, tests\__pycache__ -ErrorAction SilentlyContinue`
 
 ## Troubleshooting
 
+- **`command not found: python` or `python3`**: on macOS and Linux create the environment with `python3`; after `source .venv/bin/activate`, `python` works. On Windows use `py`.
 - **Every database check errors with `Set DATABASE_URL ...`**: set `DATABASE_URL` in this terminal (Setup step 3).
 - **`connection refused`**: your PostgreSQL server is not running, or the port in `DATABASE_URL` is wrong.
+- **`role "..." does not exist`**: the user in `DATABASE_URL` is not a PostgreSQL user; put an existing one in the URL, such as `postgres`.
 - **`password authentication failed`** or **`no password supplied`**: check the user in `DATABASE_URL` and your password file line.
 - **`permission denied for database`**: your user may not create schemas there; use a database you own, or a user such as `postgres`.
 - **`No module named pytest` or `psycopg`**: the virtual environment is not active in this terminal. Activate it and run the test command again.
+- **`errors during collection`, a `NameError` or a `SyntaxError` stops every check**: fix the file and line that pytest names first (a `NameError` such as `name 'Literal' is not defined` usually means a missing import); one broken file stops the whole run.
+- **Only your own tests ran, or `no tests ran`**: you are in the `starter` folder. Go back to the lab folder with `cd ..` and run the test command there.
 - **PowerShell refuses to run `Activate.ps1`**: run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once, then activate again.
-- **You pass 60 minutes**: pause, note the task you are on, and finish in self-study; every check still names the task it belongs to.
+- **You pass 60 minutes**: pause, note the task you are on, and finish in self-study; every check is still named after its task.

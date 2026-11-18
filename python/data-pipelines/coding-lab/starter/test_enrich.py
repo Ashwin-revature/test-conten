@@ -1,4 +1,4 @@
-"""Your own offline tests for the enrichment step (Task 10).
+"""Your own offline tests for the enrichment step (Task 9).
 
 Run only this file from the lab folder:  python -m pytest -q starter/test_enrich.py
 """
@@ -17,4 +17,4 @@ SIGNUP = {
 VALID = '{"interest": "testing", "level": "beginner"}'
 
 
-# TODO Task 10: add the two tests the README asks for below this line.
+# TODO Task 9: add the two tests the README asks for below this line.

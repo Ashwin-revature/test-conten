@@ -46,6 +46,6 @@ def validate_all(rows):
 
 
 def latest_per_email(signups):
-    """Return one Signup per email, the one with the latest signed_up_at, ordered by email."""
+    """Return one sign-up per email, the one with the latest signed_up_at, ordered by email."""
     # TODO Task 6
     raise NotImplementedError("Task 6: write latest_per_email")

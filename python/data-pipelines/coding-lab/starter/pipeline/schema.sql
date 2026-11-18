@@ -14,9 +14,3 @@ CREATE TABLE session_summary (
     signups integer NOT NULL,
     seats   integer NOT NULL
 );
-
-CREATE TABLE checkins (
-    email      text NOT NULL,
-    door       text NOT NULL,
-    scanned_at timestamp NOT NULL
-);
