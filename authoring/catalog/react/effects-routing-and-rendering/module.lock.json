@@ -25,8 +25,8 @@
     },
     {
       "path": "authoring/catalog/react/effects-routing-and-rendering/module.json",
-      "sha256": "4094c82c413900bde2508b7c9f48c60aa0da70e05dfa01cc232b55d9d8223dac",
-      "bytes": 2108
+      "sha256": "2c58806337e411297d56326762b5f5f50c91a89a1c28c29f6180b5e26cdfa6b2",
+      "bytes": 2101
     },
     {
       "path": "authoring/catalog/react/effects-routing-and-rendering/navigation/topic.json",
@@ -55,13 +55,18 @@
     },
     {
       "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme-recheck.json",
-      "sha256": "930f3244ce52f2483d968732e9d1446df024203938ebd94fefbb757e74f3a6a1",
-      "bytes": 6975
+      "sha256": "36b53e5359813727701125be860b8b884bfa3369716a75897c0b7bbad1e89df6",
+      "bytes": 6984
     },
     {
       "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme.json",
-      "sha256": "407acc19f20a6ba6ba4d2845a1ac26b21b2dc10aed8d7c51fd2b3174fd3a0c84",
-      "bytes": 6793
+      "sha256": "423ec08df308677a224c82fca07af979b21fdf800c58d4893bd131e3b7a97333",
+      "bytes": 6796
+    },
+    {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-decision-reconciliation.json",
+      "sha256": "993b10683eb53f3ade01be23714adf70db21220f274111dfbb6a9c2cc9e33b86",
+      "bytes": 2192
     },
     {
       "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-education-recheck.json",
@@ -70,8 +75,8 @@
     },
     {
       "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-sme-recheck.json",
-      "sha256": "9cafc8a15879e310015178d387ac89bb787a59152c51dbf2af7697e14395502c",
-      "bytes": 5327
+      "sha256": "1b38c75c1adc38c064bf7d0680927d9e529a22aa01b31c4f76d249821e893af5",
+      "bytes": 5335
     },
     {
       "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-reconciliation.json",
@@ -793,6 +798,13 @@
       "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
       "sha256": "5bdf324e913020ba7ee0cda2102e96e848663f1d1a0908164f90813d04906bf9",
       "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-decision-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
     },
     {
       "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-education-recheck.json",

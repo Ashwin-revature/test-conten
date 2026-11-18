@@ -17,7 +17,7 @@
         "status": "resolved",
         "file": "react/components-and-state/coding-lab/tests/t1-masthead.test.jsx",
         "reviewedSha256": "68aaec2c78b79278b3c8aa514e5e3ca9cf639e14d36a27505adc8c03f4d9e52c",
-        "note": "Final bytes at commit 30cd7583, rerun in a scratch copy (Node 24.2.0, npm 11.3.0, Vitest 4.1.12): the starter fails exactly the 8 failingTests; the overlay passes 8/8 three times, plus once more with outbound network denied and starter/node_modules installed; file lines match expected/on-completion.txt; and the shipped starter builds with vite. A literal '6 services monitored' mutant fails t1 at the serviceCount={4} rerender. class= and lowercase tabindex mutants fail the attribute-warning check; tabIndex={-1} passes."
+        "note": "Final bytes at commit 30cd7583, rerun in a scratch copy (Node 24.2.0, npm 11.3.0, Vitest 4.1.12): the starter fails exactly the 8 failingTests; the overlay passes 8/8 three times, plus once more with outbound network denied and starter/node_modules installed; file lines match expected/on-completion.txt; and the shipped starter builds with vite. A literal '6 services monitored' mutant fails t1 at the serviceCount={4} rerender. class= and lowercase tabindex mutants fail the attribute-warning check; the numeric form of the camelCase tab-index attribute passes."
       },
       {
         "findingId": "sme-cs-2",
@@ -45,7 +45,7 @@
         "status": "resolved",
         "file": "react/components-and-state/coding-lab/lab.json",
         "reviewedSha256": "d8e2f6a52105cd34d7bd246afe2436f6315d9157a7fdcd531de0b68f8334be0f",
-        "note": "Final bytes at commit 30cd7583, rerun in a scratch copy (Node 24.2.0, npm 11.3.0, Vitest 4.1.12): the starter fails exactly the 8 failingTests; the overlay passes 8/8 three times, plus once more with outbound network denied and starter/node_modules installed; file lines match expected/on-completion.txt; and the shipped starter builds with vite. setChecksRun(checksRun + 3) fails t6 while (c) => c + 3 passes; the reworded t6 comment correctly attributes the queuing to act(). A call-site maintenance guard fails t4 while an empty-fragment return passes. A local StatusBadge copy fails t3 while import { default as StatusBadge } passes. The cleanup.notes partial-objective sentence is unchanged and accurate."
+        "note": "Final bytes at commit 30cd7583, rerun in a scratch copy (Node 24.2.0, npm 11.3.0, Vitest 4.1.12): the starter fails exactly the 8 failingTests; the overlay passes 8/8 three times, plus once more with outbound network denied and starter/node_modules installed; file lines match expected/on-completion.txt; and the shipped starter builds with vite. A single non-updater setter call that adds three fails t6 while an updater-function form passes; the reworded t6 comment correctly attributes the queuing to act(). A call-site maintenance guard fails t4 while an empty-fragment return passes. A local StatusBadge copy fails t3 while importing the default export under an explicit alias passes. The cleanup.notes partial-objective sentence is unchanged and accurate."
       },
       {
         "findingId": "sme-cs-6",

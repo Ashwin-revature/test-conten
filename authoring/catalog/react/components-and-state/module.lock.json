@@ -55,13 +55,13 @@
     },
     {
       "path": "authoring/evidence/react/components-and-state/coding-lab-critic-sme-recheck.json",
-      "sha256": "4f528ff93240868524108e907e6c2c0b46136dc89518c2c1e55935dabbda773b",
-      "bytes": 7671
+      "sha256": "d5c4af0279fba901e1a4f25526e941b18562baed4ca0939011dd21ec373fbd25",
+      "bytes": 7737
     },
     {
       "path": "authoring/evidence/react/components-and-state/coding-lab-critic-sme.json",
-      "sha256": "928bf3039a15847a86ba9a60dcea66002a09f765b6747ee2645ebd9a87c51026",
-      "bytes": 8807
+      "sha256": "b610ec2b49db79ac0d8088db32eb62b08a76238bc36e22cc85b1ce700c38cda4",
+      "bytes": 8809
     },
     {
       "path": "authoring/evidence/react/components-and-state/coding-lab-loop2-critic-education-recheck.json",
@@ -70,8 +70,8 @@
     },
     {
       "path": "authoring/evidence/react/components-and-state/coding-lab-loop2-critic-sme-recheck.json",
-      "sha256": "ceeb4126247bb00db511614ebf45d6c8b8e31e8f9cf03550a559f5a861d8c58f",
-      "bytes": 7646
+      "sha256": "4ee322a5126480f8124a93953559b385982d7e8f8fa5ac8d9133383b3479015f",
+      "bytes": 7738
     },
     {
       "path": "authoring/evidence/react/components-and-state/coding-lab-loop2-reconciliation.json",

@@ -20,8 +20,8 @@
     },
     {
       "path": "authoring/catalog/react/auth-and-review/module.json",
-      "sha256": "e38977a763c4fa7e9b7aab8862ed2499e8ba202281acd3d7eb3eaf73f27da47a",
-      "bytes": 2346
+      "sha256": "cbcb63a2e20c7ce496ce0de29379b855b830375554f9ffc9f3e27af2cf398418",
+      "bytes": 2336
     },
     {
       "path": "authoring/catalog/react/auth-and-review/protected-pages-and-role-based-screens/topic.json",

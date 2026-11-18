@@ -17,7 +17,7 @@
         "status": "resolved",
         "file": "react/effects-routing-and-rendering/coding-lab/tests/helpers.js",
         "reviewedSha256": "68ea44f4cfd48ab0b3ac4fafda7f4b073a4c7c3d5d17d554325df9cacca48857",
-        "note": "Final bytes at commit 30cd7583, rerun in a scratch copy: the starter fails exactly the 8 failingTests; the overlay passes 8/8 three times, plus once more with outbound network denied and starter/node_modules installed; file lines match expected/on-completion.txt; and the shipped starter builds with vite. With the abort-aware stubs and the t6 Strict Mode renders, both r1 mutants fail t6: the hook that does not ignore AbortError, and the useRef already-fetched guard. Three valid abort-handling variants pass 8/8: an AbortError name check, a controller.signal.aborted check, and an ignore flag set in cleanup."
+        "note": "Final bytes at commit 30cd7583, rerun in a scratch copy: the starter fails exactly the 8 failingTests; the overlay passes 8/8 three times, plus once more with outbound network denied and starter/node_modules installed; file lines match expected/on-completion.txt; and the shipped starter builds with vite. With the abort-aware stubs and the t6 Strict Mode renders, both r1 mutants fail t6: the hook that does not ignore AbortError, and the useRef already-fetched guard. Three valid abort-handling variants pass 8/8: an AbortError name check, a check of the controller's aborted flag, and an ignore flag set in cleanup."
       },
       {
         "findingId": "sme-err-2",
@@ -31,7 +31,7 @@
         "status": "resolved",
         "file": "react/effects-routing-and-rendering/coding-lab/tests/helpers.js",
         "reviewedSha256": "68ea44f4cfd48ab0b3ac4fafda7f4b073a4c7c3d5d17d554325df9cacca48857",
-        "note": "Final bytes at commit 30cd7583, rerun in a scratch copy: the starter fails exactly the 8 failingTests; the overlay passes 8/8 three times, plus once more with outbound network denied and starter/node_modules installed; file lines match expected/on-completion.txt; and the shipped starter builds with vite. A fetchJson that parses with response.text() and JSON.parse passes 8/8 against the Response-based stubs, including t4's non-JSON body step."
+        "note": "Final bytes at commit 30cd7583, rerun in a scratch copy: the starter fails exactly the 8 failingTests; the overlay passes 8/8 three times, plus once more with outbound network denied and starter/node_modules installed; file lines match expected/on-completion.txt; and the shipped starter builds with vite. A fetchJson that reads the body as text and parses it itself passes 8/8 against the Response-based stubs, including t4's non-JSON body step."
       },
       {
         "findingId": "sme-err-4",
