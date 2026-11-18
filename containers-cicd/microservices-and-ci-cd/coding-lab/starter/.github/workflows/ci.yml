@@ -1,23 +1,25 @@
-# The shop's pipeline, as a teammate left it. It runs, but it breaks the
-# rules this module taught. TODO (README phase 6): fix every rule the tests
-# name; do not add new jobs.
+# The shop repository's pipeline, as a teammate left it. The repository also
+# holds the api's Maven project in backend/ (with its mvnw); this lab ships
+# only the files you edit, so the tests read this workflow and never run it.
+# It breaks rules this module taught. TODO (README phase 6): fix every rule
+# the tests name; do not add new jobs.
 name: shop ci
 on: workflow_dispatch
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: ./mvnw test
+      - run: cd backend && ./mvnw test
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: log in to the registry
-        run: docker login ghcr.io -u pepshop -p hunter2-for-ghcr
+      - name: log in to Docker Hub
+        run: docker login docker.io -u pepshop -p hunter2-for-docker-hub
       - name: show the credentials for debugging
         run: echo "pushing as pepshop with ${{ secrets.REGISTRY_PASSWORD }}"
       - uses: docker/build-push-action@v7
         with:
           context: .
-          tags: ghcr.io/pepshop/reviews:latest
+          tags: docker.io/pepshop/reviews:latest
           push: true

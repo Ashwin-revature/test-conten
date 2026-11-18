@@ -27,16 +27,18 @@ REVIEWS = {
 def reviews_for_product(product_id: int, authorization: str | None = Header(default=None)):
     """Return the product from the shop api together with its reviews.
 
-    TODO (README phase 4): this naive call breaks all three taught rules.
+    TODO (README phase 4): this naive call breaks three taught rules.
     1. It hard-codes a bearer token instead of forwarding the caller's
-       Authorization header.
-    2. It sets no connect or read timeout, so a hanging api hangs us too.
-    3. A failed or timed-out call escapes as an unhandled exception instead
-       of a clear 502/503/504 response.
+       Authorization header (and it never checks that one arrived).
+    2. It passes timeout=None, which turns off every limit, so a hanging api
+       hangs this request too.
+    3. A timed-out or refused call escapes as an unhandled exception instead
+       of a 504, or a 502/503, response.
     """
     response = httpx.get(
         f"{API_BASE_URL}/products/{product_id}",
         headers={"Authorization": "Bearer dev-token"},
+        timeout=None,
     )
     response.raise_for_status()
     return {"product": response.json(), "reviews": REVIEWS.get(product_id, [])}

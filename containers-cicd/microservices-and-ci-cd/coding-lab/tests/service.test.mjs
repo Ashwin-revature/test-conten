@@ -7,12 +7,12 @@ test('the outgoing api call sets explicit connect and read timeouts', () => {
   assert.equal(problem, null, problem ?? undefined);
 });
 
-test('the outgoing api call forwards the caller\'s token instead of a hard-coded one', () => {
+test('the outgoing api call forwards the caller\'s token, and a request without one is refused', () => {
   const problem = check('reviews-auth-forward');
   assert.equal(problem, null, problem ?? undefined);
 });
 
-test('a failed or timed-out downstream call becomes a clear 502/503/504 response', () => {
+test('a timed-out call answers 504 and a refused connection answers 502 or 503', () => {
   const problem = check('reviews-error-mapping');
   assert.equal(problem, null, problem ?? undefined);
 });

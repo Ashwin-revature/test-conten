@@ -6,7 +6,7 @@ container engine or a cloud account; it is evidence for `decisions.yaml`.
 ## Where the system stands
 
 The shop started as one Spring Boot application: catalog, checkout and, since
-last quarter, product reviews. Two incidents drive this review:
+last quarter, product reviews. Three incidents drive this review:
 
 1. A memory bug in the review-rendering code exhausted the heap and took
    checkout down with it for 40 minutes.
@@ -49,8 +49,8 @@ name through DNS, with no registry and no routing rules.
 
 Three datasets are growing:
 
-- **Cart sessions:** read or replaced whole, by session id only, expiring
-  after 30 minutes. No joins, no partial queries.
+- **Request counters:** one small number per client, read and incremented
+  by client id only and reset every minute. No joins, no other lookups.
 - **Order history:** money. Multi-row writes that must commit or roll back
   together, plus reporting joins to customers and products.
 - **Review bodies:** nested text records whose fields keep changing between
@@ -74,6 +74,11 @@ After images are pushed, the platform group runs them on Kubernetes. They ask
 you to name which object keeps three replicas of `reviews` running and which
 object gives those changing Pods one stable address.
 
-Finally, release policy: staging updates automatically on every green main
-build, and a lead presses Approve before production. The team wants the
-right name for the practice they already have.
+Finally, release policy: every green build of `main` goes to staging and,
+once staging's smoke checks pass, on to production by itself. Nobody approves
+a release. The team wants the right name for the practice they already have.
+
+The workflow pushes the `reviews` image to Docker Hub. Docker Hub is not part
+of GitHub, so the workflow's own `GITHUB_TOKEN` cannot sign in there: the
+login uses two repository secrets, `REGISTRY_USERNAME` and
+`REGISTRY_PASSWORD`.

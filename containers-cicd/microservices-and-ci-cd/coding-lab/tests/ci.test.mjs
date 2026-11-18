@@ -7,7 +7,7 @@ test('the workflow runs on push', () => {
   assert.equal(problem, null, problem ?? undefined);
 });
 
-test('the test job checks out the repository and runs the tests', () => {
+test('the test job checks out the repository before it runs the tests', () => {
   const problem = check('ci-test-job');
   assert.equal(problem, null, problem ?? undefined);
 });
@@ -17,7 +17,7 @@ test('the build job runs only after the test job succeeds', () => {
   assert.equal(problem, null, problem ?? undefined);
 });
 
-test('the image build keeps its context and pushes only conditionally', () => {
+test('the image is built from the reviews folder and pushed only outside pull requests', () => {
   const problem = check('ci-build-push');
   assert.equal(problem, null, problem ?? undefined);
 });
@@ -27,7 +27,7 @@ test('every action is pinned to a full commit SHA', () => {
   assert.equal(problem, null, problem ?? undefined);
 });
 
-test('registry credentials come from repository secrets, never literals', () => {
+test('the registry login takes both credentials from repository secrets, never literals', () => {
   const problem = check('ci-secret-refs');
   assert.equal(problem, null, problem ?? undefined);
 });

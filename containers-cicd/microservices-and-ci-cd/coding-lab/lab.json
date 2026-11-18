@@ -76,32 +76,31 @@
     "starterExpectation": "fail",
     "failingTests": [
       "the workflow runs on push",
-      "the test job checks out the repository and runs the tests",
+      "the test job checks out the repository before it runs the tests",
       "the build job runs only after the test job succeeds",
-      "the image build keeps its context and pushes only conditionally",
+      "the image is built from the reviews folder and pushed only outside pull requests",
       "every action is pinned to a full commit SHA",
-      "registry credentials come from repository secrets, never literals",
+      "the registry login takes both credentials from repository secrets, never literals",
       "no step prints a secret to the run log",
       "a permissions block gives GITHUB_TOKEN least access",
       "compose.yaml adds the reviews service built from ./reviews",
       "reviews gets its own postgres:18 database with its own named volume",
-      "reviews DATABASE_URL names its own database service, port and database, with the password from .env",
+      "reviews DATABASE_URL names its own database service, port and database, with its own password from .env",
       "reviews waits for its healthy database, which has a pg_isready healthcheck",
-      "reviews reaches the shop api at http://api:8080 through API_BASE_URL",
-      "reviews publishes a port and every added port binds to 127.0.0.1",
-      "the image reference is read as registry, repository and tag",
-      "the gateway and discovery questions match the brief",
+      "reviews reaches the shop api by its service name through API_BASE_URL",
+      "reviews publishes container port 8000 and every added port binds to 127.0.0.1",
       "the monolith, microservices and database-per-service questions match the brief",
       "each dataset gets the store its access pattern asks for",
       "the three store types are contrasted on schema, querying and consistency",
-      "the pipeline, Kubernetes and delivery questions match the taught distinctions",
-      "reviews Dockerfile uses a Python 3 base image and a WORKDIR",
-      "reviews Dockerfile installs requirements before copying the app code",
+      "the gateway and discovery questions match the brief",
+      "the listen-address and timeout questions match the service pages",
+      "the image reference and registry questions match the reading",
+      "the log redaction, add-mask and fork questions match the secrets page",
+      "the pipeline, Kubernetes and release-policy questions match the taught distinctions",
       "reviews Dockerfile starts a server that listens on 0.0.0.0",
-      "reviews .dockerignore leaves out caches, version control and secrets",
       "the outgoing api call sets explicit connect and read timeouts",
-      "the outgoing api call forwards the caller's token instead of a hard-coded one",
-      "a failed or timed-out downstream call becomes a clear 502/503/504 response"
+      "the outgoing api call forwards the caller's token, and a request without one is refused",
+      "a timed-out call answers 504 and a refused connection answers 502 or 503"
     ]
   },
   "fixtures": {
@@ -121,8 +120,8 @@
     "notes": "Delete tests/node_modules (created by npm ci) and starter/.env (your disposable local password file). To redo the lab, restore the edited starter files from version control or a fresh copy of the bundle. The lab creates no database, image, container, workflow run or volume: nothing runs a container engine, Python or any pipeline."
   },
   "minutes": {
-    "standard-s38": 39,
-    "standard-s39": 16,
+    "standard-s38": 35,
+    "standard-s39": 20,
     "standard-worst-required": 60
   },
   "trackRequirement": {
