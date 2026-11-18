@@ -115,6 +115,32 @@ def stage(conn, rows):
         )
 
 
+SOURCE_CALLS = ("open", "DictReader", "reader")
+
+
+def whole_source_comprehensions(func):
+    """List, set and dict comprehensions that loop straight over the file or its reader (they read it all at once)."""
+    tree = tree_of(func)
+    sources = set()
+    for node in ast.walk(tree):
+        if isinstance(node, ast.With):
+            sources |= {item.optional_vars.id for item in node.items if isinstance(item.optional_vars, ast.Name)}
+        if isinstance(node, ast.Assign) and isinstance(node.value, ast.Call):
+            if ast.unparse(node.value.func).split(".")[-1] in SOURCE_CALLS:
+                sources |= {t.id for t in node.targets if isinstance(t, ast.Name)}
+
+    def is_source(expr):
+        if isinstance(expr, ast.Name):
+            return expr.id in sources
+        return isinstance(expr, ast.Call) and ast.unparse(expr.func).split(".")[-1] in SOURCE_CALLS
+
+    return [
+        n
+        for n in ast.walk(tree)
+        if isinstance(n, (ast.ListComp, ast.SetComp, ast.DictComp)) and any(is_source(g.iter) for g in n.generators)
+    ]
+
+
 def test_task01_extract_streams_csv_and_jsonl_with_generators():
     rows = records.read_csv(CSV)
     assert inspect.isgenerator(rows), "Task 1: read_csv must be a generator function (use yield)"
@@ -160,9 +186,7 @@ def test_task01_extract_streams_csv_and_jsonl_with_generators():
             if (isinstance(c.func, ast.Attribute) and c.func.attr in ("read", "readlines"))
             or (isinstance(c.func, ast.Name) and c.func.id in ("list", "sorted", "tuple"))
         ]
-        collected = [
-            n for n in ast.walk(tree_of(func)) if isinstance(n, (ast.Starred, ast.ListComp, ast.SetComp, ast.DictComp))
-        ]
+        collected = [n for n in ast.walk(tree_of(func)) if isinstance(n, ast.Starred)] + whole_source_comprehensions(func)
         assert not whole_file and not collected, (
             f"Task 1: {func.__name__} must stream record by record, not read the whole file first"
         )
