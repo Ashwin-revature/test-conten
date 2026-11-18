@@ -10,7 +10,7 @@
   },
   "findings": [],
   "recheck": {
-    "of": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-education-recheck.json",
+    "of": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education.json",
     "items": [
       {
         "findingId": "edu-err-s1",
