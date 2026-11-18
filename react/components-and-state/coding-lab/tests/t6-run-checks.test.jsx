@@ -13,9 +13,10 @@ test("task 6: one click of Run checks performs all three regional checks", async
   await user.click(runChecks);
   expect(counter).toHaveTextContent("3 checks run");
 
-  // Two quick clicks inside one act(): React handles both clicks before it
-  // re-renders, so the second click still sees the old checksRun value. Only
-  // updater functions count all six probes from these two clicks.
+  // act() lets the test queue both clicks before React re-renders, the same
+  // way several setter calls in one handler are queued, so the second click
+  // still sees the old checksRun value. Only updater functions add up
+  // correctly when updates are queued, so this must read 9.
   act(() => {
     runChecks.click();
     runChecks.click();

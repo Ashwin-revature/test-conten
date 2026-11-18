@@ -10,6 +10,7 @@ import ServiceCard from "../starter/src/components/ServiceCard.jsx";
 vi.mock("../starter/src/components/StatusBadge.jsx", async (importOriginal) => {
   const actual = await importOriginal();
   return {
+    ...actual,
     STATUS_LABELS: actual.STATUS_LABELS,
     default:
       typeof actual.default === "function"

@@ -1,5 +1,5 @@
 import { test, expect, afterEach, vi } from "vitest";
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen, cleanup, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router";
 import App from "../starter/src/App.jsx";
@@ -19,14 +19,17 @@ test("task 3: submitting invalid input shows accessible field errors without cal
   );
   const user = userEvent.setup();
 
-  // Record whether the submit event was cancelled. React's handler runs
-  // before the event bubbles up to window.
-  const submits = [];
-  const record = (event) => submits.push(event.defaultPrevented);
-  window.addEventListener("submit", record);
+  // Record whether the submit handler cancels the browser's own submit.
+  const preventDefault = vi.spyOn(Event.prototype, "preventDefault");
   await user.click(screen.getByRole("button", { name: "Save service" }));
-  window.removeEventListener("submit", record);
-  expect(submits).toEqual([true]);
+  const cancelledSubmits = preventDefault.mock.contexts.filter(
+    (event) => event.type === "submit",
+  );
+  preventDefault.mockRestore();
+  expect(
+    cancelledSubmits.length,
+    "handleSubmit must call event.preventDefault()",
+  ).toBeGreaterThan(0);
 
   const nameError = await screen.findByText("Enter a service name.");
   expect(nameError).toHaveAttribute("id", "name-error");
@@ -55,8 +58,11 @@ test("task 3: submitting invalid input shows accessible field errors without cal
   expect(team).not.toHaveAttribute("aria-invalid", "true");
 
   // Once task 4 sends the request, let it finish so nothing is left in flight.
+  // Only the pending state is awaited, so this test does not depend on task 4.
   if (api.releaseHeld) {
     api.releaseHeld();
-    await screen.findByRole("heading", { level: 3, name: "Image Resizer" });
+    await waitFor(() =>
+      expect(screen.queryByRole("button", { name: /Saving/ })).not.toBeInTheDocument(),
+    );
   }
 });
