@@ -636,7 +636,7 @@ rule('decide-delivery', DECISIONS, (dir) => {
     keeps_three_replicas_running: 'deployment',
     release_policy_in_the_brief_is: 'continuous-deployment',
   }, {
-    github_actions_jobs_run: 'what do jobs do without a needs line?',
+    github_actions_jobs_run: 'reread how the GitHub Actions pipeline page orders jobs',
     jenkinsfile_stages_run: 'the reading names the one ordering difference between stages and jobs',
     gives_pods_one_stable_address: 'which Kubernetes object fronts changing Pods with one stable way in?',
     keeps_three_replicas_running: 'which Kubernetes object declares a desired replica count?',

@@ -79,7 +79,7 @@ Fix the three rules the docstring in `starter/reviews/app/main.py` lists, using 
 
 1. Forward the caller's token. If none arrived, answer 401 before calling the api.
 2. Pass an `httpx.Timeout` with explicit connect and read limits as the call's `timeout`.
-3. Turn a timeout and a refused connection into the status codes the page gives. Mind the order of your `except` clauses.
+3. Turn a timeout and a refused connection (HTTPX raises `httpx.ConnectError`) into the status codes the page gives. If you catch the broader `httpx.RequestError` instead, put it after the timeout handler.
 
 ### Phase 5: the architecture and data review (about 14 minutes)
 
@@ -92,13 +92,14 @@ Then fill the S38 sections of `starter/decisions.yaml`, choosing from the option
 
 Read the S39 topic pages first: the GitHub Actions pipeline and secrets in CI.
 Also read "Reading (optional): Jenkins, registries, CD and Kubernetes" (about 4 minutes).
-Phase 7 needs it, so this lab requires it.
+The page calls itself optional and says it has no lab; on the Standard track this lab's phase 7 uses it, so read it.
 
 ### Phase 6: repair the pipeline (about 9 minutes)
 
 Fix `starter/.github/workflows/ci.yml` without adding jobs, using the pipeline and secrets pages.
 
-- The image goes to Docker Hub, where `GITHUB_TOKEN` cannot sign in. The login uses the `REGISTRY_USERNAME` and `REGISTRY_PASSWORD` repository secrets.
+- The image goes to Docker Hub, where `GITHUB_TOKEN` cannot sign in. Keep the `run:` login step, but give it the `REGISTRY_USERNAME` and `REGISTRY_PASSWORD` repository secrets the way the secrets page passes secrets to a step, and pipe the password to `docker login --password-stdin` instead of putting it on the command line.
+- Give `GITHUB_TOKEN` the least access this workflow needs.
 - Pin every action to its full commit SHA, with the release tag in a trailing comment:
   - `actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1`
   - `docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0`

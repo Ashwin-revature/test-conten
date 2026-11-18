@@ -1,4 +1,4 @@
-The pipeline pushed this image reference:
+For the 1.4.2 release, the pipeline pushed this image reference:
 
     docker.io/pepshop/reviews:1.4.2
 
