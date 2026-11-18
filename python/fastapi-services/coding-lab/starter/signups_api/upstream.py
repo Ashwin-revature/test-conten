@@ -29,8 +29,9 @@ def fetch_workshop(client: httpx.Client, workshop_id: int) -> dict:
     """GET /workshops/{workshop_id} and return the JSON body as a dict.
 
     Raise UpstreamError(504, "Workshop service timed out") on a timeout,
-    UpstreamError(503, "Workshop service unavailable") when the connection fails, and
-    UpstreamError(502, "Workshop service returned <status>") for any non-2xx answer.
+    UpstreamError(502, "Workshop service unavailable") on another transport failure such as a
+    refused connection, and UpstreamError(502, "Workshop service returned <status>") for a
+    non-2xx answer (raise_for_status).
     """
     # TODO Task 6
     raise NotImplementedError("Task 6: write fetch_workshop")

@@ -8,7 +8,6 @@
     "python/fastapi-services/calling-the-spring-boot-api-from-fastapi-service-url-token-and-timeouts"
   ],
   "objectives": [
-    "python/fastapi-services/fastapi-routes#o1",
     "python/fastapi-services/fastapi-routes#o3",
     "python/fastapi-services/serving-pipeline-results-as-an-api#o1",
     "python/fastapi-services/serving-pipeline-results-as-an-api#o2",
@@ -22,7 +21,7 @@
     {
       "tool": "python",
       "version": ">=3.12",
-      "check": "python --version"
+      "check": "python3 --version"
     }
   ],
   "os": [
@@ -65,14 +64,15 @@
     "paths": [
       ".venv",
       ".pytest_cache",
+      "starter/.pytest_cache",
       "starter/__pycache__",
       "starter/signups_api/__pycache__",
       "tests/__pycache__"
     ],
-    "notes": "Setup creates the virtual environment .venv in the lab folder (the README creates and activates it before the setup command) and installs the exact versions pinned in starter/requirements.txt, the lab's lock of every installed package. httpx2 is pinned because Starlette 1.10's TestClient prefers it and warns when only httpx is installed; the learner's code and the pages use httpx, as FastAPI's testing tutorial does. The test command writes .pytest_cache and __pycache__ folders; the Task 8 check starts child Python processes with bytecode writing off and the pytest cache plugin disabled. No test opens a socket: TestClient calls the app in-process and an httpx.MockTransport stands in for the Spring Boot workshop catalog, so no Spring service, database or network is needed; the optional uvicorn run listens on 127.0.0.1 only and is stopped with Ctrl-C. The sign-ups come from fixtures/signups.json through the shipped repository; the checks replace it through dependency overrides. Resetting the learner's work means copying the four edited files back from a fresh copy of the lab. The expected output replaces the per-learner test count and the run time with placeholders, because Task 8 adds the learner's own tests to the run. The 45-minute median is a task-by-task authoring estimate of the eight tasks, not a measured learner pilot; 60 minutes is the cap of the 30-60 minute module-lab allowance. The checks observe HTTP status codes and JSON bodies, the settings read from environment variables, the request the client sends and the errors fetch_workshop raises; Task 8 runs the learner's tests against their code and against a broken app and a broken fetch_workshop."
+    "notes": "Setup creates the virtual environment .venv in the lab folder (the README creates it with python3 -m venv on macOS and Linux and py -m venv on Windows, whose prerequisite check is py --version, then activates it before the setup command) and installs the exact versions pinned in starter/requirements.txt, the lab's lock of every installed package. httpx2 is pinned because Starlette 1.10's TestClient prefers it and warns when only httpx is installed; the learner's code and the pages use httpx, as FastAPI's testing tutorial does. The page's fastapi dev command needs the fastapi[standard] extra, which the lab does not install; the README's optional run uses python -m uvicorn signups_api.main:app from starter instead, listens on 127.0.0.1 only and is stopped with Ctrl-C, and its /docs page loads Swagger UI from a CDN in the browser. The test command writes .pytest_cache and __pycache__ folders; starter/.pytest_cache appears only if the learner runs pytest inside starter. The Task 8 check starts child Python processes with bytecode writing off and the pytest cache plugin disabled. No test opens a socket: TestClient calls the app in-process, an httpx.MockTransport stands in for the Spring Boot workshop catalog, and the Task 5 check replaces httpx.HTTPTransport.handle_request so a client built without the given transport fails with the Task 5 message instead of reaching the network. The Task 7 check clears SPRING_BASE_URL and SPRING_TOKEN and uses a TestClient that returns server errors as 500 responses, so an uncaught UpstreamError shows the Task 7 message. The sign-ups come from fixtures/signups.json, a snapshot of the data-pipelines lab's accepted, deduplicated sign-ups with the desk's id, workshop (the Spring Boot Basics catalog's workshops 1 and 2) and status; POST /signups adds a walk-in to this app's memory only. The checks replace the repository through dependency overrides. Resetting the learner's work means copying the four edited files back from a fresh copy of the lab. The expected output replaces the per-learner test count and the run time with placeholders, because Task 8 adds the learner's own tests to the run; pytest runs the learner's file before tests/test_main.py. The 50-minute median is a task-by-task authoring estimate of setup and the eight tasks (setup and Tasks 1-3 in S18's 20-minute coding-lab block, Tasks 4-8 in its 40-minute block), not a measured learner pilot; 60 minutes is the cap of the 30-60 minute module-lab allowance. The checks observe HTTP status codes and JSON bodies, the settings read from environment variables, the request the client sends and the errors fetch_workshop raises, including a ConnectTimeout, a refused connection and non-2xx answers; both the page's raise_for_status recipe and an is_success check, and both a TransportError and a ConnectError catch, pass. Task 8 counts test functions and methods, checks for an httpx.MockTransport call, runs the learner's tests against their code (they must pass and must assign a get_repository entry into app.dependency_overrides, which the check records) and against four broken versions: an app that answers 200 to everything, an app whose dependency overrides are ignored, and a fetch_workshop that never raises or that raises the wrong status, patched in both upstream and main. Objective not claimed: fastapi-routes#o1's route definitions are practised and observed in Tasks 1-3, but its run-the-app-locally clause stays with the page and the optional uvicorn step, which no test can observe without opening a socket; fastapi-routes#o2 (explain) is left to the page."
   },
   "minutes": {
-    "estimatedMedian": 45,
+    "estimatedMedian": 50,
     "cap": 60
   },
   "trackRequirement": {

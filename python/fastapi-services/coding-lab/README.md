@@ -2,11 +2,12 @@
 
 ## Goal
 
-The data pipeline has loaded the workshop sign-ups. Now the front desk wants them over HTTP, together with each workshop's details from the Spring Boot workshop catalog (`GET /workshops/{id}`, the API you built in the Spring Boot Basics lab).
+The nightly data pipeline loads the workshop sign-ups, and its export adds the desk's sign-up id, workshop and status. This lab reads a JSON snapshot of that export (`fixtures/signups.json`). The front desk now wants the sign-ups over HTTP, together with each workshop's details from the Spring Boot workshop catalog (`GET /workshops/{id}`, the API you built in the Spring Boot Basics lab).
 In eight linked tasks you add the FastAPI routes, read the catalog's address and token from environment variables, call the catalog with httpx and a timeout, turn its failures into clear answers, and write your own tests.
+The one write route, `POST /signups`, records a walk-in at the desk in this app's memory only; the pipeline stays the source of truth.
 Everything runs on your own computer: no cloud account, no Docker, no database, and no running Spring Boot service; the tests replace the catalog with an `httpx.MockTransport`.
 
-About 45 minutes of your scheduled exercise block (an estimate); if you pass 60 minutes, pause and finish in self-study.
+About 50 minutes in total, setup included (an estimate): setup and Tasks 1-3 fit the day's 20-minute coding-lab block and Tasks 4-8 the 40-minute block, so the end of Task 3 is the place to pause between them. If you pass 60 minutes in total, pause and finish in self-study.
 
 ## What you edit
 
@@ -18,15 +19,14 @@ About 45 minutes of your scheduled exercise block (an estimate); if you pass 60 
 | `starter/test_api.py` | 8: your own tests |
 
 Leave `tests/`, `fixtures/`, `expected/`, `starter/signups_api/repository.py`, `starter/signups_api/__init__.py` and `starter/requirements.txt` as they are.
-Each failing check names its task and the next action.
+Each check is named after its task, and its failure message says what to do next.
 
 ## Prerequisites
 
-Python 3.12 or later. Check it in a terminal (on Windows, type `py` wherever this README says `python`):
+Python 3.12 or later. Check it in a terminal:
 
-```
-python --version
-```
+- macOS and Linux: `python3 --version`
+- Windows: `py --version`
 
 ## Setup (once, needs the internet)
 
@@ -35,7 +35,7 @@ Open a terminal in the lab folder (the folder that holds this README). Create an
 macOS and Linux:
 
 ```
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 ```
 
@@ -46,7 +46,7 @@ py -m venv .venv
 .venv\Scripts\Activate.ps1
 ```
 
-Then, on every system:
+Once the environment is active, `python` means its Python on every system. Then:
 
 ```
 python -m pip install -r starter/requirements.txt
@@ -76,7 +76,7 @@ FastAPI validates the body against `SignupIn`: a `workshop_id` of `"x"` is answe
 ### Task 2: one sign-up, or 404 (`main.py`)
 
 Add `GET /signups/{signup_id}` with `response_model=SignupOut` and the path parameter `signup_id: int`.
-Return `repo.get(signup_id)`; when it is `None`, `raise HTTPException(status_code=404, detail="Sign-up not found")`.
+Look the sign-up up with `repo.get(signup_id)`. When the result is `None`, `raise HTTPException(status_code=404, detail="Sign-up not found")`; otherwise return it.
 
 ### Task 3: one page of a session (`main.py`)
 
@@ -84,12 +84,15 @@ Add `GET /sessions/{session}/signups` with `response_model=list[SignupOut]`, the
 `limit: int = Query(10, ge=1, le=50)` and `offset: int = Query(0, ge=0)`.
 Return `repo.list_by_session(session, limit, offset)`. `?limit=2&offset=1` skips the first sign-up and returns the next two; `?limit=0` is a `422`.
 
-Optional: see the routes run. From the `starter` folder, start the app with `python -m uvicorn signups_api.main:app`, open http://127.0.0.1:8000/docs, try the routes, then stop it with Ctrl-C.
+Optional: see the routes run. The page's `fastapi dev main.py` needs the `fastapi[standard]` extra, which this lab does not install, so start the same app with uvicorn instead: `cd starter`, then `python -m uvicorn signups_api.main:app`, open http://127.0.0.1:8000/docs, try the routes, stop it with Ctrl-C and go back with `cd ..` before you run the tests.
+The `/docs` page loads its Swagger UI files from the internet; offline, open http://127.0.0.1:8000/openapi.json or call a route such as http://127.0.0.1:8000/signups/1 instead.
+
+This is the end of the 20-minute block.
 
 ### Task 4: settings from the environment (`settings.py`)
 
 Give `Settings(BaseSettings)` three fields: `spring_base_url: str`, `spring_token: str` and `spring_timeout_seconds: float = 2.0`.
-pydantic-settings fills each field from the environment variable of the same name in any letter case (`SPRING_BASE_URL`, `SPRING_TOKEN`, `SPRING_TIMEOUT_SECONDS`), so the token never appears in your code. A missing `SPRING_TOKEN` raises a `ValidationError`.
+pydantic-settings fills each field from the environment variable of the same name in any letter case (`SPRING_BASE_URL`, `SPRING_TOKEN`, `SPRING_TIMEOUT_SECONDS`), so the token never appears in your code. The token has no default: a missing `SPRING_TOKEN` raises a `ValidationError`.
 
 ### Task 5: an httpx client for the catalog (`upstream.py`)
 
@@ -97,18 +100,25 @@ pydantic-settings fills each field from the environment variable of the same nam
 
 - `base_url=settings.spring_base_url`;
 - `headers={"Authorization": f"Bearer {settings.spring_token}"}`;
-- `timeout=httpx.Timeout(settings.spring_timeout_seconds)`, so a slow catalog cannot hold your request open;
+- `timeout=httpx.Timeout(settings.spring_timeout_seconds)`, which limits each step of the call (connecting, sending, waiting for each read), so a catalog that stops answering cannot hang your request;
 - `transport=transport`, so a test can plug in an `httpx.MockTransport`.
+
+The Spring Boot Basics catalog ignores the token; a deployed catalog checks it.
 
 ### Task 6: map the catalog's failures (`upstream.py`)
 
-`fetch_workshop(client, workshop_id)` calls `client.get(f"/workshops/{workshop_id}")` inside `try` and returns `response.json()`. Translate every failure into an `UpstreamError(status_code, detail)`:
+`fetch_workshop(client, workshop_id)` returns the catalog's JSON body for `GET /workshops/{workshop_id}`, and turns each failure the page lists into an `UpstreamError(status_code, detail)`:
 
-| What happened | Raise |
+1. Inside `try:`, call `response = client.get(f"/workshops/{workshop_id}")`, then `response.raise_for_status()`, then return `response.json()`.
+2. Catch, in this order:
+
+| `except` | Raise |
 | --- | --- |
 | `httpx.TimeoutException` | `UpstreamError(504, "Workshop service timed out")` |
-| `httpx.ConnectError` | `UpstreamError(503, "Workshop service unavailable")` |
-| any non-2xx answer (`not response.is_success`) | `UpstreamError(502, f"Workshop service returned {response.status_code}")` |
+| `httpx.TransportError` (a refused connection and the other transport failures) | `UpstreamError(502, "Workshop service unavailable")` |
+| `httpx.HTTPStatusError as err` (from `raise_for_status()`) | `UpstreamError(502, f"Workshop service returned {err.response.status_code}")` |
+
+`TimeoutException` is a kind of `TransportError`, and the first matching `except` wins, so the timeout must come first. Without `raise_for_status()`, httpx raises nothing for a 404 or 500 answer.
 
 ### Task 7: the workshop route (`main.py`)
 
@@ -125,8 +135,9 @@ Add two test functions to `starter/test_api.py`:
 1. **A route test with an override.** Set `app.dependency_overrides[get_repository] = lambda: SignupRepository([])`, call `client.get("/signups/1")`, and assert the status is 404 and the body is `{"detail": "Sign-up not found"}`. Clear the override at the end with `app.dependency_overrides.clear()` (inside `finally:` so a failing assert still clears it).
 2. **An outbound call with a mock transport.** Write a handler that raises `httpx.ReadTimeout("slow", request=request)`, build `httpx.Client(base_url="http://spring.test", transport=httpx.MockTransport(handler))`, and check that `fetch_workshop(...)` raises `UpstreamError` with `status_code` 504 (use `with pytest.raises(UpstreamError) as raised:` and add `import pytest`).
 
+A route-level test of the workshop route that overrides `get_workshop_client` with a mock-transport client is accepted for the second test too.
 Run only your file while you work: `python -m pytest -q starter/test_api.py`.
-The Task 8 check runs your tests against your code, where they must pass, then against a broken app that answers 200 to everything and a broken `fetch_workshop` that never raises, where they must fail.
+The Task 8 check runs your tests against your code, where they must pass and must put a `get_repository` entry into `app.dependency_overrides`. It then runs them against four broken versions, where they must fail: an app that answers 200 to everything, an app that ignores dependency overrides, a `fetch_workshop` that never raises and one that answers every failure with the wrong status.
 
 ## Test
 
@@ -136,7 +147,7 @@ The one test command, run from the lab folder with the virtual environment activ
 python -m pytest -q
 ```
 
-When you finish, every test passes: the eight lab checks plus your own tests.
+When you finish, every test passes: your own tests plus the eight lab checks.
 
 ## Expected output
 
@@ -144,21 +155,23 @@ When you finish, every test passes: the eight lab checks plus your own tests.
 
 ## Offline note
 
-Only the setup step uses the network. The tests never open a connection: the catalog is an `httpx.MockTransport`, and `TestClient` calls your app in-process. Running the app with uvicorn listens only on your own computer.
+Only the setup step uses the network, and, if you open it, the optional `/docs` page in your browser. The tests never open a connection: the catalog is an `httpx.MockTransport`, and `TestClient` calls your app in-process. Running the app with uvicorn listens only on your own computer.
 
 ## Cleanup
 
-The lab creates `.venv` and `.pytest_cache` in the lab folder and `__pycache__` folders under `starter/` and `tests/`. Stop uvicorn if it is running, deactivate the environment with `deactivate`, then delete them from the lab folder:
+The lab creates `.venv` and `.pytest_cache` in the lab folder and `__pycache__` folders under `starter/` and `tests/` (and `starter/.pytest_cache` if you ran pytest inside `starter`). Stop uvicorn if it is running, deactivate the environment with `deactivate`, then delete them from the lab folder:
 
-- macOS and Linux: `rm -rf .venv .pytest_cache starter/__pycache__ starter/signups_api/__pycache__ tests/__pycache__`
-- Windows PowerShell: `Remove-Item -Recurse -Force .venv, .pytest_cache, starter\__pycache__, starter\signups_api\__pycache__, tests\__pycache__ -ErrorAction SilentlyContinue`
+- macOS and Linux: `rm -rf .venv .pytest_cache starter/.pytest_cache starter/__pycache__ starter/signups_api/__pycache__ tests/__pycache__`
+- Windows PowerShell: `Remove-Item -Recurse -Force .venv, .pytest_cache, starter\.pytest_cache, starter\__pycache__, starter\signups_api\__pycache__, tests\__pycache__ -ErrorAction SilentlyContinue`
 
 ## Troubleshooting
 
+- **`command not found: python` or `python3`**: on macOS and Linux create the environment with `python3`; after `source .venv/bin/activate`, `python` works. On Windows use `py`.
 - **`No module named fastapi` or `No module named pytest`**: the virtual environment is not active in this terminal. Activate it and run the test command again.
+- **Only your own tests ran, or `no tests ran`**: you are in the `starter` folder. Go back to the lab folder with `cd ..` and run the test command there.
 - **Every route test fails with `404 Not Found` for the route itself**: check the path and the decorator (`@app.get`, `@app.post`) against the task.
 - **A route test gets the real fixture data instead of the test's**: the route reads the repository some other way; take it as `repo=Depends(get_repository)`.
-- **`ValidationError` mentioning `spring_base_url` when you run the app and call the workshop route**: set `SPRING_BASE_URL` and `SPRING_TOKEN` in that terminal first; without a running catalog the route answers 503.
+- **`ValidationError` mentioning `spring_base_url` when you run the app and call the workshop route**: set the two variables in that terminal before starting uvicorn (macOS and Linux: `export SPRING_BASE_URL=http://localhost:8080` and `export SPRING_TOKEN=dev-token`; PowerShell: `$env:SPRING_BASE_URL = "http://localhost:8080"` and `$env:SPRING_TOKEN = "dev-token"`). Without a running catalog the route answers 502.
 - **PowerShell refuses to run `Activate.ps1`**: run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once, then activate again.
 - **Port 8000 already in use when you start uvicorn**: stop the other server, or add `--port 8001`.
-- **You pass 60 minutes**: pause, note the task you are on, and finish in self-study; every check still names the task it belongs to.
+- **You pass 60 minutes**: pause, note the task you are on, and finish in self-study; every check is still named after its task.
