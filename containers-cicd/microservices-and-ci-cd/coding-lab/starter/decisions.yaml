@@ -11,9 +11,9 @@ architecture:
   redeploys_everything_for_one_change: ""
   keeps_a_reviews_crash_away_from_checkout: ""
   scales_only_the_busy_part: ""
-  # one of: cross-service-consistency | operational-overhead | network-failures
+  # one of: network-failures | operational-overhead | cross-service-consistency
   cost_in_the_brief: ""
-  # one of: allowed | forbidden
+  # one of: forbidden | allowed
   reviews_reading_shop_tables_directly: ""
   why: ""
 
@@ -22,7 +22,7 @@ data_stores:
   request_counters: ""
   order_history: ""
   review_bodies: ""
-  # one of: an-api-gateway | a-shared-schema | database-per-service
+  # one of: database-per-service | a-shared-schema | an-api-gateway
   different_store_types_are_enabled_by: ""
   why: ""
 
@@ -47,7 +47,7 @@ store_contrast:
     document: ""
 
 gateway_and_discovery:
-  # one of: response-caching | authentication | schema-migrations
+  # one of: authentication | response-caching | schema-migrations
   shared_concern_at_gateway: ""
   # For each setup in the brief: server-side-discovery | client-side-discovery
   discovery_setup_a: ""
@@ -66,7 +66,7 @@ service_calls:
   httpx_with_timeout_none: ""
   restclient_with_nothing_set: ""
   # Where does Spring's RestClient get its read limit?
-  # one of: the-calling-controller | the-request-factory | the-restclient-base-url
+  # one of: the-request-factory | the-calling-controller | the-restclient-base-url
   restclient_read_limit_is_set_on: ""
 
 # ---- Phase 7 (S39): images, secrets and delivery ----
@@ -79,7 +79,7 @@ image_reference:
   # The short reference in the same file: what does Docker assume?
   short_reference_registry: ""
   short_reference_tag: ""
-  # one of: running-containers | build-logs | images-in-repositories
+  # one of: build-logs | running-containers | images-in-repositories
   a_registry_stores: ""
 
 secrets_in_logs:
@@ -99,6 +99,6 @@ delivery:
   # one of: service | deployment
   gives_pods_one_stable_address: ""
   keeps_three_replicas_running: ""
-  # one of: continuous-delivery | continuous-deployment
+  # one of: continuous-deployment | continuous-delivery
   release_policy_in_the_brief_is: ""
   why: ""

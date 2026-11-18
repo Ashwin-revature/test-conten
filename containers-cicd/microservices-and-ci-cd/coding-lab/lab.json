@@ -75,7 +75,7 @@
     "timeoutSeconds": 60,
     "starterExpectation": "fail",
     "failingTests": [
-      "the workflow runs on push",
+      "the workflow runs on pushes and pull requests",
       "the test job checks out the repository before it runs the tests",
       "the build job runs only after the test job succeeds",
       "the image is built from the reviews folder and pushed only outside pull requests",
@@ -95,9 +95,9 @@
       "the gateway and discovery questions match the brief",
       "the listen-address and timeout questions match the service pages",
       "the image reference and registry questions match the reading",
-      "the log redaction, add-mask and fork questions match the secrets page",
+      "the secrets-in-logs questions match the secrets page",
       "the pipeline, Kubernetes and release-policy questions match the taught distinctions",
-      "reviews Dockerfile starts a server that listens on 0.0.0.0",
+      "reviews Dockerfile starts the server the way the adding-FastAPI page says an image should",
       "the outgoing api call sets explicit connect and read timeouts",
       "the outgoing api call forwards the caller's token, and a request without one is refused",
       "a timed-out or refused call becomes a clear gateway error response"

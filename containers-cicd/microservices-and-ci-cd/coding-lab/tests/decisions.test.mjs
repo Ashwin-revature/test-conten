@@ -32,7 +32,7 @@ test('the image reference and registry questions match the reading', () => {
   assert.equal(problem, null, problem ?? undefined);
 });
 
-test('the log redaction, add-mask and fork questions match the secrets page', () => {
+test('the secrets-in-logs questions match the secrets page', () => {
   const problem = check('decide-secrets-in-logs');
   assert.equal(problem, null, problem ?? undefined);
 });

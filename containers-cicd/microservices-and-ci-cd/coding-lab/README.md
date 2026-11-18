@@ -30,8 +30,8 @@ Estimates for a learner who has read the day's topic pages; nothing fails on tim
 - **S38, about 37 minutes:** phases 1-5.
 - **S39, about 19 minutes:** the Jenkins reading, then phases 6 and 7.
 
-The worst case adds four extra failed runs of about a minute each: 60 minutes.
-If you pass 60 minutes, pause and finish in self-study.
+The 60-minute bound is a planning allowance, not a measured worst case: the typical path plus four extra failed runs of about a minute each.
+No learner has been timed yet. If you pass 60 minutes, pause and finish in self-study.
 The one-time setup (about 3 minutes) is not counted.
 
 ## Setup (once, needs the network)
@@ -97,13 +97,14 @@ The page calls itself optional and says it has no lab; on the Standard track thi
 ### Phase 6: repair the pipeline (about 9 minutes)
 
 Fix `starter/.github/workflows/ci.yml` without adding jobs, using the pipeline and secrets pages.
+The workflow you want runs for pushes and pull requests: a pull request is built and tested but never pushes an image, and a push to `main` publishes it.
 
 - The image goes to Docker Hub, where `GITHUB_TOKEN` cannot sign in. Keep the `run:` login step, but give it the `REGISTRY_USERNAME` and `REGISTRY_PASSWORD` repository secrets the way the secrets page passes secrets to a step, and pipe the password to `docker login --password-stdin` instead of putting it on the command line.
 - Give `GITHUB_TOKEN` the least access this workflow needs.
 - Pin every action to its full commit SHA, with the release tag in a trailing comment:
   - `actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1`
   - `docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0`
-- Fork pull requests get no repository secrets. Guarding the login step like the push keeps those runs green. This is optional and not tested.
+- Optional and not tested: after phase 7, check the secrets page's rule for runs from forks and decide whether the login step needs the same guard as the push.
 
 ### Phase 7: the images, secrets and delivery review (about 5 minutes)
 

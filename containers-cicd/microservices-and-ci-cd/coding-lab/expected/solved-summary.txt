@@ -1,4 +1,4 @@
-ok 1 - the workflow runs on push
+ok 1 - the workflow runs on pushes and pull requests
 ok 2 - the test job checks out the repository before it runs the tests
 ok 3 - the build job runs only after the test job succeeds
 ok 4 - the image is built from the reviews folder and pushed only outside pull requests
@@ -18,9 +18,9 @@ ok 17 - the three store types are contrasted on schema, querying and consistency
 ok 18 - the gateway and discovery questions match the brief
 ok 19 - the listen-address and timeout questions match the service pages
 ok 20 - the image reference and registry questions match the reading
-ok 21 - the log redaction, add-mask and fork questions match the secrets page
+ok 21 - the secrets-in-logs questions match the secrets page
 ok 22 - the pipeline, Kubernetes and release-policy questions match the taught distinctions
-ok 23 - reviews Dockerfile starts a server that listens on 0.0.0.0
+ok 23 - reviews Dockerfile starts the server the way the adding-FastAPI page says an image should
 ok 24 - the outgoing api call sets explicit connect and read timeouts
 ok 25 - the outgoing api call forwards the caller's token, and a request without one is refused
 ok 26 - a timed-out or refused call becomes a clear gateway error response

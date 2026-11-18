@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { check } from './lab.mjs';
 
-test('the workflow runs on push', () => {
+test('the workflow runs on pushes and pull requests', () => {
   const problem = check('ci-trigger');
   assert.equal(problem, null, problem ?? undefined);
 });
