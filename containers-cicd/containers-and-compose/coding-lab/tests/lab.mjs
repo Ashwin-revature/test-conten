@@ -421,8 +421,15 @@ function composeCommand(line) {
   return { sub, ...parseArgs(after, VALUE_OPTIONS, sub !== 'exec') };
 }
 const entry = (dir, key) => (typeof runbook(dir)[key] === 'string' ? runbook(dir)[key] : '');
+// One format message for any entry that is more than one command, whatever rule reads it.
+const notSingle = (dir, ...keys) => {
+  const key = keys.find((k) => SHELL_OPERATORS.test(entry(dir, k)));
+  return key ? `${key}: write exactly one command, with no ;, &&, pipes, redirection or $(...)` : null;
+};
 
 rule('runbook-lifecycle', (dir) => {
+  const format = notSingle(dir, 'start-stack', 'list-all-containers', 'stop-keep-data', 'stop-delete-data');
+  if (format) return format;
   const up = composeCommand(entry(dir, 'start-stack'));
   if (!up || up.sub !== 'up' || !on(up, '-d', '--detach') || up.rest.length) return 'start-stack: the whole stack must start and keep running in the background after the command returns';
   const ps = composeCommand(entry(dir, 'list-all-containers'));
@@ -441,6 +448,8 @@ rule('runbook-lifecycle', (dir) => {
 });
 
 rule('runbook-logs', (dir) => {
+  const format = notSingle(dir, 'why-did-api-exit', 'follow-api-output');
+  if (format) return format;
   const once = composeCommand(entry(dir, 'why-did-api-exit'));
   if (!once || once.sub !== 'logs' || on(once, '-f', '--follow') || once.rest.join(' ') !== 'api') {
     return 'why-did-api-exit: print what the api service alone has written so far, then return';
@@ -451,6 +460,8 @@ rule('runbook-logs', (dir) => {
 });
 
 rule('runbook-exec', (dir) => {
+  const format = notSingle(dir, 'print-one-api-setting');
+  if (format) return format;
   const cmd = composeCommand(entry(dir, 'print-one-api-setting'));
   const settings = Object.keys(env(services(dir).api));
   const [service, program, ...args] = cmd?.rest ?? [];
@@ -494,6 +505,8 @@ rule('runbook-run-env', (dir) => {
       }
     }
   }
+  const format = notSingle(dir, 'run-db-alone');
+  if (format) return format;
   const line = entry(dir, 'run-db-alone');
   const w = argv(line);
   const runAt = w[1] === 'run' ? 2 : (w[1] === 'container' && w[2] === 'run' ? 3 : -1);
