@@ -18,7 +18,7 @@
       {
         "phase": "S38 1 orient: read the README, copy .env, first run",
         "minutes": 5,
-        "derivation": "README 919 words at 200 wpm = 4.6, plus about 0.7 for the copy and the first run"
+        "derivation": "README 969 words at 200 wpm = 4.8, plus about 0.7 for the copy and the first run"
       },
       {
         "phase": "S38 2 repair the reviews services in Compose",
@@ -73,7 +73,7 @@
     },
     "wrongFirstRetry": "a failing test costs about 1 minute to read the message, make the one named repair and rerun",
     "worstRequiredMinutes": 60,
-    "worstRequiredBasis": "typical 56 plus 4 extra failed runs at about 1 minute each = 60, the bound the README names as the pause-and-self-study point",
+    "worstRequiredBasis": "a planning allowance, not a measured or derived worst case: typical 56 plus a stated allowance of 4 extra failed runs at about 1 minute each = 60, the bound the README names as the pause-and-self-study point",
     "fit": "Each day's share occupies that day's existing frozen-calendar Lab-template guided-lab block (85 minutes) and adds no required time elsewhere."
   },
   "observed": {
