@@ -25,8 +25,8 @@
     },
     {
       "path": "authoring/catalog/react/forms-context-and-crud/module.json",
-      "sha256": "bacee0d91ab643fb94987b9f33e99a8a036cfb96661a492f9f0c69381eb30ac1",
-      "bytes": 2268
+      "sha256": "e0b23170c5db5270ac235757bcb4d9f10a38639ba732983a8602b57cf2b787c1",
+      "bytes": 3131
     },
     {
       "path": "authoring/catalog/react/forms-context-and-crud/sharing-state-with-context/topic.json",
@@ -57,6 +57,56 @@
       "path": "authoring/evidence/react/forms-context-and-crud/accessible-forms/sources.json",
       "sha256": "03ad6f729db7545860d1c22ea00ff8607c561dd0e09366158f6a16292c922498",
       "bytes": 2169
+    },
+    {
+      "path": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education-recheck.json",
+      "sha256": "b313ba7de7b0fe3d1e58954ec520a64901a928719f1b7f0c1801139826eb4b3f",
+      "bytes": 8468
+    },
+    {
+      "path": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education.json",
+      "sha256": "4766331911b46228b27ff5eb0c3e8c80697886fc309fe6a3d1bfb0a777d47c80",
+      "bytes": 12129
+    },
+    {
+      "path": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme-recheck.json",
+      "sha256": "756cf4193d5cb13ccf2eb496af4d9d1970c6c22814fedc5ced4767cc78e64ef2",
+      "bytes": 6603
+    },
+    {
+      "path": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme.json",
+      "sha256": "6225eaaf64836f4ec06d8dd4237eef9494175b9b388180c6dc203b8e1aae1c75",
+      "bytes": 7112
+    },
+    {
+      "path": "authoring/evidence/react/forms-context-and-crud/coding-lab-decision-reconciliation.json",
+      "sha256": "3bbb2b05cbaff167b7571d4cb5b811e0caf8e09e4f8cb9f0042e5fe1acbd20a5",
+      "bytes": 3152
+    },
+    {
+      "path": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-education-recheck.json",
+      "sha256": "051cb8db00e99c75814bb17f60b32061b72bb57aa3f97de82b0ecba16b9d2222",
+      "bytes": 7400
+    },
+    {
+      "path": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-sme-recheck.json",
+      "sha256": "3bda03664970b5edd3ace8fa76438a38f53b9fb3bc14c0b1972a02a0971b475e",
+      "bytes": 4149
+    },
+    {
+      "path": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-reconciliation.json",
+      "sha256": "9e08f6e73327866a6dc332874f65ca4c91fea02ab69430f6650b7619c0cebb48",
+      "bytes": 7494
+    },
+    {
+      "path": "authoring/evidence/react/forms-context-and-crud/coding-lab-reconciliation.json",
+      "sha256": "d3ce9b2142d96d88e54fe458bfe2c002d39261b8f2126a31a4c95cced6199cc5",
+      "bytes": 12507
+    },
+    {
+      "path": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "sha256": "afb7e1be13629174a9efa2e29f19f30297ac24ad67fd5c60e70e3cc79f2a22b9",
+      "bytes": 8674
     },
     {
       "path": "authoring/evidence/react/forms-context-and-crud/controlled-forms/owner-essential-qa.json",
@@ -182,6 +232,176 @@
       "path": "react/forms-context-and-crud/accessible-forms/artifact.md",
       "sha256": "f1f63cd89b2fdeca906b8c1f62d3a70d354038e8db072c969207401197978795",
       "bytes": 6305
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "c1dda63de395b408ca1700623dd357382f03e3ff6e9d87fa6f3f9eb12bc4e4fe",
+      "bytes": 6066
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/expected/on-completion.txt",
+      "sha256": "6d6af326241e1a389878d077d3d6a0ab5d61cef2bdd5ee0839248671f8cc1e7f",
+      "bytes": 1019
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "e33fcf1aefae6b109306ae0878c343bfdc4aca5e3c0d37678e13b98744ac36b7",
+      "bytes": 7175
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/starter/index.html",
+      "sha256": "47b709c4f60b743e599121628f7cc43159b86a886066c4b3ea898b0b20c3cb40",
+      "bytes": 318
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/starter/mock-api.js",
+      "sha256": "e65f46158ad83e8f918bc5db9f2eaed5e04853466bae2713ec8464bfdab29126",
+      "bytes": 4562
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/starter/package-lock.json",
+      "sha256": "ebbc88f284dc067841bed60b2ab95a3bd641bf153733afcddb888e6d956cf8e3",
+      "bytes": 61066
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/starter/package.json",
+      "sha256": "4f61c9ce25222d00c3ea6d34655e5a9ce5eda24fb746db8586f89f5521496e01",
+      "bytes": 386
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/starter/src/App.jsx",
+      "sha256": "119237a6e7b2f619a93a24642756cc2b475dc433e3253e21f6fbce66fd5fbd11",
+      "bytes": 1007
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/starter/src/ToastContext.jsx",
+      "sha256": "9f76eaba9ebf44957b5818b97dbc1483c7240cc4b047c0b0fa86c6cd4ea4e0b6",
+      "bytes": 1217
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/starter/src/api.js",
+      "sha256": "d932ffa9c9e0d483f4161d7d2d1b8507de4fa03ff357749e76dfe495dcfd3599",
+      "bytes": 1597
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/starter/src/components/AppLayout.jsx",
+      "sha256": "f62f91e551c5e9d408114775b5e9976b1b1e7f7f9181ce1a36b98612c49188c6",
+      "bytes": 828
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/starter/src/components/ServiceForm.jsx",
+      "sha256": "3a8e0892bac66949d912cd1150b226179d5dbba0c6df5102b610612eb82b6d7c",
+      "bytes": 3482
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/starter/src/components/StatusBadge.jsx",
+      "sha256": "46765dcb49155983e5f81c8bbad79b5dec5a772405347ec571250d239f81386d",
+      "bytes": 306
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/starter/src/hooks/use-fetch.js",
+      "sha256": "de9fd66f9b4e707543966acc27cd9cbbd2e6ef1dc5db16f5aa209403265f8b70",
+      "bytes": 831
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/starter/src/main.jsx",
+      "sha256": "a6b75d038976f7eac2fcaee14632c27ec2fc538ef3a05399ac67a205ef7ee461",
+      "bytes": 324
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/starter/src/pages/EditServicePage.jsx",
+      "sha256": "c3856f87f27cf369a8ccfe5e615ebf4f4b961641b9399c574ac1a5a644f800e7",
+      "bytes": 1280
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/starter/src/pages/NotFoundPage.jsx",
+      "sha256": "b180453dceed2a9e3f320bb6ae34391a0b9192b5426b53cf79805e784d094be4",
+      "bytes": 312
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/starter/src/pages/OverviewPage.jsx",
+      "sha256": "d36aed9de57eae32d8fbec0fc58101043d2e9144cddfe271a831b4b1dac45a2b",
+      "bytes": 1769
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/starter/src/pages/RegisterServicePage.jsx",
+      "sha256": "fc75baffa64dbe5ac49f675ae719ba4f8403e306355e326415fa53258fbe190a",
+      "bytes": 912
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/starter/src/service-form.test.jsx",
+      "sha256": "b76a2a9413ca2a1129015023505a896d391f3b181acbc8cbdc8da5d89e98c249",
+      "bytes": 1785
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/starter/src/styles.css",
+      "sha256": "48ad306f4ac4ab0453c9a266923491799a2ecfa3d68a1af172fe88d211afcfd9",
+      "bytes": 1684
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/starter/vite.config.js",
+      "sha256": "9b558fcfc2eeb71a57336d7bfbf38864a78eb33ce38d8b723dfcd8e06329c11d",
+      "bytes": 200
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/tests/helpers.js",
+      "sha256": "246db4456d970b9989074561992f7a423b6283f637a8764875166ab20fe646ad",
+      "bytes": 5242
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/tests/package-lock.json",
+      "sha256": "ab1cb75965502bada5d26aa5f06ba3492818f97562fa97416a451b5ba23a0998",
+      "bytes": 112975
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/tests/package.json",
+      "sha256": "11afd94cfcbbb8eb3de23768671e232e38d33aaa8ef95bd47fb5263eb69de5ca",
+      "bytes": 529
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/tests/setup.js",
+      "sha256": "9b328c4843431fa76d8de00008fc159e95f99a840211085ff3b8f25e53d14409",
+      "bytes": 43
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/tests/t1-controlled-fields.test.jsx",
+      "sha256": "eb4af7bd6f36c30ed5a094b11c2542de7ad98fa9dfa3ab41f4fe6caf98c46597",
+      "bytes": 1448
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/tests/t2-labels.test.jsx",
+      "sha256": "73664c8120e9ec5e6eb926a3b6047782b56dce33c7f4d037e2970da4765ee640",
+      "bytes": 879
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/tests/t3-client-validation.test.jsx",
+      "sha256": "b87cdbfa131afed46b27370ed2f5d42dfd3f3db62386bd493ccd2a947d7d5893",
+      "bytes": 2788
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/tests/t4-create-service.test.jsx",
+      "sha256": "5680bc43e182381df284c94aac112db528aabfc7cdfb184d1c7874950e2e4aa4",
+      "bytes": 1894
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/tests/t5-server-errors.test.jsx",
+      "sha256": "97871f20818e5f28973be0107aba3fcdfe8557bcb755d9616f29d9574bc5b61d",
+      "bytes": 1802
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/tests/t6-edit-and-delete.test.jsx",
+      "sha256": "19ef2a9abaae758e9f30aa5c295a39f61647e6a51c527e8b0d9eb0e4bb809d53",
+      "bytes": 2200
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/tests/t7-toast-context.test.jsx",
+      "sha256": "4e25e3e7702aee8f173f3699d07b936dddf14cdd76663abf55fbb3feca0e6bb9",
+      "bytes": 1578
+    },
+    {
+      "path": "react/forms-context-and-crud/coding-lab/tests/vitest.config.js",
+      "sha256": "e1d9291aa9d6cefc013b403e588cd8b5c2f1d1b8f9866376d611969bb33683f1",
+      "bytes": 1640
     },
     {
       "path": "react/forms-context-and-crud/controlled-forms/artifact.gift",
@@ -338,6 +558,741 @@
       "field": "reviewedSha256",
       "artifactPath": "react/forms-context-and-crud/accessible-forms/artifact.html",
       "sha256": "9e2760eefcdfd56ae07ea40c46924b5239b9eb785eb1b4347607bd62ab50ad5a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "e33fcf1aefae6b109306ae0878c343bfdc4aca5e3c0d37678e13b98744ac36b7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "c1dda63de395b408ca1700623dd357382f03e3ff6e9d87fa6f3f9eb12bc4e4fe",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/t3-client-validation.test.jsx",
+      "sha256": "ef63ad910e708b3b83ed9d7abb3e96d5509645f1943746d17ea0077c2426826a",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education-recheck.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/t3-client-validation.test.jsx",
+      "sha256": "ef63ad910e708b3b83ed9d7abb3e96d5509645f1943746d17ea0077c2426826a",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "e33fcf1aefae6b109306ae0878c343bfdc4aca5e3c0d37678e13b98744ac36b7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "e33fcf1aefae6b109306ae0878c343bfdc4aca5e3c0d37678e13b98744ac36b7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "c1dda63de395b408ca1700623dd357382f03e3ff6e9d87fa6f3f9eb12bc4e4fe",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/service-form.test.jsx",
+      "sha256": "b76a2a9413ca2a1129015023505a896d391f3b181acbc8cbdc8da5d89e98c249",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "c1dda63de395b408ca1700623dd357382f03e3ff6e9d87fa6f3f9eb12bc4e4fe",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "c1dda63de395b408ca1700623dd357382f03e3ff6e9d87fa6f3f9eb12bc4e4fe",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/components/ServiceForm.jsx",
+      "sha256": "3a8e0892bac66949d912cd1150b226179d5dbba0c6df5102b610612eb82b6d7c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[7].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "e33fcf1aefae6b109306ae0878c343bfdc4aca5e3c0d37678e13b98744ac36b7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[8].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "c1dda63de395b408ca1700623dd357382f03e3ff6e9d87fa6f3f9eb12bc4e4fe",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "e33fcf1aefae6b109306ae0878c343bfdc4aca5e3c0d37678e13b98744ac36b7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "06ec583dfb1acff7d4a596867a810181d3d5f86e86e10be218c5929cb7d9cc58",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "e2ecefdc95b654248b6988064d7e6ead6ddc7418593ec99e6204871df2a9abe8",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "06ec583dfb1acff7d4a596867a810181d3d5f86e86e10be218c5929cb7d9cc58",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "06ec583dfb1acff7d4a596867a810181d3d5f86e86e10be218c5929cb7d9cc58",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "e2ecefdc95b654248b6988064d7e6ead6ddc7418593ec99e6204871df2a9abe8",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education.json",
+      "field": "findings[3].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/service-form.test.jsx",
+      "sha256": "06022bd7deb6f506cd57fd74c72699da05e3d8f4e09295bf0b89a4287d213805",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education.json",
+      "field": "findings[4].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "e2ecefdc95b654248b6988064d7e6ead6ddc7418593ec99e6204871df2a9abe8",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education.json",
+      "field": "findings[5].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "e2ecefdc95b654248b6988064d7e6ead6ddc7418593ec99e6204871df2a9abe8",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education.json",
+      "field": "findings[6].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/components/ServiceForm.jsx",
+      "sha256": "0a6baadca20aba1c550ff380a1bbccf1a146ac441c14109bb43019c2facaa62c",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education.json",
+      "field": "findings[7].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "06ec583dfb1acff7d4a596867a810181d3d5f86e86e10be218c5929cb7d9cc58",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education.json",
+      "field": "findings[8].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "e2ecefdc95b654248b6988064d7e6ead6ddc7418593ec99e6204871df2a9abe8",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-education.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "06ec583dfb1acff7d4a596867a810181d3d5f86e86e10be218c5929cb7d9cc58",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "e33fcf1aefae6b109306ae0878c343bfdc4aca5e3c0d37678e13b98744ac36b7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "c1dda63de395b408ca1700623dd357382f03e3ff6e9d87fa6f3f9eb12bc4e4fe",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/t3-client-validation.test.jsx",
+      "sha256": "ef63ad910e708b3b83ed9d7abb3e96d5509645f1943746d17ea0077c2426826a",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme-recheck.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/t3-client-validation.test.jsx",
+      "sha256": "ef63ad910e708b3b83ed9d7abb3e96d5509645f1943746d17ea0077c2426826a",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/helpers.js",
+      "sha256": "246db4456d970b9989074561992f7a423b6283f637a8764875166ab20fe646ad",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/t3-client-validation.test.jsx",
+      "sha256": "ef63ad910e708b3b83ed9d7abb3e96d5509645f1943746d17ea0077c2426826a",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/service-form.test.jsx",
+      "sha256": "b76a2a9413ca2a1129015023505a896d391f3b181acbc8cbdc8da5d89e98c249",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "c1dda63de395b408ca1700623dd357382f03e3ff6e9d87fa6f3f9eb12bc4e4fe",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "e33fcf1aefae6b109306ae0878c343bfdc4aca5e3c0d37678e13b98744ac36b7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "e33fcf1aefae6b109306ae0878c343bfdc4aca5e3c0d37678e13b98744ac36b7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "06ec583dfb1acff7d4a596867a810181d3d5f86e86e10be218c5929cb7d9cc58",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "e2ecefdc95b654248b6988064d7e6ead6ddc7418593ec99e6204871df2a9abe8",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/helpers.js",
+      "sha256": "2a475b98754f56ac42944325721573c2d1a8c52026b680d3dae920a7745b0ef4",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/t3-client-validation.test.jsx",
+      "sha256": "815766ee1aebbbb79d48b509d6060f62a813cc6b853b187e7d3241288bd02a6f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/service-form.test.jsx",
+      "sha256": "06022bd7deb6f506cd57fd74c72699da05e3d8f4e09295bf0b89a4287d213805",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme.json",
+      "field": "findings[3].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "e2ecefdc95b654248b6988064d7e6ead6ddc7418593ec99e6204871df2a9abe8",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme.json",
+      "field": "findings[4].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "06ec583dfb1acff7d4a596867a810181d3d5f86e86e10be218c5929cb7d9cc58",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-critic-sme.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "06ec583dfb1acff7d4a596867a810181d3d5f86e86e10be218c5929cb7d9cc58",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-decision-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "e33fcf1aefae6b109306ae0878c343bfdc4aca5e3c0d37678e13b98744ac36b7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "e33fcf1aefae6b109306ae0878c343bfdc4aca5e3c0d37678e13b98744ac36b7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "c1dda63de395b408ca1700623dd357382f03e3ff6e9d87fa6f3f9eb12bc4e4fe",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "e33fcf1aefae6b109306ae0878c343bfdc4aca5e3c0d37678e13b98744ac36b7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "e33fcf1aefae6b109306ae0878c343bfdc4aca5e3c0d37678e13b98744ac36b7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[10].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/t3-client-validation.test.jsx",
+      "sha256": "b87cdbfa131afed46b27370ed2f5d42dfd3f3db62386bd493ccd2a947d7d5893",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "c1dda63de395b408ca1700623dd357382f03e3ff6e9d87fa6f3f9eb12bc4e4fe",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/service-form.test.jsx",
+      "sha256": "b76a2a9413ca2a1129015023505a896d391f3b181acbc8cbdc8da5d89e98c249",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "c1dda63de395b408ca1700623dd357382f03e3ff6e9d87fa6f3f9eb12bc4e4fe",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "c1dda63de395b408ca1700623dd357382f03e3ff6e9d87fa6f3f9eb12bc4e4fe",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/components/ServiceForm.jsx",
+      "sha256": "3a8e0892bac66949d912cd1150b226179d5dbba0c6df5102b610612eb82b6d7c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[7].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/t3-client-validation.test.jsx",
+      "sha256": "b87cdbfa131afed46b27370ed2f5d42dfd3f3db62386bd493ccd2a947d7d5893",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[8].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "c1dda63de395b408ca1700623dd357382f03e3ff6e9d87fa6f3f9eb12bc4e4fe",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[9].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/t3-client-validation.test.jsx",
+      "sha256": "b87cdbfa131afed46b27370ed2f5d42dfd3f3db62386bd493ccd2a947d7d5893",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "e33fcf1aefae6b109306ae0878c343bfdc4aca5e3c0d37678e13b98744ac36b7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "e33fcf1aefae6b109306ae0878c343bfdc4aca5e3c0d37678e13b98744ac36b7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "c1dda63de395b408ca1700623dd357382f03e3ff6e9d87fa6f3f9eb12bc4e4fe",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/helpers.js",
+      "sha256": "246db4456d970b9989074561992f7a423b6283f637a8764875166ab20fe646ad",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/t3-client-validation.test.jsx",
+      "sha256": "b87cdbfa131afed46b27370ed2f5d42dfd3f3db62386bd493ccd2a947d7d5893",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/service-form.test.jsx",
+      "sha256": "b76a2a9413ca2a1129015023505a896d391f3b181acbc8cbdc8da5d89e98c249",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "c1dda63de395b408ca1700623dd357382f03e3ff6e9d87fa6f3f9eb12bc4e4fe",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "e33fcf1aefae6b109306ae0878c343bfdc4aca5e3c0d37678e13b98744ac36b7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/t3-client-validation.test.jsx",
+      "sha256": "b87cdbfa131afed46b27370ed2f5d42dfd3f3db62386bd493ccd2a947d7d5893",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/t3-client-validation.test.jsx",
+      "sha256": "b87cdbfa131afed46b27370ed2f5d42dfd3f3db62386bd493ccd2a947d7d5893",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "e33fcf1aefae6b109306ae0878c343bfdc4aca5e3c0d37678e13b98744ac36b7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-loop2-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "e33fcf1aefae6b109306ae0878c343bfdc4aca5e3c0d37678e13b98744ac36b7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "06ec583dfb1acff7d4a596867a810181d3d5f86e86e10be218c5929cb7d9cc58",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[0].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/README.md",
+      "sha256": "c1dda63de395b408ca1700623dd357382f03e3ff6e9d87fa6f3f9eb12bc4e4fe",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[1].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/expected/on-completion.txt",
+      "sha256": "6d6af326241e1a389878d077d3d6a0ab5d61cef2bdd5ee0839248671f8cc1e7f",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[10].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/components/AppLayout.jsx",
+      "sha256": "f62f91e551c5e9d408114775b5e9976b1b1e7f7f9181ce1a36b98612c49188c6",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[11].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/components/ServiceForm.jsx",
+      "sha256": "3a8e0892bac66949d912cd1150b226179d5dbba0c6df5102b610612eb82b6d7c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[12].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/components/StatusBadge.jsx",
+      "sha256": "46765dcb49155983e5f81c8bbad79b5dec5a772405347ec571250d239f81386d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[13].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/hooks/use-fetch.js",
+      "sha256": "de9fd66f9b4e707543966acc27cd9cbbd2e6ef1dc5db16f5aa209403265f8b70",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[14].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/main.jsx",
+      "sha256": "a6b75d038976f7eac2fcaee14632c27ec2fc538ef3a05399ac67a205ef7ee461",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[15].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/pages/EditServicePage.jsx",
+      "sha256": "c3856f87f27cf369a8ccfe5e615ebf4f4b961641b9399c574ac1a5a644f800e7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[16].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/pages/NotFoundPage.jsx",
+      "sha256": "b180453dceed2a9e3f320bb6ae34391a0b9192b5426b53cf79805e784d094be4",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[17].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/pages/OverviewPage.jsx",
+      "sha256": "d36aed9de57eae32d8fbec0fc58101043d2e9144cddfe271a831b4b1dac45a2b",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[18].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/pages/RegisterServicePage.jsx",
+      "sha256": "fc75baffa64dbe5ac49f675ae719ba4f8403e306355e326415fa53258fbe190a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[19].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/service-form.test.jsx",
+      "sha256": "b76a2a9413ca2a1129015023505a896d391f3b181acbc8cbdc8da5d89e98c249",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[2].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/lab.json",
+      "sha256": "e33fcf1aefae6b109306ae0878c343bfdc4aca5e3c0d37678e13b98744ac36b7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[20].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/styles.css",
+      "sha256": "48ad306f4ac4ab0453c9a266923491799a2ecfa3d68a1af172fe88d211afcfd9",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[21].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/vite.config.js",
+      "sha256": "9b558fcfc2eeb71a57336d7bfbf38864a78eb33ce38d8b723dfcd8e06329c11d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[22].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/helpers.js",
+      "sha256": "246db4456d970b9989074561992f7a423b6283f637a8764875166ab20fe646ad",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[23].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/package-lock.json",
+      "sha256": "ab1cb75965502bada5d26aa5f06ba3492818f97562fa97416a451b5ba23a0998",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[24].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/package.json",
+      "sha256": "11afd94cfcbbb8eb3de23768671e232e38d33aaa8ef95bd47fb5263eb69de5ca",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[25].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/setup.js",
+      "sha256": "9b328c4843431fa76d8de00008fc159e95f99a840211085ff3b8f25e53d14409",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[26].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/t1-controlled-fields.test.jsx",
+      "sha256": "eb4af7bd6f36c30ed5a094b11c2542de7ad98fa9dfa3ab41f4fe6caf98c46597",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[27].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/t2-labels.test.jsx",
+      "sha256": "73664c8120e9ec5e6eb926a3b6047782b56dce33c7f4d037e2970da4765ee640",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[28].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/t3-client-validation.test.jsx",
+      "sha256": "b87cdbfa131afed46b27370ed2f5d42dfd3f3db62386bd493ccd2a947d7d5893",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[29].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/t4-create-service.test.jsx",
+      "sha256": "5680bc43e182381df284c94aac112db528aabfc7cdfb184d1c7874950e2e4aa4",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[3].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/index.html",
+      "sha256": "47b709c4f60b743e599121628f7cc43159b86a886066c4b3ea898b0b20c3cb40",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[30].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/t5-server-errors.test.jsx",
+      "sha256": "97871f20818e5f28973be0107aba3fcdfe8557bcb755d9616f29d9574bc5b61d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[31].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/t6-edit-and-delete.test.jsx",
+      "sha256": "19ef2a9abaae758e9f30aa5c295a39f61647e6a51c527e8b0d9eb0e4bb809d53",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[32].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/t7-toast-context.test.jsx",
+      "sha256": "4e25e3e7702aee8f173f3699d07b936dddf14cdd76663abf55fbb3feca0e6bb9",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[33].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/tests/vitest.config.js",
+      "sha256": "e1d9291aa9d6cefc013b403e588cd8b5c2f1d1b8f9866376d611969bb33683f1",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[4].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/mock-api.js",
+      "sha256": "e65f46158ad83e8f918bc5db9f2eaed5e04853466bae2713ec8464bfdab29126",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[5].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/package-lock.json",
+      "sha256": "ebbc88f284dc067841bed60b2ab95a3bd641bf153733afcddb888e6d956cf8e3",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[6].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/package.json",
+      "sha256": "4f61c9ce25222d00c3ea6d34655e5a9ce5eda24fb746db8586f89f5521496e01",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[7].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/App.jsx",
+      "sha256": "119237a6e7b2f619a93a24642756cc2b475dc433e3253e21f6fbce66fd5fbd11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[8].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/ToastContext.jsx",
+      "sha256": "9f76eaba9ebf44957b5818b97dbc1483c7240cc4b047c0b0fa86c6cd4ea4e0b6",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/forms-context-and-crud/coding-lab-solved-run.json",
+      "field": "files[9].reviewedSha256",
+      "artifactPath": "react/forms-context-and-crud/coding-lab/starter/src/api.js",
+      "sha256": "d932ffa9c9e0d483f4161d7d2d1b8507de4fa03ff357749e76dfe495dcfd3599",
       "current": true
     },
     {
