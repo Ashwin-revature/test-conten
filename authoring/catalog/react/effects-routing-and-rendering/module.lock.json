@@ -79,6 +79,11 @@
       "bytes": 1944
     },
     {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop3-critic-education-recheck.json",
+      "sha256": "3ac632939d321643a8a968a73b7f3bee174ad9cf61935abfe513ca0c3a757260",
+      "bytes": 1531
+    },
+    {
       "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop3-reconciliation.json",
       "sha256": "568ddbe27f878d39f8048152b7c944ddf2ea6b662a1b8dcc2cbf1eaf126f6c46",
       "bytes": 2244
@@ -931,6 +936,34 @@
     },
     {
       "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop3-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop3-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "381a60eeacf016fd8cc3c92bf8d4bcfeaa4ff87f18f7aadab462411ac3863358",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop3-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/t6-abort-on-unmount.test.jsx",
+      "sha256": "f5fc25c2aa195a6d86440ade23f86b6f81778cb9abfcb1c417b6f93ae625bfa7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop3-critic-education-recheck.json",
       "field": "reviewedSha256",
       "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
       "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
