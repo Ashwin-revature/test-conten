@@ -10,8 +10,8 @@
     },
     {
       "path": "authoring/catalog/react/effects-routing-and-rendering/lifting-state-up/topic.json",
-      "sha256": "5eafab28db4981176ec369455fdf340e3fb107954c4a3d8c51dc8a2f49857d90",
-      "bytes": 3244
+      "sha256": "190c0a6a9854152af4e68c179dc55f9cb1135300697ea10c2eb741f4f188e525",
+      "bytes": 3179
     },
     {
       "path": "authoring/catalog/react/effects-routing-and-rendering/loading-and-error-states/topic.json",
@@ -30,18 +30,18 @@
     },
     {
       "path": "authoring/catalog/react/effects-routing-and-rendering/navigation/topic.json",
-      "sha256": "0338f86d84354e9580731408d59f3aeb82dcfa28db0f74122b653ab27d80f63f",
-      "bytes": 3102
+      "sha256": "6ecb3bf7efd061d5cacc90f60a3a973ca582ede9f9e1b48da1efd1debf48d909",
+      "bytes": 3037
     },
     {
       "path": "authoring/catalog/react/effects-routing-and-rendering/routing-and-route-parameters/topic.json",
-      "sha256": "a6150b3af6ed26d6d0d7718fba02618a6838b6abbdc05e6f8651c3d2fdd112b5",
-      "bytes": 3256
+      "sha256": "1ec784b290d52b638e3daea048ace4783fa56da8d5da3112416a05667d81bd23",
+      "bytes": 3191
     },
     {
       "path": "authoring/catalog/react/effects-routing-and-rendering/what-makes-a-component-re-render/topic.json",
-      "sha256": "eb6c02f2b15d058f72ad0a63009fc139e8420b06a2c73d3bcaee115817f94a60",
-      "bytes": 3292
+      "sha256": "f61c2d69000289d35e3ace39f8ee3d7a19682b812936c6bacd59916b81b88c16",
+      "bytes": 3227
     },
     {
       "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education-recheck.json",

@@ -5,13 +5,13 @@
   "files": [
     {
       "path": "authoring/catalog/react/forms-context-and-crud/accessible-forms/topic.json",
-      "sha256": "73a8675f9f8310fd98d256342c3f8a2e430863dbd860b3d33b10192f2de379ca",
-      "bytes": 3257
+      "sha256": "592b0ed00236efbfe2a9a2adcec8874e71530d50c304e2b447bb60fad953c190",
+      "bytes": 3199
     },
     {
       "path": "authoring/catalog/react/forms-context-and-crud/controlled-forms/topic.json",
-      "sha256": "5b59081adf01f7336150fe88f1803d42f1fd102187e2854128a021651ea725a5",
-      "bytes": 3266
+      "sha256": "c87648bff3ed7e94d03a256355d5ce33920a6e23af7f24e47536328923e29faf",
+      "bytes": 3208
     },
     {
       "path": "authoring/catalog/react/forms-context-and-crud/create-edit-and-delete-against-the-api/topic.json",
@@ -30,8 +30,8 @@
     },
     {
       "path": "authoring/catalog/react/forms-context-and-crud/sharing-state-with-context/topic.json",
-      "sha256": "8dddccc9e07ace1e5fc1982e18fb2d275ac45f84506461a4f08da1cac2952299",
-      "bytes": 3379
+      "sha256": "3a952a69ffe08bc76c2b43c7f0bf72ccf951a4779dd532b489bce6ac1ce4fed0",
+      "bytes": 3321
     },
     {
       "path": "authoring/catalog/react/forms-context-and-crud/ui-tests-with-testing-library-querying-by-role-and-label/topic.json",

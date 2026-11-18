@@ -5,13 +5,13 @@
   "files": [
     {
       "path": "authoring/catalog/react/components-and-state/components-and-jsx/topic.json",
-      "sha256": "1ff9bff0cc41dcc6398bc8902507c04838f2162e7878a2bc6a96b3a8d8c64487",
-      "bytes": 3084
+      "sha256": "9b722d815b80ea188dcea1ec22a6d7d213b56af37d542877ed98ca20cc993ab5",
+      "bytes": 3148
     },
     {
       "path": "authoring/catalog/react/components-and-state/conditional-display/topic.json",
-      "sha256": "ad2bb6cae53e29060f646acf8538a852ea33aef6aa448f764bde8213351a5fea",
-      "bytes": 3065
+      "sha256": "2991dc0e1fbb51e7b534928425dd7950b4e582b8abfc08fbb3764f798e6014e5",
+      "bytes": 3129
     },
     {
       "path": "authoring/catalog/react/components-and-state/module.json",
@@ -20,28 +20,28 @@
     },
     {
       "path": "authoring/catalog/react/components-and-state/project-structure/topic.json",
-      "sha256": "fe5281b680dc822461244e322dea8a5636936061ca6df66e3a14795811f21ec3",
-      "bytes": 3128
+      "sha256": "cf95a0a886c989321829cee14a9eb235f64cf0fa088be7ed5d77d58c5cc68c51",
+      "bytes": 3192
     },
     {
       "path": "authoring/catalog/react/components-and-state/props/topic.json",
-      "sha256": "d21333318c3689cbec8fe8d1c8daa4911b3941d9924bda101c379facd7488940",
-      "bytes": 3091
+      "sha256": "958a866c9d4145bddd8f1812c00356de586f215ebe8f5ad50c1b5d3436fc65a9",
+      "bytes": 3155
     },
     {
       "path": "authoring/catalog/react/components-and-state/rendering-lists-with-keys/topic.json",
-      "sha256": "5c2fa7159683a7d183f6545f32a824298d4b2cd62a89bca3548035a45103317f",
-      "bytes": 3055
+      "sha256": "8a9f81cb319128293afb4a5f940dd170e24a5439ac6c5c39b7638155bda64791",
+      "bytes": 3119
     },
     {
       "path": "authoring/catalog/react/components-and-state/updating-state-immutably/topic.json",
-      "sha256": "8f6ebb6d26108b226947abd124110a99686af032854f4a72c7c9d7403269baf0",
-      "bytes": 3196
+      "sha256": "8c950648cd2905ff0de37b35ac85eb89057de239644f7080385cd05578fd3e47",
+      "bytes": 3260
     },
     {
       "path": "authoring/catalog/react/components-and-state/usestate/topic.json",
-      "sha256": "c014277dea64f29dea0605b6fdec57a0c61b1af26dbf5b75ed663ebe21d34017",
-      "bytes": 3123
+      "sha256": "4b856fc1e85e0fbe6d9ddddada4f595c672443c2972656ee18f90a0383daaa0f",
+      "bytes": 3187
     },
     {
       "path": "authoring/evidence/react/components-and-state/coding-lab-critic-education-recheck.json",

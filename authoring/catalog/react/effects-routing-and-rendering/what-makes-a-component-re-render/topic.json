@@ -63,7 +63,7 @@
     },
     "lab": {
       "status": "absent",
-      "reason": "Standard: covered by the planned module lab react/effects-routing-and-rendering/coding-lab/ for the S31 Lab day, authored in the effects-routing-and-rendering module PR. Course project: not applied in a course-project part: the Fast FT17 increment is reduced to objectives it can teach and check within its 70-minute Project block"
+      "reason": "Standard: covered by the module lab react/effects-routing-and-rendering/coding-lab/ for the S31 Lab day. Course project: not applied in a course-project part: the Fast FT17 increment is reduced to objectives it can teach and check within its 70-minute Project block"
     }
   },
   "freshness": {

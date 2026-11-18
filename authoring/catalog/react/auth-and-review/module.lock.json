@@ -5,8 +5,8 @@
   "files": [
     {
       "path": "authoring/catalog/react/auth-and-review/handling-401-and-403-redirect-and-sign-out/topic.json",
-      "sha256": "635dbe00bc918c22cc0f7227a1b3515449db8ce2b25d11ac16b09c67fbdffee4",
-      "bytes": 3539
+      "sha256": "ad4e75a36398f4f592ccf3adc6d52d4a180cd52c4d75fc5defbdacdd6e94bd51",
+      "bytes": 3488
     },
     {
       "path": "authoring/catalog/react/auth-and-review/javascript-fundamentals-review/topic.json",
@@ -15,8 +15,8 @@
     },
     {
       "path": "authoring/catalog/react/auth-and-review/login-with-a-session-cookie-or-jwt/topic.json",
-      "sha256": "dbd5a9f4bd1a78a0ef48eea5b1af3df5181da7464500b1a772dfc728b64ddf1f",
-      "bytes": 3463
+      "sha256": "5ddecf98c65272d91d11276700194b35a4e1cc0270bf00e5cbb290105626309b",
+      "bytes": 3412
     },
     {
       "path": "authoring/catalog/react/auth-and-review/module.json",
@@ -25,8 +25,8 @@
     },
     {
       "path": "authoring/catalog/react/auth-and-review/protected-pages-and-role-based-screens/topic.json",
-      "sha256": "eb557b12f45a29e6d9009a1664759155ed89f7c719d52d9607d9574979c98411",
-      "bytes": 3343
+      "sha256": "654b7b9c1aaaccae31f9c9aaaacadc61d51be11ae5e47e109083910ed49d6b1c",
+      "bytes": 3292
     },
     {
       "path": "authoring/catalog/react/auth-and-review/react-review/topic.json",
@@ -35,8 +35,8 @@
     },
     {
       "path": "authoring/catalog/react/auth-and-review/turning-off-the-dev-profile/topic.json",
-      "sha256": "7dd0b877c898af87ee48e1286cccb349ea78757d232bbc268385657beaece822",
-      "bytes": 3429
+      "sha256": "7cff04a44ad3186df64704ac78888bd2e3574cac43b7d257f526cdfb63f88611",
+      "bytes": 3378
     },
     {
       "path": "authoring/evidence/react/auth-and-review/coding-lab-critic-education-recheck.json",
