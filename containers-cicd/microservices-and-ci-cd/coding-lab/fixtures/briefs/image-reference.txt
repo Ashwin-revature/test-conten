@@ -1,0 +1,3 @@
+The pipeline pushed this image reference:
+
+    ghcr.io/pepshop/reviews:1.4.2

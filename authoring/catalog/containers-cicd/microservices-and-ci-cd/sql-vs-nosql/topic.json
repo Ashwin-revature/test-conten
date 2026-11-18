@@ -62,7 +62,7 @@
     },
     "lab": {
       "status": "absent",
-      "reason": "No coding lab: Reading topic; the objectives are conceptual comparisons checked on the page"
+      "reason": "No topic coding lab: practised in the daemon-free module lab containers-cicd/microservices-and-ci-cd/coding-lab (Standard S38-S39 lab overlay; Fast does not require it)"
     }
   },
   "freshness": {
@@ -75,6 +75,6 @@
     ]
   },
   "licensing": [],
-  "lab": "none",
+  "lab": "module:microservices-and-ci-cd",
   "components": {}
 }

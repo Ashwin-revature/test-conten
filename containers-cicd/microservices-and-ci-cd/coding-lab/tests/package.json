@@ -1,0 +1,13 @@
+{
+  "name": "microservices-and-ci-cd-lab-tests",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Public rule checks for the Microservices and CI/CD module lab. They read files only; no container engine, Python runtime or network is used.",
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "yaml": "2.9.1"
+  }
+}

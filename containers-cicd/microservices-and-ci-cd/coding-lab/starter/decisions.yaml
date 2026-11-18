@@ -1,0 +1,76 @@
+# Design decision record (README phases 5 and 7).
+# Read fixtures/briefs/architecture-brief.md first; every question below is
+# asked there with its full context. Fill every "" value with one of the
+# listed choices, and write your own reasoning in each "why" field: the tests
+# check your choices and that a why is present, never its wording.
+
+# ---- Phase 5 (S38): architecture, data and routing ----
+
+gateway_and_discovery:
+  # one of: authentication | database-per-service | image-caching
+  shared_concern_at_gateway: ""
+  # For each described setup, who asks the registry where instances are?
+  # one of: the-calling-service | a-router-in-front
+  discovery_setup_a: ""
+  discovery_setup_b: ""
+  # one of: a-simple-form-of-service-discovery | an-api-gateway | a-container-registry
+  compose_service_names_are: ""
+  why: ""
+
+architecture:
+  # one of: monolith | microservices
+  redeploys_everything_for_one_change: ""
+  scales_only_the_busy_part: ""
+  keeps_a_reviews_crash_away_from_checkout: ""
+  # one of: network-failures | cross-service-consistency | operational-overhead
+  cost_in_the_brief: ""
+  # one of: allowed | forbidden
+  reviews_reading_shop_tables_directly: ""
+  why: ""
+
+data_stores:
+  # one of: relational | document | key-value   (for each described dataset)
+  cart_sessions: ""
+  order_history: ""
+  review_bodies: ""
+  # one of: database-per-service | an-api-gateway | build-caching
+  different_store_types_are_enabled_by: ""
+  why: ""
+
+store_contrast:
+  # For each store type, pick how it typically handles each question.
+  # schema, one of: declared-up-front | flexible-per-record | none-for-the-value
+  # querying, one of: rich-sql-with-joins | by-fields-inside-a-record | get-and-put-by-key
+  # consistency, one of: acid-across-rows | often-narrower-transaction-scope | varies-simple-operations
+  relational:
+    schema: ""
+    querying: ""
+    consistency: ""
+  document:
+    schema: ""
+    querying: ""
+    consistency: ""
+  key_value:
+    schema: ""
+    querying: ""
+    consistency: ""
+  why: ""
+
+# ---- Phase 7 (S39): images and delivery ----
+
+image_reference:
+  # Parse the reference in fixtures/briefs/image-reference.txt into its parts.
+  registry: ""
+  repository: ""
+  tag: ""
+
+delivery:
+  # one of: in-listed-order | in-parallel-unless-needs
+  jenkinsfile_stages_run: ""
+  github_actions_jobs_run: ""
+  # one of: deployment | service
+  keeps_three_replicas_running: ""
+  gives_pods_one_stable_address: ""
+  # one of: continuous-delivery | continuous-deployment
+  manual_approval_before_production: ""
+  why: ""
