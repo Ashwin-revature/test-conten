@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "id": "python/data-pipelines/coding-lab",
+  "scope": "module",
+  "covers": [
+    "python/data-pipelines/reading-csv-and-json-files-with-generators",
+    "python/data-pipelines/connecting-to-postgres-from-python-with-psycopg",
+    "python/data-pipelines/loading-into-a-staging-table-with-upserts",
+    "python/data-pipelines/elt-transforming-in-sql-after-loading",
+    "python/data-pipelines/cleaning-and-validating-records-with-pydantic-and-type-hints",
+    "python/data-pipelines/deduplicating-in-sql-vs-in-python",
+    "python/data-pipelines/ai-enrichment-with-validated-outputs",
+    "python/data-pipelines/keeping-sensitive-data-out-of-prompts"
+  ],
+  "objectives": [
+    "python/data-pipelines/reading-csv-and-json-files-with-generators#o1",
+    "python/data-pipelines/reading-csv-and-json-files-with-generators#o2",
+    "python/data-pipelines/reading-csv-and-json-files-with-generators#o3",
+    "python/data-pipelines/connecting-to-postgres-from-python-with-psycopg#o1",
+    "python/data-pipelines/connecting-to-postgres-from-python-with-psycopg#o2",
+    "python/data-pipelines/loading-into-a-staging-table-with-upserts#o1",
+    "python/data-pipelines/loading-into-a-staging-table-with-upserts#o2",
+    "python/data-pipelines/elt-transforming-in-sql-after-loading#o2",
+    "python/data-pipelines/elt-transforming-in-sql-after-loading#o3",
+    "python/data-pipelines/cleaning-and-validating-records-with-pydantic-and-type-hints#o1",
+    "python/data-pipelines/cleaning-and-validating-records-with-pydantic-and-type-hints#o2",
+    "python/data-pipelines/cleaning-and-validating-records-with-pydantic-and-type-hints#o3",
+    "python/data-pipelines/deduplicating-in-sql-vs-in-python#o1",
+    "python/data-pipelines/deduplicating-in-sql-vs-in-python#o2",
+    "python/data-pipelines/ai-enrichment-with-validated-outputs#o1",
+    "python/data-pipelines/ai-enrichment-with-validated-outputs#o2",
+    "python/data-pipelines/ai-enrichment-with-validated-outputs#o3",
+    "python/data-pipelines/keeping-sensitive-data-out-of-prompts#o1",
+    "python/data-pipelines/keeping-sensitive-data-out-of-prompts#o2",
+    "python/data-pipelines/keeping-sensitive-data-out-of-prompts#o3"
+  ],
+  "language": "python",
+  "prerequisites": [
+    {
+      "tool": "python",
+      "version": ">=3.12",
+      "check": "python --version"
+    },
+    {
+      "tool": "PostgreSQL server and psql",
+      "version": "16 or later (18 recommended)",
+      "check": "psql \"$DATABASE_URL\" -c \"SELECT version();\""
+    }
+  ],
+  "os": [
+    "macos",
+    "linux",
+    "windows"
+  ],
+  "network": {
+    "setup": "once",
+    "test": "none"
+  },
+  "setup": {
+    "command": "python -m pip install -r starter/requirements.txt",
+    "cwd": "."
+  },
+  "test": {
+    "command": "python -m pytest -q",
+    "cwd": ".",
+    "timeoutSeconds": 240,
+    "starterExpectation": "fail",
+    "failingTests": [
+      "tests/test_main.py::test_task01_extract_streams_csv_and_jsonl_with_generators",
+      "tests/test_main.py::test_task02_connect_reads_database_url_and_queries_with_parameters",
+      "tests/test_main.py::test_task03_load_staging_is_an_idempotent_batch_upsert",
+      "tests/test_main.py::test_task04_transform_builds_the_summary_in_one_transaction",
+      "tests/test_main.py::test_task05_pydantic_model_accepts_and_rejects_rows",
+      "tests/test_main.py::test_task06_latest_per_email_deduplicates_in_python",
+      "tests/test_main.py::test_task07_latest_checkins_deduplicates_in_sql",
+      "tests/test_main.py::test_task08_minimize_for_prompt_drops_personal_fields",
+      "tests/test_main.py::test_task09_enrich_validates_answers_and_retries_or_rejects",
+      "tests/test_main.py::test_task10_your_tests_drive_enrich_with_the_fake_client"
+    ]
+  },
+  "fixtures": {
+    "seed": 0,
+    "files": [
+      "fixtures/signups.csv",
+      "fixtures/signups.jsonl"
+    ]
+  },
+  "expectedOutput": "expected/on-completion.txt",
+  "cleanup": {
+    "paths": [
+      ".venv",
+      ".pytest_cache",
+      "starter/__pycache__",
+      "starter/pipeline/__pycache__",
+      "tests/__pycache__",
+      "postgresql schema pipeline_lab_<12 hex characters> in the DATABASE_URL database, created and dropped by each test run"
+    ],
+    "notes": "Setup creates the virtual environment .venv in the lab folder (the README creates and activates it before the setup command) and installs the exact versions pinned in starter/requirements.txt, the lab's lock of every installed package; psycopg comes with its binary package so no compiler or libpq install is needed. The database checks read DATABASE_URL, create one uniquely named schema pipeline_lab_<12 hex characters> in that database, run starter/pipeline/schema.sql inside it, and drop it with CASCADE when the module's tests finish; they never touch another schema. After an interrupted run the README lists and drops leftover pipeline_lab_ schemas. The test command writes .pytest_cache and __pycache__ folders; the Task 10 check starts child Python processes with bytecode writing off and the pytest cache plugin disabled. The enrichment uses the shipped FakeModelClient with scripted answers: no network, API key, account or paid AI call. The random schema suffix only isolates runs and never changes a result; every check uses fixed data and fixed timestamps. Resetting the learner's work means copying the four edited files back from a fresh copy of the lab. The expected output replaces the per-learner test count and the run time with placeholders, because Task 10 adds the learner's own tests to the run. The 55-minute median is a task-by-task authoring estimate of the ten tasks, not a measured learner pilot; 60 minutes is the cap of the 30-60 minute module-lab allowance, inside the two Lab days' guided-lab blocks. The checks observe yielded records, rows in PostgreSQL, validation results, prompts sent to the fake client and log records; they also check the source for the taught construct (yield, csv.DictReader, json.loads, an explicit encoding, ON CONFLICT (email) DO UPDATE, executemany, a WITH common table expression, DISTINCT ON or ROW_NUMBER), and Task 10 runs the learner's tests against their code and against two broken versions of enrich."
+  },
+  "minutes": {
+    "estimatedMedian": 55,
+    "cap": 60
+  },
+  "trackRequirement": {
+    "standard": "required",
+    "fast": "not-required"
+  },
+  "platform": {
+    "handoff": "bundle",
+    "adapter": null
+  },
+  "licensing": []
+}
