@@ -105,8 +105,8 @@
     },
     {
       "path": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint.md",
-      "sha256": "04d00bca188326651071cdd07025ab0e50d9a22b2b66205fa9be9495b5bd2f5a",
-      "bytes": 18307
+      "sha256": "1f289a7148606fb1ead554f3f65c892fef4acc16f55ece34b7ef6ed4379b935e",
+      "bytes": 17546
     },
     {
       "path": "containers-cicd/assessments/containers-cicd-module-check/blueprint.json",

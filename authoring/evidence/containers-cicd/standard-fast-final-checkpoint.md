@@ -114,12 +114,8 @@ No correction to the day's minutes, the track day counts, the AWS days, the othe
 The honest qualification is that the fit has no slack: the 120 minutes include no separate time for reading instructions, opening the scaffolds or moving between sittings, so those must sit inside each question's allocation.
 The scaffolds being supplied is what makes 10- and 20-minute coding questions plausible; no timed learner trial of either the MCQ or the coding questions has been run, so all five figures are allocations, not measurements.
 
-**Beta default (reversible) if a timed trial overruns.** The Final day keeps its fixed place (S43; FT25), and the MCQ is planned as its first sitting.
-If a trial shows the coding questions need T minutes and T is more than 60, the smallest honest correction stays within the Final day: the day runs 60 + T minutes and the ledger records the overrun.
-That matches how the installed Foundation beta taxonomy workbook already treats F30: its ledger replaces F30's 120-minute Gate block with 180 minutes of checkpoint rows (90 MCQ + 90 coding).
-That precedent lives in the workbook, not in a repository file, and it is not like for like: the Foundation checkpoint's MCQ carries weight (24), while this MCQ carries none.
-Shortening this MCQ after a timed trial is the alternative lever (see Timing basis); cutting it below 30 items would drop course coverage, and moving it to S42/FT24 would displace the accepted walkthrough day.
-A longer day would put the weighted no-AI coding (32) after an hour of MCQ, so learner fatigue is a real cost; the owner can move the MCQ to its own sitting, or after the coding, without changing the bank.
+The learner timings are estimates: "10", "20" and "60" are allocated minutes, not measured times.
+If a later timed trial shows the Gate block does not fit, that is an owner decision; shortening this MCQ is the first lever (see Timing basis), and cutting it below 30 items or moving it to S42/FT24 would drop coverage or displace the accepted walkthrough day.
 
 **Weight and pass mark (beta defaults).** The calendar gives the Final no MCQ weight, so the blueprint has an empty `weights` object: the checkpoint score does not enter the published Final composite.
 Its `passMark` is 70, the Final pool cut score and the module-check pass mark.
@@ -183,7 +179,7 @@ The bank was authored privately overnight and reviewed by an independent non-aut
 
 Canonical review in this folder (two independent critics, then a non-author reconciler):
 
-- **Loop 1 on r6.** The SME critic confirmed both r6 edits and found q27, the Dockerfile layer-caching item, a near-duplicate of a formative item whose deciding fact sat on the Fast-skimmed image-layers page (high), with an arguable second key (medium). The education critic found no high; its mediums were documentation fixes (the React auth-and-review gap reason and the unsourced Foundation precedent).
+- **Loop 1 on r6.** The SME critic confirmed both r6 edits and found q27, the Dockerfile layer-caching item, a near-duplicate of a formative item whose deciding fact sat on the Fast-skimmed image-layers page (high), with an arguable second key (medium). The education critic found no high; its mediums were documentation fixes (the React auth-and-review gap reason and an unsourced schedule precedent, since removed).
 - **r7.** q27 was replaced by a React auth-and-review item at the same key position, the blueprint gained the objectives the critics found missing, and this file was corrected. No other item changed.
 - **Loop 1 recheck on r7.** Both critics resolved the high and every medium. The education critic found the new q27 stem gave away the redirect (it said Mia signed in again), leaving a two-way choice (medium); the SME critic noted option A settled one of q08's distractors (low).
 - **r8.** q27's stem now stops at the 403 and each option states the full sequence, so rejecting the not-allowed option needs the code reading; "not 401" was dropped from option A. The key stays at C and the plain-JS model re-ran with all four results PASS. This file's allocation sentence and release gate were corrected. No other item changed.
