@@ -5,8 +5,13 @@
   "files": [
     {
       "path": "authoring/catalog/containers-cicd/course.json",
-      "sha256": "4df7c1998e938fb72f4955e19683bfa991d7bcac126cf7ca56b3a0b534a269f4",
-      "bytes": 953
+      "sha256": "8e80c2ac3cafa1986b0ef14d881cd2c6b6c3a0f01fbc699c9f74c82a6159b2a6",
+      "bytes": 989
+    },
+    {
+      "path": "authoring/evidence/containers-cicd/course-final-coverage-and-duration.md",
+      "sha256": "f6dc509dd09b2063387d20af019f927bba997f9928154d3dad2da4ab68390e77",
+      "bytes": 7949
     },
     {
       "path": "authoring/evidence/containers-cicd/intake-2-critic-education-recheck.json",
@@ -105,8 +110,18 @@
     },
     {
       "path": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint.md",
-      "sha256": "1f289a7148606fb1ead554f3f65c892fef4acc16f55ece34b7ef6ed4379b935e",
-      "bytes": 17546
+      "sha256": "31bb26b00f28b0a3fbc683addf0ff3ba561622cc04e1d10ab7ad37d06195802e",
+      "bytes": 17758
+    },
+    {
+      "path": "containers-cicd/assessments/containers-cicd-course-final/blueprint.json",
+      "sha256": "92f88ebff4bf8c8db500a0b293c08bda0e1e738520d934ac4d9c2d23e39204c2",
+      "bytes": 7689
+    },
+    {
+      "path": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
+      "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
+      "bytes": 27778
     },
     {
       "path": "containers-cicd/assessments/containers-cicd-module-check/blueprint.json",
