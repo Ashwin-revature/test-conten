@@ -1,6 +1,7 @@
 # The shop repository's pipeline, as a teammate left it. The repository also
 # holds the api's Maven project in backend/ (with its mvnw); this lab ships
-# only the files you edit, so the tests read this workflow and never run it.
+# only the files you edit. The tests read this workflow, and run only its
+# login step and the steps that can see a secret, with made-up secret values.
 # It breaks rules this module taught. TODO (README phase 6): fix every rule
 # the tests name; do not add new jobs.
 name: shop ci

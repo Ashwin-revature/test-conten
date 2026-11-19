@@ -38,7 +38,7 @@
     "containers-cicd/microservices-and-ci-cd/jenkins-registries-cd-and-kubernetes#o2",
     "containers-cicd/microservices-and-ci-cd/jenkins-registries-cd-and-kubernetes#o3"
   ],
-  "language": "JavaScript (Node.js 24) rule checks over compose.yaml, a Dockerfile, a FastAPI source file, a GitHub Actions workflow and a YAML design worksheet",
+  "language": "JavaScript (Node.js 24) checks over compose.yaml, a Dockerfile, a GitHub Actions workflow and a YAML design worksheet, plus behaviour runs of the FastAPI service (Python, against an in-process stand-in api) and of the workflow's secret-using steps (bash, with made-up secrets and a stand-in docker)",
   "prerequisites": [
     {
       "tool": "Node.js",
@@ -54,6 +54,16 @@
       "tool": "Git",
       "version": "2.x",
       "check": "git --version"
+    },
+    {
+      "tool": "Python",
+      "version": "3.10 or later",
+      "check": "python3 --version (on Windows: py -3 --version)"
+    },
+    {
+      "tool": "bash",
+      "version": "3.2 or later (on Windows, the bash that comes with Git for Windows)",
+      "check": "bash --version"
     }
   ],
   "os": [
@@ -66,7 +76,7 @@
     "test": "none"
   },
   "setup": {
-    "command": "npm ci",
+    "command": "npm run setup",
     "cwd": "tests"
   },
   "test": {

@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Public rule checks for the Microservices and CI/CD module lab. They read files only; no container engine, Python runtime or network is used.",
+  "description": "Public checks for the Microservices and CI/CD module lab. Most read files as text and YAML; tests 24-26 run the reviews service against an in-process stand-in shop api, and tests 6-7 run the workflow's secret-using steps with made-up secrets and a stand-in docker. No container engine or network is used after setup.",
+  "scripts": {
+    "setup": "npm ci && node setup_python.mjs"
+  },
   "engines": {
     "node": ">=24"
   },

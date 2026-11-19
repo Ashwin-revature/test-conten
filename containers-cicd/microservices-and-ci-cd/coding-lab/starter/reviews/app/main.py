@@ -1,8 +1,8 @@
 """The shop's reviews service.
 
 It owns product reviews and calls the shop api for product details.
-The lab's tests (in its tests folder) read this file as text; nothing here is executed by the
-lab, so you do not need Python installed to finish it.
+The lab's tests (in its tests folder) load this file with the lab's own Python environment
+and send it requests; its call to the shop api is answered by a stand-in inside the test.
 """
 
 import os

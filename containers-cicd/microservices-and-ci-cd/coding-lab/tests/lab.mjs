@@ -1,10 +1,13 @@
-// Shared readers and rule checks for the public lab tests. They read files as
-// text and YAML; nothing here builds an image, starts a container, runs
-// Python or calls any network. Each rule returns null when the project
-// satisfies it, or one stable message saying what is wrong.
+// Shared readers and rule checks for the public lab tests. Most read files as
+// text and YAML. Tests 24-26 run the reviews service against a stand-in shop api,
+// and tests 6-7 run the workflow's secret-using steps with made-up secrets and a
+// stand-in docker (see behavior.mjs). Nothing builds an image, starts a container
+// or calls any network. Each rule returns null when the project satisfies it, or
+// one stable message saying what is wrong.
 import { readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import { parse } from 'yaml';
+import { serviceRun, secretSteps } from './behavior.mjs';
 
 // The learner project: the starter folder, or LAB_PROJECT when set (for a copy elsewhere).
 export const PROJECT = path.resolve(process.env.LAB_PROJECT || path.join(import.meta.dirname, '..', 'starter'));
@@ -209,248 +212,70 @@ rule('reviews-listen', null, (dir) => {
   return 'start the FastAPI app with the fastapi command an image should use (or uvicorn with an explicit --host)';
 });
 
-// ---------- reviews/app/main.py (read as text; never executed) ----------
+// ---------- reviews/app/main.py (run, against a stand-in shop api) ----------
 
-// The source with comments and triple-quoted strings (docstrings) removed, so
-// only code counts. Ordinary one-line strings are kept.
-export function pythonCode(text) {
-  let out = '';
-  let i = 0;
-  while (i < text.length) {
-    const c = text[i];
-    const three = text.slice(i, i + 3);
-    if (three === '"""' || three === "'''") {
-      const end = text.indexOf(three, i + 3);
-      i = end < 0 ? text.length : end + 3;
-      out += '""';
-      continue;
-    }
-    if (c === '"' || c === "'") {
-      let j = i + 1;
-      while (j < text.length && text[j] !== c && text[j] !== '\n') j += text[j] === '\\' ? 2 : 1;
-      out += text.slice(i, j + 1);
-      i = j + 1;
-      continue;
-    }
-    if (c === '#') {
-      while (i < text.length && text[i] !== '\n') i += 1;
-      continue;
-    }
-    out += c;
-    i += 1;
-  }
-  return out;
-}
-const mainPy = (dir) => pythonCode(read(dir, 'reviews/app/main.py'));
+// Tests 24-26 load the service and send it requests (tests/service_behavior.py): a request
+// with a token, one without, and three where the stand-in api fails. They judge what the
+// service does, not how the code is written.
+const FAILURES = {
+  read_timeout: 'the shop api accepted the connection and then sent nothing (a read timeout)',
+  connect_timeout: 'the shop api did not accept the connection in time (a connect timeout)',
+  refused: 'the shop api refused the connection (HTTPX raises httpx.ConnectError)',
+};
+const seconds = (v) => (v === null || v === undefined ? 'no' : `a ${v}-second`);
+// The service's requests to the shop api (its API_BASE_URL) in a scenario; other
+// HTTPX requests it makes are answered too, but do not count as the call.
+const shopCalls = (run, s) => (s?.outgoing ?? []).filter((o) => String(o.url).startsWith(run.api_base_url));
+const firstCall = (run, s) => shopCalls(run, s)[0] ?? null;
+const statusText = (s) => (s?.unhandled ? '500 (an exception escaped unhandled)' : String(s?.status));
 
-// The body of the indented block that starts on lines[i] (text after its colon included).
-function blockBody(lines, i) {
-  const indent = lines[i].match(/^(\s*)/)[1].length;
-  let body = lines[i].slice(lines[i].indexOf(':') + 1);
-  for (let j = i + 1; j < lines.length; j += 1) {
-    if (lines[j].trim() === '') continue;
-    if (lines[j].match(/^(\s*)/)[1].length <= indent) break;
-    body += `\n${lines[j]}`;
-  }
-  return body;
-}
-
-// Each `key=value` keyword argument inside a call, with the name of the call
-// whose parentheses enclose it. A statement-level `key = ...` is not one.
-function keywordArgs(code, key) {
-  const out = [];
-  const stack = [];
-  const re = new RegExp(`${key}\\s*=(?!=)\\s*`, 'y');
-  for (let i = 0; i < code.length; i += 1) {
-    const c = code[i];
-    if (c === '"' || c === "'") {
-      let j = i + 1;
-      while (j < code.length && code[j] !== c && code[j] !== '\n') j += code[j] === '\\' ? 2 : 1;
-      i = j;
-      continue;
-    }
-    if (c === '(') { stack.push(code.slice(0, i).match(/([A-Za-z_][\w.]*)\s*$/)?.[1] ?? ''); continue; }
-    if (c === ')') { stack.pop(); continue; }
-    if (stack.length && !/[\w.]/.test(code[i - 1] ?? '')) {
-      re.lastIndex = i;
-      if (re.exec(code)) out.push({ at: i, callee: stack.at(-1), value: code.slice(re.lastIndex).match(/^[^,)\n]*/)[0].trim() });
-    }
-  }
-  return out;
-}
-
-// Index of the parenthesis that closes the one opened at code[open].
-function parenEnd(code, open) {
-  let depth = 0;
-  for (let j = open; j < code.length; j += 1) {
-    if (code[j] === '(') depth += 1;
-    else if (code[j] === ')') { depth -= 1; if (!depth) return j; }
-  }
-  return code.length;
-}
-const VERBS = '(?:get|post|put|patch|delete|head|options|request|stream|send)';
-// Every httpx client the code builds: its argument span and, when it is bound,
-// the name (`with ... as name`, `name = ...` or an annotated `name: T = ...`).
-function httpxConstructors(code) {
-  const out = [];
-  for (const m of code.matchAll(/httpx\.(?:Async)?Client\s*\(/g)) {
-    const open = m.index + m[0].length - 1;
-    const end = parenEnd(code, open);
-    const name = code.slice(end + 1).match(/^\s*as\s+([A-Za-z_]\w*)/)?.[1]
-      ?? code.slice(0, m.index).match(/([A-Za-z_]\w*)\s*(?::[^=\n]*)?=\s*$/)?.[1];
-    out.push({ at: m.index, start: open + 1, end, args: code.slice(open + 1, end), name });
-  }
-  return out;
-}
-function httpxClients(code) {
-  const out = {};
-  for (const c of httpxConstructors(code)) if (c.name) out[c.name] = c;
-  return out;
-}
-// The outgoing call to the shop api: a request made with httpx, directly (httpx.get
-// and friends) or through an httpx client the code creates. The one aimed at
-// API_BASE_URL wins (in its arguments, through a variable built from it, or
-// through the client's base_url); otherwise the first httpx request.
-function outgoingCall(code) {
-  const clients = httpxClients(code);
-  const derived = [...code.matchAll(/^\s*([A-Za-z_]\w*)\s*=[^\n]*API_BASE_URL/gm)].map((x) => x[1]);
-  const aimed = (text) => /API_BASE_URL/.test(text) || derived.some((n) => new RegExp(`\\b${n}\\b`).test(text));
-  const calls = [];
-  const push = (at, open, client) => {
-    const end = parenEnd(code, open);
-    calls.push({ at, start: open + 1, end, args: code.slice(open + 1, end), client });
-  };
-  for (const m of code.matchAll(new RegExp(`\\b(httpx|[A-Za-z_]\\w*)\\.${VERBS}\\s*\\(`, 'g'))) {
-    if (m[1] !== 'httpx' && !clients[m[1]]) continue;
-    push(m.index, m.index + m[0].length - 1, clients[m[1]] ?? null);
-  }
-  // A verb called straight on a newly built client: httpx.Client(...).get(...).
-  for (const c of httpxConstructors(code)) {
-    const chained = code.slice(c.end + 1).match(new RegExp(`^\\s*\\.\\s*${VERBS}\\s*\\(`));
-    if (chained) push(c.at, c.end + chained[0].length, c);
-  }
-  calls.sort((a, b) => a.at - b.at);
-  return calls.find((c) => aimed(c.args) || aimed(c.client?.args ?? '')) ?? calls[0] ?? null;
-}
-const within = (span, at) => span && at >= span.start && at < span.end;
-
-// A timeout limit: a number or a named constant (never None).
-const LIMIT = '(?!None\\b)(?:[0-9.]+|[A-Za-z_][\\w.]*)(?![\\w.]*\\s*=)';
-const SINGLE_NUMBER = 'a single number sets one limit for every phase: build an httpx.Timeout with a separate connect limit and pass that';
 rule('reviews-timeouts', null, (dir) => {
-  const code = mainPy(dir);
-  const call = outgoingCall(code);
-  if (!call) return 'make the call to the shop api with httpx, as the starter does';
-  // Only a timeout= keyword of the outgoing call, or of the client that makes it, passes a timeout.
-  // A per-request timeout replaces the client's default, so the call's own one decides when present.
-  const own = keywordArgs(code, 'timeout').filter((a) => !/(^|\.)Timeout$/.test(a.callee));
-  const onCall = own.filter((a) => within(call, a.at));
-  const passedArgs = onCall.length ? onCall : own.filter((a) => within(call.client, a.at));
-  const plainNumber = passedArgs.some((a) => /^[0-9.]+$/.test(a.value));
-  if (passedArgs.some((a) => a.value === 'None')) return 'the call passes timeout=None: reread what the service-to-service page says that does, then pass explicit limits';
-  const made = [...code.matchAll(/(?:\b([A-Za-z_]\w*)\s*=\s*)?httpx\.Timeout\s*\(([^)]*)\)/g)];
-  if (!made.length) return plainNumber ? SINGLE_NUMBER : 'build an httpx.Timeout with an explicit connect limit and an explicit read limit, and pass it as the call\'s timeout';
-  for (const [, , args] of made) {
-    if (/\b(connect|read)\s*=\s*None\b/.test(args)) return 'a None for connect or read inside httpx.Timeout turns that limit off: give both a real limit';
-    const explicit = (k) => new RegExp(`\\b${k}\\s*=\\s*${LIMIT}`).test(args);
-    if (/^\s*None\s*(,|$)/.test(args) || /\btimeout\s*=\s*None\b/.test(args)) {
-      if (explicit('connect') && explicit('read')) continue;
-      return 'a None default leaves every limit you do not set switched off: with a None default, set both connect and read';
-    }
-    // httpx.Timeout needs a default (first positional or timeout=) covering read, or all four limits.
-    const hasDefault = new RegExp(`^\\s*${LIMIT}\\s*(,|$)`).test(args) || explicit('timeout');
-    const allFour = ['connect', 'read', 'write', 'pool'].every(explicit);
-    if (!explicit('connect') || !(hasDefault || allFour)) {
-      return 'httpx.Timeout needs an explicit connect limit and a read limit it accepts: a default that covers read plus connect=..., or all four of connect, read, write and pool';
-    }
-  }
-  const names = made.map((m) => m[1]).filter(Boolean);
-  if (passedArgs.some((a) => a.value.startsWith('httpx.Timeout(') || names.includes(a.value))) return null;
-  return plainNumber ? SINGLE_NUMBER : 'your httpx.Timeout is built but never used: pass it as the timeout argument of the outgoing call (or its client)';
+  const run = serviceRun(dir);
+  if (run.problem) return run.problem;
+  const call = firstCall(run, run.with_token);
+  if (!call) return `a request with an Authorization header got ${statusText(run.with_token)} and the service made no HTTPX call to the shop api, so its limits could not be checked: call the api with httpx, as the starter does`;
+  const t = call.timeout ?? {};
+  if (t.connect === 2 && t.read === 3) return null;
+  const all = ['connect', 'read', 'write', 'pool'];
+  if (all.every((k) => t[k] === null || t[k] === undefined)) return 'the call to the shop api ran with no limits at all (timeout=None turns them off): reread the service-to-service page, then pass an httpx.Timeout with a 2-second connect limit and a 3-second read limit';
+  if (all.every((k) => t[k] === 5)) return 'the call to the shop api ran with HTTPX\'s default of 5 seconds for every limit: pass an httpx.Timeout with a 2-second connect limit and a 3-second read limit';
+  return `the call to the shop api ran with ${seconds(t.connect)} connect limit and ${seconds(t.read)} read limit: pass an httpx.Timeout with a 2-second connect limit and a 3-second read limit`;
 });
-
-const AUTH_PAIR = /["']authorization["']\s*:\s*authorization\b/i;
-function forwardsToken(code, call) {
-  for (const args of [call.args, call.client?.args ?? '']) {
-    const literal = args.match(/\bheaders\s*=\s*(\{[^}]*\})/);
-    if (literal && AUTH_PAIR.test(literal[1])) return true;
-    const name = args.match(/\bheaders\s*=\s*([A-Za-z_]\w*)\s*(?:[,)]|$)/)?.[1];
-    if (name && (new RegExp(`\\b${name}\\s*=\\s*\\{[^}]*["']authorization["']\\s*:\\s*authorization\\b`, 'i').test(code)
-      || new RegExp(`\\b${name}\\s*\\[\\s*["']authorization["']\\s*\\]\\s*=\\s*authorization\\b`, 'i').test(code))) return true;
-  }
-  return false;
-}
-// raise HTTPException(...) with 401 anywhere in its arguments (positional, status_code= in any order, or the status constant).
-const RAISE_401 = /\braise\s+HTTPException\s*\([^)]*(?:\b401\b|HTTP_401_UNAUTHORIZED)/;
-const indentOf = (line) => line.match(/^(\s*)/)[1].length;
-// Line index just past the indented block that starts on lines[i].
-function blockEnd(lines, i) {
-  let j = i + 1;
-  while (j < lines.length && (lines[j].trim() === '' || indentOf(lines[j]) > indentOf(lines[i]))) j += 1;
-  return j;
-}
 
 rule('reviews-auth-forward', null, (dir) => {
-  const code = mainPy(dir);
-  if (/["']Bearer\s+[A-Za-z0-9._~+/-]+=*["']/.test(code) || /Bearer\s*\{\s*["'][^"']+["']\s*\}/.test(code)) {
-    return 'a bearer token is written into the source: forward the token the caller sent instead';
+  const run = serviceRun(dir);
+  if (run.problem) return run.problem;
+  const call = firstCall(run, run.with_token);
+  if (!call) return `a request with an Authorization header got ${statusText(run.with_token)} and the service never called the shop api: make the call and send the caller's token on it`;
+  if (call.authorization === null || call.authorization === undefined) return 'a request with an Authorization header reached the shop api with no Authorization header: send the caller\'s value on as the outgoing Authorization header';
+  if (call.authorization !== run.token) return 'a request with an Authorization header reached the shop api with a different Authorization value: send the caller\'s own value on, not a fixed one';
+  // A token written into the code travels with every request, whichever header carries it.
+  for (const o of run.with_token.outgoing) {
+    const fixed = Object.entries(o.headers ?? {}).find(([, v]) => /\bBearer\s+\S/i.test(String(v)) && !String(v).includes(run.token.slice(7)));
+    if (fixed) return `a request also carries a fixed bearer token in its ${fixed[0]} header, which means a token is written into the code: delete it and send only the caller's token`;
   }
-  const call = outgoingCall(code);
-  if (!call) return 'no httpx request to the shop api was found: make the call with httpx (directly or through an httpx client), as the starter does';
-  if (!forwardsToken(code, call)) return 'send the incoming authorization value on as the outgoing Authorization header of the call to the shop api';
-  const optional = /\bauthorization\s*:[^=\n]*=\s*(Header\s*\(\s*(default\s*=\s*)?None|None\b)/.test(code);
-  if (!optional) return null;
-  const lines = code.split(/\r?\n/);
-  const callLine = code.slice(0, call.at).split(/\r?\n/).length - 1;
-  const before = lines.map((l, i) => i).filter((i) => i < callLine && /^\s*if\s/.test(lines[i]));
-  // A missing-token check before the call: `if not authorization:` / `if authorization is None:` raising 401.
-  const negative = before.filter((i) => /\bnot\s+authorization\b|\bauthorization\s+(?:is|==)\s+None\b/.test(lines[i]));
-  if (negative.some((i) => RAISE_401.test(blockBody(lines, i)))) return null;
-  // Or `if authorization:` (wrapping the call or ahead of it) with an else that raises 401.
-  const positive = before.filter((i) => /^\s*if\s+authorization(\s+is\s+not\s+None)?\s*:/.test(lines[i]));
-  const elseOf = (i) => {
-    const e = blockEnd(lines, i);
-    return e < lines.length && indentOf(lines[e]) === indentOf(lines[i]) && /^\s*else\s*:/.test(lines[e]) ? e : -1;
-  };
-  const withElse = positive.filter((i) => elseOf(i) >= 0);
-  if (withElse.some((i) => RAISE_401.test(blockBody(lines, elseOf(i))))) return null;
-  // A positive check with no else is not a missing-token check: the no-token path is still unhandled.
-  if (negative.length || withElse.length) return 'your missing-token check does not raise HTTPException with 401, so a request without a token is not refused: raise it there';
-  return 'a request with no token is not refused before the call: answer 401 when authorization is missing';
+  const none = run.without_token;
+  if (none.outgoing.length) return `a request with no Authorization header still reached the shop api (and got ${statusText(none)}): answer 401 before calling the api when no token arrived`;
+  if (none.status === 422) return 'a request with no Authorization header got 422 (FastAPI\'s answer when a required header is missing), not 401: keep the header optional and answer 401 yourself when no token arrived';
+  if (none.status !== 401) return `a request with no Authorization header got ${statusText(none)}, not 401: answer 401 when no token arrived`;
+  return null;
 });
 
-// except clauses with the exception names they catch and the status their body raises.
-function handlers(code) {
-  const lines = code.split(/\r?\n/);
-  const out = [];
-  lines.forEach((line, i) => {
-    const m = line.match(/^(\s*)except\b([^:]*):/);
-    if (!m) return;
-    const names = [...m[2].replace(/\bas\s+\w+\s*$/, '').matchAll(/(?:httpx\.)?([A-Za-z_]\w*)/g)].map((x) => x[1]);
-    const body = blockBody(lines, i);
-    const s = body.match(/HTTPException\s*\(\s*(?:status_code\s*=\s*)?(?:status\.HTTP_)?(\d{3})/) || body.match(/status_code\s*=\s*(\d{3})/);
-    out.push({ line: i, names: names.length ? names : ['<bare>'], status: s ? s[1] : null });
-  });
-  return out;
-}
-const SUPER_OF_TIMEOUT = ['RequestError', 'TransportError', 'HTTPError', 'Exception', 'BaseException', '<bare>'];
-// Everything that catches httpx.ConnectError: itself, its superclasses, or a bare except.
-const CATCHES_CONNECT = ['ConnectError', 'NetworkError', 'TransportError', 'RequestError', 'HTTPError', 'Exception', 'BaseException', '<bare>'];
-
 rule('reviews-error-mapping', null, (dir) => {
-  const hs = handlers(mainPy(dir));
-  const timeout = hs.find((h) => h.names.includes('TimeoutException'));
-  if (!timeout) return 'catch HTTPX\'s timeout exception around the call and answer with the status the service-to-service page gives for a timeout';
-  const shadow = hs.find((h) => h.line < timeout.line && h.names.some((n) => SUPER_OF_TIMEOUT.includes(n)));
-  if (shadow) return `the ${shadow.names.join(', ')} handler comes before the TimeoutException one and catches timeouts first: Python runs the first matching except, so put TimeoutException first`;
-  if (timeout.status !== '504') return 'the TimeoutException handler does not answer the status the service-to-service page gives when no timely response arrived';
-  // Python runs the first except clause that matches, so that clause decides a refused connection's status.
-  const refused = hs.find((h) => h.names.some((n) => CATCHES_CONNECT.includes(n)));
-  if (!refused) return 'also catch the refused-connection case and answer with a status the service-to-service page allows for it, instead of letting the exception escape';
-  if (['502', '503'].includes(refused.status)) return null;
-  return refused === timeout
-    ? 'your timeout handler also catches refused connections, so they get the timeout status: give the refused case its own handler with a status the service-to-service page allows for it'
-    : `the first handler that catches a refused connection (${refused.names.join(', ')}) answers ${refused.status ?? 'no status'}: Python runs the first matching except, and a refused connection needs a status the service-to-service page allows for it`;
+  const run = serviceRun(dir);
+  if (run.problem) return run.problem;
+  const want = { read_timeout: ['504'], connect_timeout: ['504'], refused: ['502', '503'] };
+  for (const [key, ok] of Object.entries(want)) {
+    const s = run[key];
+    if (!firstCall(run, s)) return `when ${FAILURES[key]}, the service never called it, so this case could not be checked: make the call to the shop api with httpx`;
+    if (ok.includes(String(s.status))) continue;
+    const page = key === 'refused' ? 'a status the service-to-service page allows for a refused connection' : 'the status the service-to-service page gives when no timely response arrived';
+    // A timeout answered with a refused-connection status: either the codes are swapped or a broader handler ran first.
+    const order = key !== 'refused' && ['502', '503'].includes(String(s.status))
+      ? ' (Python runs the first except clause that matches, so check which handler caught it)' : '';
+    return `when ${FAILURES[key]}, the service answered ${statusText(s)}: answer ${page}${order}`;
+  }
+  return null;
 });
 
 // ---------- .github/workflows/ci.yml ----------
@@ -560,58 +385,52 @@ rule('ci-build-push', CI, (dir) => {
     ? null : 'as written, a push to main never publishes the image: push must be on for a push to main';
 });
 
-// Variables a step can see whose value comes from the secrets context.
-function secretVars(dir, job, step) {
-  const out = {};
-  for (const scope of [workflow(dir).env, job?.env, step?.env]) {
-    for (const [k, v] of Object.entries(scope || {})) {
-      const m = String(v ?? '').match(/\$\{\{\s*secrets\.([A-Za-z0-9_]+)\s*\}\}/);
-      if (m) out[k] = m[1];
-    }
+// Tests 6 and 7 run the workflow's secret-using steps and every docker login step
+// (tests/behavior.mjs) with made-up secret values and a stand-in docker, then judge what
+// docker received and what reached the run log.
+const loginSteps = (dir) => allSteps(dir).filter(({ step }) => /\bdocker\b[\s\S]*\blogin\b/.test(String(step?.run ?? '')) || /^docker\/login-action@/.test(String(step?.uses ?? '')));
+const ARG_PASSWORD = /^(-p|--password)(=|$)|^-p./;
+function optionValue(args, short, long) {
+  for (let i = 0; i < args.length; i += 1) {
+    if (args[i] === short || args[i] === long) return args[i + 1] ?? '';
+    if (args[i].startsWith(`${long}=`)) return args[i].slice(long.length + 1);
+    if (args[i].startsWith(short) && args[i].length > short.length && !args[i].startsWith('--')) return args[i].slice(short.length);
   }
-  return out;
+  return null;
 }
-// Shell commands of a run script, with backslash continuations and lines ending in a pipe joined first.
-const commands = (run) => String(run ?? '')
-  .replace(/\\\r?\n[ \t]*/g, ' ')
-  .replace(/(^|[^|])\|[ \t]*\r?\n[ \t]*/g, '$1| ')
-  .split(/\n|;|&&|\|\|/).map((c) => c.trim()).filter(Boolean);
-// A secret-mapped variable used as $NAME, ${NAME} or the env context ${{ env.NAME }}.
-const envContext = (v) => `\\$\\{\\{\\s*env\\.${v}\\s*\\}\\}`;
-const refersTo = (text, vars) => Object.keys(vars).find((v) => new RegExp(`\\$\\{?${v}\\b|${envContext(v)}`).test(text));
-const inlineSecret = (text, vars) => /\$\{\{\s*secrets\./.test(text) || Object.keys(vars).some((v) => new RegExp(envContext(v)).test(text));
-const ARGV_PASSWORD = /(^|\s)(-p\S*|--password(?!-stdin)\S*)/;
 
 rule('ci-secret-refs', CI, (dir) => {
-  for (const { step } of allSteps(dir)) {
-    const loginParts = commands(step?.run).flatMap((c) => c.split('|')).filter((c) => /\bdocker\s+login\b/.test(c));
-    if (loginParts.some((c) => ARGV_PASSWORD.test(c))) {
-      return 'a password is given on the docker login command line (-p or --password), where it lands in the workflow file, process lists or the log: pipe it to --password-stdin from a repository secret';
-    }
-  }
-  const logins = allSteps(dir).filter(({ step }) => /\bdocker\s+login\b/.test(String(step?.run ?? '')) || /^docker\/login-action@/.test(String(step?.uses ?? '')));
+  const logins = loginSteps(dir);
   if (!logins.length) return 'keep a registry login step in the build job, signed in with the REGISTRY_USERNAME and REGISTRY_PASSWORD repository secrets';
-  for (const { job, step } of logins) {
-    if (step.uses) {
-      const ok = /secrets\.REGISTRY_USERNAME/.test(String(step.with?.username ?? '')) && /secrets\.REGISTRY_PASSWORD/.test(String(step.with?.password ?? ''));
-      if (!ok) return 'the login action\'s username and password must come from the REGISTRY_USERNAME and REGISTRY_PASSWORD repository secrets: Docker Hub is not GitHub, so GITHUB_TOKEN cannot sign in there';
-      continue;
+  for (const { step } of logins.filter(({ step }) => step.uses)) {
+    const ok = /secrets\.REGISTRY_USERNAME/.test(String(step.with?.username ?? '')) && /secrets\.REGISTRY_PASSWORD/.test(String(step.with?.password ?? ''));
+    if (!ok) return 'the login action\'s username and password must come from the REGISTRY_USERNAME and REGISTRY_PASSWORD repository secrets: Docker Hub is not GitHub, so GITHUB_TOKEN cannot sign in there';
+  }
+  for (const { job, step } of logins.filter(({ step }) => step.run !== undefined)) {
+    // ${{ env.NAME }} of a secret-mapped variable is filled in before the shell runs, just like ${{ secrets.NAME }}.
+    const secretEnv = [workflow(dir).env, job?.env, step.env].flatMap((s) => Object.entries(s && typeof s === 'object' ? s : {}))
+      .filter(([, v]) => /\$\{\{[^}]*\bsecrets\b/.test(String(v))).map(([k]) => k);
+    const envExpr = secretEnv.some((k) => new RegExp(`\\$\\{\\{\\s*env\\s*(\\.\\s*${k}\\b|\\[\\s*'${k}'\\s*\\])`).test(String(step.run)));
+    if (envExpr || /\$\{\{[^}]*\bsecrets\b/.test(String(step.run))) return 'the login command writes a ${{ ... }} expression for a secret into the script text, which puts the secret itself into the script: map each secret into the step\'s env and use the shell variable, as the secrets page shows';
+  }
+  const ran = secretSteps(dir, workflow(dir));
+  if (ran.problem) return ran.problem;
+  for (const s of ran.steps.filter((x) => x.login)) {
+    if (s.problem) return s.problem;
+    const call = s.docker.find((d) => d.args.includes('login'));
+    if (!call) {
+      const last = s.log.trim().split('\n').at(-1) ?? '';
+      return s.status === 0
+        ? `the step "${s.name}" ran but never called docker login`
+        : `the step "${s.name}" stopped (exit status ${s.status}) before docker login ran${last ? `: ${last.slice(0, 160)}` : ''}`;
     }
-    const run = String(step.run);
-    const vars = secretVars(dir, job, step);
-    if (inlineSecret(run, vars)) return 'the login command writes a ${{ ... }} expression into the command text, which puts the secret itself into the script: map each secret into the step\'s env and use the shell variable, as the secrets page shows';
-    const line = commands(run).find((c) => /\bdocker\s+login\b/.test(c)) ?? '';
-    // A pipeline of any length whose last stage is docker login: everything before it is the feed.
-    const stages = line.split('|').map((x) => x.trim());
-    const login = stages.length > 1 ? stages.at(-1) : undefined;
-    const feed = stages.slice(0, -1).join(' | ');
-    if (!login && /--password-stdin\b/.test(line)) return 'pipe the password into docker login with echo or printf and |, the form this lab checks (a here-string or file redirect is not accepted here)';
-    if (!login || !/--password-stdin\b/.test(login)) return 'feed the password to docker login through --password-stdin';
-    const pwVar = refersTo(feed, vars);
-    if (!pwVar || vars[pwVar] !== 'REGISTRY_PASSWORD') return 'the password piped to docker login must be an env variable mapped from secrets.REGISTRY_PASSWORD';
-    const user = login.match(/(?:-u|--username)(?:=|\s+)("?)([^\s"]+)\1/);
-    const userVar = user && refersTo(user[2], vars);
-    if (!userVar || vars[userVar] !== 'REGISTRY_USERNAME') return 'the username given to docker login must be an env variable mapped from secrets.REGISTRY_USERNAME';
+    if (call.args.some((a) => ARG_PASSWORD.test(a))) return 'a password is given on the docker login command line (-p or --password), where it lands in process lists and the log: pipe it to --password-stdin from a repository secret';
+    if (!call.args.includes('--password-stdin')) return 'feed the password to docker login through --password-stdin';
+    const user = optionValue(call.args, '-u', '--username');
+    if (user !== ran.secrets.REGISTRY_USERNAME) return `docker login was given ${user ? 'a username that is not' : 'no username, not'} the value of secrets.REGISTRY_USERNAME: map that secret into the step's env and pass it with -u`;
+    const stdin = (call.stdin ?? '').replace(/\r?\n$/, '');
+    if (stdin !== ran.secrets.REGISTRY_PASSWORD) return stdin === '' ? 'docker login received nothing on its standard input: pipe the REGISTRY_PASSWORD secret into it' : 'docker login received a password on its standard input that is not the value of secrets.REGISTRY_PASSWORD: pipe that secret, from the step\'s env, into it';
+    if (s.status !== 0) return `the step "${s.name}" exited with status ${s.status} (bash -e stops the step at the first failing command)`;
   }
   return null;
 });
@@ -628,44 +447,30 @@ rule('ci-pinned-actions', CI, (dir) => {
   return null;
 });
 
-// Commands that write or encode what they are given (arguments, a here-string or a redirect).
-const PRINTERS = /^(echo|printf|cat|print|tee|base64|xxd|od|hexdump|openssl)\b/;
-const PRINTS_SECRET = 'a run step writes a secret (directly, through an env variable or encoded) to the run log: reread the secrets page on why a workflow never prints one, and delete that output';
-// Here-documents in a run script: the command that opens each one, and its body.
-// The command is the pipeline around `<<`, cut at the nearest ;, && or || on either
-// side, so `cat <<EOF | docker login ...` keeps its docker login stage.
-// A quoted delimiter stops the shell expanding $NAME, but ${{ }} is filled in by Actions first.
-const SEPARATOR = /;|&&|\|\|/;
-function heredocs(run) {
-  const out = [];
-  for (const m of String(run ?? '').matchAll(/^([^\n]*?)<<-?[ \t]*(['"]?)([A-Za-z_]\w*)\2([^\n]*)\n([\s\S]*?)^[ \t]*\3[ \t]*$/gm)) {
-    const command = `${m[1].split(SEPARATOR).at(-1)} ${m[4].split(SEPARATOR)[0]}`.replace(/\s+/g, ' ').trim();
-    out.push({ command, quoted: m[2] !== '', body: m[5] });
+// What a run log would show of each made-up secret: as is, or encoded.
+function leaks(log, secrets) {
+  // Registering a value with ::add-mask:: is how the secrets page hides a derived value.
+  const text = log.split('\n').filter((l) => !l.includes('::add-mask::')).join('\n');
+  for (const [name, value] of Object.entries(secrets)) {
+    const forms = [
+      ['', value],
+      [' base64-encoded', Buffer.from(value).toString('base64')],
+      [' base64-encoded', Buffer.from(`${value}\n`).toString('base64')],
+      [' hex-encoded', Buffer.from(value).toString('hex')],
+      [' hex-encoded', Buffer.from(`${value}\n`).toString('hex')],
+    ];
+    const hit = forms.find(([, f]) => text.includes(f));
+    if (hit) return { name, how: hit[0] };
   }
-  return out;
+  return null;
 }
 rule('ci-no-secret-prints', CI, (dir) => {
-  for (const { job, step } of allSteps(dir)) {
-    const vars = secretVars(dir, job, step);
-    for (const command of commands(step?.run)) {
-      if (/::add-mask::/.test(command)) continue;
-      const parts = command.split('|').map((x) => x.trim());
-      // A pipeline that ends in docker login --password-stdin hands the value to docker, not to the log.
-      const last = parts.at(-1);
-      const intoLogin = parts.length > 1 && /\bdocker\s+login\b/.test(last) && /--password-stdin\b/.test(last);
-      if (intoLogin) {
-        // tee copies what it passes on to stdout, stderr or the terminal, which all reach the log.
-        if (parts.slice(1, -1).some((p) => /^tee\b/.test(p) && (/\/dev\/(stdout|stderr|tty|fd\/[12])\b/.test(p) || /^tee(\s+-\S+)*\s*$/.test(p)))) return PRINTS_SECRET;
-        continue;
-      }
-      if (parts.some((part) => PRINTERS.test(part) && (inlineSecret(part, vars) || refersTo(part, vars)))) return PRINTS_SECRET;
-    }
-    for (const doc of heredocs(step?.run)) {
-      const into = doc.command.split('|').map((x) => x.trim());
-      if (!PRINTERS.test(into[0])) continue;
-      if (/\bdocker\s+login\b/.test(into.at(-1)) && /--password-stdin\b/.test(into.at(-1))) continue;
-      if (inlineSecret(doc.body, vars) || (!doc.quoted && refersTo(doc.body, vars))) return PRINTS_SECRET;
-    }
+  const ran = secretSteps(dir, workflow(dir));
+  if (ran.problem) return ran.problem;
+  for (const s of ran.steps) {
+    if (s.problem) return s.problem;
+    const leak = leaks(s.log, ran.secrets);
+    if (leak) return `the step "${s.name}" wrote the value of secrets.${leak.name}${leak.how} to the run log: reread the secrets page on why a workflow never prints one, and delete that output`;
   }
   return null;
 });

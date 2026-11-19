@@ -4,8 +4,10 @@
 
 The shop from the Containers and Compose lab gets its first microservice and its first pipeline.
 A teammate drafted the pieces; you repair and complete them.
-Twenty-six public tests read your files as text and YAML.
-Nothing builds an image, starts a container, runs Python or triggers a workflow, so you need no container engine and no CI runner.
+Twenty-six public tests check your work. Most read your files as text and YAML.
+Tests 24-26 run your reviews service: they send it requests and answer its call to the shop api with a stand-in inside the test, which can also time out or refuse.
+Tests 6 and 7 run your workflow's secret-using steps with bash, made-up secret values and a stand-in `docker` command.
+Nothing builds an image, starts a container, opens a network connection or triggers a workflow, so you need no container engine and no CI runner.
 
 ## What you edit
 
@@ -32,18 +34,23 @@ Estimates for a learner who has read the day's topic pages; nothing fails on tim
 
 The 60-minute bound is a planning allowance, not a measured worst case: the typical path plus four extra failed runs of about a minute each.
 No learner has been timed yet. If you pass 60 minutes, pause and finish in self-study.
-The one-time setup (about 3 minutes) is not counted.
+The one-time setup (about 5 minutes) is not counted.
 
 ## Setup (once, needs the network)
 
-You need Node.js 24 with its bundled npm, and Git.
+You need:
+
+- Node.js 24 with its bundled npm (`node --version`)
+- Git (`git --version`)
+- Python 3.10 or later (`python3 --version`; on Windows, `py -3 --version`)
+- bash (`bash --version`; on Windows, the bash that comes with Git for Windows)
 
 ```sh
 cd tests
-npm ci
+npm run setup
 ```
 
-This installs one pinned YAML parser. After that, the tests run offline.
+This installs one pinned YAML parser, then creates a Python environment in `.venv` (next to this README) with the pinned FastAPI and HTTPX packages the service tests use. After that, the tests run offline.
 
 ## How to test
 
@@ -78,8 +85,10 @@ Replace the Dockerfile's start command with the one the adding-FastAPI page give
 Fix the three rules the docstring in `starter/reviews/app/main.py` lists, using the service-to-service page:
 
 1. Forward the caller's token. If none arrived, answer 401 before calling the api.
-2. Pass an `httpx.Timeout` with explicit connect and read limits as the call's `timeout`.
+2. Pass an `httpx.Timeout` with a 2-second connect limit and a 3-second read limit as the call's `timeout`.
 3. Turn a timeout and a refused connection (HTTPX raises `httpx.ConnectError`) into the status codes the page gives. If you catch the broader `httpx.RequestError` instead, put it after the timeout handler.
+
+Tests 24-26 judge what the service does, not how the code is written, so any correct way of writing it passes.
 
 ### Phase 5: the architecture and data review (about 14 minutes)
 
@@ -106,6 +115,8 @@ The workflow you want runs for pushes and pull requests: a pull request is built
   - `docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0`
 - Optional and not tested: after phase 7, check the secrets page's rule for runs from forks and decide whether the login step needs the same guard as the push.
 
+Tests 6 and 7 run every step that can see a secret, and the login step, with bash: they check what the stand-in `docker login` receives and that no secret value reaches the step's output. Only `${{ secrets.* }}` and `${{ env.* }}` are filled in, and a step's `if:` is not evaluated.
+
 ### Phase 7: the images, secrets and delivery review (about 5 minutes)
 
 Fill the S39 sections of `starter/decisions.yaml`. The image reference is in `fixtures/briefs/image-reference.txt`.
@@ -121,10 +132,12 @@ Run the tests. All 26 pass, and the result lines match `expected/solved-summary.
 
 ## Cleanup
 
-Delete `tests/node_modules` and `starter/.env`; restore starter files from Git to start over.
-The lab creates no image, container, volume or workflow run.
+Delete `tests/node_modules`, `.venv` and `starter/.env`; restore starter files from Git to start over.
+The lab creates no image, container, volume or workflow run. The step runs use a temporary folder that is removed afterwards.
 
 ## Troubleshooting
 
-- **`Cannot find package 'yaml'`:** run `npm ci` in `tests` first.
+- **`Cannot find package 'yaml'`, or "the lab's Python environment is missing":** run `npm run setup` in `tests` first.
+- **"setup needs Python 3.10 or later":** install Python from python.org, then run `npm run setup` again.
+- **"bash was not found" (Windows):** install Git for Windows, which includes bash, then run the tests again.
 - **"is not valid YAML":** the message gives the line. Indent with two spaces, never tabs.
