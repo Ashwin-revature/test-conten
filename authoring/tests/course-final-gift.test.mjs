@@ -39,7 +39,7 @@ const FOUNDATION_BANKS = {
 
 // The course-final contract: the bank holds exactly the blueprint's MCQ count, and the blueprint allows
 // at least one minute per question. Foundation banks hold 30; a registered course final sets its own
-// count (Spring Boot: 22 questions in its 30 minutes), so the per-letter key floor is floor(N/4).
+// count (Spring Boot: 30 questions in its 30 minutes), so the per-letter key floor is floor(N/4).
 const FOUNDATION_QUESTIONS = 30;
 
 const readJson = async (file) => JSON.parse(await readFile(path.join(repo, file), "utf8"));
