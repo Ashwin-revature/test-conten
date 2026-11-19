@@ -64,7 +64,7 @@
     },
     "lab": {
       "status": "absent",
-      "reason": "No topic coding lab: the planned daemon-free module lab containers-cicd/microservices-and-ci-cd/coding-lab is deferred and not built in the minimum release; the objectives are practised in the page's practice editor and checks."
+      "reason": "No topic coding lab: practised in the daemon-free module lab containers-cicd/microservices-and-ci-cd/coding-lab (Standard S38-S39 lab overlay; Fast does not require it)"
     }
   },
   "freshness": {
