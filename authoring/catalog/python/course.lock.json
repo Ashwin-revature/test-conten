@@ -19,6 +19,31 @@
       "bytes": 1979
     },
     {
+      "path": "authoring/evidence/python/final-mcq-critic-education-recheck.json",
+      "sha256": "78fbff3d8cd3ced9a6b8dba1e1089a4da2b636405160c76516b247c2d5a58f72",
+      "bytes": 1956
+    },
+    {
+      "path": "authoring/evidence/python/final-mcq-critic-education.json",
+      "sha256": "92a3ec21ded4b94383353fbc8958338ef819fc85701419b1aa8e8b615289fe44",
+      "bytes": 3051
+    },
+    {
+      "path": "authoring/evidence/python/final-mcq-critic-sme-recheck.json",
+      "sha256": "251f9facc5c15d5dbbf223da3e5455767f688fc81bc16bfb95842edfa548d29b",
+      "bytes": 1889
+    },
+    {
+      "path": "authoring/evidence/python/final-mcq-critic-sme.json",
+      "sha256": "54c4dd9cfbf8bfd8ae93b44a18d82e8d260bca496cd054bd16ccb16df76c2289",
+      "bytes": 3067
+    },
+    {
+      "path": "authoring/evidence/python/final-mcq-reconciliation.json",
+      "sha256": "31001f73209da4c37ded98086a67099bda9c65d82e0b3eb8452d3e8bb8a00645",
+      "bytes": 1759
+    },
+    {
       "path": "authoring/evidence/python/intake-2-critic-education-recheck.json",
       "sha256": "0721fb0ebd6938da0591416daf894388df9212afd60915403221ed2c31345aa1",
       "bytes": 7825
@@ -130,6 +155,181 @@
     }
   ],
   "evidenceBindings": [
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-mcq/blueprint.json",
+      "artifactPath": "python/assessments/python-final-mcq/blueprint.json",
+      "sha256": "90fa6f3927e183eba7405f0f907924414c6fd029bf1960db0b61b8bbc30a535c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-mcq/final-mcq.gift",
+      "artifactPath": "python/assessments/python-final-mcq/final-mcq.gift",
+      "sha256": "215a57042019f458d241c3bc78f295da1dda1fa87337363fca193fea2065ec82",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-mcq/final-mcq.gift",
+      "sha256": "215a57042019f458d241c3bc78f295da1dda1fa87337363fca193fea2065ec82",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-education-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-mcq/blueprint.json",
+      "sha256": "90fa6f3927e183eba7405f0f907924414c6fd029bf1960db0b61b8bbc30a535c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-education-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-mcq/final-mcq.gift",
+      "sha256": "215a57042019f458d241c3bc78f295da1dda1fa87337363fca193fea2065ec82",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/assessments/python-final-mcq/blueprint.json",
+      "sha256": "90fa6f3927e183eba7405f0f907924414c6fd029bf1960db0b61b8bbc30a535c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-education.json",
+      "field": "artifactHashes.assessments/python-final-mcq/blueprint.json",
+      "artifactPath": "python/assessments/python-final-mcq/blueprint.json",
+      "sha256": "90fa6f3927e183eba7405f0f907924414c6fd029bf1960db0b61b8bbc30a535c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-education.json",
+      "field": "artifactHashes.assessments/python-final-mcq/final-mcq.gift",
+      "artifactPath": "python/assessments/python-final-mcq/final-mcq.gift",
+      "sha256": "215a57042019f458d241c3bc78f295da1dda1fa87337363fca193fea2065ec82",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-education.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-mcq/final-mcq.gift",
+      "sha256": "215a57042019f458d241c3bc78f295da1dda1fa87337363fca193fea2065ec82",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-education.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-mcq/blueprint.json",
+      "sha256": "90fa6f3927e183eba7405f0f907924414c6fd029bf1960db0b61b8bbc30a535c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-education.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-mcq/final-mcq.gift",
+      "sha256": "215a57042019f458d241c3bc78f295da1dda1fa87337363fca193fea2065ec82",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-education.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/assessments/python-final-mcq/blueprint.json",
+      "sha256": "90fa6f3927e183eba7405f0f907924414c6fd029bf1960db0b61b8bbc30a535c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-mcq/blueprint.json",
+      "artifactPath": "python/assessments/python-final-mcq/blueprint.json",
+      "sha256": "90fa6f3927e183eba7405f0f907924414c6fd029bf1960db0b61b8bbc30a535c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-mcq/final-mcq.gift",
+      "artifactPath": "python/assessments/python-final-mcq/final-mcq.gift",
+      "sha256": "215a57042019f458d241c3bc78f295da1dda1fa87337363fca193fea2065ec82",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-mcq/final-mcq.gift",
+      "sha256": "215a57042019f458d241c3bc78f295da1dda1fa87337363fca193fea2065ec82",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-sme-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-mcq/final-mcq.gift",
+      "sha256": "215a57042019f458d241c3bc78f295da1dda1fa87337363fca193fea2065ec82",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-sme-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-mcq/final-mcq.gift",
+      "sha256": "215a57042019f458d241c3bc78f295da1dda1fa87337363fca193fea2065ec82",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/assessments/python-final-mcq/blueprint.json",
+      "sha256": "90fa6f3927e183eba7405f0f907924414c6fd029bf1960db0b61b8bbc30a535c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-sme.json",
+      "field": "artifactHashes.assessments/python-final-mcq/blueprint.json",
+      "artifactPath": "python/assessments/python-final-mcq/blueprint.json",
+      "sha256": "90fa6f3927e183eba7405f0f907924414c6fd029bf1960db0b61b8bbc30a535c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-sme.json",
+      "field": "artifactHashes.assessments/python-final-mcq/final-mcq.gift",
+      "artifactPath": "python/assessments/python-final-mcq/final-mcq.gift",
+      "sha256": "215a57042019f458d241c3bc78f295da1dda1fa87337363fca193fea2065ec82",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-sme.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-mcq/final-mcq.gift",
+      "sha256": "215a57042019f458d241c3bc78f295da1dda1fa87337363fca193fea2065ec82",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-sme.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-mcq/final-mcq.gift",
+      "sha256": "215a57042019f458d241c3bc78f295da1dda1fa87337363fca193fea2065ec82",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-sme.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-mcq/final-mcq.gift",
+      "sha256": "215a57042019f458d241c3bc78f295da1dda1fa87337363fca193fea2065ec82",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-critic-sme.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/assessments/python-final-mcq/blueprint.json",
+      "sha256": "90fa6f3927e183eba7405f0f907924414c6fd029bf1960db0b61b8bbc30a535c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-mcq-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/assessments/python-final-mcq/final-mcq.gift",
+      "sha256": "215a57042019f458d241c3bc78f295da1dda1fa87337363fca193fea2065ec82",
+      "current": true
+    },
     {
       "evidencePath": "authoring/evidence/python/intake-2-critic-education-recheck.json",
       "field": "artifactHashes.assessments/python-module-check/blueprint.json",
