@@ -5,8 +5,8 @@
   "files": [
     {
       "path": "authoring/catalog/containers-cicd/course.json",
-      "sha256": "8e80c2ac3cafa1986b0ef14d881cd2c6b6c3a0f01fbc699c9f74c82a6159b2a6",
-      "bytes": 989
+      "sha256": "fdc4a2b73e49c99fbb24ee0340a120996b472618c41f00538a19417323d858de",
+      "bytes": 1026
     },
     {
       "path": "authoring/evidence/containers-cicd/course-final-coverage-and-duration.md",
