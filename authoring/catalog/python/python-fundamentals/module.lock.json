@@ -5,53 +5,53 @@
   "files": [
     {
       "path": "authoring/catalog/python/python-fundamentals/exceptions-and-logging/topic.json",
-      "sha256": "c21ba12ec72e2388b17bb4221100665d36dac686cbd78f682e24107612c00018",
-      "bytes": 3119
+      "sha256": "e49379213aa221f4c057f4da6d47914238f6283629ec3a82f88746b7fa30014e",
+      "bytes": 3118
     },
     {
       "path": "authoring/catalog/python/python-fundamentals/functions-and-arguments/topic.json",
-      "sha256": "7c394ffc2da6aec8e3db1f078ee62d56ca50884cd68bf6b587cdb1a43aaaef51",
-      "bytes": 3055
+      "sha256": "87363cd0220c2b52c0ced09f8e8109b07ee59af58ef3cd6f21a3bcb1be71d3f6",
+      "bytes": 3054
     },
     {
       "path": "authoring/catalog/python/python-fundamentals/lists-dicts-sets-and-tuples/topic.json",
-      "sha256": "9099e619c34bf49d7df4829c12943988f835e1551132e27e157778dc55df8dd8",
-      "bytes": 3102
+      "sha256": "315baffe04850319d67021479bcc63e57c296f0140aac01aba939f25b8cfcca1",
+      "bytes": 3101
     },
     {
       "path": "authoring/catalog/python/python-fundamentals/module.json",
-      "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
-      "bytes": 1654
+      "sha256": "6ab01afab3e74e955c4dfaa02fc0fbf094d8a04927cb6792eb1454372a69bb31",
+      "bytes": 2145
     },
     {
       "path": "authoring/catalog/python/python-fundamentals/modules-imports-and-virtual-environments/topic.json",
-      "sha256": "116af91e7ecf4e34d760b8aa8bf683682467edde202a6aec150a2fee93cd40a8",
-      "bytes": 3288
+      "sha256": "b83bac215a94312af78ff07c284ff5440a64cd1cc7946837b7e1cc84756ce1ed",
+      "bytes": 3287
     },
     {
       "path": "authoring/catalog/python/python-fundamentals/mutability-and-aliasing/topic.json",
-      "sha256": "01619233cbe9edb77b5da8115140f68df92d788d2fc12fee507a6056dc76b259",
-      "bytes": 3205
+      "sha256": "265a58f3c15c1086959c4595ae44e0731fbae4377b0b48ffb2d22e885b2b17b6",
+      "bytes": 3204
     },
     {
       "path": "authoring/catalog/python/python-fundamentals/python-syntax-for-java-developers/topic.json",
-      "sha256": "fd3a9fa9cbdafe2ac094bb84d98d13ff4faccedd22f45c3f2f96a5036fc6b78e",
-      "bytes": 3143
+      "sha256": "6553eb2ea91b844587ce15f87a85db2fe0b72ee7e341a67d663dcfb2ca3e1d02",
+      "bytes": 3142
     },
     {
       "path": "authoring/catalog/python/python-fundamentals/slicing-and-comprehensions/topic.json",
-      "sha256": "6b544622f639ee6eef2f3c7b10d2262adc1a618fe5343790b3446e04cfd67df0",
-      "bytes": 3105
+      "sha256": "9d9160fafad2e6013d3a84059722cdbab56a117b2e9155d4f80f5d3c7e38bf2a",
+      "bytes": 3104
     },
     {
       "path": "authoring/catalog/python/python-fundamentals/testing-with-pytest/topic.json",
-      "sha256": "d78a95752425b2dba01a12ad976e4c10284db22822f77c81dcb3aa3d38c9222f",
-      "bytes": 3147
+      "sha256": "e1e95ccbbc1ea25e38da2bd15d802f6d0ab91171e500f59c5b3b66acb325f0c8",
+      "bytes": 3146
     },
     {
       "path": "authoring/catalog/python/python-fundamentals/writing-and-running-script-files/topic.json",
-      "sha256": "1819d2b0a2e31c5936f1f8a01d2b52bb48e3fdb6fd11e144516eec7b33884fad",
-      "bytes": 3151
+      "sha256": "563c3ecb2ff4cc83013f543b1ebed4219107e1da089c352c6bed9d8a40618d53",
+      "bytes": 3150
     },
     {
       "path": "authoring/evidence/python/python-fundamentals/artifact-applicability.md",
@@ -62,6 +62,51 @@
       "path": "authoring/evidence/python/python-fundamentals/authoring-notes.md",
       "sha256": "07eef74bdb4bbdae9c0fb0c3c7625b41582202fd9977a5994f1d95455d0cccd6",
       "bytes": 10682
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education-recheck.json",
+      "sha256": "825272c6bcffc7bcba0da29d74cd8b2f469b4ff7069acf4dc2238fc8d588e708",
+      "bytes": 12289
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education.json",
+      "sha256": "54040914623d80598406f5cf3d1be96ebdcc874a81c816d75948c3ef3d92806c",
+      "bytes": 18568
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "sha256": "baf0c87ad36eefefc6014bea51f39006f1813989d89e8a53cfc730e4421d444f",
+      "bytes": 13582
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "sha256": "c3b131e3a051339ac102620ba0d1e073751ada921acf9ae9b8e943452ce95063",
+      "bytes": 19631
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/coding-lab-loop1-reconciliation.json",
+      "sha256": "5bff326da96ad466038998afa51ef8887534ace644100c641eabaddf2183695a",
+      "bytes": 6786
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-education-recheck.json",
+      "sha256": "b2e37a1d2ba386bcf5fc38f8080e56270ea42105f6fc0b71290a4ed796f51813",
+      "bytes": 15307
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "sha256": "91468c3396fcd093fc804b5b04a8dc5e8ef18c0a9c2381eadc8b2f98e8cd6207",
+      "bytes": 15274
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/coding-lab-reconciliation.json",
+      "sha256": "38af9f84e3dc4b7083b6622f1dbfcc82edf72aa10f665177283deb88b88f8813",
+      "bytes": 28642
+    },
+    {
+      "path": "authoring/evidence/python/python-fundamentals/coding-lab/lab-run.json",
+      "sha256": "dc429cb7b9f31705c122ca1f3a6b94a35176f50df610a39f1c526b63e7105bc0",
+      "bytes": 3126
     },
     {
       "path": "authoring/evidence/python/python-fundamentals/exceptions-and-logging/clean-v2-b75-critic-education-recheck.json",
@@ -1024,6 +1069,56 @@
       "bytes": 491
     },
     {
+      "path": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "bytes": 13576
+    },
+    {
+      "path": "python/python-fundamentals/coding-lab/expected/on-completion.txt",
+      "sha256": "958b06e4eb011cb545aa58a63294511068593544e44fdd8d61f774ac94acf5df",
+      "bytes": 104
+    },
+    {
+      "path": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "c78dc78acb8dd83b68189968985dbf3ee097add49966b11f6105976dad2d579f",
+      "bytes": 6749
+    },
+    {
+      "path": "python/python-fundamentals/coding-lab/starter/requirements.txt",
+      "sha256": "f928be06a67a45506aa590411a9e020d94d1771e00b0d2ffc47418d4346af0e7",
+      "bytes": 120
+    },
+    {
+      "path": "python/python-fundamentals/coding-lab/starter/signups/__init__.py",
+      "sha256": "95e8942adc9f5c51228c5f283660d48cc55c05df505865efc9c665a7cf173478",
+      "bytes": 87
+    },
+    {
+      "path": "python/python-fundamentals/coding-lab/starter/signups/cli.py",
+      "sha256": "2b89107a8547e8d69a6420b1cc8f69e8732ae505771060793cf13c84b8331438",
+      "bytes": 748
+    },
+    {
+      "path": "python/python-fundamentals/coding-lab/starter/signups/records.py",
+      "sha256": "08ed48118d405ff340231a26ff12641d7c3bc9372a3fe67f1da5a8932b230c8e",
+      "bytes": 5065
+    },
+    {
+      "path": "python/python-fundamentals/coding-lab/starter/signups/sample.py",
+      "sha256": "c5d76cbed26ade0071d70206d45183e84fa59a376bab30a6bb87e920b7ea3058",
+      "bytes": 732
+    },
+    {
+      "path": "python/python-fundamentals/coding-lab/starter/test_signups.py",
+      "sha256": "3df5286623f026c04fdf036e6c3f581b209840c56665125bc2d059529c71fdee",
+      "bytes": 356
+    },
+    {
+      "path": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "500b5b02e32bff76cd9ff12c9ede98e4f851df9169d18ca783168dbdd4f1dae7",
+      "bytes": 18685
+    },
+    {
       "path": "python/python-fundamentals/exceptions-and-logging/artifact.gift",
       "sha256": "b163a744e6899663875a1f400909a0c7cc0c196b77771352c971e620aacc53d3",
       "bytes": 4772
@@ -1205,6 +1300,898 @@
     }
   ],
   "evidenceBindings": [
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "e8a109b7ddf10aa3afea321330f2a531b2bd3679e0c3836ebf301644c9a813bf",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "891df04f24ac2810d37892829d4ddca0c5b1e01605e54bf13073bab8a653f68f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "891df04f24ac2810d37892829d4ddca0c5b1e01605e54bf13073bab8a653f68f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education-recheck.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "e8a109b7ddf10aa3afea321330f2a531b2bd3679e0c3836ebf301644c9a813bf",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "83997bc3d3b70ed8ada62c202c3c94fb56ba5c25564d66e98d440350afd602b5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "83997bc3d3b70ed8ada62c202c3c94fb56ba5c25564d66e98d440350afd602b5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[10].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "891df04f24ac2810d37892829d4ddca0c5b1e01605e54bf13073bab8a653f68f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[11].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "e8a109b7ddf10aa3afea321330f2a531b2bd3679e0c3836ebf301644c9a813bf",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "891df04f24ac2810d37892829d4ddca0c5b1e01605e54bf13073bab8a653f68f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "891df04f24ac2810d37892829d4ddca0c5b1e01605e54bf13073bab8a653f68f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "891df04f24ac2810d37892829d4ddca0c5b1e01605e54bf13073bab8a653f68f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "891df04f24ac2810d37892829d4ddca0c5b1e01605e54bf13073bab8a653f68f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "891df04f24ac2810d37892829d4ddca0c5b1e01605e54bf13073bab8a653f68f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[7].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "891df04f24ac2810d37892829d4ddca0c5b1e01605e54bf13073bab8a653f68f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[8].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "891df04f24ac2810d37892829d4ddca0c5b1e01605e54bf13073bab8a653f68f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[9].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "83997bc3d3b70ed8ada62c202c3c94fb56ba5c25564d66e98d440350afd602b5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "e8a109b7ddf10aa3afea321330f2a531b2bd3679e0c3836ebf301644c9a813bf",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "dd42cde616f83a9b70e1827092169bc49bf076008894bedc9e972e2a1fb003a3",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "032c025264c1fdeccb65dde56ff495eeb1cda85a1b97c449ce216dbc278a140f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "dd42cde616f83a9b70e1827092169bc49bf076008894bedc9e972e2a1fb003a3",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "dd42cde616f83a9b70e1827092169bc49bf076008894bedc9e972e2a1fb003a3",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education.json",
+      "field": "findings[10].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "032c025264c1fdeccb65dde56ff495eeb1cda85a1b97c449ce216dbc278a140f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education.json",
+      "field": "findings[11].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "dd42cde616f83a9b70e1827092169bc49bf076008894bedc9e972e2a1fb003a3",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "032c025264c1fdeccb65dde56ff495eeb1cda85a1b97c449ce216dbc278a140f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education.json",
+      "field": "findings[3].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "032c025264c1fdeccb65dde56ff495eeb1cda85a1b97c449ce216dbc278a140f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education.json",
+      "field": "findings[4].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "032c025264c1fdeccb65dde56ff495eeb1cda85a1b97c449ce216dbc278a140f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education.json",
+      "field": "findings[5].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "032c025264c1fdeccb65dde56ff495eeb1cda85a1b97c449ce216dbc278a140f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education.json",
+      "field": "findings[6].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "032c025264c1fdeccb65dde56ff495eeb1cda85a1b97c449ce216dbc278a140f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education.json",
+      "field": "findings[7].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "032c025264c1fdeccb65dde56ff495eeb1cda85a1b97c449ce216dbc278a140f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education.json",
+      "field": "findings[8].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "032c025264c1fdeccb65dde56ff495eeb1cda85a1b97c449ce216dbc278a140f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education.json",
+      "field": "findings[9].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "032c025264c1fdeccb65dde56ff495eeb1cda85a1b97c449ce216dbc278a140f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-education.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "dd42cde616f83a9b70e1827092169bc49bf076008894bedc9e972e2a1fb003a3",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "e8a109b7ddf10aa3afea321330f2a531b2bd3679e0c3836ebf301644c9a813bf",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "891df04f24ac2810d37892829d4ddca0c5b1e01605e54bf13073bab8a653f68f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "891df04f24ac2810d37892829d4ddca0c5b1e01605e54bf13073bab8a653f68f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "83997bc3d3b70ed8ada62c202c3c94fb56ba5c25564d66e98d440350afd602b5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "e8a109b7ddf10aa3afea321330f2a531b2bd3679e0c3836ebf301644c9a813bf",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "findings[3].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "891df04f24ac2810d37892829d4ddca0c5b1e01605e54bf13073bab8a653f68f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "83997bc3d3b70ed8ada62c202c3c94fb56ba5c25564d66e98d440350afd602b5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "83997bc3d3b70ed8ada62c202c3c94fb56ba5c25564d66e98d440350afd602b5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[10].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "e8a109b7ddf10aa3afea321330f2a531b2bd3679e0c3836ebf301644c9a813bf",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[11].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "83997bc3d3b70ed8ada62c202c3c94fb56ba5c25564d66e98d440350afd602b5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[12].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "891df04f24ac2810d37892829d4ddca0c5b1e01605e54bf13073bab8a653f68f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[13].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "891df04f24ac2810d37892829d4ddca0c5b1e01605e54bf13073bab8a653f68f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[14].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "891df04f24ac2810d37892829d4ddca0c5b1e01605e54bf13073bab8a653f68f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[15].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "83997bc3d3b70ed8ada62c202c3c94fb56ba5c25564d66e98d440350afd602b5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "891df04f24ac2810d37892829d4ddca0c5b1e01605e54bf13073bab8a653f68f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "891df04f24ac2810d37892829d4ddca0c5b1e01605e54bf13073bab8a653f68f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "83997bc3d3b70ed8ada62c202c3c94fb56ba5c25564d66e98d440350afd602b5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "83997bc3d3b70ed8ada62c202c3c94fb56ba5c25564d66e98d440350afd602b5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "83997bc3d3b70ed8ada62c202c3c94fb56ba5c25564d66e98d440350afd602b5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[7].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "83997bc3d3b70ed8ada62c202c3c94fb56ba5c25564d66e98d440350afd602b5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[8].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "891df04f24ac2810d37892829d4ddca0c5b1e01605e54bf13073bab8a653f68f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[9].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/expected/on-completion.txt",
+      "sha256": "958b06e4eb011cb545aa58a63294511068593544e44fdd8d61f774ac94acf5df",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "e8a109b7ddf10aa3afea321330f2a531b2bd3679e0c3836ebf301644c9a813bf",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "dd42cde616f83a9b70e1827092169bc49bf076008894bedc9e972e2a1fb003a3",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "032c025264c1fdeccb65dde56ff495eeb1cda85a1b97c449ce216dbc278a140f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "529b861a4d44fb1e428613339d0614d79faf6e3e50ff92af7ddc2c5fa5c60871",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "529b861a4d44fb1e428613339d0614d79faf6e3e50ff92af7ddc2c5fa5c60871",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "field": "findings[10].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "dd42cde616f83a9b70e1827092169bc49bf076008894bedc9e972e2a1fb003a3",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "field": "findings[11].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "dd42cde616f83a9b70e1827092169bc49bf076008894bedc9e972e2a1fb003a3",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "field": "findings[12].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "032c025264c1fdeccb65dde56ff495eeb1cda85a1b97c449ce216dbc278a140f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "field": "findings[13].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "032c025264c1fdeccb65dde56ff495eeb1cda85a1b97c449ce216dbc278a140f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "field": "findings[14].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "032c025264c1fdeccb65dde56ff495eeb1cda85a1b97c449ce216dbc278a140f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "field": "findings[15].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "529b861a4d44fb1e428613339d0614d79faf6e3e50ff92af7ddc2c5fa5c60871",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "032c025264c1fdeccb65dde56ff495eeb1cda85a1b97c449ce216dbc278a140f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "field": "findings[3].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "032c025264c1fdeccb65dde56ff495eeb1cda85a1b97c449ce216dbc278a140f",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "field": "findings[4].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "529b861a4d44fb1e428613339d0614d79faf6e3e50ff92af7ddc2c5fa5c60871",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "field": "findings[5].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "529b861a4d44fb1e428613339d0614d79faf6e3e50ff92af7ddc2c5fa5c60871",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "field": "findings[6].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "529b861a4d44fb1e428613339d0614d79faf6e3e50ff92af7ddc2c5fa5c60871",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "field": "findings[7].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "529b861a4d44fb1e428613339d0614d79faf6e3e50ff92af7ddc2c5fa5c60871",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "field": "findings[8].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/starter/test_signups.py",
+      "sha256": "3df5286623f026c04fdf036e6c3f581b209840c56665125bc2d059529c71fdee",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "field": "findings[9].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/expected/on-completion.txt",
+      "sha256": "970e9091f46d9cc083d1bcd92790815772a0db2290039f47542ef114fe7b0130",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-critic-sme.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "dd42cde616f83a9b70e1827092169bc49bf076008894bedc9e972e2a1fb003a3",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop1-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "e8a109b7ddf10aa3afea321330f2a531b2bd3679e0c3836ebf301644c9a813bf",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "c78dc78acb8dd83b68189968985dbf3ee097add49966b11f6105976dad2d579f",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "500b5b02e32bff76cd9ff12c9ede98e4f851df9169d18ca783168dbdd4f1dae7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "500b5b02e32bff76cd9ff12c9ede98e4f851df9169d18ca783168dbdd4f1dae7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[10].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[11].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "c78dc78acb8dd83b68189968985dbf3ee097add49966b11f6105976dad2d579f",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[12].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[13].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "c78dc78acb8dd83b68189968985dbf3ee097add49966b11f6105976dad2d579f",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[7].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[8].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[9].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "500b5b02e32bff76cd9ff12c9ede98e4f851df9169d18ca783168dbdd4f1dae7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "c78dc78acb8dd83b68189968985dbf3ee097add49966b11f6105976dad2d579f",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "c78dc78acb8dd83b68189968985dbf3ee097add49966b11f6105976dad2d579f",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "500b5b02e32bff76cd9ff12c9ede98e4f851df9169d18ca783168dbdd4f1dae7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "500b5b02e32bff76cd9ff12c9ede98e4f851df9169d18ca783168dbdd4f1dae7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[10].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "c78dc78acb8dd83b68189968985dbf3ee097add49966b11f6105976dad2d579f",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[11].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "500b5b02e32bff76cd9ff12c9ede98e4f851df9169d18ca783168dbdd4f1dae7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[12].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[13].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[14].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[15].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "500b5b02e32bff76cd9ff12c9ede98e4f851df9169d18ca783168dbdd4f1dae7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[16].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[17].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "500b5b02e32bff76cd9ff12c9ede98e4f851df9169d18ca783168dbdd4f1dae7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[18].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "c78dc78acb8dd83b68189968985dbf3ee097add49966b11f6105976dad2d579f",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[19].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "500b5b02e32bff76cd9ff12c9ede98e4f851df9169d18ca783168dbdd4f1dae7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "500b5b02e32bff76cd9ff12c9ede98e4f851df9169d18ca783168dbdd4f1dae7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "500b5b02e32bff76cd9ff12c9ede98e4f851df9169d18ca783168dbdd4f1dae7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[7].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "500b5b02e32bff76cd9ff12c9ede98e4f851df9169d18ca783168dbdd4f1dae7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[8].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[9].reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/expected/on-completion.txt",
+      "sha256": "958b06e4eb011cb545aa58a63294511068593544e44fdd8d61f774ac94acf5df",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "c78dc78acb8dd83b68189968985dbf3ee097add49966b11f6105976dad2d579f",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "dd42cde616f83a9b70e1827092169bc49bf076008894bedc9e972e2a1fb003a3",
+      "current": false
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab/lab-run.json",
+      "field": "artifactHashes.expected/on-completion.txt",
+      "artifactPath": "python/python-fundamentals/coding-lab/expected/on-completion.txt",
+      "sha256": "958b06e4eb011cb545aa58a63294511068593544e44fdd8d61f774ac94acf5df",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab/lab-run.json",
+      "field": "artifactHashes.lab.json",
+      "artifactPath": "python/python-fundamentals/coding-lab/lab.json",
+      "sha256": "c78dc78acb8dd83b68189968985dbf3ee097add49966b11f6105976dad2d579f",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab/lab-run.json",
+      "field": "artifactHashes.README.md",
+      "artifactPath": "python/python-fundamentals/coding-lab/README.md",
+      "sha256": "892befa2df5be7dc9783224b8d0caccabe3576f09c2c4f24f69d73ecb8530c11",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab/lab-run.json",
+      "field": "artifactHashes.starter/requirements.txt",
+      "artifactPath": "python/python-fundamentals/coding-lab/starter/requirements.txt",
+      "sha256": "f928be06a67a45506aa590411a9e020d94d1771e00b0d2ffc47418d4346af0e7",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab/lab-run.json",
+      "field": "artifactHashes.starter/signups/__init__.py",
+      "artifactPath": "python/python-fundamentals/coding-lab/starter/signups/__init__.py",
+      "sha256": "95e8942adc9f5c51228c5f283660d48cc55c05df505865efc9c665a7cf173478",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab/lab-run.json",
+      "field": "artifactHashes.starter/signups/cli.py",
+      "artifactPath": "python/python-fundamentals/coding-lab/starter/signups/cli.py",
+      "sha256": "2b89107a8547e8d69a6420b1cc8f69e8732ae505771060793cf13c84b8331438",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab/lab-run.json",
+      "field": "artifactHashes.starter/signups/records.py",
+      "artifactPath": "python/python-fundamentals/coding-lab/starter/signups/records.py",
+      "sha256": "08ed48118d405ff340231a26ff12641d7c3bc9372a3fe67f1da5a8932b230c8e",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab/lab-run.json",
+      "field": "artifactHashes.starter/signups/sample.py",
+      "artifactPath": "python/python-fundamentals/coding-lab/starter/signups/sample.py",
+      "sha256": "c5d76cbed26ade0071d70206d45183e84fa59a376bab30a6bb87e920b7ea3058",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab/lab-run.json",
+      "field": "artifactHashes.starter/test_signups.py",
+      "artifactPath": "python/python-fundamentals/coding-lab/starter/test_signups.py",
+      "sha256": "3df5286623f026c04fdf036e6c3f581b209840c56665125bc2d059529c71fdee",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/python-fundamentals/coding-lab/lab-run.json",
+      "field": "artifactHashes.tests/test_main.py",
+      "artifactPath": "python/python-fundamentals/coding-lab/tests/test_main.py",
+      "sha256": "500b5b02e32bff76cd9ff12c9ede98e4f851df9169d18ca783168dbdd4f1dae7",
+      "current": true
+    },
     {
       "topic": "exceptions-and-logging",
       "evidencePath": "authoring/evidence/python/python-fundamentals/exceptions-and-logging/clean-v2-b75-critic-education-recheck.json",
@@ -3654,7 +4641,7 @@
       "field": "reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
       "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-clean-v2-b75-critic-sme-recheck.json",
@@ -3689,14 +4676,14 @@
       "field": "reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
       "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-clean-v2-b75-reconciliation.json",
       "field": "reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
       "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-critic-education.json",
@@ -3808,7 +4795,7 @@
       "field": "artifactHashes.module.json",
       "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
       "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-critic-education.json",
@@ -4137,7 +5124,7 @@
       "field": "reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
       "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-critic-sme.json",
@@ -4564,7 +5551,7 @@
       "field": "reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
       "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-final-critic-sme-recheck.json",
@@ -4872,7 +5859,7 @@
       "field": "recheck.items[15].reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/slicing-and-comprehensions/topic.json",
       "sha256": "6b544622f639ee6eef2f3c7b10d2262adc1a618fe5343790b3446e04cfd67df0",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-final-critic-sme-recheck.json",
@@ -5159,14 +6146,14 @@
       "field": "reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
       "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-reconciliation.json",
       "field": "reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
       "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-education-recheck.json",
@@ -5208,7 +6195,7 @@
       "field": "reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
       "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-critic-sme-recheck.json",
@@ -5278,7 +6265,7 @@
       "field": "reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
       "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-loop2-critic-education-recheck.json",
@@ -5292,7 +6279,7 @@
       "field": "reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
       "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-loop2-critic-sme-recheck.json",
@@ -5306,7 +6293,7 @@
       "field": "reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
       "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-loop3-critic-education-recheck.json",
@@ -5348,7 +6335,7 @@
       "field": "reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
       "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-loop3-critic-sme-recheck.json",
@@ -5418,7 +6405,7 @@
       "field": "reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
       "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-loop4-critic-education-recheck.json",
@@ -5460,7 +6447,7 @@
       "field": "reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
       "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/module-t25-debt-1814ba7-loop4-critic-sme-recheck.json",
@@ -5530,7 +6517,7 @@
       "field": "reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
       "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
-      "current": true
+      "current": false
     },
     {
       "topic": "modules-imports-and-virtual-environments",
@@ -6882,7 +7869,7 @@
       "field": "artifactHashes.module.json",
       "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
       "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/prefix-delta-7a3e291-critic-education-recheck.json",
@@ -7022,7 +8009,7 @@
       "field": "artifactHashes.slicing-and-comprehensions/topic.json",
       "artifactPath": "authoring/catalog/python/python-fundamentals/slicing-and-comprehensions/topic.json",
       "sha256": "6b544622f639ee6eef2f3c7b10d2262adc1a618fe5343790b3446e04cfd67df0",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/prefix-delta-7a3e291-critic-education-recheck.json",
@@ -7295,7 +8282,7 @@
       "field": "recheck.items[6].reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/slicing-and-comprehensions/topic.json",
       "sha256": "6b544622f639ee6eef2f3c7b10d2262adc1a618fe5343790b3446e04cfd67df0",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/python-fundamentals/prefix-delta-7a3e291-critic-education-recheck.json",
@@ -7323,7 +8310,7 @@
       "field": "reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/module.json",
       "sha256": "96d14e1f961e3928b4d88b998bba8ee583e7f7e7cf66bda50c250f05e1725619",
-      "current": true
+      "current": false
     },
     {
       "topic": "python-syntax-for-java-developers",
@@ -8075,7 +9062,7 @@
       "field": "artifactHashes.topic.json",
       "artifactPath": "authoring/catalog/python/python-fundamentals/slicing-and-comprehensions/topic.json",
       "sha256": "6b544622f639ee6eef2f3c7b10d2262adc1a618fe5343790b3446e04cfd67df0",
-      "current": true
+      "current": false
     },
     {
       "topic": "slicing-and-comprehensions",
@@ -8091,7 +9078,7 @@
       "field": "recheck.items[0].reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/slicing-and-comprehensions/topic.json",
       "sha256": "6b544622f639ee6eef2f3c7b10d2262adc1a618fe5343790b3446e04cfd67df0",
-      "current": true
+      "current": false
     },
     {
       "topic": "slicing-and-comprehensions",
@@ -8315,7 +9302,7 @@
       "field": "recheck.items[1].reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/slicing-and-comprehensions/topic.json",
       "sha256": "6b544622f639ee6eef2f3c7b10d2262adc1a618fe5343790b3446e04cfd67df0",
-      "current": true
+      "current": false
     },
     {
       "topic": "slicing-and-comprehensions",
@@ -8403,7 +9390,7 @@
       "field": "reviewedSha256",
       "artifactPath": "authoring/catalog/python/python-fundamentals/slicing-and-comprehensions/topic.json",
       "sha256": "6b544622f639ee6eef2f3c7b10d2262adc1a618fe5343790b3446e04cfd67df0",
-      "current": true
+      "current": false
     },
     {
       "topic": "slicing-and-comprehensions",
