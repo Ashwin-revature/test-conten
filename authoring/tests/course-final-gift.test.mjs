@@ -72,7 +72,7 @@ for (const [file, { category, html }] of Object.entries(BANKS)) {
       const text = bytes.toString("ascii");
       assert.deepEqual(numericCodeNewlines(text), [], "numeric newline references in code");
       // Indentation-safe: an importer that trims each physical line must not change any code line.
-      const unsafe = [...text.matchAll(/<pre>([\s\S]*?)<\/pre>/g)]
+      const unsafe = [...text.matchAll(/<pre><code>([\s\S]*?)<\/code><\/pre>/g)]
         .flatMap((match) => match[1].split("\n").slice(1))
         .filter((line) => line === "" || line !== line.trim() || line.startsWith("//"));
       assert.deepEqual(unsafe.length, 0, "code lines that start or end with whitespace, are blank or start with //");
@@ -139,7 +139,7 @@ const entityBody = [
   "~<code>3</code>#Not quite. no",
   "}",
   "",
-  "::c2::[html]<p>Which query?</p><pre>// first line comment&\\#10;SELECT a&\\#10;  FROM t&\\#10;&\\#10;  WHERE b \\= 2;</pre>{",
+  "::c2::[html]<p>Which query?</p><pre><code>// first line comment&\\#10;SELECT a&\\#10;  FROM t&\\#10;&\\#10;  WHERE b \\= 2;</code></pre>{",
   "~<code>a</code>#Not quite. no",
   "=<code>b</code>#Correct. yes",
   "}",
@@ -181,7 +181,7 @@ test("indentation-safe code-block line breaks keep every parsed field and invert
   assert.match(safeBody, /\n&nbsp;   int x \\= 1;/, "first indent space becomes &nbsp;, the rest stay");
   assert.match(safeBody, /\n&nbsp;   \/\/ note/, "indented comment is protected without an extra column");
   assert.match(safeBody, /\n&\\#47;\/ end/, "unindented comment becomes &\\#47;/ without an extra column");
-  assert.match(safeBody, /<pre>\/\/ first line comment/, "first code line shares the <pre> line and is unchanged");
+  assert.match(safeBody, /<pre><code>\/\/ first line comment/, "first code line shares the <pre><code> line and is unchanged");
   assert.match(safeBody, /class A \\\{\n/, "escaped braces and operators survive");
   const before = validateGift(codeBank(entityBody), htmlCategory, { html: true });
   const after = validateGift(codeBank(safeBody), htmlCategory, { html: true });
@@ -191,11 +191,13 @@ test("indentation-safe code-block line breaks keep every parsed field and invert
   assert.ok(after.every((q) => q.stem.includes("\n")), "stems carry multiline code");
 });
 
-test("numeric newline checks are scoped to plain and nested pre blocks", () => {
+test("numeric newline checks and conversion are scoped to pre/code blocks", () => {
   const outside = "[html]<p>outside &\\#10; reference</p>";
+  const plainPre = "<pre>preformatted &\\#10; content</pre>";
   assert.deepEqual(numericCodeNewlines(outside), []);
-  assert.deepEqual(numericCodeNewlines(`${outside}<pre>a&\\#10;b</pre>`), ["&\\#10;"]);
+  assert.deepEqual(numericCodeNewlines(`${outside}${plainPre}`), []);
   assert.deepEqual(numericCodeNewlines(`${outside}<pre><code>a&\\#10;b</code></pre>`), ["&\\#10;"]);
+  assert.equal(literalCodeNewlines(`${plainPre}<pre><code>a&\\#10;b</code></pre>`), `${plainPre}<pre><code>a\nb</code></pre>`);
 });
 
 test("indentation-safe code shows the same code and indentation with or without per-line trimming", () => {

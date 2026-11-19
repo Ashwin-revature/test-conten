@@ -1,6 +1,7 @@
 // Code-block line breaks for [html] GIFT banks.
 //
-// Code inside <pre> uses actual LF line breaks, not numeric &#10; references.
+// Code inside exact <pre><code>...</code></pre> regions uses actual LF line breaks,
+// not numeric &#10; references. Plain <pre> regions are outside this helper's scope.
 // Importers may trim every physical line, and GIFT reads a blank physical line as the
 // end of a question and drops a line that starts with optional whitespace then //.
 // So every code line after the first is written so that it neither starts nor ends
@@ -16,7 +17,7 @@
 // { escaped: false } for text that has already been GIFT-unescaped.
 
 export const NUMERIC_NEWLINE = /&\\?#(?:10|[xX]0*[aA]);/g;
-const PRE = /<pre>([\s\S]*?)<\/pre>/g;
+const PRE_CODE = /<pre><code>([\s\S]*?)<\/code><\/pre>/g;
 const NBSP = "&nbsp;";
 const FORMS = new Set(["entity", "nbsp", "j47", "safe"]);
 
@@ -60,11 +61,14 @@ export function encodeCodeLines(lines, form, { escaped = true } = {}) {
 }
 
 export function convertCodeBlocks(text, from, to, options = {}) {
-  return text.replace(PRE, (_, inner) => `<pre>${encodeCodeLines(decodeCodeLines(inner, from, options), to, options)}</pre>`);
+  return text.replace(
+    PRE_CODE,
+    (_, inner) => `<pre><code>${encodeCodeLines(decodeCodeLines(inner, from, options), to, options)}</code></pre>`,
+  );
 }
 
 export function numericCodeNewlines(text) {
-  return [...text.matchAll(PRE)].flatMap((match) => match[1].match(NUMERIC_NEWLINE) ?? []);
+  return [...text.matchAll(PRE_CODE)].flatMap((match) => match[1].match(NUMERIC_NEWLINE) ?? []);
 }
 
 // Entity form (the retired one) to the indentation-safe literal form, and back.
