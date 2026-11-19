@@ -8,7 +8,7 @@ It is distinct from the Foundation checkpoint, from every course-final bank and 
 | Bank | `containers-cicd/assessments/standard-fast-final-checkpoint/checkpoint-mcq.gift` |
 | Blueprint | `containers-cicd/assessments/standard-fast-final-checkpoint/blueprint.json` |
 | Format | 45 single-answer MCQ (expanded from 30 on 2026-11-19, see `standard-fast-final-checkpoint-45/README.md`), four options each, `[html]` GIFT, category `standard-fast/final-checkpoint-mcq`, titles `sfcp-q01` to `sfcp-q45` |
-| Duration | 60 minutes, at 2 minutes per question |
+| Duration | 90 minutes, at 2 minutes per question (blueprint; was 60 for the 30-item base) |
 | Day | Standard S43 and Fast FT25 (the Final gate) |
 | Content authority | learner pages at `b102584d`; `a00a6658` changes only QA tooling, so the authority is unchanged |
 | Byte check | `authoring/tests/standard-fast-checkpoint-gift.test.mjs` |
@@ -23,7 +23,7 @@ It is a new file name, `checkpoint-mcq.gift`, so the course-final bank rules (`*
 
 ## Scope
 
-Content taught **in full on both tracks** in the five shared courses:
+Content taught **in full on both tracks** in the five shared courses. The table below is the base 30 (q01-q30); the 15 items added later (q31-q45) are mapped in `standard-fast-final-checkpoint-45/coverage-45.json`.
 
 | Course | Standard days | Fast days | Items |
 | --- | --- | --- | --- |
@@ -37,15 +37,17 @@ Content taught **in full on both tracks** in the five shared courses:
 Out of scope: the AWS track A1-A7 (separate, Fast only), the Foundation courses, Project 2, Standard-only topics (no FT day) and topics the calendar marks "(skim)" on their Fast day.
 The skim list comes from the Fast day topic strings in `curriculum/snapshot/pep-calendar.json`; it includes beans and bean scopes, configuration files and profiles, secrets from the environment, mutability and aliasing, image layers and build caching, debugging with logs and exec, flexbox, grid, the event loop and accessible forms.
 
-**Skim rule.** Every item's deciding fact sits on a topic taught in full on both tracks, with no exception.
-(The r6 bank had one: a Dockerfile layer-caching item whose deciding fact was on the Fast-skimmed image-layers page. It was replaced in r7; see Review history.)
+**Skim rule.** Every item's deciding fact sits on a topic taught in full on both tracks, with one recorded exception: **q37**.
+q37 (test slices: `@DataJpaTest` loads only the JPA layer, `@SpringBootTest` gives `MockMvc` only with `@AutoConfigureMockMvc`) rests on `spring-boot/integration-and-observability/an-integration-test`, whose Fast day string is "An integration test (skim)" (FT8).
+Reason: the owner decided to keep q37 (orchestrator decision log: "keep q37 (Fast skim exception)") rather than replace it, after the loop-3 education critic (sfcp-l3-edu-01) flagged it. It is the only item on that module, a Fast learner meets the annotation pair on two fully taught pages (`a-dev-profile-that-keeps-endpoints-open`, `spring-review-layers`) but not the stated rule, and the item is a deliberate stretch for Fast. It is the only exception; every other item obeys the rule.
+(The r6 bank had another: a Dockerfile layer-caching item whose deciding fact was on the Fast-skimmed image-layers page. It was replaced in r7; see Review history.)
 
 **Allocation.** Items follow each course's share of taught days, adjusted by what each course offers once Fast-skim and Standard-only topics are excluded.
 Spring Boot loses several topics to that exclusion (beans, configuration and profiles, secrets from the environment and the whole integration-and-observability module), so it sits about one item under its day share (8 of 30, against 33-35% of days); Python sits about one over.
 React and Containers/CI-CD match their day shares.
 
-**Module coverage: 19 of the 20 shared modules.**
-The one module with no item is Spring Boot integration-and-observability: every topic in it is Standard-only or marked "(skim)" on its Fast day, so the skim rule excludes it.
+**Module coverage: 20 of the 20 shared modules.**
+Spring Boot integration-and-observability is covered only by q37, the recorded skim exception above: every topic in that module is Standard-only or marked "(skim)" on its Fast day, so without the exception it would have no item.
 React auth-and-review, which had no item in r6 by an author choice, is covered by q27 in r7.
 
 ## Coverage map
@@ -84,11 +86,15 @@ Days are Standard / Fast. "Executed" keys were run; "page-grounded" keys rest on
 | q28 | containers-and-compose/service-name-networking; html-css-js fetch-and-browser-client/environment-settings-for-the-api-address | S37 / FT21; S27 / FT15 | o3; o1 | page-grounded |
 | q29 | containers-and-compose/depends-on-with-health-checks | S37 / FT22 | o1; o2 | page-grounded |
 | q30 | microservices-and-ci-cd/github-actions-pipeline | S39 / FT23 | o2; o3 | page-grounded |
+| q37 | integration-and-observability/an-integration-test (Fast: "(skim)", FT8; recorded exception) | S11 / FT8 (skim) | o2 | executed |
+| q31-q36, q38-q45 | see `standard-fast-final-checkpoint-45/coverage-45.json` | | | `key-verification*.txt`, `loop3-key-probes.txt` |
 
 The private candidate report filed q25's form topic under React and q28's API-address topic under Containers; both actually live in the HTML/CSS/JS course, and this map and the blueprint use the real paths.
 That correction changes no item and no day: both topics are taught in full on both tracks.
 
 ## Final-day ledger and timing defaults
+
+**Open owner decision (not decided here).** With the 45-item bank at 90 minutes, the learner minutes below total 150 (90 + 60), while the calendar's Gate block is 120 minutes. The Final day is recorded as 150 minutes in the 45-item README; the 120-minute Gate block in the calendar has not been changed. Whether to lengthen the Gate block to 150, shorten the MCQ, or move a sitting is the owner's call. The table below is the original 60-minute ledger, kept for the arithmetic; read the MCQ row as 90 and the total as 150.
 
 What the calendar (`curriculum/snapshot/pep-calendar.json`) fixes for S43 and FT25:
 
@@ -101,17 +107,16 @@ Their shape is the accepted assessment-shape decision (2026-11-19, supplied thro
 
 | Final-day block | Minutes | Source |
 | --- | --- | --- |
-| Checkpoint MCQ (this bank) | 60 | this blueprint |
+| Checkpoint MCQ (this bank) | 90 (was 60 at 30 items) | this blueprint |
 | Spring Boot coding question 1 (supplied scaffold) | 10 | accepted shape decision |
 | Spring Boot coding question 2 (supplied scaffold) | 20 | accepted shape decision |
 | Python coding question 1 (supplied scaffold) | 10 | accepted shape decision |
 | Python coding question 2 (supplied scaffold) | 20 | accepted shape decision |
-| **Total learner minutes** | **120** | |
+| **Total learner minutes** | **150** (was 120) | |
 | Calendar Gate block | 120 | calendar |
 
-**Schedule verification.** 60 + 10 + 20 + 10 + 20 = 120 minutes, exactly the Gate block.
-No correction to the day's minutes, the track day counts, the AWS days, the other accepted activities or Project 2's separate grading is needed.
-The honest qualification is that the fit has no slack: the 120 minutes include no separate time for reading instructions, opening the scaffolds or moving between sittings, so those must sit inside each question's allocation.
+**Schedule verification (superseded for 45 items).** At 30 items, 60 + 10 + 20 + 10 + 20 = 120 minutes fit the Gate block exactly. At 45 items it is 90 + 10 + 20 + 10 + 20 = 150 minutes against a 120-minute Gate block: an open owner decision (above).
+The honest qualification is that any fit has no slack: the 120 minutes include no separate time for reading instructions, opening the scaffolds or moving between sittings, so those must sit inside each question's allocation.
 The scaffolds being supplied is what makes 10- and 20-minute coding questions plausible; no timed learner trial of either the MCQ or the coding questions has been run, so all five figures are allocations, not measurements.
 
 The learner timings are estimates: "10", "20" and "60" are allocated minutes, not measured times.
@@ -125,16 +130,16 @@ Neither default changes the Final weights, the cut scores or Project 2's separat
 **Timing basis.** Two minutes per question, set on this bank's own load rather than borrowed.
 The Foundation rule of 2 minutes per question governs only the four Foundation course finals.
 The Standard/Fast course finals run faster: the HTML/CSS/JS course final in progress is 30 questions in 30 minutes, and the Git/Linux/AI 30-minute course final has 20 questions.
-This bank is denser: 25 of its 30 items put code or configuration in the stem and ask for a trace or a multi-case outcome across five courses, and total reading load is about 2,200 words.
+The base 30 is dense: 25 of its 30 items put code or configuration in the stem and ask for a trace or a multi-case outcome across five courses, and total reading load is about 2,200 words.
 Every item was judged answerable in about 2 minutes; the longest traces are q04, q20 and q21.
-No timed learner trial was run, so 60 minutes is a beta baseline: if a timed trial shows learners finish well inside it, shortening the sitting is the first lever for giving the coding assessments more of the Gate block.
+No timed learner trial was run, so 90 minutes (60 at the 30-item base) is a beta baseline: if a timed trial shows learners finish well inside it, shortening the sitting is the first lever for giving the coding assessments more of the Gate block.
 
 ## Verification
 
-- **Parse shape.** `authoring/tests/standard-fast-checkpoint-gift.test.mjs` validates the shipped bytes with `authoring/tools/gift/validate.mjs` in `[html]` mode: 30 questions, ASCII only, four options with exactly one key, no line GIFT import would drop as a comment.
+- **Parse shape.** `authoring/tests/standard-fast-checkpoint-gift.test.mjs` validates the shipped bytes with `authoring/tools/gift/validate.mjs` in `[html]` mode: 45 questions, ASCII only, four options with exactly one key, no line GIFT import would drop as a comment.
 - **Code blocks** use the indentation-safe literal-newline form from `authoring/tools/gift/code-newlines.mjs`: no numeric newline references and no unsafe code lines.
-- **Key positions:** A 8, B 8, C 7, D 7, no position more than twice in a row, no periodic pattern.
-- **Keys executed: 25 of 30.**
+- **Key positions (45 items):** A 11, B 11, C 11, D 12, longest run 2.
+- **Keys executed: 25 of the base 30** (q31-q45: see `standard-fast-final-checkpoint-45/key-verification*.txt` and `loop3-key-probes.txt`; q33 re-executed after the loop-3 reword on JDK 25 / Boot 4.1.2 first with standalone MockMvc and, after sfcp-l4-sme-01, on a real embedded server (`@SpringBootTest` RANDOM_PORT, real HTTP): the `MethodArgumentTypeMismatchException` handler in the controller returns 400 with the `Err` body; `@RequestParam`, advice and `parseLong` variants do not).
   - 24 are carried forward from the private authoring run, whose scripts printed PASS/FAIL per item and, where it mattered, checked that each distractor fails:
     - Spring (q01, q03-q08): Spring Boot 4.1.2 on JDK 25, Maven 3.9.16 offline, H2.
     - Python (q09-q13): CPython 3.14, pydantic 2.12.5, fastapi 0.121.3, httpx 0.28.1 with a mock transport. q11's upsert ran on SQLite's `ON CONFLICT ... EXCLUDED`, not PostgreSQL.
@@ -143,7 +148,7 @@ No timed learner trial was run, so 60 minutes is a beta baseline: if a timed tri
   - The canonical SME critic re-ran q09, q10, q11 (SQLite), q16, q17, q18 and q20 under Python 3.14 and Node 24.
   - q27 (new in r7) ran on Node 24 as a plain-JS model: the stem's `handleStatus`, a router that honours `replace` and `state`, a sign-in step that returns to `state.from`, and an API that answers 403 to a non-admin. The key and the rejection of all three distractors printed PASS. It did not run react-router itself.
 - **Page-grounded keys: 5** (q02 Flyway, q14 accessibility audit, q28 browser versus service name, q29 `depends_on` chain, q30 workflow `needs` and `push`).
-- **Distractors.** Each wrong option is a named misconception with feedback saying why it is wrong. The key is the single longest option in 4 of 30 items and never more than 1.18 times the next option.
+- **Distractors.** Each wrong option is a named misconception with feedback saying why it is wrong. The key is the single longest option in 4 of the base 30 items and never more than 1.18 times the next option.
 
 ## Duplication
 
@@ -181,11 +186,12 @@ Canonical review in this folder (two independent critics, then a non-author reco
 - **Loop 1 on r6.** The SME critic confirmed both r6 edits and found q27, the Dockerfile layer-caching item, a near-duplicate of a formative item whose deciding fact sat on the Fast-skimmed image-layers page (high), with an arguable second key (medium). The education critic found no high; its mediums were documentation fixes (the React auth-and-review gap reason and an unsourced schedule precedent, since removed).
 - **r7.** q27 was replaced by a React auth-and-review item at the same key position, the blueprint gained the objectives the critics found missing, and this file was corrected. No other item changed.
 - **Loop 1 recheck on r7.** Both critics resolved the high and every medium. The education critic found the new q27 stem gave away the redirect (it said Mia signed in again), leaving a two-way choice (medium); the SME critic noted option A settled one of q08's distractors (low).
+- **Loop 3 fixes (45 items).** q33's stem no longer shows a 400 for a non-numeric id (and, per sfcp-l4-sme-01, no longer claims the default body lacks an `error` field: Boot's default 400 body does have one, so the stem says only that the specific message `id must be a number` is missing) (it leaked q01 option B, sfcp-l3-sme-02) and now asks, as an applied front-end case, which change restores the old response; key letter and objective unchanged. q37 is kept as the recorded skim exception (sfcp-l3-edu-01). This file was brought up to the 45-item, 90-minute bytes (sfcp-l3-edu-02); the 150 versus 120 minute Final day stays an open owner decision.
 - **r8.** q27's stem now stops at the 403 and each option states the full sequence, so rejecting the not-allowed option needs the code reading; "not 401" was dropped from option A. The key stays at C and the plain-JS model re-ran with all four results PASS. This file's allocation sentence and release gate were corrected. No other item changed.
 
 ## Limitations
 
 - No PostgreSQL server, Docker engine or GitHub Actions runner was used: q11 ran on SQLite, and q28-q30 are page-grounded.
 - No platform import, timed learner trial or learner data.
-- The Final-day fit (120 of 120 minutes) rests on allocated, not measured, durations; no timed trial has been run.
+- The Final-day fit is an open owner decision (150 learner minutes at 45 items against the 120-minute Gate block) and rests on allocated, not measured, durations; no timed trial has been run.
 - The final whole-set duplication comparison waits for the remaining course-final pins.
