@@ -5,18 +5,18 @@
   "files": [
     {
       "path": "authoring/catalog/html-css-js/dom-tooling-and-async/async-and-await/topic.json",
-      "sha256": "9755a1fa0bab98472a1a85cdbb130cfa27403c57d5abc2c22e589c35a7c5d388",
-      "bytes": 2771
+      "sha256": "6dc912b5fe099ab634ab439d7d8efa3dd62ffa90c11b946ea80c978668e08f41",
+      "bytes": 2532
     },
     {
       "path": "authoring/catalog/html-css-js/dom-tooling-and-async/debugging-with-devtools-breakpoints/topic.json",
-      "sha256": "6acccff533bfb53cd7169ffde8736eb3a6089e563e8e9aa4e5acaa4ada0f534b",
-      "bytes": 3297
+      "sha256": "9a6510255792ca16b0b0d69b0bace9e3e815780181501fd03cbd6607358816df",
+      "bytes": 3058
     },
     {
       "path": "authoring/catalog/html-css-js/dom-tooling-and-async/events-and-event-bubbling/topic.json",
-      "sha256": "1dda374fae36b8cdfaf6909636d086754b33e99aaca55bc5d72b56b68f7af348",
-      "bytes": 2874
+      "sha256": "2b05e789667b1fa357aae5341f599b74391035044a4d11192a23d99a78cd3e64",
+      "bytes": 2635
     },
     {
       "path": "authoring/catalog/html-css-js/dom-tooling-and-async/module.json",
@@ -25,33 +25,33 @@
     },
     {
       "path": "authoring/catalog/html-css-js/dom-tooling-and-async/preventing-cross-site-scripting/topic.json",
-      "sha256": "01475871bb89aee86573f0005a5a662471116dba6676379eb6c2b6fd431a79a5",
-      "bytes": 2914
+      "sha256": "3d87a6566dcf9e282c923ec366d58e045c527bfe71982d39a841832898553c2c",
+      "bytes": 2675
     },
     {
       "path": "authoring/catalog/html-css-js/dom-tooling-and-async/project-setup-with-npm-and-vite/topic.json",
-      "sha256": "eae794cde47deae25b8838a67cab8169c4051844c8755843e5f42a07f8fc3d8a",
-      "bytes": 3414
+      "sha256": "2c076ded5a8553b23d0eaf135bc37baa688e2d8b7515b42f173f9a3391e156a6",
+      "bytes": 3175
     },
     {
       "path": "authoring/catalog/html-css-js/dom-tooling-and-async/promises/topic.json",
-      "sha256": "6b08a16ab7df7e29d6764c7a743c6c40a90fd8db56492afeb7eb83482ac48d84",
-      "bytes": 2858
+      "sha256": "4d061c9d1b2dc012ec59bb00c2ca7d54d5386c4b719fbc776dfcf4484e1ff786",
+      "bytes": 2619
     },
     {
       "path": "authoring/catalog/html-css-js/dom-tooling-and-async/selecting-and-changing-the-dom/topic.json",
-      "sha256": "7dbd9b58910513f4c69d83c4fba7c8805fd08f193949246803390e73749a397b",
-      "bytes": 2943
+      "sha256": "f620877b520c61e3e767596fb982511b2dfa9419cb010494aed5be0c20eac339",
+      "bytes": 3090
     },
     {
       "path": "authoring/catalog/html-css-js/dom-tooling-and-async/the-event-loop/topic.json",
-      "sha256": "d9b13ab8b222a66c225ecdd7e40976f214c402e59ecd891557f17ab484758f2c",
-      "bytes": 2777
+      "sha256": "44c5c4bfa3aca584b7bb0aa4048d61cef149a849d4ede7abe9e7d58752ea830e",
+      "bytes": 2538
     },
     {
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/async-and-await/owner-essential-qa.json",
-      "sha256": "4f3f2c1387cc063aa259ac680b822d83ca02d4d6faabba0e183e8e2963a31331",
-      "bytes": 2599
+      "sha256": "a5701a34dbdf422e4b956a569c69b954ffc4e9c2fc180993ec22d0d83cf8e865",
+      "bytes": 3684
     },
     {
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/async-and-await/qa-paths.json",
@@ -69,14 +69,19 @@
       "bytes": 1406
     },
     {
+      "path": "authoring/evidence/html-css-js/dom-tooling-and-async/async-and-await/video.json",
+      "sha256": "6bd0cec12472de33ee7945405d19665822acc9df29b35870d54565a510f629de",
+      "bytes": 493
+    },
+    {
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/coding-lab-solved-run.json",
       "sha256": "6fb3b52b6f3822f5278a4cf25964de5d9b3d49a4c85a199292204f5fe0c0e219",
       "bytes": 4083
     },
     {
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/debugging-with-devtools-breakpoints/owner-essential-qa.json",
-      "sha256": "f149a183b9936340431f2fd4856392522142d1be9b493cc18afd35cf7c96d5ba",
-      "bytes": 2679
+      "sha256": "36a66e00604296c9dbbbc95a48f8d44e7e696d3533156db48646e59f5739d75c",
+      "bytes": 3784
     },
     {
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/debugging-with-devtools-breakpoints/qa-paths.json",
@@ -94,9 +99,14 @@
       "bytes": 2508
     },
     {
+      "path": "authoring/evidence/html-css-js/dom-tooling-and-async/debugging-with-devtools-breakpoints/video.json",
+      "sha256": "cc358e7a5b04dfd8e606adca24b1006feac47035c6b04c228998cdbd20db1248",
+      "bytes": 516
+    },
+    {
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/events-and-event-bubbling/owner-essential-qa.json",
-      "sha256": "810118eafaccbd50cf511d879beeebd0f2738954bea0f297280cb9ca2dbceee3",
-      "bytes": 2639
+      "sha256": "ad8a5337f5cd3baf32cac68e53cae68607638b786c29dde383ad081803bb14f2",
+      "bytes": 3734
     },
     {
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/events-and-event-bubbling/qa-paths.json",
@@ -112,6 +122,11 @@
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/events-and-event-bubbling/sources.json",
       "sha256": "7f505c0e9b2c20b558be47b9754cf8800faf8114911c041f3ba5e67571a304c0",
       "bytes": 1930
+    },
+    {
+      "path": "authoring/evidence/html-css-js/dom-tooling-and-async/events-and-event-bubbling/video.json",
+      "sha256": "f813f978956b7cac57a705935bc6c308707526d2614945ec95495c5b962aed9c",
+      "bytes": 507
     },
     {
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/first-draft-manifest.json",
@@ -160,8 +175,8 @@
     },
     {
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/preventing-cross-site-scripting/owner-essential-qa.json",
-      "sha256": "0a26637a8ae14da435b258fb677a81d12910164df3985aa10469a5261fe066d5",
-      "bytes": 2663
+      "sha256": "f50fb440592c40d4845385d061233753c7b2fe0a6274b6a4bac1afb23c6127bc",
+      "bytes": 3764
     },
     {
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/preventing-cross-site-scripting/qa-paths.json",
@@ -179,9 +194,14 @@
       "bytes": 2575
     },
     {
+      "path": "authoring/evidence/html-css-js/dom-tooling-and-async/preventing-cross-site-scripting/video.json",
+      "sha256": "de63578c724c1c6febdc01c12535aa38823f5513cff13f3916143d3ae26de507",
+      "bytes": 529
+    },
+    {
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/project-setup-with-npm-and-vite/owner-essential-qa.json",
-      "sha256": "e0dfc3bc522628235ec5b4e4aab1358b3f2e1cb1bb6cf40bf481ce9e6685bc4a",
-      "bytes": 2468
+      "sha256": "e86de1cee168ee2140d030399048998c859bc3b2cef8fd242a328a76a7773d75",
+      "bytes": 3569
     },
     {
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/project-setup-with-npm-and-vite/qa-paths.json",
@@ -194,9 +214,14 @@
       "bytes": 2316
     },
     {
+      "path": "authoring/evidence/html-css-js/dom-tooling-and-async/project-setup-with-npm-and-vite/video.json",
+      "sha256": "24c0474cb8215ed0e82f05a27cf2fd857781dca8d7ea5dcc0dc28fb33dc67bd0",
+      "bytes": 480
+    },
+    {
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/promises/owner-essential-qa.json",
-      "sha256": "1c3821eb2d9499fa8da0f95d236c5deb517fbec630f66e9ec7c07651b6f1b6bc",
-      "bytes": 2571
+      "sha256": "e42a54c16565ff0c833ca42dd640f040c221e6c174070d526c234e0327b4611b",
+      "bytes": 3649
     },
     {
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/promises/qa-paths.json",
@@ -212,6 +237,11 @@
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/promises/sources.json",
       "sha256": "8f42f5d4242d49fe4802bbd841abf32c38a488a622f72ab5509dca3217524c79",
       "bytes": 1398
+    },
+    {
+      "path": "authoring/evidence/html-css-js/dom-tooling-and-async/promises/video.json",
+      "sha256": "57707f62cb33268f39f94a3f93858078c0030837ec1bde1b2265c87f553d3072",
+      "bytes": 493
     },
     {
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/review-fix-coding-lab-critic-education-recheck.json",
@@ -265,8 +295,8 @@
     },
     {
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/the-event-loop/owner-essential-qa.json",
-      "sha256": "31f516054c725bdac6929448064c1117b1101fca613394c012c03a2d0ebffab5",
-      "bytes": 2595
+      "sha256": "f428e39260b733d780e6603049bddfe676700dfed8897883ab4c745020e6b2ab",
+      "bytes": 3679
     },
     {
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/the-event-loop/qa-paths.json",
@@ -282,6 +312,11 @@
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/the-event-loop/sources.json",
       "sha256": "39c307d0d71c75c207849e3aa3876d664d15ab768d6c1467ced54f2f3e4ffee1",
       "bytes": 1959
+    },
+    {
+      "path": "authoring/evidence/html-css-js/dom-tooling-and-async/the-event-loop/video.json",
+      "sha256": "e9c3ab8a96722843e853b7343c4b68fcf96d8ac5112e608560c0b994bf5bdf34",
+      "bytes": 533
     },
     {
       "path": "authoring/evidence/html-css-js/dom-tooling-and-async/timing-critic-education-recheck.json",
@@ -322,6 +357,11 @@
       "path": "html-css-js/dom-tooling-and-async/async-and-await/artifact.md",
       "sha256": "fd75b6150f0777bc93d621430eb4bf0b37cac1c5016b04889f690886262325cb",
       "bytes": 6494
+    },
+    {
+      "path": "html-css-js/dom-tooling-and-async/async-and-await/video-artifact.md",
+      "sha256": "3ca03d08b3ca15e14a69930a6598e413fefbd0e193f3823024fa7096b8902b51",
+      "bytes": 2763
     },
     {
       "path": "html-css-js/dom-tooling-and-async/coding-lab/README.md",
@@ -409,6 +449,11 @@
       "bytes": 7337
     },
     {
+      "path": "html-css-js/dom-tooling-and-async/debugging-with-devtools-breakpoints/video-artifact.md",
+      "sha256": "380c0d776b5659739eb1d4f0dbbee78b7c1dc743c08fbf730a419d867e76a995",
+      "bytes": 2607
+    },
+    {
       "path": "html-css-js/dom-tooling-and-async/events-and-event-bubbling/artifact.gift",
       "sha256": "0e29381152e78a66d668e12e9f6c0af8dc059c557d9eef8b6577fc8cb00b5401",
       "bytes": 2348
@@ -422,6 +467,11 @@
       "path": "html-css-js/dom-tooling-and-async/events-and-event-bubbling/artifact.md",
       "sha256": "a410c7064be25cfa52aeac043664cf3c78bab4722695efbcc9208554146016ac",
       "bytes": 7850
+    },
+    {
+      "path": "html-css-js/dom-tooling-and-async/events-and-event-bubbling/video-artifact.md",
+      "sha256": "8c51492356837b429b0e4aedbdfa210c87ed45108fcb497ddea3c10d34fd16e3",
+      "bytes": 2901
     },
     {
       "path": "html-css-js/dom-tooling-and-async/preventing-cross-site-scripting/artifact.gift",
@@ -439,6 +489,11 @@
       "bytes": 8596
     },
     {
+      "path": "html-css-js/dom-tooling-and-async/preventing-cross-site-scripting/video-artifact.md",
+      "sha256": "fef6ec4d244b356d62a66ea577af34ed0a4f1f7542def91eb3caac44b6e1a366",
+      "bytes": 3335
+    },
+    {
       "path": "html-css-js/dom-tooling-and-async/project-setup-with-npm-and-vite/artifact.gift",
       "sha256": "62cacc9d07067a47fc61a9212d7fed080ad3896e81f7a5164cf147d5ba360ee6",
       "bytes": 2495
@@ -454,6 +509,11 @@
       "bytes": 8391
     },
     {
+      "path": "html-css-js/dom-tooling-and-async/project-setup-with-npm-and-vite/video-artifact.md",
+      "sha256": "3c725132b42d4ca49d1440ce760c14867fae8ae8ade7d2c437239829b315a8cd",
+      "bytes": 2793
+    },
+    {
       "path": "html-css-js/dom-tooling-and-async/promises/artifact.gift",
       "sha256": "bafcbb24c5a3df0487beb586821f703a53ff69b73587066c533046eccb7f3f07",
       "bytes": 2272
@@ -467,6 +527,11 @@
       "path": "html-css-js/dom-tooling-and-async/promises/artifact.md",
       "sha256": "76ebf610e73ae0bc6013c7266f006555c9f04c12d945f5d76f954310dab85588",
       "bytes": 7003
+    },
+    {
+      "path": "html-css-js/dom-tooling-and-async/promises/video-artifact.md",
+      "sha256": "b98223154572d436bfddc13cb3f70103d29264ebce7f1facad5660dea597edd0",
+      "bytes": 2350
     },
     {
       "path": "html-css-js/dom-tooling-and-async/selecting-and-changing-the-dom/artifact.gift",
@@ -497,6 +562,11 @@
       "path": "html-css-js/dom-tooling-and-async/the-event-loop/artifact.md",
       "sha256": "db0925482848aa7a53240ab138d0a2c02412e11fddc7dcbcfdecd34b0d57252b",
       "bytes": 6728
+    },
+    {
+      "path": "html-css-js/dom-tooling-and-async/the-event-loop/video-artifact.md",
+      "sha256": "30801d6fc63bd6bce82def99a1bed9804cad0974b1195bdf9ec745fddd52f524",
+      "bytes": 2855
     }
   ],
   "evidenceBindings": [
@@ -515,6 +585,14 @@
       "artifactPath": "html-css-js/dom-tooling-and-async/async-and-await/artifact.gift",
       "sha256": "5d6f43ecebdee8627869524d0c7318503364c05d4cbfc7f4bf4c22eceb491a14",
       "current": false
+    },
+    {
+      "topic": "async-and-await",
+      "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/async-and-await/owner-essential-qa.json",
+      "field": "artifacts[2].reviewedSha256",
+      "artifactPath": "html-css-js/dom-tooling-and-async/async-and-await/video-artifact.md",
+      "sha256": "3ca03d08b3ca15e14a69930a6598e413fefbd0e193f3823024fa7096b8902b51",
+      "current": true
     },
     {
       "topic": "async-and-await",
@@ -579,6 +657,14 @@
       "artifactPath": "html-css-js/dom-tooling-and-async/async-and-await/artifact.html",
       "sha256": "5566a744050b12fca90b6351c34b13d45e9431b896cd0c5c657e7c8b50b41b22",
       "current": true
+    },
+    {
+      "topic": "async-and-await",
+      "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/async-and-await/video.json",
+      "field": "artifactSha256",
+      "artifactPath": "html-css-js/dom-tooling-and-async/async-and-await/artifact.html",
+      "sha256": "3ca03d08b3ca15e14a69930a6598e413fefbd0e193f3823024fa7096b8902b51",
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/coding-lab-solved-run.json",
@@ -724,6 +810,14 @@
     },
     {
       "topic": "debugging-with-devtools-breakpoints",
+      "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/debugging-with-devtools-breakpoints/owner-essential-qa.json",
+      "field": "artifacts[2].reviewedSha256",
+      "artifactPath": "html-css-js/dom-tooling-and-async/debugging-with-devtools-breakpoints/video-artifact.md",
+      "sha256": "380c0d776b5659739eb1d4f0dbbee78b7c1dc743c08fbf730a419d867e76a995",
+      "current": true
+    },
+    {
+      "topic": "debugging-with-devtools-breakpoints",
       "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/debugging-with-devtools-breakpoints/qa-receipt.json",
       "field": "artifactHashes.artifact.html",
       "artifactPath": "html-css-js/dom-tooling-and-async/debugging-with-devtools-breakpoints/artifact.html",
@@ -787,6 +881,14 @@
       "current": true
     },
     {
+      "topic": "debugging-with-devtools-breakpoints",
+      "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/debugging-with-devtools-breakpoints/video.json",
+      "field": "artifactSha256",
+      "artifactPath": "html-css-js/dom-tooling-and-async/debugging-with-devtools-breakpoints/artifact.html",
+      "sha256": "380c0d776b5659739eb1d4f0dbbee78b7c1dc743c08fbf730a419d867e76a995",
+      "current": false
+    },
+    {
       "topic": "events-and-event-bubbling",
       "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/events-and-event-bubbling/owner-essential-qa.json",
       "field": "artifacts[0].reviewedSha256",
@@ -801,6 +903,14 @@
       "artifactPath": "html-css-js/dom-tooling-and-async/events-and-event-bubbling/artifact.gift",
       "sha256": "0c3c01e8a4aec1e682fc41085df7f7aee930c19645aeb0351948ea5a7be58100",
       "current": false
+    },
+    {
+      "topic": "events-and-event-bubbling",
+      "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/events-and-event-bubbling/owner-essential-qa.json",
+      "field": "artifacts[2].reviewedSha256",
+      "artifactPath": "html-css-js/dom-tooling-and-async/events-and-event-bubbling/video-artifact.md",
+      "sha256": "8c51492356837b429b0e4aedbdfa210c87ed45108fcb497ddea3c10d34fd16e3",
+      "current": true
     },
     {
       "topic": "events-and-event-bubbling",
@@ -865,6 +975,14 @@
       "artifactPath": "html-css-js/dom-tooling-and-async/events-and-event-bubbling/artifact.html",
       "sha256": "e093df399c3a1d4702c1e181311eddd860a9d174849076e058d57eef84c3ddbd",
       "current": true
+    },
+    {
+      "topic": "events-and-event-bubbling",
+      "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/events-and-event-bubbling/video.json",
+      "field": "artifactSha256",
+      "artifactPath": "html-css-js/dom-tooling-and-async/events-and-event-bubbling/artifact.html",
+      "sha256": "8c51492356837b429b0e4aedbdfa210c87ed45108fcb497ddea3c10d34fd16e3",
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/local-workflow-critic-education-recheck.json",
@@ -1227,6 +1345,14 @@
     },
     {
       "topic": "preventing-cross-site-scripting",
+      "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/preventing-cross-site-scripting/owner-essential-qa.json",
+      "field": "artifacts[2].reviewedSha256",
+      "artifactPath": "html-css-js/dom-tooling-and-async/preventing-cross-site-scripting/video-artifact.md",
+      "sha256": "fef6ec4d244b356d62a66ea577af34ed0a4f1f7542def91eb3caac44b6e1a366",
+      "current": true
+    },
+    {
+      "topic": "preventing-cross-site-scripting",
       "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/preventing-cross-site-scripting/qa-receipt.json",
       "field": "artifactHashes.artifact.html",
       "artifactPath": "html-css-js/dom-tooling-and-async/preventing-cross-site-scripting/artifact.html",
@@ -1290,6 +1416,14 @@
       "current": true
     },
     {
+      "topic": "preventing-cross-site-scripting",
+      "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/preventing-cross-site-scripting/video.json",
+      "field": "artifactSha256",
+      "artifactPath": "html-css-js/dom-tooling-and-async/preventing-cross-site-scripting/artifact.html",
+      "sha256": "fef6ec4d244b356d62a66ea577af34ed0a4f1f7542def91eb3caac44b6e1a366",
+      "current": false
+    },
+    {
       "topic": "project-setup-with-npm-and-vite",
       "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/project-setup-with-npm-and-vite/owner-essential-qa.json",
       "field": "artifacts[0].reviewedSha256",
@@ -1307,11 +1441,27 @@
     },
     {
       "topic": "project-setup-with-npm-and-vite",
+      "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/project-setup-with-npm-and-vite/owner-essential-qa.json",
+      "field": "artifacts[2].reviewedSha256",
+      "artifactPath": "html-css-js/dom-tooling-and-async/project-setup-with-npm-and-vite/video-artifact.md",
+      "sha256": "3c725132b42d4ca49d1440ce760c14867fae8ae8ade7d2c437239829b315a8cd",
+      "current": true
+    },
+    {
+      "topic": "project-setup-with-npm-and-vite",
       "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/project-setup-with-npm-and-vite/sources.json",
       "field": "reviewedSha256",
       "artifactPath": "html-css-js/dom-tooling-and-async/project-setup-with-npm-and-vite/artifact.html",
       "sha256": "b5ca9902b29e8604031745e36b4a1c8213cc67ee25261bedd29e83ee18da8261",
       "current": true
+    },
+    {
+      "topic": "project-setup-with-npm-and-vite",
+      "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/project-setup-with-npm-and-vite/video.json",
+      "field": "artifactSha256",
+      "artifactPath": "html-css-js/dom-tooling-and-async/project-setup-with-npm-and-vite/artifact.html",
+      "sha256": "3c725132b42d4ca49d1440ce760c14867fae8ae8ade7d2c437239829b315a8cd",
+      "current": false
     },
     {
       "topic": "promises",
@@ -1328,6 +1478,14 @@
       "artifactPath": "html-css-js/dom-tooling-and-async/promises/artifact.gift",
       "sha256": "08f5afbe432c73ff2d56ef35a5acd89ff589c17cc15f47156bf94093ab2191eb",
       "current": false
+    },
+    {
+      "topic": "promises",
+      "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/promises/owner-essential-qa.json",
+      "field": "artifacts[2].reviewedSha256",
+      "artifactPath": "html-css-js/dom-tooling-and-async/promises/video-artifact.md",
+      "sha256": "b98223154572d436bfddc13cb3f70103d29264ebce7f1facad5660dea597edd0",
+      "current": true
     },
     {
       "topic": "promises",
@@ -1392,6 +1550,14 @@
       "artifactPath": "html-css-js/dom-tooling-and-async/promises/artifact.html",
       "sha256": "0951647c69a00149efdd318a3f043941988ba3fc99fac7c4af003cc9fe28c995",
       "current": true
+    },
+    {
+      "topic": "promises",
+      "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/promises/video.json",
+      "field": "artifactSha256",
+      "artifactPath": "html-css-js/dom-tooling-and-async/promises/artifact.html",
+      "sha256": "b98223154572d436bfddc13cb3f70103d29264ebce7f1facad5660dea597edd0",
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/review-fix-coding-lab-critic-education-recheck.json",
@@ -1995,6 +2161,14 @@
     },
     {
       "topic": "the-event-loop",
+      "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/the-event-loop/owner-essential-qa.json",
+      "field": "artifacts[2].reviewedSha256",
+      "artifactPath": "html-css-js/dom-tooling-and-async/the-event-loop/video-artifact.md",
+      "sha256": "30801d6fc63bd6bce82def99a1bed9804cad0974b1195bdf9ec745fddd52f524",
+      "current": true
+    },
+    {
+      "topic": "the-event-loop",
       "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/the-event-loop/qa-receipt.json",
       "field": "artifactHashes.artifact.html",
       "artifactPath": "html-css-js/dom-tooling-and-async/the-event-loop/artifact.html",
@@ -2056,6 +2230,14 @@
       "artifactPath": "html-css-js/dom-tooling-and-async/the-event-loop/artifact.html",
       "sha256": "ae38b77109aae314c6d9f73317e5fa85b7b15cc83a63dd15d26cc1b5e6da4211",
       "current": true
+    },
+    {
+      "topic": "the-event-loop",
+      "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/the-event-loop/video.json",
+      "field": "artifactSha256",
+      "artifactPath": "html-css-js/dom-tooling-and-async/the-event-loop/artifact.html",
+      "sha256": "30801d6fc63bd6bce82def99a1bed9804cad0974b1195bdf9ec745fddd52f524",
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/dom-tooling-and-async/timing-critic-education-recheck.json",
