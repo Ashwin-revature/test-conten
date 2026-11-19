@@ -60,12 +60,11 @@
       "status": "present"
     },
     "video": {
-      "status": "absent",
-      "reason": "Deferred: HTML-first draft batch; no video search was run for this checkpoint, so no video is linked"
+      "status": "present"
     },
     "lab": {
       "status": "absent",
-      "reason": "Standard: covered by the planned module lab react/auth-and-review/coding-lab/ for the S34 Lab day, authored in the auth-and-review module PR. Course project: applied in part P6 of the planned cumulative course project react/coding-lab/ (Fast FT19 Project implementation brief), after an embedded teach-then-check step; authored in a course-level PR"
+      "reason": "Standard: practice is partial, in tasks 1 and 2 in the module lab react/auth-and-review/coding-lab/ on the S34 Lab day: #o2 and #o3 (the Bearer-header form); #o1 is not lab-tested and is practised on this topic page. Course project: applied in part P6 of the planned cumulative course project react/coding-lab/ (Fast FT19 Project implementation brief), after an embedded teach-then-check step; authored in a course-level PR"
     }
   },
   "freshness": {

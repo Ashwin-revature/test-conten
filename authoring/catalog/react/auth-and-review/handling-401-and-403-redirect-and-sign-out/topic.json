@@ -59,11 +59,11 @@
     },
     "video": {
       "status": "absent",
-      "reason": "Deferred: HTML-first draft batch; no video search was run for this checkpoint, so no video is linked"
+      "reason": "No verified video: the 2026-11-09 search found no short public video that applies 401 versus 403 to client-side sign-out and redirect; the only status-code candidate was a Spring Security JWT configuration video for the back end; see authoring/evidence/react/video-curation.md."
     },
     "lab": {
       "status": "absent",
-      "reason": "Standard: covered by the planned module lab react/auth-and-review/coding-lab/ for the S34 Lab day, authored in the auth-and-review module PR. Course project: applied in part P6 of the planned cumulative course project react/coding-lab/ (Fast FT19 Project implementation brief), after an embedded teach-then-check step; authored in a course-level PR"
+      "reason": "Standard: practice is partial, in tasks 5 and 6 in the module lab react/auth-and-review/coding-lab/ on the S34 Lab day (task 5 proves a given 401 flow): applying the 401/403 contract (#o1), clearing auth state and returning through login (#o2) and the 403 not-allowed message (#o3); stating the general HTTP meanings and the HttpOnly-cookie distinction are practised on this topic page. Course project: applied in part P6 of the planned cumulative course project react/coding-lab/ (Fast FT19 Project implementation brief), after an embedded teach-then-check step; authored in a course-level PR"
     }
   },
   "freshness": {
