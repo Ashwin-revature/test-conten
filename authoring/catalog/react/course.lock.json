@@ -10,8 +10,8 @@
     },
     {
       "path": "authoring/evidence/react/course-final-gift-checks.md",
-      "sha256": "400e55f4155c024236b7d6d9ae244cbd44cf0342213b619ac56d672676d4943a",
-      "bytes": 10248
+      "sha256": "b442437385aca62b51d0433625b7c1a536d9881b850e964be0cab2260d2e5288",
+      "bytes": 10535
     },
     {
       "path": "authoring/evidence/react/intake-2-critic-education-recheck.json",
@@ -100,8 +100,8 @@
     },
     {
       "path": "react/assessments/react-course-final/final-mcq.gift",
-      "sha256": "2746e65395233e1dbcf183251da28bc86b14d417a8055b61759adea98edb168e",
-      "bytes": 29992
+      "sha256": "9c1df2012a6258f8977618eee797c438442f3662c5898df3c459ec0a8287898d",
+      "bytes": 30017
     },
     {
       "path": "react/assessments/web-and-react-module-check/blueprint.json",

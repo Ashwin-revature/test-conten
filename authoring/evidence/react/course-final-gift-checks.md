@@ -141,3 +141,6 @@ Coverage counts are author-tagged and await critic review. Read the count as bre
 - auth-and-review/turning-off-the-dev-profile#o3
 - auth-and-review/javascript-fundamentals-review#o3
 - auth-and-review/react-review#o1
+
+## Header update (2026-11-19, orchestrator)
+Line 1 comment changed from "Private authoring candidate." to the public-answer consent note; no question byte changed. New sha256: 9c1df2012a6258f8977618eee797c438442f3662c5898df3c459ec0a8287898d (candidate 2746e653… otherwise identical).
