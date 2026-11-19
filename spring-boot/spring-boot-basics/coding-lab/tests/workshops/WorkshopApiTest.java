@@ -2,13 +2,15 @@ package workshops;
 
 import static org.hamcrest.Matchers.hasItem;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.hamcrest.Matchers.not;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.net.URL;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
@@ -20,8 +22,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 /**
- * Public tests for Tasks 1 to 8 of the Spring Boot Basics lab. They call the API
- * over MockMvc and check responses (status codes and JSON bodies); Task 6 checks
+ * Public tests for Tasks 1 to 6 of the Spring Boot Basics lab. They call the API
+ * over MockMvc and check responses (status codes and JSON bodies); Task 4 checks
  * the two settings the application reads from application.properties.
  */
 @SpringBootTest(properties = { "spring.main.banner-mode=off", "logging.level.root=warn" })
@@ -44,32 +46,18 @@ class WorkshopApiTest {
     }
 
     @Test
-    void task2FindsOneWorkshopByItsId() throws Exception {
+    void task2FindsOneWorkshopByItsIdOr404() throws Exception {
         mvc.perform(get("/workshops/1"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(1))
                 .andExpect(jsonPath("$.title").value("Spring Kickstart"))
                 .andExpect(jsonPath("$.seats").value(20));
-    }
-
-    @Test
-    void task3UnknownWorkshopIdGives404() throws Exception {
-        mvc.perform(get("/workshops/2"))
-                .andExpect(status().isOk());
         mvc.perform(get("/workshops/999"))
                 .andExpect(status().isNotFound());
     }
 
     @Test
-    void task4FiltersWorkshopsByMinSeats() throws Exception {
-        mvc.perform(get("/workshops").param("minSeats", "10"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$[*].title", hasItem("Spring Kickstart")))
-                .andExpect(jsonPath("$[*].title", not(hasItem("REST Deep Dive"))));
-    }
-
-    @Test
-    void task5CreateReturns201AndTheCreatedWorkshop() throws Exception {
+    void task3CreateReturns201AndTheCreatedWorkshop() throws Exception {
         mvc.perform(post("/workshops")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"title\":\"Testing Lab\",\"seats\":6}"))
@@ -81,7 +69,11 @@ class WorkshopApiTest {
     }
 
     @Test
-    void task6ApplicationPropertiesNameTheServiceAndPort() {
+    void task4ApplicationPropertiesNameTheServiceAndPort() {
+        URL settings = getClass().getClassLoader().getResource("application.properties");
+        assertNotNull(settings, "no application.properties on the classpath");
+        assertTrue(settings.toString().endsWith("/classes/application.properties"),
+                "application.properties must be built from src/main/resources, found " + settings);
         assertEquals("workshop-catalog", env.getProperty("spring.application.name"),
                 "spring.application.name, read from starter/src/main/resources/application.properties");
         assertEquals("8081", env.getProperty("server.port"),
@@ -89,14 +81,14 @@ class WorkshopApiTest {
     }
 
     @Test
-    void task7ScanningFindsTheAboutController() throws Exception {
+    void task5ScanningFindsTheAboutController() throws Exception {
         mvc.perform(get("/about"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.description").value("Workshop catalog lab"));
     }
 
     @Test
-    void task8AvailabilityFollowsTheOpenApiContract() throws Exception {
+    void task6AvailabilityFollowsTheOpenApiContract() throws Exception {
         mvc.perform(get("/workshops/1/availability").param("groupSize", "12"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.workshopId").value(1))
@@ -111,6 +103,8 @@ class WorkshopApiTest {
         mvc.perform(get("/workshops/999/availability").param("groupSize", "2"))
                 .andExpect(status().isNotFound());
         mvc.perform(get("/workshops/1/availability"))
+                .andExpect(status().isBadRequest());
+        mvc.perform(get("/workshops/1/availability").param("groupSize", "abc"))
                 .andExpect(status().isBadRequest());
     }
 }

@@ -17,6 +17,7 @@
     "spring-boot/spring-boot-basics/spring-vs-spring-boot-what-boot-adds#o2",
     "spring-boot/spring-boot-basics/generating-a-spring-boot-project-and-its-structure#o2",
     "spring-boot/spring-boot-basics/dependency-injection-replacing-manual-wiring#o1",
+    "spring-boot/spring-boot-basics/beans-and-bean-scopes#o1",
     "spring-boot/spring-boot-basics/how-auto-configuration-works#o1",
     "spring-boot/spring-boot-basics/rest-controllers#o1",
     "spring-boot/spring-boot-basics/path-query-and-body-parameters#o1",
@@ -39,14 +40,12 @@
     "starterExpectation": "fail",
     "failingTests": [
       "workshops.WorkshopApiTest.task1ListsTheSeededWorkshops",
-      "workshops.WorkshopApiTest.task2FindsOneWorkshopByItsId",
-      "workshops.WorkshopApiTest.task3UnknownWorkshopIdGives404",
-      "workshops.WorkshopApiTest.task4FiltersWorkshopsByMinSeats",
-      "workshops.WorkshopApiTest.task5CreateReturns201AndTheCreatedWorkshop",
-      "workshops.WorkshopApiTest.task6ApplicationPropertiesNameTheServiceAndPort",
-      "workshops.WorkshopApiTest.task7ScanningFindsTheAboutController",
-      "workshops.WorkshopApiTest.task8AvailabilityFollowsTheOpenApiContract",
-      "workshops.WorkshopsApplicationMainTest.task9MainStartsTheEmbeddedServer"
+      "workshops.WorkshopApiTest.task2FindsOneWorkshopByItsIdOr404",
+      "workshops.WorkshopApiTest.task3CreateReturns201AndTheCreatedWorkshop",
+      "workshops.WorkshopApiTest.task4ApplicationPropertiesNameTheServiceAndPort",
+      "workshops.WorkshopApiTest.task5ScanningFindsTheAboutController",
+      "workshops.WorkshopApiTest.task6AvailabilityFollowsTheOpenApiContract",
+      "workshops.WorkshopsApplicationMainTest.task7MainStartsTheEmbeddedServer"
     ]
   },
   "fixtures": { "seed": 0, "files": ["fixtures/workshops-openapi.yaml"] },
