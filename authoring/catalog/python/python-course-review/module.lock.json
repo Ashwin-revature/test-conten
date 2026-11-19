@@ -19,6 +19,16 @@
       "bytes": 3672
     },
     {
+      "path": "authoring/evidence/python/python-course-review/python-review-language-and-scripts/critic-education.json",
+      "sha256": "54647fe927bb11a2c1d948cbe6e69779aaad5ffd2bfd3e855140e3a4c02b3537",
+      "bytes": 451
+    },
+    {
+      "path": "authoring/evidence/python/python-course-review/python-review-language-and-scripts/critic-sme.json",
+      "sha256": "1fe74386688e475ffd9c4252e6e21801088fbc60b0bc8fe3a4ea4ab5ecc600ad",
+      "bytes": 529
+    },
+    {
       "path": "authoring/evidence/python/python-course-review/python-review-language-and-scripts/qa-paths.json",
       "sha256": "7a43b8183b966c132f586889e3a4a1de5a2d1e6bc1925fad9e256db7977c14f7",
       "bytes": 21407
@@ -27,6 +37,16 @@
       "path": "authoring/evidence/python/python-course-review/python-review-language-and-scripts/sources.json",
       "sha256": "9f571d30d980313f9af98e6c343a310940a726ca5afdb7c7b8f745370953eb86",
       "bytes": 5560
+    },
+    {
+      "path": "authoring/evidence/python/python-course-review/python-review-pipeline-and-service/critic-education.json",
+      "sha256": "a6f2461c72d4c511ce74f077144ae5c785575ba590aba10254961cf425327059",
+      "bytes": 451
+    },
+    {
+      "path": "authoring/evidence/python/python-course-review/python-review-pipeline-and-service/critic-sme.json",
+      "sha256": "d674d041e85ee94945684caef7c155ccc8840081d91bf86b954ddbe5c334eed7",
+      "bytes": 529
     },
     {
       "path": "authoring/evidence/python/python-course-review/python-review-pipeline-and-service/qa-paths.json",
@@ -62,10 +82,74 @@
   "evidenceBindings": [
     {
       "topic": "python-review-language-and-scripts",
+      "evidencePath": "authoring/evidence/python/python-course-review/python-review-language-and-scripts/critic-education.json",
+      "field": "artifactHashes.artifact.html",
+      "artifactPath": "python/python-course-review/python-review-language-and-scripts/artifact.html",
+      "sha256": "cebfe59026779088f55801bad0527ebadaaed54f542c7ac4dfab64757c4e6e77",
+      "current": true
+    },
+    {
+      "topic": "python-review-language-and-scripts",
+      "evidencePath": "authoring/evidence/python/python-course-review/python-review-language-and-scripts/critic-education.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-course-review/python-review-language-and-scripts/artifact.html",
+      "sha256": "cebfe59026779088f55801bad0527ebadaaed54f542c7ac4dfab64757c4e6e77",
+      "current": true
+    },
+    {
+      "topic": "python-review-language-and-scripts",
+      "evidencePath": "authoring/evidence/python/python-course-review/python-review-language-and-scripts/critic-sme.json",
+      "field": "artifactHashes.artifact.html",
+      "artifactPath": "python/python-course-review/python-review-language-and-scripts/artifact.html",
+      "sha256": "cebfe59026779088f55801bad0527ebadaaed54f542c7ac4dfab64757c4e6e77",
+      "current": true
+    },
+    {
+      "topic": "python-review-language-and-scripts",
+      "evidencePath": "authoring/evidence/python/python-course-review/python-review-language-and-scripts/critic-sme.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-course-review/python-review-language-and-scripts/artifact.html",
+      "sha256": "cebfe59026779088f55801bad0527ebadaaed54f542c7ac4dfab64757c4e6e77",
+      "current": true
+    },
+    {
+      "topic": "python-review-language-and-scripts",
       "evidencePath": "authoring/evidence/python/python-course-review/python-review-language-and-scripts/sources.json",
       "field": "reviewedSha256",
       "artifactPath": "python/python-course-review/python-review-language-and-scripts/artifact.html",
       "sha256": "cebfe59026779088f55801bad0527ebadaaed54f542c7ac4dfab64757c4e6e77",
+      "current": true
+    },
+    {
+      "topic": "python-review-pipeline-and-service",
+      "evidencePath": "authoring/evidence/python/python-course-review/python-review-pipeline-and-service/critic-education.json",
+      "field": "artifactHashes.artifact.html",
+      "artifactPath": "python/python-course-review/python-review-pipeline-and-service/artifact.html",
+      "sha256": "bfb2fec032011554bdffc9a16636c28ddb939e224e8a3ac46f8d4397ec6495b0",
+      "current": true
+    },
+    {
+      "topic": "python-review-pipeline-and-service",
+      "evidencePath": "authoring/evidence/python/python-course-review/python-review-pipeline-and-service/critic-education.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-course-review/python-review-pipeline-and-service/artifact.html",
+      "sha256": "bfb2fec032011554bdffc9a16636c28ddb939e224e8a3ac46f8d4397ec6495b0",
+      "current": true
+    },
+    {
+      "topic": "python-review-pipeline-and-service",
+      "evidencePath": "authoring/evidence/python/python-course-review/python-review-pipeline-and-service/critic-sme.json",
+      "field": "artifactHashes.artifact.html",
+      "artifactPath": "python/python-course-review/python-review-pipeline-and-service/artifact.html",
+      "sha256": "bfb2fec032011554bdffc9a16636c28ddb939e224e8a3ac46f8d4397ec6495b0",
+      "current": true
+    },
+    {
+      "topic": "python-review-pipeline-and-service",
+      "evidencePath": "authoring/evidence/python/python-course-review/python-review-pipeline-and-service/critic-sme.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/python-course-review/python-review-pipeline-and-service/artifact.html",
+      "sha256": "bfb2fec032011554bdffc9a16636c28ddb939e224e8a3ac46f8d4397ec6495b0",
       "current": true
     },
     {
