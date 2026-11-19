@@ -63,7 +63,7 @@
     },
     "lab": {
       "status": "absent",
-      "reason": "No topic coding lab: logs and exec need a running container engine, which labs may not use; the page's terminal simulator (components/terminal@1) gives honest, assessed practice on recorded output"
+      "reason": "No topic coding lab: logs and exec need a running container engine, which labs may not use; the page's terminal simulator (components/terminal@1) gives honest, assessed practice on recorded output, and phase 5 of the containers-and-compose module lab checks the logs and exec commands the learner would use against their own compose.yaml without running them; reading the log to find why a container exited is practised in the page's terminal simulator"
     }
   },
   "freshness": {
@@ -76,7 +76,7 @@
     ]
   },
   "licensing": [],
-  "lab": "none",
+  "lab": "module:containers-and-compose",
   "components": {
     "terminal": "1"
   }
