@@ -1,38 +1,42 @@
 {
   "schemaVersion": 1,
   "lab": "spring-boot/spring-boot-basics/coding-lab",
-  "record": "solved at 87386a1df8218f20a4fa42f6b505c53f5825d0f4 by run local-1795064497",
-  "commit": "87386a1df8218f20a4fa42f6b505c53f5825d0f4",
-  "runId": "local-1795064497",
-  "ranAt": "2026-11-19T05:01:37Z",
+  "record": "solved at f17a7fff5921ac6fbea28f99802c8db59444407e by run local-1795108335",
+  "commit": "f17a7fff5921ac6fbea28f99802c8db59444407e",
+  "runId": "local-1795108335",
+  "ranAt": "2026-11-19T17:12:15Z",
   "environment": {
     "os": "macOS 27.2.1 (Darwin 27.2.0, arm64)",
     "jdk": "Eclipse Temurin 25.0.5.1+2",
     "maven": "Apache Maven 3.9.16"
   },
   "procedure": [
-    "Exported the lab files of the named commit with git archive into uncommitted private staging outside the repository, with an empty local Maven repository.",
-    "Ran the setup command mvn -q dependency:go-offline in starter/ (the one network step), then the shipped starter with mvn -q -o test: it exited 1 and failed exactly the declared failingTests (5 tests, 5 failures, 0 errors).",
-    "Deleted starter/target, then replaced only the learner-edited file (starter/src/main/java/workshops/WorkshopController.java) with privately staged completed work; a recursive diff against a second git archive of the commit showed every other file byte-identical.",
-    "Ran the test command mvn -q -o test offline against the staged completion."
+    "Exported the lab files of the named commit with git archive into uncommitted private staging outside the repository, twice: a working copy and a pristine copy for comparison.",
+    "Used a copy of the local Maven repository that the setup command mvn -q dependency:go-offline filled online from an empty repository at 2026-11-19T05:01:37Z (run local-1795064497) for a byte-identical starter/pom.xml; Maven Central did not resolve from this machine for this run, so setup was not repeated online. mvn -q -o dependency:go-offline then completed offline with exit 0 and no output.",
+    "Ran the shipped starter with mvn -q -o test: it exited 1 and failed exactly the declared failingTests (WorkshopApiTest 8 tests, 8 failures, 0 errors; WorkshopsApplicationMainTest 1 test, 1 failure, 0 errors).",
+    "Deleted starter/target, then added privately staged completed work for the three learner-edited paths only (starter/src/main/java/workshops/WorkshopController.java, starter/src/main/java/workshops/WorkshopsApplication.java and the new starter/src/main/resources/application.properties); a recursive diff against the pristine copy showed every other file byte-identical.",
+    "Ran the test command mvn -q -o test offline against the staged completion, then started the completed application from its main method on the compiled classpath and ran the spot checks in expected/test-summary.txt with curl."
   ],
-  "result": "mvn -q -o test exited 0 with no output; the surefire report workshops.WorkshopApiTest.txt reads Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, matching expected/test-summary.txt.",
-  "starterRun": "On the shipped starter, mvn -q -o test exits 1 with Tests run: 5, Failures: 5, Errors: 0, failing exactly the declared failingTests (checked in the same run sequence from the surefire XML report).",
-  "cleanup": "The runs created only starter/target inside the lab; after the documented cleanup removed it, the only difference from the exported commit was the privately staged learner file.",
+  "result": "mvn -q -o test exited 0 with no output; the surefire reports read workshops.WorkshopApiTest Tests run: 8, Failures: 0, Errors: 0, Skipped: 0 and workshops.WorkshopsApplicationMainTest Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, matching expected/test-summary.txt. The running application logged Tomcat started on port 8081 and every spot check in expected/test-summary.txt returned the documented response.",
+  "starterRun": "On the shipped starter, mvn -q -o test exits 1 with 9 tests, 9 failures and 0 errors across the two test classes, failing exactly the declared failingTests, each on its own task's assertion (checked in the same run sequence from the surefire XML reports).",
+  "cleanup": "The runs created only starter/target inside the lab; after the documented cleanup removed it, the only differences from the exported commit were the three privately staged learner paths.",
   "otherSystems": "Linux and Windows runs are not yet recorded; hosted CI is currently disabled, so this macOS record is the only execution evidence (lab-contract section 10).",
-  "testScope": "The public tests check only HTTP status codes, headers and JSON bodies over MockMvc for the listed inputs; they do not check which Java constructs the code uses.",
-  "variantRuns": "Single-lab run: this lab alone was proven against its own empty local Maven repository; its setup command supplied everything the offline test needed.",
+  "testScope": "Tasks 1-5, 7 and 8 are checked over MockMvc by HTTP status codes, headers and JSON bodies for the listed inputs; Task 6 by the two property values in the application environment; Task 9 by calling WorkshopsApplication.main on a free port and sending one real HTTP request. The tests do not check which Java constructs the code uses.",
+  "variantRuns": "Ten adversarial variants of the completed work were run against the pristine export: scanning only the about package, an optional groupSize, a wrong JSON field name, a wrong query parameter name, a strict seat comparison, application.properties under src/main/java, a main method that never runs the application, a non-web main and a 200 for an unknown id each fail the intended task test. A main method that drops args still passes, because the application then starts on its configured port 8081; the README asks learners to pass args.",
   "artifactHashes": {
-    "README.md": "8797a1c7123269949c78710ee0d5af19030dc2f5f1284ceb6df0df95b9a94da3",
-    "expected/test-summary.txt": "350714159b5f8b554492d5ac658c86a4df36a1858c43140aacacc09cf6105341",
-    "lab.json": "07e78894e53746fb06a0901565ffdc6ef67b6eac25b26b99f5726b1b9f402dd2",
+    "README.md": "47a2cca76a8f88fe7b562b00de0201d0670094a1a5a0760b5d08ce7fd3705530",
+    "expected/test-summary.txt": "952ef42f79474be0dd79c2c14b72ea4b015f36c90e891cad43ba3278cb8afdc9",
+    "fixtures/workshops-openapi.yaml": "833d5a0b1f30609e98f856afe9255aeea98b5c3b0333436ab57021e6f4fc42c4",
+    "lab.json": "f80f34ad1606c86fbc0103941f27267e7fba1b29c227ad3f2c3966c35554c69e",
     "starter/pom.xml": "5c1c75b1a357f63fc2144dd748905245bcbe2aabdee25e4a1b77319bf8ea738a",
+    "starter/src/main/java/about/AboutController.java": "ec7bdcfa6f5f64072c587d9572536f0ba0d876d6a55c540adcae20c3d23af2bd",
     "starter/src/main/java/workshops/CatalogConfig.java": "170ea74e1a8025139d71ee047af4fca3620db4a806b980fa96f8dc1f1853fdfb",
     "starter/src/main/java/workshops/NewWorkshop.java": "f095f651993d96ccb82e87b4c0888e8184d94f0e205a4b354360a422f9323a64",
     "starter/src/main/java/workshops/Workshop.java": "3a0afbb27b7028144d9b1d8c71ed7a522181d20e53fef5499229566ecf098483",
     "starter/src/main/java/workshops/WorkshopCatalog.java": "c48e3a03ea475e371281f8a66469afdef38ed00afce69b1f3537a98690f6eeab",
-    "starter/src/main/java/workshops/WorkshopController.java": "bf538973a7a9c887e2e78a47827c1d2b4ff7db4a92a1eccc2a8caf7c90464503",
-    "starter/src/main/java/workshops/WorkshopsApplication.java": "0c6fd9ccc04e5738bf88dc4fd051d504640517a07ed986eba17a063a2a33bc0e",
-    "tests/workshops/WorkshopApiTest.java": "2f8079e6bd8e6653e7b5d3478cc140ddb007b962999cb7eed9a3c497fa349ac7"
+    "starter/src/main/java/workshops/WorkshopController.java": "4c72d852d2d4f79fe757eb800648f023399d27abd06f4de2cab680846f72e326",
+    "starter/src/main/java/workshops/WorkshopsApplication.java": "5035e878ebe109a390808c3825a62d9adbbf4b7ada1aaa0419a068264fea9b98",
+    "tests/workshops/WorkshopApiTest.java": "c7d52ca8ed06056615d35fd98cd64d5c09731fcc791656c6e7fa83e3aedaee1b",
+    "tests/workshops/WorkshopsApplicationMainTest.java": "fb118391567935159a79e107e81a947dda65e24b3b4517af5c8e310acbdef972"
   }
 }

@@ -75,8 +75,8 @@
     },
     {
       "path": "authoring/evidence/spring-boot/spring-boot-basics/coding-lab/lab-run.json",
-      "sha256": "5dd0383dfb0080764af966e833266062d09401fa5097eb02e58969ec903206ff",
-      "bytes": 3603
+      "sha256": "d0c100cee4dcc626262f91b2e84bb8ca53f10ff1727a918ea9a50f1f71e6a5de",
+      "bytes": 5482
     },
     {
       "path": "authoring/evidence/spring-boot/spring-boot-basics/dependency-injection-replacing-manual-wiring/owner-essential-qa.json",
@@ -555,24 +555,32 @@
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/coding-lab/lab-run.json",
       "field": "artifactHashes.expected/test-summary.txt",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/expected/test-summary.txt",
-      "sha256": "350714159b5f8b554492d5ac658c86a4df36a1858c43140aacacc09cf6105341",
-      "current": false
+      "sha256": "952ef42f79474be0dd79c2c14b72ea4b015f36c90e891cad43ba3278cb8afdc9",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/coding-lab/lab-run.json",
+      "field": "artifactHashes.fixtures/workshops-openapi.yaml",
+      "artifactPath": "spring-boot/spring-boot-basics/coding-lab/fixtures/workshops-openapi.yaml",
+      "sha256": "833d5a0b1f30609e98f856afe9255aeea98b5c3b0333436ab57021e6f4fc42c4",
+      "current": true
     },
     {
       "topic": "coding-lab",
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/coding-lab/lab-run.json",
       "field": "artifactHashes.lab.json",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/lab.json",
-      "sha256": "07e78894e53746fb06a0901565ffdc6ef67b6eac25b26b99f5726b1b9f402dd2",
-      "current": false
+      "sha256": "f80f34ad1606c86fbc0103941f27267e7fba1b29c227ad3f2c3966c35554c69e",
+      "current": true
     },
     {
       "topic": "coding-lab",
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/coding-lab/lab-run.json",
       "field": "artifactHashes.README.md",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/README.md",
-      "sha256": "8797a1c7123269949c78710ee0d5af19030dc2f5f1284ceb6df0df95b9a94da3",
-      "current": false
+      "sha256": "47a2cca76a8f88fe7b562b00de0201d0670094a1a5a0760b5d08ce7fd3705530",
+      "current": true
     },
     {
       "topic": "coding-lab",
@@ -580,6 +588,14 @@
       "field": "artifactHashes.starter/pom.xml",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/starter/pom.xml",
       "sha256": "5c1c75b1a357f63fc2144dd748905245bcbe2aabdee25e4a1b77319bf8ea738a",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/coding-lab/lab-run.json",
+      "field": "artifactHashes.starter/src/main/java/about/AboutController.java",
+      "artifactPath": "spring-boot/spring-boot-basics/coding-lab/starter/src/main/java/about/AboutController.java",
+      "sha256": "ec7bdcfa6f5f64072c587d9572536f0ba0d876d6a55c540adcae20c3d23af2bd",
       "current": true
     },
     {
@@ -619,24 +635,32 @@
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/coding-lab/lab-run.json",
       "field": "artifactHashes.starter/src/main/java/workshops/WorkshopController.java",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/starter/src/main/java/workshops/WorkshopController.java",
-      "sha256": "bf538973a7a9c887e2e78a47827c1d2b4ff7db4a92a1eccc2a8caf7c90464503",
-      "current": false
+      "sha256": "4c72d852d2d4f79fe757eb800648f023399d27abd06f4de2cab680846f72e326",
+      "current": true
     },
     {
       "topic": "coding-lab",
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/coding-lab/lab-run.json",
       "field": "artifactHashes.starter/src/main/java/workshops/WorkshopsApplication.java",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/starter/src/main/java/workshops/WorkshopsApplication.java",
-      "sha256": "0c6fd9ccc04e5738bf88dc4fd051d504640517a07ed986eba17a063a2a33bc0e",
-      "current": false
+      "sha256": "5035e878ebe109a390808c3825a62d9adbbf4b7ada1aaa0419a068264fea9b98",
+      "current": true
     },
     {
       "topic": "coding-lab",
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/coding-lab/lab-run.json",
       "field": "artifactHashes.tests/workshops/WorkshopApiTest.java",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/tests/workshops/WorkshopApiTest.java",
-      "sha256": "2f8079e6bd8e6653e7b5d3478cc140ddb007b962999cb7eed9a3c497fa349ac7",
-      "current": false
+      "sha256": "c7d52ca8ed06056615d35fd98cd64d5c09731fcc791656c6e7fa83e3aedaee1b",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/coding-lab/lab-run.json",
+      "field": "artifactHashes.tests/workshops/WorkshopsApplicationMainTest.java",
+      "artifactPath": "spring-boot/spring-boot-basics/coding-lab/tests/workshops/WorkshopsApplicationMainTest.java",
+      "sha256": "fb118391567935159a79e107e81a947dda65e24b3b4517af5c8e310acbdef972",
+      "current": true
     },
     {
       "topic": "dependency-injection-replacing-manual-wiring",
