@@ -1,11 +1,9 @@
 {
   "schemaVersion": 1,
   "role": "sme",
-  "author": "independent Spring Boot/Java SME critic (cc critic run, not the author) - transcribed faithfully from ~/claude/pep-deliverables/critics/spring-basics-lab-critic-sme.json by the loop-3 recheck reviewer, 2026-11-19",
+  "author": "independent Spring Boot/Java SME critic (cc critic run, not the author) - transcribed faithfully from ~/claude/pep-deliverables/critics/spring-basics-lab-critic-sme.json by the loop-3 recheck reviewer, 2026-11-19; reshaped to the critic-report schema by the integration lane (2026-11-19) with no change to findings or verdict; verdict as recorded: APPROVE_WITH_FIXES; root fields reviewedScope, reviewedHead, workCopy, verdict, starterRun, solutionRun, variantRuns, determinismNotes are kept verbatim in the original record, git blob 59142cba6c3ddb02185a294a889e935629bce6fb (authoring/evidence/spring-boot/spring-boot-basics/module-practice-loop3-critic-sme.json)",
   "reviewedPath": "spring-boot/spring-boot-basics/coding-lab/lab.json",
   "reviewedSha256": "52d2df73cc50c6bdb85e3d9095a4107e2ff6783cda9dce4b812f691da47948db",
-  "reviewedScope": "spring-boot/spring-boot-basics/coding-lab",
-  "reviewedHead": "213e3e5aab2d4037d71c4a3b3b7dac47a8996cf5",
   "artifactHashes": {
     "README.md": "5616c648b85f5098c4bf63757b3f5c96053a867b400112cfb78181bd6dbda723",
     "expected/test-summary.txt": "319e62fb48ef61d8105bdd084e439bd0713382f699d69a83c55dc56e534194ef",
@@ -22,69 +20,66 @@
     "tests/workshops/WorkshopApiTest.java": "03a729eb13f3c3652f4fef25edcf7aa024039dcdcb157470878b99e08578a853",
     "tests/workshops/WorkshopsApplicationMainTest.java": "1affba2735286be46b738f80b7c93fc2509699eeb8b7c9d329143edddf11d9fc"
   },
-  "workCopy": "~/claude/pep-deliverables/critics/basics-sme-work/",
-  "verdict": "APPROVE_WITH_FIXES",
-  "starterRun": "mvn -q -o test on starter: 7 tests, 7 failures, each on its own task (task1 JSON path, task2 404 vs 200, task3 405 vs 201, task4 no application.properties, task5 404, task6 404, task7 main did not start). Runs offline, ~25-35 s on JDK 25.0.5.1 / Maven 3.9.16.",
-  "solutionRun": "Own minimal solution (@Configuration+@Bean, ctor injection, ResponseEntity 200/404/201+Location, application.properties, scanBasePackages, SpringApplication.run(args), availability with @RequestParam int): 7/7 pass, exit 0, matches expected/test-summary.txt.",
-  "variantRuns": {
-    "caught": [
-      "post 200 (task3)",
-      "post 201 without Location (task3)",
-      "find returns 200 for unknown id (tasks 2 and 6)",
-      "404 replaced by 400 (tasks 2 and 6)",
-      "properties in resources/config (task4)",
-      "properties in src/test/resources (task4, endsWith check)",
-      "application.yml (task4)",
-      "main ignores args (task7, clear message)",
-      "scan workshops only (task5 only)",
-      "scan about only (tasks 1,2,3,6,7; task5 passes by design)",
-      "bookable uses > instead of >= (task6)",
-      "groupSize optional/defaulted (task6)",
-      "wrong JSON field name (task6)",
-      "groupSize as path variable (task6)"
-    ],
-    "notCaught": [
-      "controller uses new CatalogConfig().workshopCatalog() with no @Bean/@Configuration (task1 passes)",
-      "@Component instead of @Configuration on CatalogConfig (valid, passes)",
-      "@ComponentScan added beside @SpringBootApplication (valid, passes)",
-      "@Import(AboutController.class) (passes task5 without scanning; also moving AboutController would pass)"
-    ]
-  },
   "findings": [
     {
       "id": "sme-1",
       "severity": "medium",
-      "file": "spring-boot/spring-boot-basics/coding-lab/tests/workshops/WorkshopApiTest.java:41-47",
-      "issue": "Task 1 does not verify bean registration. A learner can delete the bean step and have the controller call new CatalogConfig().workshopCatalog(); task1 still passes, so beans-and-bean-scopes#o1 (claimed in module.json) is untested.",
-      "fix": "Autowire ApplicationContext in task1 and assertEquals(1, ctx.getBeansOfType(WorkshopCatalog.class).size()); optionally assertSame the bean's findAll() size with GET /workshops after task3-independent seed."
+      "location": {
+        "file": "spring-boot/spring-boot-basics/coding-lab/tests/workshops/WorkshopApiTest.java",
+        "selector": "lines 41-47"
+      },
+      "claim": "Task 1 does not verify bean registration. A learner can delete the bean step and have the controller call new CatalogConfig().workshopCatalog(); task1 still passes, so beans-and-bean-scopes#o1 (claimed in module.json) is untested.",
+      "evidence": [],
+      "recommendation": "Autowire ApplicationContext in task1 and assertEquals(1, ctx.getBeansOfType(WorkshopCatalog.class).size()); optionally assertSame the bean's findAll() size with GET /workshops after task3-independent seed.",
+      "reviewedSha256": "03a729eb13f3c3652f4fef25edcf7aa024039dcdcb157470878b99e08578a853"
     },
     {
       "id": "sme-2",
       "severity": "low",
-      "file": "spring-boot/spring-boot-basics/coding-lab/tests/workshops/WorkshopApiTest.java:65 and README.md Task 3",
-      "issue": "Location must equal the relative /workshops/3. The idiomatic ServletUriComponentsBuilder.fromCurrentRequest().path(\"/{id}\") yields http://localhost/workshops/3 under MockMvc and fails with a message that looks like a wrong answer.",
-      "fix": "Either assert with endsWith(\"/workshops/3\") (header().string(\"Location\", endsWith(...))) or add one README sentence: use a relative URI, e.g. URI.create(\"/workshops/\" + id)."
+      "location": {
+        "file": "spring-boot/spring-boot-basics/coding-lab/tests/workshops/WorkshopApiTest.java",
+        "selector": "line 65 and README.md Task 3"
+      },
+      "claim": "Location must equal the relative /workshops/3. The idiomatic ServletUriComponentsBuilder.fromCurrentRequest().path(\"/{id}\") yields http://localhost/workshops/3 under MockMvc and fails with a message that looks like a wrong answer.",
+      "evidence": [],
+      "recommendation": "Either assert with endsWith(\"/workshops/3\") (header().string(\"Location\", endsWith(...))) or add one README sentence: use a relative URI, e.g. URI.create(\"/workshops/\" + id).",
+      "reviewedSha256": "03a729eb13f3c3652f4fef25edcf7aa024039dcdcb157470878b99e08578a853"
     },
     {
       "id": "sme-3",
       "severity": "low",
-      "file": "spring-boot/spring-boot-basics/coding-lab/starter/src/main/java/about/AboutController.java:9-10",
-      "issue": "Javadoc says 'Task 7 makes Spring find it'; scanning is Task 5.",
-      "fix": "Change to 'Task 5'."
+      "location": {
+        "file": "spring-boot/spring-boot-basics/coding-lab/starter/src/main/java/about/AboutController.java",
+        "selector": "lines 9-10"
+      },
+      "claim": "Javadoc says 'Task 7 makes Spring find it'; scanning is Task 5.",
+      "evidence": [],
+      "recommendation": "Change to 'Task 5'.",
+      "reviewedSha256": "ec7bdcfa6f5f64072c587d9572536f0ba0d876d6a55c540adcae20c3d23af2bd"
     },
     {
       "id": "sme-4",
       "severity": "low",
-      "file": "spring-boot/spring-boot-basics/coding-lab/tests/workshops/WorkshopApiTest.java:84-88",
-      "issue": "Task 5 passes if AboutController is moved or @Imported; README forbids moving but tests cannot see it (README already admits tests do not check construction).",
-      "fix": "Optional: assert getClass().getPackageName() of the bean is 'about' via ctx.getBean(\"aboutController\").getClass().getPackageName()."
+      "location": {
+        "file": "spring-boot/spring-boot-basics/coding-lab/tests/workshops/WorkshopApiTest.java",
+        "selector": "lines 84-88"
+      },
+      "claim": "Task 5 passes if AboutController is moved or @Imported; README forbids moving but tests cannot see it (README already admits tests do not check construction).",
+      "evidence": [],
+      "recommendation": "Optional: assert getClass().getPackageName() of the bean is 'about' via ctx.getBean(\"aboutController\").getClass().getPackageName().",
+      "reviewedSha256": "03a729eb13f3c3652f4fef25edcf7aa024039dcdcb157470878b99e08578a853"
     },
     {
       "id": "sme-5",
-      "severity": "info",
-      "file": "authoring/evidence/spring-boot/spring-boot-basics/coding-lab/lab-run.json variantRuns",
-      "issue": "Record says only a few variants were run and not a String groupSize; this critic ran 19 variants (list above). Technical statements (Boot 4.1.2, webmvc starters, org.springframework.boot.webmvc.test.autoconfigure, JDK 25) compile and run; offline mvn -q -o test works after one online setup; ports are ephemeral (--server.port=0), no sleeps, MethodName ordering with shared mutable catalog is deterministic (task3 expects id 3 and no other test mutates)."
+      "severity": "low",
+      "location": {
+        "file": "authoring/evidence/spring-boot/spring-boot-basics/coding-lab/lab-run.json",
+        "selector": "variantRuns"
+      },
+      "claim": "[Critic severity as recorded: info; the critic-report schema has no info level, so it is recorded as low.] Record says only a few variants were run and not a String groupSize; this critic ran 19 variants (list above). Technical statements (Boot 4.1.2, webmvc starters, org.springframework.boot.webmvc.test.autoconfigure, JDK 25) compile and run; offline mvn -q -o test works after one online setup; ports are ephemeral (--server.port=0), no sleeps, MethodName ordering with shared mutable catalog is deterministic (task3 expects id 3 and no other test mutates).",
+      "evidence": [],
+      "recommendation": "None stated by the critic (informational finding).",
+      "reviewedSha256": "f82ab97acbc9f58983847bed4429ac2a34e43a6ef21234efaa30563e7b2202da"
     }
-  ],
-  "determinismNotes": "task3 id 3 depends on the Spring context being shared and task3 being the only mutator; fine today, brittle if a learner adds a POST in another test. Task 7 uses a hook plus a 10 s HTTP timeout and context.close in finally."
+  ]
 }

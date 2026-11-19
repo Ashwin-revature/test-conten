@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "lab": "spring-boot/spring-boot-basics/coding-lab",
-  "record": "starter and reference proofs of the seven-task lab after applying independent-critic fixes, local run 2026-11-19",
-  "commit": "working tree on cc/spring-basics-lab (see git history for the committing SHA)",
+  "record": "solved at 4b34099192fb11face38812555caed45b8ff84bc by run local-seven-task-20261119-critic-fixes",
+  "commit": "4b34099192fb11face38812555caed45b8ff84bc",
   "runId": "local-seven-task-20261119-critic-fixes",
   "ranAt": "2026-11-19T21:00:00Z",
   "environment": {
@@ -11,6 +11,7 @@
     "maven": "Apache Maven 3.9.16"
   },
   "procedure": [
+    "Record description as first written: starter and reference proofs of the seven-task lab after applying independent-critic fixes, local run 2026-11-19. Commit as first written: working tree on cc/spring-basics-lab (see git history for the committing SHA); 4b340991 is the commit whose coding-lab tree matches every artifactHashes entry below.",
     "Copied the lab to private scratch twice (a starter copy and a reference copy). The Maven repository ~/.m2 already held Spring Boot 4.1.2; the setup command was not repeated online and mvn -q -o test ran offline.",
     "Ran the shipped starter with mvn -q -o test.",
     "Overlaid a private reference solution (CatalogConfig with the @Configuration and @Bean annotations, WorkshopController, WorkshopsApplication with scanBasePackages and SpringApplication.run, and src/main/resources/application.properties; the reference is kept outside the repository) and ran mvn -q -o test again after deleting target."

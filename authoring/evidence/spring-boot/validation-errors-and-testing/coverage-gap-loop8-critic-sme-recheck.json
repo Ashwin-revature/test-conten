@@ -37,7 +37,8 @@
       "id": "cg-sme-validation-025",
       "severity": "low",
       "location": {
-        "file": "spring-boot/validation-errors-and-testing/coding-lab/lab.json"
+        "file": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
+        "selector": "cleanup.notes"
       },
       "claim": "lab.json cleanup.notes reads 'setup 5 plus tasks 67 (tasks 1 to 3 about 19, ...)'. 'tasks 67' is a garbled figure: the intended sum is 19 + 8 + 6 + 12 + 12 + 10 = 67 minutes for the eight tasks, so the sentence should read 'tasks 67 minutes' or 'the eight tasks 67'. minutes.tasks is 67 and setup 5 gives the 72 minutes the README states, so numbers are consistent; only the sentence is unclear.",
       "evidence": [],

@@ -160,13 +160,13 @@
     },
     {
       "path": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
-      "sha256": "6985c62f28bfa50192be403d94f781df2ba061b2dc215477571a401cab7f09c7",
-      "bytes": 5314
+      "sha256": "e610e4d4c77a39d1d4ecaee42fd69fd19e439438eae3dd934096c5631efecfd7",
+      "bytes": 5351
     },
     {
       "path": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
-      "sha256": "c82eb283367c8518be2c6e7bf874b1ff0adb3eccd8b714c1dbb2c1e5ec2c5e43",
-      "bytes": 5415
+      "sha256": "d41033cc1bd4c4f19d5b1d6e9a2478485f6bf4a4c4e7850aeeec65aede38b7b3",
+      "bytes": 5452
     },
     {
       "path": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-reconciliation.json",
