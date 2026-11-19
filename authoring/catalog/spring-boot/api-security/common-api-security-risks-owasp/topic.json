@@ -63,7 +63,7 @@
     },
     "lab": {
       "status": "absent",
-      "reason": "No topic-level coding lab: practised in the planned api-security module lab (Standard lab overlay, S12), authored in the api-security module PR; Fast skips coding labs"
+      "reason": "No topic-level coding lab: practised in the api-security module coding lab (Standard lab overlay, required on Standard at the end of the module: S13, after the Spring review page and before the Spring module check); Fast skips coding labs"
     }
   },
   "freshness": {
