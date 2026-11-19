@@ -63,7 +63,7 @@
     },
     "lab": {
       "status": "absent",
-      "reason": "No coding lab: optional Reading topic; Jenkins, registries and Kubernetes would need servers or a cluster outside the course scope"
+      "reason": "No topic coding lab: practised in the daemon-free module lab containers-cicd/microservices-and-ci-cd/coding-lab (Standard S38-S39 lab overlay; Fast does not require it)"
     }
   },
   "freshness": {
@@ -77,6 +77,6 @@
     ]
   },
   "licensing": [],
-  "lab": "none",
+  "lab": "module:microservices-and-ci-cd",
   "components": {}
 }

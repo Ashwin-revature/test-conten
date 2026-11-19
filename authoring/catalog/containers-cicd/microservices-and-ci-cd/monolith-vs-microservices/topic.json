@@ -63,7 +63,7 @@
     },
     "lab": {
       "status": "absent",
-      "reason": "No topic coding lab: the objectives are architecture comparisons practised in the page's scenario checks; a toolchain adds setup without new learning"
+      "reason": "No topic coding lab: practised in the daemon-free module lab containers-cicd/microservices-and-ci-cd/coding-lab (Standard S38-S39 lab overlay; Fast does not require it)"
     }
   },
   "freshness": {
@@ -76,6 +76,6 @@
     ]
   },
   "licensing": [],
-  "lab": "none",
+  "lab": "module:microservices-and-ci-cd",
   "components": {}
 }
