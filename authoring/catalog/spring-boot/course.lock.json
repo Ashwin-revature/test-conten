@@ -159,6 +159,11 @@
       "bytes": 7344
     },
     {
+      "path": "authoring/evidence/spring-boot/video-curation.md",
+      "sha256": "e8f1c5a250c1dad4f90a8349233be4d3c342d7caaee49bfac8f9d476de550863",
+      "bytes": 36860
+    },
+    {
       "path": "spring-boot/assessments/spring-boot-final-assessment/blueprint.json",
       "sha256": "8ac7e54a226ef8ae9182b2c1108113e2eb305b1d783b1355fe40b11eeb69a679",
       "bytes": 7303
