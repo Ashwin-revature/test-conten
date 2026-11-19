@@ -21,3 +21,8 @@ C fulfilled {"error":"C"}
 ## Not re-executed this loop
 q31-q35, q37 (Spring MockMvc/test slices), q39 (FastAPI; no fastapi on this machine), q44 (fastapi-cli): keys rest on key-verification.txt, key-verification-fixes.txt and critic-sme-new15.json, re-read option by option against the deciding pages.
 q41-q43, q45: page-grounded (Vite proxy relative path; cookie vs JWT CSRF/XSS; Link vs anchor reload; compose down vs down -v with Flyway history).
+
+## Loop 4 recheck: q33 at a7a77fe1 (JDK 25.0.5.1, Spring Boot 4.1.2, spring-boot-starter-webmvc, real embedded server on a random port, the stem's ItemController)
+PROBE /items/99 404 {"error":"item 99 not found"}
+PROBE /items/abc 400 {"timestamp":"2026-11-19T23:17:49.417Z","status":400,"error":"Bad Request","path":"/items/abc"}
+-> Boot's default body has an "error" field ("Bad Request"); the reworded stem's "its body has no error field" is false (sfcp-l4-sme-01).
