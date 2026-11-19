@@ -9,6 +9,16 @@
       "bytes": 1026
     },
     {
+      "path": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-education.json",
+      "sha256": "bed09da4f880089d3c8f6957fb885b6b04e09ff8525ef77a37b14c67aceab2af",
+      "bytes": 5019
+    },
+    {
+      "path": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-sme.json",
+      "sha256": "4d79773894d383001cdb478274c1b4576a0bc9ca812999035ceb9d14e5fa4f85",
+      "bytes": 3536
+    },
+    {
       "path": "authoring/evidence/containers-cicd/course-final-coverage-and-duration.md",
       "sha256": "f6dc509dd09b2063387d20af019f927bba997f9928154d3dad2da4ab68390e77",
       "bytes": 7949
@@ -175,6 +185,97 @@
     }
   ],
   "evidenceBindings": [
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-education.json",
+      "field": "artifactHashes.assessments/containers-cicd-course-final/blueprint.json",
+      "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/blueprint.json",
+      "sha256": "92f88ebff4bf8c8db500a0b293c08bda0e1e738520d934ac4d9c2d23e39204c2",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-education.json",
+      "field": "artifactHashes.assessments/containers-cicd-course-final/final-mcq.gift",
+      "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
+      "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-education.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
+      "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-education.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
+      "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-education.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
+      "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-education.json",
+      "field": "findings[3].reviewedSha256",
+      "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
+      "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-education.json",
+      "field": "reviewedSha256",
+      "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/blueprint.json",
+      "sha256": "92f88ebff4bf8c8db500a0b293c08bda0e1e738520d934ac4d9c2d23e39204c2",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-sme.json",
+      "field": "artifactHashes.assessments/containers-cicd-course-final/blueprint.json",
+      "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/blueprint.json",
+      "sha256": "92f88ebff4bf8c8db500a0b293c08bda0e1e738520d934ac4d9c2d23e39204c2",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-sme.json",
+      "field": "artifactHashes.assessments/containers-cicd-course-final/final-mcq.gift",
+      "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
+      "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-sme.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
+      "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-sme.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
+      "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-sme.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
+      "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-sme.json",
+      "field": "reviewedSha256",
+      "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/blueprint.json",
+      "sha256": "92f88ebff4bf8c8db500a0b293c08bda0e1e738520d934ac4d9c2d23e39204c2",
+      "current": true
+    },
     {
       "evidencePath": "authoring/evidence/containers-cicd/intake-2-critic-education-recheck.json",
       "field": "recheck.items[1].reviewedSha256",
