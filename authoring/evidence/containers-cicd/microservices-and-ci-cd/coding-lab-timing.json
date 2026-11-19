@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "lab": "containers-cicd/microservices-and-ci-cd/coding-lab",
-  "measuredAt": "2026-11-18",
+  "measuredAt": "2026-11-19",
   "machine": {
     "os": "macOS (darwin, arm64)",
     "node": "v24.2.0",

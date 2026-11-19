@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "lab": "containers-cicd/microservices-and-ci-cd/coding-lab",
-  "record": "solved at b34ec1e9b8824b3ca1efd0bc6060678a32c9d026 by run local-1794993140",
-  "commit": "b34ec1e9b8824b3ca1efd0bc6060678a32c9d026",
-  "runId": "local-1794993140",
-  "ranAt": "2026-11-18T09:12:20Z",
+  "record": "solved at 2204f76c7284aea7ecad6e6690c869d26131e819 by run local-1795052065",
+  "commit": "2204f76c7284aea7ecad6e6690c869d26131e819",
+  "runId": "local-1795052065",
+  "ranAt": "2026-11-19T01:34:25Z",
   "contract": "authoring/docs/lab-contract.md section 10 and authoring/schemas/solved-run.schema.json: every tracked public lab file at the recorded commit is bound by file and reviewedSha256; the lab directory was exported with git archive of that commit into private staging outside the repository and run there.",
   "toolchain": {
     "node": "v24.2.0",
@@ -13,7 +13,7 @@
     "engine": "none: no container engine, Python runtime or CI runner was used; the lab's tests read files only"
   },
   "procedure": [
-    "git archive b34ec1e9b8824b3ca1efd0bc6060678a32c9d026 containers-cicd/microservices-and-ci-cd/coding-lab into a fresh private staging directory outside the repository",
+    "git archive 2204f76c7284aea7ecad6e6690c869d26131e819 containers-cicd/microservices-and-ci-cd/coding-lab into a fresh private staging directory outside the repository",
     "npm ci in tests (the one network step), then npm audit",
     "node --test --test-reporter=tap against the shipped starter, comparing the result lines with expected/starter-summary.txt",
     "for each of two private solutions: a fresh copy of the same export with only the learner-edited starter files and starter/.env replaced, then node --test --test-reporter=tap, comparing the result and summary lines with expected/solved-summary.txt",
@@ -123,7 +123,7 @@
     },
     {
       "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
-      "reviewedSha256": "1cc3d198b63f7062c76126a8292bbb523c858d14b94e5d3be6e18abec05ba5e0"
+      "reviewedSha256": "9278b451b1a2602839347dd1b5fa403999dab8260041c18006343738de902a77"
     },
     {
       "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/package-lock.json",
