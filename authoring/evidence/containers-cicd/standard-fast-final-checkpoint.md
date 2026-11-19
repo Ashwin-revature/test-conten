@@ -118,7 +118,7 @@ The learner timings are estimates: "10", "20" and "60" are allocated minutes, no
 If a later timed trial shows the Gate block does not fit, that is an owner decision; shortening this MCQ is the first lever (see Timing basis), and cutting it below 30 items or moving it to S42/FT24 would drop coverage or displace the accepted walkthrough day.
 
 **Weight and pass mark (beta defaults).** The calendar gives the Final no MCQ weight, so the blueprint has an empty `weights` object: the checkpoint score does not enter the published Final composite.
-Its `passMark` is 70, the Final pool cut score and the module-check pass mark.
+Its `passMark` is 70, the Final pool cut score.
 It is a readiness check reported to the learner's assessor, as the blueprint's learner instructions say: it is not a pass/fail gate and changes no grade in this beta.
 Neither default changes the Final weights, the cut scores or Project 2's separate grading, and neither sets a programme-wide certification policy.
 
@@ -148,10 +148,9 @@ No timed learner trial was run, so 60 minutes is a beta baseline: if a timed tri
 ## Duplication
 
 Lexical scan of the shipped bytes (stems and options, entity-decoded) by a scratch script that parses every bank it is given.
-It read 258 files and parsed 1,660 questions:
+It read 258 files and parsed 1,660 questions. Two of those files were legacy containers mastery files from the retired module-mastery layer; that layer is outside the assessment hierarchy, so they are not a comparison target and the real overlap checks are the topic practice, module practice, Foundation and course-final banks below:
 
 - 252 tracked GIFT files at `a00a6658` other than this bank and the test fixtures: every topic `artifact.gift`, module `practice.gift` and Foundation `final-mcq.gift`;
-- the two preserved containers mastery banks;
 - the Foundation 45-question checkpoint;
 - the in-progress HTML/CSS/JS and Git/Linux/AI course-final banks from their unmerged branches;
 - the private Containers/CI-CD course-final candidate.
