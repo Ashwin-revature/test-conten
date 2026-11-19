@@ -41,7 +41,9 @@
   },
   "assessments": [
     "python-module-check",
-    "python-final-mcq"
+    "python-final-mcq",
+    "python-final-coding-basic-validate",
+    "python-final-coding-intermediate-refunds"
   ],
   "courseLabs": [],
   "license": "proprietary-private",
