@@ -59,12 +59,11 @@
       "status": "present"
     },
     "video": {
-      "status": "absent",
-      "reason": "Deferred: HTML-first draft batch; no video search was run for this checkpoint, so no video is linked"
+      "status": "present"
     },
     "lab": {
       "status": "absent",
-      "reason": "No topic lab: S30 is a Concept day with no calendar Lab day and the page simulator gives this topic's practice. Course project: applied in part P2 of the planned cumulative course project react/coding-lab/ (Fast FT17 increment), after an embedded teach-then-check step; authored in a course-level PR"
+      "reason": "No topic lab: S30 is a Concept day with no calendar Lab day. Standard practice is partial, in tasks 4-6 in the module lab react/effects-routing-and-rendering/coding-lab/ on the S31 Lab day: #o1, #o2 except its what-an-empty-array-means clause, and #o3 except its Strict-Mode explanation clause; those clauses are practised on this topic page and its page simulator. Course project: applied in part P2 of the planned cumulative course project react/coding-lab/ (Fast FT17 increment), after an embedded teach-then-check step; authored in a course-level PR"
     }
   },
   "freshness": {
