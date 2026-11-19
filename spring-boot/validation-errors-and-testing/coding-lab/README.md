@@ -5,13 +5,9 @@
 This is the required lab of the Standard track's error-handling day.
 Eight linked tasks on one booking API: reject invalid bookings and ids with Bean Validation, turn exceptions into RFC 9457 problem details in one global handler and with Spring MVC's built-in support, reproduce a bug report in a MockMvc test before fixing it, and test the web layer with a fake service and with `@MockitoBean`.
 
-The lab runs over two days:
+The lab is one sitting after all six Standard topics of the module are taught: it follows "Debugging a failing request" on S10, in its own lab slot before S11. Tasks 1 to 3 and 6 use the validation and error-handling pages (Bean Validation, global error handling, ProblemDetail); Tasks 4, 5, 7 and 8 use the testing pages (`@MockitoBean`, MockMvc, debugging a failing request).
 
-- **S9, in the guided-lab block:** Tasks 1, 2, 3 and 6. They use the S9 pages (Bean Validation, global error handling, ProblemDetail).
-- **S10, in the Concept day's "Faded, then fresh problem" coding-lab block (40 minutes), after its three pages:** Tasks 4, 5, 7 and 8. They use the S10 testing pages (`@MockitoBean`, MockMvc, debugging a failing request).
-
-Authoring estimate, not a measured learner pilot: about 5 minutes of setup before S9, about 27 minutes on S9 and about 40 minutes on S10.
-On S9, if you pass 45 minutes, pause and finish in self-study. On S10, stop when the 40-minute block ends and finish the rest in self-study.
+Authoring estimate, not a measured learner pilot: about 72 minutes in all, which is about 5 minutes of setup, about 27 minutes for Tasks 1 to 3 and 6, and about 40 minutes for Tasks 4, 5, 7 and 8.
 
 ## What you edit
 
@@ -47,32 +43,32 @@ Run the one test command from the `starter` folder after each task:
 mvn -q -o test
 ```
 
-### Task 1 (S9): constrain the request body
+### Task 1: constrain the request body
 
 In `NewBooking.java`, add the constraints from the TODO: `attendee` `@NotBlank`, `email` `@NotBlank @Email`, `seats` `@Min(1)`.
 Constraints only run when asked: in `BookingController.create`, put `@Valid` in front of the `@RequestBody` parameter.
 An invalid body now stops at the door with 400 before any service code runs.
 Done when `task1RejectsAnInvalidBookingWith400` no longer fails.
 
-### Task 2 (S9): one global handler for the not-found case
+### Task 2: one global handler for the not-found case
 
 `GET /bookings/999` currently explodes into a 500: the service's `NoSuchElementException` reaches the servlet container, and the client learns internal details it should never see.
 Create `ApiErrors.java` in the same package: a class annotated `@RestControllerAdvice` with one method annotated `@ExceptionHandler(NoSuchElementException.class)` that returns a `ProblemDetail` built with `ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, exception.getMessage())`, with `setTitle("Booking not found")`.
 Done when `task2TurnsAnUnknownIdIntoAProblem404` no longer fails.
 
-### Task 3 (S9): problem details for validation failures
+### Task 3: problem details for validation failures
 
 Add a second handler to `ApiErrors` for `MethodArgumentNotValidException` (import from `org.springframework.web.bind`): return a `ProblemDetail` with status 400, title `Validation failed`, and a detail string that names the failing fields, e.g. `"Invalid fields: " + fields` where `fields` joins `exception.getBindingResult().getFieldErrors()` field names (sorted, comma-separated).
 Every error from this API now has one standard shape.
 Done when `task3AnswersValidationFailuresWithProblemDetail` no longer fails.
 
-### Task 4 (S10): finish the web-layer slice test
+### Task 4: finish the web-layer slice test
 
 Open `tests/bookings/WebLayerTest.java` - a `@WebMvcTest` you complete yourself, following its three TODO steps: annotate the class with `@WebMvcTest(BookingController.class)`, replace the service with a `@MockitoBean` field, and stub it with `given(service.byId(7L)).willReturn(...)` exactly as the TODO shows.
 The slice starts only the web layer; the mock plays the service.
 Done when `task4StubsTheServiceWithMockitoBean` no longer fails.
 
-### Task 5 (S10): reproduce a bug report, predict, then fix it
+### Task 5: reproduce a bug report, predict, then fix it
 
 The report: "`GET /bookings/0` answers 404 Booking not found. Booking ids start at 1, so 0 is a bad request from the client and should be a 400."
 
@@ -92,7 +88,7 @@ The constraint is `@Positive` from `jakarta.validation.constraints`, written aft
 
 Done when `task5ReproducesTheZeroIdReport`, `task5PredictsTheProblemBodyOfTheFix` and `task5RejectsANonPositiveIdWith400` no longer fail.
 
-### Task 6 (S9): built-in problem details for framework errors
+### Task 6: built-in problem details for framework errors
 
 Your handlers cover two exceptions. Spring MVC throws many others itself, for example for a body that is not JSON or cannot be read, and those still answer without a problem body.
 
@@ -111,7 +107,7 @@ Your handlers cover two exceptions. Spring MVC throws many others itself, for ex
 
 Done when `task6AnswersFrameworkErrorsWithProblemDetail` passes and Task 3 passes again.
 
-### Task 7 (S10): test the error paths with a fake service
+### Task 7: test the error paths with a fake service
 
 Open `tests/bookings/ErrorSliceTest.java` and follow its four TODO steps:
 
@@ -133,7 +129,7 @@ Step 2 is a `static class` annotated `@TestConfiguration` with one `@Bean` metho
 
 Done when both `task7...` tests no longer fail.
 
-### Task 8 (S10): verify an interaction on the mock
+### Task 8: verify an interaction on the mock
 
 Back in `WebLayerTest.java`, `task8VerifiesTheCreateCall` posts a valid booking and checks the 201.
 The status alone cannot show that the controller handed the request to the service: an unstubbed mock simply returns `null`.

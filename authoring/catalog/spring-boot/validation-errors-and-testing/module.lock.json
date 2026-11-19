@@ -10,8 +10,8 @@
     },
     {
       "path": "authoring/catalog/spring-boot/validation-errors-and-testing/debugging-a-failing-request/topic.json",
-      "sha256": "d3ced5d973e18b814e896a7904b470a9904b28509418445079c2ecb836c63e87",
-      "bytes": 3778
+      "sha256": "ed2565de42fbaa63ac459482a4beecdab8266498a8a5fc3c70aab89ef1955fe1",
+      "bytes": 3733
     },
     {
       "path": "authoring/catalog/spring-boot/validation-errors-and-testing/error-handling-project/topic.json",
@@ -25,13 +25,13 @@
     },
     {
       "path": "authoring/catalog/spring-boot/validation-errors-and-testing/mockito-in-spring-at-mockitobean/topic.json",
-      "sha256": "ff4b5d2b73b7754b456faa20569448845eaf0b987f19bc58f11aaeba12d977d6",
-      "bytes": 3915
+      "sha256": "086bfac08c990c8b2c18ddb750e346ab7bdf1985f451254750f3c380ba3beb7c",
+      "bytes": 3870
     },
     {
       "path": "authoring/catalog/spring-boot/validation-errors-and-testing/module.json",
-      "sha256": "faaa7e00a0b8ffefa74367fe9b0805f7daeeabeec892b1487e20457349d6e897",
-      "bytes": 2720
+      "sha256": "f00fa99e37bee9740f7748e2ecf208d0dd82b4e29af71a65f4ca740b632818e8",
+      "bytes": 2554
     },
     {
       "path": "authoring/catalog/spring-boot/validation-errors-and-testing/standard-error-responses-with-problemdetail/topic.json",
@@ -40,8 +40,8 @@
     },
     {
       "path": "authoring/catalog/spring-boot/validation-errors-and-testing/web-layer-tests-with-mockmvc/topic.json",
-      "sha256": "92b4c65cd2a2daa45b0a38a1ae38785883d707766c415362127c59afa7f5f7f5",
-      "bytes": 3870
+      "sha256": "188debacf9b1fae599918d154cc0cdac9435b9e3998c45b1f9b71a4b1aae892d",
+      "bytes": 3825
     },
     {
       "path": "authoring/evidence/spring-boot/validation-errors-and-testing/bean-validation-on-requests/owner-essential-qa.json",
@@ -315,8 +315,8 @@
     },
     {
       "path": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
-      "sha256": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
-      "bytes": 15881
+      "sha256": "d39f2c5517052d379532add1e88009e989a536e06d4360fa65c816e0cfa7603d",
+      "bytes": 15747
     },
     {
       "path": "spring-boot/validation-errors-and-testing/coding-lab/expected/test-summary.txt",
@@ -325,8 +325,8 @@
     },
     {
       "path": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
-      "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
-      "bytes": 4337
+      "sha256": "bd7907d58576b87ba641fc3491e52d2955fc4951f6c82ce56c8b74bee93f622d",
+      "bytes": 4201
     },
     {
       "path": "spring-boot/validation-errors-and-testing/coding-lab/starter/pom.xml",
@@ -554,7 +554,7 @@
       "field": "artifactHashes.lab.json",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
       "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
-      "current": true
+      "current": false
     },
     {
       "topic": "coding-lab",
@@ -562,7 +562,7 @@
       "field": "artifactHashes.README.md",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
       "sha256": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
-      "current": true
+      "current": false
     },
     {
       "topic": "coding-lab",
@@ -2225,7 +2225,7 @@
       "field": "artifactHashes.coding-lab/lab.json",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
       "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop6-critic-education-recheck.json",
@@ -2337,7 +2337,7 @@
       "field": "findings[3].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
       "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop6-critic-education-recheck.json",
@@ -2386,7 +2386,7 @@
       "field": "recheck.items[6].reviewedSha256",
       "artifactPath": "authoring/catalog/spring-boot/validation-errors-and-testing/module.json",
       "sha256": "faaa7e00a0b8ffefa74367fe9b0805f7daeeabeec892b1487e20457349d6e897",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop6-critic-education-recheck.json",
@@ -2414,7 +2414,7 @@
       "field": "reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
       "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop6-critic-sme-recheck.json",
@@ -2428,7 +2428,7 @@
       "field": "artifactHashes.coding-lab/lab.json",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
       "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop6-critic-sme-recheck.json",
@@ -2540,7 +2540,7 @@
       "field": "findings[3].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
       "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop6-critic-sme-recheck.json",
@@ -2631,7 +2631,7 @@
       "field": "recheck.items[8].reviewedSha256",
       "artifactPath": "authoring/catalog/spring-boot/validation-errors-and-testing/module.json",
       "sha256": "faaa7e00a0b8ffefa74367fe9b0805f7daeeabeec892b1487e20457349d6e897",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop6-critic-sme-recheck.json",
@@ -2645,14 +2645,14 @@
       "field": "reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
       "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop6-reconciliation.json",
       "field": "reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
       "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-education-recheck.json",
@@ -2666,14 +2666,14 @@
       "field": "artifactHashes.coding-lab/lab.json",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
       "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-education-recheck.json",
       "field": "artifactHashes.coding-lab/README.md",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
       "sha256": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-education-recheck.json",
@@ -2757,14 +2757,14 @@
       "field": "findings[0].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
       "sha256": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-education-recheck.json",
       "field": "findings[1].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
       "sha256": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-education-recheck.json",
@@ -2778,7 +2778,7 @@
       "field": "findings[3].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
       "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-education-recheck.json",
@@ -2799,7 +2799,7 @@
       "field": "recheck.items[10].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
       "sha256": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-education-recheck.json",
@@ -2813,56 +2813,56 @@
       "field": "recheck.items[12].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
       "sha256": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-education-recheck.json",
       "field": "recheck.items[13].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
       "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-education-recheck.json",
       "field": "recheck.items[2].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
       "sha256": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-education-recheck.json",
       "field": "recheck.items[3].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
       "sha256": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-education-recheck.json",
       "field": "recheck.items[4].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
       "sha256": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-education-recheck.json",
       "field": "recheck.items[5].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
       "sha256": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-education-recheck.json",
       "field": "recheck.items[6].reviewedSha256",
       "artifactPath": "authoring/catalog/spring-boot/validation-errors-and-testing/module.json",
       "sha256": "faaa7e00a0b8ffefa74367fe9b0805f7daeeabeec892b1487e20457349d6e897",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-education-recheck.json",
       "field": "recheck.items[7].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
       "sha256": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-education-recheck.json",
@@ -2883,7 +2883,7 @@
       "field": "reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
       "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-sme-recheck.json",
@@ -2897,14 +2897,14 @@
       "field": "artifactHashes.coding-lab/lab.json",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
       "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-sme-recheck.json",
       "field": "artifactHashes.coding-lab/README.md",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
       "sha256": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-sme-recheck.json",
@@ -2988,14 +2988,14 @@
       "field": "findings[0].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
       "sha256": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-sme-recheck.json",
       "field": "findings[1].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
       "sha256": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-sme-recheck.json",
@@ -3009,7 +3009,7 @@
       "field": "findings[3].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
       "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-sme-recheck.json",
@@ -3037,7 +3037,7 @@
       "field": "recheck.items[10].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
       "sha256": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-sme-recheck.json",
@@ -3072,7 +3072,7 @@
       "field": "recheck.items[15].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
       "sha256": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-sme-recheck.json",
@@ -3086,7 +3086,7 @@
       "field": "recheck.items[17].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
       "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-sme-recheck.json",
@@ -3114,7 +3114,7 @@
       "field": "recheck.items[5].reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
       "sha256": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-sme-recheck.json",
@@ -3135,7 +3135,7 @@
       "field": "recheck.items[8].reviewedSha256",
       "artifactPath": "authoring/catalog/spring-boot/validation-errors-and-testing/module.json",
       "sha256": "faaa7e00a0b8ffefa74367fe9b0805f7daeeabeec892b1487e20457349d6e897",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-critic-sme-recheck.json",
@@ -3149,14 +3149,14 @@
       "field": "reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
       "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-reconciliation.json",
       "field": "reviewedSha256",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
       "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-reconciliation.json",

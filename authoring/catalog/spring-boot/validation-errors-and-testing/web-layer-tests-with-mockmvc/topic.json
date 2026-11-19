@@ -64,7 +64,7 @@
     },
     "lab": {
       "status": "absent",
-      "reason": "No topic coding lab: S10 is a Concept day with no lab overlay of its own in the confirmed expected-artifact scope (matrix v3); the page's simulators carry the practice, and the validation-errors-and-testing module lab, which spans S9 and S10 (Tasks 4, 5, 7 and 8 run in the S10 \"Faded, then fresh problem\" coding-lab block), has learners finish and run MockMvc tests for this topic; deferred labs and cloud provisioning are outside the minimum release"
+      "reason": "No topic coding lab: S10 is a Concept day with no lab overlay of its own in the confirmed expected-artifact scope (matrix v3); the page's simulators carry the practice, and the validation-errors-and-testing module lab, taken in one sitting in its own slot after S10 and before S11, has learners finish and run MockMvc tests for this topic; deferred labs and cloud provisioning are outside the minimum release"
     }
   },
   "freshness": {
