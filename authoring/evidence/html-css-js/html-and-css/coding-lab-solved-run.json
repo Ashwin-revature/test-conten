@@ -1,39 +1,40 @@
 {
   "schemaVersion": 1,
   "lab": "html-css-js/html-and-css/coding-lab",
-  "record": "solved at 0e12a9f77d1361917807b1dab9f9135a4ac582e9 by run clean-loop3-1795052566",
-  "commit": "0e12a9f77d1361917807b1dab9f9135a4ac582e9",
-  "runId": "clean-loop3-1795052566",
-  "ranAt": "2026-11-19T01:42:46Z",
-  "contract": "authoring/docs/lab-contract.md section 10: starter expectation, private solved run, expected output and cleanup, exercised on a fresh pep export-lab bundle",
+  "record": "solved at a942501c39a7bad4a112040450cfdaffb4fddab2 by run clean-loop4-1795055090",
+  "commit": "a942501c39a7bad4a112040450cfdaffb4fddab2",
+  "runId": "clean-loop4-1795055090",
+  "ranAt": "2026-11-19T02:24:50Z",
+  "contract": "authoring/docs/lab-contract.md section 10: starter expectation, private solved run, expected output and cleanup, exercised on a fresh git archive of html-css-js/html-and-css/coding-lab at a942501c39a7bad4a112040450cfdaffb4fddab2 in private staging outside the repository",
   "environment": {
-    "os": "macOS (Darwin 25.6.0)",
+    "os": "macOS 27.2.1 (Darwin 27.2.0, arm64)",
     "node": "v24.2.0",
     "npm": "11.3.0",
-    "network": "used only by the documented one-time setup; the test command ran offline",
+    "network": "used only by the documented one-time setup (npm ci and the pinned Chromium download); the test command ran offline",
     "container": "none"
   },
   "procedure": [
-    "git archive 0e12a9f77d1361917807b1dab9f9135a4ac582e9 html-css-js/html-and-css/coding-lab into a fresh private directory outside the repository",
+    "git archive a942501c39a7bad4a112040450cfdaffb4fddab2 html-css-js/html-and-css/coding-lab into a fresh private directory under the task's uncommitted data directory, outside the repository",
     "setup: npm ci in starter/ (installs pinned Playwright 1.55.1 and its headless Chromium into starter/node_modules)",
     "starter expectation: node --test --test-reporter=spec on the untouched starter gave tests 12, pass 0, fail 12; the failing set equals the declared failingTests",
-    "applied the privately completed starter/index.html and starter/styles.css (all eleven tasks) inside that private copy only",
+    "applied the privately completed starter/index.html and starter/styles.css (all eleven tasks) over the starter files of that same private copy",
     "solved run: the same command offline; the browser helper blocks every non-file request",
     "compared the timing-masked solved output with expected/on-completion.txt"
   ],
   "starterRun": "node --test --test-reporter=spec on the untouched starter gave tests 12, pass 0, fail 12; all 12 declared failingTests failed",
   "result": "after applying the privately completed starter files, the same command gave pass 12, fail 0, and the timing-masked output matched expected/on-completion.txt byte-for-byte",
   "testScope": "12 public tests (layout.test.mjs tasks 1-6 and 11, structure.test.mjs tasks 7-10)",
-  "cleanup": "the private copy (including the completed starter files and starter/node_modules) stays only in uncommitted private staging; no tracked file changed",
-  "privateStaging": "the solution existed only in the private $TMPDIR copy of the export during the run; no solution bytes or solution hashes are recorded here",
+  "cleanup": "the private copy (including the completed starter files and starter/node_modules) stays only in uncommitted private staging outside the repository; no tracked file changed",
+  "privateStaging": "the completed starter files exist only in uncommitted private staging outside the repository, never in a tracked file; no solution bytes or solution hashes are recorded here",
   "toolchain": {
     "node": "v24.2.0",
-    "npm": "11.3.0"
+    "npm": "11.3.0",
+    "playwright": "1.55.1"
   },
   "artifactHashes": {
-    "README.md": "6009327f0d738b840d03220b46f562366de4d6d22aa1dafaacdea949fcdebc53",
+    "README.md": "c8403d19fb11d6f80b4336e07f15c1ff1955617b3db8319ac79e26bd05586c16",
     "expected/on-completion.txt": "2242211c4798464260692cf26026103b36c42cdee5acbcba37f487e5ce4bd73c",
-    "lab.json": "ff86cfa50288fd8d587681f808fe04ecc1ae13c77d7278b720b6adab0b5906ff",
+    "lab.json": "86241dcf28d42674b6c0225cdbdb4e54152570c5f0cde35d049599c4ed8dada2",
     "starter/badge.svg": "ec0ebe55b9e4d905939bac5bca65b4e0865ffce4fa5d6f6d74e0757d8af314e7",
     "starter/index.html": "a096e9c62cf3b06c9afeadbf4d7b97e5508085d00376b1f2f360d8dc888d9aa3",
     "starter/package-lock.json": "977eb105016398ae58a1d1bf4b611e8baf75fe73368fa962e65329e6ba24185e",
@@ -42,8 +43,8 @@
     "tests/browser.mjs": "9ce76aaf5ace75676b57fba4254ae16d33987ce41c1e21e31d6ab40ccaa74656",
     "tests/css.mjs": "3ef88650200827a92532cfa2e3ffc47d78b9d631c21cdd7d44eb3a0e586dd8e8",
     "tests/install-browser.mjs": "ddf947be1edb8ade748f7f8c76483d59e19a7d407c18f2e90b5ed39a5d8804f7",
-    "tests/layout.test.mjs": "5918890ce0c42566f6bbec4a870170fa2e8224f41bd273158740947955e82bd0",
+    "tests/layout.test.mjs": "8980080f47104c3cf12d2bcaec7fa2da2f85f7bba14497a88fab973d9d033636",
     "tests/structure.test.mjs": "4aa7a5680d653ac95ff4e418627d94adb5d54c908803510d5e2fa91906ae983f"
   },
-  "variantRuns": "Task 11 matrix in the same private copy, each case a privately staged variant of the completed work run with the full public suite. 12 wrong variants each failed task 11 and no other task: tags with automatic width inside a new fixed-width wrapper, the same wrapper with a large maximum width on each tag, and a wrapper sized in viewport units (markup edits); automatic-width tags beside a float as their own formatting context, inside a two-column checklist with a percentage gap, and absolutely positioned with a container-relative inset (each failed the fill-the-checklist control); tag widths in viewport units; automatic width alone; automatic width with a container-relative side margin; percentage width; and the completed work plus a small scale or zoom. 7 valid variants passed all 12 tests: the unmodified completed work; the same sizes under child-combinator, adjacent-sibling and position selectors; each calculated value as a maximum width over an automatic width; as a logical inline size; and with a learner-styled flex-column checklist. 3 variants with the correct own widths but tags that are not ordinary blocks directly in the checklist (inline-block, floated, inside a padded wrapper) failed task 11 on the fill-the-checklist control, as README task 11 and Troubleshooting state. All variants stay in uncommitted private staging."
+  "variantRuns": "Task 11 matrix in the same private copy, each case a privately staged variant of the completed work run with the full public suite. 14 wrong variants each failed task 11 and no other task. Markup edits: tags with automatic width inside a new fixed-width wrapper, the same wrapper with a large maximum width on each tag, and a wrapper sized in viewport units. Stylesheet only: automatic-width tags beside a float as their own formatting context, and inside a two-column checklist with a percentage gap (both failed the fill-the-checklist control, whose message named something around the tag); tags absolutely positioned with a container-relative inset (failed the control, whose message named the tag's own positioning); tag widths in vw, vh and vmin units; automatic width alone; automatic width with a container-relative side margin; percentage width; and the completed work plus a small scale or zoom. 8 valid variants passed all 12 tests: the unmodified completed work; the same sizes under child-combinator, adjacent-sibling and position selectors; each calculated value as a maximum width over an automatic width; as a logical inline size; with a learner-styled flex-column checklist; and with learner transitions on the checklist and tag sizes. 4 variants with the correct own widths but tags that are not ordinary blocks directly in the checklist failed task 11 on the fill-the-checklist control, as README task 11 and Troubleshooting state: inline-block, table and floated tags (the message named the tag's own display or float), and tags inside a padded wrapper (the message named something around the tag). All variants stay in uncommitted private staging."
 }
