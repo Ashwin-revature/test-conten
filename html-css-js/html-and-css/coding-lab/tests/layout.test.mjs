@@ -142,11 +142,14 @@ test("task 11: both pack tags are 200px wide border to border, one in each box-s
             if (Number.isFinite(animation.effect?.getComputedTiming().endTime)) animation.finish();
           }
         }
-        const asideStyle = aside ? getComputedStyle(aside) : null;
-        const asideUnscaled =
-          !asideStyle ||
-          ([asideStyle.transform, asideStyle.scale, asideStyle.rotate, asideStyle.translate].every((value) => value === "none") &&
-            String(asideStyle.zoom) === "1");
+        // A held end value such as an identity matrix, scale 1 or translate 0px counts as unscaled.
+        const identity = (cs) =>
+          (cs.transform === "none" || new DOMMatrixReadOnly(cs.transform).isIdentity) &&
+          (cs.scale === "none" || cs.scale.split(/\s+/).every((part) => parseFloat(part) === 1)) &&
+          (cs.rotate === "none" || parseFloat(cs.rotate.split(/\s+/).pop()) === 0) &&
+          (cs.translate === "none" || cs.translate.split(/\s+/).every((part) => parseFloat(part) === 0)) &&
+          parseFloat(cs.zoom) === 1;
+        const asideUnscaled = !aside || identity(getComputedStyle(aside));
         const pinned = (width) => ({
           display: "block",
           "box-sizing": "content-box",
@@ -175,22 +178,24 @@ test("task 11: both pack tags are 200px wide border to border, one in each box-s
               found: true,
               boxSizing: cs.boxSizing,
               ownReason:
-                cs.display === "contents"
-                  ? "its display is contents, so it has no box of its own"
-                  : cs.display.startsWith("inline") || cs.display.startsWith("table")
-                    ? `its display is ${cs.display}`
-                    : cs.float !== "none"
-                      ? "it is floated"
-                      : ["absolute", "fixed"].includes(cs.position)
-                        ? `it is positioned ${cs.position}`
-                        : "",
+                cs.display === "none"
+                  ? "its display is none, so it is hidden"
+                  : cs.display === "contents"
+                    ? "its display is contents, so it has no box of its own"
+                    : cs.display.startsWith("inline") || cs.display.startsWith("table")
+                      ? `its display is ${cs.display}`
+                      : cs.float !== "none"
+                        ? "it is floated"
+                        : ["absolute", "fixed"].includes(cs.position)
+                          ? `it is positioned ${cs.position}`
+                          : "",
               layout: el.offsetWidth,
               rendered: el.getBoundingClientRect().width,
               padding: [px("padding-top"), px("padding-right"), px("padding-bottom"), px("padding-left")],
               border: [px("border-top-width"), px("border-right-width"), px("border-bottom-width"), px("border-left-width")],
               margin: px("margin-bottom"),
               sideMargins: [px("margin-left"), px("margin-right")],
-              unscaled: [cs.transform, cs.scale, cs.rotate, cs.translate].every((value) => value === "none") && String(cs.zoom) === "1",
+              unscaled: identity(cs),
             };
             const saved = own.map((name) => [name, el.style.getPropertyValue(name), el.style.getPropertyPriority(name)]);
             el.style.setProperty("width", "auto", "important");
