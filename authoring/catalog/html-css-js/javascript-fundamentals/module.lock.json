@@ -5,28 +5,28 @@
   "files": [
     {
       "path": "authoring/catalog/html-css-js/javascript-fundamentals/arrays-and-objects-map-filter-reduce/topic.json",
-      "sha256": "5231bdaedd24245fe203e59d9f83d2b2fa2d14657abe34656a91ae7395250eb5",
-      "bytes": 3000
+      "sha256": "4062c8ec5be49822e2325c063413a47c6ee71ff1126741c9c6e7a35a970024b2",
+      "bytes": 2761
     },
     {
       "path": "authoring/catalog/html-css-js/javascript-fundamentals/destructuring-and-spread/topic.json",
-      "sha256": "83f600d532f98073ab8a7629e9e4e59246b5130e0bbecc6a7c6c8d8b76daea71",
-      "bytes": 2953
+      "sha256": "e31591ef2c7865be92f0b8d200b21d389ce6368edcf9887ae540ca356a3c1cb5",
+      "bytes": 2714
     },
     {
       "path": "authoring/catalog/html-css-js/javascript-fundamentals/functions-as-values-arrow-functions-and-callbacks/topic.json",
-      "sha256": "f0e58884b3d84f6dd7ad5fab768bba2cfce84236ed6c9567e524a94d4b3b59c4",
-      "bytes": 3040
+      "sha256": "6d6c31d445e50d1380c1fad5c4cb0d4b36b42a4054204262c0cd23f9bf4d00f7",
+      "bytes": 2801
     },
     {
       "path": "authoring/catalog/html-css-js/javascript-fundamentals/javascript-for-java-developers/topic.json",
-      "sha256": "4519b1e7edc6335b4053754b1f9443056012b85cc0323ea985e9599235d343ea",
-      "bytes": 2966
+      "sha256": "39bd56b6a56eb0e6aad0cc5f5466e47baadf5a95b4337a4c71231b01d7a50c8c",
+      "bytes": 3083
     },
     {
       "path": "authoring/catalog/html-css-js/javascript-fundamentals/let-const-and-equals/topic.json",
-      "sha256": "99366e8e6ef2b4ae096ce80abcdb6c9d78d3885d4e6fea46d6ce21aa9e539517",
-      "bytes": 2961
+      "sha256": "46e8eb47774357ff673268d261d0edbe4f70b814b9e66a9476cbb6936a256e23",
+      "bytes": 2722
     },
     {
       "path": "authoring/catalog/html-css-js/javascript-fundamentals/module.json",
@@ -35,18 +35,18 @@
     },
     {
       "path": "authoring/catalog/html-css-js/javascript-fundamentals/modules-import-and-export/topic.json",
-      "sha256": "af59bd589fe6b5f0ae75f8180507327ccb22c0af5dbe03ef7a0e9f0b1db781e3",
-      "bytes": 2946
+      "sha256": "97e91cf1e00c4e3bc1dd750f45940e874f1cde3a714bdafd2bc782f6177ff477",
+      "bytes": 2707
     },
     {
       "path": "authoring/catalog/html-css-js/javascript-fundamentals/scope-and-closures/topic.json",
-      "sha256": "261848becbb01927b41435858d47139b46bd595fd5b818ad30fb0e945348774b",
-      "bytes": 3046
+      "sha256": "946f1b1b9f3c4bb27211a49f61c7f582762b3b1b1b9f086d201d29947423338c",
+      "bytes": 2807
     },
     {
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/arrays-and-objects-map-filter-reduce/owner-essential-qa.json",
-      "sha256": "6d3750cdd80ccf1cfce242286ab3ed0308bcec15b9a7bd5e469daac0ab9bfc66",
-      "bytes": 2689
+      "sha256": "37df05d0e8d7c1f8f01aad2cdbf3ab141d1f0584d2af6c6151dee630f163c09e",
+      "bytes": 3797
     },
     {
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/arrays-and-objects-map-filter-reduce/qa-paths.json",
@@ -64,14 +64,19 @@
       "bytes": 2642
     },
     {
+      "path": "authoring/evidence/html-css-js/javascript-fundamentals/arrays-and-objects-map-filter-reduce/video.json",
+      "sha256": "af50615fd72876c7863520203235dd682935ccb713087dfd1abca99e0309a472",
+      "bytes": 532
+    },
+    {
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/coding-lab-solved-run.json",
       "sha256": "dea641fc37c9af7f2e4ad095067bf4a094881d4bef2c7844715fed955453a715",
       "bytes": 3177
     },
     {
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/destructuring-and-spread/owner-essential-qa.json",
-      "sha256": "32329a6097df735f0102c168b061a90c0e1a1a6a5d7c8eb575ecdf8098e60ebd",
-      "bytes": 2641
+      "sha256": "7a246619b3a97870e60150bb3bcc5c6c562b34f7e8dcac0c828b4b226333408d",
+      "bytes": 3737
     },
     {
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/destructuring-and-spread/qa-paths.json",
@@ -89,14 +94,19 @@
       "bytes": 1424
     },
     {
+      "path": "authoring/evidence/html-css-js/javascript-fundamentals/destructuring-and-spread/video.json",
+      "sha256": "7b880312a4fa948bd547ace16f3a44bda74176d2caed5fb468974cf8fbdcfa6d",
+      "bytes": 492
+    },
+    {
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/first-draft-manifest.json",
       "sha256": "59958f465da9ee3d3084b3c1c472eb91c1b3418ba0d160b1312b97ebff668db5",
       "bytes": 15689
     },
     {
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/functions-as-values-arrow-functions-and-callbacks/owner-essential-qa.json",
-      "sha256": "fa04a3948b380e17687768464b31443c7da7fb2d10adb8fe3921c6e4b906a7ee",
-      "bytes": 2741
+      "sha256": "6f7e28dbe8f38a9ee53f43925f6a44eddf13d49b395518e184b753e5ec1e0986",
+      "bytes": 3862
     },
     {
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/functions-as-values-arrow-functions-and-callbacks/qa-paths.json",
@@ -112,6 +122,11 @@
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/functions-as-values-arrow-functions-and-callbacks/sources.json",
       "sha256": "165c40a4d8a9f5e0a0f741f070683690379acc627ed9370cef108221534cbea9",
       "bytes": 1954
+    },
+    {
+      "path": "authoring/evidence/html-css-js/javascript-fundamentals/functions-as-values-arrow-functions-and-callbacks/video.json",
+      "sha256": "175d57787b121b460b2d7c098eff4909edacb089090405f6dce5c005b809eb14",
+      "bytes": 544
     },
     {
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/javascript-for-java-developers/owner-essential-qa.json",
@@ -135,8 +150,8 @@
     },
     {
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/let-const-and-equals/owner-essential-qa.json",
-      "sha256": "96679fb3293fab8ff797d279e9ecd8b0f445b60a59962fb291ef338df414f69e",
-      "bytes": 2625
+      "sha256": "6b5fc5fe9d6e0ace5a881ca4711434aa8f30a04b84cbd258135b756512cc028f",
+      "bytes": 3717
     },
     {
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/let-const-and-equals/qa-paths.json",
@@ -152,6 +167,11 @@
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/let-const-and-equals/sources.json",
       "sha256": "5a8eff2c0a4402991f28c554d54c8f43e0e5f4a140b2d7075cb1c96810990f2a",
       "bytes": 2511
+    },
+    {
+      "path": "authoring/evidence/html-css-js/javascript-fundamentals/let-const-and-equals/video.json",
+      "sha256": "fece540435080e5b51c3b3296b3f0a0e648b10fa73577ae6d4772e23b3908be0",
+      "bytes": 510
     },
     {
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/local-workflow-critic-education-recheck.json",
@@ -190,8 +210,8 @@
     },
     {
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/modules-import-and-export/owner-essential-qa.json",
-      "sha256": "bc096498109ba2924c5f2b50aefc7595f90441fe2abde1fdbf4ac0a22be33603",
-      "bytes": 2645
+      "sha256": "25be44c60243b785cb57c150e99c6b47b6b39b96f5629d3a10b7c667ffe11494",
+      "bytes": 3742
     },
     {
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/modules-import-and-export/qa-paths.json",
@@ -209,14 +229,19 @@
       "bytes": 1887
     },
     {
+      "path": "authoring/evidence/html-css-js/javascript-fundamentals/modules-import-and-export/video.json",
+      "sha256": "904910adffb879a5acc593bf53680cafae51fd65938d19e73395ba2fbaa94139",
+      "bytes": 493
+    },
+    {
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/review-readiness.md",
       "sha256": "fe4cb45a03baa1af7584e3ffb0709b7f40d392f4f62f01ec44763671405942aa",
       "bytes": 5533
     },
     {
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/scope-and-closures/owner-essential-qa.json",
-      "sha256": "8739e51a0d5b00348fd36f707e33731ff518800efc82f3f9af6789bcba171de9",
-      "bytes": 2617
+      "sha256": "bf845c4599c29afd411b143418e383f9c7f86681aa85c631faabd3a498eba75d",
+      "bytes": 3707
     },
     {
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/scope-and-closures/qa-paths.json",
@@ -232,6 +257,11 @@
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/scope-and-closures/sources.json",
       "sha256": "24a0bae642fdb55d145ac96be94e00adb15f913ac319ce3233a5b5f590427233",
       "bytes": 1329
+    },
+    {
+      "path": "authoring/evidence/html-css-js/javascript-fundamentals/scope-and-closures/video.json",
+      "sha256": "a3e4cc6e756a7766ff5f3164745f428d902d2ef2639037a7584a577ce614580d",
+      "bytes": 530
     },
     {
       "path": "authoring/evidence/html-css-js/javascript-fundamentals/timing-critic-education-recheck.json",
@@ -262,6 +292,11 @@
       "path": "html-css-js/javascript-fundamentals/arrays-and-objects-map-filter-reduce/artifact.md",
       "sha256": "7e4c84155552a9fd95546ce5b363c2ec855bca5d9a678dc917a7a9b3af974b63",
       "bytes": 7599
+    },
+    {
+      "path": "html-css-js/javascript-fundamentals/arrays-and-objects-map-filter-reduce/video-artifact.md",
+      "sha256": "a05190836d36602bf2a72895313efef01339508b664941fd48e18b5541becd17",
+      "bytes": 2855
     },
     {
       "path": "html-css-js/javascript-fundamentals/assessments/javascript-fundamentals-mastery-check/blueprint.json",
@@ -329,6 +364,11 @@
       "bytes": 6413
     },
     {
+      "path": "html-css-js/javascript-fundamentals/destructuring-and-spread/video-artifact.md",
+      "sha256": "20aa861cf764195b9fbe41b605416758ee4df90da9810bbd05de16612e4aace9",
+      "bytes": 2358
+    },
+    {
       "path": "html-css-js/javascript-fundamentals/functions-as-values-arrow-functions-and-callbacks/artifact.gift",
       "sha256": "ca5ad5b05d5aa4d8fe3d07e968eab0f6f4841f5ed291904ad75945e080b04c50",
       "bytes": 2786
@@ -342,6 +382,11 @@
       "path": "html-css-js/javascript-fundamentals/functions-as-values-arrow-functions-and-callbacks/artifact.md",
       "sha256": "b84c927ba13732681e3b29a3782a99e11927e8666e3fe47cf2897e0bb4f510b8",
       "bytes": 7738
+    },
+    {
+      "path": "html-css-js/javascript-fundamentals/functions-as-values-arrow-functions-and-callbacks/video-artifact.md",
+      "sha256": "f27da93e6199560bec5172f2a9800a539d3ec22e8e7c1229b73fac4da503bca7",
+      "bytes": 2954
     },
     {
       "path": "html-css-js/javascript-fundamentals/javascript-for-java-developers/artifact.gift",
@@ -374,6 +419,11 @@
       "bytes": 6527
     },
     {
+      "path": "html-css-js/javascript-fundamentals/let-const-and-equals/video-artifact.md",
+      "sha256": "8cd7d266602d5e8dcd7549d647bde276fb1f9d7c80ecb74137c2198b1bb636d1",
+      "bytes": 2728
+    },
+    {
       "path": "html-css-js/javascript-fundamentals/modules-import-and-export/artifact.gift",
       "sha256": "e50b6620934162c1797d0cd16812fd9b83390c1fc3e4d7050ee4620662095222",
       "bytes": 2642
@@ -389,6 +439,11 @@
       "bytes": 7571
     },
     {
+      "path": "html-css-js/javascript-fundamentals/modules-import-and-export/video-artifact.md",
+      "sha256": "863964f041ccb891c4cd3e7c036f9ed6a26b0a6e973f1d172f03b9980a7a1e8f",
+      "bytes": 2702
+    },
+    {
       "path": "html-css-js/javascript-fundamentals/scope-and-closures/artifact.gift",
       "sha256": "ed2abd35a674d9f6a51329b658f713e388fdd4fe3740aa080811fd464ea07230",
       "bytes": 2525
@@ -402,6 +457,11 @@
       "path": "html-css-js/javascript-fundamentals/scope-and-closures/artifact.md",
       "sha256": "1d5c7cf2307a408c2cf003bcd213ee924a03ba72a6cb6d833208787640c0f9c6",
       "bytes": 7828
+    },
+    {
+      "path": "html-css-js/javascript-fundamentals/scope-and-closures/video-artifact.md",
+      "sha256": "31282246b4ece018cc0e7e6c050a43783230112222c63330288d6c4fc07d5172",
+      "bytes": 2783
     }
   ],
   "evidenceBindings": [
@@ -420,6 +480,14 @@
       "artifactPath": "html-css-js/javascript-fundamentals/arrays-and-objects-map-filter-reduce/artifact.gift",
       "sha256": "55e10b6eb2d67fdc2ee7623bf93c5e2adb11786b64cb70633a271f888d006b40",
       "current": false
+    },
+    {
+      "topic": "arrays-and-objects-map-filter-reduce",
+      "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/arrays-and-objects-map-filter-reduce/owner-essential-qa.json",
+      "field": "artifacts[2].reviewedSha256",
+      "artifactPath": "html-css-js/javascript-fundamentals/arrays-and-objects-map-filter-reduce/video-artifact.md",
+      "sha256": "a05190836d36602bf2a72895313efef01339508b664941fd48e18b5541becd17",
+      "current": true
     },
     {
       "topic": "arrays-and-objects-map-filter-reduce",
@@ -484,6 +552,14 @@
       "artifactPath": "html-css-js/javascript-fundamentals/arrays-and-objects-map-filter-reduce/artifact.html",
       "sha256": "e30f506e48e9a575c20ecf8613389626c77ffb5e281d99f4f8549ddecfe22dac",
       "current": true
+    },
+    {
+      "topic": "arrays-and-objects-map-filter-reduce",
+      "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/arrays-and-objects-map-filter-reduce/video.json",
+      "field": "artifactSha256",
+      "artifactPath": "html-css-js/javascript-fundamentals/arrays-and-objects-map-filter-reduce/artifact.html",
+      "sha256": "a05190836d36602bf2a72895313efef01339508b664941fd48e18b5541becd17",
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/coding-lab-solved-run.json",
@@ -575,6 +651,14 @@
     },
     {
       "topic": "destructuring-and-spread",
+      "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/destructuring-and-spread/owner-essential-qa.json",
+      "field": "artifacts[2].reviewedSha256",
+      "artifactPath": "html-css-js/javascript-fundamentals/destructuring-and-spread/video-artifact.md",
+      "sha256": "20aa861cf764195b9fbe41b605416758ee4df90da9810bbd05de16612e4aace9",
+      "current": true
+    },
+    {
+      "topic": "destructuring-and-spread",
       "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/destructuring-and-spread/qa-receipt.json",
       "field": "artifactHashes.artifact.html",
       "artifactPath": "html-css-js/javascript-fundamentals/destructuring-and-spread/artifact.html",
@@ -638,6 +722,14 @@
       "current": true
     },
     {
+      "topic": "destructuring-and-spread",
+      "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/destructuring-and-spread/video.json",
+      "field": "artifactSha256",
+      "artifactPath": "html-css-js/javascript-fundamentals/destructuring-and-spread/artifact.html",
+      "sha256": "20aa861cf764195b9fbe41b605416758ee4df90da9810bbd05de16612e4aace9",
+      "current": false
+    },
+    {
       "topic": "functions-as-values-arrow-functions-and-callbacks",
       "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/functions-as-values-arrow-functions-and-callbacks/owner-essential-qa.json",
       "field": "artifacts[0].reviewedSha256",
@@ -652,6 +744,14 @@
       "artifactPath": "html-css-js/javascript-fundamentals/functions-as-values-arrow-functions-and-callbacks/artifact.gift",
       "sha256": "9a4596ca3fa8fde52a5eea1427f6aec7ee997ba030147a3ce580b31ea8e8ca57",
       "current": false
+    },
+    {
+      "topic": "functions-as-values-arrow-functions-and-callbacks",
+      "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/functions-as-values-arrow-functions-and-callbacks/owner-essential-qa.json",
+      "field": "artifacts[2].reviewedSha256",
+      "artifactPath": "html-css-js/javascript-fundamentals/functions-as-values-arrow-functions-and-callbacks/video-artifact.md",
+      "sha256": "f27da93e6199560bec5172f2a9800a539d3ec22e8e7c1229b73fac4da503bca7",
+      "current": true
     },
     {
       "topic": "functions-as-values-arrow-functions-and-callbacks",
@@ -716,6 +816,14 @@
       "artifactPath": "html-css-js/javascript-fundamentals/functions-as-values-arrow-functions-and-callbacks/artifact.html",
       "sha256": "4c843c5973d2accdb9b3b2e792e47aed6ace22aa36f6f254ee89521d30ab5fc5",
       "current": true
+    },
+    {
+      "topic": "functions-as-values-arrow-functions-and-callbacks",
+      "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/functions-as-values-arrow-functions-and-callbacks/video.json",
+      "field": "artifactSha256",
+      "artifactPath": "html-css-js/javascript-fundamentals/functions-as-values-arrow-functions-and-callbacks/artifact.html",
+      "sha256": "f27da93e6199560bec5172f2a9800a539d3ec22e8e7c1229b73fac4da503bca7",
+      "current": false
     },
     {
       "topic": "javascript-for-java-developers",
@@ -815,6 +923,14 @@
     },
     {
       "topic": "let-const-and-equals",
+      "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/let-const-and-equals/owner-essential-qa.json",
+      "field": "artifacts[2].reviewedSha256",
+      "artifactPath": "html-css-js/javascript-fundamentals/let-const-and-equals/video-artifact.md",
+      "sha256": "8cd7d266602d5e8dcd7549d647bde276fb1f9d7c80ecb74137c2198b1bb636d1",
+      "current": true
+    },
+    {
+      "topic": "let-const-and-equals",
       "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/let-const-and-equals/qa-receipt.json",
       "field": "artifactHashes.artifact.html",
       "artifactPath": "html-css-js/javascript-fundamentals/let-const-and-equals/artifact.html",
@@ -876,6 +992,14 @@
       "artifactPath": "html-css-js/javascript-fundamentals/let-const-and-equals/artifact.html",
       "sha256": "ac00ea92cd4c7f37c49bf44138149079dc9d0ee760b17968eb4e3e72842558b1",
       "current": true
+    },
+    {
+      "topic": "let-const-and-equals",
+      "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/let-const-and-equals/video.json",
+      "field": "artifactSha256",
+      "artifactPath": "html-css-js/javascript-fundamentals/let-const-and-equals/artifact.html",
+      "sha256": "8cd7d266602d5e8dcd7549d647bde276fb1f9d7c80ecb74137c2198b1bb636d1",
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/local-workflow-critic-education-recheck.json",
@@ -1245,6 +1369,14 @@
     },
     {
       "topic": "modules-import-and-export",
+      "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/modules-import-and-export/owner-essential-qa.json",
+      "field": "artifacts[2].reviewedSha256",
+      "artifactPath": "html-css-js/javascript-fundamentals/modules-import-and-export/video-artifact.md",
+      "sha256": "863964f041ccb891c4cd3e7c036f9ed6a26b0a6e973f1d172f03b9980a7a1e8f",
+      "current": true
+    },
+    {
+      "topic": "modules-import-and-export",
       "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/modules-import-and-export/qa-receipt.json",
       "field": "artifactHashes.artifact.html",
       "artifactPath": "html-css-js/javascript-fundamentals/modules-import-and-export/artifact.html",
@@ -1308,6 +1440,14 @@
       "current": true
     },
     {
+      "topic": "modules-import-and-export",
+      "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/modules-import-and-export/video.json",
+      "field": "artifactSha256",
+      "artifactPath": "html-css-js/javascript-fundamentals/modules-import-and-export/artifact.html",
+      "sha256": "863964f041ccb891c4cd3e7c036f9ed6a26b0a6e973f1d172f03b9980a7a1e8f",
+      "current": false
+    },
+    {
       "topic": "scope-and-closures",
       "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/scope-and-closures/owner-essential-qa.json",
       "field": "artifacts[0].reviewedSha256",
@@ -1322,6 +1462,14 @@
       "artifactPath": "html-css-js/javascript-fundamentals/scope-and-closures/artifact.gift",
       "sha256": "47109e3b12cd65e9b3fafd574f7706dfc7b7a7f3ec5fdb74fa03dcee4f639d28",
       "current": false
+    },
+    {
+      "topic": "scope-and-closures",
+      "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/scope-and-closures/owner-essential-qa.json",
+      "field": "artifacts[2].reviewedSha256",
+      "artifactPath": "html-css-js/javascript-fundamentals/scope-and-closures/video-artifact.md",
+      "sha256": "31282246b4ece018cc0e7e6c050a43783230112222c63330288d6c4fc07d5172",
+      "current": true
     },
     {
       "topic": "scope-and-closures",
@@ -1386,6 +1534,14 @@
       "artifactPath": "html-css-js/javascript-fundamentals/scope-and-closures/artifact.html",
       "sha256": "8d65c4cc35f3b28160e74b09b72f63406ebaabe10e2efed1f6eaacb33b690723",
       "current": true
+    },
+    {
+      "topic": "scope-and-closures",
+      "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/scope-and-closures/video.json",
+      "field": "artifactSha256",
+      "artifactPath": "html-css-js/javascript-fundamentals/scope-and-closures/artifact.html",
+      "sha256": "31282246b4ece018cc0e7e6c050a43783230112222c63330288d6c4fc07d5172",
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/javascript-fundamentals/timing-critic-education-recheck.json",
