@@ -175,8 +175,8 @@
     },
     {
       "path": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint.md",
-      "sha256": "f3c4c0bc65cb3f39863fac07172316ba97375de0ea8fb9dab5a293800c601d78",
-      "bytes": 20586
+      "sha256": "04d834ef6a82698562c65ee1d8758d7a6e89b10e9b970e9be774e80b24303ea0",
+      "bytes": 20893
     },
     {
       "path": "containers-cicd/assessments/containers-cicd-course-final/blueprint.json",
@@ -200,8 +200,8 @@
     },
     {
       "path": "containers-cicd/assessments/standard-fast-final-checkpoint/checkpoint-mcq.gift",
-      "sha256": "a7a77fe1c21ae494f8033de3c650cd3ab2e8ba68a8a256706e6876bbd50773a6",
-      "bytes": 59818
+      "sha256": "6916150d0b0d5887937066d3e508d439906863a812fcebf434df78e099253685",
+      "bytes": 59836
     }
   ],
   "evidenceBindings": [
@@ -1057,21 +1057,21 @@
       "field": "artifactHashes.assessments/standard-fast-final-checkpoint/checkpoint-mcq.gift",
       "artifactPath": "containers-cicd/assessments/standard-fast-final-checkpoint/checkpoint-mcq.gift",
       "sha256": "a7a77fe1c21ae494f8033de3c650cd3ab2e8ba68a8a256706e6876bbd50773a6",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-loop4-critic-education-recheck.json",
       "field": "recheck.items[0].reviewedSha256",
       "artifactPath": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint.md",
       "sha256": "f3c4c0bc65cb3f39863fac07172316ba97375de0ea8fb9dab5a293800c601d78",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-loop4-critic-education-recheck.json",
       "field": "recheck.items[1].reviewedSha256",
       "artifactPath": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint.md",
       "sha256": "f3c4c0bc65cb3f39863fac07172316ba97375de0ea8fb9dab5a293800c601d78",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-loop4-critic-education-recheck.json",
@@ -1092,42 +1092,42 @@
       "field": "artifactHashes.assessments/standard-fast-final-checkpoint/checkpoint-mcq.gift",
       "artifactPath": "containers-cicd/assessments/standard-fast-final-checkpoint/checkpoint-mcq.gift",
       "sha256": "a7a77fe1c21ae494f8033de3c650cd3ab2e8ba68a8a256706e6876bbd50773a6",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-loop4-critic-sme-recheck.json",
       "field": "findings[0].reviewedSha256",
       "artifactPath": "containers-cicd/assessments/standard-fast-final-checkpoint/checkpoint-mcq.gift",
       "sha256": "a7a77fe1c21ae494f8033de3c650cd3ab2e8ba68a8a256706e6876bbd50773a6",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-loop4-critic-sme-recheck.json",
       "field": "recheck.items[0].reviewedSha256",
       "artifactPath": "containers-cicd/assessments/standard-fast-final-checkpoint/checkpoint-mcq.gift",
       "sha256": "a7a77fe1c21ae494f8033de3c650cd3ab2e8ba68a8a256706e6876bbd50773a6",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-loop4-critic-sme-recheck.json",
       "field": "recheck.items[1].reviewedSha256",
       "artifactPath": "containers-cicd/assessments/standard-fast-final-checkpoint/checkpoint-mcq.gift",
       "sha256": "a7a77fe1c21ae494f8033de3c650cd3ab2e8ba68a8a256706e6876bbd50773a6",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-loop4-critic-sme-recheck.json",
       "field": "recheck.items[2].reviewedSha256",
       "artifactPath": "containers-cicd/assessments/standard-fast-final-checkpoint/checkpoint-mcq.gift",
       "sha256": "a7a77fe1c21ae494f8033de3c650cd3ab2e8ba68a8a256706e6876bbd50773a6",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-loop4-critic-sme-recheck.json",
       "field": "reviewedSha256",
       "artifactPath": "containers-cicd/assessments/standard-fast-final-checkpoint/checkpoint-mcq.gift",
       "sha256": "a7a77fe1c21ae494f8033de3c650cd3ab2e8ba68a8a256706e6876bbd50773a6",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-reconciliation.json",
