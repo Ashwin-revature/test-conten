@@ -39,7 +39,8 @@
     ]
   },
   "assessments": [
-    "python-module-check"
+    "python-module-check",
+    "python-final-mcq"
   ],
   "courseLabs": [],
   "license": "proprietary-private",
