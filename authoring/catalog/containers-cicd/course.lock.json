@@ -5,8 +5,8 @@
   "files": [
     {
       "path": "authoring/catalog/containers-cicd/course.json",
-      "sha256": "24f30936006362bade3bb1a63fbf12016d9f4f1b9e28e039cbda5751572a5ff9",
-      "bytes": 915
+      "sha256": "890f48b1935963acba57dacdde18f1a1522a281792af5c8db217cd583e3d8790",
+      "bytes": 952
     },
     {
       "path": "authoring/evidence/containers-cicd/intake-2-critic-education-recheck.json",
@@ -192,7 +192,7 @@
       "field": "artifactHashes.course.json",
       "artifactPath": "authoring/catalog/containers-cicd/course.json",
       "sha256": "24f30936006362bade3bb1a63fbf12016d9f4f1b9e28e039cbda5751572a5ff9",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/intake-critic-education.json",
@@ -262,7 +262,7 @@
       "field": "artifactHashes.course.json",
       "artifactPath": "authoring/catalog/containers-cicd/course.json",
       "sha256": "24f30936006362bade3bb1a63fbf12016d9f4f1b9e28e039cbda5751572a5ff9",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/intake-critic-sme.json",
@@ -297,7 +297,7 @@
       "field": "artifactHashes.course.json",
       "artifactPath": "authoring/catalog/containers-cicd/course.json",
       "sha256": "24f30936006362bade3bb1a63fbf12016d9f4f1b9e28e039cbda5751572a5ff9",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/intake-path-critic-education-recheck.json",
@@ -339,7 +339,7 @@
       "field": "artifactHashes.course.json",
       "artifactPath": "authoring/catalog/containers-cicd/course.json",
       "sha256": "24f30936006362bade3bb1a63fbf12016d9f4f1b9e28e039cbda5751572a5ff9",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/intake-path-critic-sme-recheck.json",
