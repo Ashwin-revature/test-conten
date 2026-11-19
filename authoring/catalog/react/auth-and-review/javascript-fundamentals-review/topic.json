@@ -60,11 +60,11 @@
     },
     "video": {
       "status": "absent",
-      "reason": "Deferred: HTML-first draft batch; no video search was run for this checkpoint, so no video is linked"
+      "reason": "Not linked: a mixed review topic; its objectives repeat topics whose videos are already linked in html-css-js javascript-fundamentals, dom-tooling-and-async and fetch-and-browser-client, so a further video would duplicate them; see authoring/evidence/react/video-curation.md."
     },
     "lab": {
       "status": "absent",
-      "reason": "Not applicable: no topic lab for a review page; the S35 Review-day 'Practice without AI' block runs on the platform"
+      "reason": "No topic lab for a review page; the S35 Review-day 'Practice without AI' block runs on the platform. Standard: the module lab react/auth-and-review/coding-lab/ on the S34 Lab day partly practises #o2 (awaited fetch and status-carrying errors in tasks 1, 2 and 6); #o1 and #o3 are not lab-tested."
     }
   },
   "freshness": {

@@ -59,11 +59,11 @@
     },
     "video": {
       "status": "absent",
-      "reason": "Deferred: HTML-first draft batch; no video search was run for this checkpoint, so no video is linked"
+      "reason": "No verified video: the only whole-course candidate, Code Bootcamp's \"Every React Concept Explained in 12 Minutes\", has embedding disabled (oEmbed HTTP 401 on 2026-11-09), and the topic videos already linked in this course cover its parts; see authoring/evidence/react/video-curation.md."
     },
     "lab": {
       "status": "absent",
-      "reason": "Not applicable: no topic lab for a review page; the S35 Review-day 'Practice without AI' block runs on the platform"
+      "reason": "No topic lab for a review page; the S35 Review-day 'Practice without AI' block runs on the platform. Standard: the module lab react/auth-and-review/coding-lab/ on the S34 Lab day partly practises #o1 (state, context, routing and form submission together in tasks 1, 3, 6 and 7, with the state-update and changed-context re-render triggers); effects and the parent-re-render trigger appear only in given code, and #o2 is not lab-tested."
     }
   },
   "freshness": {
