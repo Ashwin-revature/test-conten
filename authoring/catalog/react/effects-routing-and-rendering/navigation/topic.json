@@ -54,12 +54,11 @@
       "status": "present"
     },
     "video": {
-      "status": "absent",
-      "reason": "Deferred: HTML-first draft batch; no video search was run for this checkpoint, so no video is linked"
+      "status": "present"
     },
     "lab": {
       "status": "absent",
-      "reason": "Standard: covered by the planned module lab react/effects-routing-and-rendering/coding-lab/ for the S31 Lab day, authored in the effects-routing-and-rendering module PR. Course project: applied in part P2 of the planned cumulative course project react/coding-lab/ (Fast FT17 increment), after an embedded teach-then-check step; authored in a course-level PR"
+      "reason": "Standard: practice is partial, in tasks 2 and 3 in the module lab react/effects-routing-and-rendering/coding-lab/ on the S31 Lab day: #o1 and #o2 except its replacing-the-history-entry clause, which is practised on this topic page. Course project: applied in part P2 of the planned cumulative course project react/coding-lab/ (Fast FT17 increment), after an embedded teach-then-check step; authored in a course-level PR"
     }
   },
   "freshness": {

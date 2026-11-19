@@ -58,12 +58,11 @@
       "status": "present"
     },
     "video": {
-      "status": "absent",
-      "reason": "Deferred: HTML-first draft batch; no video search was run for this checkpoint, so no video is linked"
+      "status": "present"
     },
     "lab": {
       "status": "absent",
-      "reason": "Standard: covered by the planned module lab react/effects-routing-and-rendering/coding-lab/ for the S31 Lab day, authored in the effects-routing-and-rendering module PR. Course project: not applied in a course-project part: the Fast FT17 increment is reduced to objectives it can teach and check within its 70-minute Project block"
+      "reason": "Standard: practice is partial, in task 8 in the module lab react/effects-routing-and-rendering/coding-lab/ on the S31 Lab day, where the learner applies memo to skip a needless re-render: only #o3 is mapped, and its predict-the-re-render and describe-memo clauses are not lab-tested; #o1, #o2 and those clauses are practised on this topic page. Course project: not applied in a course-project part: the Fast FT17 increment is reduced to objectives it can teach and check within its 70-minute Project block"
     }
   },
   "freshness": {

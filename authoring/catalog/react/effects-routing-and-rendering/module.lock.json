@@ -5,48 +5,108 @@
   "files": [
     {
       "path": "authoring/catalog/react/effects-routing-and-rendering/custom-hooks/topic.json",
-      "sha256": "8ac9d3774874e5a68e0275b39eaf1609e71c3ff24fd4148be42ea3fe41653d76",
-      "bytes": 3102
+      "sha256": "b6f18d2d946d87394915734fb957d9c87b170097e9b6edff47630ac43990170d",
+      "bytes": 3194
     },
     {
       "path": "authoring/catalog/react/effects-routing-and-rendering/lifting-state-up/topic.json",
-      "sha256": "5eafab28db4981176ec369455fdf340e3fb107954c4a3d8c51dc8a2f49857d90",
-      "bytes": 3244
+      "sha256": "15aee785f6b25dad725f2eb6f362d0245b0436fd8a7a7b94b44639e1511a594b",
+      "bytes": 3387
     },
     {
       "path": "authoring/catalog/react/effects-routing-and-rendering/loading-and-error-states/topic.json",
-      "sha256": "315d03d7e4c5e4a5a44cf29d4180f5a1966571aa9d6823f2470eeddcbce5e8e3",
-      "bytes": 3252
+      "sha256": "e716286ba5703f56121e276162326b638d4f3f820ea44a11249aed301327fb83",
+      "bytes": 3223
     },
     {
       "path": "authoring/catalog/react/effects-routing-and-rendering/loading-data-with-useeffect/topic.json",
-      "sha256": "fc7b5fcc2814e0b41884c2592b13b140f49c3c24408fdbdcbf8a54e90703b6d7",
-      "bytes": 3239
+      "sha256": "becda5e44a205a68c317837074dc754e7561de4657d90506a3da02fac5d8d61f",
+      "bytes": 3374
     },
     {
       "path": "authoring/catalog/react/effects-routing-and-rendering/module.json",
-      "sha256": "5d0019f4ab0369d4506c9456e3afe66fb2303f3d2b27f11f52a476fb1b87d34f",
-      "bytes": 1626
+      "sha256": "c641cd7f7aaf74524bdef4417903998e75fcab980107f624d39428c44482b108",
+      "bytes": 2140
     },
     {
       "path": "authoring/catalog/react/effects-routing-and-rendering/navigation/topic.json",
-      "sha256": "0338f86d84354e9580731408d59f3aeb82dcfa28db0f74122b653ab27d80f63f",
-      "bytes": 3102
+      "sha256": "54be8ddae9eff13c4282ba4a1fb9682c567ef3abc5ae1d151048d537cc9e8b2e",
+      "bytes": 3045
     },
     {
       "path": "authoring/catalog/react/effects-routing-and-rendering/routing-and-route-parameters/topic.json",
-      "sha256": "a6150b3af6ed26d6d0d7718fba02618a6838b6abbdc05e6f8651c3d2fdd112b5",
-      "bytes": 3256
+      "sha256": "2ff92f19af18df8c3b4d59a561efbf2ba7cd50cc1eb8afe9d6f7c43f92e902ad",
+      "bytes": 3113
     },
     {
       "path": "authoring/catalog/react/effects-routing-and-rendering/what-makes-a-component-re-render/topic.json",
-      "sha256": "eb6c02f2b15d058f72ad0a63009fc139e8420b06a2c73d3bcaee115817f94a60",
-      "bytes": 3292
+      "sha256": "c76a7fca927e0fcd7d4dee325f54feb1a135e78050603c1fffede84107f8000d",
+      "bytes": 3348
+    },
+    {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education-recheck.json",
+      "sha256": "257086e8259778346ecd23e8ac2a83122e143e1f6fd6e0bcec88918032d289e7",
+      "bytes": 5093
+    },
+    {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education.json",
+      "sha256": "5a96538267d05e30577251adb1e3c2b6dec34d4f8f7c9df4635f51bfdb7ba17f",
+      "bytes": 9324
+    },
+    {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme-recheck.json",
+      "sha256": "36b53e5359813727701125be860b8b884bfa3369716a75897c0b7bbad1e89df6",
+      "bytes": 6984
+    },
+    {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme.json",
+      "sha256": "423ec08df308677a224c82fca07af979b21fdf800c58d4893bd131e3b7a97333",
+      "bytes": 6796
+    },
+    {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-decision-reconciliation.json",
+      "sha256": "993b10683eb53f3ade01be23714adf70db21220f274111dfbb6a9c2cc9e33b86",
+      "bytes": 2192
+    },
+    {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-education-recheck.json",
+      "sha256": "50a79ead370b78f73ce75783e457cbfe15bf16f50ad134b8c13feb18b25703bb",
+      "bytes": 6137
+    },
+    {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-sme-recheck.json",
+      "sha256": "1b38c75c1adc38c064bf7d0680927d9e529a22aa01b31c4f76d249821e893af5",
+      "bytes": 5335
+    },
+    {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-reconciliation.json",
+      "sha256": "57476e0c1f03e79077aae0af161675ed19b098b1d0a5bae4ead20beda63ab19d",
+      "bytes": 1944
+    },
+    {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop3-critic-education-recheck.json",
+      "sha256": "d4e81230311fed4050cfe4888513bb363bb517346f8b1cfa1473b2140a30734b",
+      "bytes": 1517
+    },
+    {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop3-reconciliation.json",
+      "sha256": "568ddbe27f878d39f8048152b7c944ddf2ea6b662a1b8dcc2cbf1eaf126f6c46",
+      "bytes": 2244
+    },
+    {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-reconciliation.json",
+      "sha256": "7003356edd0173aaaf289d933dc8ceee55d216661bb90965f7a40696561daec1",
+      "bytes": 14109
+    },
+    {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "sha256": "614c2adc1b5f2a0a948a818157bcc3cdfc926381358ed3b87523dcc50e5bedf3",
+      "bytes": 9497
     },
     {
       "path": "authoring/evidence/react/effects-routing-and-rendering/custom-hooks/owner-essential-qa.json",
-      "sha256": "576b9cd1d66b26c3e86e697b351b3ffea0bf517c723f80395f5edb212056a537",
-      "bytes": 2951
+      "sha256": "29744b7ee6de629f3addd41b155f42c361baf06aaaca67d2c6d0cc1730c54e9b",
+      "bytes": 4035
     },
     {
       "path": "authoring/evidence/react/effects-routing-and-rendering/custom-hooks/qa-paths.json",
@@ -62,6 +122,11 @@
       "path": "authoring/evidence/react/effects-routing-and-rendering/custom-hooks/sources.json",
       "sha256": "eda9b7cb37c6a2549fc17f239de72ce043cbdecea56b55d4c565d59e2cefa805",
       "bytes": 616
+    },
+    {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/custom-hooks/video.json",
+      "sha256": "8d3ebe0a1342c104e19bc66ad3682ba61d4cd12e2f0937735476ae10795e2347",
+      "bytes": 508
     },
     {
       "path": "authoring/evidence/react/effects-routing-and-rendering/first-draft-manifest.json",
@@ -90,8 +155,8 @@
     },
     {
       "path": "authoring/evidence/react/effects-routing-and-rendering/loading-and-error-states/owner-essential-qa.json",
-      "sha256": "29e573fcba9343b215652b2ec612a777e8f2de2046e135ac479a05c161348f19",
-      "bytes": 2987
+      "sha256": "18f61eaff8faa8a1cf59ae0e11f2ce5fa14a8e561e4ac79c3f6004eaffbfdcd8",
+      "bytes": 4083
     },
     {
       "path": "authoring/evidence/react/effects-routing-and-rendering/loading-and-error-states/qa-paths.json",
@@ -109,9 +174,14 @@
       "bytes": 1343
     },
     {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/loading-and-error-states/video.json",
+      "sha256": "063b2e0ad0893ed4a713ee25c37f9f96906411a8142b194475d374aacbff4c19",
+      "bytes": 509
+    },
+    {
       "path": "authoring/evidence/react/effects-routing-and-rendering/loading-data-with-useeffect/owner-essential-qa.json",
-      "sha256": "256e9d000fae0764c12ad9afc26157f1531dd1786973e3fef0cbd3e23e989287",
-      "bytes": 2996
+      "sha256": "71c59fa2a11959510c80cc394344baa7e5f54cc5061f91ffd70bb8de24f0438b",
+      "bytes": 4095
     },
     {
       "path": "authoring/evidence/react/effects-routing-and-rendering/loading-data-with-useeffect/qa-paths.json",
@@ -129,9 +199,14 @@
       "bytes": 2215
     },
     {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/loading-data-with-useeffect/video.json",
+      "sha256": "b52139e77874e0da7a51fa95385812920beb0f4a3aff1cd0276312f6cc8a0c49",
+      "bytes": 516
+    },
+    {
       "path": "authoring/evidence/react/effects-routing-and-rendering/navigation/owner-essential-qa.json",
-      "sha256": "f7192fba8a437b6fb308f8504355cf354b65d514ea6d2c455a744fc26805aa45",
-      "bytes": 2945
+      "sha256": "5d3ece3028413039bd53beab4f60f2365701cf8f889bbbbf7cfdfa1c081e4748",
+      "bytes": 4027
     },
     {
       "path": "authoring/evidence/react/effects-routing-and-rendering/navigation/qa-paths.json",
@@ -149,14 +224,19 @@
       "bytes": 961
     },
     {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/navigation/video.json",
+      "sha256": "a0b3efa24257c58523e65b908c64f85b517f2cea157bc05a0edd3bb15253e9b9",
+      "bytes": 514
+    },
+    {
       "path": "authoring/evidence/react/effects-routing-and-rendering/readiness.md",
       "sha256": "9cb15e29379c47fc5dae265bd9f2b195216b16ffa38b07a775dca4d45f5b01ff",
       "bytes": 15251
     },
     {
       "path": "authoring/evidence/react/effects-routing-and-rendering/routing-and-route-parameters/owner-essential-qa.json",
-      "sha256": "26d38b99fe4e189a613e4639ef4a9a6b58e200ced701144c326a8030db1c0694",
-      "bytes": 2999
+      "sha256": "ab832102e452a95fc4f90cf11ec5b53a17e2e69af7b462ea25a51b528eb23fbe",
+      "bytes": 4099
     },
     {
       "path": "authoring/evidence/react/effects-routing-and-rendering/routing-and-route-parameters/qa-paths.json",
@@ -174,9 +254,14 @@
       "bytes": 2112
     },
     {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/routing-and-route-parameters/video.json",
+      "sha256": "ef55e2cad717e5602e751885dd4d2f364ff34c33c79008f8883ac43a3d9ae695",
+      "bytes": 504
+    },
+    {
       "path": "authoring/evidence/react/effects-routing-and-rendering/what-makes-a-component-re-render/owner-essential-qa.json",
-      "sha256": "cfec4bef0e150e369b6ca2f6c47ab219aebb96388de1b30552165ec637a3e2be",
-      "bytes": 2672
+      "sha256": "9e1c752d6575f86a56275ea7144e3898a9ec467ede9bb52f53cf0757818c3304",
+      "bytes": 3776
     },
     {
       "path": "authoring/evidence/react/effects-routing-and-rendering/what-makes-a-component-re-render/qa-paths.json",
@@ -187,6 +272,196 @@
       "path": "authoring/evidence/react/effects-routing-and-rendering/what-makes-a-component-re-render/sources.json",
       "sha256": "5d331bf918eca46a3ce9dff8fe73d91c5465ba447dff841b2547340ca64bbbba",
       "bytes": 1347
+    },
+    {
+      "path": "authoring/evidence/react/effects-routing-and-rendering/what-makes-a-component-re-render/video.json",
+      "sha256": "081902b249d8fdb094bdf65449e512855c47a43c02bc8968e42d1e374737d370",
+      "bytes": 519
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "381a60eeacf016fd8cc3c92bf8d4bcfeaa4ff87f18f7aadab462411ac3863358",
+      "bytes": 5857
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/expected/on-completion.txt",
+      "sha256": "139e64bc0c0b0d680abd09bc205aee25070b8f243981fd6cd45c521d70d116fa",
+      "bytes": 1096
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "bytes": 6933
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/index.html",
+      "sha256": "b94300008bae762558613b0c1c4a52ef22a713ba5659ff3e527f47d5c0be7f13",
+      "bytes": 318
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/mock-api.js",
+      "sha256": "8a77daef733863fe49d55e92910f57b46215fbf2e487752b31ada7e95ffd79d6",
+      "bytes": 2288
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/package-lock.json",
+      "sha256": "c01bcc820bce91d21e828f21f693dddc595642085f8284f1a539e3e3bffe442c",
+      "bytes": 61066
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/package.json",
+      "sha256": "f7998beea9ce562ba045e116ef514904e8ed0cc801cbf5708ee545470f6082e5",
+      "bytes": 386
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/src/App.jsx",
+      "sha256": "8bf10103aea596bfd615815e1a12f3c5d29c59ca8f6373f004d20e4bc3f15bd6",
+      "bytes": 1038
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/src/api.js",
+      "sha256": "a3ef8799dfc80dd0dd2bd991fa68b2e9183d016930a445e3b60f27963ea009c3",
+      "bytes": 652
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/src/components/AppLayout.jsx",
+      "sha256": "72715c995e6887edd3b2e2d6bddef271503b3919582d014a161b0787c638194d",
+      "bytes": 795
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/src/components/ServiceCard.jsx",
+      "sha256": "e1b7fb930f9c94d1c55b604e289f7a9916ba665330fb836bec3c9e4be175d6a7",
+      "bytes": 522
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/src/components/ServiceList.jsx",
+      "sha256": "3d8680228505790473d1e47a20475d0cfef1bf16a99276090ac2f2416d2cac1a",
+      "bytes": 471
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/src/components/StatusBadge.jsx",
+      "sha256": "46765dcb49155983e5f81c8bbad79b5dec5a772405347ec571250d239f81386d",
+      "bytes": 306
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/src/components/StatusLegend.jsx",
+      "sha256": "8088897c0f2a5788a9a5e595475361d3a9450c670e9303c313afb80abb949816",
+      "bytes": 1322
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/src/components/Toolbar.jsx",
+      "sha256": "981060debb6f4f42ff91628776829252403ffbf2e259182f65ec063425131fda",
+      "bytes": 908
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/src/hooks/use-fetch.js",
+      "sha256": "ead6646d5f8fd8419d043f88ee9d31ffc7d771f0d464ba152272a1141b8b426b",
+      "bytes": 1169
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/src/main.jsx",
+      "sha256": "a6b75d038976f7eac2fcaee14632c27ec2fc538ef3a05399ac67a205ef7ee461",
+      "bytes": 324
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/src/pages/LegendPage.jsx",
+      "sha256": "732fff1ce13d2a1e04f406b9d38561c5eda4da6f7716f3e556c5f523a6acd52e",
+      "bytes": 265
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/src/pages/NotFoundPage.jsx",
+      "sha256": "433a856cfcbb73bff615eeb3fec796a5bc7be73958005a965d1d72a87a997301",
+      "bytes": 307
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/src/pages/OverviewPage.jsx",
+      "sha256": "e329499f52f151570455c011318d887a929d224fad9902826a40198b6dc0411c",
+      "bytes": 2555
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/src/pages/ServiceDetailPage.jsx",
+      "sha256": "f05dd9207a09582cc240a5823ca08015e87b511e92587631bf156263205b79c4",
+      "bytes": 1187
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/src/render-count.js",
+      "sha256": "db94462ea3bdc21b2d57c24aa26396f9115390b44d15468ad4e41818db319d5c",
+      "bytes": 439
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/src/styles.css",
+      "sha256": "5e5f0b1954043552a5f476179c16a599e326ed200fcd5c0284bb7354e0a9d5ce",
+      "bytes": 1347
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/starter/vite.config.js",
+      "sha256": "9b558fcfc2eeb71a57336d7bfbf38864a78eb33ce38d8b723dfcd8e06329c11d",
+      "bytes": 200
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/tests/helpers.js",
+      "sha256": "68ea44f4cfd48ab0b3ac4fafda7f4b073a4c7c3d5d17d554325df9cacca48857",
+      "bytes": 4143
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/tests/package-lock.json",
+      "sha256": "9667b6b33d68ace5aeeedc7570f917a55f49c21cd8837f2bf7cc692cf1531546",
+      "bytes": 112975
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/tests/package.json",
+      "sha256": "4f8fa743db9a8eccddc0ccbe29442cd6afaca2c08e8f1802c92b5f1607407303",
+      "bytes": 529
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/tests/setup.js",
+      "sha256": "9b328c4843431fa76d8de00008fc159e95f99a840211085ff3b8f25e53d14409",
+      "bytes": 43
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/tests/t1-routes-and-layout.test.jsx",
+      "sha256": "70abfefec7eeed6b1b87e93606e9d40062ab4e80feedd0d944d87fae6481e9a3",
+      "bytes": 1523
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/tests/t2-navigation-links.test.jsx",
+      "sha256": "7b05e46da216312ee2e3a68b42baf749ec89827bb464f1b7980d7dddc5441fe5",
+      "bytes": 1391
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/tests/t3-detail-page.test.jsx",
+      "sha256": "80547d7ab428fcbd78048c14876d3adcff1aba43be0298ac6a487fd8384ac525",
+      "bytes": 1555
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/tests/t4-use-fetch-hook.test.jsx",
+      "sha256": "89cd4f9ae9903a19a5a43ad08051a800d872706a3d7affba4f196b79dd801c23",
+      "bytes": 2824
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/tests/t5-overview-states.test.jsx",
+      "sha256": "e08e50c3c7df8b9e24e09866728d3b31dbd78e7c98d050835c4a2aeb5dd6dca0",
+      "bytes": 1652
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/tests/t6-abort-on-unmount.test.jsx",
+      "sha256": "f5fc25c2aa195a6d86440ade23f86b6f81778cb9abfcb1c417b6f93ae625bfa7",
+      "bytes": 1951
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/tests/t7-lifted-filter.test.jsx",
+      "sha256": "44309b3355de75257a51c4746d6f47a6babb9dba79a0f6f87069108a6466895a",
+      "bytes": 1749
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/tests/t8-memoized-legend.test.jsx",
+      "sha256": "0542241aa009dfa6e1882aaca5883a9875a2f530e37dfd0013a7c264c556d35b",
+      "bytes": 1257
+    },
+    {
+      "path": "react/effects-routing-and-rendering/coding-lab/tests/vitest.config.js",
+      "sha256": "68f5c979a254444b6433d3ee410d33e13bcee0e5ec3be38654f3e85b5f7643d8",
+      "bytes": 1184
     },
     {
       "path": "react/effects-routing-and-rendering/custom-hooks/artifact.gift",
@@ -202,6 +477,11 @@
       "path": "react/effects-routing-and-rendering/custom-hooks/artifact.md",
       "sha256": "f49217fcfc8164bae6a7fc150c3f437b65ae7bb2f4e6ee5b2d364644e5fbcf43",
       "bytes": 4667
+    },
+    {
+      "path": "react/effects-routing-and-rendering/custom-hooks/video-artifact.md",
+      "sha256": "22b20b09a4387c4979222812bf3c42b3ac817f1423316f96c4fd07f3826cd54a",
+      "bytes": 2319
     },
     {
       "path": "react/effects-routing-and-rendering/lifting-state-up/artifact.gift",
@@ -234,6 +514,11 @@
       "bytes": 5611
     },
     {
+      "path": "react/effects-routing-and-rendering/loading-and-error-states/video-artifact.md",
+      "sha256": "f1c2b7131850acd1a299988548a3f4bbe1126133401ec73565d411e05f33732e",
+      "bytes": 2040
+    },
+    {
       "path": "react/effects-routing-and-rendering/loading-data-with-useeffect/artifact.gift",
       "sha256": "e4d7a8a559cdb8ad441a7807126a5af7cc8b57bdd92e362dd128c75ecc6d2883",
       "bytes": 3135
@@ -247,6 +532,11 @@
       "path": "react/effects-routing-and-rendering/loading-data-with-useeffect/artifact.md",
       "sha256": "74a1ee4c5a946adc31111f102074262a4a5d6af180825a43abd546c5291b20f4",
       "bytes": 6711
+    },
+    {
+      "path": "react/effects-routing-and-rendering/loading-data-with-useeffect/video-artifact.md",
+      "sha256": "79f9eb555ade6f570b10a77d38918ae967a3a761a85f46992861de7ae21960cf",
+      "bytes": 3496
     },
     {
       "path": "react/effects-routing-and-rendering/navigation/artifact.gift",
@@ -264,6 +554,11 @@
       "bytes": 5798
     },
     {
+      "path": "react/effects-routing-and-rendering/navigation/video-artifact.md",
+      "sha256": "4fb312b78c48814b429e687a62efeac45238db575250954e12cea980f891963b",
+      "bytes": 2236
+    },
+    {
       "path": "react/effects-routing-and-rendering/routing-and-route-parameters/artifact.gift",
       "sha256": "5b22912406044fb41275d448d00d328d17e2f8f230bea0caa7b9b7631d5c0428",
       "bytes": 2271
@@ -279,6 +574,11 @@
       "bytes": 5164
     },
     {
+      "path": "react/effects-routing-and-rendering/routing-and-route-parameters/video-artifact.md",
+      "sha256": "500db40c52712e8f491687a02cc0b68741cd194e989d732eb7609869aeffd301",
+      "bytes": 3302
+    },
+    {
       "path": "react/effects-routing-and-rendering/what-makes-a-component-re-render/artifact.gift",
       "sha256": "7200a7599d074811801e3211699072156c2f4138f0c11fc7362a084d9ecd38ec",
       "bytes": 2640
@@ -292,9 +592,728 @@
       "path": "react/effects-routing-and-rendering/what-makes-a-component-re-render/artifact.md",
       "sha256": "af222e44a86932656adf179feb679b29a1094e1be25cb44ff1db24396f98d986",
       "bytes": 4872
+    },
+    {
+      "path": "react/effects-routing-and-rendering/what-makes-a-component-re-render/video-artifact.md",
+      "sha256": "12b3f04a02ea08d31f13837ead047739e3e796bb0748b63492a3f24f0ebea0e6",
+      "bytes": 2412
     }
   ],
   "evidenceBindings": [
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "381a60eeacf016fd8cc3c92bf8d4bcfeaa4ff87f18f7aadab462411ac3863358",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/api.js",
+      "sha256": "a3ef8799dfc80dd0dd2bd991fa68b2e9183d016930a445e3b60f27963ea009c3",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "381a60eeacf016fd8cc3c92bf8d4bcfeaa4ff87f18f7aadab462411ac3863358",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/pages/OverviewPage.jsx",
+      "sha256": "e329499f52f151570455c011318d887a929d224fad9902826a40198b6dc0411c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "381a60eeacf016fd8cc3c92bf8d4bcfeaa4ff87f18f7aadab462411ac3863358",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "381a60eeacf016fd8cc3c92bf8d4bcfeaa4ff87f18f7aadab462411ac3863358",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "5bdf324e913020ba7ee0cda2102e96e848663f1d1a0908164f90813d04906bf9",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "6096832f008e33191c0d2d91e41a60f180896e2f12be6c8ff422f93b7e67e995",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "6096832f008e33191c0d2d91e41a60f180896e2f12be6c8ff422f93b7e67e995",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "6096832f008e33191c0d2d91e41a60f180896e2f12be6c8ff422f93b7e67e995",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "5bdf324e913020ba7ee0cda2102e96e848663f1d1a0908164f90813d04906bf9",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education.json",
+      "field": "findings[3].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "5bdf324e913020ba7ee0cda2102e96e848663f1d1a0908164f90813d04906bf9",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education.json",
+      "field": "findings[4].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "6096832f008e33191c0d2d91e41a60f180896e2f12be6c8ff422f93b7e67e995",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education.json",
+      "field": "findings[5].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "6096832f008e33191c0d2d91e41a60f180896e2f12be6c8ff422f93b7e67e995",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education.json",
+      "field": "findings[6].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "6096832f008e33191c0d2d91e41a60f180896e2f12be6c8ff422f93b7e67e995",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-education.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "5bdf324e913020ba7ee0cda2102e96e848663f1d1a0908164f90813d04906bf9",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "381a60eeacf016fd8cc3c92bf8d4bcfeaa4ff87f18f7aadab462411ac3863358",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/t6-abort-on-unmount.test.jsx",
+      "sha256": "cdd4caba59d3357e56f5e0a3206933c99f9520c9a699dda13cd8cbc5d5613c58",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/helpers.js",
+      "sha256": "68ea44f4cfd48ab0b3ac4fafda7f4b073a4c7c3d5d17d554325df9cacca48857",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/t4-use-fetch-hook.test.jsx",
+      "sha256": "89cd4f9ae9903a19a5a43ad08051a800d872706a3d7affba4f196b79dd801c23",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/helpers.js",
+      "sha256": "68ea44f4cfd48ab0b3ac4fafda7f4b073a4c7c3d5d17d554325df9cacca48857",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "381a60eeacf016fd8cc3c92bf8d4bcfeaa4ff87f18f7aadab462411ac3863358",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "5bdf324e913020ba7ee0cda2102e96e848663f1d1a0908164f90813d04906bf9",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "6096832f008e33191c0d2d91e41a60f180896e2f12be6c8ff422f93b7e67e995",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/helpers.js",
+      "sha256": "bc7cf7cdcdd047532a30bd1d36a6c2ce30851c152b3b5a35b392f18609f29076",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/t4-use-fetch-hook.test.jsx",
+      "sha256": "a88d1cd42843601960cc2ff1bb45d4b9e27fb4f7b2889476d3ce85953b0ef867",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/helpers.js",
+      "sha256": "bc7cf7cdcdd047532a30bd1d36a6c2ce30851c152b3b5a35b392f18609f29076",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme.json",
+      "field": "findings[3].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "5bdf324e913020ba7ee0cda2102e96e848663f1d1a0908164f90813d04906bf9",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme.json",
+      "field": "findings[4].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "6096832f008e33191c0d2d91e41a60f180896e2f12be6c8ff422f93b7e67e995",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-critic-sme.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "5bdf324e913020ba7ee0cda2102e96e848663f1d1a0908164f90813d04906bf9",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-decision-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "381a60eeacf016fd8cc3c92bf8d4bcfeaa4ff87f18f7aadab462411ac3863358",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-education-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/t6-abort-on-unmount.test.jsx",
+      "sha256": "b6adbae2bb4118ef067ec95b475155fd55ca52d2d9d0cc1192e97d1b5394d1f6",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/api.js",
+      "sha256": "a3ef8799dfc80dd0dd2bd991fa68b2e9183d016930a445e3b60f27963ea009c3",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "381a60eeacf016fd8cc3c92bf8d4bcfeaa4ff87f18f7aadab462411ac3863358",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/t6-abort-on-unmount.test.jsx",
+      "sha256": "b6adbae2bb4118ef067ec95b475155fd55ca52d2d9d0cc1192e97d1b5394d1f6",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/pages/OverviewPage.jsx",
+      "sha256": "e329499f52f151570455c011318d887a929d224fad9902826a40198b6dc0411c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "381a60eeacf016fd8cc3c92bf8d4bcfeaa4ff87f18f7aadab462411ac3863358",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "381a60eeacf016fd8cc3c92bf8d4bcfeaa4ff87f18f7aadab462411ac3863358",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "381a60eeacf016fd8cc3c92bf8d4bcfeaa4ff87f18f7aadab462411ac3863358",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/helpers.js",
+      "sha256": "68ea44f4cfd48ab0b3ac4fafda7f4b073a4c7c3d5d17d554325df9cacca48857",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/t4-use-fetch-hook.test.jsx",
+      "sha256": "89cd4f9ae9903a19a5a43ad08051a800d872706a3d7affba4f196b79dd801c23",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/helpers.js",
+      "sha256": "68ea44f4cfd48ab0b3ac4fafda7f4b073a4c7c3d5d17d554325df9cacca48857",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "381a60eeacf016fd8cc3c92bf8d4bcfeaa4ff87f18f7aadab462411ac3863358",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/t6-abort-on-unmount.test.jsx",
+      "sha256": "b6adbae2bb4118ef067ec95b475155fd55ca52d2d9d0cc1192e97d1b5394d1f6",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop2-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop3-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop3-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "381a60eeacf016fd8cc3c92bf8d4bcfeaa4ff87f18f7aadab462411ac3863358",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop3-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/t6-abort-on-unmount.test.jsx",
+      "sha256": "f5fc25c2aa195a6d86440ade23f86b6f81778cb9abfcb1c417b6f93ae625bfa7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop3-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-loop3-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "5bdf324e913020ba7ee0cda2102e96e848663f1d1a0908164f90813d04906bf9",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[0].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/README.md",
+      "sha256": "381a60eeacf016fd8cc3c92bf8d4bcfeaa4ff87f18f7aadab462411ac3863358",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[1].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/expected/on-completion.txt",
+      "sha256": "139e64bc0c0b0d680abd09bc205aee25070b8f243981fd6cd45c521d70d116fa",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[10].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/components/ServiceCard.jsx",
+      "sha256": "e1b7fb930f9c94d1c55b604e289f7a9916ba665330fb836bec3c9e4be175d6a7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[11].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/components/ServiceList.jsx",
+      "sha256": "3d8680228505790473d1e47a20475d0cfef1bf16a99276090ac2f2416d2cac1a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[12].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/components/StatusBadge.jsx",
+      "sha256": "46765dcb49155983e5f81c8bbad79b5dec5a772405347ec571250d239f81386d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[13].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/components/StatusLegend.jsx",
+      "sha256": "8088897c0f2a5788a9a5e595475361d3a9450c670e9303c313afb80abb949816",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[14].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/components/Toolbar.jsx",
+      "sha256": "981060debb6f4f42ff91628776829252403ffbf2e259182f65ec063425131fda",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[15].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/hooks/use-fetch.js",
+      "sha256": "ead6646d5f8fd8419d043f88ee9d31ffc7d771f0d464ba152272a1141b8b426b",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[16].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/main.jsx",
+      "sha256": "a6b75d038976f7eac2fcaee14632c27ec2fc538ef3a05399ac67a205ef7ee461",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[17].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/pages/LegendPage.jsx",
+      "sha256": "732fff1ce13d2a1e04f406b9d38561c5eda4da6f7716f3e556c5f523a6acd52e",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[18].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/pages/NotFoundPage.jsx",
+      "sha256": "433a856cfcbb73bff615eeb3fec796a5bc7be73958005a965d1d72a87a997301",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[19].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/pages/OverviewPage.jsx",
+      "sha256": "e329499f52f151570455c011318d887a929d224fad9902826a40198b6dc0411c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[2].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/lab.json",
+      "sha256": "cb6a3aa0b1b336fc62761b39bab35054debf71adb3279f870a67aeb825039570",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[20].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/pages/ServiceDetailPage.jsx",
+      "sha256": "f05dd9207a09582cc240a5823ca08015e87b511e92587631bf156263205b79c4",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[21].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/render-count.js",
+      "sha256": "db94462ea3bdc21b2d57c24aa26396f9115390b44d15468ad4e41818db319d5c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[22].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/styles.css",
+      "sha256": "5e5f0b1954043552a5f476179c16a599e326ed200fcd5c0284bb7354e0a9d5ce",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[23].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/vite.config.js",
+      "sha256": "9b558fcfc2eeb71a57336d7bfbf38864a78eb33ce38d8b723dfcd8e06329c11d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[24].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/helpers.js",
+      "sha256": "68ea44f4cfd48ab0b3ac4fafda7f4b073a4c7c3d5d17d554325df9cacca48857",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[25].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/package-lock.json",
+      "sha256": "9667b6b33d68ace5aeeedc7570f917a55f49c21cd8837f2bf7cc692cf1531546",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[26].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/package.json",
+      "sha256": "4f8fa743db9a8eccddc0ccbe29442cd6afaca2c08e8f1802c92b5f1607407303",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[27].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/setup.js",
+      "sha256": "9b328c4843431fa76d8de00008fc159e95f99a840211085ff3b8f25e53d14409",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[28].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/t1-routes-and-layout.test.jsx",
+      "sha256": "70abfefec7eeed6b1b87e93606e9d40062ab4e80feedd0d944d87fae6481e9a3",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[29].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/t2-navigation-links.test.jsx",
+      "sha256": "7b05e46da216312ee2e3a68b42baf749ec89827bb464f1b7980d7dddc5441fe5",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[3].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/index.html",
+      "sha256": "b94300008bae762558613b0c1c4a52ef22a713ba5659ff3e527f47d5c0be7f13",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[30].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/t3-detail-page.test.jsx",
+      "sha256": "80547d7ab428fcbd78048c14876d3adcff1aba43be0298ac6a487fd8384ac525",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[31].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/t4-use-fetch-hook.test.jsx",
+      "sha256": "89cd4f9ae9903a19a5a43ad08051a800d872706a3d7affba4f196b79dd801c23",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[32].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/t5-overview-states.test.jsx",
+      "sha256": "e08e50c3c7df8b9e24e09866728d3b31dbd78e7c98d050835c4a2aeb5dd6dca0",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[33].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/t6-abort-on-unmount.test.jsx",
+      "sha256": "f5fc25c2aa195a6d86440ade23f86b6f81778cb9abfcb1c417b6f93ae625bfa7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[34].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/t7-lifted-filter.test.jsx",
+      "sha256": "44309b3355de75257a51c4746d6f47a6babb9dba79a0f6f87069108a6466895a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[35].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/t8-memoized-legend.test.jsx",
+      "sha256": "0542241aa009dfa6e1882aaca5883a9875a2f530e37dfd0013a7c264c556d35b",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[36].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/tests/vitest.config.js",
+      "sha256": "68f5c979a254444b6433d3ee410d33e13bcee0e5ec3be38654f3e85b5f7643d8",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[4].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/mock-api.js",
+      "sha256": "8a77daef733863fe49d55e92910f57b46215fbf2e487752b31ada7e95ffd79d6",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[5].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/package-lock.json",
+      "sha256": "c01bcc820bce91d21e828f21f693dddc595642085f8284f1a539e3e3bffe442c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[6].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/package.json",
+      "sha256": "f7998beea9ce562ba045e116ef514904e8ed0cc801cbf5708ee545470f6082e5",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[7].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/App.jsx",
+      "sha256": "8bf10103aea596bfd615815e1a12f3c5d29c59ca8f6373f004d20e4bc3f15bd6",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[8].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/api.js",
+      "sha256": "a3ef8799dfc80dd0dd2bd991fa68b2e9183d016930a445e3b60f27963ea009c3",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/coding-lab-solved-run.json",
+      "field": "files[9].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/coding-lab/starter/src/components/AppLayout.jsx",
+      "sha256": "72715c995e6887edd3b2e2d6bddef271503b3919582d014a161b0787c638194d",
+      "current": true
+    },
     {
       "topic": "custom-hooks",
       "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/custom-hooks/owner-essential-qa.json",
@@ -310,6 +1329,14 @@
       "artifactPath": "react/effects-routing-and-rendering/custom-hooks/artifact.gift",
       "sha256": "077e5cda4f3a0d9a3a74147a08dd3cd57376c98e3ae8c8adc1bcf2ef09fea11f",
       "current": false
+    },
+    {
+      "topic": "custom-hooks",
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/custom-hooks/owner-essential-qa.json",
+      "field": "artifacts[2].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/custom-hooks/video-artifact.md",
+      "sha256": "22b20b09a4387c4979222812bf3c42b3ac817f1423316f96c4fd07f3826cd54a",
+      "current": true
     },
     {
       "topic": "custom-hooks",
@@ -374,6 +1401,14 @@
       "artifactPath": "react/effects-routing-and-rendering/custom-hooks/artifact.html",
       "sha256": "3bc18aa82d20c46f6b30eb999064da915206eba89466e2f88ebb6fa6882462b6",
       "current": true
+    },
+    {
+      "topic": "custom-hooks",
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/custom-hooks/video.json",
+      "field": "artifactSha256",
+      "artifactPath": "react/effects-routing-and-rendering/custom-hooks/artifact.html",
+      "sha256": "22b20b09a4387c4979222812bf3c42b3ac817f1423316f96c4fd07f3826cd54a",
+      "current": false
     },
     {
       "topic": "lifting-state-up",
@@ -473,6 +1508,14 @@
     },
     {
       "topic": "loading-and-error-states",
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/loading-and-error-states/owner-essential-qa.json",
+      "field": "artifacts[2].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/loading-and-error-states/video-artifact.md",
+      "sha256": "f1c2b7131850acd1a299988548a3f4bbe1126133401ec73565d411e05f33732e",
+      "current": true
+    },
+    {
+      "topic": "loading-and-error-states",
       "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/loading-and-error-states/qa-receipt.json",
       "field": "artifactHashes.artifact.html",
       "artifactPath": "react/effects-routing-and-rendering/loading-and-error-states/artifact.html",
@@ -536,6 +1579,14 @@
       "current": true
     },
     {
+      "topic": "loading-and-error-states",
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/loading-and-error-states/video.json",
+      "field": "artifactSha256",
+      "artifactPath": "react/effects-routing-and-rendering/loading-and-error-states/artifact.html",
+      "sha256": "f1c2b7131850acd1a299988548a3f4bbe1126133401ec73565d411e05f33732e",
+      "current": false
+    },
+    {
       "topic": "loading-data-with-useeffect",
       "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/loading-data-with-useeffect/owner-essential-qa.json",
       "field": "artifacts[0].reviewedSha256",
@@ -550,6 +1601,14 @@
       "artifactPath": "react/effects-routing-and-rendering/loading-data-with-useeffect/artifact.gift",
       "sha256": "5f3d9c172373a940aa11ce45693da2b20c612d3d0ef264092639967e8d527c76",
       "current": false
+    },
+    {
+      "topic": "loading-data-with-useeffect",
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/loading-data-with-useeffect/owner-essential-qa.json",
+      "field": "artifacts[2].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/loading-data-with-useeffect/video-artifact.md",
+      "sha256": "79f9eb555ade6f570b10a77d38918ae967a3a761a85f46992861de7ae21960cf",
+      "current": true
     },
     {
       "topic": "loading-data-with-useeffect",
@@ -616,6 +1675,14 @@
       "current": true
     },
     {
+      "topic": "loading-data-with-useeffect",
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/loading-data-with-useeffect/video.json",
+      "field": "artifactSha256",
+      "artifactPath": "react/effects-routing-and-rendering/loading-data-with-useeffect/artifact.html",
+      "sha256": "79f9eb555ade6f570b10a77d38918ae967a3a761a85f46992861de7ae21960cf",
+      "current": false
+    },
+    {
       "topic": "navigation",
       "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/navigation/owner-essential-qa.json",
       "field": "artifacts[0].reviewedSha256",
@@ -630,6 +1697,14 @@
       "artifactPath": "react/effects-routing-and-rendering/navigation/artifact.gift",
       "sha256": "acb97d4a8009af45f5700809a4e5338abe7516df05a7b117bef4c2c00b9e5164",
       "current": false
+    },
+    {
+      "topic": "navigation",
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/navigation/owner-essential-qa.json",
+      "field": "artifacts[2].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/navigation/video-artifact.md",
+      "sha256": "4fb312b78c48814b429e687a62efeac45238db575250954e12cea980f891963b",
+      "current": true
     },
     {
       "topic": "navigation",
@@ -696,6 +1771,14 @@
       "current": true
     },
     {
+      "topic": "navigation",
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/navigation/video.json",
+      "field": "artifactSha256",
+      "artifactPath": "react/effects-routing-and-rendering/navigation/artifact.html",
+      "sha256": "4fb312b78c48814b429e687a62efeac45238db575250954e12cea980f891963b",
+      "current": false
+    },
+    {
       "topic": "routing-and-route-parameters",
       "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/routing-and-route-parameters/owner-essential-qa.json",
       "field": "artifacts[0].reviewedSha256",
@@ -710,6 +1793,14 @@
       "artifactPath": "react/effects-routing-and-rendering/routing-and-route-parameters/artifact.gift",
       "sha256": "08e52d9ae885e3d61238e67680c75996b70cc059185e1d469e69b35bbfab32d7",
       "current": false
+    },
+    {
+      "topic": "routing-and-route-parameters",
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/routing-and-route-parameters/owner-essential-qa.json",
+      "field": "artifacts[2].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/routing-and-route-parameters/video-artifact.md",
+      "sha256": "500db40c52712e8f491687a02cc0b68741cd194e989d732eb7609869aeffd301",
+      "current": true
     },
     {
       "topic": "routing-and-route-parameters",
@@ -776,6 +1867,14 @@
       "current": true
     },
     {
+      "topic": "routing-and-route-parameters",
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/routing-and-route-parameters/video.json",
+      "field": "artifactSha256",
+      "artifactPath": "react/effects-routing-and-rendering/routing-and-route-parameters/artifact.html",
+      "sha256": "500db40c52712e8f491687a02cc0b68741cd194e989d732eb7609869aeffd301",
+      "current": false
+    },
+    {
       "topic": "what-makes-a-component-re-render",
       "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/what-makes-a-component-re-render/owner-essential-qa.json",
       "field": "artifacts[0].reviewedSha256",
@@ -793,11 +1892,27 @@
     },
     {
       "topic": "what-makes-a-component-re-render",
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/what-makes-a-component-re-render/owner-essential-qa.json",
+      "field": "artifacts[2].reviewedSha256",
+      "artifactPath": "react/effects-routing-and-rendering/what-makes-a-component-re-render/video-artifact.md",
+      "sha256": "12b3f04a02ea08d31f13837ead047739e3e796bb0748b63492a3f24f0ebea0e6",
+      "current": true
+    },
+    {
+      "topic": "what-makes-a-component-re-render",
       "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/what-makes-a-component-re-render/sources.json",
       "field": "reviewedSha256",
       "artifactPath": "react/effects-routing-and-rendering/what-makes-a-component-re-render/artifact.html",
       "sha256": "af4d1d7f26d4524bf011ee2087ee431383d8c9de3007bf5b18f9797bed0f1d6e",
       "current": true
+    },
+    {
+      "topic": "what-makes-a-component-re-render",
+      "evidencePath": "authoring/evidence/react/effects-routing-and-rendering/what-makes-a-component-re-render/video.json",
+      "field": "artifactSha256",
+      "artifactPath": "react/effects-routing-and-rendering/what-makes-a-component-re-render/artifact.html",
+      "sha256": "12b3f04a02ea08d31f13837ead047739e3e796bb0748b63492a3f24f0ebea0e6",
+      "current": false
     }
   ]
 }
