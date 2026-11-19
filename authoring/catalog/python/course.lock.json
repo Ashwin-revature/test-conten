@@ -5,8 +5,8 @@
   "files": [
     {
       "path": "authoring/catalog/python/course.json",
-      "sha256": "850d08078fc2a7f16c377ab866ef75746a77aaa78208f46b700a0f71c56b198c",
-      "bytes": 995
+      "sha256": "052316822161f453cd689380842ceb5756091c00da8948d4173ff5fe64912c95",
+      "bytes": 1023
     },
     {
       "path": "authoring/evidence/python/course-final-coverage-map.md",
