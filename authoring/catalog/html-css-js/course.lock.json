@@ -384,6 +384,11 @@
       "bytes": 1881
     },
     {
+      "path": "authoring/evidence/html-css-js/video-curation.md",
+      "sha256": "d8f4e4792c2e53323203a53c7816654989e561f0f10bb0767ddc51c796992fff",
+      "bytes": 19778
+    },
+    {
       "path": "html-css-js/assessments/web-client-mcq/blueprint.json",
       "sha256": "7d60fbff0d82540b1788559580cacd08fd3d37ef28dad0843b90167d44f351b3",
       "bytes": 13350
