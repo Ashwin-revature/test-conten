@@ -29,8 +29,8 @@ HTML is the primary learner artifact; every other topic file is a companion to i
 
 - Assessment answer keys, rubrics, hidden tests, reference or instructor solutions and scoring secrets.
   Formative learner practice quizzes (`artifact.gift`) and MCQs are the one exception, because they are low-stakes.
-  Captain-approved exception (2026-11-10): the four Foundation course-final MCQ banks at `<course>/assessments/<module-check>/final-mcq.gift` (git-linux-ai-foundations, java-foundations, sql-jdbc-foundations, collections-streams) may carry their intrinsic GIFT keys; no other graded key, source or private file is covered.
-  Captain public-answer consent (2026-11-19) also covers the cumulative Standard/Fast final checkpoint bank at `containers-cicd/assessments/standard-fast-final-checkpoint/checkpoint-mcq.gift`; `authoring/tests/standard-fast-checkpoint-gift.test.mjs` enforces its location and contract.
+  Captain-approved exceptions: the four Foundation course-final MCQ banks at `<course>/assessments/<module-check>/final-mcq.gift` (git-linux-ai-foundations, java-foundations, sql-jdbc-foundations, collections-streams; 2026-11-10) and, under the captain's public-answer consent (2026-11-19), the cumulative Standard/Fast final checkpoint bank at `containers-cicd/assessments/standard-fast-final-checkpoint/checkpoint-mcq.gift` may carry their intrinsic GIFT keys; no other graded key, source or private file is covered.
+  `authoring/tests/standard-fast-checkpoint-gift.test.mjs` enforces the checkpoint's location and contract.
 - Hashes of short answer keys: a hash of "B" is trivially reversible.
   Record "validated at <commit> by run <id>" instead.
 - Platform-only material; it stays in uncommitted private staging and is retired after confirmed upload.

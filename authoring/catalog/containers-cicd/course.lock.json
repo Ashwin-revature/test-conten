@@ -105,8 +105,8 @@
     },
     {
       "path": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint.md",
-      "sha256": "420b2be6e471cc1d1cbe74d9e73a85211dabc925dd4f88ab1c40921cd8f679a0",
-      "bytes": 17032
+      "sha256": "c91022eb4cd1b425c5b682cc4683ffd6b5dc1951ed33674c0103060eec7c0120",
+      "bytes": 17643
     },
     {
       "path": "containers-cicd/assessments/containers-cicd-module-check/blueprint.json",
@@ -795,7 +795,7 @@
       "field": "recheck.items[2].reviewedSha256",
       "artifactPath": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint.md",
       "sha256": "420b2be6e471cc1d1cbe74d9e73a85211dabc925dd4f88ab1c40921cd8f679a0",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-loop2-critic-education-recheck.json",

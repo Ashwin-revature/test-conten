@@ -122,9 +122,12 @@ Its `passMark` is 70, the Final pool cut score and the module-check pass mark.
 It is a readiness check reported to the learner's assessor, as the blueprint's learner instructions say: it is not a pass/fail gate and changes no grade in this beta.
 Neither default changes the Final weights, the cut scores or Project 2's separate grading, and neither sets a programme-wide certification policy.
 
-**Timing basis.** Two minutes per question, the rule the Foundation course finals use.
-Total reading load is about 2,200 words; every item was judged answerable in about 2 minutes, and the longest traces are q04, q20 and q21.
-No timed learner trial was run.
+**Timing basis.** Two minutes per question, set on this bank's own load rather than borrowed.
+The Foundation rule of 2 minutes per question governs only the four Foundation course finals.
+The Standard/Fast course finals run faster: the HTML/CSS/JS course final in progress is 30 questions in 30 minutes, and the Git/Linux/AI 30-minute course final has 20 questions.
+This bank is denser: 25 of its 30 items put code or configuration in the stem and ask for a trace or a multi-case outcome across five courses, and total reading load is about 2,200 words.
+Every item was judged answerable in about 2 minutes; the longest traces are q04, q20 and q21.
+No timed learner trial was run, so 60 minutes is a beta baseline: if a timed trial shows learners finish well inside it, shortening the sitting is the first lever for giving the coding assessments more of the Gate block.
 
 ## Verification
 
