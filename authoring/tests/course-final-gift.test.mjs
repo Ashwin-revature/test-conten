@@ -10,6 +10,7 @@ import {
   literalCodeNewlines,
   numericCodeNewlines,
   NUMERIC_NEWLINE,
+  unsafeCodeLines,
 } from "../tools/gift/code-newlines.mjs";
 import { parseGift, validateGift } from "../tools/gift/validate.mjs";
 
@@ -72,10 +73,7 @@ for (const [file, { category, html }] of Object.entries(BANKS)) {
       const text = bytes.toString("ascii");
       assert.deepEqual(numericCodeNewlines(text), [], "numeric newline references in code");
       // Indentation-safe: an importer that trims each physical line must not change any code line.
-      const unsafe = [...text.matchAll(/<pre><code>([\s\S]*?)<\/code><\/pre>/g)]
-        .flatMap((match) => match[1].split("\n").slice(1))
-        .filter((line) => line === "" || line !== line.trim() || line.startsWith("//"));
-      assert.deepEqual(unsafe.length, 0, "code lines that start or end with whitespace, are blank or start with //");
+      assert.deepEqual(unsafeCodeLines(text), [], "code lines that start or end with whitespace, are blank or start with //");
     }
     const positions = {};
     let previous;
@@ -191,13 +189,36 @@ test("indentation-safe code-block line breaks keep every parsed field and invert
   assert.ok(after.every((q) => q.stem.includes("\n")), "stems carry multiline code");
 });
 
-test("numeric newline checks and conversion are scoped to pre/code blocks", () => {
+// The same questions with their code in plain <pre> blocks instead of <pre><code>.
+const plainPreBody = entityBody.replaceAll("<pre><code>", "<pre>").replaceAll("</code></pre>", "</pre>");
+
+test("numeric newline detection covers plain <pre> and <pre><code> blocks, not other text", () => {
   const outside = "[html]<p>outside &\\#10; reference</p>";
-  const plainPre = "<pre>preformatted &\\#10; content</pre>";
-  assert.deepEqual(numericCodeNewlines(outside), []);
-  assert.deepEqual(numericCodeNewlines(`${outside}${plainPre}`), []);
-  assert.deepEqual(numericCodeNewlines(`${outside}<pre><code>a&\\#10;b</code></pre>`), ["&\\#10;"]);
-  assert.equal(literalCodeNewlines(`${plainPre}<pre><code>a&\\#10;b</code></pre>`), `${plainPre}<pre><code>a\nb</code></pre>`);
+  assert.deepEqual(numericCodeNewlines(outside), [], "a reference outside <pre> stays permitted");
+  assert.deepEqual(numericCodeNewlines(`${outside}<pre>a&\\#10;b</pre>`), ["&\\#10;"], "plain <pre>");
+  assert.deepEqual(numericCodeNewlines(`${outside}<pre><code>a&\\#10;b</code></pre>`), ["&\\#10;"], "<pre><code>");
+  assert.equal(numericCodeNewlines(entityBody).length, numericCodeNewlines(plainPreBody).length);
+  assert.ok(numericCodeNewlines(plainPreBody).length > 0);
+  assert.equal(literalCodeNewlines(outside), outside, "text outside <pre> is not converted");
+});
+
+test("plain <pre> and <pre><code> convert alike: trim-safe, inverse-exact and parse-equivalent", () => {
+  for (const body of [entityBody, plainPreBody]) {
+    const safeBody = literalCodeNewlines(body);
+    assert.deepEqual(numericCodeNewlines(safeBody), []);
+    assert.deepEqual(unsafeCodeLines(safeBody), []);
+    assert.ok(unsafeCodeLines(body.replaceAll("&\\#10;", "\n")).length > 0, "unguarded literal lines are caught");
+    assert.equal(entityCodeNewlines(safeBody), body, "inverse reproduces the entity form byte for byte");
+    const before = validateGift(codeBank(body), htmlCategory, { html: true });
+    const after = validateGift(codeBank(safeBody), htmlCategory, { html: true });
+    assert.deepEqual(shape(after, "safe"), shape(before, "entity"));
+    assert.deepEqual(visibleCode(safeBody, true), visibleCode(body, false));
+  }
+  assert.deepEqual(visibleCode(literalCodeNewlines(plainPreBody), true), visibleCode(entityBody, false));
+  assert.equal(
+    literalCodeNewlines(plainPreBody),
+    literalCodeNewlines(entityBody).replaceAll("<pre><code>", "<pre>").replaceAll("</code></pre>", "</pre>"),
+  );
 });
 
 test("indentation-safe code shows the same code and indentation with or without per-line trimming", () => {
