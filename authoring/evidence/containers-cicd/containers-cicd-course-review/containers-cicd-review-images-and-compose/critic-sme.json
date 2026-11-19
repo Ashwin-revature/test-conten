@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "role": "sme",
+  "author": "independent technology SME critic (non-author Claude subagent, 2026-11-19; head 3c2ea6a9)",
+  "reviewedPath": "containers-cicd/containers-cicd-course-review/containers-cicd-review-images-and-compose/artifact.html",
+  "reviewedSha256": "7d1d1ce8ef0cd00d012dd0b997112b53bd679ea7652b9b214996ae8eb6cf3114",
+  "artifactHashes": {
+    "artifact.html": "7d1d1ce8ef0cd00d012dd0b997112b53bd679ea7652b9b214996ae8eb6cf3114",
+    "artifact.md": "27e7c14e9137d0243c1b8b351c279acbf87b0b7eed5ec1de11cc43a0eb02f9e4"
+  },
+  "verdict": "approve",
+  "summary": "Dockerfile layer/multi-stage, Compose service-name networking, healthcheck startup order, loopback port publishing on Engine 28+, postgres:18 /var/lib/postgresql mount and down/-v claims match official docs; eclipse-temurin 25-jdk/25-jre tags are current. Activity 2 ps/log output is labelled a shortened illustration in the Sources disclosure and no terminal is simulated.",
+  "findings": [
+    {
+      "id": "sme-img-001",
+      "severity": "low",
+      "location": {
+        "file": "containers-cicd/containers-cicd-course-review/containers-cicd-review-images-and-compose/artifact.html",
+        "note": "Activity 3 teaching text"
+      },
+      "claim": "Docker's port-publishing page notes that with IP forwarding enabled, a port published on a specific host address can still be reached by direct routing through another host interface. The page says flatly that only this machine can connect; for a laptop on an office network the claim is the right default.",
+      "evidence": [],
+      "recommendation": "Accept as recorded residual: add 'under default settings' only if the page is revised."
+    },
+    {
+      "id": "sme-img-002",
+      "severity": "low",
+      "location": {
+        "file": "containers-cicd/containers-cicd-course-review/containers-cicd-review-images-and-compose/artifact.html",
+        "note": "Activity 2 option text"
+      },
+      "claim": "Options say 'add a pg_isready healthcheck' without showing the test command (pg_isready -U shop -d shop); the learner is not shown a complete healthcheck.",
+      "evidence": [],
+      "recommendation": "Accept as recorded residual: the question tests the condition and the URL, and the module topic teaches the full healthcheck."
+    }
+  ]
+}
