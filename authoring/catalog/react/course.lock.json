@@ -5,8 +5,13 @@
   "files": [
     {
       "path": "authoring/catalog/react/course.json",
-      "sha256": "9dfec5c6f8260326367fe838b90b1f7d05d93a51df6a4fb38f56116810092f7e",
-      "bytes": 1146
+      "sha256": "648da17cb80e122ead346cb99121066aa48e7bbdd4060780522cceb43f1b3150",
+      "bytes": 1172
+    },
+    {
+      "path": "authoring/evidence/react/course-final-gift-checks.md",
+      "sha256": "400e55f4155c024236b7d6d9ae244cbd44cf0342213b619ac56d672676d4943a",
+      "bytes": 10248
     },
     {
       "path": "authoring/evidence/react/intake-2-critic-education-recheck.json",
@@ -82,6 +87,21 @@
       "path": "authoring/evidence/react/source-snapshot.json",
       "sha256": "4df26d4175e0eb587be89ccf14e07de6ccf6c543e258a375bfc110132e3cc1b2",
       "bytes": 26983
+    },
+    {
+      "path": "authoring/evidence/react/video-curation.md",
+      "sha256": "423e50a561fc454d965a3ddb2310a6a4eca94125b207aec0756c1aef6e733c90",
+      "bytes": 18783
+    },
+    {
+      "path": "react/assessments/react-course-final/blueprint.json",
+      "sha256": "20c684dc6484f82638142f889bc62c927c237125766e5213b7c1ef89697f0f72",
+      "bytes": 7831
+    },
+    {
+      "path": "react/assessments/react-course-final/final-mcq.gift",
+      "sha256": "2746e65395233e1dbcf183251da28bc86b14d417a8055b61759adea98edb168e",
+      "bytes": 29992
     },
     {
       "path": "react/assessments/web-and-react-module-check/blueprint.json",
@@ -291,7 +311,7 @@
       "field": "artifactHashes.course.json",
       "artifactPath": "authoring/catalog/react/course.json",
       "sha256": "9dfec5c6f8260326367fe838b90b1f7d05d93a51df6a4fb38f56116810092f7e",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/react/intake-5-critic-education-recheck.json",
@@ -361,7 +381,7 @@
       "field": "artifactHashes.course.json",
       "artifactPath": "authoring/catalog/react/course.json",
       "sha256": "9dfec5c6f8260326367fe838b90b1f7d05d93a51df6a4fb38f56116810092f7e",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/react/intake-5-critic-sme-recheck.json",
@@ -459,7 +479,7 @@
       "field": "artifactHashes.course.json",
       "artifactPath": "authoring/catalog/react/course.json",
       "sha256": "9dfec5c6f8260326367fe838b90b1f7d05d93a51df6a4fb38f56116810092f7e",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/react/intake-critic-education.json",
@@ -522,7 +542,7 @@
       "field": "artifactHashes.course.json",
       "artifactPath": "authoring/catalog/react/course.json",
       "sha256": "9dfec5c6f8260326367fe838b90b1f7d05d93a51df6a4fb38f56116810092f7e",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/react/intake-critic-sme.json",
