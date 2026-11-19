@@ -58,12 +58,11 @@
       "status": "present"
     },
     "video": {
-      "status": "absent",
-      "reason": "Deferred: HTML-first draft batch; no video search was run for this checkpoint, so no video is linked"
+      "status": "present"
     },
     "lab": {
       "status": "absent",
-      "reason": "No topic lab. Course project: applied in part P5 of the planned cumulative course project react/coding-lab/ (Standard S33 Build block and Fast FT20 increment), after an embedded teach-then-check step; authored in a course-level PR"
+      "reason": "No topic lab. Standard practice of all three objectives is task 8 of the module lab react/forms-context-and-crud/coding-lab/ on S33, where tasks 4-8 run: the learner writes their own test for the named blank-then-valid ServiceForm scenario. npm test machine-scores that test's behaviour by rerunning it against an unchanged control and six faulty runtime variants of the learner's form, so vacuous and partial tests are rejected; the role and label queries (#o1), the getBy/queryBy/findBy choice (#o2) and the user-event interaction (#o3) are self-checked practice, not machine-verified. Course project: applied in part P5 of the planned cumulative course project react/coding-lab/ (Standard S33 Build block and Fast FT20 increment), after an embedded teach-then-check step; authored in a course-level PR"
     }
   },
   "freshness": {
