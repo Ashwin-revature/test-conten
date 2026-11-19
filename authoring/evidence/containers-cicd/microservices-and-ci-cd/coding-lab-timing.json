@@ -5,20 +5,20 @@
   "machine": {
     "os": "macOS (darwin, arm64)",
     "node": "v24.2.0",
-    "note": "author workstation; CI runs Ubuntu. No container engine, Python runtime or CI runner is used by this lab."
+    "note": "author workstation; CI runs Ubuntu. No container engine or CI runner is used by this lab; tests 24-26 use the lab .venv Python and tests 6-7 use bash."
   },
   "model": {
     "basis": "Minutes for a learner who has read that day's topic pages. Reading uses the frozen page-estimator rate of 200 words per minute for the README, the brief and the required Jenkins reading. Each worksheet choice is charged 0.25 minute (the evidence is already read; the learner matches it to a listed option) and each why sentence 1.0 minute. Editing time is judged from the edit distance between each draft and the private solutions.",
     "phases": [
       {
         "phase": "setup (outside the required core)",
-        "minutes": 3,
-        "derivation": "npm ci once"
+        "minutes": 5,
+        "derivation": "npm run setup once: npm ci plus a Python venv with the pinned packages (6 seconds measured with a warm pip cache; a cold download is slower)"
       },
       {
         "phase": "S38 1 orient: read the README, copy .env, first run",
-        "minutes": 5,
-        "derivation": "README 969 words at 200 wpm = 4.8, plus about 0.7 for the copy and the first run"
+        "minutes": 7,
+        "derivation": "README 1237 words at 200 wpm = 6.2, plus about 0.7 for the copy and the first run"
       },
       {
         "phase": "S38 2 repair the reviews services in Compose",
@@ -61,26 +61,26 @@
         "derivation": "one full run"
       }
     ],
-    "typicalMinutes": 56,
+    "typicalMinutes": 58,
     "split": {
-      "S38": 37,
+      "S38": 39,
       "S39": 19
     },
     "requiredCoreBounds": {
-      "S38": "about 37 minutes inside S38's 85-minute guided-lab block",
+      "S38": "about 39 minutes inside S38's 85-minute guided-lab block",
       "S39": "about 19 minutes, including the 4-minute Jenkins reading, inside S39's 85-minute guided-lab block, which also holds the module check",
-      "outsideCore": "the one-time setup (about 3 minutes) is outside the required core"
+      "outsideCore": "the one-time setup (about 5 minutes: npm ci plus the pinned Python packages) is outside the required core"
     },
     "wrongFirstRetry": "a failing test costs about 1 minute to read the message, make the one named repair and rerun",
     "worstRequiredMinutes": 60,
-    "worstRequiredBasis": "a planning allowance, not a measured or derived worst case: typical 56 plus a stated allowance of 4 extra failed runs at about 1 minute each = 60, the bound the README names as the pause-and-self-study point",
+    "worstRequiredBasis": "a planning allowance, not a measured or derived worst case: typical 58 plus a stated allowance of 2 extra failed runs at about 1 minute each = 60, the bound the README names as the pause-and-self-study point",
     "fit": "Each day's share occupies that day's existing frozen-calendar Lab-template guided-lab block (85 minutes) and adds no required time elsewhere."
   },
   "observed": {
     "learnerCommands": {
-      "note": "node --test --test-reporter=tap finishes in well under a second on the starter and on both private solutions"
+      "note": "node --test --test-reporter=tap finishes in about a second on the starter and on both private solutions, including the service and step runs"
     },
-    "independentAgentSolve": "an independent non-author agent solved the git-archived lab from the README, the topic pages and the failure messages in 3 test runs (0/26, then 15/26 at the S38 checkpoint, then 26/26) without opening the tests, and estimated about 44 minutes by phase (3, 7, 1, 9, 10, 10, 4). That is an agent's estimate, not a human timing; the model above stays the planning figure. The friction it reported was fixed in the lab before this record."
+    "independentAgentSolve": "an independent non-author agent solved the lab git-archived at c3e666bf (the OPS5-C behaviour grader) from the README, the topic pages and the failure messages in 6 test runs (0, 7, 10, 15 at the S38 checkpoint, 23, then 26 of 26), each phase passing at its first run, without opening the tests, and estimated about 54 minutes by phase (4, 9, 1, 9, 12, then 4, 10, 4, 1) plus under a minute of setup. That is an agent's estimate, not a human timing; the model above stays the planning figure. Its friction reports on the refused-connection status and the httpx.Timeout form were fixed in loop 6 (README phase 4, and test 24 now names the exception); its solution is replayed on this record's commit as private solution 2."
   },
   "notObserved": "No human learner has been timed. The phase minutes above are a model, not an observation."
 }

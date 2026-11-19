@@ -1,20 +1,23 @@
 {
   "schemaVersion": 1,
   "lab": "containers-cicd/microservices-and-ci-cd/coding-lab",
-  "record": "solved at 2204f76c7284aea7ecad6e6690c869d26131e819 by run local-1795052065",
-  "commit": "2204f76c7284aea7ecad6e6690c869d26131e819",
-  "runId": "local-1795052065",
-  "ranAt": "2026-11-19T01:34:25Z",
+  "record": "solved at bc16896ab3a4e0c7a58a53fbec6824a1a63743db by run local-ops-loop6-20261119061942",
+  "commit": "bc16896ab3a4e0c7a58a53fbec6824a1a63743db",
+  "runId": "local-ops-loop6-20261119061942",
+  "ranAt": "2026-11-19T06:19:42Z",
   "contract": "authoring/docs/lab-contract.md section 10 and authoring/schemas/solved-run.schema.json: every tracked public lab file at the recorded commit is bound by file and reviewedSha256; the lab directory was exported with git archive of that commit into private staging outside the repository and run there.",
   "toolchain": {
     "node": "v24.2.0",
     "npm": "11.3.0",
     "os": "darwin arm64 (macOS)",
-    "engine": "none: no container engine, Python runtime or CI runner was used; the lab's tests read files only"
+    "python": "3.14.6 (lab .venv from npm run setup: fastapi 0.136.3, httpx 0.28.1 and pinned dependencies)",
+    "bash": "GNU bash 3.2.57 (macOS /bin/bash)",
+    "githubShellReference": "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax, jobs.<job_id>.steps[*].shell table, retrieved 2026-11-19: with no shell set on Linux or macOS a run step runs bash -e {0}; shell: bash runs bash --noprofile --norc -eo pipefail {0}; shell: sh runs sh -e {0}. Tests 6-7 run the steps the same way.",
+    "engine": "none: no container engine, CI runner or network was used by the tests; tests 24-26 load the service in-process with a stand-in shop api, tests 6-7 run secret-using workflow steps with bash, made-up secrets and a stand-in docker"
   },
   "procedure": [
-    "git archive 2204f76c7284aea7ecad6e6690c869d26131e819 containers-cicd/microservices-and-ci-cd/coding-lab into a fresh private staging directory outside the repository",
-    "npm ci in tests (the one network step), then npm audit",
+    "git archive bc16896ab3a4e0c7a58a53fbec6824a1a63743db containers-cicd/microservices-and-ci-cd/coding-lab into a fresh private staging directory outside the repository",
+    "npm run setup in tests (npm ci, then the lab .venv with the pinned Python packages: the one network step), then npm audit",
     "node --test --test-reporter=tap against the shipped starter, comparing the result lines with expected/starter-summary.txt",
     "for each of two private solutions: a fresh copy of the same export with only the learner-edited starter files and starter/.env replaced, then node --test --test-reporter=tap, comparing the result and summary lines with expected/solved-summary.txt",
     "an S38-only state (solution 1 without the phase 6 workflow and phase 7 worksheet sections), checking that exactly tests 9-19 and 23-26 pass as the README's end-of-S38 checkpoint states"
@@ -30,7 +33,7 @@
       "summary": "# tests 26 # pass 26 # fail 0"
     },
     {
-      "what": "private solution 2, written by an independent non-author agent from the git-archived lab, the README, the topic pages and the failure messages only (uncommitted staging)",
+      "what": "private solution 2, written by an independent non-author agent from the lab git-archived at c3e666bf, the README, the topic pages and the failure messages only (uncommitted staging), replayed unchanged on this commit",
       "summary": "# tests 26 # pass 26 # fail 0"
     },
     {
@@ -41,13 +44,13 @@
   "audit": {
     "tests": "npm audit: found 0 vulnerabilities (tests/package-lock.json, yaml 2.9.1)"
   },
-  "testScope": "This run proves the rule checks over learner-written files: compose.yaml, the reviews Dockerfile start command, reviews/app/main.py read as text, the GitHub Actions workflow (Docker Hub login through repository secrets) and the decisions worksheet. Nothing in the lab executes Python, builds an image or runs a workflow.",
+  "testScope": "This run proves structured checks over compose.yaml, the reviews Dockerfile start command, the GitHub Actions workflow and the decisions worksheet, plus behaviour runs: reviews/app/main.py is loaded and sent requests (token forwarded, missing token refused with 401 before any call, 2-second connect and 3-second read limits on the request, read timeout, connect timeout and refused connection mapped to gateway statuses) against an in-process stand-in api, and the workflow's login step and secret-using steps run under bash with made-up secrets and a stand-in docker (what docker login receives, and that no secret value reaches the step output). Nothing builds an image, starts a container, opens a network connection or runs a real workflow.",
   "privateStaging": "both solutions and the private regression cases live only in uncommitted private staging outside the repository; no solution, hidden test or hash of either is recorded here",
-  "otherSystems": "Linux and Windows runs are not yet recorded; hosted CI is currently disabled, so this macOS record is the only execution evidence (lab-contract section 10).",
+  "otherSystems": "Linux and Windows runs are not yet recorded, nor Python versions other than 3.14 or Windows bash discovery through Git for Windows; hosted CI is currently disabled, so this macOS record is the only execution evidence (lab-contract section 10).",
   "files": [
     {
       "file": "containers-cicd/microservices-and-ci-cd/coding-lab/README.md",
-      "reviewedSha256": "e286096a9d79a56980a6267dea525baa22a66030d0f6f42397922b5c25afbdc3"
+      "reviewedSha256": "bfd2a0b441517c27ace29b6608f4add58b5728a7821deea3e75a9cd12601d7b7"
     },
     {
       "file": "containers-cicd/microservices-and-ci-cd/coding-lab/expected/solved-summary.txt",
@@ -71,11 +74,11 @@
     },
     {
       "file": "containers-cicd/microservices-and-ci-cd/coding-lab/lab.json",
-      "reviewedSha256": "0c680786a68731ee36634d8cd5248f95262cff5c53a2bb898d6d15d1b75b5685"
+      "reviewedSha256": "583b89649f1b26372d02eb8a8b9a007020b124dc34f149ae6a039a88396cd8ab"
     },
     {
       "file": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/.github/workflows/ci.yml",
-      "reviewedSha256": "0fd485a2de89495350989d88d162d32c82388883f0874182d170e91877d38231"
+      "reviewedSha256": "d0c9ea0d0208e909f9812117e0e943ea1ca098e449fa45d0e711f03bac502086"
     },
     {
       "file": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/.gitignore",
@@ -99,11 +102,15 @@
     },
     {
       "file": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/app/main.py",
-      "reviewedSha256": "f57ae633f73b9f06018376bd983e5ef9c32a75774e965ed397648f680838bb6b"
+      "reviewedSha256": "a1a5518a18a7d1ca82e268cac4a126b788eba2024782dba668b8764c986ff0f7"
     },
     {
       "file": "containers-cicd/microservices-and-ci-cd/coding-lab/starter/reviews/requirements.txt",
       "reviewedSha256": "44216c29888f2536291b0822db49381252392f80298b391c94c130bf892ebbad"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/behavior.mjs",
+      "reviewedSha256": "f5f793a44e454f572ee22304b8574cf88814310ccbca66a55e45e2360d43349b"
     },
     {
       "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/ci.test.mjs",
@@ -123,7 +130,7 @@
     },
     {
       "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
-      "reviewedSha256": "9278b451b1a2602839347dd1b5fa403999dab8260041c18006343738de902a77"
+      "reviewedSha256": "a5228f9233a08c78ad1e5b189b58223e946cc51b74a2f2303bbee1be72c95fff"
     },
     {
       "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/package-lock.json",
@@ -131,11 +138,23 @@
     },
     {
       "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/package.json",
-      "reviewedSha256": "3a5c13790064c853eef28d93aed9525d0b7280843d68c34a43c0f734a8e3a4fd"
+      "reviewedSha256": "b0f2bfb3c731ab142966c0530fe23ac9d533d667473a5cede4f7d88d733e012a"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/requirements.txt",
+      "reviewedSha256": "084aeba1ac6d1241d4d3921e887123a54c71aa9e765b07551a746f548af3f925"
     },
     {
       "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/service.test.mjs",
       "reviewedSha256": "8314fabe10b849245f72e3917b76ad8f83d593dce9b4bd7523a064c28385ea41"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/service_behavior.py",
+      "reviewedSha256": "68cbaf01d21bd0b7b5eb78b2b3329dd054191ddbb7aa27cb8bad3949241a8b29"
+    },
+    {
+      "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/setup_python.mjs",
+      "reviewedSha256": "06b667dc5d5f00578a59aa24d6cddca9ac1e86945dcf717a2aa93ef26b60d0a7"
     }
   ]
 }
