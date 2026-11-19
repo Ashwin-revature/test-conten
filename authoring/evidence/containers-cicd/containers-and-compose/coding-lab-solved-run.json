@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "lab": "containers-cicd/containers-and-compose/coding-lab",
-  "record": "solved at 37a5518dea278ff97fbc391e70e3f9579a51f5ba by run coverage-gap-final-1794978348",
-  "commit": "37a5518dea278ff97fbc391e70e3f9579a51f5ba",
-  "runId": "coverage-gap-final-1794978348",
-  "ranAt": "2026-11-18T05:06:44Z",
+  "record": "solved at 7bc31cfdcb15ed3048a5ece7963762630e2e12ac by run lane-containers-hardening-20261119T191914Z",
+  "commit": "7bc31cfdcb15ed3048a5ece7963762630e2e12ac",
+  "runId": "lane-containers-hardening-20261119T191914Z",
+  "ranAt": "2026-11-19T19:19:14Z",
   "contract": "authoring/docs/lab-contract.md section 10 and authoring/schemas/solved-run.schema.json: every tracked public lab file at the recorded commit is bound by file and reviewedSha256; the lab files were exported from that commit with git archive and run there.",
   "toolchain": {
     "node": "v24.2.0",
@@ -14,11 +14,12 @@
     "engine": "none: no container engine was used"
   },
   "procedure": [
-    "git archive 37a5518dea278ff97fbc391e70e3f9579a51f5ba containers-cicd/containers-and-compose/coding-lab into a fresh private directory",
+    "git archive 7bc31cfdcb15ed3048a5ece7963762630e2e12ac containers-cicd/containers-and-compose/coding-lab into a fresh private directory",
     "npm ci in tests, then npm audit",
     "node --test --test-reporter=tap against the shipped starter",
     "node --test --test-reporter=tap with LAB_PROJECT set to each private solution copied over a fresh starter copy",
-    "node authoring/evidence/containers-cicd/containers-and-compose/coding-lab-bypass/run-bypass.mjs <private cases directory>, from a git archive of the same commit"
+    "node authoring/evidence/containers-cicd/containers-and-compose/coding-lab-bypass/run-bypass.mjs <private cases directory>, from a git archive of the same commit",
+    "node authoring/evidence/containers-cicd/containers-and-compose/runbook-command-regression.mjs, from the same git archive (public, committed command-form regressions: help, dry-run, no-op and incompatible forms, password-source overrides)"
   ],
   "runs": [
     {
@@ -37,6 +38,10 @@
     {
       "what": "bypass regression evidence: 61 cases in uncommitted private staging (deliberately wrong projects plus accepted-variant projects; none is committed, because each is a near-complete solution)",
       "summary": "61 of 61 cases caught"
+    },
+    {
+      "what": "public runbook command regressions (committed)",
+      "summary": "runbook command regressions passed"
     }
   ],
   "audit": {
@@ -155,7 +160,7 @@
     },
     {
       "file": "containers-cicd/containers-and-compose/coding-lab/tests/lab.mjs",
-      "reviewedSha256": "5d983d0dc8441f3b42677033ae2e0a57fe859d9f8b488cb38aed111050610ba4"
+      "reviewedSha256": "7c20ad2a632b6548eabc11379842e0cc087f7e61ffaa2a9050fca813717fe71f"
     },
     {
       "file": "containers-cicd/containers-and-compose/coding-lab/tests/package-lock.json",

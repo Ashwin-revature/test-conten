@@ -55,8 +55,8 @@
     },
     {
       "path": "authoring/evidence/containers-cicd/containers-and-compose/coding-lab-solved-run.json",
-      "sha256": "9fa4b2d013e51fe04a33b3d64f4e6054227307d7efe2dee5b99498c41c2b9c8f",
-      "bytes": 8858
+      "sha256": "526f95809609119b930c6d8eaccd6f1770e0ae7813f77a6e0579f3274077c58d",
+      "bytes": 9260
     },
     {
       "path": "authoring/evidence/containers-cicd/containers-and-compose/coding-lab-timing.json",
@@ -274,6 +274,11 @@
       "bytes": 611
     },
     {
+      "path": "authoring/evidence/containers-cicd/containers-and-compose/runbook-command-regression.mjs",
+      "sha256": "75175f8ae36a1a1c03425651714608ef6a8e5700e11b4a8fe0e6ff53bf981828",
+      "bytes": 4945
+    },
+    {
       "path": "authoring/evidence/containers-cicd/containers-and-compose/service-name-networking/owner-essential-qa.json",
       "sha256": "be30770c53b4fc2894747b427c65b46816a5bb1fd3a0b5ae9da52f0b263017e3",
       "bytes": 4428
@@ -430,8 +435,8 @@
     },
     {
       "path": "containers-cicd/containers-and-compose/coding-lab/tests/lab.mjs",
-      "sha256": "5d983d0dc8441f3b42677033ae2e0a57fe859d9f8b488cb38aed111050610ba4",
-      "bytes": 31636
+      "sha256": "7c20ad2a632b6548eabc11379842e0cc087f7e61ffaa2a9050fca813717fe71f",
+      "bytes": 33433
     },
     {
       "path": "containers-cicd/containers-and-compose/coding-lab/tests/package-lock.json",
@@ -759,7 +764,7 @@
       "evidencePath": "authoring/evidence/containers-cicd/containers-and-compose/coding-lab-solved-run.json",
       "field": "files[27].reviewedSha256",
       "artifactPath": "containers-cicd/containers-and-compose/coding-lab/tests/lab.mjs",
-      "sha256": "5d983d0dc8441f3b42677033ae2e0a57fe859d9f8b488cb38aed111050610ba4",
+      "sha256": "7c20ad2a632b6548eabc11379842e0cc087f7e61ffaa2a9050fca813717fe71f",
       "current": true
     },
     {
@@ -1749,7 +1754,7 @@
       "field": "recheck.items[0].reviewedSha256",
       "artifactPath": "containers-cicd/containers-and-compose/coding-lab/tests/lab.mjs",
       "sha256": "5d983d0dc8441f3b42677033ae2e0a57fe859d9f8b488cb38aed111050610ba4",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-and-compose/coverage-gap-loop3-critic-education-recheck.json",
@@ -1763,7 +1768,7 @@
       "field": "recheck.items[2].reviewedSha256",
       "artifactPath": "containers-cicd/containers-and-compose/coding-lab/tests/lab.mjs",
       "sha256": "5d983d0dc8441f3b42677033ae2e0a57fe859d9f8b488cb38aed111050610ba4",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-and-compose/coverage-gap-loop3-critic-education-recheck.json",
@@ -1791,7 +1796,7 @@
       "field": "recheck.items[6].reviewedSha256",
       "artifactPath": "containers-cicd/containers-and-compose/coding-lab/tests/lab.mjs",
       "sha256": "5d983d0dc8441f3b42677033ae2e0a57fe859d9f8b488cb38aed111050610ba4",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-and-compose/coverage-gap-loop3-critic-education-recheck.json",
@@ -1819,14 +1824,14 @@
       "field": "recheck.items[0].reviewedSha256",
       "artifactPath": "containers-cicd/containers-and-compose/coding-lab/tests/lab.mjs",
       "sha256": "5d983d0dc8441f3b42677033ae2e0a57fe859d9f8b488cb38aed111050610ba4",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-and-compose/coverage-gap-loop3-critic-sme-recheck.json",
       "field": "recheck.items[1].reviewedSha256",
       "artifactPath": "containers-cicd/containers-and-compose/coding-lab/tests/lab.mjs",
       "sha256": "5d983d0dc8441f3b42677033ae2e0a57fe859d9f8b488cb38aed111050610ba4",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-and-compose/coverage-gap-loop3-critic-sme-recheck.json",
@@ -1854,28 +1859,28 @@
       "field": "recheck.items[13].reviewedSha256",
       "artifactPath": "containers-cicd/containers-and-compose/coding-lab/tests/lab.mjs",
       "sha256": "5d983d0dc8441f3b42677033ae2e0a57fe859d9f8b488cb38aed111050610ba4",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-and-compose/coverage-gap-loop3-critic-sme-recheck.json",
       "field": "recheck.items[14].reviewedSha256",
       "artifactPath": "containers-cicd/containers-and-compose/coding-lab/tests/lab.mjs",
       "sha256": "5d983d0dc8441f3b42677033ae2e0a57fe859d9f8b488cb38aed111050610ba4",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-and-compose/coverage-gap-loop3-critic-sme-recheck.json",
       "field": "recheck.items[2].reviewedSha256",
       "artifactPath": "containers-cicd/containers-and-compose/coding-lab/tests/lab.mjs",
       "sha256": "5d983d0dc8441f3b42677033ae2e0a57fe859d9f8b488cb38aed111050610ba4",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-and-compose/coverage-gap-loop3-critic-sme-recheck.json",
       "field": "recheck.items[3].reviewedSha256",
       "artifactPath": "containers-cicd/containers-and-compose/coding-lab/tests/lab.mjs",
       "sha256": "5d983d0dc8441f3b42677033ae2e0a57fe859d9f8b488cb38aed111050610ba4",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-and-compose/coverage-gap-loop3-critic-sme-recheck.json",
@@ -1889,14 +1894,14 @@
       "field": "recheck.items[5].reviewedSha256",
       "artifactPath": "containers-cicd/containers-and-compose/coding-lab/tests/lab.mjs",
       "sha256": "5d983d0dc8441f3b42677033ae2e0a57fe859d9f8b488cb38aed111050610ba4",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-and-compose/coverage-gap-loop3-critic-sme-recheck.json",
       "field": "recheck.items[6].reviewedSha256",
       "artifactPath": "containers-cicd/containers-and-compose/coding-lab/tests/lab.mjs",
       "sha256": "5d983d0dc8441f3b42677033ae2e0a57fe859d9f8b488cb38aed111050610ba4",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-and-compose/coverage-gap-loop3-critic-sme-recheck.json",
@@ -1910,7 +1915,7 @@
       "field": "recheck.items[8].reviewedSha256",
       "artifactPath": "containers-cicd/containers-and-compose/coding-lab/tests/lab.mjs",
       "sha256": "5d983d0dc8441f3b42677033ae2e0a57fe859d9f8b488cb38aed111050610ba4",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-and-compose/coverage-gap-loop3-critic-sme-recheck.json",
