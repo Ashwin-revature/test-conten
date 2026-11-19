@@ -288,15 +288,23 @@ function parenEnd(code, open) {
   }
   return code.length;
 }
-// httpx clients the code creates, by the name they are bound to (`with ... as name` or `name = ...`).
-function httpxClients(code) {
-  const out = {};
+const VERBS = '(?:get|post|put|patch|delete|head|options|request|stream|send)';
+// Every httpx client the code builds: its argument span and, when it is bound,
+// the name (`with ... as name`, `name = ...` or an annotated `name: T = ...`).
+function httpxConstructors(code) {
+  const out = [];
   for (const m of code.matchAll(/httpx\.(?:Async)?Client\s*\(/g)) {
     const open = m.index + m[0].length - 1;
     const end = parenEnd(code, open);
-    const name = code.slice(end + 1).match(/^\s*as\s+([A-Za-z_]\w*)/)?.[1] ?? code.slice(0, m.index).match(/([A-Za-z_]\w*)\s*=\s*$/)?.[1];
-    if (name) out[name] = { start: open + 1, end, args: code.slice(open + 1, end) };
+    const name = code.slice(end + 1).match(/^\s*as\s+([A-Za-z_]\w*)/)?.[1]
+      ?? code.slice(0, m.index).match(/([A-Za-z_]\w*)\s*(?::[^=\n]*)?=\s*$/)?.[1];
+    out.push({ at: m.index, start: open + 1, end, args: code.slice(open + 1, end), name });
   }
+  return out;
+}
+function httpxClients(code) {
+  const out = {};
+  for (const c of httpxConstructors(code)) if (c.name) out[c.name] = c;
   return out;
 }
 // The outgoing call to the shop api: a request made with httpx, directly (httpx.get
@@ -308,12 +316,20 @@ function outgoingCall(code) {
   const derived = [...code.matchAll(/^\s*([A-Za-z_]\w*)\s*=[^\n]*API_BASE_URL/gm)].map((x) => x[1]);
   const aimed = (text) => /API_BASE_URL/.test(text) || derived.some((n) => new RegExp(`\\b${n}\\b`).test(text));
   const calls = [];
-  for (const m of code.matchAll(/\b(httpx|[A-Za-z_]\w*)\.(get|post|put|patch|delete|head|options|request|stream|send)\s*\(/g)) {
-    if (m[1] !== 'httpx' && !clients[m[1]]) continue;
-    const open = m.index + m[0].length - 1;
+  const push = (at, open, client) => {
     const end = parenEnd(code, open);
-    calls.push({ at: m.index, start: open + 1, end, args: code.slice(open + 1, end), client: clients[m[1]] ?? null });
+    calls.push({ at, start: open + 1, end, args: code.slice(open + 1, end), client });
+  };
+  for (const m of code.matchAll(new RegExp(`\\b(httpx|[A-Za-z_]\\w*)\\.${VERBS}\\s*\\(`, 'g'))) {
+    if (m[1] !== 'httpx' && !clients[m[1]]) continue;
+    push(m.index, m.index + m[0].length - 1, clients[m[1]] ?? null);
   }
+  // A verb called straight on a newly built client: httpx.Client(...).get(...).
+  for (const c of httpxConstructors(code)) {
+    const chained = code.slice(c.end + 1).match(new RegExp(`^\\s*\\.\\s*${VERBS}\\s*\\(`));
+    if (chained) push(c.at, c.end + chained[0].length, c);
+  }
+  calls.sort((a, b) => a.at - b.at);
   return calls.find((c) => aimed(c.args) || aimed(c.client?.args ?? '')) ?? calls[0] ?? null;
 }
 const within = (span, at) => span && at >= span.start && at < span.end;
@@ -392,11 +408,14 @@ rule('reviews-auth-forward', null, (dir) => {
   if (negative.some((i) => RAISE_401.test(blockBody(lines, i)))) return null;
   // Or `if authorization:` (wrapping the call or ahead of it) with an else that raises 401.
   const positive = before.filter((i) => /^\s*if\s+authorization(\s+is\s+not\s+None)?\s*:/.test(lines[i]));
-  for (const i of positive) {
+  const elseOf = (i) => {
     const e = blockEnd(lines, i);
-    if (e < lines.length && indentOf(lines[e]) === indentOf(lines[i]) && /^\s*else\s*:/.test(lines[e]) && RAISE_401.test(blockBody(lines, e))) return null;
-  }
-  if (negative.length || positive.length) return 'your missing-token check does not raise HTTPException with 401, so a request without a token is not refused: raise it there';
+    return e < lines.length && indentOf(lines[e]) === indentOf(lines[i]) && /^\s*else\s*:/.test(lines[e]) ? e : -1;
+  };
+  const withElse = positive.filter((i) => elseOf(i) >= 0);
+  if (withElse.some((i) => RAISE_401.test(blockBody(lines, elseOf(i))))) return null;
+  // A positive check with no else is not a missing-token check: the no-token path is still unhandled.
+  if (negative.length || withElse.length) return 'your missing-token check does not raise HTTPException with 401, so a request without a token is not refused: raise it there';
   return 'a request with no token is not refused before the call: answer 401 when authorization is missing';
 });
 
@@ -612,12 +631,16 @@ rule('ci-pinned-actions', CI, (dir) => {
 // Commands that write or encode what they are given (arguments, a here-string or a redirect).
 const PRINTERS = /^(echo|printf|cat|print|tee|base64|xxd|od|hexdump|openssl)\b/;
 const PRINTS_SECRET = 'a run step writes a secret (directly, through an env variable or encoded) to the run log: reread the secrets page on why a workflow never prints one, and delete that output';
-// Here-documents in a run script: the command line that opens each one, and its body.
+// Here-documents in a run script: the command that opens each one, and its body.
+// The command is the pipeline around `<<`, cut at the nearest ;, && or || on either
+// side, so `cat <<EOF | docker login ...` keeps its docker login stage.
 // A quoted delimiter stops the shell expanding $NAME, but ${{ }} is filled in by Actions first.
+const SEPARATOR = /;|&&|\|\|/;
 function heredocs(run) {
   const out = [];
-  for (const m of String(run ?? '').matchAll(/^([^\n]*?)<<-?[ \t]*(['"]?)([A-Za-z_]\w*)\2[^\n]*\n([\s\S]*?)^[ \t]*\3[ \t]*$/gm)) {
-    out.push({ command: m[1].trim(), quoted: m[2] !== '', body: m[4] });
+  for (const m of String(run ?? '').matchAll(/^([^\n]*?)<<-?[ \t]*(['"]?)([A-Za-z_]\w*)\2([^\n]*)\n([\s\S]*?)^[ \t]*\3[ \t]*$/gm)) {
+    const command = `${m[1].split(SEPARATOR).at(-1)} ${m[4].split(SEPARATOR)[0]}`.replace(/\s+/g, ' ').trim();
+    out.push({ command, quoted: m[2] !== '', body: m[5] });
   }
   return out;
 }
