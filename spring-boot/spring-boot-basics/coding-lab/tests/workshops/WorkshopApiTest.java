@@ -17,6 +17,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
 import org.springframework.core.env.Environment;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
@@ -37,8 +38,13 @@ class WorkshopApiTest {
     @Autowired
     Environment env;
 
+    @Autowired
+    ApplicationContext ctx;
+
     @Test
     void task1ListsTheSeededWorkshops() throws Exception {
+        assertEquals(1, ctx.getBeansOfType(WorkshopCatalog.class).size(),
+                "Task 1: WorkshopCatalog must be registered as exactly one Spring bean (a @Bean method in CatalogConfig)");
         mvc.perform(get("/workshops"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[*].title", hasItem("Spring Kickstart")))
@@ -62,7 +68,7 @@ class WorkshopApiTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"title\":\"Testing Lab\",\"seats\":6}"))
                 .andExpect(status().isCreated())
-                .andExpect(header().string("Location", "/workshops/3"))
+                .andExpect(header().string("Location", org.hamcrest.Matchers.endsWith("/workshops/3")))
                 .andExpect(jsonPath("$.id").value(3))
                 .andExpect(jsonPath("$.title").value("Testing Lab"))
                 .andExpect(jsonPath("$.seats").value(6));

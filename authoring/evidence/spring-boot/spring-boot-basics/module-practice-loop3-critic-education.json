@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "role": "education",
+  "author": "independent education critic (read-only review) - transcribed faithfully from ~/claude/pep-deliverables/critics/spring-basics-lab-critic-education.json by the loop-3 recheck reviewer, 2026-11-19",
+  "reviewedPath": "spring-boot/spring-boot-basics/coding-lab/lab.json",
+  "reviewedSha256": "52d2df73cc50c6bdb85e3d9095a4107e2ff6783cda9dce4b812f691da47948db",
+  "reviewedScope": "spring-boot/spring-boot-basics/coding-lab",
+  "reviewedHead": "213e3e5a (diff vs origin/main a00a6658)",
+  "artifactHashes": {
+    "README.md": "5616c648b85f5098c4bf63757b3f5c96053a867b400112cfb78181bd6dbda723",
+    "expected/test-summary.txt": "319e62fb48ef61d8105bdd084e439bd0713382f699d69a83c55dc56e534194ef",
+    "fixtures/workshops-openapi.yaml": "719f17c7f33de959c421ff8a33bce5fbf7edcd47c4ae86f61d18b39a0af0021f",
+    "lab.json": "52d2df73cc50c6bdb85e3d9095a4107e2ff6783cda9dce4b812f691da47948db",
+    "starter/pom.xml": "5c1c75b1a357f63fc2144dd748905245bcbe2aabdee25e4a1b77319bf8ea738a",
+    "starter/src/main/java/about/AboutController.java": "ec7bdcfa6f5f64072c587d9572536f0ba0d876d6a55c540adcae20c3d23af2bd",
+    "starter/src/main/java/workshops/CatalogConfig.java": "ba9b40f34133bdcf6de6e3f57bfd816d314b3752c0d3707894936a4a203e0050",
+    "starter/src/main/java/workshops/NewWorkshop.java": "f095f651993d96ccb82e87b4c0888e8184d94f0e205a4b354360a422f9323a64",
+    "starter/src/main/java/workshops/Workshop.java": "3a0afbb27b7028144d9b1d8c71ed7a522181d20e53fef5499229566ecf098483",
+    "starter/src/main/java/workshops/WorkshopCatalog.java": "29f915318d479af2b9dc3faeb9f6188335dce313b25e8fdf2872be609ef95008",
+    "starter/src/main/java/workshops/WorkshopController.java": "69c038f3867da8d377d20c5cf78c407e2e9b925c05b3a3534e218ee097d37865",
+    "starter/src/main/java/workshops/WorkshopsApplication.java": "52f2db9253914c33fee06d5736ecd43f5d5deb10ac2b43b0d629c9d951759fcd",
+    "tests/workshops/WorkshopApiTest.java": "03a729eb13f3c3652f4fef25edcf7aa024039dcdcb157470878b99e08578a853",
+    "tests/workshops/WorkshopsApplicationMainTest.java": "1affba2735286be46b738f80b7c93fc2509699eeb8b7c9d329143edddf11d9fc"
+  },
+  "verdict": "approve-with-fixes",
+  "summary": "All 9 topics have a tested task (topics 1 and 2 only lightly via Tasks 7/4). Tasks are fairly faded; every required construct is taught. Starter has no solution leakage; tests are deterministic and match README wording. Placement after the last topic is correct and timing is labeled unpiloted. Defects are one mastery-layer reference and two small inaccuracies.",
+  "findings": [
+    {
+      "id": "edu-spring-basics-lab-mastery-001",
+      "severity": "high",
+      "location": {
+        "file": "authoring/catalog/spring-boot/spring-boot-basics/module.json",
+        "line": 29
+      },
+      "claim": "The module still lists assessments [spring-boot-basics-mastery-check] (lines 20-21), and the notes added at lines 29-30 name the mastery-check bank. The fixed hierarchy allows no module-mastery MCQ layer and the lab should not reference or depend on it.",
+      "evidence": [],
+      "recommendation": "Delete the line 29 note and the line 30 practice-mastery-check note. Clear the assessments array only if the brief allows touching the legacy link; otherwise record it as a separate retirement item."
+    },
+    {
+      "id": "edu-spring-basics-lab-readme-001",
+      "severity": "medium",
+      "location": {
+        "file": "spring-boot/spring-boot-basics/coding-lab/README.md",
+        "line": 52
+      },
+      "claim": "README says each task has a TODO comment except Task 6, which creates a new file. This is wrong: Task 6 has a TODO in WorkshopController, adds a handler and a record in an existing file, and creates no file. Task 4 is the task that creates a file and has no TODO.",
+      "evidence": [],
+      "recommendation": "Rewrite as: Each task has a TODO comment, except Task 4, which creates a new file."
+    },
+    {
+      "id": "edu-spring-basics-lab-starter-001",
+      "severity": "low",
+      "location": {
+        "file": "spring-boot/spring-boot-basics/coding-lab/starter/src/main/java/about/AboutController.java",
+        "line": 9
+      },
+      "claim": "The javadoc says Task 7 makes Spring find AboutController. The scanning task is Task 5, so the comment misleads learners.",
+      "evidence": [],
+      "recommendation": "Change to Task 5."
+    },
+    {
+      "id": "edu-spring-basics-lab-timing-001",
+      "severity": "low",
+      "location": {
+        "file": "authoring/catalog/spring-boot/spring-boot-basics/module.json",
+        "line": 27
+      },
+      "claim": "The timing note compares 102 required minutes (58+36+8) with 95 minutes described as the S2 page blocks plus a 40-minute lab block. The arithmetic is confusing and hard to audit, although the text correctly says the fit is unproven and unpiloted.",
+      "evidence": [],
+      "recommendation": "State the two totals plainly (page time plus lab plus setup versus the slot) and label the schedule decision open, with no derived figure."
+    },
+    {
+      "id": "edu-spring-basics-lab-coverage-001",
+      "severity": "low",
+      "location": {
+        "file": "spring-boot/spring-boot-basics/coding-lab/README.md",
+        "line": 9
+      },
+      "claim": "spring-vs-spring-boot#o2 (BOM parent and starters) has no dedicated check. It is covered only by Task 7 starting the embedded server, so the coverage of topic 1 is thin, though the notes record it honestly.",
+      "evidence": [],
+      "recommendation": "Optionally add one line to Task 7 asking learners to find the parent and the starter in pom.xml, with no new test."
+    }
+  ]
+}

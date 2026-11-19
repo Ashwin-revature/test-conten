@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "lab": "spring-boot/spring-boot-basics/coding-lab",
-  "record": "starter and reference proofs of the seven-task lab, local run 2026-11-19",
+  "record": "starter and reference proofs of the seven-task lab after applying independent-critic fixes, local run 2026-11-19",
   "commit": "working tree on cc/spring-basics-lab (see git history for the committing SHA)",
-  "runId": "local-seven-task-20261119",
-  "ranAt": "2026-11-19T19:21:00Z",
+  "runId": "local-seven-task-20261119-critic-fixes",
+  "ranAt": "2026-11-19T21:00:00Z",
   "environment": {
     "os": "macOS 27.2.1 (Darwin 27.2.0, arm64)",
     "jdk": "Eclipse Temurin 25.0.5.1",
@@ -15,26 +15,26 @@
     "Ran the shipped starter with mvn -q -o test.",
     "Overlaid a private reference solution (CatalogConfig with the @Configuration and @Bean annotations, WorkshopController, WorkshopsApplication with scanBasePackages and SpringApplication.run, and src/main/resources/application.properties; the reference is kept outside the repository) and ran mvn -q -o test again after deleting target."
   ],
-  "result": "Reference: mvn -q -o test exited 0 with no output; workshops.WorkshopApiTest Tests run: 6, Failures: 0, Errors: 0, Skipped: 0 and workshops.WorkshopsApplicationMainTest Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, matching expected/test-summary.txt. Zero Tomcat 'Socket accept failed' lines in the reports.",
-  "starterRun": "Shipped starter: mvn -q -o test exited 1 with 7 tests, 7 failures, 0 errors, failing exactly the declared failingTests, each on its own task's assertion.",
+  "result": "Reference (the independent SME critic solution, adapted): mvn -q -o test exited 0; workshops.WorkshopApiTest Tests run: 6, Failures: 0, Errors: 0, Skipped: 0 and workshops.WorkshopsApplicationMainTest Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, matching expected/test-summary.txt.",
+  "starterRun": "Shipped starter: mvn -q -o test exited 1 with 7 tests, 7 failures, 0 errors, failing exactly the declared failingTests, each on its own task assertion (Task 1 now fails on the explicit one-WorkshopCatalog-bean assertion).",
   "cleanup": "The runs created only starter/target inside the lab; after the documented cleanup removed it, the only differences from the exported commit were the three privately staged learner paths.",
   "otherSystems": "Linux and Windows runs are not recorded; hosted CI is disabled, so this macOS run is local evidence only.",
   "testScope": "Tasks 1-3, 5 and 6 are checked over MockMvc by HTTP status codes, headers and JSON bodies for the listed inputs; Task 4 by the two property values and by the settings file being built from src/main/resources; Task 7 by calling WorkshopsApplication.main with --server.port=0, checking that the port argument reached Spring, and sending one real HTTP request with a 10-second timeout. The tests do not check which Java constructs the code uses.",
   "variantRuns": "Variants of the reference run in this pass: application.properties in the starter folder instead of src/main/resources fails the Task 4 test; a main that drops args fails the Task 7 test with 'main must pass its args to Spring Boot'; scanning only the about package passes the Task 5 test and is caught by the tests for Tasks 1, 2, 3 and 6 and by Task 7 (404 on workshops paths). The earlier nine-task adversarial variants were not re-run on the seven-task lab. Not run: a groupSize bound as a String.",
   "artifactHashes": {
-    "README.md": "5616c648b85f5098c4bf63757b3f5c96053a867b400112cfb78181bd6dbda723",
+    "README.md": "5fabc6a286ef415265daa10a449c2c8b46b5aaf08c4b115a74db3ae91265b747",
     "expected/test-summary.txt": "319e62fb48ef61d8105bdd084e439bd0713382f699d69a83c55dc56e534194ef",
     "fixtures/workshops-openapi.yaml": "719f17c7f33de959c421ff8a33bce5fbf7edcd47c4ae86f61d18b39a0af0021f",
     "lab.json": "52d2df73cc50c6bdb85e3d9095a4107e2ff6783cda9dce4b812f691da47948db",
     "starter/pom.xml": "5c1c75b1a357f63fc2144dd748905245bcbe2aabdee25e4a1b77319bf8ea738a",
-    "starter/src/main/java/about/AboutController.java": "ec7bdcfa6f5f64072c587d9572536f0ba0d876d6a55c540adcae20c3d23af2bd",
+    "starter/src/main/java/about/AboutController.java": "4f2417790ed454c74b9a8bcbd3bc41b0fa2a0a4af002f7c1e90e2be15e18226e",
     "starter/src/main/java/workshops/CatalogConfig.java": "ba9b40f34133bdcf6de6e3f57bfd816d314b3752c0d3707894936a4a203e0050",
     "starter/src/main/java/workshops/NewWorkshop.java": "f095f651993d96ccb82e87b4c0888e8184d94f0e205a4b354360a422f9323a64",
     "starter/src/main/java/workshops/Workshop.java": "3a0afbb27b7028144d9b1d8c71ed7a522181d20e53fef5499229566ecf098483",
     "starter/src/main/java/workshops/WorkshopCatalog.java": "29f915318d479af2b9dc3faeb9f6188335dce313b25e8fdf2872be609ef95008",
     "starter/src/main/java/workshops/WorkshopController.java": "69c038f3867da8d377d20c5cf78c407e2e9b925c05b3a3534e218ee097d37865",
     "starter/src/main/java/workshops/WorkshopsApplication.java": "52f2db9253914c33fee06d5736ecd43f5d5deb10ac2b43b0d629c9d951759fcd",
-    "tests/workshops/WorkshopApiTest.java": "03a729eb13f3c3652f4fef25edcf7aa024039dcdcb157470878b99e08578a853",
+    "tests/workshops/WorkshopApiTest.java": "a962acbace32846e8d4effd49f87228b1f7c6d4393d999d831dae5edbffbc48c",
     "tests/workshops/WorkshopsApplicationMainTest.java": "1affba2735286be46b738f80b7c93fc2509699eeb8b7c9d329143edddf11d9fc"
   }
 }
