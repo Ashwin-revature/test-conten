@@ -97,25 +97,29 @@ What the calendar (`curriculum/snapshot/pep-calendar.json`) fixes for S43 and FT
 - The walkthrough is recorded the day before (S42; FT24), and the capstone is Project 2, graded separately. Neither uses Final-day learner minutes.
 
 So the learner minutes on the Final day are this MCQ plus the end-of-track coding assessments.
-Their number and mix come from the overnight beta mandate, not from a repository file: four coding assessments, recommended as two Spring Boot, one Python and one Docker (or a second Python if Docker cannot be assessed soundly).
+Their shape is the accepted assessment-shape decision (2026-11-19, supplied through this task's steering instruction, not in a repository file): four coding questions, each on a supplied scaffold, totalling 60 minutes.
 
-| Final-day block | Minutes | Status |
+| Final-day block | Minutes | Source |
 | --- | --- | --- |
-| Checkpoint MCQ (this bank) | 60 | fixed by this blueprint |
-| Four coding assessments | T, the sum of their reviewed durations | not yet known: those assessments are still being authored |
-| Calendar Gate block | 120 | fixed |
+| Checkpoint MCQ (this bank) | 60 | this blueprint |
+| Spring Boot coding question 1 (supplied scaffold) | 10 | accepted shape decision |
+| Spring Boot coding question 2 (supplied scaffold) | 20 | accepted shape decision |
+| Python coding question 1 (supplied scaffold) | 10 | accepted shape decision |
+| Python coding question 2 (supplied scaffold) | 20 | accepted shape decision |
+| **Total learner minutes** | **120** | |
+| Calendar Gate block | 120 | calendar |
 
-With the MCQ at 60 minutes, the coding assessments have 60 minutes of the Gate block, about 15 minutes each.
-This file does not claim they fit.
+**Schedule verification.** 60 + 10 + 20 + 10 + 20 = 120 minutes, exactly the Gate block.
+No correction to the day's minutes, the track day counts, the AWS days, the other accepted activities or Project 2's separate grading is needed.
+The honest qualification is that the fit has no slack: the 120 minutes include no separate time for reading instructions, opening the scaffolds or moving between sittings, so those must sit inside each question's allocation.
+The scaffolds being supplied is what makes 10- and 20-minute coding questions plausible; no timed learner trial of either the MCQ or the coding questions has been run, so all five figures are allocations, not measurements.
 
-**Beta default (reversible).** The Final day keeps its fixed place (S43; FT25), and the MCQ is planned as its first sitting.
-When the reviewed coding total T is 60 minutes or less, the day fits the 120-minute block unchanged.
-When T is more than 60 minutes, the smallest honest correction is within the Final day: the day runs 60 + T minutes and the ledger records the overrun.
+**Beta default (reversible) if a timed trial overruns.** The Final day keeps its fixed place (S43; FT25), and the MCQ is planned as its first sitting.
+If a trial shows the coding questions need T minutes and T is more than 60, the smallest honest correction stays within the Final day: the day runs 60 + T minutes and the ledger records the overrun.
 That matches how the installed Foundation beta taxonomy workbook already treats F30: its ledger replaces F30's 120-minute Gate block with 180 minutes of checkpoint rows (90 MCQ + 90 coding).
 That precedent lives in the workbook, not in a repository file, and it is not like for like: the Foundation checkpoint's MCQ carries weight (24), while this MCQ carries none.
-The correction changes no track day count, no AWS day, no other accepted activity and no Project 2 grading.
-Rejected alternatives: cutting the MCQ below 30 items would drop course coverage and reopen an accepted bank; moving it to S42/FT24 would displace the accepted walkthrough day.
-If T is large, a 60 + T minute day puts the weighted no-AI coding (32) after an hour of MCQ, so learner fatigue is a real cost; the owner can move the MCQ to its own sitting, or after the coding, without changing the bank.
+Shortening this MCQ after a timed trial is the alternative lever (see Timing basis); cutting it below 30 items would drop course coverage, and moving it to S42/FT24 would displace the accepted walkthrough day.
+A longer day would put the weighted no-AI coding (32) after an hour of MCQ, so learner fatigue is a real cost; the owner can move the MCQ to its own sitting, or after the coding, without changing the bank.
 
 **Weight and pass mark (beta defaults).** The calendar gives the Final no MCQ weight, so the blueprint has an empty `weights` object: the checkpoint score does not enter the published Final composite.
 Its `passMark` is 70, the Final pool cut score and the module-check pass mark.
@@ -188,5 +192,5 @@ Canonical review in this folder (two independent critics, then a non-author reco
 
 - No PostgreSQL server, Docker engine or GitHub Actions runner was used: q11 ran on SQLite, and q28-q30 are page-grounded.
 - No platform import, timed learner trial or learner data.
-- The coding-assessment durations, and therefore the final Final-day length, are not known yet.
+- The Final-day fit (120 of 120 minutes) rests on allocated, not measured, durations; no timed trial has been run.
 - The final whole-set duplication comparison waits for the remaining course-final pins.
