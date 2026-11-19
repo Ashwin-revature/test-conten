@@ -1,0 +1,62 @@
+// Spring Boot course final MCQ reserve (spring-boot-module-check Part 2), 5 questions. Not part of the graded bank.
+
+$CATEGORY: spring-boot/assessments/spring-boot-module-check
+
+::sbf-q04::[html]<p>The webmvc starter is on the classpath and a <code>@RestController</code> sits in the same package. To keep only what is needed, someone replaced <code>@SpringBootApplication</code> like this\:</p><pre><code>@SpringBootConfiguration
+@ComponentScan
+public class HarborApplication \{
+&nbsp; public static void main(String[] args) \{
+&nbsp;   SpringApplication.run(HarborApplication.class, args);
+&nbsp; \}
+\}</code></pre><p>What happens when the application runs?</p> {
+~The app starts on port 8080 and the controller answers, because scanning still finds it.#Not quite. Scanning does find the controller, but the embedded server comes from auto-configuration, which is no longer enabled.
+~The app starts, but GET requests answer 404 because only <code>@SpringBootApplication</code> scans for controllers.#Not quite. <code>@ComponentScan</code> scans the package of the class it sits on, so the controller is registered; the missing piece is auto-configuration.
+=Startup fails\: without auto-configuration there is no embedded web server factory.#Correct. <code>@SpringBootApplication</code> also carries <code>@EnableAutoConfiguration</code>. Without it Boot adds none of its auto-configured beans, including the servlet web server factory, so the web app cannot start.
+~Startup fails, because <code>@SpringBootConfiguration</code> also needs <code>@Configuration</code> on the class.#Not quite. <code>@SpringBootConfiguration</code> already makes the class a source of bean definitions; what is missing is <code>@EnableAutoConfiguration</code>.
+}
+
+::sbf-q05::[html]<p>A client sends DELETE /lockers/12. The server deletes it and answers 204, but the response is lost. The client retries and gets 404.</p><p>Which statement about this exchange is right?</p> {
+~The server broke REST rules\: a repeated DELETE must answer 204 again.#Not quite. Idempotence promises the same effect on the server, not the same response. The 404 honestly reports that the locker is already gone.
+~The retry deleted a second locker, which is why the server answered 404.#Not quite. The request names locker 12 only; the 404 says it was already gone, not that anything else changed.
+=DELETE is still idempotent\: either way locker 12 is gone; only the status differs.#Correct. Idempotent describes the intended effect on the server, which is the same after one call or two. The status reports what each call found.
+~The client should not have retried, because only GET is idempotent.#Not quite. PUT and DELETE are idempotent too, so a retry after a lost response is safe. POST is the method that is not.
+}
+
+::sbf-q13::[html]<p>No sensor TX-301 exists yet. Constructors are omitted.</p><pre><code>@Entity
+class Sensor \{
+&nbsp; @Id private String serial;
+&nbsp; private String site;
+\}
+&nbsp;
+sensorRepository.save(new Sensor("TX-301", "dock"));</code></pre><p>Does save take the persist path or the merge path here, and why?</p> {
+=Merge, because the id is not null, so save does not treat the entity as new#Correct. save asks whether the entity is new, and by default only a null id (or a primitive 0) counts as new. This id is assigned, so save merges; the SQL log shows a select by id before the insert.
+~Persist, because no row with that id exists in the table yet#Not quite. save does not look in the table to decide; it looks at the id, and a non-null id means merge.
+~Persist, because an id field without <code>@GeneratedValue</code> always marks a new entity#Not quite. The default check is whether the id is null, not how the id is produced; an assigned id is not null.
+~Neither\: save throws, because an <code>@Id</code> field needs <code>@GeneratedValue</code>#Not quite. The application may assign an id itself; <code>@GeneratedValue</code> is optional, and this save succeeds.
+}
+
+::sbf-q23::[html]<p>There are 30 beds spread over 3 gardens. The list endpoint maps each bed to a BedResponse of id and label and never reads its garden, yet the SQL log shows the bed select followed by 3 garden selects.</p><pre><code>@Entity
+class Bed \{
+&nbsp; @Id @GeneratedValue private Long id;
+&nbsp; private String label;
+&nbsp; @ManyToOne private Garden garden;
+\}</code></pre><p>Which change removes the garden selects?</p> {
+~<code>spring.jpa.open-in-view\=false</code> in application.properties#Not quite. open-in-view decides whether lazy loading can still happen while the response is written; it does not change an EAGER mapping.
+=<code>@ManyToOne(fetch \= FetchType.LAZY)</code> on garden#Correct. A <code>@ManyToOne</code> is EAGER by default, so Hibernate loads each distinct garden right after the bed query even when nothing reads it. LAZY leaves a proxy that loads only when used.
+~<code>@Transactional(readOnly \= true)</code> on the service method that lists beds#Not quite. readOnly skips dirty checking; it does not change what a query fetches.
+~<code>spring.jpa.properties.hibernate.default_batch_fetch_size\=50</code> so the gardens load in one batch#Not quite. Batching groups the garden selects into one statement, but an EAGER association still loads the gardens; LAZY removes them.
+}
+
+::sbf-q24::[html]<p>GET /trails takes a required <code>@RequestParam String region</code>. After this advice was added, a request without region answers 500\:</p><pre><code>@RestControllerAdvice
+class ApiErrors \{
+&nbsp; @ExceptionHandler(Exception.class)
+&nbsp; ResponseEntity&lt;String&gt; any(Exception e) \{
+&nbsp;   log.error("Unhandled", e);
+&nbsp;   return ResponseEntity.status(500).body("Something went wrong");
+&nbsp; \}
+\}</code></pre><p>Why did the status change?</p> {
+=The catch-all handler also catches the missing-parameter exception and returns 500#Correct. A missing required parameter raises an exception before the controller runs. <code>@ExceptionHandler(Exception.class)</code> matches that too, so a client error is reported as a server error. Map specific exceptions instead.
+~Adding any <code>@RestControllerAdvice</code> switches off Spring's built-in handling of bad requests#Not quite. An advice handles only the exception types its methods name; here the method names Exception, which includes the missing-parameter error.
+~region became optional once an advice existed, so the controller ran and failed#Not quite. An advice does not change binding rules; region is still required, which is why the exception is raised.
+~log.error rethrows the exception after logging it, so the container answers 500#Not quite. Logging does not rethrow; the 500 is the handler's own return value.
+}
