@@ -1,0 +1,383 @@
+// PEP Standard/Fast Final Checkpoint - graded MCQ, 30 questions, 60 minutes (2 minutes per question).
+$CATEGORY: standard-fast/final-checkpoint-mcq
+
+::sfcp-q01::[html]<p>A refunds endpoint is declared like this\:</p><pre><code>@GetMapping("/payments/\{id\}/refunds")
+public List&lt;RefundDto&gt; refunds(@PathVariable long id,
+&nbsp;       @RequestParam(defaultValue \= "OPEN") String status,
+&nbsp;       @RequestParam int limit) \{
+&nbsp;   return service.refunds(id, status, limit);
+\}</code></pre><p>Three requests arrive\: (a) <code>/payments/42/refunds?limit\=5</code>, (b) <code>/payments/42/refunds?status\=PAID</code> and (c) <code>/payments/abc/refunds?limit\=5</code>. Which of them reach the method body?</p>{
+~(a) and (b), with <code>limit</code> set to 0 in (b)#Not quite. <code>limit</code> has no <code>defaultValue</code>, so it is required; Spring does not pick 0 for a missing <code>int</code>.
+~(a) and (c), with <code>id</code> set to 0 in (c)#Not quite. Spring does not substitute a default for a value it cannot convert; the request gets 400.
+~None of them, because (a) does not send <code>status</code>#Not quite. <code>defaultValue \= "OPEN"</code> makes <code>status</code> optional and fills it in when it is absent.
+=Only (a)#Correct. (a) gets <code>status</code> from <code>defaultValue</code>. (b) is missing the required <code>limit</code>, and (c) cannot convert <code>abc</code> to <code>long</code>, so both get 400 before the method runs.
+}
+
+::sfcp-q02::[html]<p>The shared development database has applied <code>V1__create_payment.sql</code>, <code>V2__create_refund.sql</code> and <code>V3__add_refund_reason.sql</code>. A developer now needs a <code>currency</code> column on the <code>payment</code> table.</p><p>Which change lets every teammate's app start and pick up the column?</p>{
+~Add a new file <code>V3__add_payment_currency.sql</code> with the <code>ALTER TABLE</code> statement.#Not quite. Version 3 is taken\: two migration files would share it, so Flyway stops instead of applying a new change.
+~Append the <code>ALTER TABLE</code> statement to <code>V3__add_refund_reason.sql</code>, the latest migration.#Not quite. Editing an applied migration changes its checksum, so validation fails on the next start.
+=Add a new file <code>V4__add_payment_currency.sql</code> with the <code>ALTER TABLE</code> statement.#Correct. A new version is applied once and recorded; applied migrations stay unchanged.
+~Add <code>V4__add_payment_currency.sql</code>, and also add the column to the <code>CREATE TABLE</code> in <code>V1</code> for new databases.#Not quite. The edit to the applied <code>V1</code> changes its checksum, so every existing database fails validation.
+}
+
+::sfcp-q03::[html]<p>A handler passes the request's <code>Pageable</code> to this repository method. The table holds 23 payments with status <code>FAILED</code>.</p><pre><code>Page&lt;Payment&gt; findByStatusOrderByCreatedAtDesc(String status, Pageable pageable);</code></pre><p>Which payments does <code>GET /payments?status\=FAILED&amp;page\=2&amp;size\=5</code> return?</p>{
+~The 6th to 10th most recently created <code>FAILED</code> payments#Not quite. That would be page 1; the first page is page 0.
+=The 11th to 15th most recently created <code>FAILED</code> payments#Correct. Pages are numbered from 0, so page 2 skips 10 rows; the method name sorts newest first.
+~The 11th to 15th oldest <code>FAILED</code> payments#Not quite. <code>OrderBy...Desc</code> in the method name sorts by <code>createdAt</code> newest first.
+~All 23 <code>FAILED</code> payments, because a derived query ignores the <code>Pageable</code>#Not quite. A <code>Pageable</code> parameter limits and offsets the derived query.
+}
+
+::sfcp-q04::[html]<p><code>LimitExceededException</code> extends <code>Exception</code>. A controller calls <code>refundAll</code> on the injected <code>RefundService</code> bean with two refunds; only the second is above the limit.</p><pre><code>public void refundAll(List&lt;Refund&gt; batch) throws LimitExceededException \{
+&nbsp;   for (Refund r \: batch) \{
+&nbsp;       this.refund(r);
+&nbsp;   \}
+\}
+&nbsp;
+@Transactional(rollbackFor \= Exception.class)
+public void refund(Refund r) throws LimitExceededException \{
+&nbsp;   ledger.save(new LedgerEntry(r.paymentId(), -r.cents()));
+&nbsp;   if (r.cents() &gt; limit) \{
+&nbsp;       throw new LimitExceededException();
+&nbsp;   \}
+\}</code></pre><p>What does the ledger hold afterwards, and why?</p>{
+~Only the first entry, because <code>rollbackFor</code> rolls back the refund that threw#Not quite. That would be true for a call through the proxy; <code>this.refund</code> never reaches it.
+=Both entries, because <code>this.refund</code> skips the proxy, so <code>refund</code> runs without a transaction#Correct. <code>@Transactional</code> works through the proxy; a self-invocation bypasses it, so nothing is rolled back.
+~No entries, because <code>rollbackFor</code> rolls back the whole batch#Not quite. <code>refundAll</code> has no transaction of its own, and the self-invocation means <code>refund</code> has none either.
+~Both entries, because a checked exception commits even with <code>rollbackFor</code>#Not quite. <code>rollbackFor \= Exception.class</code> does make checked exceptions roll back through the proxy; the proxy is the missing piece.
+}
+
+::sfcp-q05::[html]<p>A merchant report lists every merchant with its payments. Some merchants have no payments yet and must still appear. The SQL log for 40 merchants shows one <code>select</code> from <code>merchant</code>, then 40 <code>select ... from payment where merchant_id\=?</code> statements.</p><p>Which repository change removes the repeated queries and keeps every merchant in the report?</p>{
+~<code>@Query("select m from Merchant m join fetch m.payments")</code>#Not quite. This removes the extra queries, but the inner join drops merchants that have no payments.
+~Annotate the service method that builds the report with <code>@Transactional(readOnly \= true)</code>#Not quite. A read-only transaction does not change how the collection is loaded; the per-merchant selects remain.
+~Set <code>spring.jpa.show-sql\=true</code> so Hibernate batches the statements#Not quite. That only prints the SQL; it is how you spot N+1, not how you fix it.
+=<code>@Query("select m from Merchant m left join fetch m.payments")</code>#Correct. A left join fetch loads merchants and their payments in one statement and keeps merchants with no payments.
+}
+
+::sfcp-q06::[html]<p><code>PaymentNotFound</code> extends <code>RuntimeException</code>. For id 99, both controllers below throw it from their service call.</p><pre><code>@RestController
+class PaymentController \{
+&nbsp;   @GetMapping("/payments/\{id\}")
+&nbsp;   PaymentDto one(@PathVariable long id) \{ return service.find(id); \}
+&nbsp;
+&nbsp;   @ExceptionHandler(RuntimeException.class)
+&nbsp;   ResponseEntity&lt;String&gt; failed(RuntimeException e) \{
+&nbsp;       return ResponseEntity.status(500).body("Something went wrong");
+&nbsp;   \}
+\}
+&nbsp;
+@RestController
+class RefundController \{
+&nbsp;   @GetMapping("/refunds/\{id\}")
+&nbsp;   RefundDto one(@PathVariable long id) \{ return service.findRefund(id); \}
+\}
+&nbsp;
+@RestControllerAdvice
+class ApiErrors \{
+&nbsp;   @ExceptionHandler(PaymentNotFound.class)
+&nbsp;   ProblemDetail notFound(PaymentNotFound e) \{
+&nbsp;       return ProblemDetail.forStatus(HttpStatus.NOT_FOUND);
+&nbsp;   \}
+\}</code></pre><p>What status does each request get\: <code>GET /payments/99</code> and <code>GET /refunds/99</code>?</p>{
+~404 for both#Not quite. The closest match is chosen within the controller first; the advice is only consulted when the controller has no matching handler.
+~500 for both#Not quite. A local <code>@ExceptionHandler</code> applies only to its own controller, not to <code>RefundController</code>.
+~404 for <code>/payments/99</code>, 500 for <code>/refunds/99</code>#Not quite. This swaps the two\: the local handler belongs to <code>PaymentController</code>.
+=500 for <code>/payments/99</code>, 404 for <code>/refunds/99</code>#Correct. Spring checks the throwing controller's own handlers first, and <code>RuntimeException</code> matches there; <code>RefundController</code> has none, so the advice answers.
+}
+
+::sfcp-q07::[html]<p>An advice handles <code>RefundTooLarge</code> like this. A <code>@WebMvcTest</code> posts a refund that triggers it.</p><pre><code>@ExceptionHandler(RefundTooLarge.class)
+ProblemDetail tooLarge(RefundTooLarge e) \{
+&nbsp;   ProblemDetail pd \= ProblemDetail.forStatusAndDetail(
+&nbsp;       HttpStatus.UNPROCESSABLE_ENTITY, "Refund exceeds the captured amount");
+&nbsp;   pd.setTitle("Refund too large");
+&nbsp;   return pd;
+\}</code></pre><p>Which expectation in the test fails?</p>{
+~<code>status().isUnprocessableEntity()</code>#Not quite. Returning a <code>ProblemDetail</code> from a handler sets the response status from it, 422 here.
+=<code>content().contentType(MediaType.APPLICATION_JSON)</code>#Correct. A <code>ProblemDetail</code> body is written as <code>application/problem+json</code>, not plain <code>application/json</code>.
+~<code>jsonPath("$.detail").value("Refund exceeds the captured amount")</code>#Not quite. The second argument of <code>forStatusAndDetail</code> becomes the <code>detail</code> member.
+~<code>jsonPath("$.title").value("Refund too large")</code>#Not quite. <code>setTitle</code> sets the <code>title</code> member to exactly that text.
+}
+
+::sfcp-q08::[html]<p>A stateless resource server has these rules and no <code>JwtAuthenticationConverter</code> of its own\:</p><pre><code>http.authorizeHttpRequests(auth -&gt; auth
+&nbsp;       .requestMatchers("/api/admin/**").hasRole("ADMIN")
+&nbsp;       .anyRequest().authenticated())
+&nbsp;   .oauth2ResourceServer(o -&gt; o.jwt(Customizer.withDefaults()));</code></pre><p>A valid, unexpired token carries the claims <code>"scope"\: "payments.read"</code> and <code>"roles"\: ["ADMIN"]</code>. Which statuses result for (a) that token to <code>/api/admin/reports</code>, (b) that token to <code>/api/payments</code> and (c) no token to <code>/api/payments</code>?</p>{
+=(a) 403, (b) 200, (c) 401#Correct. The default converter maps <code>scope</code> to <code>SCOPE_payments.read</code> and ignores <code>roles</code>, so the user is authenticated but lacks <code>ROLE_ADMIN</code>.
+~(a) 200, (b) 200, (c) 401#Not quite. Without a converter for the <code>roles</code> claim, no <code>ROLE_ADMIN</code> authority exists.
+~(a) 403, (b) 403, (c) 401#Not quite. <code>/api/payments</code> only requires authentication, and the token is valid.
+~(a) 401, (b) 200, (c) 401#Not quite. The token is valid, so the request is authenticated; a missing role is 403.
+}
+
+::sfcp-q09::[html]<p>What does this print?</p><pre><code>def log_payment(merchant, level\="info", *amounts, **fields)\:
+&nbsp;   return merchant, level, amounts, fields
+&nbsp;
+batch \= [100, 250]
+meta \= \{"currency"\: "EUR", "retry"\: True\}
+print(log_payment("m1", *batch, **meta))</code></pre>{
+~<code>('m1', 'info', (100, 250), \{'currency'\: 'EUR', 'retry'\: True\})</code>#Not quite. A defaulted parameter is still filled by position when enough positional arguments arrive.
+~<code>('m1', 100, [250], \{'currency'\: 'EUR', 'retry'\: True\})</code>#Not quite. <code>*amounts</code> collects extra positional arguments into a tuple, not a list.
+=<code>('m1', 100, (250,), \{'currency'\: 'EUR', 'retry'\: True\})</code>#Correct. <code>*batch</code> passes 100 and 250 by position\: 100 fills <code>level</code>, and only the extra 250 is collected into the tuple.
+~It raises <code>TypeError</code>, because a defaulted parameter cannot come before <code>*amounts</code>.#Not quite. Starred parameters may sit after defaulted ones, as in <code>def log(level\="info", *parts, **fields)</code>.
+}
+
+::sfcp-q10::[html]<p><code>payments.csv</code> has a header line <code>cents</code> and three data rows\: <code>100</code>, <code>250</code> and <code>50</code>. What does this print?</p><pre><code>import csv
+&nbsp;
+def amounts(path)\:
+&nbsp;   with open(path, newline\="", encoding\="utf-8") as f\:
+&nbsp;       for row in csv.DictReader(f)\:
+&nbsp;           yield int(row["cents"])
+&nbsp;
+rows \= amounts("payments.csv")
+big \= (c for c in rows if c &gt; 120)
+print(next(big), sum(rows))</code></pre>{
+~<code>250 400</code>#Not quite. <code>rows</code> is one generator; the filter already consumed two of its records, and it does not restart.
+=<code>250 50</code>#Correct. <code>next(big)</code> pulls 100 (filtered out) and 250 from <code>rows</code>; <code>sum(rows)</code> resumes the same generator and sees only 50.
+~<code>250 0</code>#Not quite. <code>next</code> resumes the body only until one value passes the filter, so 50 is still unread.
+~<code>250 150</code>#Not quite. The 100 was pulled and rejected by the filter; it is not put back for <code>sum</code>.
+}
+
+::sfcp-q11::[html]<p>A loader runs this statement once per row. <code>external_id</code> is the primary key of <code>staging_payment</code>.</p><pre><code>INSERT INTO staging_payment (external_id, amount_cents)
+VALUES (%s, %s)
+ON CONFLICT (external_id)
+DO UPDATE SET amount_cents \= EXCLUDED.amount_cents;</code></pre><p>The first run loads <code>(P1, 100)</code> and <code>(P2, 200)</code>. A second run loads <code>(P1, 150)</code> and <code>(P3, 300)</code>. What does the table hold afterwards?</p>{
+~Three rows\: P1 100, P2 200, P3 300#Not quite. <code>EXCLUDED</code> is the row you tried to insert, so the update writes 150; keeping 100 is what <code>DO NOTHING</code> does.
+~Four rows\: P1 100, P1 150, P2 200, P3 300#Not quite. The primary key allows one P1; the conflict turns the second insert into an update.
+=Three rows\: P1 150, P2 200, P3 300#Correct. P1 conflicts and takes the new value from <code>EXCLUDED</code>; P3 is inserted; P2 is untouched.
+~Two rows\: P1 100, P2 200, because the second run stops at the duplicate key#Not quite. <code>ON CONFLICT ... DO UPDATE</code> turns the duplicate into an update instead of an error.
+}
+
+::sfcp-q12::[html]<p>A pipeline validates each raw record with this Pydantic model in its default mode, appending valid ones to <code>accepted</code> and catching <code>ValidationError</code> for the rest.</p><pre><code>class Payment(BaseModel)\:
+&nbsp;   external_id\: str
+&nbsp;   cents\: int
+&nbsp;
+raw \= [
+&nbsp;   \{"external_id"\: "P1", "cents"\: "1200"\},
+&nbsp;   \{"external_id"\: "P2", "cents"\: "12.50"\},
+&nbsp;   \{"external_id"\: 7, "cents"\: 300\},
+]</code></pre><p>Which records end up in <code>accepted</code>?</p>{
+~P1 and the third record#Not quite. An <code>int</code> is not converted to a <code>str</code> field, so the third record raises <code>ValidationError</code>.
+=Only P1#Correct. Lax mode safely converts <code>"1200"</code> to 1200, but rejects the fractional string for <code>int</code> and does not turn the integer 7 into a <code>str</code>.
+~P1 and P2, with P2's cents stored as 12#Not quite. Converting <code>"12.50"</code> to <code>int</code> would lose data, so validation rejects it.
+~All three, because the default mode converts every value to the declared type#Not quite. Lax mode converts only when the conversion is safe; the other two fail.
+}
+
+::sfcp-q13::[html]<p><code>client</code> is an <code>httpx.Client</code> whose base URL is the Spring Boot API. A FastAPI route uses it like this. For merchant 99 the Spring API answers 404 with a ProblemDetail JSON body.</p><pre><code>@app.get("/merchants/\{merchant_id\}/summary")
+def summary(merchant_id\: int)\:
+&nbsp;   r \= client.get(f"/api/merchants/\{merchant_id\}", timeout\=2.0)
+&nbsp;   return r.json()</code></pre><p>What does a caller of <code>GET /merchants/99/summary</code> receive?</p>{
+~Status 404, because FastAPI forwards the upstream status automatically#Not quite. The route returns a plain dict, which FastAPI sends with its default 200.
+~Status 500, because httpx raises <code>HTTPStatusError</code> for the 404#Not quite. <code>HTTPStatusError</code> is raised only by <code>raise_for_status()</code>, which this route never calls.
+=Status 200 with the Spring API's error body, as if it were merchant data#Correct. httpx raises nothing for a non-2xx response until <code>raise_for_status()</code> is called, so the route returns the 404 body as data.
+~Status 422, because <code>merchant_id</code> fails validation#Not quite. 99 is a valid <code>int</code>, so validation passes and the handler runs.
+}
+
+::sfcp-q14::[html]<p>A screen reader user tests this refund panel.</p><pre><code>&lt;h2&gt;Refund payment&lt;/h2&gt;
+&lt;label&gt;Amount &lt;input name\="amount" type\="number"&gt;&lt;/label&gt;
+&lt;input name\="reason" placeholder\="Reason for the refund"&gt;
+&lt;img src\="status-failed.svg" alt\=""&gt;
+&lt;button type\="submit"&gt;Refund&lt;/button&gt;</code></pre><p>The status icon is the only thing on the panel that shows the last refund attempt failed. Which elements are barriers?</p>{
+=The reason field and the status icon#Correct. A placeholder is not a label, so the field has no lasting name; the icon carries information, so an empty <code>alt</code> hides it.
+~The reason field and the amount field#Not quite. Wrapping the input inside its <code>label</code> links them, so the amount field is named.
+~The status icon and the Refund button#Not quite. A native <code>button</code> with visible text is focusable, operable and named by its text.
+~Only the reason field#Not quite. <code>alt\=""</code> is right only for decorative images; this icon is the only sign of the failure.
+}
+
+::sfcp-q15::[html]<p>Two badges share these rules, except that <code>.b</code> adds <code>box-sizing\: border-box</code>.</p><pre><code>.a \{ width\: 120px; padding\: 10px; border\: 2px solid; \}
+.b \{ width\: 120px; padding\: 10px; border\: 2px solid; box-sizing\: border-box; \}</code></pre><p>How much wider is the rendered box of <code>.a</code> than that of <code>.b</code>?</p>{
+=24px#Correct. <code>.a</code> renders at 120 + 2 x 10 + 2 x 2 \= 144px; <code>.b</code> fits padding and border inside 120px.
+~0px#Not quite. Only <code>.b</code> counts padding and border inside <code>width</code>; <code>.a</code> uses the default <code>content-box</code>.
+~20px#Not quite. Both borders count too\: 2px on each side adds 4px.
+~12px#Not quite. Padding and border apply on both the left and the right side.
+}
+
+::sfcp-q16::[html]<p>What does this log?</p><pre><code>const refund \= \{ cents\: 500 \};
+refund.cents \= "500";
+console.log(refund.cents \=\= 500, refund.cents \=\=\= 500);</code></pre>{
+~It throws <code>TypeError</code> at the second line, because <code>refund</code> is <code>const</code>.#Not quite. <code>const</code> protects the binding, not the object's properties.
+~<code>true true</code>#Not quite. <code>\=\=\=</code> compares without type conversion, so the string <code>"500"</code> is not the number 500.
+~<code>false false</code>#Not quite. <code>\=\=</code> converts the string to a number before comparing, so it is <code>true</code>.
+=<code>true false</code>#Correct. <code>const</code> only stops rebinding <code>refund</code>; the property can change. <code>\=\=</code> converts the string, <code>\=\=\=</code> does not.
+}
+
+::sfcp-q17::[html]<p>What is <code>total</code>?</p><pre><code>const handlers \= [];
+for (let i \= 0; i &lt; 3; i++) \{
+&nbsp; handlers.push(() \=&gt; i * 10);
+\}
+const total \= handlers
+&nbsp; .map((h) \=&gt; h())
+&nbsp; .filter((v) \=&gt; v &gt; 0)
+&nbsp; .reduce((sum, v) \=&gt; sum + v, 0);</code></pre>{
+=30#Correct. <code>let</code> gives each pass its own <code>i</code>, so the calls return 0, 10 and 20; the filter drops 0 and the sum is 30.
+~90#Not quite. That would happen if every callback saw a single shared <code>i</code> ending at 3; <code>let</code> creates one per iteration.
+~0#Not quite. Each callback keeps the <code>i</code> from its own iteration; only the first returns 0.
+~60#Not quite. The filter removes only the 0; 10 + 20 is 30.
+}
+
+::sfcp-q18::[html]<p>What does this log?</p><pre><code>const base \= \{ currency\: "EUR", limits\: \{ daily\: 1000 \} \};
+const copy \= \{ ...base, currency\: "USD" \};
+copy.limits.daily \= 50;
+const \{ fee \= 1, currency \} \= base;
+console.log(base.limits.daily, currency, fee);</code></pre>{
+~<code>1000 EUR 1</code>#Not quite. A spread copy is shallow, so changing <code>copy.limits</code> also changes <code>base.limits</code>.
+~<code>50 USD 1</code>#Not quite. The override applies to <code>copy</code> only; <code>base.currency</code> is still EUR.
+=<code>50 EUR 1</code>#Correct. Spread copies one level, so <code>limits</code> is shared; <code>base.currency</code> stays EUR and <code>fee</code> takes its default.
+~<code>1000 EUR undefined</code>#Not quite. A default in destructuring applies when the property is missing, so <code>fee</code> is 1.
+}
+
+::sfcp-q19::[html]<p>The page has <code>&lt;ul id\="list"&gt;&lt;li&gt;&lt;a href\="/refunds/7"&gt;Refund &lt;b&gt;7&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</code>, and <code>list</code> and <code>link</code> hold the <code>ul</code> and the <code>a</code>. A user clicks the bold 7.</p><pre><code>const log \= [];
+document.body.addEventListener("click", () \=&gt; log.push("body"));
+list.addEventListener("click", (e) \=&gt; \{
+&nbsp; log.push("list\:" + e.target.tagName);
+&nbsp; e.stopPropagation();
+\});
+link.addEventListener("click", (e) \=&gt; \{
+&nbsp; e.preventDefault();
+&nbsp; log.push("link");
+\});</code></pre><p>What does <code>log</code> hold afterwards?</p>{
+~<code>["link"]</code>#Not quite. <code>preventDefault</code> cancels the default action; it does not stop bubbling.
+~<code>["link", "list\:A"]</code>#Not quite. <code>target</code> stays the element where the click started, the <code>b</code>.
+=<code>["link", "list\:B"]</code>#Correct. The click bubbles from the <code>b</code>; <code>preventDefault</code> cancels only navigation, and <code>stopPropagation</code> in the list keeps it from reaching <code>body</code>.
+~<code>["link", "list\:B", "body"]</code>#Not quite. <code>stopPropagation</code> in the list listener stops the event before it reaches <code>body</code>.
+}
+
+::sfcp-q20::[html]<p>A client loads payments with this function.</p><pre><code>async function loadPayment(id) \{
+&nbsp; const res \= await fetch(`/api/payments/$\{id\}`);
+&nbsp; if (!res.ok) \{
+&nbsp;   const type \= res.headers.get("content-type") || "";
+&nbsp;   if (type.includes("json")) \{
+&nbsp;     const problem \= await res.json();
+&nbsp;     return \{ error\: problem.detail \};
+&nbsp;   \}
+&nbsp;   return \{ error\: "Server error " + res.status \};
+&nbsp; \}
+&nbsp; return \{ payment\: await res.json() \};
+\}</code></pre><p>What happens for (a) a 404 with a problem details body whose <code>detail</code> is "Payment 77 not found", (b) a 502 with an HTML page from a gateway and (c) a network failure, so that no response arrives?</p>{
+=(a) <code>\{ error\: "Payment 77 not found" \}</code>, (b) <code>\{ error\: "Server error 502" \}</code>, (c) the promise rejects#Correct. Error statuses fulfill <code>fetch</code>, and the content type is checked before parsing; only a network failure rejects.
+~(a) <code>\{ error\: "Payment 77 not found" \}</code>, (b) the promise rejects, (c) the promise rejects#Not quite. The HTML body is never parsed\: its content type is not JSON, so the code returns the status message.
+~(a) <code>\{ error\: "Payment 77 not found" \}</code>, (b) <code>\{ error\: "Server error 502" \}</code>, (c) <code>\{ error\: "Server error 0" \}</code>#Not quite. When no response arrives, <code>fetch</code> rejects before <code>res.ok</code> is read.
+~(a) <code>\{ payment\: ... \}</code> holding the problem body, (b) <code>\{ error\: "Server error 502" \}</code>, (c) the promise rejects#Not quite. A 404 has <code>ok</code> false, so the code takes the error branch.
+}
+
+::sfcp-q21::[html]<p><code>cents</code> starts at 100. The user clicks once.</p><pre><code>const [cents, setCents] \= useState(100);
+&nbsp;
+function handleClick() \{
+&nbsp; setCents(cents + 50);
+&nbsp; setCents((c) \=&gt; c * 2);
+&nbsp; setCents(cents + 10);
+\}</code></pre><p>What does the next render show for <code>cents</code>?</p>{
+=110#Correct. The queue runs in order\: replace with 150, double to 300, then replace with <code>cents + 10</code>, where <code>cents</code> is still this render's 100.
+~300#Not quite. The last setter passes a plain value, which replaces the queued result.
+~220#Not quite. The plain-value setters use this render's snapshot, 100, not the queued value.
+~160#Not quite. Each setter is queued, not applied immediately, and the last one replaces the result with 110.
+}
+
+::sfcp-q22::[html]<p><code>payments</code> is an array held in state with <code>useState</code>. Which <code>addPayment</code> body shows the new payment on screen and leaves the previous array unchanged?</p>{
+~<code>payments[payments.length] \= p; setPayments([...payments]);</code>#Not quite. The screen updates, because the spread makes a new array, but the old array was changed first.
+~<code>setPayments((prev) \=&gt; \{ prev.push(p); return prev; \});</code>#Not quite. The updater mutates <code>prev</code> and returns the same array, so <code>Object.is</code> sees no change and nothing renders.
+~<code>const next \= payments; next[next.length] \= p; setPayments(next);</code>#Not quite. <code>next</code> is the same array as <code>payments</code>, so this mutates it and hands React the same reference.
+=<code>setPayments([...payments, p]);</code>#Correct. Spread builds a new array from the old items plus <code>p</code>, so React renders and the old array is untouched.
+}
+
+::sfcp-q23::[html]<p>In a production build, the Network tab shows <code>/api/payments</code> requested again and again for as long as this page is open.</p><pre><code>function Payments() \{
+&nbsp; const [payments, setPayments] \= useState([]);
+&nbsp; useEffect(() \=&gt; \{
+&nbsp;   fetch("/api/payments")
+&nbsp;     .then((r) \=&gt; r.json())
+&nbsp;     .then(setPayments);
+&nbsp; \});
+&nbsp; return &lt;PaymentList items\=\{payments\} /&gt;;
+\}</code></pre><p>Why?</p>{
+~Strict Mode remounts the component after every response to check that the Effect cleans up.#Not quite. Strict Mode runs an extra mount once, in development only; it does not repeat forever in production.
+=The Effect has no dependency array, so it runs after every render, and <code>setPayments</code> renders again.#Correct. Pass <code>[]</code> so the Effect runs once after mount.
+~<code>fetch</code> retries the request by itself until the response body has been read with <code>await</code>.#Not quite. <code>fetch</code> sends one request per call; the repeats come from the Effect being called again.
+~<code>useState([])</code> creates a new state variable on every render, and a new state re-runs every Effect.#Not quite. React keeps the same state between renders; the Effect re-runs because it has no dependency array.
+}
+
+::sfcp-q24::[html]<p><code>Layout</code> renders a <code>&lt;nav&gt;</code> and an <code>&lt;Outlet /&gt;</code>. The app's routes are\:</p><pre><code>&lt;Routes&gt;
+&nbsp; &lt;Route path\="/" element\=\{&lt;Layout /&gt;\}&gt;
+&nbsp;   &lt;Route index element\=\{&lt;Home /&gt;\} /&gt;
+&nbsp;   &lt;Route path\="payments/\:id" element\=\{&lt;PaymentDetail /&gt;\} /&gt;
+&nbsp;   &lt;Route path\="*" element\=\{&lt;NotFound /&gt;\} /&gt;
+&nbsp; &lt;/Route&gt;
+&lt;/Routes&gt;</code></pre><p>A user opens <code>/reports</code>. What renders?</p>{
+~<code>NotFound</code> alone, without <code>Layout</code>'s nav#Not quite. The catch-all is a child of the <code>/</code> route, so it renders inside <code>Layout</code>.
+~<code>Layout</code>'s nav, with <code>Home</code> in its <code>Outlet</code>#Not quite. The index route is the default child only at the parent's own URL, <code>/</code>.
+~<code>Layout</code>'s nav, with an empty <code>Outlet</code>#Not quite. The <code>*</code> child matches anything unmatched, so the <code>Outlet</code> shows <code>NotFound</code>.
+=<code>Layout</code>'s nav, with <code>NotFound</code> in its <code>Outlet</code>#Correct. No other child matches, so the catch-all child does, and children appear through the parent's <code>Outlet</code>.
+}
+
+::sfcp-q25::[html]<p>A component renders an icon-only button. The test query <code>screen.getByRole("button", \{ name\: "Refund" \})</code> throws, although the button is on screen.</p><pre><code>&lt;button onClick\=\{onRefund\}&gt;
+&nbsp; &lt;svg aria-hidden\="true" viewBox\="0 0 16 16"&gt;...&lt;/svg&gt;
+&lt;/button&gt;</code></pre><p>Which attribute on the <code>button</code> makes the query find it?</p>{
+~<code>name\="Refund"</code>#Not quite. The <code>name</code> attribute names the value sent with a form; it is not the accessible name.
+=<code>aria-label\="Refund"</code>#Correct. An icon-only button has no text to name it; <code>aria-label</code> gives it the accessible name the query matches.
+~<code>data-testid\="Refund"</code>#Not quite. A test id is matched only by <code>getByTestId</code>; it adds no accessible name.
+~<code>alt\="Refund"</code>#Not quite. <code>alt</code> names images; on a <code>button</code> it gives no accessible name.
+}
+
+::sfcp-q26::[html]<p>The user clicks Switch once.</p><pre><code>const CurrencyContext \= createContext("EUR");
+&nbsp;
+function Price(\{ cents \}) \{
+&nbsp; const currency \= useContext(CurrencyContext);
+&nbsp; return &lt;li&gt;\{cents\} \{currency\}&lt;/li&gt;;
+\}
+&nbsp;
+function App() \{
+&nbsp; const [currency, setCurrency] \= useState("USD");
+&nbsp; return (
+&nbsp;   &lt;ul&gt;
+&nbsp;     &lt;Price cents\=\{100\} /&gt;
+&nbsp;     &lt;CurrencyContext value\=\{currency\}&gt;
+&nbsp;       &lt;Price cents\=\{200\} /&gt;
+&nbsp;       &lt;CurrencyContext value\="GBP"&gt;
+&nbsp;         &lt;Price cents\=\{300\} /&gt;
+&nbsp;       &lt;/CurrencyContext&gt;
+&nbsp;       &lt;button onClick\=\{() \=&gt; setCurrency("CHF")\}&gt;Switch&lt;/button&gt;
+&nbsp;     &lt;/CurrencyContext&gt;
+&nbsp;   &lt;/ul&gt;
+&nbsp; );
+\}</code></pre><p>What do the three prices show now?</p>{
+=<code>100 EUR</code>, <code>200 CHF</code>, <code>300 GBP</code>#Correct. The first has no provider above it and gets the default; each other reads its nearest provider, and only the outer one's value changed.
+~<code>100 CHF</code>, <code>200 CHF</code>, <code>300 CHF</code>#Not quite. A provider affects only its subtree, and the inner provider overrides it for 300.
+~<code>100 EUR</code>, <code>200 CHF</code>, <code>300 CHF</code>#Not quite. The 300 price reads its nearest provider, the inner one with "GBP".
+~<code>100 EUR</code>, <code>200 USD</code>, <code>300 GBP</code>#Not quite. The outer value comes from state, so readers re-render with "CHF" after the click.
+}
+
+::sfcp-q27::[html]<p>The refunds app sends every refused API call through this function. Its sign-in page ends a successful sign-in with <code>go(here.state?.from ?? '/', \{ replace\: true \})</code>.</p><pre><code>function handleStatus(status, \{ forgetUser, go, showNotAllowed, here \}) \{
+&nbsp; if (status \=\=\= 401 || status \=\=\= 403) \{
+&nbsp;   forgetUser();
+&nbsp;   go('/sign-in', \{ state\: \{ from\: here \}, replace\: true \});
+&nbsp; \}
+\}</code></pre><p>Mia has a valid session but not the admin role. She opens <code>/admin/refunds</code>, and the API answers 403. Which sequence follows?</p>{
+~She stays signed in on <code>/admin/refunds</code> and sees a not-allowed message there.#Not quite. That is what the project contract asks for, but this function has no separate 403 branch and never calls <code>showNotAllowed</code>.
+~She goes to sign-in; once she signs in again she lands on the home page, because <code>replace\: true</code> drops the remembered page.#Not quite. <code>replace</code> only replaces the history entry; the state with <code>from</code> still reaches the sign-in page.
+=She goes to sign-in; once she signs in again she is returned to <code>/admin/refunds</code>, gets 403 and goes back to sign-in.#Correct. Signing in again cannot fix a 403, so treating it like a 401 loops. Under the project contract a 403 keeps the user and shows not-allowed.
+~She stays on <code>/admin/refunds</code> with an empty page and is still signed in, because the function ignores the 403.#Not quite. The first branch matches 401 or 403, so the 403 signs her out of the app and sends her to sign-in.
+}
+
+::sfcp-q28::[html]<p>In <code>compose.yaml</code>, <code>web</code> is nginx serving the built React app on <code>127.0.0.1\:5173\:80</code>, and <code>api</code> publishes <code>127.0.0.1\:9090\:8080</code>. The app calls <code>fetch(import.meta.env.VITE_API_URL + "/api/payments")</code>, and the API allows the <code>http\://localhost\:5173</code> origin.</p><p>A user opens <code>http\://localhost\:5173</code> on the laptop. Which <code>VITE_API_URL</code> works?</p>{
+=<code>http\://localhost\:9090</code>#Correct. The bundle is served by <code>web</code> but runs in the browser on the laptop, which reaches <code>api</code> through the published host port.
+~<code>http\://api\:8080</code>#Not quite. The name <code>api</code> only resolves inside the Compose network; the browser is outside it.
+~<code>http\://api\:9090</code>#Not quite. 9090 is the host port, and the browser cannot resolve the service name <code>api</code>.
+~<code>http\://localhost\:8080</code>#Not quite. 8080 is the container port; on the laptop nothing is published on 8080.
+}
+
+::sfcp-q29::[html]<p><code>db</code> has a <code>pg_isready</code> healthcheck. <code>api</code> has <code>depends_on</code> with <code>db\: condition\: service_healthy</code>, and <code>web</code> has <code>depends_on\: [api]</code>. <code>api</code> has no healthcheck.</p><p>What is guaranteed at the moment Compose starts <code>web</code>?</p>{
+~<code>db</code> and <code>api</code> are both ready, because the healthy wait passes down the chain.#Not quite. Each condition applies only to the service that declares it; <code>web</code> asked only for <code>api</code> to be started.
+~<code>api</code> is running, but <code>db</code> may still be initialising, because <code>web</code> lists only <code>api</code>.#Not quite. <code>api</code> itself could not start until <code>db</code> was healthy, so <code>db</code> is already healthy when <code>web</code> starts.
+~Nothing, because Compose starts every service at once when one uses a condition.#Not quite. Compose still follows the start order that <code>depends_on</code> sets.
+=<code>db</code> is healthy, and the <code>api</code> container is running but may not be ready yet.#Correct. <code>api</code> waited for a healthy <code>db</code>; <code>web</code> waits only for the <code>api</code> container to start, which is not the same as ready.
+}
+
+::sfcp-q30::[html]<p>A workflow runs on <code>push</code> and <code>pull_request</code>. Its <code>build</code> job looks like this\:</p><pre><code>build\:
+&nbsp; needs\: test
+&nbsp; runs-on\: ubuntu-latest
+&nbsp; steps\:
+&nbsp;   - uses\: actions/checkout@v7
+&nbsp;   - uses\: docker/build-push-action@v7
+&nbsp;     with\:
+&nbsp;       context\: .
+&nbsp;       push\: $\{\{ github.event_name !\= 'pull_request' \}\}</code></pre><p>What happens to the image in (a) a pull request where <code>test</code> fails, (b) a pull request where <code>test</code> passes and (c) a push to <code>main</code> where <code>test</code> fails?</p>{
+~(a) built but not pushed, (b) built but not pushed, (c) built and pushed#Not quite. <code>needs</code> does more than order the jobs\: if <code>test</code> fails, <code>build</code> is skipped.
+=(a) not built, (b) built but not pushed, (c) not built#Correct. <code>needs\: test</code> skips <code>build</code> whenever <code>test</code> fails; on a pull request <code>push</code> is false, so the image is only built.
+~(a) not built, (b) built and pushed, (c) not built#Not quite. The expression is false for <code>pull_request</code> events, so nothing is pushed from a pull request.
+~(a) not built, (b) built but not pushed, (c) built and pushed#Not quite. <code>needs</code> applies to every event, so a failed <code>test</code> on <code>main</code> also skips <code>build</code>.
+}
