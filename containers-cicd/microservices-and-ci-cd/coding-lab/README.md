@@ -4,10 +4,8 @@
 
 The shop from the Containers and Compose lab gets its first microservice and its first pipeline.
 A teammate drafted the pieces; you repair and complete them.
-Twenty-six public tests check your work. Most read your files as text and YAML.
-Tests 24-26 run your reviews service: they send it requests and answer its call to the shop api with a stand-in inside the test, which can also time out or refuse.
-Tests 6 and 7 run your workflow's secret-using steps with bash, made-up secret values and a stand-in `docker` command.
-Nothing builds an image, starts a container, opens a network connection or triggers a workflow, so you need no container engine and no CI runner.
+Twenty-six public tests check your work. Most read your files; tests 24-26 run your service against a stand-in shop api, and tests 6-7 run your workflow's secret-using steps with made-up secrets and a stand-in `docker`.
+Nothing builds an image, starts a container, opens a network connection or triggers a workflow.
 
 ## What you edit
 
@@ -29,10 +27,10 @@ Each failing test names the file and the rule to fix next.
 
 Estimates for a learner who has read the day's topic pages; nothing fails on time.
 
-- **S38, about 37 minutes:** phases 1-5.
+- **S38, about 39 minutes:** phases 1-5.
 - **S39, about 19 minutes:** the Jenkins reading, then phases 6 and 7.
 
-The 60-minute bound is a planning allowance, not a measured worst case: the typical path plus four extra failed runs of about a minute each.
+The 60-minute bound is a planning allowance, not a measured worst case: the typical path (about 58 minutes) plus two extra failed runs of about a minute each.
 No learner has been timed yet. If you pass 60 minutes, pause and finish in self-study.
 The one-time setup (about 5 minutes) is not counted.
 
@@ -42,15 +40,16 @@ You need:
 
 - Node.js 24 with its bundled npm (`node --version`)
 - Git (`git --version`)
-- Python 3.10 or later (`python3 --version`; on Windows, `py -3 --version`)
-- bash (`bash --version`; on Windows, the bash that comes with Git for Windows)
+- Python 3.11 or later (`python3 --version`; on Windows, `py -3 --version`)
+- bash (`bash --version`; on Windows, the tests use Git for Windows' bash, found next to `git`)
 
 ```sh
 cd tests
 npm run setup
 ```
 
-This installs one pinned YAML parser, then creates a Python environment in `.venv` (next to this README) with the pinned FastAPI and HTTPX packages the service tests use. After that, the tests run offline.
+This installs a pinned YAML parser and creates `.venv` (next to this README) with the pinned Python packages; after that, the tests run offline.
+Windows is not yet tested: if the tests cannot find Python or bash there, set `LAB_PYTHON` (the `.venv` Python) or `LAB_BASH` (a `bash.exe`).
 
 ## How to test
 
@@ -66,7 +65,7 @@ Read the `error:` text under each `not ok` line, change one thing, and run again
 
 Read the S38 topic pages first: monolith vs microservices, adding the FastAPI service to Compose, service-to-service calls, SQL vs NoSQL, and API gateways and service discovery.
 
-### Phase 1: orient (about 5 minutes)
+### Phase 1: orient (about 7 minutes)
 
 Read this file, copy `fixtures/.env.example` to `starter/.env`, and run the tests once. All 26 fail.
 
@@ -86,7 +85,7 @@ Fix the three rules the docstring in `starter/reviews/app/main.py` lists, using 
 
 1. Forward the caller's token. If none arrived, answer 401 before calling the api.
 2. Pass an `httpx.Timeout` with a 2-second connect limit and a 3-second read limit as the call's `timeout`.
-3. Turn a timeout and a refused connection (HTTPX raises `httpx.ConnectError`) into the status codes the page gives. If you catch the broader `httpx.RequestError` instead, put it after the timeout handler.
+3. Turn a timeout and a refused connection (HTTPX raises `httpx.ConnectError`) into the status codes the page gives (for a refused connection either of the two it names passes). If you catch the broader `httpx.RequestError` instead, put it after the timeout handler.
 
 Tests 24-26 judge what the service does, not how the code is written, so any correct way of writing it passes.
 
@@ -115,7 +114,9 @@ The workflow you want runs for pushes and pull requests: a pull request is built
   - `docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0`
 - Optional and not tested: after phase 7, check the secrets page's rule for runs from forks and decide whether the login step needs the same guard as the push.
 
-Tests 6 and 7 run every step that can see a secret, and the login step, with bash: they check what the stand-in `docker login` receives and that no secret value reaches the step's output. Only `${{ secrets.* }}` and `${{ env.* }}` are filled in, and a step's `if:` is not evaluated.
+Tests 6 and 7 run the login step and every step that can see a secret with bash, as on a push to `main`, and check what the stand-in `docker login` receives and that no secret reaches the output.
+Only `secrets`, `env` and `github.event_name`, `ref` and `ref_name` expressions are filled in; `if:` is not evaluated.
+Test 7 finds a value as written, in base64 or in hex, even wrapped; the secrets page forbids every form.
 
 ### Phase 7: the images, secrets and delivery review (about 5 minutes)
 
@@ -138,6 +139,6 @@ The lab creates no image, container, volume or workflow run. The step runs use a
 ## Troubleshooting
 
 - **`Cannot find package 'yaml'`, or "the lab's Python environment is missing":** run `npm run setup` in `tests` first.
-- **"setup needs Python 3.10 or later":** install Python from python.org, then run `npm run setup` again.
+- **"setup needs Python 3.11 or later":** install Python from python.org and run `npm run setup` again (it rebuilds an old `.venv`; if it still fails, delete `.venv` first).
 - **"bash was not found" (Windows):** install Git for Windows, which includes bash, then run the tests again.
 - **"is not valid YAML":** the message gives the line. Indent with two spaces, never tabs.

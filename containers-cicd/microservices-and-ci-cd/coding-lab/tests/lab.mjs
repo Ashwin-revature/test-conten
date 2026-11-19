@@ -227,18 +227,24 @@ const seconds = (v) => (v === null || v === undefined ? 'no' : `a ${v}-second`);
 // HTTPX requests it makes are answered too, but do not count as the call.
 const shopCalls = (run, s) => (s?.outgoing ?? []).filter((o) => String(o.url).startsWith(run.api_base_url));
 const firstCall = (run, s) => shopCalls(run, s)[0] ?? null;
-const statusText = (s) => (s?.unhandled ? '500 (an exception escaped unhandled)' : String(s?.status));
+const statusText = (s) => (s?.unhandled ? `500 (an exception escaped unhandled${s.error ? `: ${String(s.error).slice(0, 200)}` : ''})` : String(s?.status));
+// When no call reached API_BASE_URL, say where the service did send requests, if anywhere.
+const elsewhere = (run, s) => {
+  const other = (s?.outgoing ?? []).find((o) => !String(o.url).startsWith(run.api_base_url));
+  return other ? ` (it called ${String(other.url).slice(0, 120)}, not the API_BASE_URL it was given)` : '';
+};
 
 rule('reviews-timeouts', null, (dir) => {
   const run = serviceRun(dir);
   if (run.problem) return run.problem;
   const call = firstCall(run, run.with_token);
-  if (!call) return `a request with an Authorization header got ${statusText(run.with_token)} and the service made no HTTPX call to the shop api, so its limits could not be checked: call the api with httpx, as the starter does`;
+  if (!call) return `a request with an Authorization header got ${statusText(run.with_token)} and the service made no HTTPX call to the shop api${elsewhere(run, run.with_token)}, so its limits could not be checked: call the api with httpx, as the starter does`;
   const t = call.timeout ?? {};
   if (t.connect === 2 && t.read === 3) return null;
   const all = ['connect', 'read', 'write', 'pool'];
-  if (all.every((k) => t[k] === null || t[k] === undefined)) return 'the call to the shop api ran with no limits at all (timeout=None turns them off): reread the service-to-service page, then pass an httpx.Timeout with a 2-second connect limit and a 3-second read limit';
-  if (all.every((k) => t[k] === 5)) return 'the call to the shop api ran with HTTPX\'s default of 5 seconds for every limit: pass an httpx.Timeout with a 2-second connect limit and a 3-second read limit';
+  // No limits at all, or HTTPX's default: one message for both, so it answers no worksheet question.
+  const unset = all.every((k) => t[k] === null || t[k] === undefined) || all.every((k) => t[k] === 5);
+  if (unset) return 'the call to the shop api did not run with a 2-second connect limit and a 3-second read limit: reread the service-to-service page, then pass an httpx.Timeout with those limits as the call\'s timeout';
   return `the call to the shop api ran with ${seconds(t.connect)} connect limit and ${seconds(t.read)} read limit: pass an httpx.Timeout with a 2-second connect limit and a 3-second read limit`;
 });
 
@@ -246,7 +252,7 @@ rule('reviews-auth-forward', null, (dir) => {
   const run = serviceRun(dir);
   if (run.problem) return run.problem;
   const call = firstCall(run, run.with_token);
-  if (!call) return `a request with an Authorization header got ${statusText(run.with_token)} and the service never called the shop api: make the call and send the caller's token on it`;
+  if (!call) return `a request with an Authorization header got ${statusText(run.with_token)} and the service never called the shop api${elsewhere(run, run.with_token)}: make the call and send the caller's token on it`;
   if (call.authorization === null || call.authorization === undefined) return 'a request with an Authorization header reached the shop api with no Authorization header: send the caller\'s value on as the outgoing Authorization header';
   if (call.authorization !== run.token) return 'a request with an Authorization header reached the shop api with a different Authorization value: send the caller\'s own value on, not a fixed one';
   // A token written into the code travels with every request, whichever header carries it.
@@ -267,7 +273,7 @@ rule('reviews-error-mapping', null, (dir) => {
   const want = { read_timeout: ['504'], connect_timeout: ['504'], refused: ['502', '503'] };
   for (const [key, ok] of Object.entries(want)) {
     const s = run[key];
-    if (!firstCall(run, s)) return `when ${FAILURES[key]}, the service never called it, so this case could not be checked: make the call to the shop api with httpx`;
+    if (!firstCall(run, s)) return `when ${FAILURES[key]}, the service answered ${statusText(s)} and never called it${elsewhere(run, s)}, so this case could not be checked: make the call to the shop api with httpx`;
     if (ok.includes(String(s.status))) continue;
     const page = key === 'refused' ? 'a status the service-to-service page allows for a refused connection' : 'the status the service-to-service page gives when no timely response arrived';
     // A timeout answered with a refused-connection status: either the codes are swapped or a broader handler ran first.
@@ -394,7 +400,8 @@ function optionValue(args, short, long) {
   for (let i = 0; i < args.length; i += 1) {
     if (args[i] === short || args[i] === long) return args[i + 1] ?? '';
     if (args[i].startsWith(`${long}=`)) return args[i].slice(long.length + 1);
-    if (args[i].startsWith(short) && args[i].length > short.length && !args[i].startsWith('--')) return args[i].slice(short.length);
+    // -uNAME and -u=NAME both work for docker's short options.
+    if (args[i].startsWith(short) && args[i].length > short.length && !args[i].startsWith('--')) return args[i].slice(short.length).replace(/^=/, '');
   }
   return null;
 }
@@ -430,7 +437,10 @@ rule('ci-secret-refs', CI, (dir) => {
     if (user !== ran.secrets.REGISTRY_USERNAME) return `docker login was given ${user ? 'a username that is not' : 'no username, not'} the value of secrets.REGISTRY_USERNAME: map that secret into the step's env and pass it with -u`;
     const stdin = (call.stdin ?? '').replace(/\r?\n$/, '');
     if (stdin !== ran.secrets.REGISTRY_PASSWORD) return stdin === '' ? 'docker login received nothing on its standard input: pipe the REGISTRY_PASSWORD secret into it' : 'docker login received a password on its standard input that is not the value of secrets.REGISTRY_PASSWORD: pipe that secret, from the step\'s env, into it';
-    if (s.status !== 0) return `the step "${s.name}" exited with status ${s.status} (bash -e stops the step at the first failing command)`;
+    if (s.status !== 0) {
+      const last = s.log.trim().split('\n').at(-1) ?? '';
+      return `the step "${s.name}" exited with status ${s.status} (bash -e stops the step at the first failing command)${last ? `; its last output line: ${last.slice(0, 160)}` : ''}`;
+    }
   }
   return null;
 });
@@ -447,20 +457,27 @@ rule('ci-pinned-actions', CI, (dir) => {
   return null;
 });
 
-// What a run log would show of each made-up secret: as is, or encoded.
+// The hex digits of a dump, line by line: an optional offset column ("00000010:") is
+// dropped, and so is a text column after a double space (xxd's default layout).
+function hexStream(text) {
+  return text.split('\n').map((l) => {
+    const m = l.match(/^\s*(?:[0-9a-fA-F]+:\s+)?((?:[0-9a-fA-F]{2,} ?)+)/);
+    return m ? m[1].replace(/ /g, '') : '';
+  }).join('').toLowerCase();
+}
+// What a run log would show of each made-up secret: as is, or base64 or hex encoded,
+// also when the encoded form is wrapped over several lines.
 function leaks(log, secrets) {
-  // Registering a value with ::add-mask:: is how the secrets page hides a derived value.
-  const text = log.split('\n').filter((l) => !l.includes('::add-mask::')).join('\n');
+  // A line that starts with ::add-mask:: registers a value for masking (the secrets page's
+  // way to hide a derived value); the runner does not print it.
+  const text = log.split('\n').filter((l) => !/^\s*::add-mask::/.test(l)).join('\n');
+  const joined = text.replace(/\s+/g, '');
+  const hex = hexStream(text);
   for (const [name, value] of Object.entries(secrets)) {
-    const forms = [
-      ['', value],
-      [' base64-encoded', Buffer.from(value).toString('base64')],
-      [' base64-encoded', Buffer.from(`${value}\n`).toString('base64')],
-      [' hex-encoded', Buffer.from(value).toString('hex')],
-      [' hex-encoded', Buffer.from(`${value}\n`).toString('hex')],
-    ];
-    const hit = forms.find(([, f]) => text.includes(f));
-    if (hit) return { name, how: hit[0] };
+    if (text.includes(value)) return { name, how: '' };
+    const encoded = (enc) => [value, `${value}\n`].map((v) => Buffer.from(v).toString(enc));
+    if (encoded('base64').some((f) => joined.includes(f))) return { name, how: ' base64-encoded' };
+    if (encoded('hex').some((f) => hex.includes(f) || joined.toLowerCase().includes(f))) return { name, how: ' hex-encoded' };
   }
   return null;
 }

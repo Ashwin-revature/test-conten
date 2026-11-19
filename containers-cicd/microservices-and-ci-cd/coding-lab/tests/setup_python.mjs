@@ -4,9 +4,10 @@
 import { spawnSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
-import { labPython } from './behavior.mjs';
 
+const MIN = { major: 3, minor: 11 }; // the pinned starlette and annotated-doc need 3.11 or later
 const venv = path.join(import.meta.dirname, '..', '.venv');
+const venvPython = process.platform === 'win32' ? path.join(venv, 'Scripts', 'python.exe') : path.join(venv, 'bin', 'python');
 const requirements = path.join(import.meta.dirname, 'requirements.txt');
 
 function version(cmd, args) {
@@ -15,22 +16,33 @@ function version(cmd, args) {
   const [major, minor] = r.stdout.trim().split('.').map(Number);
   return { cmd, args, major, minor, text: r.stdout.trim() };
 }
+const recentEnough = (p) => p && p.major === MIN.major && p.minor >= MIN.minor;
 
 const candidates = process.platform === 'win32'
   ? [['py', ['-3']], ['python', []], ['python3', []]]
   : [['python3', []], ['python', []]];
 const found = candidates.map(([c, a]) => version(c, a)).filter(Boolean);
-const python = found.find((p) => p.major === 3 && p.minor >= 10);
+const python = found.find(recentEnough);
 if (!python) {
   const seen = found.map((p) => `${p.cmd} ${p.text}`).join(', ') || 'none';
-  console.error(`setup needs Python 3.10 or later (found: ${seen}). Install it from python.org, then run npm run setup again.`);
+  console.error(`setup needs Python ${MIN.major}.${MIN.minor} or later (found: ${seen}). Install it from python.org, then run npm run setup again.`);
   process.exit(1);
 }
-if (!existsSync(labPython())) {
-  console.log(`creating the lab's Python environment with ${python.cmd} ${python.text} in .venv`);
-  const r = spawnSync(python.cmd, [...python.args, '-m', 'venv', venv], { stdio: 'inherit' });
+
+// Reuse .venv only when its Python is recent enough and has pip; otherwise rebuild it
+// (venv --clear empties that folder first; it touches nothing else).
+const existing = existsSync(venvPython) ? version(venvPython, []) : null;
+const hasPip = existing && spawnSync(venvPython, ['-m', 'pip', '--version'], { encoding: 'utf8' }).status === 0;
+if (!recentEnough(existing) || !hasPip) {
+  const why = !existing ? 'creating' : `rebuilding (it had ${hasPip ? `Python ${existing.text}` : 'no working pip'})`;
+  console.log(`${why} the lab's Python environment with ${python.cmd} ${python.text} in .venv`);
+  const r = spawnSync(python.cmd, [...python.args, '-m', 'venv', '--clear', venv], { stdio: 'inherit' });
   if (r.status !== 0) process.exit(r.status ?? 1);
 }
-const pip = spawnSync(labPython(), ['-m', 'pip', 'install', '--disable-pip-version-check', '--quiet', '-r', requirements], { stdio: 'inherit' });
-if (pip.status !== 0) process.exit(pip.status ?? 1);
+// Prebuilt wheels only, exactly the pinned versions: nothing is compiled or run from a source package.
+const pip = spawnSync(venvPython, ['-m', 'pip', 'install', '--disable-pip-version-check', '--quiet', '--only-binary=:all:', '-r', requirements], { stdio: 'inherit' });
+if (pip.status !== 0) {
+  console.error('installing the pinned Python packages failed: check the network, then run npm run setup again (if it keeps failing, delete the .venv folder next to tests and retry)');
+  process.exit(pip.status ?? 1);
+}
 console.log('setup done: the tests now run offline');

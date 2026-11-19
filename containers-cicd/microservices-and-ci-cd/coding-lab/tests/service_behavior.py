@@ -68,7 +68,9 @@ def main():
         app = module.app
         from fastapi.testclient import TestClient
 
-        client = TestClient(app, raise_server_exceptions=False)
+        # An exception the service does not handle is raised here instead of becoming a
+        # bare 500, so the test can name it (a real server answers 500 in that case).
+        client = TestClient(app, raise_server_exceptions=True)
     except Exception as e:  # report, do not crash: the learner's file may not load
         out["error"] = f"{type(e).__name__}: {e}"[:300]
         print(json.dumps(out))
@@ -79,17 +81,20 @@ def main():
     def scenario(mode, headers):
         MODE["value"] = mode
         OUTGOING.clear()
-        unhandled = False
+        result = {"status": None, "unhandled": False}
         try:
             r = client.get("/reviews/1", headers=headers)
-            status = r.status_code
-            # Starlette answers an exception nothing handled with a plain-text 500;
-            # an HTTPException the code raises answers JSON.
-            unhandled = status == 500 and r.headers.get("content-type", "").startswith("text/plain")
-        except Exception as e:
-            status = None
-            out.setdefault("errors", {})[mode] = f"{type(e).__name__}: {e}"[:300]
-        return {"status": status, "unhandled": unhandled, "outgoing": list(OUTGOING)}
+            result["status"] = r.status_code
+        except Exception as e:  # escaped every route-level handler
+            if Exception in app.exception_handlers or 500 in app.exception_handlers:
+                # The service has its own catch-all handler: answer with what it sends.
+                OUTGOING.clear()
+                r = TestClient(app, raise_server_exceptions=False).get("/reviews/1", headers=headers)
+                result["status"] = r.status_code
+            else:  # a real server would answer 500
+                result.update(status=500, unhandled=True, error=f"{type(e).__name__}: {e}"[:300])
+        result["outgoing"] = list(OUTGOING)
+        return result
 
     out["token"] = token
     out["with_token"] = scenario("ok", {"Authorization": token})

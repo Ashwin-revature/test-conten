@@ -22,6 +22,9 @@ export function labPython() {
   return process.platform === 'win32' ? path.join(venv, 'Scripts', 'python.exe') : path.join(venv, 'bin', 'python');
 }
 
+const PROXY_VARS = /^(all|http|https|no)_proxy$/i;
+const withoutProxies = (env) => Object.fromEntries(Object.entries(env).filter(([k]) => !PROXY_VARS.test(k)));
+
 const serviceRuns = new Map();
 export function serviceRun(dir) {
   if (serviceRuns.has(dir)) return serviceRuns.get(dir);
@@ -32,7 +35,9 @@ export function serviceRun(dir) {
   else if (!existsSync(main)) result = { problem: 'reviews/app/main.py is missing: restore it from Git' };
   else {
     const r = spawnSync(python, ['-B', '-W', 'ignore', path.join(import.meta.dirname, 'service_behavior.py'), main], {
-      encoding: 'utf8', timeout: 60_000, env: { ...process.env, PYTHONDONTWRITEBYTECODE: '1' },
+      // Proxy settings are dropped: the stand-in answers in-process, and HTTPX would
+      // otherwise try to set up a proxy transport (and fail for SOCKS without socksio).
+      encoding: 'utf8', timeout: 60_000, env: { ...withoutProxies(process.env), PYTHONDONTWRITEBYTECODE: '1' },
     });
     if (r.error?.code === 'ETIMEDOUT') result = { problem: 'loading and calling reviews/app/main.py took longer than 60 seconds: look for a loop or a call that waits forever' };
     else if (r.error) result = { problem: `the lab's Python could not start (${r.error.code}): ${SETUP}` };
@@ -72,16 +77,36 @@ exit 0
 `;
 
 const EXPR = /\$\{\{\s*([\s\S]*?)\s*\}\}/g;
-const CONTEXT_REF = /^(secrets|env)\s*(?:\.\s*([A-Za-z_][A-Za-z0-9_]*)|\[\s*'([^']+)'\s*\])$/;
-// Fill in ${{ secrets.NAME }} and ${{ env.NAME }}; any other expression gets a fixed
-// placeholder, because this check models only the secrets and env contexts.
+const CONTEXT_REF = /^(secrets|env|github)\s*(?:\.\s*([A-Za-z_][A-Za-z0-9_]*)|\[\s*'([^']+)'\s*\])$/;
+// The steps run as on a push to main.
+const GITHUB = { event_name: 'push', ref: 'refs/heads/main', ref_name: 'main' };
+// Fill in ${{ secrets.NAME }}, ${{ env.NAME }} and ${{ github.event_name / ref / ref_name }};
+// any other expression gets a fixed placeholder, because only those are modelled.
 function fill(text, secretValue, envValues) {
   return String(text ?? '').replace(EXPR, (_, inner) => {
     const m = inner.trim().match(CONTEXT_REF);
     if (!m) return 'lab-expression-not-evaluated';
     const name = m[2] ?? m[3];
-    return m[1] === 'secrets' ? secretValue(name) : envValues[name] ?? '';
+    if (m[1] === 'secrets') return secretValue(name);
+    if (m[1] === 'github') return GITHUB[name] ?? 'lab-expression-not-evaluated';
+    return envValues[name] ?? '';
   });
+}
+
+// GitHub's command for each shell (workflow syntax reference, jobs.<job_id>.steps[*].shell):
+// unspecified on Linux: bash -e {0}; bash: bash --noprofile --norc -eo pipefail {0}; sh: sh -e {0};
+// a custom template such as "bash -x {0}" runs as written. Returns [command, args before the file, args after] or null.
+function shellCommand(shell, bash) {
+  const sh = process.platform === 'win32' && existsSync(path.join(path.dirname(bash), 'sh.exe')) ? path.join(path.dirname(bash), 'sh.exe') : 'sh';
+  const program = (name) => (name === 'bash' ? bash : sh);
+  if (!shell) return [bash, ['-e'], []];
+  const s = String(shell).trim();
+  if (s === 'bash') return [bash, ['--noprofile', '--norc', '-eo', 'pipefail'], []];
+  if (s === 'sh') return [sh, ['-e'], []];
+  const words = s.split(/\s+/);
+  const at = words.indexOf('{0}');
+  if (!/^(bash|sh)$/.test(words[0]) || at < 1) return null;
+  return [program(words[0]), words.slice(1, at), words.slice(at + 1)];
 }
 
 const usesSecrets = (text) => /\$\{\{[^}]*\bsecrets\b/.test(String(text ?? ''));
@@ -116,28 +141,33 @@ function runSecretSteps(workflow) {
       if (!seesSecret && !isLoginStep(step)) return;
       const name = step.name ? String(step.name) : `${jobId} step ${index + 1}`;
       const shell = step.shell ?? job.defaults?.run?.shell ?? workflow.defaults?.run?.shell;
-      if (shell && !/^(bash|sh)\b/.test(String(shell))) {
-        out.push({ job: jobId, name, login: isLoginStep(step), problem: `the step "${name}" sets shell: ${shell}; this lab runs secret-using steps only with bash` });
+      const how = shellCommand(shell, bash);
+      if (!how) {
+        out.push({ job: jobId, name, login: isLoginStep(step), problem: `the step "${name}" sets shell: ${shell}; this lab runs secret-using steps only with bash or sh (or a "bash ... {0}" template)` });
         return;
       }
       const envValues = {};
       for (const scope of scopes) for (const [k, v] of Object.entries(scope)) envValues[k] = fill(v, secretValue, envValues);
-      // GitHub's commands for each shell (workflow syntax reference, jobs.<job_id>.steps[*].shell):
-      // unspecified on Linux: bash -e {0}; bash: bash --noprofile --norc -eo pipefail {0}; sh: sh -e {0}.
-      const how = !shell ? [bash, ['-e']] : /^bash\b/.test(String(shell)) ? [bash, ['--noprofile', '--norc', '-eo', 'pipefail']] : ['sh', ['-e']];
       out.push({ job: jobId, name, login: isLoginStep(step), ...runStep(bash, how, fill(step.run, secretValue, envValues), envValues) });
     });
   }
   return { secrets, steps: out };
 }
 
-function runStep(bash, [shellCmd, shellArgs], script, envValues) {
+function runStep(bash, [shellCmd, shellArgs, shellTail], script, envValues) {
   const tmp = mkdtempSync(path.join(os.tmpdir(), 'lab-step-'));
   try {
     const stub = path.join(tmp, 'stub-bin');
     const calls = path.join(tmp, 'docker-calls');
     const work = path.join(tmp, 'work');
-    for (const d of [stub, calls, work, path.join(tmp, 'home'), path.join(tmp, 'docker-config')]) mkdirSync(d);
+    const runner = path.join(tmp, 'runner');
+    for (const d of [stub, calls, work, runner, path.join(tmp, 'home'), path.join(tmp, 'docker-config')]) mkdirSync(d);
+    // The files a runner gives every step for outputs, env, PATH and the job summary.
+    const runnerFiles = Object.fromEntries(['GITHUB_ENV', 'GITHUB_OUTPUT', 'GITHUB_PATH', 'GITHUB_STEP_SUMMARY'].map((k) => {
+      const f = path.join(runner, k.toLowerCase());
+      writeFileSync(f, '');
+      return [k, f];
+    }));
     writeFileSync(path.join(stub, 'docker'), STUB_DOCKER);
     chmodSync(path.join(stub, 'docker'), 0o755);
     const env = {
@@ -147,6 +177,12 @@ function runStep(bash, [shellCmd, shellArgs], script, envValues) {
       DOCKER_CONFIG: path.join(tmp, 'docker-config'),
       LANG: 'C',
       GITHUB_ACTIONS: 'true',
+      CI: 'true',
+      GITHUB_EVENT_NAME: GITHUB.event_name,
+      GITHUB_REF: GITHUB.ref,
+      GITHUB_REF_NAME: GITHUB.ref_name,
+      GITHUB_WORKSPACE: work,
+      ...runnerFiles,
       ...envValues,
       LAB_DOCKER_CALLS: calls,
     };
@@ -155,7 +191,7 @@ function runStep(bash, [shellCmd, shellArgs], script, envValues) {
     if (!String(which.stdout).includes(path.basename(tmp))) return { problem: 'the stand-in docker could not be put first on PATH, so the secret-using steps were not run' };
     const file = path.join(tmp, 'step.sh');
     writeFileSync(file, script);
-    const r = spawnSync(shellCmd, [...shellArgs, file], { encoding: 'utf8', env, cwd: work, stdio: ['ignore', 'pipe', 'pipe'], timeout: 20_000, killSignal: 'SIGKILL' });
+    const r = spawnSync(shellCmd, [...shellArgs, file, ...shellTail], { encoding: 'utf8', env, cwd: work, stdio: ['ignore', 'pipe', 'pipe'], timeout: 20_000, killSignal: 'SIGKILL' });
     const docker = readdirSync(calls).filter((f) => f.endsWith('.args')).sort().map((f) => {
       const stdinFile = path.join(calls, f.replace(/\.args$/, '.stdin'));
       return {
