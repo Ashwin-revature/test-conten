@@ -24,6 +24,31 @@
       "bytes": 1340
     },
     {
+      "path": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education-recheck.json",
+      "sha256": "69982621f91a65227aa92ee810b12f53951c7f7d53f3092f56e999a9fc670d2d",
+      "bytes": 4841
+    },
+    {
+      "path": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education.json",
+      "sha256": "c35fcc319c7d54491a6e64ec96e72409ef073677668a4bcdcd0a33ddd673a2e0",
+      "bytes": 5570
+    },
+    {
+      "path": "authoring/evidence/spring-boot/final-mcq-loop3-critic-sme-recheck.json",
+      "sha256": "7785e61d12051a0753cf0646e39a3035d01de7a2fa5fb2b14a5cf63e68cfb4aa",
+      "bytes": 1268
+    },
+    {
+      "path": "authoring/evidence/spring-boot/final-mcq-loop3-critic-sme.json",
+      "sha256": "3c07b197175fe84cc0f80f2741ffca19e6b936bb615a05a509be46cf8f475095",
+      "bytes": 1786
+    },
+    {
+      "path": "authoring/evidence/spring-boot/final-mcq-loop3-reconciliation.json",
+      "sha256": "604b487bd03de89c099d8718ac52400b8e15e036a3404056b58e7f6d6f85f037",
+      "bytes": 4154
+    },
+    {
       "path": "authoring/evidence/spring-boot/intake-2-critic-education-recheck.json",
       "sha256": "882d01accc583382d872a2448fef3121a617d0f10c6152dd2fe3625f4a317cf4",
       "bytes": 5336
@@ -248,6 +273,216 @@
       "artifactPath": "spring-boot/assessments/spring-boot-final-assessment/blueprint.json",
       "sha256": "e5d42e040a23aa836c788080378004a602a5dc73e00f8dd0a4d0ebe2f52a5674",
       "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/spring-boot-final-mcq/blueprint.json",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/blueprint.json",
+      "sha256": "dafcb2fff0fcd30ddf5d38442c891ac856bef600fb1d507cb0569f6930e1b86c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/spring-boot-final-mcq/final-mcq.gift",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "6c4c698d53f0fc52482304239ebc8782fdd441ad6b2299915968465a0d8852b9",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "6c4c698d53f0fc52482304239ebc8782fdd441ad6b2299915968465a0d8852b9",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "6c4c698d53f0fc52482304239ebc8782fdd441ad6b2299915968465a0d8852b9",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "6c4c698d53f0fc52482304239ebc8782fdd441ad6b2299915968465a0d8852b9",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "6c4c698d53f0fc52482304239ebc8782fdd441ad6b2299915968465a0d8852b9",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "6c4c698d53f0fc52482304239ebc8782fdd441ad6b2299915968465a0d8852b9",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "6c4c698d53f0fc52482304239ebc8782fdd441ad6b2299915968465a0d8852b9",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "6c4c698d53f0fc52482304239ebc8782fdd441ad6b2299915968465a0d8852b9",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "6c4c698d53f0fc52482304239ebc8782fdd441ad6b2299915968465a0d8852b9",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/blueprint.json",
+      "sha256": "dafcb2fff0fcd30ddf5d38442c891ac856bef600fb1d507cb0569f6930e1b86c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education.json",
+      "field": "artifactHashes.assessments/spring-boot-final-mcq/blueprint.json",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/blueprint.json",
+      "sha256": "dafcb2fff0fcd30ddf5d38442c891ac856bef600fb1d507cb0569f6930e1b86c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education.json",
+      "field": "artifactHashes.assessments/spring-boot-final-mcq/final-mcq.gift",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "ef34aa9b64708052e5a9173e19360eb70d0a6d7082163f6162288ce4d6bb8127",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "ef34aa9b64708052e5a9173e19360eb70d0a6d7082163f6162288ce4d6bb8127",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "ef34aa9b64708052e5a9173e19360eb70d0a6d7082163f6162288ce4d6bb8127",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "ef34aa9b64708052e5a9173e19360eb70d0a6d7082163f6162288ce4d6bb8127",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education.json",
+      "field": "findings[3].reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "ef34aa9b64708052e5a9173e19360eb70d0a6d7082163f6162288ce4d6bb8127",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education.json",
+      "field": "findings[4].reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "ef34aa9b64708052e5a9173e19360eb70d0a6d7082163f6162288ce4d6bb8127",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education.json",
+      "field": "findings[5].reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "ef34aa9b64708052e5a9173e19360eb70d0a6d7082163f6162288ce4d6bb8127",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education.json",
+      "field": "findings[6].reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "ef34aa9b64708052e5a9173e19360eb70d0a6d7082163f6162288ce4d6bb8127",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-education.json",
+      "field": "reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/blueprint.json",
+      "sha256": "dafcb2fff0fcd30ddf5d38442c891ac856bef600fb1d507cb0569f6930e1b86c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/spring-boot-final-mcq/blueprint.json",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/blueprint.json",
+      "sha256": "dafcb2fff0fcd30ddf5d38442c891ac856bef600fb1d507cb0569f6930e1b86c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/spring-boot-final-mcq/final-mcq.gift",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "6c4c698d53f0fc52482304239ebc8782fdd441ad6b2299915968465a0d8852b9",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "6c4c698d53f0fc52482304239ebc8782fdd441ad6b2299915968465a0d8852b9",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/blueprint.json",
+      "sha256": "dafcb2fff0fcd30ddf5d38442c891ac856bef600fb1d507cb0569f6930e1b86c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-sme.json",
+      "field": "artifactHashes.assessments/spring-boot-final-mcq/blueprint.json",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/blueprint.json",
+      "sha256": "dafcb2fff0fcd30ddf5d38442c891ac856bef600fb1d507cb0569f6930e1b86c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-sme.json",
+      "field": "artifactHashes.assessments/spring-boot-final-mcq/final-mcq.gift",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "ef34aa9b64708052e5a9173e19360eb70d0a6d7082163f6162288ce4d6bb8127",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-sme.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "ef34aa9b64708052e5a9173e19360eb70d0a6d7082163f6162288ce4d6bb8127",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-critic-sme.json",
+      "field": "reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/blueprint.json",
+      "sha256": "dafcb2fff0fcd30ddf5d38442c891ac856bef600fb1d507cb0569f6930e1b86c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/final-mcq-loop3-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "6c4c698d53f0fc52482304239ebc8782fdd441ad6b2299915968465a0d8852b9",
+      "current": true
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/intake-2-critic-education-recheck.json",
