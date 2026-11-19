@@ -116,7 +116,7 @@ The workflow you want runs for pushes and pull requests: a pull request is built
 
 Tests 6 and 7 run the login step and every step that can see a secret with bash, as on a push to `main`, and check what the stand-in `docker login` receives and that no secret reaches the output.
 Only `secrets`, `env` and `github.event_name`, `ref` and `ref_name` expressions are filled in; `if:` is not evaluated.
-Test 7 finds a value as written, in base64 or in hex, even wrapped; the secrets page forbids every form.
+Test 7 finds a value as written (even split over lines), base64-encoded on its own, or in hex as xxd and xxd -p print it; the secrets page forbids every form.
 
 ### Phase 7: the images, secrets and delivery review (about 5 minutes)
 

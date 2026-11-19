@@ -228,17 +228,21 @@ const seconds = (v) => (v === null || v === undefined ? 'no' : `a ${v}-second`);
 const shopCalls = (run, s) => (s?.outgoing ?? []).filter((o) => String(o.url).startsWith(run.api_base_url));
 const firstCall = (run, s) => shopCalls(run, s)[0] ?? null;
 const statusText = (s) => (s?.unhandled ? `500 (an exception escaped unhandled${s.error ? `: ${String(s.error).slice(0, 200)}` : ''})` : String(s?.status));
-// When no call reached API_BASE_URL, say where the service did send requests, if anywhere.
-const elsewhere = (run, s) => {
+// Why no call reached the shop api, in this order: a request sent somewhere else, an
+// exception the handler raised before any call, or no call at all (the fallback).
+function noCall(run, s, when, fallback) {
   const other = (s?.outgoing ?? []).find((o) => !String(o.url).startsWith(run.api_base_url));
-  return other ? ` (it called ${String(other.url).slice(0, 120)}, not the API_BASE_URL it was given)` : '';
-};
+  if (other) return `${when}, the service sent its request to ${String(other.url).slice(0, 120)}, not to the shop api: build the URL from API_BASE_URL`;
+  if (s?.unhandled && s.error) return `${when}, the handler raised ${String(s.error).slice(0, 200)} before calling the shop api: fix that error`;
+  return `${when}, ${fallback}`;
+}
+const CASES = { read_timeout: 'read-timeout', connect_timeout: 'connect-timeout', refused: 'refused-connection' };
 
 rule('reviews-timeouts', null, (dir) => {
   const run = serviceRun(dir);
   if (run.problem) return run.problem;
   const call = firstCall(run, run.with_token);
-  if (!call) return `a request with an Authorization header got ${statusText(run.with_token)} and the service made no HTTPX call to the shop api${elsewhere(run, run.with_token)}, so its limits could not be checked: call the api with httpx, as the starter does`;
+  if (!call) return noCall(run, run.with_token, 'for a request with an Authorization header', `the service answered ${statusText(run.with_token)} and made no HTTPX call to the shop api, so its limits could not be checked: call the api with httpx, as the starter does`);
   const t = call.timeout ?? {};
   if (t.connect === 2 && t.read === 3) return null;
   const all = ['connect', 'read', 'write', 'pool'];
@@ -252,7 +256,7 @@ rule('reviews-auth-forward', null, (dir) => {
   const run = serviceRun(dir);
   if (run.problem) return run.problem;
   const call = firstCall(run, run.with_token);
-  if (!call) return `a request with an Authorization header got ${statusText(run.with_token)} and the service never called the shop api${elsewhere(run, run.with_token)}: make the call and send the caller's token on it`;
+  if (!call) return noCall(run, run.with_token, 'for a request with an Authorization header', `the service answered ${statusText(run.with_token)} and never called the shop api: make the call and send the caller's token on it`);
   if (call.authorization === null || call.authorization === undefined) return 'a request with an Authorization header reached the shop api with no Authorization header: send the caller\'s value on as the outgoing Authorization header';
   if (call.authorization !== run.token) return 'a request with an Authorization header reached the shop api with a different Authorization value: send the caller\'s own value on, not a fixed one';
   // A token written into the code travels with every request, whichever header carries it.
@@ -273,8 +277,15 @@ rule('reviews-error-mapping', null, (dir) => {
   const want = { read_timeout: ['504'], connect_timeout: ['504'], refused: ['502', '503'] };
   for (const [key, ok] of Object.entries(want)) {
     const s = run[key];
-    if (!firstCall(run, s)) return `when ${FAILURES[key]}, the service answered ${statusText(s)} and never called it${elsewhere(run, s)}, so this case could not be checked: make the call to the shop api with httpx`;
+    const call = firstCall(run, s);
+    if (!call) return noCall(run, s, `in test 26's ${CASES[key]} case`, `the service answered ${statusText(s)} and never called the shop api, so this case could not be checked: make the call to the shop api with httpx`);
     if (ok.includes(String(s.status))) continue;
+    // A timeout case is only reported in detail for a call with the limits test 24 asks for set
+    // (no limit for that phase, or HTTPX's default for all four, gets one neutral line instead).
+    const lim = call.timeout ?? {};
+    const phase = key === 'read_timeout' ? 'read' : 'connect';
+    const defaults = ['connect', 'read', 'write', 'pool'].every((k) => lim[k] === 5);
+    if (key !== 'refused' && (lim[phase] === null || lim[phase] === undefined || defaults)) return 'test 26 reports the detail of its timeout cases only for a call that carries the connect and read limits test 24 asks for: finish test 24, then run again';
     const page = key === 'refused' ? 'a status the service-to-service page allows for a refused connection' : 'the status the service-to-service page gives when no timely response arrived';
     // A timeout answered with a refused-connection status: either the codes are swapped or a broader handler ran first.
     const order = key !== 'refused' && ['502', '503'].includes(String(s.status))
@@ -474,7 +485,7 @@ function leaks(log, secrets) {
   const joined = text.replace(/\s+/g, '');
   const hex = hexStream(text);
   for (const [name, value] of Object.entries(secrets)) {
-    if (text.includes(value)) return { name, how: '' };
+    if (text.includes(value) || joined.includes(value)) return { name, how: '' };
     const encoded = (enc) => [value, `${value}\n`].map((v) => Buffer.from(v).toString(enc));
     if (encoded('base64').some((f) => joined.includes(f))) return { name, how: ' base64-encoded' };
     if (encoded('hex').some((f) => hex.includes(f) || joined.toLowerCase().includes(f))) return { name, how: ' hex-encoded' };
