@@ -142,14 +142,30 @@ test("task 11: both pack tags are 200px wide border to border, one in each box-s
             if (Number.isFinite(animation.effect?.getComputedTiming().endTime)) animation.finish();
           }
         }
-        // A held end value such as an identity matrix, scale 1 or translate 0px counts as unscaled.
-        const identity = (cs) =>
-          (cs.transform === "none" || new DOMMatrixReadOnly(cs.transform).isIdentity) &&
-          (cs.scale === "none" || cs.scale.split(/\s+/).every((part) => parseFloat(part) === 1)) &&
-          (cs.rotate === "none" || parseFloat(cs.rotate.split(/\s+/).pop()) === 0) &&
-          (cs.translate === "none" || cs.translate.split(/\s+/).every((part) => parseFloat(part) === 0)) &&
-          parseFloat(cs.zoom) === 1;
-        const asideUnscaled = !aside || identity(getComputedStyle(aside));
+        // With no animation left running, a held end value such as an identity matrix, scale 1,
+        // a whole-turn rotate or translate 0px counts as unscaled. While an endless or paused
+        // animation is still on the element, only the plain none and 1 values count, because
+        // its value at this moment says nothing about the frames that follow.
+        const turns = (angle) => {
+          const value = parseFloat(angle);
+          const unit = angle.replace(/^[-+\d.e]+/i, "");
+          const degrees = unit === "turn" ? value * 360 : unit === "rad" ? (value * 180) / Math.PI : unit === "grad" ? value * 0.9 : value;
+          return Math.abs(degrees % 360) < 1e-9;
+        };
+        const unscaledNow = (el) => {
+          const cs = getComputedStyle(el);
+          if (el.getAnimations().some((animation) => animation.playState !== "finished")) {
+            return [cs.transform, cs.scale, cs.rotate, cs.translate].every((value) => value === "none") && String(cs.zoom) === "1";
+          }
+          return (
+            (cs.transform === "none" || new DOMMatrixReadOnly(cs.transform).isIdentity) &&
+            (cs.scale === "none" || cs.scale.split(/\s+/).every((part) => parseFloat(part) === 1)) &&
+            (cs.rotate === "none" || turns(cs.rotate.split(/\s+/).pop())) &&
+            (cs.translate === "none" || cs.translate.split(/\s+/).every((part) => parseFloat(part) === 0)) &&
+            parseFloat(cs.zoom) === 1
+          );
+        };
+        const asideUnscaled = !aside || unscaledNow(aside);
         const pinned = (width) => ({
           display: "block",
           "box-sizing": "content-box",
@@ -165,6 +181,9 @@ test("task 11: both pack tags are 200px wide border to border, one in each box-s
           translate: "none",
           zoom: "1",
         });
+        const pinnedBefore = aside
+          ? Object.keys(pinned(0)).map((name) => [name, aside.style.getPropertyValue(name), aside.style.getPropertyPriority(name)])
+          : [];
         const own = ["width", "min-width", "max-width"];
         const out = widths.map((width) => {
           if (aside) for (const [name, value] of Object.entries(pinned(width))) aside.style.setProperty(name, value, "important");
@@ -195,7 +214,7 @@ test("task 11: both pack tags are 200px wide border to border, one in each box-s
               border: [px("border-top-width"), px("border-right-width"), px("border-bottom-width"), px("border-left-width")],
               margin: px("margin-bottom"),
               sideMargins: [px("margin-left"), px("margin-right")],
-              unscaled: identity(cs),
+              unscaled: unscaledNow(el),
             };
             const saved = own.map((name) => [name, el.style.getPropertyValue(name), el.style.getPropertyPriority(name)]);
             el.style.setProperty("width", "auto", "important");
@@ -210,6 +229,12 @@ test("task 11: both pack tags are 200px wide border to border, one in each box-s
           });
           return { width, asideUnscaled, tags };
         });
+        if (aside) {
+          for (const [name, value, priority] of pinnedBefore) {
+            if (value) aside.style.setProperty(name, value, priority);
+            else aside.style.removeProperty(name);
+          }
+        }
         quiet.forEach((el, i) => {
           for (const [name, value, priority] of before[i]) {
             if (value) el.style.setProperty(name, value, priority);
