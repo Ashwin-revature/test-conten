@@ -69,7 +69,9 @@
   "assessments": [
     "spring-boot-module-check",
     "spring-boot-final-assessment",
-    "spring-boot-final-mcq"
+    "spring-boot-final-mcq",
+    "spring-final-coding-basic-tool-by-id",
+    "spring-final-coding-intermediate-place-order"
   ],
   "courseLabs": [],
   "license": "proprietary-private",
