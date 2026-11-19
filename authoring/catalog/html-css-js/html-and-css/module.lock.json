@@ -114,6 +114,21 @@
       "bytes": 9745
     },
     {
+      "path": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "sha256": "26b67b88d4a48281895778d2f2943c577b05188f231ff190815ecd28a1b0bf24",
+      "bytes": 10578
+    },
+    {
+      "path": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "sha256": "6d22bc78317feb2368eed6c473d98814a2eb0dcee381c2663ce3bbddf5f0037d",
+      "bytes": 14533
+    },
+    {
+      "path": "authoring/evidence/html-css-js/html-and-css/clean-loop4-reconciliation.json",
+      "sha256": "7c7dba17f72d124f87ab7582bddcdd19330f3666dda63ba6cbdfdf03aa1e09fd",
+      "bytes": 5532
+    },
+    {
       "path": "authoring/evidence/html-css-js/html-and-css/coding-lab-critic-education-recheck.json",
       "sha256": "7d9579b251fa0d03142a87e8f2df4670206bb7c9b9293acde46b664db9163bbd",
       "bytes": 2287
@@ -145,8 +160,8 @@
     },
     {
       "path": "authoring/evidence/html-css-js/html-and-css/coding-lab-solved-run.json",
-      "sha256": "082222bbf6c0d5f5c7e4632bbd23ebf4c400793133edb81a3a9a5d33f3e2481c",
-      "bytes": 4899
+      "sha256": "5d2284fc4c1f33beadbf1e45d78e3f9eddd9c1623edf1dceb5e67c848efcbb60",
+      "bytes": 5538
     },
     {
       "path": "authoring/evidence/html-css-js/html-and-css/coding-lab-solved-run.md",
@@ -860,8 +875,8 @@
     },
     {
       "path": "html-css-js/html-and-css/coding-lab/README.md",
-      "sha256": "6009327f0d738b840d03220b46f562366de4d6d22aa1dafaacdea949fcdebc53",
-      "bytes": 18814
+      "sha256": "c8403d19fb11d6f80b4336e07f15c1ff1955617b3db8319ac79e26bd05586c16",
+      "bytes": 19101
     },
     {
       "path": "html-css-js/html-and-css/coding-lab/expected/on-completion.txt",
@@ -870,8 +885,8 @@
     },
     {
       "path": "html-css-js/html-and-css/coding-lab/lab.json",
-      "sha256": "ff86cfa50288fd8d587681f808fe04ecc1ae13c77d7278b720b6adab0b5906ff",
-      "bytes": 6025
+      "sha256": "86241dcf28d42674b6c0225cdbdb4e54152570c5f0cde35d049599c4ed8dada2",
+      "bytes": 6158
     },
     {
       "path": "html-css-js/html-and-css/coding-lab/starter/badge.svg",
@@ -915,8 +930,8 @@
     },
     {
       "path": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
-      "sha256": "5918890ce0c42566f6bbec4a870170fa2e8224f41bd273158740947955e82bd0",
-      "bytes": 13314
+      "sha256": "8980080f47104c3cf12d2bcaec7fa2da2f85f7bba14497a88fab973d9d033636",
+      "bytes": 14634
     },
     {
       "path": "html-css-js/html-and-css/coding-lab/tests/structure.test.mjs",
@@ -1475,14 +1490,14 @@
       "field": "artifactHashes.coding-lab/lab.json",
       "artifactPath": "html-css-js/html-and-css/coding-lab/lab.json",
       "sha256": "ff86cfa50288fd8d587681f808fe04ecc1ae13c77d7278b720b6adab0b5906ff",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-education-recheck.json",
       "field": "artifactHashes.coding-lab/README.md",
       "artifactPath": "html-css-js/html-and-css/coding-lab/README.md",
       "sha256": "6009327f0d738b840d03220b46f562366de4d6d22aa1dafaacdea949fcdebc53",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-education-recheck.json",
@@ -1545,7 +1560,7 @@
       "field": "artifactHashes.coding-lab/tests/layout.test.mjs",
       "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
       "sha256": "5918890ce0c42566f6bbec4a870170fa2e8224f41bd273158740947955e82bd0",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-education-recheck.json",
@@ -1559,56 +1574,56 @@
       "field": "findings[0].reviewedSha256",
       "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
       "sha256": "5918890ce0c42566f6bbec4a870170fa2e8224f41bd273158740947955e82bd0",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-education-recheck.json",
       "field": "findings[1].reviewedSha256",
       "artifactPath": "authoring/evidence/html-css-js/html-and-css/coding-lab-solved-run.json",
       "sha256": "082222bbf6c0d5f5c7e4632bbd23ebf4c400793133edb81a3a9a5d33f3e2481c",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-education-recheck.json",
       "field": "findings[2].reviewedSha256",
       "artifactPath": "html-css-js/html-and-css/coding-lab/README.md",
       "sha256": "6009327f0d738b840d03220b46f562366de4d6d22aa1dafaacdea949fcdebc53",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-education-recheck.json",
       "field": "findings[3].reviewedSha256",
       "artifactPath": "html-css-js/html-and-css/coding-lab/lab.json",
       "sha256": "ff86cfa50288fd8d587681f808fe04ecc1ae13c77d7278b720b6adab0b5906ff",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-education-recheck.json",
       "field": "recheck.items[0].reviewedSha256",
       "artifactPath": "html-css-js/html-and-css/coding-lab/README.md",
       "sha256": "6009327f0d738b840d03220b46f562366de4d6d22aa1dafaacdea949fcdebc53",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-education-recheck.json",
       "field": "recheck.items[1].reviewedSha256",
       "artifactPath": "html-css-js/html-and-css/coding-lab/README.md",
       "sha256": "6009327f0d738b840d03220b46f562366de4d6d22aa1dafaacdea949fcdebc53",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-education-recheck.json",
       "field": "recheck.items[2].reviewedSha256",
       "artifactPath": "html-css-js/html-and-css/coding-lab/README.md",
       "sha256": "6009327f0d738b840d03220b46f562366de4d6d22aa1dafaacdea949fcdebc53",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-education-recheck.json",
       "field": "reviewedSha256",
       "artifactPath": "html-css-js/html-and-css/coding-lab/README.md",
       "sha256": "6009327f0d738b840d03220b46f562366de4d6d22aa1dafaacdea949fcdebc53",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-sme-recheck.json",
@@ -1622,14 +1637,14 @@
       "field": "artifactHashes.coding-lab/lab.json",
       "artifactPath": "html-css-js/html-and-css/coding-lab/lab.json",
       "sha256": "ff86cfa50288fd8d587681f808fe04ecc1ae13c77d7278b720b6adab0b5906ff",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-sme-recheck.json",
       "field": "artifactHashes.coding-lab/README.md",
       "artifactPath": "html-css-js/html-and-css/coding-lab/README.md",
       "sha256": "6009327f0d738b840d03220b46f562366de4d6d22aa1dafaacdea949fcdebc53",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-sme-recheck.json",
@@ -1692,7 +1707,7 @@
       "field": "artifactHashes.coding-lab/tests/layout.test.mjs",
       "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
       "sha256": "5918890ce0c42566f6bbec4a870170fa2e8224f41bd273158740947955e82bd0",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-sme-recheck.json",
@@ -1706,35 +1721,35 @@
       "field": "findings[0].reviewedSha256",
       "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
       "sha256": "5918890ce0c42566f6bbec4a870170fa2e8224f41bd273158740947955e82bd0",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-sme-recheck.json",
       "field": "findings[1].reviewedSha256",
       "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
       "sha256": "5918890ce0c42566f6bbec4a870170fa2e8224f41bd273158740947955e82bd0",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-sme-recheck.json",
       "field": "findings[2].reviewedSha256",
       "artifactPath": "html-css-js/html-and-css/coding-lab/README.md",
       "sha256": "6009327f0d738b840d03220b46f562366de4d6d22aa1dafaacdea949fcdebc53",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-sme-recheck.json",
       "field": "findings[3].reviewedSha256",
       "artifactPath": "authoring/evidence/html-css-js/html-and-css/coding-lab-solved-run.json",
       "sha256": "082222bbf6c0d5f5c7e4632bbd23ebf4c400793133edb81a3a9a5d33f3e2481c",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-sme-recheck.json",
       "field": "findings[4].reviewedSha256",
       "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
       "sha256": "5918890ce0c42566f6bbec4a870170fa2e8224f41bd273158740947955e82bd0",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-sme-recheck.json",
@@ -1755,34 +1770,335 @@
       "field": "recheck.items[2].reviewedSha256",
       "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
       "sha256": "5918890ce0c42566f6bbec4a870170fa2e8224f41bd273158740947955e82bd0",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-sme-recheck.json",
       "field": "recheck.items[3].reviewedSha256",
       "artifactPath": "html-css-js/html-and-css/coding-lab/lab.json",
       "sha256": "ff86cfa50288fd8d587681f808fe04ecc1ae13c77d7278b720b6adab0b5906ff",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-sme-recheck.json",
       "field": "recheck.items[4].reviewedSha256",
       "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
       "sha256": "5918890ce0c42566f6bbec4a870170fa2e8224f41bd273158740947955e82bd0",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-coding-lab-critic-sme-recheck.json",
       "field": "reviewedSha256",
       "artifactPath": "html-css-js/html-and-css/coding-lab/README.md",
       "sha256": "6009327f0d738b840d03220b46f562366de4d6d22aa1dafaacdea949fcdebc53",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop3-reconciliation.json",
       "field": "reviewedSha256",
       "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
       "sha256": "5918890ce0c42566f6bbec4a870170fa2e8224f41bd273158740947955e82bd0",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/expected/on-completion.txt",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/expected/on-completion.txt",
+      "sha256": "2242211c4798464260692cf26026103b36c42cdee5acbcba37f487e5ce4bd73c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/lab.json",
+      "sha256": "86241dcf28d42674b6c0225cdbdb4e54152570c5f0cde35d049599c4ed8dada2",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/README.md",
+      "sha256": "c8403d19fb11d6f80b4336e07f15c1ff1955617b3db8319ac79e26bd05586c16",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/badge.svg",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/starter/badge.svg",
+      "sha256": "ec0ebe55b9e4d905939bac5bca65b4e0865ffce4fa5d6f6d74e0757d8af314e7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/index.html",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/starter/index.html",
+      "sha256": "a096e9c62cf3b06c9afeadbf4d7b97e5508085d00376b1f2f360d8dc888d9aa3",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/package-lock.json",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/starter/package-lock.json",
+      "sha256": "977eb105016398ae58a1d1bf4b611e8baf75fe73368fa962e65329e6ba24185e",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/package.json",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/starter/package.json",
+      "sha256": "3fecf55d1fb82860b26e81d64ae8f7060d93f316452fb67f78e6510e15640e69",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/styles.css",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/starter/styles.css",
+      "sha256": "e7c1f3b7b97c1fa7a6761bc2deed9fe88fcf7066ace7ef83541dfa5a67de2dd2",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/tests/browser.mjs",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/tests/browser.mjs",
+      "sha256": "9ce76aaf5ace75676b57fba4254ae16d33987ce41c1e21e31d6ab40ccaa74656",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/tests/css.mjs",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/tests/css.mjs",
+      "sha256": "3ef88650200827a92532cfa2e3ffc47d78b9d631c21cdd7d44eb3a0e586dd8e8",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/tests/install-browser.mjs",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/tests/install-browser.mjs",
+      "sha256": "ddf947be1edb8ade748f7f8c76483d59e19a7d407c18f2e90b5ed39a5d8804f7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/tests/layout.test.mjs",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
+      "sha256": "8980080f47104c3cf12d2bcaec7fa2da2f85f7bba14497a88fab973d9d033636",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/tests/structure.test.mjs",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/tests/structure.test.mjs",
+      "sha256": "4aa7a5680d653ac95ff4e418627d94adb5d54c908803510d5e2fa91906ae983f",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
+      "sha256": "8980080f47104c3cf12d2bcaec7fa2da2f85f7bba14497a88fab973d9d033636",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
+      "sha256": "8980080f47104c3cf12d2bcaec7fa2da2f85f7bba14497a88fab973d9d033636",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "authoring/evidence/html-css-js/html-and-css/coding-lab-solved-run.json",
+      "sha256": "5d2284fc4c1f33beadbf1e45d78e3f9eddd9c1623edf1dceb5e67c848efcbb60",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/README.md",
+      "sha256": "c8403d19fb11d6f80b4336e07f15c1ff1955617b3db8319ac79e26bd05586c16",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/README.md",
+      "sha256": "c8403d19fb11d6f80b4336e07f15c1ff1955617b3db8319ac79e26bd05586c16",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/README.md",
+      "sha256": "c8403d19fb11d6f80b4336e07f15c1ff1955617b3db8319ac79e26bd05586c16",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/README.md",
+      "sha256": "c8403d19fb11d6f80b4336e07f15c1ff1955617b3db8319ac79e26bd05586c16",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/expected/on-completion.txt",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/expected/on-completion.txt",
+      "sha256": "2242211c4798464260692cf26026103b36c42cdee5acbcba37f487e5ce4bd73c",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/lab.json",
+      "sha256": "86241dcf28d42674b6c0225cdbdb4e54152570c5f0cde35d049599c4ed8dada2",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/README.md",
+      "sha256": "c8403d19fb11d6f80b4336e07f15c1ff1955617b3db8319ac79e26bd05586c16",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/badge.svg",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/starter/badge.svg",
+      "sha256": "ec0ebe55b9e4d905939bac5bca65b4e0865ffce4fa5d6f6d74e0757d8af314e7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/index.html",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/starter/index.html",
+      "sha256": "a096e9c62cf3b06c9afeadbf4d7b97e5508085d00376b1f2f360d8dc888d9aa3",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/package-lock.json",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/starter/package-lock.json",
+      "sha256": "977eb105016398ae58a1d1bf4b611e8baf75fe73368fa962e65329e6ba24185e",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/package.json",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/starter/package.json",
+      "sha256": "3fecf55d1fb82860b26e81d64ae8f7060d93f316452fb67f78e6510e15640e69",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/styles.css",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/starter/styles.css",
+      "sha256": "e7c1f3b7b97c1fa7a6761bc2deed9fe88fcf7066ace7ef83541dfa5a67de2dd2",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/tests/browser.mjs",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/tests/browser.mjs",
+      "sha256": "9ce76aaf5ace75676b57fba4254ae16d33987ce41c1e21e31d6ab40ccaa74656",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/tests/css.mjs",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/tests/css.mjs",
+      "sha256": "3ef88650200827a92532cfa2e3ffc47d78b9d631c21cdd7d44eb3a0e586dd8e8",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/tests/install-browser.mjs",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/tests/install-browser.mjs",
+      "sha256": "ddf947be1edb8ade748f7f8c76483d59e19a7d407c18f2e90b5ed39a5d8804f7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/tests/layout.test.mjs",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
+      "sha256": "8980080f47104c3cf12d2bcaec7fa2da2f85f7bba14497a88fab973d9d033636",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/tests/structure.test.mjs",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/tests/structure.test.mjs",
+      "sha256": "4aa7a5680d653ac95ff4e418627d94adb5d54c908803510d5e2fa91906ae983f",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
+      "sha256": "8980080f47104c3cf12d2bcaec7fa2da2f85f7bba14497a88fab973d9d033636",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
+      "sha256": "8980080f47104c3cf12d2bcaec7fa2da2f85f7bba14497a88fab973d9d033636",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
+      "sha256": "8980080f47104c3cf12d2bcaec7fa2da2f85f7bba14497a88fab973d9d033636",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
+      "sha256": "8980080f47104c3cf12d2bcaec7fa2da2f85f7bba14497a88fab973d9d033636",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
+      "sha256": "8980080f47104c3cf12d2bcaec7fa2da2f85f7bba14497a88fab973d9d033636",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/README.md",
+      "sha256": "c8403d19fb11d6f80b4336e07f15c1ff1955617b3db8319ac79e26bd05586c16",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "authoring/evidence/html-css-js/html-and-css/coding-lab-solved-run.json",
+      "sha256": "5d2284fc4c1f33beadbf1e45d78e3f9eddd9c1623edf1dceb5e67c848efcbb60",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
+      "sha256": "8980080f47104c3cf12d2bcaec7fa2da2f85f7bba14497a88fab973d9d033636",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-coding-lab-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/README.md",
+      "sha256": "c8403d19fb11d6f80b4336e07f15c1ff1955617b3db8319ac79e26bd05586c16",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/html-and-css/clean-loop4-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "html-css-js/html-and-css/coding-lab/tests/layout.test.mjs",
+      "sha256": "8980080f47104c3cf12d2bcaec7fa2da2f85f7bba14497a88fab973d9d033636",
       "current": true
     },
     {
@@ -2225,7 +2541,7 @@
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/coding-lab-solved-run.json",
       "field": "artifactHashes.lab.json",
       "artifactPath": "html-css-js/html-and-css/lab.json",
-      "sha256": "ff86cfa50288fd8d587681f808fe04ecc1ae13c77d7278b720b6adab0b5906ff",
+      "sha256": "86241dcf28d42674b6c0225cdbdb4e54152570c5f0cde35d049599c4ed8dada2",
       "current": false,
       "historical": true,
       "missing": true
@@ -2234,7 +2550,7 @@
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/coding-lab-solved-run.json",
       "field": "artifactHashes.README.md",
       "artifactPath": "html-css-js/html-and-css/README.md",
-      "sha256": "6009327f0d738b840d03220b46f562366de4d6d22aa1dafaacdea949fcdebc53",
+      "sha256": "c8403d19fb11d6f80b4336e07f15c1ff1955617b3db8319ac79e26bd05586c16",
       "current": false,
       "historical": true,
       "missing": true
@@ -2315,7 +2631,7 @@
       "evidencePath": "authoring/evidence/html-css-js/html-and-css/coding-lab-solved-run.json",
       "field": "artifactHashes.tests/layout.test.mjs",
       "artifactPath": "html-css-js/html-and-css/tests/layout.test.mjs",
-      "sha256": "5918890ce0c42566f6bbec4a870170fa2e8224f41bd273158740947955e82bd0",
+      "sha256": "8980080f47104c3cf12d2bcaec7fa2da2f85f7bba14497a88fab973d9d033636",
       "current": false,
       "historical": true,
       "missing": true
