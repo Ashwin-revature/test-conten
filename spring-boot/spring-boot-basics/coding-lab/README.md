@@ -49,7 +49,7 @@ This downloads Spring Boot 4.1.2 and the pinned plugins into your local Maven re
 ## Tasks
 
 Open the `starter` folder as a Maven project in your IDE and open `WorkshopController.java`.
-Each task has a `TODO` comment, except Task 6, which creates a new file. Each test is named after its task, so a failure tells you which task it belongs to.
+Each task has a `TODO` comment, except Task 4, which creates a new file. Each test is named after its task, so a failure tells you which task it belongs to.
 Run the one test command from the `starter` folder after each task:
 
 ```
@@ -70,7 +70,7 @@ Done when `task2FindsOneWorkshopByItsIdOr404` no longer fails.
 
 ### Task 3: create a workshop
 
-Add `POST /workshops`. It takes a `NewWorkshop` request body, adds it with `catalog.add(...)`, and returns `201 Created` with a `Location` header of `/workshops/{newId}` and the created workshop as the body.
+Add `POST /workshops`. It takes a `NewWorkshop` request body, adds it with `catalog.add(...)`, and returns `201 Created` with a `Location` header ending in `/workshops/{newId}` and the created workshop as the body.
 Done when `task3CreateReturns201AndTheCreatedWorkshop` no longer fails.
 
 ### Task 4: add the settings file
@@ -97,6 +97,7 @@ Done when `task6AvailabilityFollowsTheOpenApiContract` no longer fails.
 
 `main` in `WorkshopsApplication.java` is empty, so running the class does nothing.
 Start Spring Boot from `main` the way a generated project's main class does, passing `args` through.
+Open `pom.xml` and point out the Spring Boot parent and the web starter that make this work.
 The test calls `main` with `--server.port=0`, then sends one real HTTP request to the server it started.
 Done when `task7MainStartsTheEmbeddedServer` no longer fails.
 

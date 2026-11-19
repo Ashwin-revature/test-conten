@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * A small endpoint kept in its own package, the way a shared module would be.
- * This class is complete; you do not edit or move it. Task 7 makes Spring find it.
+ * This class is complete; you do not edit or move it. Task 5 makes Spring find it.
  */
 @RestController
 public class AboutController {
