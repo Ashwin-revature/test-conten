@@ -16,7 +16,7 @@ const ID = "standard-fast-final-checkpoint";
 const BANK = `${COURSE}/assessments/${ID}/checkpoint-mcq.gift`;
 const BLUEPRINT = `${COURSE}/assessments/${ID}/blueprint.json`;
 const CATEGORY = "standard-fast/final-checkpoint-mcq";
-const QUESTIONS = 30;
+const QUESTIONS = 45;
 const MINUTES_PER_QUESTION = 2;
 const SHARED_COURSES = ["spring-boot", "python", "html-css-js", "react", "containers-cicd"];
 

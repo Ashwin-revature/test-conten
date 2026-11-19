@@ -52,7 +52,32 @@
     "containers-cicd/containers-and-compose/depends-on-with-health-checks#o1",
     "containers-cicd/containers-and-compose/depends-on-with-health-checks#o2",
     "containers-cicd/microservices-and-ci-cd/github-actions-pipeline#o2",
-    "containers-cicd/microservices-and-ci-cd/github-actions-pipeline#o3"
+    "containers-cicd/microservices-and-ci-cd/github-actions-pipeline#o3",
+    "spring-boot/spring-boot-basics/rest-controllers#o3",
+    "spring-boot/spring-boot-basics/dependency-injection-replacing-manual-wiring#o1",
+    "spring-boot/spring-boot-basics/dependency-injection-replacing-manual-wiring#o2",
+    "spring-boot/porting-and-configuration/porting-a-javalin-route-service-and-repository-to-spring-boot#o2",
+    "spring-boot/porting-and-configuration/porting-a-javalin-route-service-and-repository-to-spring-boot#o3",
+    "spring-boot/spring-data-jpa/spring-data-jpa-with-hibernate#o2",
+    "spring-boot/validation-errors-and-testing/bean-validation-on-requests#o1",
+    "spring-boot/validation-errors-and-testing/bean-validation-on-requests#o2",
+    "spring-boot/api-security/password-hashing#o1",
+    "spring-boot/api-security/password-hashing#o3",
+    "spring-boot/integration-and-observability/an-integration-test#o1",
+    "spring-boot/integration-and-observability/an-integration-test#o2",
+    "python/python-fundamentals/python-syntax-for-java-developers#o2",
+    "python/fastapi-services/serving-pipeline-results-as-an-api#o1",
+    "python/fastapi-services/serving-pipeline-results-as-an-api#o2",
+    "html-css-js/dom-tooling-and-async/async-and-await#o2",
+    "html-css-js/dom-tooling-and-async/async-and-await#o3",
+    "html-css-js/fetch-and-browser-client/fixing-cors-spring-security-config-vs-vite-dev-proxy#o2",
+    "html-css-js/fetch-and-browser-client/fixing-cors-spring-security-config-vs-vite-dev-proxy#o3",
+    "react/auth-and-review/login-with-a-session-cookie-or-jwt#o1",
+    "react/auth-and-review/login-with-a-session-cookie-or-jwt#o3",
+    "react/effects-routing-and-rendering/navigation#o1",
+    "react/auth-and-review/protected-pages-and-role-based-screens#o1",
+    "containers-cicd/microservices-and-ci-cd/adding-fastapi-service-to-compose#o3",
+    "containers-cicd/containers-and-compose/compose-spring-boot-and-database#o3"
   ],
   "objectiveFormats": {
     "spring-boot/spring-boot-basics/path-query-and-body-parameters#o2": [
@@ -186,12 +211,87 @@
     ],
     "containers-cicd/microservices-and-ci-cd/github-actions-pipeline#o3": [
       "MCQ"
+    ],
+    "spring-boot/spring-boot-basics/rest-controllers#o3": [
+      "MCQ"
+    ],
+    "spring-boot/spring-boot-basics/dependency-injection-replacing-manual-wiring#o1": [
+      "MCQ"
+    ],
+    "spring-boot/spring-boot-basics/dependency-injection-replacing-manual-wiring#o2": [
+      "MCQ"
+    ],
+    "spring-boot/porting-and-configuration/porting-a-javalin-route-service-and-repository-to-spring-boot#o2": [
+      "MCQ"
+    ],
+    "spring-boot/porting-and-configuration/porting-a-javalin-route-service-and-repository-to-spring-boot#o3": [
+      "MCQ"
+    ],
+    "spring-boot/spring-data-jpa/spring-data-jpa-with-hibernate#o2": [
+      "MCQ"
+    ],
+    "spring-boot/validation-errors-and-testing/bean-validation-on-requests#o1": [
+      "MCQ"
+    ],
+    "spring-boot/validation-errors-and-testing/bean-validation-on-requests#o2": [
+      "MCQ"
+    ],
+    "spring-boot/api-security/password-hashing#o1": [
+      "MCQ"
+    ],
+    "spring-boot/api-security/password-hashing#o3": [
+      "MCQ"
+    ],
+    "spring-boot/integration-and-observability/an-integration-test#o1": [
+      "MCQ"
+    ],
+    "spring-boot/integration-and-observability/an-integration-test#o2": [
+      "MCQ"
+    ],
+    "python/python-fundamentals/python-syntax-for-java-developers#o2": [
+      "MCQ"
+    ],
+    "python/fastapi-services/serving-pipeline-results-as-an-api#o1": [
+      "MCQ"
+    ],
+    "python/fastapi-services/serving-pipeline-results-as-an-api#o2": [
+      "MCQ"
+    ],
+    "html-css-js/dom-tooling-and-async/async-and-await#o2": [
+      "MCQ"
+    ],
+    "html-css-js/dom-tooling-and-async/async-and-await#o3": [
+      "MCQ"
+    ],
+    "html-css-js/fetch-and-browser-client/fixing-cors-spring-security-config-vs-vite-dev-proxy#o2": [
+      "MCQ"
+    ],
+    "html-css-js/fetch-and-browser-client/fixing-cors-spring-security-config-vs-vite-dev-proxy#o3": [
+      "MCQ"
+    ],
+    "react/auth-and-review/login-with-a-session-cookie-or-jwt#o1": [
+      "MCQ"
+    ],
+    "react/auth-and-review/login-with-a-session-cookie-or-jwt#o3": [
+      "MCQ"
+    ],
+    "react/effects-routing-and-rendering/navigation#o1": [
+      "MCQ"
+    ],
+    "react/auth-and-review/protected-pages-and-role-based-screens#o1": [
+      "MCQ"
+    ],
+    "containers-cicd/microservices-and-ci-cd/adding-fastapi-service-to-compose#o3": [
+      "MCQ"
+    ],
+    "containers-cicd/containers-and-compose/compose-spring-boot-and-database#o3": [
+      "MCQ"
     ]
   },
   "itemCounts": {
-    "MCQ": 30
+    "MCQ": 45
   },
-  "durationMinutes": 60,
+  "durationMinutes": 90,
   "allowedResources": [],
-  "instructions": "Cumulative Standard/Fast final checkpoint: 30 single-answer multiple-choice questions in 60 minutes (2 minutes per question), taken without notes or AI on the proctored Final day (Standard S43, Fast FT25). It covers content taught in full on both tracks across Spring Boot, Python, HTML/CSS/JavaScript, React and Containers/CI-CD; it does not cover AWS (A1-A7), Foundation courses or Project 2. Each question has four options and exactly one is right; there is no penalty for a wrong choice. Your score is reported to your assessor as a readiness check against 70 percent; in this beta it does not change your Final grade, which is set by the coding assessments, Project 2 and the other published Final components."
+  "instructions": "Cumulative Standard/Fast final assessment MCQ: 45 single-answer multiple-choice questions in 90 minutes, taken without notes or AI on the proctored Final day (Standard S43, Fast FT25). It covers all five shared technology courses (Spring Boot, Python, HTML/CSS/JavaScript, React and Containers/CI-CD) and every shared module; it does not cover AWS (A1-A7), Foundation courses or Project 2. Each question has four options and exactly one is right; there is no penalty for a wrong choice. Your score is reported to your assessor as a readiness check against 70 percent; in this beta it does not change your Final grade, which is set by the coding assessments, Project 2 and the other published Final components."
 }

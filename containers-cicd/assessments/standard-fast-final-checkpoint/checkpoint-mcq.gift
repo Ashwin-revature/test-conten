@@ -1,4 +1,4 @@
-// PEP Standard/Fast Final Checkpoint - graded MCQ, 30 questions, 60 minutes (2 minutes per question).
+// PEP Standard/Fast Final Checkpoint - graded MCQ, 45 questions, 90 minutes (2 minutes per question).
 $CATEGORY: standard-fast/final-checkpoint-mcq
 
 ::sfcp-q01::[html]<p>A refunds endpoint is declared like this\:</p><pre><code>@GetMapping("/payments/\{id\}/refunds")
@@ -380,4 +380,204 @@ function App() \{
 =(a) not built, (b) built but not pushed, (c) not built#Correct. <code>needs\: test</code> skips <code>build</code> whenever <code>test</code> fails; on a pull request <code>push</code> is false, so the image is only built.
 ~(a) not built, (b) built and pushed, (c) not built#Not quite. The expression is false for <code>pull_request</code> events, so nothing is pushed from a pull request.
 ~(a) not built, (b) built but not pushed, (c) built and pushed#Not quite. <code>needs</code> applies to every event, so a failed <code>test</code> on <code>main</code> also skips <code>build</code>.
+}
+
+::sfcp-q31::[html]<p>The controller below runs on port 8080, and <code>Workshop</code> is a record with <code>id</code> and <code>title</code>.</p><pre><code>@RestController
+class WorkshopController \{
+&nbsp;   @GetMapping("/workshops")
+&nbsp;   List&lt;Workshop&gt; all() \{ return service.all(); \}
+&nbsp;
+&nbsp;   @PostMapping("/workshops")
+&nbsp;   Workshop add(@RequestBody Workshop w) \{ return service.add(w); \}
+\}</code></pre><p>Three commands are run against it\:</p><pre><code>(a) curl localhost\:8080/workshops -H "Content-Type\: application/json" -d '\{"id"\:2,"title"\:"Advanced"\}'
+(b) curl localhost\:8080/workshops -d '\{"id"\:3,"title"\:"Basics"\}'
+(c) curl localhost\:8080/workshops -H "Content-Type\: application/json"</code></pre><p>Which method, if any, handles each command?</p>{
+~(a) <code>add</code>, (b) <code>add</code>, (c) <code>all</code>#Not quite. <code>-d</code> does make (b) a POST, but without the JSON content type its body is not read as JSON, so Spring rejects it before <code>add</code> runs.
+~(a) <code>all</code>, (b) <code>all</code>, (c) <code>all</code>, because only <code>-X POST</code> sends a POST#Not quite. Adding <code>-d</code> sends POST even without <code>-X POST</code>, so (a) reaches <code>add</code>.
+=(a) <code>add</code>, (b) neither, because it is rejected before <code>add</code> runs, (c) <code>all</code>#Correct. <code>-d</code> makes (a) and (b) POSTs, but only (a) says its body is JSON. (c) sends no data, so it is a GET; a header does not change the method.
+~(a) <code>add</code>, (b) neither, (c) <code>add</code>, because the JSON header makes it a POST#Not quite. The method comes from <code>-d</code> or <code>-X</code>; with neither, curl sends GET, so (c) reaches <code>all</code>.
+}
+
+::sfcp-q32::[html]<p>After a port, the app stops at startup with this message\:</p><pre><code>Parameter 0 of constructor in com.acme.booking.WorkshopService
+required a bean of type 'com.acme.booking.WorkshopRepository'
+that could not be found.</code></pre><p>These classes sit in <code>com.acme.booking</code>, beside the main application class\:</p><pre><code>interface WorkshopRepository \{ List&lt;Workshop&gt; findAll(); \}
+&nbsp;
+class InMemoryWorkshopRepository implements WorkshopRepository \{
+&nbsp;   public List&lt;Workshop&gt; findAll() \{ ... \}
+\}
+&nbsp;
+@Service
+class WorkshopService \{
+&nbsp;   private final WorkshopRepository repo;
+&nbsp;   WorkshopService(WorkshopRepository repo) \{ this.repo \= repo; \}
+\}</code></pre><p>Which change lets the app start?</p>{
+=Annotate <code>InMemoryWorkshopRepository</code> with <code>@Repository</code>#Correct. Spring makes beans only from classes marked with a stereotype. The one implementation then becomes the bean that the constructor asks for by type.
+~Add <code>@Autowired</code> to the <code>WorkshopService</code> constructor#Not quite. A single constructor is used without <code>@Autowired</code>; the problem is that no bean of the type exists.
+~Annotate the <code>WorkshopRepository</code> interface with <code>@Repository</code>#Not quite. Spring cannot build an object from a plain interface, so there is still no bean; the implementing class needs the annotation.
+~Change the constructor parameter to <code>InMemoryWorkshopRepository</code>#Not quite. That class is not a bean either, so startup now fails naming it, and the service depends on one storage choice.
+}
+
+::sfcp-q33::[html]<p>A Javalin route answered an unknown id with 404 and a non-numeric id with 400, each with an <code>Err</code> JSON body such as <code>\{"error"\:"id must be a number"\}</code>. After the port to Spring Boot, the same requests give\:</p><pre><code>GET /items/99   404  \{"error"\:"item 99 not found"\}
+GET /items/abc  400  \{"timestamp"\:"...","status"\:400,"error"\:"Bad Request","path"\:"/items/abc"\}</code></pre><p>The ported controller is\:</p><pre><code>@RestController
+class ItemController \{
+&nbsp;   @GetMapping("/items/\{id\}")
+&nbsp;   Item one(@PathVariable long id) \{ return service.get(id); \}
+&nbsp;
+&nbsp;   @ExceptionHandler(ItemNotFound.class)
+&nbsp;   @ResponseStatus(HttpStatus.NOT_FOUND)
+&nbsp;   Err notFound(ItemNotFound e) \{ return new Err(e.getMessage()); \}
+\}</code></pre><p>Which change finishes the port?</p>{
+~Change the parameter to <code>@RequestParam long id</code>, so that a bad id is reported as a bad request#Not quite. The id is part of the path; <code>@RequestParam</code> reads the query string, so both requests would then get 400.
+~Move <code>notFound</code> into a <code>@RestControllerAdvice</code> class, so that it covers every error#Not quite. It still handles only <code>ItemNotFound</code>; the 400 for <code>abc</code> comes from the failed conversion, which no handler of yours maps.
+~Take <code>@PathVariable String id</code> and call <code>Long.parseLong(id)</code> in the method, as Javalin did#Not quite. <code>parseLong</code> then throws <code>NumberFormatException</code> inside the method, and with no handler for it the client gets 500.
+=Add a 400 handler for <code>MethodArgumentTypeMismatchException</code> to <code>ItemController</code>, returning <code>Err</code>#Correct. A non-numeric id fails path-variable conversion with that exception, and a handler in this controller restores the old 400 response.
+}
+
+::sfcp-q34::[html]<p>A project has <code>spring-boot-starter-data-jpa</code> and the H2 runtime dependency. It sets no <code>spring.datasource</code> or <code>spring.jpa</code> properties and has no Flyway. A developer starts the app and posts three workshops; each answers 201, and <code>GET /workshops</code> lists all three. After the app is stopped and started again, <code>GET /workshops</code> returns <code>[]</code>.</p><p>Why?</p>{
+~<code>save</code> kept the rows only in Hibernate's memory, because no <code>@Transactional</code> service method committed them#Not quite. A repository's <code>save</code> runs in its own transaction and commits; the first GET read the rows back from the database.
+=Boot used an in-memory H2 database, and with no Flyway <code>ddl-auto</code> defaults to <code>create-drop</code>, so tables start empty#Correct. With no URL set, the embedded database lives only as long as the app, and with no schema manager such as Flyway its schema is built at startup and dropped at shutdown.
+~H2 kept the rows in a file under <code>target</code>, and starting the app again rebuilt that folder from scratch#Not quite. With no URL set, Boot configures an in-memory database with a generated name, not a file.
+~<code>ddl-auto</code> defaults to <code>validate</code>, which empties every table each time the app starts up#Not quite. <code>validate</code> only checks the schema against the entities and never deletes rows; the default here is <code>create-drop</code>.
+}
+
+::sfcp-q35::[html]<p><code>spring-boot-starter-validation</code> is on the classpath. The request record and two handlers are\:</p><pre><code>record NewSession(@NotBlank String room, @Min(1) int seats,
+&nbsp;       @Email String owner) \{\}
+&nbsp;
+@PostMapping("/sessions")
+Session create(@Valid @RequestBody NewSession body) \{ ... \}
+&nbsp;
+@PostMapping("/sessions/import")
+Session importOne(@RequestBody NewSession body) \{ ... \}</code></pre><p>A client sends <code>\{"room"\:" ","seats"\:0,"owner"\:"ana"\}</code> to each path. What happens?</p>{
+~Both answer 400, because the constraints sit on the record that both handlers take#Not quite. Without <code>@Valid</code> on the parameter, the annotations are ignored for a request body.
+~<code>/sessions</code> answers 400 after its first failure, on <code>room</code>; <code>/sessions/import</code> passes the body on#Not quite. Validation checks every constraint and collects every failure, so it does not stop at the first.
+~<code>/sessions</code> answers 422, and <code>/sessions/import</code> answers 400, both naming the same three fields#Not quite. A failed <code>@Valid @RequestBody</code> gives 400, and the import handler checks nothing.
+=<code>/sessions</code> answers 400, failing <code>room</code>, <code>seats</code> and <code>owner</code>; <code>/sessions/import</code> passes the body on#Correct. <code>@Valid</code> turns checking on and every failure is collected\: a blank room, 0 is below the minimum of 1, and <code>ana</code> is not an email. The import handler has no <code>@Valid</code>, so the bad data reaches it.
+}
+
+::sfcp-q36::[html]<p>The app's <code>PasswordEncoder</code> is Spring Security's delegating encoder. The team has since made argon2 its algorithm for new hashes. Ana's stored hash dates from before the change and starts with <code>\{bcrypt\}</code>; Ben registered after it, and his starts with <code>\{argon2@SpringSecurity_v5_8\}</code>. The login code checks a password like this\:</p><pre><code>boolean ok \= encoder.encode(raw).equals(user.passwordHash());</code></pre><p>Both type their correct passwords. What happens, and what should the check be?</p>{
+~Ben gets in and Ana is refused, because <code>encode</code> now uses argon2; Ana must reset her password#Not quite. Every <code>encode</code> call uses a new salt, so not even Ben's hash is ever produced twice.
+~Both get in, because <code>encode</code> reuses the salt that is stored in each user's hash#Not quite. <code>encode</code> never sees the stored hash; it makes a new salt each time, so the strings differ.
+=Both are refused; check with <code>encoder.matches(raw, user.passwordHash())</code>, which accepts both#Correct. Each <code>encode</code> adds a fresh salt, so <code>equals</code> never matches. <code>matches</code> reads the prefix and checks with that algorithm, so old bcrypt hashes keep working.
+~Both are refused; the <code>\{bcrypt\}</code> hashes need rehashing with argon2 first, and then <code>equals</code> works#Not quite. A hash cannot be rehashed without the password, and <code>equals</code> still fails on the new salt; <code>matches</code> delegates by prefix.
+}
+
+::sfcp-q37::[html]<p>The app has <code>BookingController</code>, <code>BookingService</code> and a JPA <code>BookingRepository</code>, with H2 on the classpath. Each test class below has one test that asserts its fields are not null.</p><pre><code>@DataJpaTest
+class T1 \{ @Autowired BookingRepository repo; \}
+&nbsp;
+@DataJpaTest
+class T2 \{ @Autowired BookingService service; \}
+&nbsp;
+@SpringBootTest
+class T3 \{ @Autowired MockMvc mvc; \}
+&nbsp;
+@SpringBootTest
+@AutoConfigureMockMvc
+class T4 \{ @Autowired MockMvc mvc; @Autowired BookingService service; \}</code></pre><p>Which test classes fail because their context cannot supply a field?</p>{
+=T2 and T3#Correct. <code>@DataJpaTest</code> loads only the JPA layer, so there is no <code>BookingService</code>; <code>@SpringBootTest</code> provides <code>MockMvc</code> only with <code>@AutoConfigureMockMvc</code>.
+~Only T3#Not quite. A JPA slice does not load <code>@Service</code> classes, so T2 fails too.
+~Only T2#Not quite. <code>@SpringBootTest</code> alone starts the whole app but adds no <code>MockMvc</code>; that takes <code>@AutoConfigureMockMvc</code>.
+~T2, T3 and T4#Not quite. T4's full context includes the service, and <code>@AutoConfigureMockMvc</code> supplies <code>MockMvc</code>.
+}
+
+::sfcp-q38::[html]<p>A Java method was ported to Python line by line. What does this print?</p><pre><code>def bucket(cents, note)\:
+&nbsp;   size \= cents // 100
+&nbsp;   if not note\:
+&nbsp;       note \= "none"
+&nbsp;   return size, note
+&nbsp;
+print(bucket(-250, "0"), bucket(250, ""))</code></pre>{
+~<code>(-2, '0') (2, 'none')</code>#Not quite. <code>//</code> rounds down, toward negative infinity, so -250 // 100 is -3; Java's integer division gives -2.
+~<code>(-3, 'none') (2, 'none')</code>#Not quite. <code>"0"</code> is a non-empty string, so it counts as true and keeps its value.
+~<code>(-2.5, '0') (2.5, 'none')</code>#Not quite. That is true division with <code>/</code>; <code>//</code> is floor division and gives whole numbers here.
+=<code>(-3, '0') (2, 'none')</code>#Correct. Floor division rounds -2.5 down to -3. <code>"0"</code> is a non-empty string and counts as true, while <code>""</code> is false and becomes <code>"none"</code>.
+}
+
+::sfcp-q39::[html]<p><code>get_db</code> provides a database object. Its <code>fetch_total</code> returns a dict with <code>sku</code>, <code>total</code> and <code>loaded_by</code> for a known SKU, and <code>None</code> for an unknown one.</p><pre><code>class TotalOut(BaseModel)\:
+&nbsp;   sku\: str
+&nbsp;   total\: int
+&nbsp;
+@app.get("/totals/\{sku\}", response_model\=TotalOut)
+def one(sku\: str, db\=Depends(get_db))\:
+&nbsp;   return db.fetch_total(sku)
+&nbsp;
+@app.get("/totals", response_model\=list[TotalOut])
+def many(limit\: int \= Query(10, ge\=1, le\=50), db\=Depends(get_db))\:
+&nbsp;   return db.fetch_totals(limit)</code></pre><p>What do these requests get\: (a) <code>GET /totals/A1</code>, a known SKU, (b) <code>GET /totals/ZZ</code>, an unknown SKU, and (c) <code>GET /totals?limit\=500</code>?</p>{
+~(a) 200 with <code>sku</code>, <code>total</code> and <code>loaded_by</code>; (b) 404; (c) 200 with at most 50 results#Not quite. <code>response_model</code> drops <code>loaded_by</code>, nothing here raises a 404, and <code>le</code> rejects 500 rather than capping it.
+~(a) 200 with <code>sku</code> and <code>total</code>; (b) 200 with a <code>null</code> body; (c) 422#Not quite. <code>None</code> does not fit <code>TotalOut</code>, so response validation fails on the server.
+=(a) 200 with <code>sku</code> and <code>total</code>; (b) a 500 error, as <code>None</code> fails the response model; (c) 422#Correct. <code>response_model</code> limits what leaves. A returned <code>None</code> fails validation against it, so the route should raise <code>HTTPException(404)</code>. <code>le\=50</code> rejects 500 before the function runs.
+~(a) 200 with <code>sku</code> and <code>total</code>; (b) 404, as FastAPI treats <code>None</code> as not found; (c) 200 with 50 results#Not quite. A missing record becomes 404 only when the route raises <code>HTTPException</code>, and <code>le</code> rejects a larger value with 422.
+}
+
+::sfcp-q40::[html]<p><code>fetchOrder(7)</code> returns a promise that rejects with <code>Error("offline")</code>.</p><pre><code>async function loadA(id) \{
+&nbsp; try \{
+&nbsp;   return fetchOrder(id);
+&nbsp; \} catch (err) \{
+&nbsp;   return \{ error\: "A" \};
+&nbsp; \}
+\}
+&nbsp;
+async function loadB(id) \{
+&nbsp; try \{
+&nbsp;   return await fetchOrder(id);
+&nbsp; \} catch (err) \{
+&nbsp;   return \{ error\: "B" \};
+&nbsp; \}
+\}
+&nbsp;
+async function loadC(id) \{
+&nbsp; const pending \= fetchOrder(id);
+&nbsp; try \{
+&nbsp;   return \{ order\: await pending \};
+&nbsp; \} catch (err) \{
+&nbsp;   return \{ error\: "C" \};
+&nbsp; \}
+\}</code></pre><p>What does each of <code>loadA(7)</code>, <code>loadB(7)</code> and <code>loadC(7)</code> settle to?</p>{
+~All three fulfill, with <code>\{ error\: "A" \}</code>, <code>\{ error\: "B" \}</code> and <code>\{ error\: "C" \}</code>#Not quite. <code>loadA</code> returns the promise without awaiting it, so the rejection happens after its <code>try</code> has finished.
+=<code>loadA</code> rejects with offline; <code>loadB</code> and <code>loadC</code> fulfill with their error objects#Correct. An awaited rejection throws at the <code>await</code> line inside <code>try</code>, wherever the call started. <code>loadA</code>'s <code>catch</code> never sees the rejection.
+~<code>loadA</code> and <code>loadC</code> reject with offline; <code>loadB</code> fulfills with <code>\{ error\: "B" \}</code>#Not quite. <code>loadC</code> awaits inside its <code>try</code>, so <code>catch</code> sees the rejection even though the call started before the <code>try</code>.
+~All three reject with offline, because <code>catch</code> cannot handle a rejected promise#Not quite. When an awaited promise rejects, <code>await</code> throws at that line, and an ordinary <code>try</code> and <code>catch</code> handles it.
+}
+
+::sfcp-q41::[html]<p>The page runs on the Vite dev server at <code>http\://localhost\:5173</code>, and the Spring API at <code>http\://localhost\:8080</code> has no CORS configuration. To fix a CORS error, a teammate adds this to <code>vite.config.js</code> and restarts the dev server\:</p><pre><code>server\: \{
+&nbsp; proxy\: \{
+&nbsp;   "/api"\: "http\://localhost\:8080",
+&nbsp; \},
+\},</code></pre><p>The client still calls <code>fetch("http\://localhost\:8080/api/books")</code>, and the console still shows the CORS error. Why, and what is the fix?</p>{
+~The proxy forwards only GET requests, so the API needs its own CORS configuration as well#Not quite. The proxy forwards any request whose path starts with the prefix; this request never reaches the dev server.
+~The key must be the full address, <code>"http\://localhost\:8080/api"</code>, for the proxy to match the call#Not quite. Each key is a path prefix on the dev server, and the value is where matching requests go.
+~A proxy only takes effect in the built app, so the error stays until <code>npm run build</code>#Not quite. It is the reverse\: <code>server.proxy</code> exists only in the dev server, not in a production build.
+=The call still goes straight to port 8080; <code>fetch("/api/books")</code> lets the dev server forward it#Correct. With a relative path, the browser talks only to the page's own origin, and the proxy passes the request on to the API.
+}
+
+::sfcp-q42::[html]<p>Two versions of a payments app use the same API, which has no CSRF tokens and whose refund endpoint accepts form posts. App C signs in with a session cookie marked <code>HttpOnly; Secure; SameSite\=None</code> and calls the API with <code>credentials\: 'include'</code>. App J keeps a JWT in <code>localStorage</code> and sends it as <code>Authorization\: Bearer ...</code>.</p><p>Two attacks target a signed-in user\: (1) a page on another site makes the user's browser post a refund request to the API; (2) a script injected into the app's own page tries to copy the credential out of the page and send that copy to the attacker's server. Which app does each attack work against?</p>{
+=(1) only App C; (2) only App J#Correct. The browser attaches the cookie even to a request another site triggers, but only the app's own code adds the bearer header. A script can read <code>localStorage</code>, but not an <code>HttpOnly</code> cookie.
+~(1) both apps; (2) both apps#Not quite. A form on another site cannot add an <code>Authorization</code> header, and <code>HttpOnly</code> keeps the cookie away from scripts.
+~(1) only App J; (2) only App C#Not quite. This swaps them\: the cookie is sent automatically, and the JWT sits where scripts can read it.
+~(1) only App C; (2) both apps, as a script can read every cookie through <code>document.cookie</code>#Not quite. <code>HttpOnly</code> hides the cookie from <code>document.cookie</code>; only App J's token can be read.
+}
+
+::sfcp-q43::[html]<p>The app fills <code>AuthContext</code>'s <code>user</code> only when the sign-in form succeeds; it never asks the server who is signed in. Lee signs in, and the session cookie stays valid. <code>/orders</code> is wrapped in this guard\:</p><pre><code>function RequireUser(\{ children \}) \{
+&nbsp; const \{ user \} \= useContext(AuthContext);
+&nbsp; if (!user) return &lt;Navigate to\="/sign-in" replace /&gt;;
+&nbsp; return children;
+\}</code></pre><p>On the home page, an Orders button that calls <code>navigate('/orders')</code> shows Lee the orders. The menu entry <code>&lt;a href\="/orders"&gt;Orders&lt;/a&gt;</code> lands Lee on the sign-in page instead. Why?</p>{
+~The anchor's request carries no session cookie, so the API answers 401 and the guard redirects#Not quite. The guard reads <code>AuthContext</code>, not the API, and the browser sends the cookie on a page load anyway.
+~A <code>Navigate</code> inside a guard lets through only navigation that started with <code>useNavigate</code>#Not quite. The guard checks only <code>user</code>; it does not know how the navigation started.
+=The anchor loads the whole page again, so React starts with <code>user</code> null; use <code>&lt;Link to\="/orders"&gt;</code>#Correct. A full page load restarts the app and empties its state, so the guard redirects. <code>Link</code> changes the route without a reload, so <code>AuthContext</code> keeps the user.
+~<code>replace</code> on the <code>Navigate</code> took <code>/orders</code> out of history, so a plain link cannot open it#Not quite. <code>replace</code> only swaps the current history entry; it does not block a route.
+}
+
+::sfcp-q44::[html]<p>A FastAPI <code>pricing</code> service is added to <code>compose.yaml</code> with <code>ports\: ["8301\:8300"]</code>. Its image ends with <code>CMD ["fastapi", "dev", "app/main.py", "--port", "8300"]</code>. The Spring <code>checkout</code> service, in the same Compose file, calls <code>http\://pricing\:8301/quotes</code> and gets Connection refused.</p><p>Which change fixes the call?</p>{
+~Change only <code>checkout</code>'s URL to <code>http\://pricing\:8300/quotes</code>#Not quite. Port 8300 is the right port between containers, but <code>fastapi dev</code> still listens on <code>127.0.0.1</code>, so other containers are refused.
+~Change only the image's command to <code>fastapi run</code>, which listens on <code>0.0.0.0</code>#Not quite. The server now accepts other containers, but it listens on 8300, and <code>checkout</code> still calls 8301, which is only the port published on the laptop.
+~Change <code>checkout</code>'s URL to <code>http\://localhost\:8301/quotes</code>, the published port#Not quite. Inside the <code>checkout</code> container, <code>localhost</code> is the <code>checkout</code> container itself, and published ports are for the laptop.
+=Call <code>http\://pricing\:8300/quotes</code> and start the image with <code>fastapi run</code>#Correct. Containers on the same network use the container's own port, 8300, not the published one. And <code>fastapi dev</code> binds <code>127.0.0.1</code>, reachable only from inside its own container, while <code>fastapi run</code> binds <code>0.0.0.0</code>. Both must change.
+}
+
+::sfcp-q45::[html]<p>In <code>compose.yaml</code>, <code>api</code> is a Spring Boot service whose image holds Flyway migrations, and <code>db</code> is PostgreSQL with the named volume <code>pgdata</code>. The stack has run before, so <code>V1</code> to <code>V3</code> are applied. The stack is then restarted in one of two ways\: (a) <code>docker compose down</code>, then <code>docker compose up -d</code>; (b) <code>docker compose down -v</code>, then <code>docker compose up -d</code>.</p><p>Which migrations does Flyway apply when <code>api</code> starts in each case?</p>{
+~(a) V1 to V3 again, because <code>down</code> removes the database container and its data; (b) V1 to V3#Not quite. <code>down</code> removes the containers and the network, but the named volume and its data stay.
+=(a) none, because all three are recorded in the database; (b) V1 to V3, on a new, empty volume#Correct. Flyway compares the files with <code>flyway_schema_history</code> in the database. <code>down</code> keeps <code>pgdata</code>; <code>down -v</code> removes it.
+~(a) none; (b) none, because named volumes survive every <code>down</code> command#Not quite. <code>down -v</code> also removes named volumes, so the database starts empty.
+~(a) none; (b) Flyway stops with an error, because its history table is missing#Not quite. On an empty database Flyway creates its history table and applies every migration.
 }

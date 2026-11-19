@@ -7,7 +7,7 @@ It is distinct from the Foundation checkpoint, from every course-final bank and 
 | --- | --- |
 | Bank | `containers-cicd/assessments/standard-fast-final-checkpoint/checkpoint-mcq.gift` |
 | Blueprint | `containers-cicd/assessments/standard-fast-final-checkpoint/blueprint.json` |
-| Format | 30 single-answer MCQ, four options each, `[html]` GIFT, category `standard-fast/final-checkpoint-mcq`, titles `sfcp-q01` to `sfcp-q30` |
+| Format | 45 single-answer MCQ (expanded from 30 on 2026-11-19, see `standard-fast-final-checkpoint-45/README.md`), four options each, `[html]` GIFT, category `standard-fast/final-checkpoint-mcq`, titles `sfcp-q01` to `sfcp-q45` |
 | Duration | 60 minutes, at 2 minutes per question |
 | Day | Standard S43 and Fast FT25 (the Final gate) |
 | Content authority | learner pages at `b102584d`; `a00a6658` changes only QA tooling, so the authority is unchanged |
