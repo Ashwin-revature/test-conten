@@ -59,6 +59,66 @@
       "bytes": 12902
     },
     {
+      "path": "authoring/evidence/html-css-js/course-final-gift-checks.md",
+      "sha256": "557d2dbae85b9f869917c409bf30534da8be846bceeb23cc47e2bb1b9bc646d5",
+      "bytes": 9315
+    },
+    {
+      "path": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "sha256": "3d27a6fb3f4d284fa9f53b34477bfb53b8ac3cbf332bf441f4f09710916abcba",
+      "bytes": 15156
+    },
+    {
+      "path": "authoring/evidence/html-css-js/course-final-gift-critic-education.json",
+      "sha256": "795d5dae1679a0fd6bda1a9290049349a8120c15503dfd943765e9305ea563c8",
+      "bytes": 20888
+    },
+    {
+      "path": "authoring/evidence/html-css-js/course-final-gift-critic-sme-recheck.json",
+      "sha256": "84569f7f02efc166b8a22a3fe08a596692fb5a101c0544db7f1e6d0db56a8d90",
+      "bytes": 7442
+    },
+    {
+      "path": "authoring/evidence/html-css-js/course-final-gift-critic-sme.json",
+      "sha256": "c6def1820d6e4b795b6a49424293ee99a662560db035c3586bd35e969e5c6629",
+      "bytes": 7628
+    },
+    {
+      "path": "authoring/evidence/html-css-js/course-final-gift-loop2-critic-education-recheck.json",
+      "sha256": "b5bdc1ca094b5468d6bf56e5d87520988920ac473e8afc93f9b955474f93b661",
+      "bytes": 8755
+    },
+    {
+      "path": "authoring/evidence/html-css-js/course-final-gift-loop2-critic-sme-recheck.json",
+      "sha256": "5ad9f8c4f680e5b8b45ba669ac6e5d157f4ab503a1cda8d7038f5806d0ad449d",
+      "bytes": 4620
+    },
+    {
+      "path": "authoring/evidence/html-css-js/course-final-gift-loop3-critic-education-recheck.json",
+      "sha256": "6617f59e5311560d2998167b03db21e056b8a48d65d48a38ebe36ab0a5aa49c2",
+      "bytes": 4628
+    },
+    {
+      "path": "authoring/evidence/html-css-js/course-final-gift-loop3-critic-sme-recheck.json",
+      "sha256": "340636cfb591e3914ea01fe596451b4376587450c9dbaee2f1f7497d393525fd",
+      "bytes": 3218
+    },
+    {
+      "path": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "sha256": "295918c8b249645caf02af8402bb6650c0b940e68e2b85cdfdc0cdfd9733eda2",
+      "bytes": 13847
+    },
+    {
+      "path": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-sme-recheck.json",
+      "sha256": "bef994b243a8683b1522ab16224ab7ec06d3af970a6498285cfbf8d482d2cbd4",
+      "bytes": 6923
+    },
+    {
+      "path": "authoring/evidence/html-css-js/course-final-gift-reconciliation.json",
+      "sha256": "40d367c4966e5363874e8f8cf2c5f8dea2596fd037a954d092dfda1125d2442a",
+      "bytes": 17597
+    },
+    {
       "path": "authoring/evidence/html-css-js/course-final-loop2-critic-education-recheck.json",
       "sha256": "a3fe24910b224fa5dd55a392df6c9678cc76f544f58eae4525197ef02d07a324",
       "bytes": 7264
@@ -327,6 +387,11 @@
       "path": "html-css-js/assessments/web-client-mcq/blueprint.json",
       "sha256": "7d60fbff0d82540b1788559580cacd08fd3d37ef28dad0843b90167d44f351b3",
       "bytes": 13350
+    },
+    {
+      "path": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "bytes": 33463
     },
     {
       "path": "html-css-js/assessments/web-client-practical/blueprint.json",
@@ -901,6 +966,818 @@
       "artifactPath": "html-css-js/assessments/web-client-mcq/blueprint.json",
       "sha256": "dc80ed83d0e479ee2675eacec2ca492d5ba8b2027755ec2d9353e537634b7f96",
       "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/web-client-mcq/final-mcq.gift",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "field": "recheck.items[10].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "field": "recheck.items[11].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "field": "recheck.items[12].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "field": "recheck.items[13].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "field": "recheck.items[14].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "field": "recheck.items[7].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "field": "recheck.items[8].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "field": "recheck.items[9].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education.json",
+      "field": "artifactHashes.assessments/web-client-mcq/final-mcq.gift",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education.json",
+      "field": "findings[10].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education.json",
+      "field": "findings[11].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education.json",
+      "field": "findings[12].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education.json",
+      "field": "findings[13].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education.json",
+      "field": "findings[14].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education.json",
+      "field": "findings[3].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education.json",
+      "field": "findings[4].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education.json",
+      "field": "findings[5].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education.json",
+      "field": "findings[6].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education.json",
+      "field": "findings[7].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education.json",
+      "field": "findings[8].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education.json",
+      "field": "findings[9].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-education.json",
+      "field": "reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/web-client-mcq/final-mcq.gift",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-sme-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-sme-recheck.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-sme-recheck.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-sme-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-sme-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-sme-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-sme-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "43d3e611ac8f85612a400b08e9470705030235ff4dffebbdd88f4a8878ac51d5",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-sme.json",
+      "field": "artifactHashes.assessments/web-client-mcq/final-mcq.gift",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-sme.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-sme.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-sme.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-sme.json",
+      "field": "findings[3].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-sme.json",
+      "field": "findings[4].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-critic-sme.json",
+      "field": "reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "df012da8cd96f22e91eb2e19cd1a4b4e86db6ed9a6ac75fc503a32bb10587cb7",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop2-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/web-client-mcq/final-mcq.gift",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "38bb6e29afa3419c9648b0366cb5b69818fffbbd0af4f8793c4194f90d4b6153",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop2-critic-education-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "38bb6e29afa3419c9648b0366cb5b69818fffbbd0af4f8793c4194f90d4b6153",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop2-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "38bb6e29afa3419c9648b0366cb5b69818fffbbd0af4f8793c4194f90d4b6153",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop2-critic-education-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "38bb6e29afa3419c9648b0366cb5b69818fffbbd0af4f8793c4194f90d4b6153",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop2-critic-education-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "38bb6e29afa3419c9648b0366cb5b69818fffbbd0af4f8793c4194f90d4b6153",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop2-critic-education-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "38bb6e29afa3419c9648b0366cb5b69818fffbbd0af4f8793c4194f90d4b6153",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop2-critic-education-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "38bb6e29afa3419c9648b0366cb5b69818fffbbd0af4f8793c4194f90d4b6153",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop2-critic-education-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "38bb6e29afa3419c9648b0366cb5b69818fffbbd0af4f8793c4194f90d4b6153",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop2-critic-education-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "38bb6e29afa3419c9648b0366cb5b69818fffbbd0af4f8793c4194f90d4b6153",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop2-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "38bb6e29afa3419c9648b0366cb5b69818fffbbd0af4f8793c4194f90d4b6153",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop2-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/web-client-mcq/final-mcq.gift",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "38bb6e29afa3419c9648b0366cb5b69818fffbbd0af4f8793c4194f90d4b6153",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop2-critic-sme-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "38bb6e29afa3419c9648b0366cb5b69818fffbbd0af4f8793c4194f90d4b6153",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop2-critic-sme-recheck.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "38bb6e29afa3419c9648b0366cb5b69818fffbbd0af4f8793c4194f90d4b6153",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "38bb6e29afa3419c9648b0366cb5b69818fffbbd0af4f8793c4194f90d4b6153",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "38bb6e29afa3419c9648b0366cb5b69818fffbbd0af4f8793c4194f90d4b6153",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "38bb6e29afa3419c9648b0366cb5b69818fffbbd0af4f8793c4194f90d4b6153",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop2-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "38bb6e29afa3419c9648b0366cb5b69818fffbbd0af4f8793c4194f90d4b6153",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop3-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/web-client-mcq/final-mcq.gift",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "9c4f891370e7e80356b62e22a698cf5b603c04d4c2603d7eebdbb50a32fb70e2",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop3-critic-education-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "9c4f891370e7e80356b62e22a698cf5b603c04d4c2603d7eebdbb50a32fb70e2",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop3-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "9c4f891370e7e80356b62e22a698cf5b603c04d4c2603d7eebdbb50a32fb70e2",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop3-critic-education-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "9c4f891370e7e80356b62e22a698cf5b603c04d4c2603d7eebdbb50a32fb70e2",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop3-critic-education-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "9c4f891370e7e80356b62e22a698cf5b603c04d4c2603d7eebdbb50a32fb70e2",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop3-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "9c4f891370e7e80356b62e22a698cf5b603c04d4c2603d7eebdbb50a32fb70e2",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop3-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/web-client-mcq/final-mcq.gift",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "9c4f891370e7e80356b62e22a698cf5b603c04d4c2603d7eebdbb50a32fb70e2",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop3-critic-sme-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "9c4f891370e7e80356b62e22a698cf5b603c04d4c2603d7eebdbb50a32fb70e2",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop3-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "9c4f891370e7e80356b62e22a698cf5b603c04d4c2603d7eebdbb50a32fb70e2",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop3-critic-sme-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "9c4f891370e7e80356b62e22a698cf5b603c04d4c2603d7eebdbb50a32fb70e2",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop3-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "9c4f891370e7e80356b62e22a698cf5b603c04d4c2603d7eebdbb50a32fb70e2",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/web-client-mcq/final-mcq.gift",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "recheck.items[10].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "recheck.items[11].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "recheck.items[12].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "recheck.items[13].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "recheck.items[14].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "recheck.items[15].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "recheck.items[16].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "recheck.items[17].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "recheck.items[18].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "recheck.items[7].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "recheck.items[8].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "recheck.items[9].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/web-client-mcq/final-mcq.gift",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-sme-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-sme-recheck.json",
+      "field": "recheck.items[10].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-sme-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-sme-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-sme-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-sme-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-sme-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-sme-recheck.json",
+      "field": "recheck.items[7].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-sme-recheck.json",
+      "field": "recheck.items[8].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-sme-recheck.json",
+      "field": "recheck.items[9].reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-loop4-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/html-css-js/course-final-gift-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "html-css-js/assessments/web-client-mcq/final-mcq.gift",
+      "sha256": "743984a0d669b2ebcb855eee6416f1c928bea69ec0966574be962691407b279a",
+      "current": true
     },
     {
       "evidencePath": "authoring/evidence/html-css-js/course-final-loop2-critic-education-recheck.json",
