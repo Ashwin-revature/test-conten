@@ -18,7 +18,7 @@
   ],
   "result": "Reference: exited 0, 7 passed.",
   "starterRun": "Shipped starter: exited 1, 7 failed, exactly the 7 declared failingTests.",
-  "cleanup": "The runs wrote only paths declared under cleanup.paths inside the scratch copies; the copies were deleted. Nothing was run inside the repository.",
+  "cleanup": "Both runs used scratch copies outside the repository, which were deleted afterwards; no before/after diff of the copies was taken, so the declared cleanup.paths step was not separately verified. Nothing was run inside the repository.",
   "otherSystems": "Linux and Windows runs and the Exa template (grade.yml) are not recorded; this macOS run is local evidence only.",
   "testScope": "Seven pytest checks over the provided Pydantic Transaction model and fixtures/transactions.jsonl; deterministic, no network, clock or locale.",
   "variantRuns": "Not re-run here. Transcribed from the authors' private fix-pass matrix (proof/matrix-fixpass.txt; 32 runs after round 2, 0 mismatches): starter 0/7, reference 7/7, 11 accepted variants 7/7 (including SME Z2), wrong variants at their expected scores; SME Z1 (unsorted set) failed check4 in 50 of 50 hash seeds (z1-hashseed-sweep.txt). Round 2 added SME R5 6/7 and R6 2/7. The SME critic re-ran starter 0/7 and reference 7/7.",

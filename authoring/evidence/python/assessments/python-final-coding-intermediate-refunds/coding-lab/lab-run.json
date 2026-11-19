@@ -18,7 +18,7 @@
   ],
   "result": "Reference: exited 0, 9 passed.",
   "starterRun": "Shipped starter: exited 1, 9 failed, exactly the 9 declared failingTests.",
-  "cleanup": "The runs wrote only paths declared under cleanup.paths inside the scratch copies; the copies were deleted. Nothing was run inside the repository.",
+  "cleanup": "Both runs used scratch copies outside the repository, which were deleted afterwards; no before/after diff of the copies was taken, so the declared cleanup.paths step was not separately verified. Nothing was run inside the repository.",
   "otherSystems": "Linux and Windows runs and the Exa template (grade.yml) are not recorded; this macOS run is local evidence only.",
   "testScope": "Nine pytest checks through FastAPI TestClient with the provided payments client faked in-process (dependency override); no network, clock or locale.",
   "variantRuns": "Not re-run here. Transcribed from the authors' private fix-pass matrix after round 3 (proof/matrix-fixpass.txt, 41 runs, 0 mismatches): starter 0/9, reference and all 13 accepted variants 9/9, wrong-01 and SME V2 5/9, V3 4/9, wrong-09 and R9 6/9, wrong-04 6/9; nine single-slip wrong answers still pass at 8/9 (owner decision). The SME final recheck re-ran starter 0/9, reference 9/9 and those variants on the round-3 bytes.",

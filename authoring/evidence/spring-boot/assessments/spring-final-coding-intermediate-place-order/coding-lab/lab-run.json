@@ -18,7 +18,7 @@
   ],
   "result": "Reference: exited 0; pickup.PlaceOrderTest (3) and pickup.DatabaseOutageTest (5) Tests run: 8, Failures: 0, Errors: 0, Skipped: 0 (about 5 s wall).",
   "starterRun": "Shipped starter: exited 1 with 8 tests, 7 failures and 1 error, failing exactly the 8 declared failingTests.",
-  "cleanup": "The runs wrote only paths declared under cleanup.paths inside the scratch copies; the copies were deleted. Nothing was run inside the repository.",
+  "cleanup": "Both runs used scratch copies outside the repository, which were deleted afterwards; no before/after diff of the copies was taken, so the declared cleanup.paths step was not separately verified. Nothing was run inside the repository.",
   "otherSystems": "Linux and Windows runs and the Exa template (grade.yml) are not recorded; this macOS run is local evidence only.",
   "testScope": "Eight checks: one plain-Java addLine check, then MockMvc order placement and five SqlOutage checks that refuse one statement through a Hibernate StatementInspector; in-memory H2 seeded by data.sql; no network or clock.",
   "variantRuns": "Not re-run here. Transcribed from the authors' private fix-pass matrix after round 2 (proof/matrix-fixpass.txt, 25 runs, ALL OK): starter 0/8, reference and 9 accepted variants 8/8, every no-transaction variant at most 5/8, SME R3 and edu-never-places-an-order 1/8, N7 and SME R4 0/8. The SME final recheck re-ran starter 0/8, reference 8/8, R3 1/8, R4 0/8, Y1 8/8, Y2 3/8 on the round-2 bytes.",

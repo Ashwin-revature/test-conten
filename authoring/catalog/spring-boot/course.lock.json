@@ -10,13 +10,13 @@
     },
     {
       "path": "authoring/evidence/spring-boot/assessments/spring-final-coding-basic-tool-by-id/coding-lab/lab-run.json",
-      "sha256": "5cd9ddc186db407e9b97504a8ea9fd27f3ac8d640a1693acf7624d16af2e24ca",
-      "bytes": 6635
+      "sha256": "bce4f0f3ad1c2194b827319e8e682b7b0a6ed2121a0d5044d4f0fc4c0e87cbd6",
+      "bytes": 6723
     },
     {
       "path": "authoring/evidence/spring-boot/assessments/spring-final-coding-intermediate-place-order/coding-lab/lab-run.json",
-      "sha256": "f6e8e08202e0e84b6c0ad45f9d2a4d9814efacafb72766fc4b64890f94d3fd7f",
-      "bytes": 8808
+      "sha256": "6d68ebbd2b33aebcadf26319497eea4aa4f5e8f5627b99413247c22567850a45",
+      "bytes": 8896
     },
     {
       "path": "authoring/evidence/spring-boot/final-assessment-critic-education.json",

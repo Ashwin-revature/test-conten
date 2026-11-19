@@ -10,13 +10,13 @@
     },
     {
       "path": "authoring/evidence/python/assessments/python-final-coding-basic-validate/coding-lab/lab-run.json",
-      "sha256": "7af0e2492e7c8d852868db0f8ddcb6f464530724d2a240d09326f0da82f62aba",
-      "bytes": 4639
+      "sha256": "5508efec705a534181b049208a5d0e629933fc80874a909e615c97c3e8fdfda0",
+      "bytes": 4727
     },
     {
       "path": "authoring/evidence/python/assessments/python-final-coding-intermediate-refunds/coding-lab/lab-run.json",
-      "sha256": "89f5c457f66c22f878f66372ec5e59e468dbf8086883b5e7a6937ac38175c06a",
-      "bytes": 5144
+      "sha256": "0ec5edf78ff9e5e116bb6e348b2aad1cd3b9f6944bc796023efc6ab771aa56c2",
+      "bytes": 5232
     },
     {
       "path": "authoring/evidence/python/course-final-coverage-map.md",
