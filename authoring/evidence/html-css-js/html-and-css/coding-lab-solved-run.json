@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "lab": "html-css-js/html-and-css/coding-lab",
-  "record": "solved at 89161df6d443d255e9041de3502f77e51b7051c8 by run clean-loop6-1795063777",
-  "commit": "89161df6d443d255e9041de3502f77e51b7051c8",
-  "runId": "clean-loop6-1795063777",
-  "ranAt": "2026-11-19T04:49:37Z",
-  "contract": "authoring/docs/lab-contract.md section 10: starter expectation, private solved run, expected output and cleanup, exercised on a fresh git archive of html-css-js/html-and-css/coding-lab at 89161df6d443d255e9041de3502f77e51b7051c8 in private staging outside the repository",
+  "record": "solved at 80eff5af51aa7231101d78f8c07a25117f19a44b by run clean-loop7-1795066500",
+  "commit": "80eff5af51aa7231101d78f8c07a25117f19a44b",
+  "runId": "clean-loop7-1795066500",
+  "ranAt": "2026-11-19T05:35:00Z",
+  "contract": "authoring/docs/lab-contract.md section 10: starter expectation, private solved run, expected output and cleanup, exercised on a fresh git archive of html-css-js/html-and-css/coding-lab at 80eff5af51aa7231101d78f8c07a25117f19a44b in private staging outside the repository",
   "environment": {
     "os": "macOS 27.2.1 (Darwin 27.2.0, arm64)",
     "node": "v24.2.0",
@@ -14,7 +14,7 @@
     "container": "none"
   },
   "procedure": [
-    "git archive 89161df6d443d255e9041de3502f77e51b7051c8 html-css-js/html-and-css/coding-lab into a fresh private directory under the task's uncommitted data directory, outside the repository",
+    "git archive 80eff5af51aa7231101d78f8c07a25117f19a44b html-css-js/html-and-css/coding-lab into a fresh private directory under the task's uncommitted data directory, outside the repository",
     "setup: npm ci in starter/ (installs pinned Playwright 1.55.1 and its headless Chromium into starter/node_modules)",
     "starter expectation: node --test --test-reporter=spec on the untouched starter gave tests 12, pass 0, fail 12; the failing set equals the declared failingTests",
     "applied the privately completed starter/index.html and starter/styles.css (all eleven tasks) over the starter files of that same private copy",
@@ -34,7 +34,7 @@
   "artifactHashes": {
     "README.md": "78cf495cb1cec8044370441bdb768b6750106509cd2ae4b120b2b7332e115499",
     "expected/on-completion.txt": "2242211c4798464260692cf26026103b36c42cdee5acbcba37f487e5ce4bd73c",
-    "lab.json": "5624346488df7d5d3a6531495be4079f4430a6626fe761bce938456712a4652c",
+    "lab.json": "5d713d1abf9f1cfa65c95a84d329630d16bea80af19a15f5f9e61ff882cb6c3a",
     "starter/badge.svg": "ec0ebe55b9e4d905939bac5bca65b4e0865ffce4fa5d6f6d74e0757d8af314e7",
     "starter/index.html": "a096e9c62cf3b06c9afeadbf4d7b97e5508085d00376b1f2f360d8dc888d9aa3",
     "starter/package-lock.json": "977eb105016398ae58a1d1bf4b611e8baf75fe73368fa962e65329e6ba24185e",
@@ -43,8 +43,8 @@
     "tests/browser.mjs": "9ce76aaf5ace75676b57fba4254ae16d33987ce41c1e21e31d6ab40ccaa74656",
     "tests/css.mjs": "3ef88650200827a92532cfa2e3ffc47d78b9d631c21cdd7d44eb3a0e586dd8e8",
     "tests/install-browser.mjs": "ddf947be1edb8ade748f7f8c76483d59e19a7d407c18f2e90b5ed39a5d8804f7",
-    "tests/layout.test.mjs": "312d0f1052d0e7ea9003a93d032f47abd13c70c87461f4afa222ecb059ec7c15",
+    "tests/layout.test.mjs": "dbe0d3a3aa0aff6757cfc26de919017233d468edd1f1581ef9e37ca06f9a1f47",
     "tests/structure.test.mjs": "4aa7a5680d653ac95ff4e418627d94adb5d54c908803510d5e2fa91906ae983f"
   },
-  "variantRuns": "Task 11 matrix in the same private copy, each case a privately staged variant of the completed work run with the full public suite. 18 wrong variants each failed task 11 and no other task. Markup edits: tags with automatic width inside a new fixed-width wrapper, the same wrapper with a large maximum width on each tag, and a wrapper sized in viewport units. Stylesheet only: automatic-width tags beside a float as their own formatting context, and inside a two-column checklist with a percentage gap (both failed the fill-the-checklist control, whose message named something around the tag); tags absolutely positioned with a container-relative inset (the control's message named the tag's own absolute positioning); tag widths in vw, vh and vmin units; automatic width alone; automatic width with a container-relative side margin; percentage width; the completed work plus a small scale or zoom on the tags; a short animation that holds a wrong width or a wrong padding after it ends; an endless scale animation; and a zoomed gear checklist (failed the checklist-unscaled check). 10 valid variants passed all 12 tests: the unmodified completed work; the same sizes under child-combinator, adjacent-sibling and position selectors; each calculated value as a maximum width over an automatic width; as a logical inline size; with a learner-styled flex-column checklist; with short filled entrance animations on the tags and on the checklist that end at their identity values; and with learner transitions on the checklist and tag sizes. 6 variants with the correct own widths but tags that are not ordinary blocks directly in the checklist failed task 11 on the fill-the-checklist control, as README task 11 and Troubleshooting state, each with a message naming the detected cause: inline-block, table, contents and none displays, floated tags, and tags inside a padded wrapper (something around the tag). Not covered and not detected by the test: paused, long-delayed, very long or slow animations and animated custom properties that change the drawn size later; README task 11 asks learners to keep the assessed checklist layout static instead. All variants stay in uncommitted private staging."
+  "variantRuns": "Task 11 matrix in the same private copy, each case a privately staged variant of the completed work run with the full public suite; the whole matrix ran three times with the same results. 21 wrong variants each failed task 11 and no other task. Markup edits: tags with automatic width inside a new fixed-width wrapper, the same wrapper with a large maximum width on each tag, and a wrapper sized in viewport units. Stylesheet only: automatic-width tags beside a float as their own formatting context, and inside a two-column checklist with a percentage gap (both failed the fill-the-checklist control, whose message named something around the tag); tags absolutely positioned with a container-relative inset (the control's message named the tag's own absolute positioning); tag widths in vw, vh and vmin units; automatic width alone; automatic width with a container-relative side margin; percentage width; the completed work plus a small scale or zoom on the tags; a short animation that holds a wrong width or a wrong padding after it ends; an endless scale animation; endless scale pulses and transform spins on the tags that start at their identity value; an endless scale pulse on the checklist; and a zoomed gear checklist. 12 variants passed all 12 tests: the unmodified completed work; the same sizes under child-combinator, adjacent-sibling and position selectors; each calculated value as a maximum width over an automatic width; as a logical inline size; with a learner-styled flex-column checklist; and with a static whole-turn rotate value on the tags. The test also accepts short filled entrance animations on the tags and the checklist that end at their identity values, a filled whole-turn spin-in, and learner transitions on the checklist and tag sizes, although README task 11 asks learners to keep the assessed layout static. 6 variants with the correct own widths but tags that are not ordinary blocks directly in the checklist failed task 11 on the fill-the-checklist control, as README task 11 and Troubleshooting state, each with a message naming the detected cause: inline-block, table, contents and none displays, floated tags, and tags inside a padded wrapper (something around the tag). Not covered and not detected by the test: paused, long-delayed, very long, slow or endless animations that change a width or padding, and animated custom properties that change the drawn size later; README task 11 asks learners to keep the assessed checklist layout static instead. All variants stay in uncommitted private staging."
 }
