@@ -114,20 +114,28 @@ test("task 6: at 400px wide the page does not scroll sideways, and the hero pict
 });
 
 test("task 11: both pack tags are 200px wide border to border, one in each box-sizing model", async () => {
-  // The tags stay where they are, inside .site-aside. At two window widths, the test fixes that
-  // box at two widths of its own (no padding, border or scaling), so each tag must be 200px wide
-  // because of its own width, padding and border, not because of the space around it. As a
-  // control, it then removes the tag's own width, min-width and max-width for a moment: an
-  // ordinary block tag then fills the whole checklist, which shows that the 200px came from the
-  // width set on the tag and not from a wrapper, float, column or positioned box around it.
-  const windowWidths = [800, 1280];
+  // The tags stay where they are, inside .site-aside. At two window sizes (both width and
+  // height differ), the test fixes that box at two widths of its own (no padding, border or
+  // scaling), so each tag must be 200px wide because of its own width, padding and border, not
+  // because of the space around it or the window. As a control, it then removes the tag's own
+  // width, min-width and max-width for a moment: an ordinary block tag then fills the whole
+  // checklist, which shows that the 200px came from the width set on the tag. Transitions and
+  // animations are switched off only while measuring, and restored afterwards.
+  const windows = [
+    { width: 800, height: 800 },
+    { width: 1280, height: 1000 },
+  ];
   const parentWidths = [480, 720];
   const runs = await withPage(async (page) => {
     const all = [];
-    for (const windowWidth of windowWidths) {
-      await page.setViewportSize({ width: windowWidth, height: 800 });
+    for (const size of windows) {
+      await page.setViewportSize(size);
       const measured = await page.evaluate((widths) => {
         const aside = document.querySelector(".site-aside");
+        const still = ["transition", "animation"];
+        const quiet = [aside, ...document.querySelectorAll(".pack-tag-day, .pack-tag-overnight")].filter(Boolean);
+        const before = quiet.map((el) => still.map((name) => [name, el.style.getPropertyValue(name), el.style.getPropertyPriority(name)]));
+        for (const el of quiet) for (const name of still) el.style.setProperty(name, "none", "important");
         const pinned = (width) => ({
           display: "block",
           "box-sizing": "content-box",
@@ -144,7 +152,7 @@ test("task 11: both pack tags are 200px wide border to border, one in each box-s
           zoom: "1",
         });
         const own = ["width", "min-width", "max-width"];
-        return widths.map((width) => {
+        const out = widths.map((width) => {
           if (aside) for (const [name, value] of Object.entries(pinned(width))) aside.style.setProperty(name, value, "important");
           const tags = [".pack-tag-day", ".pack-tag-overnight"].map((selector) => {
             const el = document.querySelector(selector);
@@ -155,6 +163,8 @@ test("task 11: both pack tags are 200px wide border to border, one in each box-s
               selector,
               found: true,
               boxSizing: cs.boxSizing,
+              display: cs.display,
+              ownLayout: cs.display.startsWith("inline") || cs.display.startsWith("table") || cs.float !== "none" || ["absolute", "fixed"].includes(cs.position),
               layout: el.offsetWidth,
               rendered: el.getBoundingClientRect().width,
               padding: [px("padding-top"), px("padding-right"), px("padding-bottom"), px("padding-left")],
@@ -176,8 +186,15 @@ test("task 11: both pack tags are 200px wide border to border, one in each box-s
           });
           return { width, tags };
         });
+        quiet.forEach((el, i) => {
+          for (const [name, value, priority] of before[i]) {
+            if (value) el.style.setProperty(name, value, priority);
+            else el.style.removeProperty(name);
+          }
+        });
+        return out;
       }, parentWidths);
-      all.push(...measured.map((run) => ({ ...run, windowWidth })));
+      all.push(...measured.map((run) => ({ ...run, window: `${size.width}x${size.height}` })));
     }
     return all;
   });
@@ -191,16 +208,19 @@ test("task 11: both pack tags are 200px wide border to border, one in each box-s
       assert.ok(tag.unscaled, `${tag.selector}: size the box with the box model, not by scaling, rotating, moving or zooming it.`);
     }
   }
-  const [day, overnight] = runs[0].tags;
-  assert.equal(day.boxSizing, "content-box", ".pack-tag-day must keep the default content-box sizing.");
-  assert.equal(overnight.boxSizing, "border-box", ".pack-tag-overnight is not using border-box sizing yet.");
   for (const run of runs) {
-    const where = `when the gear checklist is ${run.width}px wide in a ${run.windowWidth}px window`;
+    const where = `when the gear checklist is ${run.width}px wide in a ${run.window} window`;
+    const [day, overnight] = run.tags;
+    assert.equal(day.boxSizing, "content-box", `.pack-tag-day must keep the default content-box sizing (${where}).`);
+    assert.equal(overnight.boxSizing, "border-box", `.pack-tag-overnight is not using border-box sizing yet (${where}).`);
     for (const tag of run.tags) {
+      const cause = tag.ownLayout
+        ? `the tag itself is not an ordinary block (its display is ${tag.display}, or it is floated or absolutely positioned), so it shrinks to its text: remove that display, float or position change from the tag`
+        : "something around the tag (a wrapper, a float beside it, columns or positioning on the checklist) is giving it its size: keep the tag directly in the checklist and set the width on the tag itself";
       assert.equal(
         tag.withoutOwnWidth,
         run.width,
-        `${tag.selector} is ${tag.withoutOwnWidth}px wide ${where} once its own width, min-width and max-width are removed, so it does not fill the checklist: keep each tag an ordinary block directly in the checklist (no wrapper, float, columns or positioning around it) and set the width on the tag itself.`,
+        `${tag.selector} is ${tag.withoutOwnWidth}px wide ${where} once its own width, min-width and max-width are removed, so it does not fill the checklist: ${cause}.`,
       );
       assert.equal(
         tag.layout,
