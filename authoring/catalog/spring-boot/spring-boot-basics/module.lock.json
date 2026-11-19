@@ -15,18 +15,18 @@
     },
     {
       "path": "authoring/catalog/spring-boot/spring-boot-basics/generating-a-spring-boot-project-and-its-structure/topic.json",
-      "sha256": "2a769aa898448fac5329741360b802f5154d5cdea303d4008e14d492ddae775a",
-      "bytes": 3809
+      "sha256": "bfcdc607470f449b8d3db2f71724672690ad11d21ff4a0c65226b055ad835e55",
+      "bytes": 3915
     },
     {
       "path": "authoring/catalog/spring-boot/spring-boot-basics/how-auto-configuration-works/topic.json",
-      "sha256": "f9941d213f3314a3f19ea0e581eddcc0c784b1cea58ea3326176e13c2a7cd976",
-      "bytes": 3655
+      "sha256": "a8cc0ff8337efcaa2074c2522b71f65523bd1a20497feaca30ac7770c10aa9e5",
+      "bytes": 3761
     },
     {
       "path": "authoring/catalog/spring-boot/spring-boot-basics/module.json",
-      "sha256": "3be1cfcf1c6c1d7a00d613d36f5b9cda76b3fbff547ae191596c093e9f184c87",
-      "bytes": 3856
+      "sha256": "e36c146e316c5fedf6aca6c8cfe991711048a38caf079e8d60a265b5a4505d87",
+      "bytes": 4679
     },
     {
       "path": "authoring/catalog/spring-boot/spring-boot-basics/path-query-and-body-parameters/topic.json",
@@ -35,8 +35,8 @@
     },
     {
       "path": "authoring/catalog/spring-boot/spring-boot-basics/reading-an-openapi-spec-and-exploring-it-in-swagger-ui/topic.json",
-      "sha256": "32441e6e57e91ca3a04fb6c5c20eabf7136c8b87a2367fa76cb28f9cb928d943",
-      "bytes": 3608
+      "sha256": "e0e297d63b42e40586da2bc37e5b3ff714c12a8a3c54ed81fbcf0337621d14cb",
+      "bytes": 3714
     },
     {
       "path": "authoring/catalog/spring-boot/spring-boot-basics/response-codes-with-responseentity/topic.json",
@@ -50,8 +50,8 @@
     },
     {
       "path": "authoring/catalog/spring-boot/spring-boot-basics/spring-vs-spring-boot-what-boot-adds/topic.json",
-      "sha256": "3bb233881e561782adc0524525bc53ac966670db1182c140c928e0e0796e136c",
-      "bytes": 3950
+      "sha256": "b77664ec933636c7974d216a4f0cec1a47965b990d8d99e7cacb1d822427c699",
+      "bytes": 4056
     },
     {
       "path": "authoring/evidence/spring-boot/spring-boot-basics/beans-and-bean-scopes/owner-essential-qa.json",
@@ -280,23 +280,33 @@
     },
     {
       "path": "spring-boot/spring-boot-basics/coding-lab/README.md",
-      "sha256": "8797a1c7123269949c78710ee0d5af19030dc2f5f1284ceb6df0df95b9a94da3",
-      "bytes": 4520
+      "sha256": "47a2cca76a8f88fe7b562b00de0201d0670094a1a5a0760b5d08ce7fd3705530",
+      "bytes": 7595
     },
     {
       "path": "spring-boot/spring-boot-basics/coding-lab/expected/test-summary.txt",
-      "sha256": "350714159b5f8b554492d5ac658c86a4df36a1858c43140aacacc09cf6105341",
-      "bytes": 704
+      "sha256": "952ef42f79474be0dd79c2c14b72ea4b015f36c90e891cad43ba3278cb8afdc9",
+      "bytes": 1141
+    },
+    {
+      "path": "spring-boot/spring-boot-basics/coding-lab/fixtures/workshops-openapi.yaml",
+      "sha256": "833d5a0b1f30609e98f856afe9255aeea98b5c3b0333436ab57021e6f4fc42c4",
+      "bytes": 1226
     },
     {
       "path": "spring-boot/spring-boot-basics/coding-lab/lab.json",
-      "sha256": "07e78894e53746fb06a0901565ffdc6ef67b6eac25b26b99f5726b1b9f402dd2",
-      "bytes": 2532
+      "sha256": "f80f34ad1606c86fbc0103941f27267e7fba1b29c227ad3f2c3966c35554c69e",
+      "bytes": 3621
     },
     {
       "path": "spring-boot/spring-boot-basics/coding-lab/starter/pom.xml",
       "sha256": "5c1c75b1a357f63fc2144dd748905245bcbe2aabdee25e4a1b77319bf8ea738a",
       "bytes": 2341
+    },
+    {
+      "path": "spring-boot/spring-boot-basics/coding-lab/starter/src/main/java/about/AboutController.java",
+      "sha256": "ec7bdcfa6f5f64072c587d9572536f0ba0d876d6a55c540adcae20c3d23af2bd",
+      "bytes": 810
     },
     {
       "path": "spring-boot/spring-boot-basics/coding-lab/starter/src/main/java/workshops/CatalogConfig.java",
@@ -320,18 +330,23 @@
     },
     {
       "path": "spring-boot/spring-boot-basics/coding-lab/starter/src/main/java/workshops/WorkshopController.java",
-      "sha256": "bf538973a7a9c887e2e78a47827c1d2b4ff7db4a92a1eccc2a8caf7c90464503",
-      "bytes": 1572
+      "sha256": "4c72d852d2d4f79fe757eb800648f023399d27abd06f4de2cab680846f72e326",
+      "bytes": 1730
     },
     {
       "path": "spring-boot/spring-boot-basics/coding-lab/starter/src/main/java/workshops/WorkshopsApplication.java",
-      "sha256": "0c6fd9ccc04e5738bf88dc4fd051d504640517a07ed986eba17a063a2a33bc0e",
-      "bytes": 319
+      "sha256": "5035e878ebe109a390808c3825a62d9adbbf4b7ada1aaa0419a068264fea9b98",
+      "bytes": 769
     },
     {
       "path": "spring-boot/spring-boot-basics/coding-lab/tests/workshops/WorkshopApiTest.java",
-      "sha256": "2f8079e6bd8e6653e7b5d3478cc140ddb007b962999cb7eed9a3c497fa349ac7",
-      "bytes": 3188
+      "sha256": "c7d52ca8ed06056615d35fd98cd64d5c09731fcc791656c6e7fa83e3aedaee1b",
+      "bytes": 5116
+    },
+    {
+      "path": "spring-boot/spring-boot-basics/coding-lab/tests/workshops/WorkshopsApplicationMainTest.java",
+      "sha256": "fb118391567935159a79e107e81a947dda65e24b3b4517af5c8e310acbdef972",
+      "bytes": 2123
     },
     {
       "path": "spring-boot/spring-boot-basics/dependency-injection-replacing-manual-wiring/artifact.gift",
@@ -541,7 +556,7 @@
       "field": "artifactHashes.expected/test-summary.txt",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/expected/test-summary.txt",
       "sha256": "350714159b5f8b554492d5ac658c86a4df36a1858c43140aacacc09cf6105341",
-      "current": true
+      "current": false
     },
     {
       "topic": "coding-lab",
@@ -549,7 +564,7 @@
       "field": "artifactHashes.lab.json",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/lab.json",
       "sha256": "07e78894e53746fb06a0901565ffdc6ef67b6eac25b26b99f5726b1b9f402dd2",
-      "current": true
+      "current": false
     },
     {
       "topic": "coding-lab",
@@ -557,7 +572,7 @@
       "field": "artifactHashes.README.md",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/README.md",
       "sha256": "8797a1c7123269949c78710ee0d5af19030dc2f5f1284ceb6df0df95b9a94da3",
-      "current": true
+      "current": false
     },
     {
       "topic": "coding-lab",
@@ -605,7 +620,7 @@
       "field": "artifactHashes.starter/src/main/java/workshops/WorkshopController.java",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/starter/src/main/java/workshops/WorkshopController.java",
       "sha256": "bf538973a7a9c887e2e78a47827c1d2b4ff7db4a92a1eccc2a8caf7c90464503",
-      "current": true
+      "current": false
     },
     {
       "topic": "coding-lab",
@@ -613,7 +628,7 @@
       "field": "artifactHashes.starter/src/main/java/workshops/WorkshopsApplication.java",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/starter/src/main/java/workshops/WorkshopsApplication.java",
       "sha256": "0c6fd9ccc04e5738bf88dc4fd051d504640517a07ed986eba17a063a2a33bc0e",
-      "current": true
+      "current": false
     },
     {
       "topic": "coding-lab",
@@ -621,7 +636,7 @@
       "field": "artifactHashes.tests/workshops/WorkshopApiTest.java",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/tests/workshops/WorkshopApiTest.java",
       "sha256": "2f8079e6bd8e6653e7b5d3478cc140ddb007b962999cb7eed9a3c497fa349ac7",
-      "current": true
+      "current": false
     },
     {
       "topic": "dependency-injection-replacing-manual-wiring",
@@ -826,49 +841,49 @@
       "field": "artifactHashes.coding-lab/lab.json",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/lab.json",
       "sha256": "07e78894e53746fb06a0901565ffdc6ef67b6eac25b26b99f5726b1b9f402dd2",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/module-practice-critic-education-recheck.json",
       "field": "artifactHashes.coding-lab/README.md",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/README.md",
       "sha256": "8797a1c7123269949c78710ee0d5af19030dc2f5f1284ceb6df0df95b9a94da3",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/module-practice-critic-education-recheck.json",
       "field": "findings[0].reviewedSha256",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/lab.json",
       "sha256": "07e78894e53746fb06a0901565ffdc6ef67b6eac25b26b99f5726b1b9f402dd2",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/module-practice-critic-education-recheck.json",
       "field": "findings[1].reviewedSha256",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/README.md",
       "sha256": "8797a1c7123269949c78710ee0d5af19030dc2f5f1284ceb6df0df95b9a94da3",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/module-practice-critic-education-recheck.json",
       "field": "findings[2].reviewedSha256",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/lab.json",
       "sha256": "07e78894e53746fb06a0901565ffdc6ef67b6eac25b26b99f5726b1b9f402dd2",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/module-practice-critic-education-recheck.json",
       "field": "recheck.items[0].reviewedSha256",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/lab.json",
       "sha256": "07e78894e53746fb06a0901565ffdc6ef67b6eac25b26b99f5726b1b9f402dd2",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/module-practice-critic-education-recheck.json",
       "field": "reviewedSha256",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/lab.json",
       "sha256": "07e78894e53746fb06a0901565ffdc6ef67b6eac25b26b99f5726b1b9f402dd2",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/module-practice-critic-education.json",
@@ -896,7 +911,7 @@
       "field": "artifactHashes.coding-lab/README.md",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/README.md",
       "sha256": "8797a1c7123269949c78710ee0d5af19030dc2f5f1284ceb6df0df95b9a94da3",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/module-practice-critic-education.json",
@@ -931,35 +946,35 @@
       "field": "artifactHashes.coding-lab/lab.json",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/lab.json",
       "sha256": "07e78894e53746fb06a0901565ffdc6ef67b6eac25b26b99f5726b1b9f402dd2",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/module-practice-critic-sme-recheck.json",
       "field": "artifactHashes.coding-lab/README.md",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/README.md",
       "sha256": "8797a1c7123269949c78710ee0d5af19030dc2f5f1284ceb6df0df95b9a94da3",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/module-practice-critic-sme-recheck.json",
       "field": "findings[0].reviewedSha256",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/README.md",
       "sha256": "8797a1c7123269949c78710ee0d5af19030dc2f5f1284ceb6df0df95b9a94da3",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/module-practice-critic-sme-recheck.json",
       "field": "findings[1].reviewedSha256",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/expected/test-summary.txt",
       "sha256": "350714159b5f8b554492d5ac658c86a4df36a1858c43140aacacc09cf6105341",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/module-practice-critic-sme-recheck.json",
       "field": "reviewedSha256",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/lab.json",
       "sha256": "07e78894e53746fb06a0901565ffdc6ef67b6eac25b26b99f5726b1b9f402dd2",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/module-practice-critic-sme.json",
@@ -987,7 +1002,7 @@
       "field": "artifactHashes.coding-lab/README.md",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/README.md",
       "sha256": "8797a1c7123269949c78710ee0d5af19030dc2f5f1284ceb6df0df95b9a94da3",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/spring-boot-basics/module-practice-critic-sme.json",
@@ -1008,7 +1023,7 @@
       "field": "reviewedSha256",
       "artifactPath": "spring-boot/spring-boot-basics/coding-lab/lab.json",
       "sha256": "07e78894e53746fb06a0901565ffdc6ef67b6eac25b26b99f5726b1b9f402dd2",
-      "current": true
+      "current": false
     },
     {
       "topic": "path-query-and-body-parameters",

@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * The only file you edit in this lab.
- * Work through the five tasks in the README, top to bottom.
+ * You edit this file in Tasks 1 to 5 and 8.
+ * Work through the tasks in the README, top to bottom.
  */
 @RestController
 public class WorkshopController {
@@ -33,4 +33,7 @@ public class WorkshopController {
     // TODO Task 5: add a POST /workshops method that takes a NewWorkshop
     // @RequestBody, adds it to the catalog, and returns 201 Created with a
     // Location header of /workshops/{newId} and the created workshop as the body.
+
+    // TODO Task 8: add the GET operation that fixtures/workshops-openapi.yaml
+    // describes, with its path, parameters, response body and status codes.
 }
