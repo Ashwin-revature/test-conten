@@ -418,7 +418,13 @@ function composeCommand(line) {
   const [sub, ...after] = global.rest;
   if (!sub) return null;
   // exec takes options, then the service, then a command whose own words are not exec options.
-  return { sub, ...parseArgs(after, VALUE_OPTIONS, sub !== 'exec') };
+  // In Compose, -v (down) and -h (help) are plain flags; only docker run reads them as volume and hostname.
+  const composeValues = new Set([...VALUE_OPTIONS].filter((o) => o !== '-v' && o !== '-h'));
+  const command = parseArgs(after, composeValues, sub !== 'exec');
+  const options = [...global.options, ...command.options];
+  // Help and version modes print text and run nothing, so they never perform the operation asked for.
+  if (options.some(([name]) => ['--help', '-h', '--version'].includes(name))) return null;
+  return { sub, options, rest: command.rest };
 }
 const entry = (dir, key) => (typeof runbook(dir)[key] === 'string' ? runbook(dir)[key] : '');
 // One format message for any entry that is more than one command, whatever rule reads it.
@@ -426,20 +432,28 @@ const notSingle = (dir, ...keys) => {
   const key = keys.find((k) => SHELL_OPERATORS.test(entry(dir, k)));
   return key ? `${key}: write exactly one command, with no ;, &&, pipes, redirection or $(...)` : null;
 };
+const dryRun = (cmd) => on(cmd, '--dry-run');
+const psShowsState = (cmd) => values(cmd, '--format').every((format) => ['json', 'table'].includes(format) || /\.(State|Status)\b/.test(format));
+const logsHaveOutput = (cmd) => values(cmd, '-n', '--tail')
+  .every((tail) => tail === 'all' || (Number.isInteger(Number(tail)) && Number(tail) !== 0));
 
 rule('runbook-lifecycle', (dir) => {
   const format = notSingle(dir, 'start-stack', 'list-all-containers', 'stop-keep-data', 'stop-delete-data');
   if (format) return format;
   const up = composeCommand(entry(dir, 'start-stack'));
-  if (!up || up.sub !== 'up' || !on(up, '-d', '--detach') || up.rest.length) return 'start-stack: the whole stack must start and keep running in the background after the command returns';
+  const incompatible = up && (up.options.some(([name]) => name === '--exit-code-from')
+    || on(up, '--abort-on-container-exit', '--abort-on-container-failure', '--menu'));
+  if (!up || up.sub !== 'up' || !on(up, '-d', '--detach') || on(up, '--no-start')
+    || incompatible || dryRun(up) || up.rest.length) return 'start-stack: the whole stack must start and keep running in the background after the command returns';
   const ps = composeCommand(entry(dir, 'list-all-containers'));
-  if (!ps || ps.sub !== 'ps' || !on(ps, '-a', '--all') || on(ps, '-q', '--quiet', '--services') || ps.rest.length) {
+  if (!ps || ps.sub !== 'ps' || !on(ps, '-a', '--all') || on(ps, '-q', '--quiet', '--services')
+    || dryRun(ps) || values(ps, '--filter', '--status').length || !psShowsState(ps) || ps.rest.length) {
     return 'list-all-containers: list every container of the stack with its state, including the ones that have exited';
   }
   const keep = composeCommand(entry(dir, 'stop-keep-data'));
-  if (!keep || keep.sub !== 'down' || on(keep, '-v', '--volumes') || keep.rest.length) return 'stop-keep-data: stop the stack and remove its containers and network, and keep the database data';
+  if (!keep || keep.sub !== 'down' || on(keep, '-v', '--volumes') || dryRun(keep) || keep.rest.length) return 'stop-keep-data: stop the stack and remove its containers and network, and keep the database data';
   const wipe = composeCommand(entry(dir, 'stop-delete-data'));
-  if (!wipe || wipe.sub !== 'down' || !on(wipe, '-v', '--volumes') || wipe.rest.length) return 'stop-delete-data: stop the stack and also delete the data it keeps in volumes';
+  if (!wipe || wipe.sub !== 'down' || !on(wipe, '-v', '--volumes') || dryRun(wipe) || wipe.rest.length) return 'stop-delete-data: stop the stack and also delete the data it keeps in volumes';
   const listed = runbook(dir)['down-v-also-deletes'];
   const declared = Object.entries(compose(dir).volumes || {}).filter(([, v]) => !v?.external).map(([k]) => k).sort();
   const named = Array.isArray(listed) ? listed.map(String).sort() : [];
@@ -451,11 +465,12 @@ rule('runbook-logs', (dir) => {
   const format = notSingle(dir, 'why-did-api-exit', 'follow-api-output');
   if (format) return format;
   const once = composeCommand(entry(dir, 'why-did-api-exit'));
-  if (!once || once.sub !== 'logs' || on(once, '-f', '--follow') || once.rest.join(' ') !== 'api') {
+  if (!once || once.sub !== 'logs' || on(once, '-f', '--follow') || dryRun(once) || !logsHaveOutput(once) || once.rest.join(' ') !== 'api') {
     return 'why-did-api-exit: print what the api service alone has written so far, then return';
   }
   const follow = composeCommand(entry(dir, 'follow-api-output'));
-  return follow && follow.sub === 'logs' && on(follow, '-f', '--follow') && follow.rest.join(' ') === 'api'
+  return follow && follow.sub === 'logs' && on(follow, '-f', '--follow') && !dryRun(follow)
+    && logsHaveOutput(follow) && follow.rest.join(' ') === 'api'
     ? null : 'follow-api-output: keep printing new lines from the api service alone as they arrive';
 });
 
@@ -469,7 +484,7 @@ rule('runbook-exec', (dir) => {
   const script = ['sh', 'bash'].includes(program) && args[0] === '-c' && args.length === 2 ? args[1].trim() : '';
   const echoed = (script.match(/^echo\s+"?\$\{?([A-Za-z_][A-Za-z0-9_]*)\}?"?$/) || script.match(/^printenv\s+([A-Za-z_][A-Za-z0-9_]*)$/) || [])[1];
   const name = program === 'printenv' && args.length === 1 ? args[0] : echoed;
-  if (!cmd || cmd.sub !== 'exec' || service !== 'api') return 'print-one-api-setting: run the command inside the running api container, not in a new one';
+  if (!cmd || cmd.sub !== 'exec' || dryRun(cmd) || service !== 'api') return 'print-one-api-setting: run the command inside the running api container, not in a new one';
   if (cmd.options.some(([n]) => ['-e', '--env'].includes(n))) return 'print-one-api-setting: read the setting the container already has; do not pass a new value in the same command';
   if (!name) return 'print-one-api-setting: print exactly one named variable, never the whole environment';
   if (/PASS|SECRET|TOKEN|KEY|CREDENTIAL/i.test(name)) return 'print-one-api-setting: check a setting that is not a secret, so no password lands on your screen';
@@ -513,8 +528,10 @@ rule('runbook-run-env', (dir) => {
   if (SHELL_OPERATORS.test(line) || !ENGINES.includes(w[0]) || runAt < 0) return 'run-db-alone: start the database image on its own, as one command, without Compose';
   const cmd = parseArgs(w.slice(runAt), VALUE_OPTIONS, false);
   if (!/^(docker\.io\/(library\/)?)?postgres:18(\b|-|$)/.test(cmd.rest[0] || '')) return 'run-db-alone: run the same PostgreSQL 18 image your compose.yaml uses';
+  if (cmd.options.some(([name]) => name === '--entrypoint') || cmd.rest.length !== 1) return 'run-db-alone: start the database image with its normal entrypoint and command';
+  if (cmd.options.some(([name]) => name === '--help')) return 'run-db-alone: start the database image on its own, as one command, without Compose';
   if (!on(cmd, '-d', '--detach')) return 'run-db-alone: the database must keep running in the background after the command returns';
-  if (values(cmd, '-e', '--env').some((v) => /^POSTGRES_PASSWORD=/.test(v))) return 'run-db-alone: never type the password into the command; the container must read it from your local env file';
+  if (values(cmd, '-e', '--env').some((v) => /^POSTGRES_PASSWORD(_FILE)?(=|$)/.test(v))) return 'run-db-alone: never type the password into the command; the container must read it from your local env file';
   if (on(cmd, '-P', '--publish-all') || values(cmd, '--network', '--net').includes('host')
     || values(cmd, '-p', '--publish').some((v) => !/^(127\.0\.0\.1|\[::1\]):\d+:\d+/.test(v))) {
     return 'run-db-alone: any port you publish must be reachable from this machine only, not from the network';
@@ -526,7 +543,12 @@ rule('runbook-run-env', (dir) => {
     if (!vals) return `run-db-alone: the env file ${f} does not exist in the project`;
     if (!gitignored(dir, f) || trackedByGit(dir, f)) return `run-db-alone: ${f} must be listed in .gitignore and not tracked by Git`;
   }
-  const password = files.map((f) => envFileValues(dir, f).POSTGRES_PASSWORD).find(Boolean);
+  // Docker applies --env-file options in order, so the last file that sets the variable decides.
+  let password;
+  for (const f of files) {
+    const vals = envFileValues(dir, f);
+    if ('POSTGRES_PASSWORD' in vals) password = vals.POSTGRES_PASSWORD;
+  }
   if (!password) return 'run-db-alone: the env file you pass must set the variable the postgres image reads for its password';
   return /\$\{/.test(password)
     ? 'run-db-alone: write the plain value in the env file; docker run does not fill in ${...} variables there' : null;
