@@ -58,12 +58,11 @@
       "status": "present"
     },
     "video": {
-      "status": "absent",
-      "reason": "No verified video: the 2026-10-14 search found only unverified titles, and none fits the 8-minute S20 Short video block shared by four topics after verification; see authoring/evidence/html-css-js/html-and-css/video-search.md."
+      "status": "present"
     },
     "lab": {
       "status": "absent",
-      "reason": "No coding lab: the objectives are practised in the page's own simulators, and this topic falls on a Concept day with no calendar lab day; see authoring/evidence/html-css-js/intake.md, section Lab plan"
+      "reason": "No topic coding lab: the objectives are practised in the page's own simulators, and this topic falls on a Concept day with no calendar lab day (see authoring/evidence/html-css-js/intake.md, section Lab plan); task 11 of the html-and-css module lab (S21) has learners set each of the four box areas to a given size and calculate a width under each box-sizing model, measured in the lab's pinned Chromium, and name the areas in the browser's box-model view"
     }
   },
   "freshness": {
@@ -75,6 +74,6 @@
     ]
   },
   "licensing": [],
-  "lab": "none",
+  "lab": "module:html-and-css",
   "components": {}
 }
