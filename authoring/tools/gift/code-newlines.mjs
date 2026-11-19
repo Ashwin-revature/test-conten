@@ -63,6 +63,10 @@ export function convertCodeBlocks(text, from, to, options = {}) {
   return text.replace(PRE, (_, inner) => `<pre>${encodeCodeLines(decodeCodeLines(inner, from, options), to, options)}</pre>`);
 }
 
+export function numericCodeNewlines(text) {
+  return [...text.matchAll(PRE)].flatMap((match) => match[1].match(NUMERIC_NEWLINE) ?? []);
+}
+
 // Entity form (the retired one) to the indentation-safe literal form, and back.
 export const literalCodeNewlines = (text) => convertCodeBlocks(text, "entity", "safe");
 export const entityCodeNewlines = (text, options) => convertCodeBlocks(text, "safe", "entity", options);
