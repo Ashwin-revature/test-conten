@@ -417,8 +417,7 @@ class WorkshopService \{
 ~Change the constructor parameter to <code>InMemoryWorkshopRepository</code>#Not quite. That class is not a bean either, so startup now fails naming it, and the service depends on one storage choice.
 }
 
-::sfcp-q33::[html]<p>A Javalin route answered an unknown id with 404 and a non-numeric id with 400, each with an <code>Err</code> JSON body such as <code>\{"error"\:"id must be a number"\}</code>. After the port to Spring Boot, the same requests give\:</p><pre><code>GET /items/99   404  \{"error"\:"item 99 not found"\}
-GET /items/abc  400  \{"timestamp"\:"...","status"\:400,"error"\:"Bad Request","path"\:"/items/abc"\}</code></pre><p>The ported controller is\:</p><pre><code>@RestController
+::sfcp-q33::[html]<p>A Javalin route answered an unknown id with 404 and a non-numeric id with 400, each with an <code>Err</code> JSON body such as <code>\{"error"\:"id must be a number"\}</code>. The front end shows the <code>error</code> text from that body. After the port to Spring Boot, <code>GET /items/99</code> still shows <code>item 99 not found</code>, but <code>GET /items/abc</code> shows only a generic message because its body has no <code>error</code> field. The ported controller is\:</p><pre><code>@RestController
 class ItemController \{
 &nbsp;   @GetMapping("/items/\{id\}")
 &nbsp;   Item one(@PathVariable long id) \{ return service.get(id); \}
