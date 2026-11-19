@@ -119,8 +119,9 @@ test("task 11: both pack tags are 200px wide border to border, one in each box-s
   // scaling), so each tag must be 200px wide because of its own width, padding and border, not
   // because of the space around it or the window. As a control, it then removes the tag's own
   // width, min-width and max-width for a moment: an ordinary block tag then fills the whole
-  // checklist, which shows that the 200px came from the width set on the tag. Transitions and
-  // animations are switched off only while measuring, and restored afterwards.
+  // checklist, which shows that the 200px came from the width set on the tag. Transitions are
+  // switched off only while measuring and restored afterwards; finite animations are finished
+  // first and an endless one is measured as drawn. The checklist itself must not be scaled.
   const windows = [
     { width: 800, height: 800 },
     { width: 1280, height: 1000 },
@@ -132,10 +133,20 @@ test("task 11: both pack tags are 200px wide border to border, one in each box-s
       await page.setViewportSize(size);
       const measured = await page.evaluate((widths) => {
         const aside = document.querySelector(".site-aside");
-        const still = ["transition", "animation"];
+        const still = ["transition"];
         const quiet = [aside, ...document.querySelectorAll(".pack-tag-day, .pack-tag-overnight")].filter(Boolean);
         const before = quiet.map((el) => still.map((name) => [name, el.style.getPropertyValue(name), el.style.getPropertyPriority(name)]));
         for (const el of quiet) for (const name of still) el.style.setProperty(name, "none", "important");
+        for (const el of quiet) {
+          for (const animation of el.getAnimations()) {
+            if (Number.isFinite(animation.effect?.getComputedTiming().endTime)) animation.finish();
+          }
+        }
+        const asideStyle = aside ? getComputedStyle(aside) : null;
+        const asideUnscaled =
+          !asideStyle ||
+          ([asideStyle.transform, asideStyle.scale, asideStyle.rotate, asideStyle.translate].every((value) => value === "none") &&
+            String(asideStyle.zoom) === "1");
         const pinned = (width) => ({
           display: "block",
           "box-sizing": "content-box",
@@ -163,8 +174,16 @@ test("task 11: both pack tags are 200px wide border to border, one in each box-s
               selector,
               found: true,
               boxSizing: cs.boxSizing,
-              display: cs.display,
-              ownLayout: cs.display.startsWith("inline") || cs.display.startsWith("table") || cs.float !== "none" || ["absolute", "fixed"].includes(cs.position),
+              ownReason:
+                cs.display === "contents"
+                  ? "its display is contents, so it has no box of its own"
+                  : cs.display.startsWith("inline") || cs.display.startsWith("table")
+                    ? `its display is ${cs.display}`
+                    : cs.float !== "none"
+                      ? "it is floated"
+                      : ["absolute", "fixed"].includes(cs.position)
+                        ? `it is positioned ${cs.position}`
+                        : "",
               layout: el.offsetWidth,
               rendered: el.getBoundingClientRect().width,
               padding: [px("padding-top"), px("padding-right"), px("padding-bottom"), px("padding-left")],
@@ -184,7 +203,7 @@ test("task 11: both pack tags are 200px wide border to border, one in each box-s
             }
             return result;
           });
-          return { width, tags };
+          return { width, asideUnscaled, tags };
         });
         quiet.forEach((el, i) => {
           for (const [name, value, priority] of before[i]) {
@@ -199,6 +218,7 @@ test("task 11: both pack tags are 200px wide border to border, one in each box-s
     return all;
   });
   for (const run of runs) {
+    assert.ok(run.asideUnscaled, "The gear checklist itself is scaled, rotated, translated or zoomed; size the tags with the box model and leave the checklist unscaled.");
     for (const tag of run.tags) {
       assert.ok(tag.found, `${tag.selector} is missing from the gear checklist; keep the two pack tags from the starter inside .site-aside.`);
       assert.ok(tag.padding.every((v) => Math.abs(v - 12) < 0.5), `${tag.selector}: the padding area is not 12px on every side yet.`);
@@ -214,8 +234,8 @@ test("task 11: both pack tags are 200px wide border to border, one in each box-s
     assert.equal(day.boxSizing, "content-box", `.pack-tag-day must keep the default content-box sizing (${where}).`);
     assert.equal(overnight.boxSizing, "border-box", `.pack-tag-overnight is not using border-box sizing yet (${where}).`);
     for (const tag of run.tags) {
-      const cause = tag.ownLayout
-        ? `the tag itself is not an ordinary block (its display is ${tag.display}, or it is floated or absolutely positioned), so it shrinks to its text: remove that display, float or position change from the tag`
+      const cause = tag.ownReason
+        ? `the tag itself is not an ordinary block (${tag.ownReason}): remove that change from the tag`
         : "something around the tag (a wrapper, a float beside it, columns or positioning on the checklist) is giving it its size: keep the tag directly in the checklist and set the width on the tag itself";
       assert.equal(
         tag.withoutOwnWidth,
