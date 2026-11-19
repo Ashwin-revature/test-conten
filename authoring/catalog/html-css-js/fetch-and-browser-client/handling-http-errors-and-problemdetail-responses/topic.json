@@ -60,7 +60,7 @@
     },
     "video": {
       "status": "absent",
-      "reason": "Not searched yet: this readiness pass selected no video and holds no search record. Absent until a documented search finds a verified live, public, embeddable video within the topic budget, or records why none qualifies."
+      "reason": "Not linked: the 2026-11-09 search found no video on application/problem+json for a browser client (the one Problem Details candidate builds it in ASP.NET), and the fetch-resolves-on-HTTP-errors point is already in the video linked from fetching-data; see authoring/evidence/html-css-js/video-curation.md."
     },
     "lab": {
       "status": "absent",

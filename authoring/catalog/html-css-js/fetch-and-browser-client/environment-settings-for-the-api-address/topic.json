@@ -55,7 +55,7 @@
     },
     "video": {
       "status": "absent",
-      "reason": "Not searched yet: this readiness pass selected no video and holds no search record. Absent until a documented search finds a verified live, public, embeddable video within the topic budget, or records why none qualifies."
+      "reason": "No verified video: the 2026-11-09 search found one short candidate, How Dev You's \"Environment Variables in VITE + REACT\" (1:50), whose captions configure Vite define instead of the VITE_ prefix and import.meta.env this topic teaches, and no other candidate within the 11-minute budget covers o1 or o2; see authoring/evidence/html-css-js/video-curation.md."
     },
     "lab": {
       "status": "absent",
