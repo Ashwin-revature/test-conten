@@ -5,18 +5,18 @@
   "files": [
     {
       "path": "authoring/catalog/python/fastapi-services/calling-the-spring-boot-api-from-fastapi-service-url-token-and-timeouts/topic.json",
-      "sha256": "9c61af485ab6476a444d92c2a27c853f73db350e6b696607ab4e8be6812fb18f",
-      "bytes": 3675
+      "sha256": "e1ed2e640bdfc187c79691f6068534085d6e58c22f991d0e5daae87c859041ca",
+      "bytes": 3664
     },
     {
       "path": "authoring/catalog/python/fastapi-services/fastapi-routes/topic.json",
-      "sha256": "2768c299d922f835622b2fd3d4a933cc5ebbb2a850e0d6b83846428a4b83a861",
-      "bytes": 3471
+      "sha256": "1a560f0dde62c81579215d99b5c46e77886ae027af27fc7c1a0fd083c075af06",
+      "bytes": 3460
     },
     {
       "path": "authoring/catalog/python/fastapi-services/module.json",
-      "sha256": "c8df125ded59fb25f6006fcd73c5aaba50157bc72ab613f8995322c1ceb91530",
-      "bytes": 1306
+      "sha256": "adc8704b614b81a5d13188324977ae3e7311a717901748875011d15f0d6abd27",
+      "bytes": 1899
     },
     {
       "path": "authoring/catalog/python/fastapi-services/python-review/topic.json",
@@ -25,8 +25,8 @@
     },
     {
       "path": "authoring/catalog/python/fastapi-services/serving-pipeline-results-as-an-api/topic.json",
-      "sha256": "d9fa7b598ddd51eb4defb5f9a1b3c42fb8778f0e903a40dda1ffcaf28685ce75",
-      "bytes": 3266
+      "sha256": "c807e08876aef1fdb2cdbc852aabe11987c3f940f50846489feaabf54319a2c0",
+      "bytes": 3255
     },
     {
       "path": "authoring/evidence/python/fastapi-services/calling-the-spring-boot-api-from-fastapi-service-url-token-and-timeouts/owner-essential-qa.json",
@@ -42,6 +42,51 @@
       "path": "authoring/evidence/python/fastapi-services/calling-the-spring-boot-api-from-fastapi-service-url-token-and-timeouts/sources.json",
       "sha256": "daa42e2b902537b4bf4c70dae8c6c8cafbcb0978c7e56eb3556112cc52efd3ff",
       "bytes": 2947
+    },
+    {
+      "path": "authoring/evidence/python/fastapi-services/coding-lab-critic-education-recheck.json",
+      "sha256": "b1300693e10afce552ec8c7a7f540b35aa76dc33547d70c3f8a54d4dc5eb22c3",
+      "bytes": 9487
+    },
+    {
+      "path": "authoring/evidence/python/fastapi-services/coding-lab-critic-education.json",
+      "sha256": "b0c23649679c440fdf9dbfbe866c17b37408f5ade526a2a89c83cd38792bcde3",
+      "bytes": 18550
+    },
+    {
+      "path": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme-recheck.json",
+      "sha256": "28a039fbc189b1ca5e3b9ecff30e18a7dba985dba51828ba2437f0c5a7e4901a",
+      "bytes": 10727
+    },
+    {
+      "path": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme.json",
+      "sha256": "0a6637742cd3960d65c33f98e98d0755f703af472ae9c978003f2276a759a0cb",
+      "bytes": 15965
+    },
+    {
+      "path": "authoring/evidence/python/fastapi-services/coding-lab-loop1-reconciliation.json",
+      "sha256": "df6bf679749fc3cd83217bd4258b44c588ec5e7d881b1b71bae574a604ef23b5",
+      "bytes": 4342
+    },
+    {
+      "path": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-education-recheck.json",
+      "sha256": "3fcc0b29c559f26a8770053bfffccef591d460ce773b5f79bc313ca60b934bd8",
+      "bytes": 6680
+    },
+    {
+      "path": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-sme-recheck.json",
+      "sha256": "be08c9018af050ce8e05c4a01e63f33895ecbd0c95b8259b9b2fe4fbbbebbab3",
+      "bytes": 7849
+    },
+    {
+      "path": "authoring/evidence/python/fastapi-services/coding-lab-reconciliation.json",
+      "sha256": "a692d432dd46d26a5aaaa92d68a908d8c7c6fe22c060ee0c01eea752346851d8",
+      "bytes": 24437
+    },
+    {
+      "path": "authoring/evidence/python/fastapi-services/coding-lab/lab-run.json",
+      "sha256": "af0827233fb5613bbb2fdcf70d38019b479aa0f946fce4a18cf8341c1b47318b",
+      "bytes": 3269
     },
     {
       "path": "authoring/evidence/python/fastapi-services/fastapi-routes/owner-essential-qa.json",
@@ -102,6 +147,66 @@
       "path": "python/fastapi-services/calling-the-spring-boot-api-from-fastapi-service-url-token-and-timeouts/artifact.md",
       "sha256": "553684d584def979b79ca99dc3207cfe24fad7219d7bec8e85592845d7d89b2f",
       "bytes": 5227
+    },
+    {
+      "path": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "339dcdecab8ee915b157f31644208ab4a17f0b4c6938c28233821bc1bf1b0da0",
+      "bytes": 12280
+    },
+    {
+      "path": "python/fastapi-services/coding-lab/expected/on-completion.txt",
+      "sha256": "184a1edaef2dd8075eb591c8e8188a188f8eb7ca3dfab9ef1c1cbdcb06c42136",
+      "bytes": 104
+    },
+    {
+      "path": "python/fastapi-services/coding-lab/fixtures/signups.json",
+      "sha256": "ac3494a3cf9aa9e4a1f2eab1318e062256aedb41041f9e63635b09d4fda3dbed",
+      "bytes": 523
+    },
+    {
+      "path": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "23ff593e6b0d7b5a224358b68caddbb552919e31d1e0af6fa0d18908b67d6b16",
+      "bytes": 6440
+    },
+    {
+      "path": "python/fastapi-services/coding-lab/starter/requirements.txt",
+      "sha256": "377ada70ca59058b800280798c7b07592e7ec08684582aae6cc050a87a7f0bd6",
+      "bytes": 530
+    },
+    {
+      "path": "python/fastapi-services/coding-lab/starter/signups_api/__init__.py",
+      "sha256": "7e8b53140e42bb7dabf63afd76ed5c4f3d52ad23181c8d0b2c6d868d35e7a4ce",
+      "bytes": 98
+    },
+    {
+      "path": "python/fastapi-services/coding-lab/starter/signups_api/main.py",
+      "sha256": "809dcb48404e7113927431bc7f17c75441555c5dc7b9b94f3deb4dd67d5ea3d4",
+      "bytes": 1326
+    },
+    {
+      "path": "python/fastapi-services/coding-lab/starter/signups_api/repository.py",
+      "sha256": "2d8d1136a6bdeab9ba49d75b4f8cefa76f88d3b7457bee94e2d83971c5e28993",
+      "bytes": 1791
+    },
+    {
+      "path": "python/fastapi-services/coding-lab/starter/signups_api/settings.py",
+      "sha256": "5e1e888613b0cb3776cf9872f982cfc2282d80bde9599a23f7c135d59c599336",
+      "bytes": 438
+    },
+    {
+      "path": "python/fastapi-services/coding-lab/starter/signups_api/upstream.py",
+      "sha256": "494df3f38e2dc1c7e5fd77bc37d9697e7bea36b00a7eee428dfcfb04c97bb42e",
+      "bytes": 1404
+    },
+    {
+      "path": "python/fastapi-services/coding-lab/starter/test_api.py",
+      "sha256": "e4257191c92bfc13d3c997752fe6c50dffa4ee794fb4332b6044205b051ab6b2",
+      "bytes": 445
+    },
+    {
+      "path": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "02b944fbf20e1840e71252a3cf8c860ba2e123174053b98dadcdd4bbd8504e1d",
+      "bytes": 13909
     },
     {
       "path": "python/fastapi-services/fastapi-routes/artifact.gift",
@@ -172,6 +277,725 @@
       "field": "reviewedSha256",
       "artifactPath": "python/fastapi-services/calling-the-spring-boot-api-from-fastapi-service-url-token-and-timeouts/artifact.html",
       "sha256": "7158f241fe5c802e2d313926a3e15fb5b4dfc914123a93a410aeb991996fc80e",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "be2efea95050e484f9e7e9091c8dd8e20874ba660338c1e8e571ef91eedbabc3",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "09cc6cab0b593f2089e6061c39f3ddabebeedee7ab8613b97701e5c186f23d6b",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "09cc6cab0b593f2089e6061c39f3ddabebeedee7ab8613b97701e5c186f23d6b",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "80a3bc6427f5187543b8069716076026f5721888bbf28212d7a1270d56a4e9ca",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "80a3bc6427f5187543b8069716076026f5721888bbf28212d7a1270d56a4e9ca",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[10].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/expected/on-completion.txt",
+      "sha256": "184a1edaef2dd8075eb591c8e8188a188f8eb7ca3dfab9ef1c1cbdcb06c42136",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "80a3bc6427f5187543b8069716076026f5721888bbf28212d7a1270d56a4e9ca",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "09cc6cab0b593f2089e6061c39f3ddabebeedee7ab8613b97701e5c186f23d6b",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "be2efea95050e484f9e7e9091c8dd8e20874ba660338c1e8e571ef91eedbabc3",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "80a3bc6427f5187543b8069716076026f5721888bbf28212d7a1270d56a4e9ca",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/fixtures/signups.json",
+      "sha256": "ac3494a3cf9aa9e4a1f2eab1318e062256aedb41041f9e63635b09d4fda3dbed",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[7].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "09cc6cab0b593f2089e6061c39f3ddabebeedee7ab8613b97701e5c186f23d6b",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[8].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/fixtures/signups.json",
+      "sha256": "ac3494a3cf9aa9e4a1f2eab1318e062256aedb41041f9e63635b09d4fda3dbed",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education-recheck.json",
+      "field": "recheck.items[9].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "09cc6cab0b593f2089e6061c39f3ddabebeedee7ab8613b97701e5c186f23d6b",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "be2efea95050e484f9e7e9091c8dd8e20874ba660338c1e8e571ef91eedbabc3",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "68af88b55de003424f5e4f78be669a228f58d1a2db6494a248025e48846a9e70",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "0f11916d3aaf8ac05055e126886a34505063b9b8b967b20296b6fe58a83b77cb",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "0f11916d3aaf8ac05055e126886a34505063b9b8b967b20296b6fe58a83b77cb",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "6f1eca438dd30446c16f3aa3c5e833c07d99b933f2186ded82f825289f25c63b",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education.json",
+      "field": "findings[10].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/expected/on-completion.txt",
+      "sha256": "181348e031b3e589c52fe94370447df553c3ccf7617717f568a7943b0952cee8",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "68af88b55de003424f5e4f78be669a228f58d1a2db6494a248025e48846a9e70",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education.json",
+      "field": "findings[3].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "0f11916d3aaf8ac05055e126886a34505063b9b8b967b20296b6fe58a83b77cb",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education.json",
+      "field": "findings[4].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "68af88b55de003424f5e4f78be669a228f58d1a2db6494a248025e48846a9e70",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education.json",
+      "field": "findings[5].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "0f11916d3aaf8ac05055e126886a34505063b9b8b967b20296b6fe58a83b77cb",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education.json",
+      "field": "findings[6].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "0f11916d3aaf8ac05055e126886a34505063b9b8b967b20296b6fe58a83b77cb",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education.json",
+      "field": "findings[7].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "0f11916d3aaf8ac05055e126886a34505063b9b8b967b20296b6fe58a83b77cb",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education.json",
+      "field": "findings[8].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "0f11916d3aaf8ac05055e126886a34505063b9b8b967b20296b6fe58a83b77cb",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education.json",
+      "field": "findings[9].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "0f11916d3aaf8ac05055e126886a34505063b9b8b967b20296b6fe58a83b77cb",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-education.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "68af88b55de003424f5e4f78be669a228f58d1a2db6494a248025e48846a9e70",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "be2efea95050e484f9e7e9091c8dd8e20874ba660338c1e8e571ef91eedbabc3",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "09cc6cab0b593f2089e6061c39f3ddabebeedee7ab8613b97701e5c186f23d6b",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "80a3bc6427f5187543b8069716076026f5721888bbf28212d7a1270d56a4e9ca",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme-recheck.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "be2efea95050e484f9e7e9091c8dd8e20874ba660338c1e8e571ef91eedbabc3",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "80a3bc6427f5187543b8069716076026f5721888bbf28212d7a1270d56a4e9ca",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "80a3bc6427f5187543b8069716076026f5721888bbf28212d7a1270d56a4e9ca",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "be2efea95050e484f9e7e9091c8dd8e20874ba660338c1e8e571ef91eedbabc3",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "80a3bc6427f5187543b8069716076026f5721888bbf28212d7a1270d56a4e9ca",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "09cc6cab0b593f2089e6061c39f3ddabebeedee7ab8613b97701e5c186f23d6b",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "80a3bc6427f5187543b8069716076026f5721888bbf28212d7a1270d56a4e9ca",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "09cc6cab0b593f2089e6061c39f3ddabebeedee7ab8613b97701e5c186f23d6b",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[7].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "80a3bc6427f5187543b8069716076026f5721888bbf28212d7a1270d56a4e9ca",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[8].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "80a3bc6427f5187543b8069716076026f5721888bbf28212d7a1270d56a4e9ca",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme-recheck.json",
+      "field": "recheck.items[9].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "09cc6cab0b593f2089e6061c39f3ddabebeedee7ab8613b97701e5c186f23d6b",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "be2efea95050e484f9e7e9091c8dd8e20874ba660338c1e8e571ef91eedbabc3",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "68af88b55de003424f5e4f78be669a228f58d1a2db6494a248025e48846a9e70",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "0f11916d3aaf8ac05055e126886a34505063b9b8b967b20296b6fe58a83b77cb",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "6f1eca438dd30446c16f3aa3c5e833c07d99b933f2186ded82f825289f25c63b",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "6f1eca438dd30446c16f3aa3c5e833c07d99b933f2186ded82f825289f25c63b",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme.json",
+      "field": "findings[2].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "68af88b55de003424f5e4f78be669a228f58d1a2db6494a248025e48846a9e70",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme.json",
+      "field": "findings[3].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "6f1eca438dd30446c16f3aa3c5e833c07d99b933f2186ded82f825289f25c63b",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme.json",
+      "field": "findings[4].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "0f11916d3aaf8ac05055e126886a34505063b9b8b967b20296b6fe58a83b77cb",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme.json",
+      "field": "findings[5].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "6f1eca438dd30446c16f3aa3c5e833c07d99b933f2186ded82f825289f25c63b",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme.json",
+      "field": "findings[6].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "0f11916d3aaf8ac05055e126886a34505063b9b8b967b20296b6fe58a83b77cb",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme.json",
+      "field": "findings[7].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "0f11916d3aaf8ac05055e126886a34505063b9b8b967b20296b6fe58a83b77cb",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme.json",
+      "field": "findings[8].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "6f1eca438dd30446c16f3aa3c5e833c07d99b933f2186ded82f825289f25c63b",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme.json",
+      "field": "findings[9].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "0f11916d3aaf8ac05055e126886a34505063b9b8b967b20296b6fe58a83b77cb",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-critic-sme.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "68af88b55de003424f5e4f78be669a228f58d1a2db6494a248025e48846a9e70",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop1-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "be2efea95050e484f9e7e9091c8dd8e20874ba660338c1e8e571ef91eedbabc3",
+      "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "23ff593e6b0d7b5a224358b68caddbb552919e31d1e0af6fa0d18908b67d6b16",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "339dcdecab8ee915b157f31644208ab4a17f0b4c6938c28233821bc1bf1b0da0",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "02b944fbf20e1840e71252a3cf8c860ba2e123174053b98dadcdd4bbd8504e1d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "02b944fbf20e1840e71252a3cf8c860ba2e123174053b98dadcdd4bbd8504e1d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[10].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/expected/on-completion.txt",
+      "sha256": "184a1edaef2dd8075eb591c8e8188a188f8eb7ca3dfab9ef1c1cbdcb06c42136",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[11].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "339dcdecab8ee915b157f31644208ab4a17f0b4c6938c28233821bc1bf1b0da0",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "02b944fbf20e1840e71252a3cf8c860ba2e123174053b98dadcdd4bbd8504e1d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "339dcdecab8ee915b157f31644208ab4a17f0b4c6938c28233821bc1bf1b0da0",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "23ff593e6b0d7b5a224358b68caddbb552919e31d1e0af6fa0d18908b67d6b16",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "02b944fbf20e1840e71252a3cf8c860ba2e123174053b98dadcdd4bbd8504e1d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/fixtures/signups.json",
+      "sha256": "ac3494a3cf9aa9e4a1f2eab1318e062256aedb41041f9e63635b09d4fda3dbed",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[7].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "339dcdecab8ee915b157f31644208ab4a17f0b4c6938c28233821bc1bf1b0da0",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[8].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/fixtures/signups.json",
+      "sha256": "ac3494a3cf9aa9e4a1f2eab1318e062256aedb41041f9e63635b09d4fda3dbed",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-education-recheck.json",
+      "field": "recheck.items[9].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "339dcdecab8ee915b157f31644208ab4a17f0b4c6938c28233821bc1bf1b0da0",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "23ff593e6b0d7b5a224358b68caddbb552919e31d1e0af6fa0d18908b67d6b16",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "23ff593e6b0d7b5a224358b68caddbb552919e31d1e0af6fa0d18908b67d6b16",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "339dcdecab8ee915b157f31644208ab4a17f0b4c6938c28233821bc1bf1b0da0",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "02b944fbf20e1840e71252a3cf8c860ba2e123174053b98dadcdd4bbd8504e1d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "02b944fbf20e1840e71252a3cf8c860ba2e123174053b98dadcdd4bbd8504e1d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[10].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "02b944fbf20e1840e71252a3cf8c860ba2e123174053b98dadcdd4bbd8504e1d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[11].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "23ff593e6b0d7b5a224358b68caddbb552919e31d1e0af6fa0d18908b67d6b16",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "23ff593e6b0d7b5a224358b68caddbb552919e31d1e0af6fa0d18908b67d6b16",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "02b944fbf20e1840e71252a3cf8c860ba2e123174053b98dadcdd4bbd8504e1d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "339dcdecab8ee915b157f31644208ab4a17f0b4c6938c28233821bc1bf1b0da0",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "02b944fbf20e1840e71252a3cf8c860ba2e123174053b98dadcdd4bbd8504e1d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "339dcdecab8ee915b157f31644208ab4a17f0b4c6938c28233821bc1bf1b0da0",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[7].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "02b944fbf20e1840e71252a3cf8c860ba2e123174053b98dadcdd4bbd8504e1d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[8].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "02b944fbf20e1840e71252a3cf8c860ba2e123174053b98dadcdd4bbd8504e1d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "recheck.items[9].reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "339dcdecab8ee915b157f31644208ab4a17f0b4c6938c28233821bc1bf1b0da0",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-loop2-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "23ff593e6b0d7b5a224358b68caddbb552919e31d1e0af6fa0d18908b67d6b16",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "68af88b55de003424f5e4f78be669a228f58d1a2db6494a248025e48846a9e70",
+      "current": false
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab/lab-run.json",
+      "field": "artifactHashes.expected/on-completion.txt",
+      "artifactPath": "python/fastapi-services/coding-lab/expected/on-completion.txt",
+      "sha256": "184a1edaef2dd8075eb591c8e8188a188f8eb7ca3dfab9ef1c1cbdcb06c42136",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab/lab-run.json",
+      "field": "artifactHashes.fixtures/signups.json",
+      "artifactPath": "python/fastapi-services/coding-lab/fixtures/signups.json",
+      "sha256": "ac3494a3cf9aa9e4a1f2eab1318e062256aedb41041f9e63635b09d4fda3dbed",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab/lab-run.json",
+      "field": "artifactHashes.lab.json",
+      "artifactPath": "python/fastapi-services/coding-lab/lab.json",
+      "sha256": "23ff593e6b0d7b5a224358b68caddbb552919e31d1e0af6fa0d18908b67d6b16",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab/lab-run.json",
+      "field": "artifactHashes.README.md",
+      "artifactPath": "python/fastapi-services/coding-lab/README.md",
+      "sha256": "339dcdecab8ee915b157f31644208ab4a17f0b4c6938c28233821bc1bf1b0da0",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab/lab-run.json",
+      "field": "artifactHashes.starter/requirements.txt",
+      "artifactPath": "python/fastapi-services/coding-lab/starter/requirements.txt",
+      "sha256": "377ada70ca59058b800280798c7b07592e7ec08684582aae6cc050a87a7f0bd6",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab/lab-run.json",
+      "field": "artifactHashes.starter/signups_api/__init__.py",
+      "artifactPath": "python/fastapi-services/coding-lab/starter/signups_api/__init__.py",
+      "sha256": "7e8b53140e42bb7dabf63afd76ed5c4f3d52ad23181c8d0b2c6d868d35e7a4ce",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab/lab-run.json",
+      "field": "artifactHashes.starter/signups_api/main.py",
+      "artifactPath": "python/fastapi-services/coding-lab/starter/signups_api/main.py",
+      "sha256": "809dcb48404e7113927431bc7f17c75441555c5dc7b9b94f3deb4dd67d5ea3d4",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab/lab-run.json",
+      "field": "artifactHashes.starter/signups_api/repository.py",
+      "artifactPath": "python/fastapi-services/coding-lab/starter/signups_api/repository.py",
+      "sha256": "2d8d1136a6bdeab9ba49d75b4f8cefa76f88d3b7457bee94e2d83971c5e28993",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab/lab-run.json",
+      "field": "artifactHashes.starter/signups_api/settings.py",
+      "artifactPath": "python/fastapi-services/coding-lab/starter/signups_api/settings.py",
+      "sha256": "5e1e888613b0cb3776cf9872f982cfc2282d80bde9599a23f7c135d59c599336",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab/lab-run.json",
+      "field": "artifactHashes.starter/signups_api/upstream.py",
+      "artifactPath": "python/fastapi-services/coding-lab/starter/signups_api/upstream.py",
+      "sha256": "494df3f38e2dc1c7e5fd77bc37d9697e7bea36b00a7eee428dfcfb04c97bb42e",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab/lab-run.json",
+      "field": "artifactHashes.starter/test_api.py",
+      "artifactPath": "python/fastapi-services/coding-lab/starter/test_api.py",
+      "sha256": "e4257191c92bfc13d3c997752fe6c50dffa4ee794fb4332b6044205b051ab6b2",
+      "current": true
+    },
+    {
+      "topic": "coding-lab",
+      "evidencePath": "authoring/evidence/python/fastapi-services/coding-lab/lab-run.json",
+      "field": "artifactHashes.tests/test_main.py",
+      "artifactPath": "python/fastapi-services/coding-lab/tests/test_main.py",
+      "sha256": "02b944fbf20e1840e71252a3cf8c860ba2e123174053b98dadcdd4bbd8504e1d",
       "current": true
     },
     {
