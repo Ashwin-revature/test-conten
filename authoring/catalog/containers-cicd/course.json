@@ -36,7 +36,8 @@
     ]
   },
   "assessments": [
-    "containers-cicd-module-check"
+    "containers-cicd-module-check",
+    "standard-fast-final-checkpoint"
   ],
   "courseLabs": [],
   "license": "proprietary-private",
