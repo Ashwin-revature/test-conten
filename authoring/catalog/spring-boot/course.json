@@ -68,7 +68,8 @@
   },
   "assessments": [
     "spring-boot-module-check",
-    "spring-boot-final-assessment"
+    "spring-boot-final-assessment",
+    "spring-boot-final-mcq"
   ],
   "courseLabs": [],
   "license": "proprietary-private",

@@ -37,8 +37,10 @@ const FOUNDATION_BANKS = {
   },
 };
 
-// The course-final contract: 30 questions, at least one minute per question.
-const COURSE_FINAL_QUESTIONS = 30;
+// The course-final contract: the bank holds exactly the blueprint's MCQ count, and the blueprint allows
+// at least one minute per question. Foundation banks hold 30; a registered course final sets its own
+// count (Spring Boot: 22 questions in its 30 minutes), so the per-letter key floor is floor(N/4).
+const FOUNDATION_QUESTIONS = 30;
 
 const readJson = async (file) => JSON.parse(await readFile(path.join(repo, file), "utf8"));
 
@@ -88,17 +90,19 @@ test("only a manifest-registered gradedMcq assessment can hold a course-final ba
 
 for (const [file, { blueprint }] of Object.entries(courseFinals)) {
   test(`${file} meets the course-final contract in its blueprint`, () => {
-    assert.equal(blueprint.itemCounts?.MCQ, COURSE_FINAL_QUESTIONS, "blueprint MCQ count");
+    const count = blueprint.itemCounts?.MCQ;
+    assert.ok(Number.isInteger(count) && count >= 20 && count <= 30, `blueprint MCQ count ${count} is outside 20 to 30`);
     assert.ok(
-      Number.isInteger(blueprint.durationMinutes) && blueprint.durationMinutes >= COURSE_FINAL_QUESTIONS,
-      `blueprint allows ${blueprint.durationMinutes} minutes for ${COURSE_FINAL_QUESTIONS} questions`,
+      Number.isInteger(blueprint.durationMinutes) && blueprint.durationMinutes >= count,
+      `blueprint allows ${blueprint.durationMinutes} minutes for ${count} questions`,
     );
   });
 }
 
 const BANKS = { ...FOUNDATION_BANKS, ...courseFinals };
 
-for (const [file, { category, html }] of Object.entries(BANKS)) {
+for (const [file, { category, html, blueprint }] of Object.entries(BANKS)) {
+  const expected = blueprint ? blueprint.itemCounts.MCQ : FOUNDATION_QUESTIONS;
   test(`${file} validates raw in its declared format`, async () => {
     const bytes = await readFile(path.join(repo, file));
     if (html) {
@@ -106,7 +110,7 @@ for (const [file, { category, html }] of Object.entries(BANKS)) {
       assert.throws(() => validateGift(bytes, category), /must not contain < or >/);
     }
     const questions = validateGift(bytes, category, { html });
-    assert.equal(questions.length, COURSE_FINAL_QUESTIONS);
+    assert.equal(questions.length, expected);
     const lines = bytes.toString("ascii").split("\n");
     const comments = lines.filter((line) => line.trimStart().startsWith("//"));
     for (const line of comments)
@@ -137,7 +141,7 @@ for (const [file, { category, html }] of Object.entries(BANKS)) {
       previous = letter;
       longest = Math.max(longest, run);
     }
-    for (const letter of "ABCD") assert.ok((positions[letter] ?? 0) >= 7, `${letter} keyed ${positions[letter] ?? 0} times`);
+    for (const letter of "ABCD") assert.ok((positions[letter] ?? 0) >= Math.floor(expected / 4), `${letter} keyed ${positions[letter] ?? 0} times`);
     assert.ok(longest <= 2, `longest repeated key run is ${longest}`);
   });
 }

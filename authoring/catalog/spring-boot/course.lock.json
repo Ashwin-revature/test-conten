@@ -5,8 +5,8 @@
   "files": [
     {
       "path": "authoring/catalog/spring-boot/course.json",
-      "sha256": "8ea51df6309b505a3d0341d5322f6d07a395502360473ae696555a36272c95b4",
-      "bytes": 1724
+      "sha256": "d54b20aa8150b0c64c348bc936303620d115170b208a3303495d2bf2e53d801b",
+      "bytes": 1753
     },
     {
       "path": "authoring/evidence/spring-boot/final-assessment-critic-education.json",
@@ -69,9 +69,109 @@
       "bytes": 49755
     },
     {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/README.md",
+      "sha256": "ced6352b11475e698a7e37337cedab9e234b06afb239ba1329d0a8d9ff7c2bd0",
+      "bytes": 7895
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/audit.txt",
+      "sha256": "0e19f8093ff81da2c9bb539b63e6ab5651fa785896260a410289bdb9fad5cecb",
+      "bytes": 13878
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/blueprint-proposal.json",
+      "sha256": "bdc1231f8e4d1ba1980a3ab9d1ab7a01b1a394ba0f927ebdeff24395b7c3035d",
+      "bytes": 23145
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/coverage.json",
+      "sha256": "000039470f9bcf6058023bd9981cac02348e4d5f1697b5d5f86caa840687a7bf",
+      "bytes": 47800
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/key-proof/item-tests.tsv",
+      "sha256": "850570339848fe28741fa039c2c980f13234b4173cf94ad0fc779f21024a6a54",
+      "bytes": 1192
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/key-proof/results.txt",
+      "sha256": "a6b4e5a927a388fc77748043e7e157c7876b2395f104c22a68168eb98c9c962b",
+      "bytes": 2740
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reserve-mcq.gift",
+      "sha256": "c7f91317a4d1d259d48f6157ff6c80eeb9e55e084fc04f84074bb5694771d3dc",
+      "bytes": 6696
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/review-record.md",
+      "sha256": "1238105b398844c361ca833da95600b2910f738a92820a49aeedb56a4578dd2e",
+      "bytes": 3640
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/education-recheck-loop1.md",
+      "sha256": "23f09cbfcfa1784d6de654be8ad29b5df26be5a7a70400b707d645ef6bef2157",
+      "bytes": 6145
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/education-recheck-loop2.md",
+      "sha256": "e6b6ac5cef2de3f82908dbb447074217864a0447b327baaba199fddbda26f505",
+      "bytes": 5724
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/education-review.md",
+      "sha256": "eba7d76c32739e22c3b28857e090642eca45be99c568ed7ad383ce631d8e0d5b",
+      "bytes": 7998
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/handoff-manifest-sha256.txt",
+      "sha256": "ea84a156b5201296880472d3944fd0734d649d42d3fcc76eb7ee3c0e30b3c5ca",
+      "bytes": 10965
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/reconciliation-loop1.md",
+      "sha256": "75974db355287fbb0b794337b803a8f554ddd9057ace87c0f01970d5f55b46a1",
+      "bytes": 8002
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/reconciliation-loop2.md",
+      "sha256": "86131cffcf837e97305fff7008106050e330de2cc70a20111f3633c3e514692c",
+      "bytes": 7630
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/reconciliation.md",
+      "sha256": "575f0ba2de4d3fd6c8ceef7aef47a83003b0048959466c5a359a5e6ed9db49c2",
+      "bytes": 8793
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/sme-recheck-loop1-replacement.md",
+      "sha256": "dbf048105c539607d1b75d66704c67b2fdcce7c727a40a3bc7d3d0462578d432",
+      "bytes": 14206
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/sme-recheck-loop2.md",
+      "sha256": "6eb83c10b57a7ef3161ccc8a8acf64b33d56790f101d17ddb25eec8c590bb136",
+      "bytes": 7149
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/sme-review.md",
+      "sha256": "388133124098426e03f5644e24d193e7df4d0e7969c318c4ee83d89f7228f059",
+      "bytes": 7344
+    },
+    {
       "path": "spring-boot/assessments/spring-boot-final-assessment/blueprint.json",
-      "sha256": "e5d42e040a23aa836c788080378004a602a5dc73e00f8dd0a4d0ebe2f52a5674",
-      "bytes": 15762
+      "sha256": "8ac7e54a226ef8ae9182b2c1108113e2eb305b1d783b1355fe40b11eeb69a679",
+      "bytes": 7303
+    },
+    {
+      "path": "spring-boot/assessments/spring-boot-final-mcq/blueprint.json",
+      "sha256": "341710faaa3c145a01d53ba09d0c75fe57ca74f1e505eda55077c955067f4fa8",
+      "bytes": 9761
+    },
+    {
+      "path": "spring-boot/assessments/spring-boot-final-mcq/final-mcq.gift",
+      "sha256": "e166262b67b5fe243c6871417d8dfb3f9983a9c66ae360122d38ddc27468a117",
+      "bytes": 27414
     },
     {
       "path": "spring-boot/assessments/spring-boot-module-check/blueprint.json",
@@ -85,49 +185,49 @@
       "field": "artifactHashes.assessments/spring-boot-final-assessment/blueprint.json",
       "artifactPath": "spring-boot/assessments/spring-boot-final-assessment/blueprint.json",
       "sha256": "e5d42e040a23aa836c788080378004a602a5dc73e00f8dd0a4d0ebe2f52a5674",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/final-assessment-critic-education.json",
       "field": "findings[0].reviewedSha256",
       "artifactPath": "spring-boot/assessments/spring-boot-final-assessment/blueprint.json",
       "sha256": "e5d42e040a23aa836c788080378004a602a5dc73e00f8dd0a4d0ebe2f52a5674",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/final-assessment-critic-education.json",
       "field": "reviewedSha256",
       "artifactPath": "spring-boot/assessments/spring-boot-final-assessment/blueprint.json",
       "sha256": "e5d42e040a23aa836c788080378004a602a5dc73e00f8dd0a4d0ebe2f52a5674",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/final-assessment-critic-sme.json",
       "field": "artifactHashes.assessments/spring-boot-final-assessment/blueprint.json",
       "artifactPath": "spring-boot/assessments/spring-boot-final-assessment/blueprint.json",
       "sha256": "e5d42e040a23aa836c788080378004a602a5dc73e00f8dd0a4d0ebe2f52a5674",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/final-assessment-critic-sme.json",
       "field": "findings[0].reviewedSha256",
       "artifactPath": "spring-boot/assessments/spring-boot-final-assessment/blueprint.json",
       "sha256": "e5d42e040a23aa836c788080378004a602a5dc73e00f8dd0a4d0ebe2f52a5674",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/final-assessment-critic-sme.json",
       "field": "reviewedSha256",
       "artifactPath": "spring-boot/assessments/spring-boot-final-assessment/blueprint.json",
       "sha256": "e5d42e040a23aa836c788080378004a602a5dc73e00f8dd0a4d0ebe2f52a5674",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/final-assessment-reconciliation.json",
       "field": "reviewedSha256",
       "artifactPath": "spring-boot/assessments/spring-boot-final-assessment/blueprint.json",
       "sha256": "e5d42e040a23aa836c788080378004a602a5dc73e00f8dd0a4d0ebe2f52a5674",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/intake-2-critic-education-recheck.json",
