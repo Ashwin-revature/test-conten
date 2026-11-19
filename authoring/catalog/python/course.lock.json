@@ -54,6 +54,21 @@
       "bytes": 3669
     },
     {
+      "path": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "sha256": "857d7d7194d8e080bd83d0b53cb94b343e8d8042c5f0bf2b5f4637be2baf0696",
+      "bytes": 10860
+    },
+    {
+      "path": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "sha256": "6e59107dd5a022a25834aea998aa12df0076a4916f52e4661c7156928d64fc97",
+      "bytes": 7481
+    },
+    {
+      "path": "authoring/evidence/python/final-coding-loop4-reconciliation.json",
+      "sha256": "a959db4307e3d2d9c3f43be92441aa85a3d8cf9194670b957c81194dcc8bed1f",
+      "bytes": 4834
+    },
+    {
       "path": "authoring/evidence/python/final-coding-reconciliation.json",
       "sha256": "f21fe9abbbf630df2258e63d58557c95d7b184ee44a155c26ba3f677b3958fe5",
       "bytes": 8215
@@ -1459,6 +1474,454 @@
       "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/blueprint.json",
       "sha256": "ac4c0e8e14caa4cb8e08ebe3a7a7d851425745496df1a099ef389d09d2b016d6",
       "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/blueprint.json",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/blueprint.json",
+      "sha256": "4cea0f26eafd04a7b193677950f3414dcfc111b397b8ed20c53e1bb92d6d33b9",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/coding-lab/expected/on-completion.txt",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/coding-lab/expected/on-completion.txt",
+      "sha256": "aeda70de5a1fd57cf98c304d96bc6e612f2e97aa3739e90b8520a9279e6fc9a6",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/coding-lab/fixtures/transactions.jsonl",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/coding-lab/fixtures/transactions.jsonl",
+      "sha256": "5b98420b4434243cf2287155a24404649c86448e218343d7622aab9f30db7789",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/coding-lab/lab.json",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/coding-lab/lab.json",
+      "sha256": "8793131645385fa027195f3470e798fbdc27f2035e03522b3c0b56c234994ad0",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/coding-lab/README.md",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/coding-lab/README.md",
+      "sha256": "8fcc784f8cd4d2651a5270e4022060b0fd266c8d97dbefa5f2fe0477106eac24",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/coding-lab/starter/requirements.txt",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/coding-lab/starter/requirements.txt",
+      "sha256": "e320df58fc1c69433027d8f996b6e0625ee816a6fcc81099b6ac54b67514d1de",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/coding-lab/starter/settlement/__init__.py",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/coding-lab/starter/settlement/__init__.py",
+      "sha256": "36bff9e1688d404c5aefcb1fc997ba5a5aa77f2da0b4aad9fc684a4183b16b02",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/coding-lab/starter/settlement/extract.py",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/coding-lab/starter/settlement/extract.py",
+      "sha256": "38ff1adcf61b934c40fcc2f984fa0f2817deac35bd4614a57e4a900c84596074",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/coding-lab/starter/settlement/models.py",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/coding-lab/starter/settlement/models.py",
+      "sha256": "fa4fd6d990366773490d86f713ffd98b700ff6daf7e77517d43bc3d7a77cb6dd",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/coding-lab/tests/test_main.py",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/coding-lab/tests/test_main.py",
+      "sha256": "08460cccd7b9abd60ea5418ed69e35950f0c3d3b33675ffaeb3db6b4c30579f7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/blueprint.json",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/blueprint.json",
+      "sha256": "122180170813eacffc06ae5a3d051311b8273300359d904de5b5e51959df39ce",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/expected/on-completion.txt",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/expected/on-completion.txt",
+      "sha256": "8902663e375daa949b00ecb8c1d0ae8fa33765ba25f4d37ddab7d581e111368f",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/lab.json",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/lab.json",
+      "sha256": "6c9bfaaee3fc18ccbd1e01eaf7e00b1ca62c795a85ffb9461664f2780ea35892",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/README.md",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/README.md",
+      "sha256": "5a867a76d1abb51004cf40812282c9705bcf4ba442e663ae059834268285cf35",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/__init__.py",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/__init__.py",
+      "sha256": "ff8f31f48b10786a4550e1f9d106e509681addac5a170fe8aa77f8af4f2ddf40",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/main.py",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/main.py",
+      "sha256": "d11d43997794ff39aef00077673816add06858039dc25c3c3e9d9a45f5b19331",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/models.py",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/models.py",
+      "sha256": "33afa43db8c6df486bda99946f10d0d27184a371296097a3c278014cca2feda1",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/payments.py",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/payments.py",
+      "sha256": "1040e005a52390ec50b0e3f5bfba6dbee2892290612d1acdfed078d4bdd49878",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/settings.py",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/settings.py",
+      "sha256": "60ee4bbefdf922af7856768e663d9b55a3ecccc385a780019c4f64a7bcffc112",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/store.py",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/store.py",
+      "sha256": "686876125db4428619a9736f6928dc6c53ea6763a706a2c9bc890a98173db23d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/starter/requirements.txt",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/starter/requirements.txt",
+      "sha256": "5366cd5ba8fd21c4d06110dfe5b51f4e2ad359ce8d4aff902e17a0b17d632fb5",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/tests/test_main.py",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/tests/test_main.py",
+      "sha256": "7f771fc2ecc1ae7467520ad5411e488ea0d4336f062c56c727c7e44f8767afcc",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/blueprint.json",
+      "sha256": "122180170813eacffc06ae5a3d051311b8273300359d904de5b5e51959df39ce",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/blueprint.json",
+      "sha256": "122180170813eacffc06ae5a3d051311b8273300359d904de5b5e51959df39ce",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/blueprint.json",
+      "sha256": "122180170813eacffc06ae5a3d051311b8273300359d904de5b5e51959df39ce",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/tests/test_main.py",
+      "sha256": "7f771fc2ecc1ae7467520ad5411e488ea0d4336f062c56c727c7e44f8767afcc",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/README.md",
+      "sha256": "5a867a76d1abb51004cf40812282c9705bcf4ba442e663ae059834268285cf35",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/README.md",
+      "sha256": "5a867a76d1abb51004cf40812282c9705bcf4ba442e663ae059834268285cf35",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/README.md",
+      "sha256": "5a867a76d1abb51004cf40812282c9705bcf4ba442e663ae059834268285cf35",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/tests/test_main.py",
+      "sha256": "7f771fc2ecc1ae7467520ad5411e488ea0d4336f062c56c727c7e44f8767afcc",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "recheck.items[7].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/lab.json",
+      "sha256": "6c9bfaaee3fc18ccbd1e01eaf7e00b1ca62c795a85ffb9461664f2780ea35892",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "recheck.items[8].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/blueprint.json",
+      "sha256": "122180170813eacffc06ae5a3d051311b8273300359d904de5b5e51959df39ce",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/blueprint.json",
+      "sha256": "122180170813eacffc06ae5a3d051311b8273300359d904de5b5e51959df39ce",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/blueprint.json",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/blueprint.json",
+      "sha256": "4cea0f26eafd04a7b193677950f3414dcfc111b397b8ed20c53e1bb92d6d33b9",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/coding-lab/expected/on-completion.txt",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/coding-lab/expected/on-completion.txt",
+      "sha256": "aeda70de5a1fd57cf98c304d96bc6e612f2e97aa3739e90b8520a9279e6fc9a6",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/coding-lab/fixtures/transactions.jsonl",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/coding-lab/fixtures/transactions.jsonl",
+      "sha256": "5b98420b4434243cf2287155a24404649c86448e218343d7622aab9f30db7789",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/coding-lab/lab.json",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/coding-lab/lab.json",
+      "sha256": "8793131645385fa027195f3470e798fbdc27f2035e03522b3c0b56c234994ad0",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/coding-lab/README.md",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/coding-lab/README.md",
+      "sha256": "8fcc784f8cd4d2651a5270e4022060b0fd266c8d97dbefa5f2fe0477106eac24",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/coding-lab/starter/requirements.txt",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/coding-lab/starter/requirements.txt",
+      "sha256": "e320df58fc1c69433027d8f996b6e0625ee816a6fcc81099b6ac54b67514d1de",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/coding-lab/starter/settlement/__init__.py",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/coding-lab/starter/settlement/__init__.py",
+      "sha256": "36bff9e1688d404c5aefcb1fc997ba5a5aa77f2da0b4aad9fc684a4183b16b02",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/coding-lab/starter/settlement/extract.py",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/coding-lab/starter/settlement/extract.py",
+      "sha256": "38ff1adcf61b934c40fcc2f984fa0f2817deac35bd4614a57e4a900c84596074",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/coding-lab/starter/settlement/models.py",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/coding-lab/starter/settlement/models.py",
+      "sha256": "fa4fd6d990366773490d86f713ffd98b700ff6daf7e77517d43bc3d7a77cb6dd",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-basic-validate/coding-lab/tests/test_main.py",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/coding-lab/tests/test_main.py",
+      "sha256": "08460cccd7b9abd60ea5418ed69e35950f0c3d3b33675ffaeb3db6b4c30579f7",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/blueprint.json",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/blueprint.json",
+      "sha256": "122180170813eacffc06ae5a3d051311b8273300359d904de5b5e51959df39ce",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/expected/on-completion.txt",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/expected/on-completion.txt",
+      "sha256": "8902663e375daa949b00ecb8c1d0ae8fa33765ba25f4d37ddab7d581e111368f",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/lab.json",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/lab.json",
+      "sha256": "6c9bfaaee3fc18ccbd1e01eaf7e00b1ca62c795a85ffb9461664f2780ea35892",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/README.md",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/README.md",
+      "sha256": "5a867a76d1abb51004cf40812282c9705bcf4ba442e663ae059834268285cf35",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/__init__.py",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/__init__.py",
+      "sha256": "ff8f31f48b10786a4550e1f9d106e509681addac5a170fe8aa77f8af4f2ddf40",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/main.py",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/main.py",
+      "sha256": "d11d43997794ff39aef00077673816add06858039dc25c3c3e9d9a45f5b19331",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/models.py",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/models.py",
+      "sha256": "33afa43db8c6df486bda99946f10d0d27184a371296097a3c278014cca2feda1",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/payments.py",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/payments.py",
+      "sha256": "1040e005a52390ec50b0e3f5bfba6dbee2892290612d1acdfed078d4bdd49878",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/settings.py",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/settings.py",
+      "sha256": "60ee4bbefdf922af7856768e663d9b55a3ecccc385a780019c4f64a7bcffc112",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/store.py",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/starter/refunds/store.py",
+      "sha256": "686876125db4428619a9736f6928dc6c53ea6763a706a2c9bc890a98173db23d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/starter/requirements.txt",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/starter/requirements.txt",
+      "sha256": "5366cd5ba8fd21c4d06110dfe5b51f4e2ad359ce8d4aff902e17a0b17d632fb5",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "artifactHashes.assessments/python-final-coding-intermediate-refunds/coding-lab/tests/test_main.py",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/coding-lab/tests/test_main.py",
+      "sha256": "7f771fc2ecc1ae7467520ad5411e488ea0d4336f062c56c727c7e44f8767afcc",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/blueprint.json",
+      "sha256": "122180170813eacffc06ae5a3d051311b8273300359d904de5b5e51959df39ce",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/blueprint.json",
+      "sha256": "4cea0f26eafd04a7b193677950f3414dcfc111b397b8ed20c53e1bb92d6d33b9",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "recheck.items[2].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/blueprint.json",
+      "sha256": "122180170813eacffc06ae5a3d051311b8273300359d904de5b5e51959df39ce",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "recheck.items[3].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/blueprint.json",
+      "sha256": "4cea0f26eafd04a7b193677950f3414dcfc111b397b8ed20c53e1bb92d6d33b9",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "recheck.items[4].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/blueprint.json",
+      "sha256": "122180170813eacffc06ae5a3d051311b8273300359d904de5b5e51959df39ce",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "recheck.items[5].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/blueprint.json",
+      "sha256": "122180170813eacffc06ae5a3d051311b8273300359d904de5b5e51959df39ce",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "recheck.items[6].reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/blueprint.json",
+      "sha256": "4cea0f26eafd04a7b193677950f3414dcfc111b397b8ed20c53e1bb92d6d33b9",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-basic-validate/blueprint.json",
+      "sha256": "4cea0f26eafd04a7b193677950f3414dcfc111b397b8ed20c53e1bb92d6d33b9",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/python/final-coding-loop4-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "python/assessments/python-final-coding-intermediate-refunds/blueprint.json",
+      "sha256": "122180170813eacffc06ae5a3d051311b8273300359d904de5b5e51959df39ce",
+      "current": true
     },
     {
       "evidencePath": "authoring/evidence/python/final-coding-reconciliation.json",
