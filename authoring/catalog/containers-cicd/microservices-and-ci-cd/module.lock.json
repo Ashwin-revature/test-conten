@@ -184,6 +184,11 @@
       "bytes": 71627
     },
     {
+      "path": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-loop4-reconciliation.json",
+      "sha256": "4eb1c4812e4450c285f594e84f1be51b5b32cccfc21873b3b4c5614b49ac03b0",
+      "bytes": 63271
+    },
+    {
       "path": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-recheck-reconciliation.json",
       "sha256": "df0772edd49bfb1c03eafc933e4f04ce4104ce8b943fac22c78a6006152a30bb",
       "bytes": 27249
@@ -4327,6 +4332,13 @@
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-loop4-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/lab.json",
+      "sha256": "0c680786a68731ee36634d8cd5248f95262cff5c53a2bb898d6d15d1b75b5685",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/containers-cicd/microservices-and-ci-cd/module-lab-loop4-reconciliation.json",
       "field": "reviewedSha256",
       "artifactPath": "containers-cicd/microservices-and-ci-cd/coding-lab/lab.json",
       "sha256": "0c680786a68731ee36634d8cd5248f95262cff5c53a2bb898d6d15d1b75b5685",
