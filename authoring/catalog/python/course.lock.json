@@ -5,8 +5,8 @@
   "files": [
     {
       "path": "authoring/catalog/python/course.json",
-      "sha256": "9beb1ef3424067798b267f9573af043f1d6ee56389b8d57c1fcbde0ae11a9e08",
-      "bytes": 971
+      "sha256": "fdbdc6fc635d8cfe529fc9e6679f1a374fef0300bf6dfa7a68cf44a49662f973",
+      "bytes": 999
     },
     {
       "path": "authoring/evidence/python/intake-2-critic-education-recheck.json",
@@ -570,7 +570,7 @@
       "field": "artifactHashes.course.json",
       "artifactPath": "authoring/catalog/python/course.json",
       "sha256": "9beb1ef3424067798b267f9573af043f1d6ee56389b8d57c1fcbde0ae11a9e08",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/python/intake-critic-education.json",
