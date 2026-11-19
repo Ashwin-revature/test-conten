@@ -165,8 +165,8 @@
     },
     {
       "path": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
-      "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
-      "bytes": 27778
+      "sha256": "859eeedc26374ac1ba18ca342ac8b3f7bba2078a59d987518e0f79437f314a1f",
+      "bytes": 28426
     },
     {
       "path": "containers-cicd/assessments/containers-cicd-module-check/blueprint.json",
@@ -197,35 +197,35 @@
       "field": "artifactHashes.assessments/containers-cicd-course-final/final-mcq.gift",
       "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
       "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-education.json",
       "field": "findings[0].reviewedSha256",
       "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
       "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-education.json",
       "field": "findings[1].reviewedSha256",
       "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
       "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-education.json",
       "field": "findings[2].reviewedSha256",
       "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
       "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-education.json",
       "field": "findings[3].reviewedSha256",
       "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
       "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-education.json",
@@ -246,28 +246,28 @@
       "field": "artifactHashes.assessments/containers-cicd-course-final/final-mcq.gift",
       "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
       "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-sme.json",
       "field": "findings[0].reviewedSha256",
       "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
       "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-sme.json",
       "field": "findings[1].reviewedSha256",
       "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
       "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-sme.json",
       "field": "findings[2].reviewedSha256",
       "artifactPath": "containers-cicd/assessments/containers-cicd-course-final/final-mcq.gift",
       "sha256": "d9842d49680d013a4501bacee346da29403f8f7fea3592a17bc9277bd201693b",
-      "current": true
+      "current": false
     },
     {
       "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-final-critic-sme.json",

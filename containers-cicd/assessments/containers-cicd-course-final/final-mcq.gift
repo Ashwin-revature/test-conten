@@ -88,8 +88,8 @@ ENTRYPOINT ["java", "-jar", "target/app.jar"]</code></pre><p>What is wrong?</p>{
 }
 
 ::ccd-cf30-q12::[html]<p>Local development needs <code>DB_HOST\=db</code>; staging needs <code>DB_HOST\=staging-db</code>. A teammate proposes building two shop-api images, each with its own <code>ENV DB_HOST</code> line.</p><p>Which review is right?</p>{
-=Build one image and pass DB_HOST at run time with -e or --env-file#Correct. -e or --env-file sets the value when the container starts. A value written with ENV lives in the image, so changing it needs a rebuild.
-~Fine\: ENV is how a container receives its environment variables#Not quite. -e and --env-file also set variables, without baking values into the image.
+=Build one image and pass DB_HOST at run time with -e or --env-file#Correct. -e or --env-file sets the value when the container starts. A value written with ENV is baked into the image as its default, so building two images per environment is unnecessary; -e overrides it at run time.
+~Fine\: ENV is how a container receives its environment variables#Not quite. ENV does set a variable, but it bakes one default into the image; -e and --env-file set it per container without a rebuild.
 ~Build one image and COPY a different .env into it for each place#Not quite. A copied file is still inside the image, and changing it needs a rebuild.
 ~Build one image with ENV, then change it with exec in each container#Not quite. An exec edit lives only in that container and is lost when it is recreated.
 }
@@ -98,7 +98,7 @@ ENTRYPOINT ["java", "-jar", "target/app.jar"]</code></pre><p>What is wrong?</p>{
 &nbsp; test\: ["CMD-SHELL", "pg_isready -U $\{POSTGRES_USER\} -d $\{POSTGRES_DB\}"]</code></pre><p>Who fills in <code>$\{POSTGRES_USER\}</code> in this test?</p>{
 ~The db container's shell, from db's own environment#Not quite. That is what $$ achieves; with one $, Compose has already filled it in.
 ~pg_isready, which looks the user up in the database#Not quite. pg_isready receives the text after Compose has filled it in.
-=Compose, from your machine, when it reads compose.yaml#Correct. With a single $, Compose fills the variable from your machine, not from db's environment. Writing $$ leaves it for the container to expand.
+=Compose, from your machine, when it reads compose.yaml#Correct. With a single $, Compose fills the variable from your machine, not from db's environment. Writing $$ leaves it for the container to expand. Here neither your shell nor .env sets the names, so Compose substitutes an empty string and prints a warning.
 ~Nobody\: the text reaches pg_isready exactly as written#Not quite. Compose expands a single $ itself; only $$ passes the reference through.
 }
 
@@ -127,7 +127,7 @@ $ docker compose logs api
 ~(1) the user's token in the query string; (2) a configured token#Not quite. Query strings end up in logs; tokens go in the Authorization header.
 }
 
-::ccd-cf30-q17::[html]<p>A release job in the acme/shop-api repository pushes the image as <code>ghcr.io/acme/shop-api\:2.0</code> and as <code>registry.example.com/shop/api\:2.0</code>.</p><p>Which credentials should it use?</p>{
+::ccd-cf30-q17::[html]<p>A release job in the acme/shop-api repository pushes the image as <code>ghcr.io/acme/shop-api\:2.0</code> and as <code>registry.example.com/shop/api\:2.0</code>. GitHub's registry ghcr.io accepts the run's <code>GITHUB_TOKEN</code> when the job's <code>permissions</code> block includes <code>packages\: write</code>; registry.example.com is a separate system that knows nothing about GitHub tokens.</p><p>Which credentials should it use?</p>{
 ~GITHUB_TOKEN with <code>write-all</code> for GHCR, so pushes never fail; a secret for the other#Not quite. write-all grants far more than pushing a package needs; list only the permissions the job uses.
 =GITHUB_TOKEN with least-access permissions for GHCR; a secret for the other#Correct. The first reference names the ghcr.io registry for this repository, where GITHUB_TOKEN, limited to the least access it needs, suits. registry.example.com is another system, so it needs a stored secret.
 ~GITHUB_TOKEN for both, since it is created per run#Not quite. The token belongs to this repository's run; it cannot log in to another company's registry.
@@ -165,7 +165,7 @@ $ docker compose logs api
 ::ccd-cf30-q22::[html]<p>Ana fixes a setting by editing a file inside the running api container with <code>docker compose exec</code>. The app works. After <code>docker compose down</code> and <code>docker compose up -d</code>, the old setting is back.</p><p>Why?</p>{
 =The edit lived in the old container; up made a new one from the image#Correct. The image never changes. down removed the container that held the edit, and up created a fresh one.
 ~down rebuilt the api image from ./backend, which replaced her edit#Not quite. down stops and removes containers and the network; it builds nothing.
-~<code>docker compose down -v</code> would have kept the edit in a volume#Not quite. -v also removes named volumes, and the edit was in no volume.
+~The edit was saved to a named volume, and down deleted that volume#Not quite. down keeps named volumes unless -v is given, and a file edited in the container's filesystem is not in a volume.
 ~exec ran her command in a temporary copy of the api container#Not quite. exec runs inside the service's running container; that container was then removed.
 }
 
@@ -223,8 +223,8 @@ RestClient client \= RestClient.builder()
 }
 
 ::ccd-cf30-q30::[html]<p>Ana changes Java code in ./backend and runs <code>docker compose up -d</code> again. <code>docker compose ps</code> shows api still "Up 2 hours", and the old behaviour remains.</p><p>Why?</p>{
-~Compose rebuilt the image, so the edit was not saved to disk#Not quite. Compose did not rebuild\: up -d builds only missing images.
+~up -d rebuilds the image only when the Dockerfile itself changes#Not quite. up -d builds only a missing image; it does not compare the Dockerfile or the source code.
 ~api needs <code>docker compose down -v</code> before any code change shows#Not quite. -v deletes the database volume; it does not rebuild the image.
 =up -d builds only missing images; the api image already existed#Correct. Compose builds an image only when it is missing; the api image existed, so nothing was rebuilt and the running container was left as it was.
-~The code is read from a bind mount, which only refreshes on stop#Not quite. This service is built from its Dockerfile, not bind-mounted.
+~The api container must be restarted with <code>docker compose restart api</code> before it sees new code#Not quite. A restart reuses the same image; the code was copied into the image at build time, so only a rebuild picks up the change.
 }
