@@ -65,7 +65,7 @@
     },
     {
       "path": "authoring/evidence/spring-boot/validation-errors-and-testing/coding-lab/lab-run.json",
-      "sha256": "33d37e37bdb1f447d1eb9b423dd4ee490c27e3d553657a13283954a3fd19a954",
+      "sha256": "7ed11323dec24226d4d4314f6333f230f0bab9e16c2243434b9e2320e0cec267",
       "bytes": 4574
     },
     {
@@ -157,6 +157,21 @@
       "path": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop7-reconciliation.json",
       "sha256": "20b2f97b5aa121d49ef4bca99ded0ce5fb87d2dcd38831c804a61dd25e5cd8da",
       "bytes": 20197
+    },
+    {
+      "path": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
+      "sha256": "6985c62f28bfa50192be403d94f781df2ba061b2dc215477571a401cab7f09c7",
+      "bytes": 5314
+    },
+    {
+      "path": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "sha256": "c82eb283367c8518be2c6e7bf874b1ff0adb3eccd8b714c1dbb2c1e5ec2c5e43",
+      "bytes": 5415
+    },
+    {
+      "path": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-reconciliation.json",
+      "sha256": "c7dd92a642cfddd645006507dac1596db7c84960dd7da8a09f73d2ec955460fe",
+      "bytes": 1857
     },
     {
       "path": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-reconciliation.json",
@@ -553,16 +568,16 @@
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coding-lab/lab-run.json",
       "field": "artifactHashes.lab.json",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
-      "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
-      "current": false
+      "sha256": "bd7907d58576b87ba641fc3491e52d2955fc4951f6c82ce56c8b74bee93f622d",
+      "current": true
     },
     {
       "topic": "coding-lab",
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coding-lab/lab-run.json",
       "field": "artifactHashes.README.md",
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
-      "sha256": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
-      "current": false
+      "sha256": "d39f2c5517052d379532add1e88009e989a536e06d4360fa65c816e0cfa7603d",
+      "current": true
     },
     {
       "topic": "coding-lab",
@@ -3157,6 +3172,272 @@
       "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
       "sha256": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
       "current": false
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/expected/test-summary.txt",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/expected/test-summary.txt",
+      "sha256": "c455a65b0edea873483391b6d56e787030bcc5fc03d323993d83d2b2de57ab0b",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
+      "sha256": "bd7907d58576b87ba641fc3491e52d2955fc4951f6c82ce56c8b74bee93f622d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
+      "sha256": "d39f2c5517052d379532add1e88009e989a536e06d4360fa65c816e0cfa7603d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/pom.xml",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/starter/pom.xml",
+      "sha256": "fb0c2acc5f6db04b05b7591f071f62c277ada789fe1fe2681e07969c0cad5bfe",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/src/main/java/bookings/Booking.java",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/starter/src/main/java/bookings/Booking.java",
+      "sha256": "bcefacdb6c60b239abd881a27396a25ea4b68ef73e00442dfa3ee59991408201",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/src/main/java/bookings/BookingController.java",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/starter/src/main/java/bookings/BookingController.java",
+      "sha256": "409ac8b7a92618508daa4f121814b2e349af382af7c8de6ce716d747a4e548a5",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/src/main/java/bookings/BookingsApplication.java",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/starter/src/main/java/bookings/BookingsApplication.java",
+      "sha256": "5bcb3140f019b1974fd0f350326c71ae56fcb51249d834921c08f2ca6f338d84",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/src/main/java/bookings/BookingService.java",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/starter/src/main/java/bookings/BookingService.java",
+      "sha256": "aec9ed47794c903988a7e5e61d720aaf2531bb7aeff1e200ead76923ef536a3a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/src/main/java/bookings/NewBooking.java",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/starter/src/main/java/bookings/NewBooking.java",
+      "sha256": "494471cac979299843f81708811f48de2b15d58ff68bb973e91d6d4acb4324b3",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/src/main/resources/application.properties",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/starter/src/main/resources/application.properties",
+      "sha256": "7b931c73dc627379b1aeb3f50534fafa7837a9a61fd5b153615b4e3e051ce853",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/tests/bookings/BugReportTest.java",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/tests/bookings/BugReportTest.java",
+      "sha256": "b452c7e91a7d375f205eeaa7532107b98f3d7e77fc889a8c73495607b04ae2d1",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/tests/bookings/ErrorSliceTest.java",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/tests/bookings/ErrorSliceTest.java",
+      "sha256": "0fa43b2c43eaa6ca00a666af0245bc925cf19448d9a0188e94e8be6a8c285fd2",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/tests/bookings/ValidationApiTest.java",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/tests/bookings/ValidationApiTest.java",
+      "sha256": "30d8b1acdb3e48efb590fd1d1da0f687e1c1a0f6ec172d097416fb9d7a412b38",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
+      "field": "artifactHashes.coding-lab/tests/bookings/WebLayerTest.java",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/tests/bookings/WebLayerTest.java",
+      "sha256": "9d6403eac50efffe069a885def4b70315fe6a4d8206bb08e95a27a4c0a708208",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
+      "sha256": "d39f2c5517052d379532add1e88009e989a536e06d4360fa65c816e0cfa7603d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
+      "sha256": "bd7907d58576b87ba641fc3491e52d2955fc4951f6c82ce56c8b74bee93f622d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
+      "sha256": "d39f2c5517052d379532add1e88009e989a536e06d4360fa65c816e0cfa7603d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-education-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
+      "sha256": "bd7907d58576b87ba641fc3491e52d2955fc4951f6c82ce56c8b74bee93f622d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/expected/test-summary.txt",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/expected/test-summary.txt",
+      "sha256": "c455a65b0edea873483391b6d56e787030bcc5fc03d323993d83d2b2de57ab0b",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/lab.json",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
+      "sha256": "bd7907d58576b87ba641fc3491e52d2955fc4951f6c82ce56c8b74bee93f622d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/README.md",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
+      "sha256": "d39f2c5517052d379532add1e88009e989a536e06d4360fa65c816e0cfa7603d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/pom.xml",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/starter/pom.xml",
+      "sha256": "fb0c2acc5f6db04b05b7591f071f62c277ada789fe1fe2681e07969c0cad5bfe",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/src/main/java/bookings/Booking.java",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/starter/src/main/java/bookings/Booking.java",
+      "sha256": "bcefacdb6c60b239abd881a27396a25ea4b68ef73e00442dfa3ee59991408201",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/src/main/java/bookings/BookingController.java",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/starter/src/main/java/bookings/BookingController.java",
+      "sha256": "409ac8b7a92618508daa4f121814b2e349af382af7c8de6ce716d747a4e548a5",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/src/main/java/bookings/BookingsApplication.java",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/starter/src/main/java/bookings/BookingsApplication.java",
+      "sha256": "5bcb3140f019b1974fd0f350326c71ae56fcb51249d834921c08f2ca6f338d84",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/src/main/java/bookings/BookingService.java",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/starter/src/main/java/bookings/BookingService.java",
+      "sha256": "aec9ed47794c903988a7e5e61d720aaf2531bb7aeff1e200ead76923ef536a3a",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/src/main/java/bookings/NewBooking.java",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/starter/src/main/java/bookings/NewBooking.java",
+      "sha256": "494471cac979299843f81708811f48de2b15d58ff68bb973e91d6d4acb4324b3",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/starter/src/main/resources/application.properties",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/starter/src/main/resources/application.properties",
+      "sha256": "7b931c73dc627379b1aeb3f50534fafa7837a9a61fd5b153615b4e3e051ce853",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/tests/bookings/BugReportTest.java",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/tests/bookings/BugReportTest.java",
+      "sha256": "b452c7e91a7d375f205eeaa7532107b98f3d7e77fc889a8c73495607b04ae2d1",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/tests/bookings/ErrorSliceTest.java",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/tests/bookings/ErrorSliceTest.java",
+      "sha256": "0fa43b2c43eaa6ca00a666af0245bc925cf19448d9a0188e94e8be6a8c285fd2",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/tests/bookings/ValidationApiTest.java",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/tests/bookings/ValidationApiTest.java",
+      "sha256": "30d8b1acdb3e48efb590fd1d1da0f687e1c1a0f6ec172d097416fb9d7a412b38",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "field": "artifactHashes.coding-lab/tests/bookings/WebLayerTest.java",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/tests/bookings/WebLayerTest.java",
+      "sha256": "9d6403eac50efffe069a885def4b70315fe6a4d8206bb08e95a27a4c0a708208",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/README.md",
+      "sha256": "d39f2c5517052d379532add1e88009e989a536e06d4360fa65c816e0cfa7603d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
+      "sha256": "bd7907d58576b87ba641fc3491e52d2955fc4951f6c82ce56c8b74bee93f622d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "field": "recheck.items[0].reviewedSha256",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/tests/bookings/BugReportTest.java",
+      "sha256": "b452c7e91a7d375f205eeaa7532107b98f3d7e77fc889a8c73495607b04ae2d1",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "field": "recheck.items[1].reviewedSha256",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/tests/bookings/ErrorSliceTest.java",
+      "sha256": "0fa43b2c43eaa6ca00a666af0245bc925cf19448d9a0188e94e8be6a8c285fd2",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-critic-sme-recheck.json",
+      "field": "reviewedSha256",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
+      "sha256": "bd7907d58576b87ba641fc3491e52d2955fc4951f6c82ce56c8b74bee93f622d",
+      "current": true
+    },
+    {
+      "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-loop8-reconciliation.json",
+      "field": "reviewedSha256",
+      "artifactPath": "spring-boot/validation-errors-and-testing/coding-lab/lab.json",
+      "sha256": "bd7907d58576b87ba641fc3491e52d2955fc4951f6c82ce56c8b74bee93f622d",
+      "current": true
     },
     {
       "evidencePath": "authoring/evidence/spring-boot/validation-errors-and-testing/coverage-gap-reconciliation.json",

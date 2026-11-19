@@ -23,9 +23,9 @@
   "otherSystems": "Linux and Windows runs are not yet recorded; hosted CI is disabled, so this macOS record is the only execution evidence (lab-contract section 10).",
   "testScope": "The public tests check HTTP responses over MockMvc for the listed inputs. Inside the tests the learner finishes, shipped checks run executable behavior only: the Task 7 context is the web-layer slice (no full-application ApplicationAvailability bean) whose every BookingService is a non-mock fake that finds nothing (residual: a full context that deliberately switches ApplicationAvailability's auto-configuration off and overrides the service is not caught); Task 5 checks from the real MockMvc result that Spring resolved a HandlerMethodValidationException for ids 0 and -3; Task 8 checks the calls Mockito recorded and verified on its mocks, requires a BookingController the learner built from the plain mock, and probes that controller's delegation with built.byId(5L). Residual: these checks cannot distinguish a direct plain.create call from built.create without call-location inspection, which is excluded. Task 5's predicted title and detail are a formative self-check; the shipped test checks the 400 problem+json response independently of the prediction, and the lab does not claim standard-error-responses-with-problemdetail#o2. The lab has no database.",
   "artifactHashes": {
-    "README.md": "1d92b09c6832b537fdcafae31c576da332188ebccfb2e37889cfd1776e1bb80c",
+    "README.md": "d39f2c5517052d379532add1e88009e989a536e06d4360fa65c816e0cfa7603d",
     "expected/test-summary.txt": "c455a65b0edea873483391b6d56e787030bcc5fc03d323993d83d2b2de57ab0b",
-    "lab.json": "39c95b1cca6505291972a0a709a40a4fd8e501c4426f3e09e51847e3c3665fa1",
+    "lab.json": "bd7907d58576b87ba641fc3491e52d2955fc4951f6c82ce56c8b74bee93f622d",
     "starter/pom.xml": "fb0c2acc5f6db04b05b7591f071f62c277ada789fe1fe2681e07969c0cad5bfe",
     "starter/src/main/java/bookings/Booking.java": "bcefacdb6c60b239abd881a27396a25ea4b68ef73e00442dfa3ee59991408201",
     "starter/src/main/java/bookings/BookingController.java": "409ac8b7a92618508daa4f121814b2e349af382af7c8de6ce716d747a4e548a5",
