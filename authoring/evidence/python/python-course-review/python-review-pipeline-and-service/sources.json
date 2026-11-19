@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "reviewedSha256": "bfb2fec032011554bdffc9a16636c28ddb939e224e8a3ac46f8d4397ec6495b0",
-  "checkedAt": "2026-11-19T20:49:36.868Z",
+  "checkedAt": "2026-11-19T21:00:03.945Z",
   "sources": [
     {
       "url": "https://docs.python.org/3/howto/functional.html",
-      "retrievedAt": "2026-11-19T20:49:36.868Z",
+      "retrievedAt": "2026-11-19T21:00:03.945Z",
       "status": 200,
       "finalUrl": "https://docs.python.org/3/howto/functional.html",
       "sha256": "9ab719a23c3440bb37a4f0195f12d4d131f9a0d770bd49b65028427d28786a7c",
@@ -15,7 +15,7 @@
     },
     {
       "url": "https://docs.python.org/3/library/json.html",
-      "retrievedAt": "2026-11-19T20:49:36.868Z",
+      "retrievedAt": "2026-11-19T21:00:03.945Z",
       "status": 200,
       "finalUrl": "https://docs.python.org/3/library/json.html",
       "sha256": "aac1d650b3a55957cbcc9791e17c0a71a8189a3d013b7a6128d3b03aed87ae59",
@@ -25,7 +25,7 @@
     },
     {
       "url": "https://pydantic.dev/docs/validation/latest/concepts/models/",
-      "retrievedAt": "2026-11-19T20:49:36.868Z",
+      "retrievedAt": "2026-11-19T21:00:03.945Z",
       "status": 200,
       "finalUrl": "https://pydantic.dev/docs/validation/latest/concepts/models/",
       "sha256": "84d12c386bade018b035bc370155abb1207bcbe63a2768c8758183ab1fce94f4",
@@ -35,7 +35,7 @@
     },
     {
       "url": "https://pydantic.dev/docs/validation/latest/concepts/conversion_table/",
-      "retrievedAt": "2026-11-19T20:49:36.868Z",
+      "retrievedAt": "2026-11-19T21:00:03.945Z",
       "status": 200,
       "finalUrl": "https://pydantic.dev/docs/validation/latest/concepts/conversion_table/",
       "sha256": "39d763fdc82a8f0641fb5aadeab48b3b9f343f9d658eefb9cdb6ecb8f8102b8d",
@@ -45,7 +45,7 @@
     },
     {
       "url": "https://pydantic.dev/docs/validation/latest/errors/validation_errors/",
-      "retrievedAt": "2026-11-19T20:49:36.868Z",
+      "retrievedAt": "2026-11-19T21:00:03.945Z",
       "status": 200,
       "finalUrl": "https://pydantic.dev/docs/validation/latest/errors/validation_errors/",
       "sha256": "bddc02ff3296206701503b366f387453b66d020656556354a002cead75b03541",
@@ -55,7 +55,7 @@
     },
     {
       "url": "https://www.postgresql.org/docs/current/sql-insert.html",
-      "retrievedAt": "2026-11-19T20:49:36.868Z",
+      "retrievedAt": "2026-11-19T21:00:03.945Z",
       "status": 200,
       "finalUrl": "https://www.postgresql.org/docs/current/sql-insert.html",
       "sha256": "0abf6eab275823061d7b66097b4f4c2a61424b3ccae87a5fd3bc8c6b4c1acc5c",
@@ -65,7 +65,7 @@
     },
     {
       "url": "https://www.psycopg.org/psycopg3/docs/basic/transactions.html",
-      "retrievedAt": "2026-11-19T20:49:36.868Z",
+      "retrievedAt": "2026-11-19T21:00:03.945Z",
       "status": 200,
       "finalUrl": "https://www.psycopg.org/psycopg3/docs/basic/transactions.html",
       "sha256": "39b47502c9ec1a6ff8b80ab901133cab42318e341a6b1c18e2a803ae0fd82c81",
@@ -75,7 +75,7 @@
     },
     {
       "url": "https://www.psycopg.org/psycopg3/docs/api/cursors.html",
-      "retrievedAt": "2026-11-19T20:49:36.868Z",
+      "retrievedAt": "2026-11-19T21:00:03.945Z",
       "status": 200,
       "finalUrl": "https://www.psycopg.org/psycopg3/docs/api/cursors.html",
       "sha256": "4236564281081e755cb9b9276fed46741e18241750589869d9630f4afffef3f8",
@@ -85,7 +85,7 @@
     },
     {
       "url": "https://docs.python.org/3/howto/logging.html",
-      "retrievedAt": "2026-11-19T20:49:36.868Z",
+      "retrievedAt": "2026-11-19T21:00:03.945Z",
       "status": 200,
       "finalUrl": "https://docs.python.org/3/howto/logging.html",
       "sha256": "e1c00ea5a353bf5d626bf21d5ce345c47a7b54d0e23560d2f0881bda79d1e1ca",
@@ -95,7 +95,7 @@
     },
     {
       "url": "https://fastapi.tiangolo.com/tutorial/path-params/",
-      "retrievedAt": "2026-11-19T20:49:36.868Z",
+      "retrievedAt": "2026-11-19T21:00:03.945Z",
       "status": 200,
       "finalUrl": "https://fastapi.tiangolo.com/tutorial/path-params/",
       "sha256": "3b0704be20b4f3bb6f6bd60dc594c6d82328b05455fbf0f153ceabd1e9f54c5b",
@@ -105,7 +105,7 @@
     },
     {
       "url": "https://fastapi.tiangolo.com/tutorial/handling-errors/",
-      "retrievedAt": "2026-11-19T20:49:36.868Z",
+      "retrievedAt": "2026-11-19T21:00:03.945Z",
       "status": 200,
       "finalUrl": "https://fastapi.tiangolo.com/tutorial/handling-errors/",
       "sha256": "b911b8e91902122038cda28afccb769dbe47fa6732bd28f48357eab14717fbfb",
@@ -115,7 +115,7 @@
     },
     {
       "url": "https://www.python-httpx.org/advanced/timeouts/",
-      "retrievedAt": "2026-11-19T20:49:36.868Z",
+      "retrievedAt": "2026-11-19T21:00:03.945Z",
       "status": 200,
       "finalUrl": "https://www.python-httpx.org/advanced/timeouts/",
       "sha256": "1a060f1e06215f7c9305d8cb88f5553440fb01274de4594405b693cbd16a0649",
@@ -125,7 +125,7 @@
     },
     {
       "url": "https://www.python-httpx.org/exceptions/",
-      "retrievedAt": "2026-11-19T20:49:36.868Z",
+      "retrievedAt": "2026-11-19T21:00:03.945Z",
       "status": 200,
       "finalUrl": "https://www.python-httpx.org/exceptions/",
       "sha256": "095a8b0a1ea34a3b52394628341415d699d8f4a37f0a1e9cce0153c43a64720d",

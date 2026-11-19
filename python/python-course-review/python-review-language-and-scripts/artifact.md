@@ -41,7 +41,7 @@ line(*args, "fragile", **opts)
 line("pen", gift=False)
 ```
 
-One reminder: `print` separates its arguments with spaces and shows a tuple, list or dict the way you would type it in code.
+Two reminders: `print` separates its arguments with spaces and shows a tuple, list or dict the way you would type it in code; and `* 2` doubles a number but repeats a string, so `"ab" * 2` is `"abab"`.
 
 ### Activity 3 of 3: Check the order script and its test
 

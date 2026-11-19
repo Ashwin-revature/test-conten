@@ -10,8 +10,8 @@
     },
     {
       "path": "authoring/catalog/python/python-course-review/python-review-language-and-scripts/topic.json",
-      "sha256": "4e0ec9ac0258093633588129dde6add39a5213708c4a3b1fc2d78e64430744a8",
-      "bytes": 3697
+      "sha256": "367c70c2e51acb0add942bdec288cc4a76ba75d8852a22b53b869063d5b52679",
+      "bytes": 3698
     },
     {
       "path": "authoring/catalog/python/python-course-review/python-review-pipeline-and-service/topic.json",
@@ -25,7 +25,7 @@
     },
     {
       "path": "authoring/evidence/python/python-course-review/python-review-language-and-scripts/sources.json",
-      "sha256": "3cb0626b93fa1ae108fd8080b1f3084eaa46efb209b0eec7b2eee484a4f8bded",
+      "sha256": "9f571d30d980313f9af98e6c343a310940a726ca5afdb7c7b8f745370953eb86",
       "bytes": 5560
     },
     {
@@ -35,18 +35,18 @@
     },
     {
       "path": "authoring/evidence/python/python-course-review/python-review-pipeline-and-service/sources.json",
-      "sha256": "8b53c642ae078b864e301b69a1c8d9d7ab62809fc5a4e8ac5bdbb44281eca133",
+      "sha256": "bfaf347b8595e94c547ee82f159389c3b0c89160b39d99f7497017979c13984e",
       "bytes": 6225
     },
     {
       "path": "python/python-course-review/python-review-language-and-scripts/artifact.html",
-      "sha256": "2155c67ce560b150c241304dc31a54aa737a77418355741d1b4b752b19343d7a",
-      "bytes": 91486
+      "sha256": "cebfe59026779088f55801bad0527ebadaaed54f542c7ac4dfab64757c4e6e77",
+      "bytes": 91596
     },
     {
       "path": "python/python-course-review/python-review-language-and-scripts/artifact.md",
-      "sha256": "b938fe3c0be15fbaad0bab2b37b15d1edc64204d578e81cb1435399430f0a2cb",
-      "bytes": 10840
+      "sha256": "4a9b4ba4e87d2e0f4609b825e252b008aba859402f4df0ef31e8241f1c9904e6",
+      "bytes": 10917
     },
     {
       "path": "python/python-course-review/python-review-pipeline-and-service/artifact.html",
@@ -65,7 +65,7 @@
       "evidencePath": "authoring/evidence/python/python-course-review/python-review-language-and-scripts/sources.json",
       "field": "reviewedSha256",
       "artifactPath": "python/python-course-review/python-review-language-and-scripts/artifact.html",
-      "sha256": "2155c67ce560b150c241304dc31a54aa737a77418355741d1b4b752b19343d7a",
+      "sha256": "cebfe59026779088f55801bad0527ebadaaed54f542c7ac4dfab64757c4e6e77",
       "current": true
     },
     {
