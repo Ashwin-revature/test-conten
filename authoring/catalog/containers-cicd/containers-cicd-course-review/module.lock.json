@@ -25,8 +25,8 @@
     },
     {
       "path": "authoring/evidence/containers-cicd/containers-cicd-course-review/containers-cicd-review-images-and-compose/critic-education.json",
-      "sha256": "910e7b7e2712a42ab678840939d588943530c29c46e15071cc6d533b8625ae86",
-      "bytes": 2215
+      "sha256": "b268f481ea11ba020774e7b131c4ce85a4957479db969835d04501b2a1b3f594",
+      "bytes": 2385
     },
     {
       "path": "authoring/evidence/containers-cicd/containers-cicd-course-review/containers-cicd-review-images-and-compose/critic-sme-recheck.json",
@@ -35,8 +35,8 @@
     },
     {
       "path": "authoring/evidence/containers-cicd/containers-cicd-course-review/containers-cicd-review-images-and-compose/critic-sme.json",
-      "sha256": "181c59e7ecf71778b21f4ca61aaeb01bb8ff9c65fbb3a2771069f36540800c13",
-      "bytes": 2315
+      "sha256": "bdf09cc1ad8dc579ca14ffb030defdbfa1ac03dc0216aca0e898450bf21f31a6",
+      "bytes": 2483
     },
     {
       "path": "authoring/evidence/containers-cicd/containers-cicd-course-review/containers-cicd-review-images-and-compose/qa-paths.json",
@@ -60,8 +60,8 @@
     },
     {
       "path": "authoring/evidence/containers-cicd/containers-cicd-course-review/containers-cicd-review-services-and-pipelines/critic-education.json",
-      "sha256": "aa5f3b15491cfb97f9fd6665e14f2a55a4a214fead64d7819a4160e330ce39fa",
-      "bytes": 2132
+      "sha256": "870ffcaa5cd7ff06b545ecf6271c431ef2f55a88cd1a621865829a912e9feb97",
+      "bytes": 2306
     },
     {
       "path": "authoring/evidence/containers-cicd/containers-cicd-course-review/containers-cicd-review-services-and-pipelines/critic-sme-recheck.json",
@@ -70,8 +70,8 @@
     },
     {
       "path": "authoring/evidence/containers-cicd/containers-cicd-course-review/containers-cicd-review-services-and-pipelines/critic-sme.json",
-      "sha256": "72aaa47813185d1b0df067d8ba405affd913021499747d377ee486993335c3fd",
-      "bytes": 2159
+      "sha256": "ad4cafa60b59814ea768ea4c901daf98c8641d54268eb6e728cab3f7d1b24f6f",
+      "bytes": 2439
     },
     {
       "path": "authoring/evidence/containers-cicd/containers-cicd-course-review/containers-cicd-review-services-and-pipelines/qa-paths.json",
@@ -169,6 +169,22 @@
     {
       "topic": "containers-cicd-review-images-and-compose",
       "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-review/containers-cicd-review-images-and-compose/critic-education.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "containers-cicd/containers-cicd-course-review/containers-cicd-review-images-and-compose/artifact.html",
+      "sha256": "7d1d1ce8ef0cd00d012dd0b997112b53bd679ea7652b9b214996ae8eb6cf3114",
+      "current": true
+    },
+    {
+      "topic": "containers-cicd-review-images-and-compose",
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-review/containers-cicd-review-images-and-compose/critic-education.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "containers-cicd/containers-cicd-course-review/containers-cicd-review-images-and-compose/artifact.html",
+      "sha256": "7d1d1ce8ef0cd00d012dd0b997112b53bd679ea7652b9b214996ae8eb6cf3114",
+      "current": true
+    },
+    {
+      "topic": "containers-cicd-review-images-and-compose",
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-review/containers-cicd-review-images-and-compose/critic-education.json",
       "field": "reviewedSha256",
       "artifactPath": "containers-cicd/containers-cicd-course-review/containers-cicd-review-images-and-compose/artifact.html",
       "sha256": "7d1d1ce8ef0cd00d012dd0b997112b53bd679ea7652b9b214996ae8eb6cf3114",
@@ -228,6 +244,22 @@
       "field": "artifactHashes.artifact.md",
       "artifactPath": "containers-cicd/containers-cicd-course-review/containers-cicd-review-images-and-compose/artifact.md",
       "sha256": "27e7c14e9137d0243c1b8b351c279acbf87b0b7eed5ec1de11cc43a0eb02f9e4",
+      "current": true
+    },
+    {
+      "topic": "containers-cicd-review-images-and-compose",
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-review/containers-cicd-review-images-and-compose/critic-sme.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "containers-cicd/containers-cicd-course-review/containers-cicd-review-images-and-compose/artifact.html",
+      "sha256": "7d1d1ce8ef0cd00d012dd0b997112b53bd679ea7652b9b214996ae8eb6cf3114",
+      "current": true
+    },
+    {
+      "topic": "containers-cicd-review-images-and-compose",
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-review/containers-cicd-review-images-and-compose/critic-sme.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "containers-cicd/containers-cicd-course-review/containers-cicd-review-images-and-compose/artifact.html",
+      "sha256": "7d1d1ce8ef0cd00d012dd0b997112b53bd679ea7652b9b214996ae8eb6cf3114",
       "current": true
     },
     {
@@ -313,6 +345,22 @@
     {
       "topic": "containers-cicd-review-services-and-pipelines",
       "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-review/containers-cicd-review-services-and-pipelines/critic-education.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "containers-cicd/containers-cicd-course-review/containers-cicd-review-services-and-pipelines/artifact.html",
+      "sha256": "76d0a7b67d76394d0796171f993b96bf6da383f577726cc8058faedb43759bb4",
+      "current": true
+    },
+    {
+      "topic": "containers-cicd-review-services-and-pipelines",
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-review/containers-cicd-review-services-and-pipelines/critic-education.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "containers-cicd/containers-cicd-course-review/containers-cicd-review-services-and-pipelines/artifact.html",
+      "sha256": "76d0a7b67d76394d0796171f993b96bf6da383f577726cc8058faedb43759bb4",
+      "current": true
+    },
+    {
+      "topic": "containers-cicd-review-services-and-pipelines",
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-review/containers-cicd-review-services-and-pipelines/critic-education.json",
       "field": "reviewedSha256",
       "artifactPath": "containers-cicd/containers-cicd-course-review/containers-cicd-review-services-and-pipelines/artifact.html",
       "sha256": "76d0a7b67d76394d0796171f993b96bf6da383f577726cc8058faedb43759bb4",
@@ -372,6 +420,22 @@
       "field": "artifactHashes.artifact.md",
       "artifactPath": "containers-cicd/containers-cicd-course-review/containers-cicd-review-services-and-pipelines/artifact.md",
       "sha256": "20a9675456d7e015293295ef23798cbee53153f517b00c2b157153777ef237e4",
+      "current": true
+    },
+    {
+      "topic": "containers-cicd-review-services-and-pipelines",
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-review/containers-cicd-review-services-and-pipelines/critic-sme.json",
+      "field": "findings[0].reviewedSha256",
+      "artifactPath": "containers-cicd/containers-cicd-course-review/containers-cicd-review-services-and-pipelines/artifact.html",
+      "sha256": "76d0a7b67d76394d0796171f993b96bf6da383f577726cc8058faedb43759bb4",
+      "current": true
+    },
+    {
+      "topic": "containers-cicd-review-services-and-pipelines",
+      "evidencePath": "authoring/evidence/containers-cicd/containers-cicd-course-review/containers-cicd-review-services-and-pipelines/critic-sme.json",
+      "field": "findings[1].reviewedSha256",
+      "artifactPath": "containers-cicd/containers-cicd-course-review/containers-cicd-review-services-and-pipelines/artifact.html",
+      "sha256": "76d0a7b67d76394d0796171f993b96bf6da383f577726cc8058faedb43759bb4",
       "current": true
     },
     {
