@@ -18,7 +18,7 @@
       {
         "phase": "S38 1 orient: read the README, copy .env, first run",
         "minutes": 7,
-        "derivation": "README 1237 words at 200 wpm = 6.2, plus about 0.7 for the copy and the first run"
+        "derivation": "README 1248 words at 200 wpm = 6.2, plus about 0.7 for the copy and the first run"
       },
       {
         "phase": "S38 2 repair the reviews services in Compose",
@@ -80,7 +80,7 @@
     "learnerCommands": {
       "note": "node --test --test-reporter=tap finishes in about a second on the starter and on both private solutions, including the service and step runs"
     },
-    "independentAgentSolve": "an independent non-author agent solved the lab git-archived at c3e666bf (the OPS5-C behaviour grader) from the README, the topic pages and the failure messages in 6 test runs (0, 7, 10, 15 at the S38 checkpoint, 23, then 26 of 26), each phase passing at its first run, without opening the tests, and estimated about 54 minutes by phase (4, 9, 1, 9, 12, then 4, 10, 4, 1) plus under a minute of setup. That is an agent's estimate, not a human timing; the model above stays the planning figure. Its friction reports on the refused-connection status and the httpx.Timeout form were fixed in loop 6 (README phase 4, and test 24 now names the exception); its solution is replayed on this record's commit as private solution 2."
+    "independentAgentSolve": "an independent non-author agent solved the lab git-archived at c3e666bf (the OPS5-C behaviour grader) from the README, the topic pages and the failure messages in 6 test runs (0, 7, 10, 15 at the S38 checkpoint, 23, then 26 of 26), each phase passing at its first run, without opening the tests, and estimated about 54 minutes by phase (4, 9, 1, 9, 12, then 4, 10, 4, 1) plus under a minute of setup. That is an agent's estimate, not a human timing; the model above stays the planning figure. Its friction reports on the refused-connection status and the httpx.Timeout form were fixed in loops 6 and 7 (README phase 4, and tests 24-26 now name the exception); its solution is replayed on this record's commit as private solution 2."
   },
   "notObserved": "No human learner has been timed. The phase minutes above are a model, not an observation."
 }

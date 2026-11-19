@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "lab": "containers-cicd/microservices-and-ci-cd/coding-lab",
-  "record": "solved at bc16896ab3a4e0c7a58a53fbec6824a1a63743db by run local-ops-loop6-20261119061942",
-  "commit": "bc16896ab3a4e0c7a58a53fbec6824a1a63743db",
-  "runId": "local-ops-loop6-20261119061942",
-  "ranAt": "2026-11-19T06:19:42Z",
+  "record": "solved at 7b7edd4f42cbe45d76f15ce6b9507c783491947c by run local-ops-loop7-20261119071619",
+  "commit": "7b7edd4f42cbe45d76f15ce6b9507c783491947c",
+  "runId": "local-ops-loop7-20261119071619",
+  "ranAt": "2026-11-19T07:16:19Z",
   "contract": "authoring/docs/lab-contract.md section 10 and authoring/schemas/solved-run.schema.json: every tracked public lab file at the recorded commit is bound by file and reviewedSha256; the lab directory was exported with git archive of that commit into private staging outside the repository and run there.",
   "toolchain": {
     "node": "v24.2.0",
@@ -16,7 +16,7 @@
     "engine": "none: no container engine, CI runner or network was used by the tests; tests 24-26 load the service in-process with a stand-in shop api, tests 6-7 run secret-using workflow steps with bash, made-up secrets and a stand-in docker"
   },
   "procedure": [
-    "git archive bc16896ab3a4e0c7a58a53fbec6824a1a63743db containers-cicd/microservices-and-ci-cd/coding-lab into a fresh private staging directory outside the repository",
+    "git archive 7b7edd4f42cbe45d76f15ce6b9507c783491947c containers-cicd/microservices-and-ci-cd/coding-lab into a fresh private staging directory outside the repository",
     "npm run setup in tests (npm ci, then the lab .venv with the pinned Python packages: the one network step), then npm audit",
     "node --test --test-reporter=tap against the shipped starter, comparing the result lines with expected/starter-summary.txt",
     "for each of two private solutions: a fresh copy of the same export with only the learner-edited starter files and starter/.env replaced, then node --test --test-reporter=tap, comparing the result and summary lines with expected/solved-summary.txt",
@@ -50,7 +50,7 @@
   "files": [
     {
       "file": "containers-cicd/microservices-and-ci-cd/coding-lab/README.md",
-      "reviewedSha256": "bfd2a0b441517c27ace29b6608f4add58b5728a7821deea3e75a9cd12601d7b7"
+      "reviewedSha256": "5aca976b29f6cdcb9724de6886629864d60c00b5d1fec790ff06b351ffbc407d"
     },
     {
       "file": "containers-cicd/microservices-and-ci-cd/coding-lab/expected/solved-summary.txt",
@@ -130,7 +130,7 @@
     },
     {
       "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/lab.mjs",
-      "reviewedSha256": "a5228f9233a08c78ad1e5b189b58223e946cc51b74a2f2303bbee1be72c95fff"
+      "reviewedSha256": "fffff5eb1bc6ed7721c696023cd7e06948167d65dc3046095324985798e727b4"
     },
     {
       "file": "containers-cicd/microservices-and-ci-cd/coding-lab/tests/package-lock.json",
