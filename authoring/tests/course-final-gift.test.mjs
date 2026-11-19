@@ -18,7 +18,7 @@ const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..")
 
 // The four captain-approved Foundation course-final MCQ banks, checked as the exact bytes that ship.
 // Collections & Streams declares its own Moodle category; the other three use their folder path.
-const BANKS = {
+const FOUNDATION_BANKS = {
   "collections-streams/assessments/collections-module-check/final-mcq.gift": {
     category: "collections-streams/final-mcq",
     html: true,
@@ -37,16 +37,66 @@ const BANKS = {
   },
 };
 
-test("exactly the four approved course-final banks are tracked", () => {
-  const tracked = execFileSync("git", ["ls-files", "--", "*/assessments/*/final-mcq.gift"], {
-    cwd: repo,
-    encoding: "utf8",
-  })
+// The course-final contract: 30 questions, at least one minute per question.
+const COURSE_FINAL_QUESTIONS = 30;
+
+const readJson = async (file) => JSON.parse(await readFile(path.join(repo, file), "utf8"));
+
+// A Standard/Fast course final lives at <course>/assessments/<id>/final-mcq.gift, where <id> is a
+// graded MCQ assessment the course manifest registers. Its blueprint sets the contract it must meet.
+async function courseFinal(file) {
+  const match = file.match(/^([a-z0-9]+(?:-[a-z0-9]+)*)\/assessments\/([a-z0-9]+(?:-[a-z0-9]+)*)\/final-mcq\.gift$/);
+  if (!match) return null;
+  const [, course, id] = match;
+  let manifest;
+  let blueprint;
+  try {
+    manifest = await readJson(`authoring/catalog/${course}/course.json`);
+    blueprint = await readJson(`${course}/assessments/${id}/blueprint.json`);
+  } catch {
+    return null;
+  }
+  if (!(manifest.assessments ?? []).includes(id) || blueprint.id !== id || blueprint.kind !== "gradedMcq") return null;
+  return { category: `${course}/assessments/${id}`, html: true, blueprint };
+}
+
+const trackedBanks = () =>
+  execFileSync("git", ["ls-files", "--", "*/assessments/*/final-mcq.gift"], { cwd: repo, encoding: "utf8" })
     .split("\n")
     .filter(Boolean)
     .sort();
-  assert.deepEqual(tracked, Object.keys(BANKS).sort());
+
+const courseFinals = {};
+for (const file of trackedBanks()) {
+  if (FOUNDATION_BANKS[file]) continue;
+  const final = await courseFinal(file);
+  if (final) courseFinals[file] = final;
+}
+
+test("every tracked course-final bank is a Foundation bank or a registered graded course final", () => {
+  const tracked = trackedBanks();
+  for (const file of Object.keys(FOUNDATION_BANKS)) assert.ok(tracked.includes(file), `${file} is no longer tracked`);
+  assert.deepEqual(tracked, [...Object.keys(FOUNDATION_BANKS), ...Object.keys(courseFinals)].sort());
 });
+
+test("only a manifest-registered gradedMcq assessment can hold a course-final bank", async () => {
+  assert.equal(await courseFinal("html-css-js/assessments/web-client-practical/final-mcq.gift"), null, "practical, not gradedMcq");
+  assert.equal(await courseFinal("html-css-js/assessments/not-registered/final-mcq.gift"), null, "unregistered id");
+  assert.equal(await courseFinal("html-css-js/html-and-css/assessments/x/final-mcq.gift"), null, "module-level path");
+  assert.equal(await courseFinal("html-css-js/assessments/web-client-mcq/other.gift"), null, "other file name");
+});
+
+for (const [file, { blueprint }] of Object.entries(courseFinals)) {
+  test(`${file} meets the course-final contract in its blueprint`, () => {
+    assert.equal(blueprint.itemCounts?.MCQ, COURSE_FINAL_QUESTIONS, "blueprint MCQ count");
+    assert.ok(
+      Number.isInteger(blueprint.durationMinutes) && blueprint.durationMinutes >= COURSE_FINAL_QUESTIONS,
+      `blueprint allows ${blueprint.durationMinutes} minutes for ${COURSE_FINAL_QUESTIONS} questions`,
+    );
+  });
+}
+
+const BANKS = { ...FOUNDATION_BANKS, ...courseFinals };
 
 for (const [file, { category, html }] of Object.entries(BANKS)) {
   test(`${file} validates raw in its declared format`, async () => {
@@ -56,7 +106,7 @@ for (const [file, { category, html }] of Object.entries(BANKS)) {
       assert.throws(() => validateGift(bytes, category), /must not contain < or >/);
     }
     const questions = validateGift(bytes, category, { html });
-    assert.equal(questions.length, 30);
+    assert.equal(questions.length, COURSE_FINAL_QUESTIONS);
     const lines = bytes.toString("ascii").split("\n");
     const comments = lines.filter((line) => line.trimStart().startsWith("//"));
     for (const line of comments)
