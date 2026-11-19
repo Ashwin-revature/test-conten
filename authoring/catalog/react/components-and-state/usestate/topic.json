@@ -58,12 +58,11 @@
       "status": "present"
     },
     "video": {
-      "status": "absent",
-      "reason": "Deferred: HTML-first draft batch; no video search was run for this checkpoint, so no video is linked"
+      "status": "present"
     },
     "lab": {
       "status": "absent",
-      "reason": "No topic lab: S29 is a Concept day with no calendar Lab day and the page simulator gives this topic's practice. Course project: applied in part P1 of the planned cumulative course project react/coding-lab/ (Fast FT16 increment), after an embedded teach-then-check step; authored in a course-level PR"
+      "reason": "No topic lab: Standard practice is partial, in tasks 5 and 6 in the module lab react/components-and-state/coding-lab/ (added to the S29 block; S28 and S29 are Concept days with no calendar Lab day): #o1 and the updater-function clause of #o3; #o2 and #o3's predict-the-rendered-value clause are not lab-tested and are practised on this topic page and its page simulator. Course project: applied in part P1 of the planned cumulative course project react/coding-lab/ (Fast FT16 increment), after an embedded teach-then-check step; authored in a course-level PR"
     }
   },
   "freshness": {
