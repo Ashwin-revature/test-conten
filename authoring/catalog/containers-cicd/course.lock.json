@@ -100,8 +100,8 @@
     },
     {
       "path": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-45/README.md",
-      "sha256": "5895166be73459ecccead75c6345fd0cfcbd30eabca708b4555127145d4942d7",
-      "bytes": 1158
+      "sha256": "5d610c496d6b581962f13533f19efb0ecdad3b67c7bfc1e757614c687ea7a410",
+      "bytes": 1162
     },
     {
       "path": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-45/coverage-45.json",
@@ -109,19 +109,14 @@
       "bytes": 3585
     },
     {
-      "path": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-45/critic-education-new15.json",
-      "sha256": "b3660e9e22d266efdabb07c6060d5291858f091725978e9b2dbe4c86a70df5e7",
-      "bytes": 4584
-    },
-    {
-      "path": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-45/critic-sme-new15.json",
-      "sha256": "7efb5d0920abe4bff82718dab0ee4651d6c6771afcf9bac8e52feb7b1386f1af",
-      "bytes": 6083
-    },
-    {
       "path": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-45/dedup-new15.json",
       "sha256": "a44b4e05339d050d7c71f6b65c2be4a9f573d1f81867ebf0ebd6b46058de14a1",
       "bytes": 5985
+    },
+    {
+      "path": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-45/education-findings-new15.json",
+      "sha256": "b3660e9e22d266efdabb07c6060d5291858f091725978e9b2dbe4c86a70df5e7",
+      "bytes": 4584
     },
     {
       "path": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-45/key-verification-fixes.txt",
@@ -135,8 +130,13 @@
     },
     {
       "path": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-45/loop3-key-probes.txt",
-      "sha256": "8b8e37e7e1fe4a21cf56393d1fa351a167891cf8cd1edfbbd7d673a83e581111",
-      "bytes": 1845
+      "sha256": "91a92f6ac19438ed4899ae05e15d32cdfde383b1a81e16df41ee32951fdbbaca",
+      "bytes": 1847
+    },
+    {
+      "path": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-45/sme-findings-new15.json",
+      "sha256": "7efb5d0920abe4bff82718dab0ee4651d6c6771afcf9bac8e52feb7b1386f1af",
+      "bytes": 6083
     },
     {
       "path": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-critic-education-recheck.json",
@@ -170,8 +170,8 @@
     },
     {
       "path": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-loop3-critic-education.json",
-      "sha256": "279025faa0f3fdc0d1bbcd35247d5dbbb7406b3fab011d2b6bdd545653703cfb",
-      "bytes": 5823
+      "sha256": "7b892f7442df23115d801a56e25ab256effde6e4c6d83a5087f2a02fbcc0bedd",
+      "bytes": 5825
     },
     {
       "path": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-loop3-critic-sme-recheck.json",
@@ -180,8 +180,8 @@
     },
     {
       "path": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-loop3-critic-sme.json",
-      "sha256": "ddcd14b3326d09701a2963da99bfea124abe96cd58eb29a986dd4d1daebc23e8",
-      "bytes": 6764
+      "sha256": "95399989df3cf81967c3c19115c3309946b5ba9e80b75991d1d2a2da99a1dfb1",
+      "bytes": 6768
     },
     {
       "path": "authoring/evidence/containers-cicd/standard-fast-final-checkpoint-loop4-critic-education-recheck.json",

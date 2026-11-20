@@ -1,8 +1,8 @@
 # Reconciliation loop 2 (terminal): Spring Boot course-final MCQ
 
 - **Role:** non-author reconciler. **Date:** 2026-11-19.
-- **recheck.of:** reconciliation-loop1.md.
-- **Basis:** captain decision `cf-loop2-decision.txt` (terminal loop, Option 1); T, R and G as defined in `reconciliation.md`.
+- **recheck.of:** decisions-loop1.md.
+- **Basis:** captain decision `cf-loop2-decision.txt` (terminal loop, Option 1); T, R and G as defined in `decisions.md`.
 
 | Input | sha256 |
 | --- | --- |
@@ -15,7 +15,7 @@
 | key-proof/results.txt | a6b4e5a927a388fc77748043e7e157c7876b2395f104c22a68168eb98c9c962b |
 | reviews/education-recheck-loop2.md | e6b6ac5cef2de3f82908dbb447074217864a0447b327baaba199fddbda26f505 |
 | reviews/sme-recheck-loop2.md | 6eb83c10b57a7ef3161ccc8a8acf64b33d56790f101d17ddb25eec8c590bb136 |
-| reviews/reconciliation-loop1.md | 75974db355287fbb0b794337b803a8f554ddd9057ace87c0f01970d5f55b46a1 |
+| reviews/decisions-loop1.md | 75974db355287fbb0b794337b803a8f554ddd9057ace87c0f01970d5f55b46a1 |
 | SCR/cf-loop2-decision.txt | 0b85bd15f817628585751518256acd611e1d8a2a008dd97717157743affd367b |
 | SCR/cf-v2-snapshot/final-mcq.gift | c0167b686833ea23bb415020121fc253650e21b84f20d1bc851db00573e3a59a |
 

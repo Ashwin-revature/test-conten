@@ -1,10 +1,10 @@
 # Reconciliation loop 3 (terminal): Spring Boot course-final MCQ, 30 questions
 
 - **Role:** non-author recorder. This is the same critic pair that wrote `education-sme-review-loop3.md` and its recheck. It is not a separate reconciler, and this record is disclosed as such. **Date:** 2026-11-19.
-- **recheck.of:** reconciliation-loop2.md.
+- **recheck.of:** decisions-loop2.md.
 - **Basis:**
   - The user decision that course finals hold 30 questions.
-  - T, R and G as defined in `reconciliation.md`.
+  - T, R and G as defined in `decisions.md`.
   - The loop-2 acceptance of the 22 items. Those items are carried over byte for byte and were not re-reviewed.
 
 | Input | sha256 |

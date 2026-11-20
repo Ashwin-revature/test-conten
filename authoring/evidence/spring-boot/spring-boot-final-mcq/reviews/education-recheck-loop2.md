@@ -3,7 +3,7 @@
 recheck.of=education-recheck-loop1.md
 
 - Role: education critic. Date: 2026-11-19.
-- Basis: captain Option 1 (`SCR/cf-loop2-decision.txt`), T and R from `reconciliation.md`, and the three-layer hierarchy (topic practice MCQs, module coding labs, one course graded MCQ).
+- Basis: captain Option 1 (`SCR/cf-loop2-decision.txt`), T and R from `decisions.md`, and the three-layer hierarchy (topic practice MCQs, module coding labs, one course graded MCQ).
 - Scope: I diffed the bank against `SCR/cf-v2-snapshot/`. Only q14, q15, q17, q21, q25 and q28 changed.
 
 | File | sha256 |
@@ -16,7 +16,7 @@ recheck.of=education-recheck-loop1.md
 | blueprint-proposal.json | bdc1231f8e4d1ba1980a3ab9d1ab7a01b1a394ba0f927ebdeff24395b7c3035d |
 | check-bank.mjs | c1ca493f4dbde21b8382f730fc0791ed0eb1a984922d40ff17bb27372586baea |
 | key-proof/results.txt | a6b4e5a927a388fc77748043e7e157c7876b2395f104c22a68168eb98c9c962b |
-| reviews/reconciliation-loop1.md | 75974db355287fbb0b794337b803a8f554ddd9057ace87c0f01970d5f55b46a1 |
+| reviews/decisions-loop1.md | 75974db355287fbb0b794337b803a8f554ddd9057ace87c0f01970d5f55b46a1 |
 | SCR/cf-loop2-decision.txt | 0b85bd15f817628585751518256acd611e1d8a2a008dd97717157743affd367b |
 
 ## Verdict

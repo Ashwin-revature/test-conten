@@ -1,6 +1,6 @@
 # Education critic recheck, loop 1
 
-recheck.of=education-review.md. Role: education critic. Date: 2026-11-19. Rules: T and R from `reconciliation.md`, captain decision D1 = A, and a hard 30-minute limit.
+recheck.of=education-review.md. Role: education critic. Date: 2026-11-19. Rules: T and R from `decisions.md`, captain decision D1 = A, and a hard 30-minute limit.
 
 Each changed item was compared with: the topic banks, practice banks, activities, Where-this-fits sections and models, sfcp-q01..q08, toolshed, pickup, and Project 2 (keyword search only).
 
@@ -14,7 +14,7 @@ Each changed item was compared with: the topic banks, practice banks, activities
 | blueprint-proposal.json | c179017623fbca159f94a595881c77e8235dca9cb75e66e706efd0d0f2c5b340 |
 | check-bank.mjs | c1ca493f4dbde21b8382f730fc0791ed0eb1a984922d40ff17bb27372586baea |
 | key-proof/results.txt | 0421362d0410ec94456bc9b1e1460ed8acfe762e0411a9215e588bd4352c39f6 |
-| reviews/reconciliation.md | 575f0ba2de4d3fd6c8ceef7aef47a83003b0048959466c5a359a5e6ed9db49c2 |
+| reviews/decisions.md | 575f0ba2de4d3fd6c8ceef7aef47a83003b0048959466c5a359a5e6ed9db49c2 |
 
 ## Verdict
 

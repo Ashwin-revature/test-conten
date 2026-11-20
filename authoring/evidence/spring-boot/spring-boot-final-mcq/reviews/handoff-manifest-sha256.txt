@@ -1,4 +1,4 @@
-# Spring course-final private handoff manifest, 2026-11-19T17:39:20Z. Accepted by reconciliation-loop2.md (non-author): 0 high / 0 medium / 3 disclosed lows. Not delivery: no commit, publication or platform import.
+# Spring course-final private handoff manifest, 2026-11-19T17:39:20Z. Accepted by decisions-loop2.md (non-author): 0 high / 0 medium / 3 disclosed lows. Not delivery: no commit, publication or platform import.
 0e19f8093ff81da2c9bb539b63e6ab5651fa785896260a410289bdb9fad5cecb  ./audit.txt
 bdc1231f8e4d1ba1980a3ab9d1ab7a01b1a394ba0f927ebdeff24395b7c3035d  ./blueprint-proposal.json
 c1ca493f4dbde21b8382f730fc0791ed0eb1a984922d40ff17bb27372586baea  ./check-bank.mjs
@@ -83,9 +83,9 @@ c7f91317a4d1d259d48f6157ff6c80eeb9e55e084fc04f84074bb5694771d3dc  ./reserve-mcq.
 23f09cbfcfa1784d6de654be8ad29b5df26be5a7a70400b707d645ef6bef2157  ./reviews/education-recheck-loop1.md
 e6b6ac5cef2de3f82908dbb447074217864a0447b327baaba199fddbda26f505  ./reviews/education-recheck-loop2.md
 eba7d76c32739e22c3b28857e090642eca45be99c568ed7ad383ce631d8e0d5b  ./reviews/education-review.md
-75974db355287fbb0b794337b803a8f554ddd9057ace87c0f01970d5f55b46a1  ./reviews/reconciliation-loop1.md
-86131cffcf837e97305fff7008106050e330de2cc70a20111f3633c3e514692c  ./reviews/reconciliation-loop2.md
-575f0ba2de4d3fd6c8ceef7aef47a83003b0048959466c5a359a5e6ed9db49c2  ./reviews/reconciliation.md
+75974db355287fbb0b794337b803a8f554ddd9057ace87c0f01970d5f55b46a1  ./reviews/decisions-loop1.md
+86131cffcf837e97305fff7008106050e330de2cc70a20111f3633c3e514692c  ./reviews/decisions-loop2.md
+575f0ba2de4d3fd6c8ceef7aef47a83003b0048959466c5a359a5e6ed9db49c2  ./reviews/decisions.md
 dbf048105c539607d1b75d66704c67b2fdcce7c727a40a3bc7d3d0462578d432  ./reviews/sme-recheck-loop1-replacement.md
 6eb83c10b57a7ef3161ccc8a8acf64b33d56790f101d17ddb25eec8c590bb136  ./reviews/sme-recheck-loop2.md
 388133124098426e03f5644e24d193e7df4d0e7969c318c4ee83d89f7228f059  ./reviews/sme-review.md

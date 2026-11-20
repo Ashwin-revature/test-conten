@@ -1,6 +1,6 @@
 # Education and SME critic review, loop 3: the 30-item extension (delta only)
 
-recheck.of=reconciliation-loop2.md
+recheck.of=decisions-loop2.md
 
 - **Role:** an independent critic pair, education and Spring SME (Boot 4.1.2, Java 25). We did not author the bank. **Date:** 2026-11-19.
 - **Scope:** only the delta from the accepted 22-item bank:
@@ -8,7 +8,7 @@ recheck.of=reconciliation-loop2.md
   - the five reserve items promoted into the bank (q04, q05, q13, q23, q24);
   - cross-item cueing: q23 D → q25 D, q24 → q11, q24 vs sfcp-q06 and q26 vs sfcp-q08.
   - This is not a whole-bank campaign.
-- **Bar:** T (same setup and same deciding fact) and R (every taught topic decides an option), as defined in `reconciliation.md`. Cueing is judged on stem and option text only, because feedback is not shown during the attempt.
+- **Bar:** T (same setup and same deciding fact) and R (every taught topic decides an option), as defined in `decisions.md`. Cueing is judged on stem and option text only, because feedback is not shown during the attempt.
 
 | Input | sha256 |
 | --- | --- |

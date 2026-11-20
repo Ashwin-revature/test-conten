@@ -1,7 +1,7 @@
 # Reconciliation, loop 1: Spring Boot course-final MCQ
 
 - Non-author reconciler (same as loop 0). Date: 2026-11-19.
-- recheck.of = reconciliation.md.
+- recheck.of = decisions.md.
 - Binding rulings: D1 = A; 30 minutes is a hard limit and 22 items is accepted; three-layer hierarchy (no module-mastery MCQ layer); loop 2 not authorized.
 
 | Input | sha256 |
@@ -15,7 +15,7 @@
 | key-proof/results.txt | 0421362d0410ec94456bc9b1e1460ed8acfe762e0411a9215e588bd4352c39f6 |
 | reviews/education-recheck-loop1.md | 23f09cbfcfa1784d6de654be8ad29b5df26be5a7a70400b707d645ef6bef2157 |
 | reviews/sme-recheck-loop1-replacement.md | dbf048105c539607d1b75d66704c67b2fdcce7c727a40a3bc7d3d0462578d432 |
-| reviews/reconciliation.md | 575f0ba2de4d3fd6c8ceef7aef47a83003b0048959466c5a359a5e6ed9db49c2 |
+| reviews/decisions.md | 575f0ba2de4d3fd6c8ceef7aef47a83003b0048959466c5a359a5e6ed9db49c2 |
 
 ## How I classified the sources
 

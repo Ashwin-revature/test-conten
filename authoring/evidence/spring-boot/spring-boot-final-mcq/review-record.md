@@ -17,7 +17,7 @@ The candidate `README.md`, `audit.txt` and `blueprint-proposal.json` in this fol
 
 Author coverage summary (`coverage.json`): bands 7/12/11; keys A8 B7 C8 D7; 43 of 44 taught topics decide an option (exception E1, health-checks, unchanged); 29 topics as primary, 12 only through a distractor; lexical dedup against the 44 Spring topic banks, 7 module practice banks and checkpoint-mcq-45 finds 0 exact stems, 0 shared 7-grams and 0 Jaccard flags (max 0.264, pre-existing q14).
 
-Review (`reviews/`): `education-sme-review-loop3.md` (independent education + SME pair, delta only: approve with fixes, 0 high / 2 medium / 6 low), `education-sme-recheck-loop3.md` (approve, 0 high / 0 medium), `reconciliation-loop3.md` (accepted; recorded by the critic pair, not a separate reconciler).
+Review (`reviews/`): `education-sme-review-loop3.md` (independent education + SME pair, delta only: approve with fixes, 0 high / 2 medium / 6 low), `education-sme-recheck-loop3.md` (approve, 0 high / 0 medium), `decisions-loop3.md` (accepted; recorded by the critic pair, not a separate reconciler).
 Open, not blocking: CFE-28 timing. The bank models at 33.9 min (30 s decision cost) and 41.4 min (45 s) against the blueprint's 30 minutes; duration is an owner decision. The loop-2 residual lows (CFE-20, SMR-6, SMR-7) stand.
 
 # Loop 2 record (22 questions, superseded by loop 3)
@@ -39,7 +39,7 @@ The reports are in `reviews/` (original handoff hashes in `reviews/handoff-manif
 
 - `sme-review.md`, `sme-recheck-loop1-replacement.md`, `sme-recheck-loop2.md` (verdict APPROVE)
 - `education-review.md`, `education-recheck-loop1.md`, `education-recheck-loop2.md` (verdict Approve)
-- `reconciliation.md`, `reconciliation-loop1.md`, `reconciliation-loop2.md` (terminal)
+- `decisions.md`, `decisions-loop1.md`, `decisions-loop2.md` (terminal)
 
 Disclosed lows, not fixed and not blocking: SMR-6 (q28 key wording slightly exceeds the stem), SMR-7 (q14 option B feedback says "also deletes its shared garden"; the delete is attempted and rolled back), and one education wording low in `education-recheck-loop2.md`.
 These reports are author-format Markdown, not the repository's critic-report JSON schema, so they are not bound into `course.lock.json` evidence bindings.

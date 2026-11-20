@@ -13,7 +13,7 @@
 | audit.txt | 0e19f8093ff81da2c9bb539b63e6ab5651fa785896260a410289bdb9fad5cecb |
 | key-proof/results.txt | a6b4e5a927a388fc77748043e7e157c7876b2395f104c22a68168eb98c9c962b |
 | key-proof/item-tests.tsv | 850570339848fe28741fa039c2c980f13234b4173cf94ad0fc779f21024a6a54 |
-| reviews/reconciliation-loop1.md | 75974db355287fbb0b794337b803a8f554ddd9057ace87c0f01970d5f55b46a1 |
+| reviews/decisions-loop1.md | 75974db355287fbb0b794337b803a8f554ddd9057ace87c0f01970d5f55b46a1 |
 | checkpoint private-authoring-candidate.gift | 06ddb5544c40f4ee46248e812f572115178c4f303a3613ceb41f8b5e237662b0 |
 | MAIN authoring/tools/gift/validate.mjs | 6d6cf37b672bb8bb964c57d4904e750ca10a84ff41265b0999b26e2bf68ec4f8 |
 

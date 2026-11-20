@@ -115,8 +115,8 @@
     },
     {
       "path": "authoring/evidence/spring-boot/final-mcq-loop3-reconciliation.json",
-      "sha256": "604b487bd03de89c099d8718ac52400b8e15e036a3404056b58e7f6d6f85f037",
-      "bytes": 4154
+      "sha256": "0ca83670d2db972a04475284c7a8069adfcd6bc31599c47e7324dff9c715761f",
+      "bytes": 4104
     },
     {
       "path": "authoring/evidence/spring-boot/intake-2-critic-education-recheck.json",
@@ -200,18 +200,38 @@
     },
     {
       "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/review-record.md",
-      "sha256": "a4bc7a2a8988502dccc29274f7a64217798dc2236505553a17b06ab6f800c8cd",
-      "bytes": 5796
+      "sha256": "98dc503ca0c6ed09855570b6a26f6b9786252032430993072bfb593c8a20fc65",
+      "bytes": 5776
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/decisions-loop1.md",
+      "sha256": "e2079a019973c665d974e67edd981d426f00bfee219a88e98925954f27cff767",
+      "bytes": 7992
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/decisions-loop2.md",
+      "sha256": "29268f44e3cb02e8721aa5472354b3128e622f810925fde65d85fa54cdef3fea",
+      "bytes": 7615
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/decisions-loop3.md",
+      "sha256": "65198511ed58c57b0d7d1d18d0899ae507b3dbf6a82bf3cea7b761d91dfc50ff",
+      "bytes": 3407
+    },
+    {
+      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/decisions.md",
+      "sha256": "575f0ba2de4d3fd6c8ceef7aef47a83003b0048959466c5a359a5e6ed9db49c2",
+      "bytes": 8793
     },
     {
       "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/education-recheck-loop1.md",
-      "sha256": "23f09cbfcfa1784d6de654be8ad29b5df26be5a7a70400b707d645ef6bef2157",
-      "bytes": 6145
+      "sha256": "34eb004460f9800c9599f153fdf0aa21d226f6657948189ab20822fbf4810f15",
+      "bytes": 6135
     },
     {
       "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/education-recheck-loop2.md",
-      "sha256": "e6b6ac5cef2de3f82908dbb447074217864a0447b327baaba199fddbda26f505",
-      "bytes": 5724
+      "sha256": "1254145ea7ef3a51a31915da6c331ca524148d9e4ee6881e5a0981564f746e37",
+      "bytes": 5714
     },
     {
       "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/education-review.md",
@@ -225,33 +245,13 @@
     },
     {
       "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/education-sme-review-loop3.md",
-      "sha256": "fff76751d3240007120e8962afafd48a8b8865aa3d37e6dba0ca272ba8572a96",
-      "bytes": 5671
+      "sha256": "00f9226b3c5672f96f8cc79598bb2ec3f747a3a64b235f54e26648bde92b91cf",
+      "bytes": 5661
     },
     {
       "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/handoff-manifest-sha256.txt",
-      "sha256": "ea84a156b5201296880472d3944fd0734d649d42d3fcc76eb7ee3c0e30b3c5ca",
-      "bytes": 10965
-    },
-    {
-      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/reconciliation-loop1.md",
-      "sha256": "75974db355287fbb0b794337b803a8f554ddd9057ace87c0f01970d5f55b46a1",
-      "bytes": 8002
-    },
-    {
-      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/reconciliation-loop2.md",
-      "sha256": "86131cffcf837e97305fff7008106050e330de2cc70a20111f3633c3e514692c",
-      "bytes": 7630
-    },
-    {
-      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/reconciliation-loop3.md",
-      "sha256": "72978fec1c068733d0d71e6aef1de4cee3d29c847ffcfe0fc36936ce991fbbdf",
-      "bytes": 3417
-    },
-    {
-      "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/reconciliation.md",
-      "sha256": "575f0ba2de4d3fd6c8ceef7aef47a83003b0048959466c5a359a5e6ed9db49c2",
-      "bytes": 8793
+      "sha256": "143f3925145f29f8d58345f0effa5468dc830922187d8f9c2a6577a394c24270",
+      "bytes": 10945
     },
     {
       "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/sme-recheck-loop1-replacement.md",
@@ -260,8 +260,8 @@
     },
     {
       "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/sme-recheck-loop2.md",
-      "sha256": "6eb83c10b57a7ef3161ccc8a8acf64b33d56790f101d17ddb25eec8c590bb136",
-      "bytes": 7149
+      "sha256": "29b262316e1389d88ec55894d5cc1f03ab68f7348cb9e26556fef507a9a7a6e4",
+      "bytes": 7144
     },
     {
       "path": "authoring/evidence/spring-boot/spring-boot-final-mcq/reviews/sme-review.md",

@@ -19,7 +19,7 @@ C fulfilled {"error":"C"}
 -> key B confirmed.
 
 ## Not re-executed this loop
-q31-q35, q37 (Spring MockMvc/test slices), q39 (FastAPI; no fastapi on this machine), q44 (fastapi-cli): keys rest on key-verification.txt, key-verification-fixes.txt and critic-sme-new15.json, re-read option by option against the deciding pages.
+q31-q35, q37 (Spring MockMvc/test slices), q39 (FastAPI; no fastapi on this machine), q44 (fastapi-cli): keys rest on key-verification.txt, key-verification-fixes.txt and sme-findings-new15.json, re-read option by option against the deciding pages.
 q41-q43, q45: page-grounded (Vite proxy relative path; cookie vs JWT CSRF/XSS; Link vs anchor reload; compose down vs down -v with Flyway history).
 
 ## Loop 4 recheck: q33 at a7a77fe1 (JDK 25.0.5.1, Spring Boot 4.1.2, spring-boot-starter-webmvc, real embedded server on a random port, the stem's ItemController)
