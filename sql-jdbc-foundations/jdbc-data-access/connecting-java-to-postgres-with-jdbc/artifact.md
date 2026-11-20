@@ -1,5 +1,9 @@
 # Connecting Java to Postgres with JDBC
 
+
+
+testttttt
+
 ## Objectives
 
 - Build a jdbc:postgresql URL from host, port and database, reading the settings from environment variables rather than hard-coding them
