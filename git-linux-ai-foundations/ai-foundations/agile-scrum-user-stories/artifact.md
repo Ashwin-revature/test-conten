@@ -3,6 +3,7 @@
 ## Objectives
 
 - Put the Scrum events of one sprint in order
+- testttt
 - Build a user story in the form As a ..., I want ..., so that ...
 - Tell a testable acceptance criterion from a vague one
 
