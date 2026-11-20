@@ -2,6 +2,7 @@
 
 ## Objectives
 
+- test update done for vignesh
 - Name three inputs you control: standing instructions, shared context and your prompt
 - Predict how missing context changes an assistant's proposal
 - Choose a workspace scope that gives the assistant the project it needs and nothing beyond it
